@@ -58,14 +58,9 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
                       child: ListTile(
                         leading: const Icon(Icons.person_outline),
                         title: Text(profile.name),
-                        subtitle: profile.notes.isEmpty
+                        subtitle: profile.trainingLocation.isEmpty
                             ? null
-                            : Text(
-                                profile.notes.replaceAll(
-                                  'PIN_PADRAO_1234',
-                                  'PIN padrão ativo',
-                                ),
-                              ),
+                            : Text(profile.trainingLocation),
                         trailing: const Icon(Icons.lock_open_outlined),
                         onTap: () => _unlock(profile),
                       ),
@@ -147,6 +142,7 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
 
 class _CreateFirstProfile extends StatelessWidget {
   const _CreateFirstProfile({required this.database, required this.onCreated});
+
   final AppDatabase database;
   final ValueChanged<Profile> onCreated;
 
@@ -156,13 +152,15 @@ class _CreateFirstProfile extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       children: [
         Text(
-          'Criar primeiro perfil',
+          'Configuração inicial',
           style: Theme.of(
             context,
           ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
-        const Text('Cria um perfil local com PIN de 4 dígitos.'),
+        const Text(
+          'Cria o teu perfil local. A app já não traz perfis pessoais pré-criados.',
+        ),
         const SizedBox(height: 16),
         FilledButton.icon(
           onPressed: () async {
@@ -173,7 +171,7 @@ class _CreateFirstProfile extends StatelessWidget {
             if (profile != null) onCreated(profile);
           },
           icon: const Icon(Icons.person_add_alt_1_outlined),
-          label: const Text('Criar perfil'),
+          label: const Text('Começar'),
         ),
       ],
     );
@@ -187,8 +185,39 @@ Future<Profile?> showCreateProfileSheet({
   final name = TextEditingController();
   final pin = TextEditingController();
   final confirmPin = TextEditingController();
+  final height = TextEditingController();
   final notes = TextEditingController();
+  var step = 0;
+  var trainingLocation = 'Ginásio';
+  var sex = '';
+  DateTime? birthDate;
+  final selectedEquipment = <String, String>{};
+  final selectedGoals = <String>{};
   String? error;
+  const trainingLocations = [
+    'Ginásio',
+    'Casa',
+    'Ginásio e casa',
+    'Exterior',
+    'Artes marciais / dojo',
+    'Outro',
+  ];
+  const goals = [
+    'Ganhar massa muscular',
+    'Perder gordura',
+    'Construir V-shape',
+    'Definir abdominal',
+    'Ganhar força',
+    'Melhorar cardio',
+    'Melhorar mobilidade',
+    'Melhorar postura',
+    'Melhorar performance no Karate',
+    'Melhorar performance no Jiu-Jitsu',
+    'Recomposição corporal',
+    'Manutenção',
+    'Outro',
+  ];
+
   final created = await showModalBottomSheet<Profile>(
     context: context,
     isScrollControlled: true,
@@ -201,79 +230,337 @@ Future<Profile?> showCreateProfileSheet({
           16,
           MediaQuery.viewInsetsOf(context).bottom + 16,
         ),
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            Text(
-              'Criar novo perfil',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: name,
-              decoration: const InputDecoration(labelText: 'Nome do perfil'),
-            ),
-            const SizedBox(height: 10),
-            _PinField(controller: pin, label: 'PIN de 4 dígitos'),
-            const SizedBox(height: 10),
-            _PinField(controller: confirmPin, label: 'Confirmar PIN'),
-            const SizedBox(height: 10),
-            TextField(
-              controller: notes,
-              minLines: 2,
-              maxLines: 4,
-              decoration: const InputDecoration(labelText: 'Notas opcionais'),
-            ),
-            if (error != null) ...[
-              const SizedBox(height: 10),
+        child: SizedBox(
+          height: MediaQuery.sizeOf(context).height * 0.86,
+          child: ListView(
+            children: [
               Text(
-                error!,
-                style: TextStyle(color: Theme.of(context).colorScheme.error),
+                'Configuração inicial',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: 6),
+              Text('Passo ${step + 1} de 4'),
+              const SizedBox(height: 12),
+              if (step == 0)
+                _ProfileStep(
+                  name: name,
+                  pin: pin,
+                  confirmPin: confirmPin,
+                  height: height,
+                  notes: notes,
+                  sex: sex,
+                  birthDate: birthDate,
+                  onSexChanged: (value) => setSheetState(() => sex = value),
+                  onBirthDateChanged: (value) =>
+                      setSheetState(() => birthDate = value),
+                )
+              else if (step == 1)
+                _TrainingLocationStep(
+                  value: trainingLocation,
+                  options: trainingLocations,
+                  onChanged: (value) =>
+                      setSheetState(() => trainingLocation = value),
+                )
+              else if (step == 2)
+                _EquipmentStep(
+                  trainingLocation: trainingLocation,
+                  selectedEquipment: selectedEquipment,
+                  onChanged: () => setSheetState(() {}),
+                )
+              else
+                _GoalStep(
+                  goals: goals,
+                  selectedGoals: selectedGoals,
+                  onChanged: () => setSheetState(() {}),
+                ),
+              if (error != null) ...[
+                const SizedBox(height: 10),
+                Text(
+                  error!,
+                  style: TextStyle(color: Theme.of(context).colorScheme.error),
+                ),
+              ],
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  if (step > 0)
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: () => setSheetState(() {
+                          error = null;
+                          step -= 1;
+                        }),
+                        child: const Text('Voltar'),
+                      ),
+                    ),
+                  if (step > 0) const SizedBox(width: 10),
+                  Expanded(
+                    child: FilledButton(
+                      onPressed: () async {
+                        if (step == 0) {
+                          final profileName = name.text.trim();
+                          if (profileName.isEmpty) {
+                            setSheetState(
+                              () => error = 'O nome não pode estar vazio.',
+                            );
+                            return;
+                          }
+                          if (!PinService.isValidPin(pin.text)) {
+                            setSheetState(
+                              () => error =
+                                  'O PIN deve ter exatamente 4 dígitos.',
+                            );
+                            return;
+                          }
+                          if (pin.text != confirmPin.text) {
+                            setSheetState(
+                              () => error =
+                                  'O PIN e a confirmação devem coincidir.',
+                            );
+                            return;
+                          }
+                        }
+                        if (step < 3) {
+                          setSheetState(() {
+                            error = null;
+                            step += 1;
+                          });
+                          return;
+                        }
+                        final gymOnly = trainingLocation == 'Ginásio';
+                        final profile = await database.createProfile(
+                          name: name.text.trim(),
+                          pin: pin.text,
+                          heightCm: _optionalDouble(height.text),
+                          birthDate: birthDate,
+                          sex: sex,
+                          trainingLocation: trainingLocation,
+                          initialGoals: selectedGoals.toList(),
+                          availableEquipment: gymOnly
+                              ? AppDatabase.defaultEquipment
+                              : selectedEquipment,
+                          notes: notes.text,
+                        );
+                        if (context.mounted) Navigator.pop(context, profile);
+                      },
+                      child: Text(step < 3 ? 'Continuar' : 'Criar perfil'),
+                    ),
+                  ),
+                ],
               ),
             ],
-            const SizedBox(height: 12),
-            FilledButton(
-              onPressed: () async {
-                final profileName = name.text.trim();
-                if (profileName.isEmpty) {
-                  setSheetState(() => error = 'O nome não pode estar vazio.');
-                  return;
-                }
-                if (!PinService.isValidPin(pin.text)) {
-                  setSheetState(
-                    () => error = 'O PIN deve ter exatamente 4 dígitos.',
-                  );
-                  return;
-                }
-                if (pin.text != confirmPin.text) {
-                  setSheetState(
-                    () => error = 'O PIN e a confirmação devem coincidir.',
-                  );
-                  return;
-                }
-                final profile = await database.createProfile(
-                  name: profileName,
-                  pin: pin.text,
-                  notes: notes.text,
-                );
-                if (context.mounted) Navigator.pop(context, profile);
-              },
-              child: const Text('Criar perfil'),
-            ),
-          ],
+          ),
         ),
       ),
     ),
   );
-  name.dispose();
-  pin.dispose();
-  confirmPin.dispose();
-  notes.dispose();
+  for (final controller in [name, pin, confirmPin, height, notes]) {
+    controller.dispose();
+  }
   return created;
+}
+
+class _ProfileStep extends StatelessWidget {
+  const _ProfileStep({
+    required this.name,
+    required this.pin,
+    required this.confirmPin,
+    required this.height,
+    required this.notes,
+    required this.sex,
+    required this.birthDate,
+    required this.onSexChanged,
+    required this.onBirthDateChanged,
+  });
+
+  final TextEditingController name;
+  final TextEditingController pin;
+  final TextEditingController confirmPin;
+  final TextEditingController height;
+  final TextEditingController notes;
+  final String sex;
+  final DateTime? birthDate;
+  final ValueChanged<String> onSexChanged;
+  final ValueChanged<DateTime> onBirthDateChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TextField(
+          controller: name,
+          decoration: const InputDecoration(labelText: 'Nome do perfil'),
+        ),
+        const SizedBox(height: 10),
+        _PinField(controller: pin, label: 'PIN de 4 dígitos'),
+        const SizedBox(height: 10),
+        _PinField(controller: confirmPin, label: 'Confirmar PIN'),
+        const SizedBox(height: 10),
+        TextField(
+          controller: height,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          decoration: const InputDecoration(labelText: 'Altura opcional'),
+        ),
+        const SizedBox(height: 10),
+        DropdownButtonFormField<String>(
+          initialValue: sex.isEmpty ? null : sex,
+          items: const ['Feminino', 'Masculino', 'Outro', 'Prefiro não indicar']
+              .map((item) => DropdownMenuItem(value: item, child: Text(item)))
+              .toList(),
+          onChanged: (value) => onSexChanged(value ?? ''),
+          decoration: const InputDecoration(labelText: 'Sexo opcional'),
+        ),
+        const SizedBox(height: 10),
+        OutlinedButton.icon(
+          onPressed: () async {
+            final picked = await showDatePicker(
+              context: context,
+              initialDate: DateTime(2000),
+              firstDate: DateTime(1900),
+              lastDate: DateTime.now(),
+            );
+            if (picked != null) onBirthDateChanged(picked);
+          },
+          icon: const Icon(Icons.cake_outlined),
+          label: Text(
+            birthDate == null
+                ? 'Data de nascimento opcional'
+                : '${birthDate!.day.toString().padLeft(2, '0')}/${birthDate!.month.toString().padLeft(2, '0')}/${birthDate!.year}',
+          ),
+        ),
+        const SizedBox(height: 10),
+        TextField(
+          controller: notes,
+          minLines: 2,
+          maxLines: 4,
+          decoration: const InputDecoration(labelText: 'Notas opcionais'),
+        ),
+      ],
+    );
+  }
+}
+
+class _TrainingLocationStep extends StatelessWidget {
+  const _TrainingLocationStep({
+    required this.value,
+    required this.options,
+    required this.onChanged,
+  });
+
+  final String value;
+  final List<String> options;
+  final ValueChanged<String> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text('Onde costumas treinar?'),
+        const SizedBox(height: 8),
+        for (final option in options)
+          ListTile(
+            leading: Icon(
+              option == value
+                  ? Icons.radio_button_checked
+                  : Icons.radio_button_unchecked,
+            ),
+            title: Text(option),
+            selected: option == value,
+            onTap: () => onChanged(option),
+          ),
+      ],
+    );
+  }
+}
+
+class _EquipmentStep extends StatelessWidget {
+  const _EquipmentStep({
+    required this.trainingLocation,
+    required this.selectedEquipment,
+    required this.onChanged,
+  });
+
+  final String trainingLocation;
+  final Map<String, String> selectedEquipment;
+  final VoidCallback onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final gymOnly = trainingLocation == 'Ginásio';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          gymOnly
+              ? 'Ginásio selecionado: todos os equipamentos ficam disponíveis.'
+              : 'Que equipamento tens disponível?',
+        ),
+        const SizedBox(height: 8),
+        if (!gymOnly)
+          for (final entry in AppDatabase.defaultEquipment.entries)
+            CheckboxListTile(
+              value: selectedEquipment.containsKey(entry.key),
+              title: Text(entry.value),
+              onChanged: (value) {
+                if (value == true) {
+                  selectedEquipment[entry.key] = entry.value;
+                } else {
+                  selectedEquipment.remove(entry.key);
+                }
+                onChanged();
+              },
+            ),
+      ],
+    );
+  }
+}
+
+class _GoalStep extends StatelessWidget {
+  const _GoalStep({
+    required this.goals,
+    required this.selectedGoals,
+    required this.onChanged,
+  });
+
+  final List<String> goals;
+  final Set<String> selectedGoals;
+  final VoidCallback onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text('Escolhe objetivos iniciais.'),
+        const SizedBox(height: 8),
+        for (final goal in goals)
+          CheckboxListTile(
+            value: selectedGoals.contains(goal),
+            title: Text(goal),
+            onChanged: (value) {
+              if (value == true) {
+                selectedGoals.add(goal);
+              } else {
+                selectedGoals.remove(goal);
+              }
+              onChanged();
+            },
+          ),
+      ],
+    );
+  }
+}
+
+double? _optionalDouble(String text) {
+  final normalized = text.trim().replaceAll(',', '.');
+  if (normalized.isEmpty) return null;
+  return double.tryParse(normalized);
 }
 
 class _PinField extends StatelessWidget {
   const _PinField({required this.controller, required this.label});
+
   final TextEditingController controller;
   final String label;
 

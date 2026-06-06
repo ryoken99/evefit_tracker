@@ -7,9 +7,8 @@ import '../models/profile.dart';
 import '../services/pin_service.dart';
 import 'profile_gate_screen.dart';
 
-const appVersionLabel = 'v0.4.0';
+const appVersionLabel = 'v0.5.1';
 const githubRepoUrl = 'https://github.com/ryoken99/evefit_tracker';
-const githubReleasesUrl = '$githubRepoUrl/releases';
 const githubLatestReleaseUrl = '$githubRepoUrl/releases/latest';
 
 class SettingsScreen extends StatefulWidget {
@@ -42,14 +41,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Text('Atualizações', style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 8),
           FilledButton.icon(
-            onPressed: () => _openUrl(githubReleasesUrl),
-            icon: const Icon(Icons.system_update_alt),
-            label: const Text('Ver atualizações $appVersionLabel'),
-          ),
-          OutlinedButton.icon(
             onPressed: () => _openUrl(githubLatestReleaseUrl),
-            icon: const Icon(Icons.download_outlined),
-            label: const Text('Download APK mais recente'),
+            icon: const Icon(Icons.system_update_alt),
+            label: const Text('Ver atualizações v0.5.1'),
           ),
           TextButton.icon(
             onPressed: () => _openUrl(githubRepoUrl),
@@ -64,22 +58,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
               leading: const Icon(Icons.person_outline),
               title: Text(profile?.name ?? 'Sem perfil'),
               subtitle: Text(
-                profile?.notes.replaceAll(
-                      'PIN_PADRAO_1234',
-                      'PIN padrão ativo',
-                    ) ??
-                    '',
+                [
+                  if (profile?.trainingLocation.isNotEmpty == true)
+                    profile!.trainingLocation,
+                  if (profile?.initialGoals.isNotEmpty == true)
+                    profile!.initialGoals,
+                  if (profile?.notes.isNotEmpty == true) profile!.notes,
+                ].join('\n'),
               ),
             ),
           ),
-          if (profile?.usesDefaultPin == true)
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: Text(
-                'PIN padrão ativo. Recomenda-se alterar o PIN.',
-                style: TextStyle(color: Theme.of(context).colorScheme.error),
-              ),
-            ),
           const SizedBox(height: 12),
           OutlinedButton.icon(
             onPressed: widget.onProfileLocked,
@@ -107,8 +95,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _openUrl(String url) async {
-    final uri = Uri.parse(url);
-    await launchUrl(uri, mode: LaunchMode.externalApplication);
+    await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
   }
 
   Future<void> _createProfile() async {
@@ -124,9 +111,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _editProfile(Profile profile) async {
     final name = TextEditingController(text: profile.name);
-    final notes = TextEditingController(
-      text: profile.notes.replaceAll('PIN_PADRAO_1234', '').trim(),
-    );
+    final notes = TextEditingController(text: profile.notes.trim());
     final currentPin = TextEditingController();
     final newPin = TextEditingController();
     final confirmPin = TextEditingController();
@@ -245,6 +230,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
 class _PinField extends StatelessWidget {
   const _PinField({required this.controller, required this.label});
+
   final TextEditingController controller;
   final String label;
 

@@ -20,4 +20,17 @@ class GoalProgressService {
     final progress = (currentValue - initialValue) / total;
     return progress.clamp(0, 1);
   }
+
+  static double calculateFrequencyProgress({
+    required int completed,
+    required int target,
+  }) {
+    if (target <= 0) return 0;
+    return (completed / target).clamp(0, 1);
+  }
+
+  static double calculateManualPercent(double? percent) {
+    if (percent == null) return 0;
+    return (percent / 100).clamp(0, 1);
+  }
 }

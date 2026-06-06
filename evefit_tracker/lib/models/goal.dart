@@ -8,10 +8,13 @@ class Goal {
     this.category = 'Outro',
     this.metricKey = 'manual',
     this.initialValue,
+    this.currentValue,
     this.targetValue,
     this.unit = '',
     this.startDate,
     this.targetDate,
+    this.periodicity = 'Livre',
+    this.frequencyTarget,
     this.manualProgress,
     this.notes = '',
     required this.isActive,
@@ -27,10 +30,13 @@ class Goal {
   final String category;
   final String metricKey;
   final double? initialValue;
+  final double? currentValue;
   final double? targetValue;
   final String unit;
   final DateTime? startDate;
   final DateTime? targetDate;
+  final String periodicity;
+  final int? frequencyTarget;
   final double? manualProgress;
   final String notes;
   final bool isActive;
@@ -48,6 +54,9 @@ class Goal {
     initialValue: map['initial_value'] == null
         ? null
         : (map['initial_value'] as num).toDouble(),
+    currentValue: map['current_value'] == null
+        ? null
+        : (map['current_value'] as num).toDouble(),
     targetValue: map['target_value'] == null
         ? null
         : (map['target_value'] as num).toDouble(),
@@ -58,6 +67,8 @@ class Goal {
     targetDate: map['target_date'] == null
         ? null
         : DateTime.parse(map['target_date'] as String),
+    periodicity: map['periodicity'] as String? ?? 'Livre',
+    frequencyTarget: map['frequency_target'] as int?,
     manualProgress: map['manual_progress'] == null
         ? null
         : (map['manual_progress'] as num).toDouble(),
@@ -78,10 +89,13 @@ class Goal {
     'category': category,
     'metric_key': metricKey,
     'initial_value': initialValue,
+    'current_value': currentValue,
     'target_value': targetValue,
     'unit': unit,
     'start_date': startDate?.toIso8601String(),
     'target_date': targetDate?.toIso8601String(),
+    'periodicity': periodicity,
+    'frequency_target': frequencyTarget,
     'manual_progress': manualProgress,
     'notes': notes,
     'is_active': isActive ? 1 : 0,

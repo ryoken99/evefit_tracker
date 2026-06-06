@@ -6,6 +6,7 @@ import '../models/dashboard_widget_config.dart';
 import '../models/user_profile.dart';
 import '../services/csv_export_service.dart';
 import '../services/dashboard_metric_service.dart';
+import '../services/dashboard_widget_draft_service.dart';
 import '../widgets/progress_chart.dart';
 import '../widgets/stat_card.dart';
 import 'settings_screen.dart';
@@ -197,51 +198,93 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> _editDashboard(List<DashboardWidgetConfig> widgets) async {
+    var draft = DashboardWidgetDraftService.createDraft(widgets);
     final changed = await showModalBottomSheet<bool>(
       context: context,
       showDragHandle: true,
       isScrollControlled: true,
-      builder: (context) => SafeArea(
-        child: ListView(
-          shrinkWrap: true,
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-          children: [
-            Text(
-              'Editar Dashboard',
-              style: Theme.of(context).textTheme.titleLarge,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setSheetState) => SafeArea(
+          child: SizedBox(
+            height: MediaQuery.sizeOf(context).height * 0.82,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Editar Dashboard',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, false),
+                        child: const Text('Cancelar'),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: ListView(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    children: [
+                      for (var index = 0; index < draft.length; index++)
+                        SwitchListTile(
+                          value: draft[index].isVisible,
+                          title: Text(draft[index].title),
+                          subtitle: Text(draft[index].metricKey),
+                          onChanged: (value) => setSheetState(() {
+                            draft[index] = DashboardWidgetDraftService.toggle(
+                              draft[index],
+                              value,
+                            );
+                          }),
+                        ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: () => setSheetState(() {
+                            draft = [
+                              for (final item in draft)
+                                DashboardWidgetDraftService.toggle(
+                                  item,
+                                  DashboardMetricService.defaultKeys.contains(
+                                    item.metricKey,
+                                  ),
+                                ),
+                            ];
+                          }),
+                          icon: const Icon(Icons.restart_alt),
+                          label: const Text('Restaurar padrão'),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: FilledButton.icon(
+                          onPressed: () async {
+                            for (final item in draft) {
+                              await widget.database.updateDashboardWidget(item);
+                            }
+                            if (context.mounted) Navigator.pop(context, true);
+                          },
+                          icon: const Icon(Icons.save_outlined),
+                          label: const Text('Guardar'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 8),
-            for (final item in widgets)
-              SwitchListTile(
-                value: item.isVisible,
-                title: Text(item.title),
-                subtitle: Text(item.metricKey),
-                onChanged: (value) async {
-                  await widget.database.updateDashboardWidget(
-                    DashboardWidgetConfig(
-                      id: item.id,
-                      profileId: item.profileId,
-                      metricKey: item.metricKey,
-                      title: item.title,
-                      isVisible: value,
-                      sortOrder: item.sortOrder,
-                      createdAt: item.createdAt,
-                      updatedAt: DateTime.now(),
-                    ),
-                  );
-                  if (context.mounted) Navigator.pop(context, true);
-                },
-              ),
-            const SizedBox(height: 8),
-            OutlinedButton.icon(
-              onPressed: () async {
-                await widget.database.resetDashboardWidgets();
-                if (context.mounted) Navigator.pop(context, true);
-              },
-              icon: const Icon(Icons.restart_alt),
-              label: const Text('Restaurar defaults'),
-            ),
-          ],
+          ),
         ),
       ),
     );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class ProgressChart extends StatelessWidget {
   const ProgressChart({super.key, required this.title, required this.values});
+
   final String title;
   final List<double?> values;
 
@@ -21,7 +22,7 @@ class ProgressChart extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 24),
                 child: Text(
-                  'Ainda não há dados suficientes para gerar este gráfico.',
+                  'Ainda não há dados suficientes para este gráfico.',
                   style: Theme.of(
                     context,
                   ).textTheme.bodyMedium?.copyWith(color: Colors.white70),

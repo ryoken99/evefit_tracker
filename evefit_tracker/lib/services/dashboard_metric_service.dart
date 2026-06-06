@@ -18,6 +18,7 @@ class DashboardMetricService {
 
   static const definitions = [
     DashboardMetricDefinition(key: 'weight', title: 'Peso atual', unit: 'kg'),
+    DashboardMetricDefinition(key: 'bmi', title: 'IMC', unit: ''),
     DashboardMetricDefinition(
       key: 'body_fat',
       title: 'Gordura corporal',
@@ -29,23 +30,194 @@ class DashboardMetricService {
       unit: 'kg',
     ),
     DashboardMetricDefinition(
-      key: 'avg_biceps_flexed',
-      title: 'Braço contraído',
+      key: 'muscle_percentage',
+      title: 'Percentagem muscular',
+      unit: '%',
+    ),
+    DashboardMetricDefinition(
+      key: 'body_water',
+      title: 'Água corporal',
+      unit: '%',
+    ),
+    DashboardMetricDefinition(
+      key: 'protein',
+      title: 'Proteína corporal',
+      unit: '%',
+    ),
+    DashboardMetricDefinition(
+      key: 'subcutaneous_fat',
+      title: 'Gordura subcutânea',
+      unit: '%',
+    ),
+    DashboardMetricDefinition(
+      key: 'visceral_fat',
+      title: 'Gordura visceral',
+      unit: '',
+    ),
+    DashboardMetricDefinition(
+      key: 'bone_mass',
+      title: 'Massa óssea',
+      unit: 'kg',
+    ),
+    DashboardMetricDefinition(
+      key: 'basal_metabolism',
+      title: 'Metabolismo basal',
+      unit: 'kcal',
+    ),
+    DashboardMetricDefinition(
+      key: 'body_age',
+      title: 'Idade corporal',
+      unit: 'anos',
+    ),
+    DashboardMetricDefinition(key: 'neck', title: 'Pescoço', unit: 'cm'),
+    DashboardMetricDefinition(key: 'shoulders', title: 'Ombros', unit: 'cm'),
+    DashboardMetricDefinition(
+      key: 'upper_chest',
+      title: 'Peito alto',
       unit: 'cm',
     ),
-    DashboardMetricDefinition(key: 'shoulders', title: 'Ombros', unit: 'cm'),
+    DashboardMetricDefinition(
+      key: 'mid_chest',
+      title: 'Peito médio',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'lower_chest',
+      title: 'Peito baixo',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(key: 'chest', title: 'Peito total', unit: 'cm'),
+    DashboardMetricDefinition(
+      key: 'back_width',
+      title: 'Costas / largura dorsal',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(key: 'waist', title: 'Cintura', unit: 'cm'),
+    DashboardMetricDefinition(
+      key: 'abdomen',
+      title: 'Abdómen ao nível do umbigo',
+      unit: 'cm',
+    ),
     DashboardMetricDefinition(
       key: 'side_hip_area',
       title: 'Zona lateral acima da anca',
       unit: 'cm',
     ),
-    DashboardMetricDefinition(key: 'waist', title: 'Cintura', unit: 'cm'),
-    DashboardMetricDefinition(key: 'abdomen', title: 'Abdómen', unit: 'cm'),
     DashboardMetricDefinition(key: 'hips', title: 'Anca', unit: 'cm'),
-    DashboardMetricDefinition(key: 'chest', title: 'Peito', unit: 'cm'),
+    DashboardMetricDefinition(key: 'glutes', title: 'Glúteos', unit: 'cm'),
+    DashboardMetricDefinition(
+      key: 'left_bicep_relaxed',
+      title: 'Bíceps esquerdo relaxado',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_bicep_flexed',
+      title: 'Bíceps esquerdo contraído',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_bicep_relaxed',
+      title: 'Bíceps direito relaxado',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_bicep_flexed',
+      title: 'Bíceps direito contraído',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'avg_biceps_flexed',
+      title: 'Média dos bíceps contraídos',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_forearm',
+      title: 'Antebraço esquerdo',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_forearm',
+      title: 'Antebraço direito',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_wrist',
+      title: 'Punho esquerdo',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_wrist',
+      title: 'Punho direito',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_hand',
+      title: 'Mão esquerda',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_hand',
+      title: 'Mão direita',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_upper_thigh',
+      title: 'Coxa esquerda alta',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_mid_thigh',
+      title: 'Coxa esquerda média',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_upper_thigh',
+      title: 'Coxa direita alta',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_mid_thigh',
+      title: 'Coxa direita média',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_calf',
+      title: 'Gémeo esquerdo',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_calf',
+      title: 'Gémeo direito',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'left_ankle',
+      title: 'Tornozelo esquerdo',
+      unit: 'cm',
+    ),
+    DashboardMetricDefinition(
+      key: 'right_ankle',
+      title: 'Tornozelo direito',
+      unit: 'cm',
+    ),
     DashboardMetricDefinition(
       key: 'workouts_week',
       title: 'Treinos esta semana',
+      unit: '',
+    ),
+    DashboardMetricDefinition(
+      key: 'workouts_month',
+      title: 'Treinos este mês',
+      unit: '',
+    ),
+    DashboardMetricDefinition(
+      key: 'sets_week',
+      title: 'Número de séries esta semana',
+      unit: '',
+    ),
+    DashboardMetricDefinition(
+      key: 'exercises_week',
+      title: 'Número de exercícios esta semana',
       unit: '',
     ),
     DashboardMetricDefinition(
@@ -71,15 +243,21 @@ class DashboardMetricService {
     String key,
     BodyMeasurement? measurement, {
     int? workoutsThisWeek,
+    int? workoutsThisMonth,
+    int? setsThisWeek,
+    int? exercisesThisWeek,
     int? daysSinceStart,
   }) {
     if (key == 'workouts_week') return '${workoutsThisWeek ?? 0}';
+    if (key == 'workouts_month') return '${workoutsThisMonth ?? 0}';
+    if (key == 'sets_week') return '${setsThisWeek ?? 0}';
+    if (key == 'exercises_week') return '${exercisesThisWeek ?? 0}';
     if (key == 'days_since_start') return '${daysSinceStart ?? 0}';
     final value = numericValueFor(key, measurement);
     if (value == null) return '-';
     final unit = definitionFor(key).unit;
     return unit.isEmpty
-        ? value.toStringAsFixed(0)
+        ? value.toStringAsFixed(1)
         : '${value.toStringAsFixed(1)} $unit';
   }
 
@@ -87,17 +265,50 @@ class DashboardMetricService {
     if (measurement == null) return null;
     return switch (key) {
       'weight' => measurement.weightKg,
+      'bmi' => measurement.bmi,
       'body_fat' => measurement.bodyFatPercentage,
       'muscle_mass' => measurement.muscleMassKg,
-      'avg_biceps_flexed' => DashboardStatsService.flexedArmCm(measurement),
+      'muscle_percentage' => measurement.musclePercentage,
+      'body_water' => measurement.bodyWaterPercentage,
+      'protein' => measurement.proteinPercentage,
+      'subcutaneous_fat' => measurement.subcutaneousFatPercentage,
+      'visceral_fat' => measurement.visceralFat,
+      'bone_mass' => measurement.boneMassKg,
+      'basal_metabolism' => measurement.basalMetabolismKcal,
+      'body_age' => measurement.bodyAge,
+      'neck' => measurement.neckCm,
       'shoulders' => measurement.shouldersCm,
-      'side_hip_area' => measurement.sideHipAreaCm,
+      'upper_chest' => measurement.upperChestCm,
+      'mid_chest' => measurement.midChestCm,
+      'lower_chest' => measurement.lowerChestCm,
+      'chest' => measurement.chestCm,
+      'back_width' => measurement.backWidthCm,
       'waist' => measurement.waistCm,
       'abdomen' => measurement.abdomenCm,
+      'side_hip_area' => measurement.sideHipAreaCm,
       'hips' => measurement.hipsCm,
-      'chest' => measurement.chestCm,
-      'bmi' => measurement.bmi,
-      'visceral_fat' => measurement.visceralFat,
+      'glutes' => measurement.glutesCm,
+      'left_bicep_relaxed' => measurement.leftBicepRelaxedCm,
+      'left_bicep_flexed' => measurement.leftBicepFlexedCm,
+      'right_bicep_relaxed' => measurement.rightBicepRelaxedCm,
+      'right_bicep_flexed' => measurement.rightBicepFlexedCm,
+      'avg_biceps_flexed' => DashboardStatsService.flexedArmCm(measurement),
+      'left_forearm' => measurement.leftForearmCm,
+      'right_forearm' => measurement.rightForearmCm,
+      'left_wrist' => measurement.leftWristCm,
+      'right_wrist' => measurement.rightWristCm,
+      'left_hand' => measurement.leftHandCm,
+      'right_hand' => measurement.rightHandCm,
+      'left_upper_thigh' =>
+        measurement.leftUpperThighCm ?? measurement.leftThighCm,
+      'left_mid_thigh' => measurement.leftMidThighCm,
+      'right_upper_thigh' =>
+        measurement.rightUpperThighCm ?? measurement.rightThighCm,
+      'right_mid_thigh' => measurement.rightMidThighCm,
+      'left_calf' => measurement.leftCalfCm,
+      'right_calf' => measurement.rightCalfCm,
+      'left_ankle' => measurement.leftAnkleCm,
+      'right_ankle' => measurement.rightAnkleCm,
       _ => null,
     };
   }

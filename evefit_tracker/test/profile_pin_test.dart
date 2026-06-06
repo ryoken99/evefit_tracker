@@ -21,19 +21,19 @@ void main() {
   test('Profile maps to and from database rows', () {
     final profile = Profile(
       id: 1,
-      name: 'Sandro',
+      name: 'Perfil Teste',
       pinHash: 'hash',
       createdAt: DateTime(2026, 6, 6),
       updatedAt: DateTime(2026, 6, 7),
       isActive: true,
-      notes: 'PIN padrão ativo',
+      notes: 'Notas locais',
     );
 
     final restored = Profile.fromMap(profile.toMap());
 
     expect(restored.id, 1);
-    expect(restored.name, 'Sandro');
+    expect(restored.name, 'Perfil Teste');
     expect(restored.isActive, isTrue);
-    expect(restored.notes, 'PIN padrão ativo');
+    expect(restored.notes, 'Notas locais');
   });
 }

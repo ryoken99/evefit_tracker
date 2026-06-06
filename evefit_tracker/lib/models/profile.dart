@@ -6,6 +6,11 @@ class Profile {
     required this.createdAt,
     required this.updatedAt,
     required this.isActive,
+    this.heightCm,
+    this.birthDate,
+    this.sex = '',
+    this.trainingLocation = '',
+    this.initialGoals = '',
     this.notes = '',
   });
 
@@ -15,9 +20,12 @@ class Profile {
   final DateTime createdAt;
   final DateTime updatedAt;
   final bool isActive;
+  final double? heightCm;
+  final DateTime? birthDate;
+  final String sex;
+  final String trainingLocation;
+  final String initialGoals;
   final String notes;
-
-  bool get usesDefaultPin => notes.contains('PIN_PADRAO_1234');
 
   factory Profile.fromMap(Map<String, Object?> map) => Profile(
     id: map['id'] as int?,
@@ -26,6 +34,15 @@ class Profile {
     createdAt: DateTime.parse(map['created_at'] as String),
     updatedAt: DateTime.parse(map['updated_at'] as String),
     isActive: (map['is_active'] as int? ?? 0) == 1,
+    heightCm: map['height_cm'] == null
+        ? null
+        : (map['height_cm'] as num).toDouble(),
+    birthDate: map['birth_date'] == null
+        ? null
+        : DateTime.parse(map['birth_date'] as String),
+    sex: map['sex'] as String? ?? '',
+    trainingLocation: map['training_location'] as String? ?? '',
+    initialGoals: map['initial_goals'] as String? ?? '',
     notes: map['notes'] as String? ?? '',
   );
 
@@ -36,6 +53,11 @@ class Profile {
     'created_at': createdAt.toIso8601String(),
     'updated_at': updatedAt.toIso8601String(),
     'is_active': isActive ? 1 : 0,
+    'height_cm': heightCm,
+    'birth_date': birthDate?.toIso8601String(),
+    'sex': sex,
+    'training_location': trainingLocation,
+    'initial_goals': initialGoals,
     'notes': notes,
   };
 
@@ -46,6 +68,11 @@ class Profile {
     DateTime? createdAt,
     DateTime? updatedAt,
     bool? isActive,
+    double? heightCm,
+    DateTime? birthDate,
+    String? sex,
+    String? trainingLocation,
+    String? initialGoals,
     String? notes,
   }) {
     return Profile(
@@ -55,6 +82,11 @@ class Profile {
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       isActive: isActive ?? this.isActive,
+      heightCm: heightCm ?? this.heightCm,
+      birthDate: birthDate ?? this.birthDate,
+      sex: sex ?? this.sex,
+      trainingLocation: trainingLocation ?? this.trainingLocation,
+      initialGoals: initialGoals ?? this.initialGoals,
       notes: notes ?? this.notes,
     );
   }

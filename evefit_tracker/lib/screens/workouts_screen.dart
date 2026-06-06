@@ -242,34 +242,6 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                   ),
                 ),
               ],
-              const SizedBox(height: 8),
-              FutureBuilder(
-                future: widget.database.muscleGroups(),
-                builder: (context, snapshot) {
-                  final groups = snapshot.data ?? [];
-                  if (groups.isEmpty) return const SizedBox.shrink();
-                  return Wrap(
-                    spacing: 8,
-                    runSpacing: 6,
-                    children: [
-                      for (final group in groups)
-                        FilterChip(
-                          label: Text(group.name),
-                          selected: selectedGroups.contains(group.name),
-                          onSelected: (value) {
-                            setSheetState(() {
-                              if (value) {
-                                selectedGroups.add(group.name);
-                              } else {
-                                selectedGroups.remove(group.name);
-                              }
-                            });
-                          },
-                        ),
-                    ],
-                  );
-                },
-              ),
               const SizedBox(height: 10),
               TextField(
                 controller: duration,
@@ -296,7 +268,9 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       name: templateName,
                       description: notes.text.trim(),
                       workoutTypeId: workoutTypeId,
-                      muscleGroups: selectedGroups.join(', '),
+                      muscleGroups: selectedGroups.isEmpty
+                          ? _typeGroupsFor(types, type)
+                          : selectedGroups.join(', '),
                       createdAt: DateTime.now(),
                       updatedAt: DateTime.now(),
                     ),
@@ -327,7 +301,9 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                     date: date,
                     workoutType: type,
                     workoutTypeId: workoutTypeId,
-                    muscleGroups: selectedGroups.join(', '),
+                    muscleGroups: selectedGroups.isEmpty
+                        ? _typeGroupsFor(types, type)
+                        : selectedGroups.join(', '),
                     durationMinutes: int.tryParse(duration.text),
                     notes: notes.text.trim(),
                   );
@@ -379,6 +355,13 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
       if (type.name == name) return type.id;
     }
     return null;
+  }
+
+  String _typeGroupsFor(List<WorkoutType> types, String name) {
+    for (final type in types) {
+      if (type.name == name) return type.muscleGroups;
+    }
+    return '';
   }
 
   Future<String?> _askTemplateName() async {

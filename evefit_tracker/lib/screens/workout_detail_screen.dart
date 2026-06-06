@@ -7,6 +7,8 @@ import '../models/exercise.dart';
 import '../models/workout.dart';
 import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
+import '../models/workout_type.dart';
+import '../services/exercise_filter_service.dart';
 
 class WorkoutDetailScreen extends StatefulWidget {
   const WorkoutDetailScreen({
@@ -327,16 +329,34 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
 
   Future<Exercise?> _pickExercise() async {
     final exercises = await widget.database.exercises();
+    final profile = widget.database.activeProfile;
+    final equipment = await widget.database.availableEquipmentKeys();
     if (!mounted || exercises.isEmpty) return null;
     var query = '';
     var filter = filters.first;
+    var showAll = false;
+    final workoutType = WorkoutType(
+      id: _entry.workout.workoutTypeId,
+      name: _entry.workout.workoutType,
+      muscleGroups: _entry.workout.muscleGroups,
+      isDefault: true,
+      createdAt: DateTime.now(),
+      updatedAt: DateTime.now(),
+    );
     return showModalBottomSheet<Exercise>(
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
       builder: (context) => StatefulBuilder(
         builder: (context, setSheetState) {
-          final visible = exercises.where((exercise) {
+          final base = ExerciseFilterService.filter(
+            exercises: exercises,
+            trainingLocation: profile?.trainingLocation ?? '',
+            availableEquipmentKeys: equipment,
+            workoutType: workoutType,
+            showAllWithoutEquipment: showAll,
+          );
+          final visible = base.where((exercise) {
             final matchesQuery = exercise.name.toLowerCase().contains(
               query.toLowerCase(),
             );
@@ -367,6 +387,13 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                     onChanged: (value) => setSheetState(() => query = value),
                   ),
                   const SizedBox(height: 10),
+                  SwitchListTile(
+                    contentPadding: EdgeInsets.zero,
+                    value: showAll,
+                    title: const Text('Mostrar todos os exercícios'),
+                    onChanged: (value) => setSheetState(() => showAll = value),
+                  ),
+                  const SizedBox(height: 10),
                   DropdownButtonFormField<String>(
                     initialValue: filter,
                     items: filters
@@ -393,7 +420,16 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                               final exercise = visible[index];
                               return ListTile(
                                 title: Text(exercise.name),
-                                subtitle: Text(exercise.muscleGroup),
+                                subtitle: Text(
+                                  exercise.description.isEmpty
+                                      ? exercise.muscleGroup
+                                      : '${exercise.muscleGroup} · ${exercise.equipment}',
+                                ),
+                                trailing: IconButton(
+                                  tooltip: 'Explicação',
+                                  icon: const Icon(Icons.info_outline),
+                                  onPressed: () => _showExerciseInfo(exercise),
+                                ),
                                 onTap: () => Navigator.pop(context, exercise),
                               );
                             },
@@ -421,6 +457,35 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
       'Outro' => false,
       _ => group.contains(filter.toLowerCase()),
     };
+  }
+
+  void _showExerciseInfo(Exercise exercise) {
+    showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(exercise.name),
+        content: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _InfoLine('Grupo principal', exercise.muscleGroup),
+              _InfoLine('Grupos secundários', exercise.secondaryMuscleGroups),
+              _InfoLine('Equipamento', exercise.equipment),
+              _InfoLine('Descrição', exercise.description),
+              _InfoLine('Execução', exercise.executionSteps),
+              _InfoLine('Erros comuns', exercise.commonMistakes),
+              _InfoLine('Segurança', exercise.safetyNotes),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Fechar'),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _openSetForm({
@@ -580,4 +645,29 @@ class _ExerciseBlock {
   final String name;
   final String? muscleGroup;
   final List<WorkoutSet> sets;
+}
+
+class _InfoLine extends StatelessWidget {
+  const _InfoLine(this.label, this.value);
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    final text = value.trim().isEmpty
+        ? 'Descrição ainda incompleta. Este exercício será melhorado numa próxima versão.'
+        : value.trim();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: Theme.of(context).textTheme.titleSmall),
+          const SizedBox(height: 2),
+          Text(text),
+        ],
+      ),
+    );
+  }
 }
