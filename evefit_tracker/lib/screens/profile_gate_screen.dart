@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../database/app_database.dart';
 import '../models/profile.dart';
 import '../services/pin_service.dart';
+import '../services/training_location_service.dart';
 
 class ProfileGateScreen extends StatefulWidget {
   const ProfileGateScreen({
@@ -159,7 +160,7 @@ class _CreateFirstProfile extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         const Text(
-          'Cria o teu perfil local. A app já não traz perfis pessoais pré-criados.',
+          'Cria o teu perfil local. A app não traz perfis pessoais pré-criados.',
         ),
         const SizedBox(height: 16),
         FilledButton.icon(
@@ -188,20 +189,12 @@ Future<Profile?> showCreateProfileSheet({
   final height = TextEditingController();
   final notes = TextEditingController();
   var step = 0;
-  var trainingLocation = 'Ginásio';
+  final selectedLocations = <String>{'Ginásio'};
   var sex = '';
   DateTime? birthDate;
   final selectedEquipment = <String, String>{};
   final selectedGoals = <String>{};
   String? error;
-  const trainingLocations = [
-    'Ginásio',
-    'Casa',
-    'Ginásio e casa',
-    'Exterior',
-    'Artes marciais / dojo',
-    'Outro',
-  ];
   const goals = [
     'Ganhar massa muscular',
     'Perder gordura',
@@ -256,14 +249,12 @@ Future<Profile?> showCreateProfileSheet({
                 )
               else if (step == 1)
                 _TrainingLocationStep(
-                  value: trainingLocation,
-                  options: trainingLocations,
-                  onChanged: (value) =>
-                      setSheetState(() => trainingLocation = value),
+                  selectedLocations: selectedLocations,
+                  onChanged: () => setSheetState(() {}),
                 )
               else if (step == 2)
                 _EquipmentStep(
-                  trainingLocation: trainingLocation,
+                  hasGym: selectedLocations.contains('Ginásio'),
                   selectedEquipment: selectedEquipment,
                   onChanged: () => setSheetState(() {}),
                 )
@@ -298,8 +289,7 @@ Future<Profile?> showCreateProfileSheet({
                     child: FilledButton(
                       onPressed: () async {
                         if (step == 0) {
-                          final profileName = name.text.trim();
-                          if (profileName.isEmpty) {
+                          if (name.text.trim().isEmpty) {
                             setSheetState(
                               () => error = 'O nome não pode estar vazio.',
                             );
@@ -320,6 +310,12 @@ Future<Profile?> showCreateProfileSheet({
                             return;
                           }
                         }
+                        if (step == 1 && selectedLocations.isEmpty) {
+                          setSheetState(
+                            () => error = 'Escolhe pelo menos um local.',
+                          );
+                          return;
+                        }
                         if (step < 3) {
                           setSheetState(() {
                             error = null;
@@ -327,16 +323,16 @@ Future<Profile?> showCreateProfileSheet({
                           });
                           return;
                         }
-                        final gymOnly = trainingLocation == 'Ginásio';
+                        final hasGym = selectedLocations.contains('Ginásio');
                         final profile = await database.createProfile(
                           name: name.text.trim(),
                           pin: pin.text,
                           heightCm: _optionalDouble(height.text),
                           birthDate: birthDate,
                           sex: sex,
-                          trainingLocation: trainingLocation,
+                          trainingLocations: selectedLocations.toList(),
                           initialGoals: selectedGoals.toList(),
-                          availableEquipment: gymOnly
+                          availableEquipment: hasGym
                               ? AppDatabase.defaultEquipment
                               : selectedEquipment,
                           notes: notes.text,
@@ -442,32 +438,32 @@ class _ProfileStep extends StatelessWidget {
 
 class _TrainingLocationStep extends StatelessWidget {
   const _TrainingLocationStep({
-    required this.value,
-    required this.options,
+    required this.selectedLocations,
     required this.onChanged,
   });
 
-  final String value;
-  final List<String> options;
-  final ValueChanged<String> onChanged;
+  final Set<String> selectedLocations;
+  final VoidCallback onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Onde costumas treinar?'),
+        const Text('Onde treinas? Podes escolher mais do que um local.'),
         const SizedBox(height: 8),
-        for (final option in options)
-          ListTile(
-            leading: Icon(
-              option == value
-                  ? Icons.radio_button_checked
-                  : Icons.radio_button_unchecked,
-            ),
+        for (final option in TrainingLocationService.options)
+          CheckboxListTile(
+            value: selectedLocations.contains(option),
             title: Text(option),
-            selected: option == value,
-            onTap: () => onChanged(option),
+            onChanged: (value) {
+              if (value == true) {
+                selectedLocations.add(option);
+              } else {
+                selectedLocations.remove(option);
+              }
+              onChanged();
+            },
           ),
       ],
     );
@@ -476,41 +472,41 @@ class _TrainingLocationStep extends StatelessWidget {
 
 class _EquipmentStep extends StatelessWidget {
   const _EquipmentStep({
-    required this.trainingLocation,
+    required this.hasGym,
     required this.selectedEquipment,
     required this.onChanged,
   });
 
-  final String trainingLocation;
+  final bool hasGym;
   final Map<String, String> selectedEquipment;
   final VoidCallback onChanged;
 
   @override
   Widget build(BuildContext context) {
-    final gymOnly = trainingLocation == 'Ginásio';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          gymOnly
-              ? 'Ginásio selecionado: todos os equipamentos ficam disponíveis.'
+          hasGym
+              ? 'Ginásio selecionado: os equipamentos de ginásio ficam disponíveis. Se também treinas noutros locais, podes marcar equipamento adicional.'
               : 'Que equipamento tens disponível?',
         ),
         const SizedBox(height: 8),
-        if (!gymOnly)
-          for (final entry in AppDatabase.defaultEquipment.entries)
-            CheckboxListTile(
-              value: selectedEquipment.containsKey(entry.key),
-              title: Text(entry.value),
-              onChanged: (value) {
-                if (value == true) {
-                  selectedEquipment[entry.key] = entry.value;
-                } else {
-                  selectedEquipment.remove(entry.key);
-                }
-                onChanged();
-              },
-            ),
+        for (final entry in AppDatabase.defaultEquipment.entries)
+          CheckboxListTile(
+            value: hasGym || selectedEquipment.containsKey(entry.key),
+            title: Text(entry.value),
+            onChanged: hasGym
+                ? null
+                : (value) {
+                    if (value == true) {
+                      selectedEquipment[entry.key] = entry.value;
+                    } else {
+                      selectedEquipment.remove(entry.key);
+                    }
+                    onChanged();
+                  },
+          ),
       ],
     );
   }

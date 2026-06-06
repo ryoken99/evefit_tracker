@@ -18,6 +18,7 @@ import '../models/workout_template.dart';
 import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/pin_service.dart';
+import '../services/training_location_service.dart';
 import 'seed_data.dart';
 
 class WorkoutEntry {
@@ -56,11 +57,12 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 5,
+      version: 6,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
         await _migrateV51(db);
+        await _migrateV52(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -74,6 +76,9 @@ class AppDatabase {
         }
         if (oldVersion < 5) {
           await _migrateV51(db);
+        }
+        if (oldVersion < 6) {
+          await _migrateV52(db);
         }
       },
     );
@@ -195,6 +200,54 @@ class AppDatabase {
     await _seedWorkoutTypes(db);
     await _seedExercises(db);
     await _backfillExerciseDetails(db);
+  }
+
+  Future<void> _migrateV52(Database db) async {
+    await _createProfileTrainingLocationsTable(db);
+    await _seedExercises(db);
+    await _seedWorkoutTypes(db);
+    await _backfillSpecificWorkoutTypes(db);
+    final profiles = await db.query('profiles');
+    for (final row in profiles) {
+      final profileId = row['id'] as int;
+      final locations = TrainingLocationService.parse(
+        row['training_location'] as String? ?? '',
+      );
+      await _insertProfileTrainingLocations(
+        db,
+        profileId: profileId,
+        selectedLocations: locations,
+      );
+    }
+  }
+
+  Future<void> _createProfileTrainingLocationsTable(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS profile_training_locations(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER NOT NULL, location_key TEXT NOT NULL, location_name TEXT NOT NULL, is_selected INTEGER NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(profile_id, location_key))',
+    );
+  }
+
+  Future<void> _backfillSpecificWorkoutTypes(Database db) async {
+    const updates = {
+      'Passadeira': 'Passadeira',
+      'Bicicleta': 'Bicicleta',
+      'Elíptica': 'Elíptica',
+      'Corda de saltar': 'Corda de saltar',
+      'Corrida exterior': 'Corrida exterior',
+      'Caminhada exterior': 'Caminhada exterior',
+      'Cardio geral': 'Cardio',
+      'HIIT': 'Cardio',
+      'Karate': 'Karate',
+      'Jiu-Jitsu': 'Jiu-Jitsu',
+    };
+    for (final entry in updates.entries) {
+      await db.update(
+        'workout_types',
+        {'muscle_groups': entry.value},
+        where: 'name = ?',
+        whereArgs: [entry.key],
+      );
+    }
   }
 
   Future<void> _createProfileEquipmentTable(Database db) async {
@@ -514,7 +567,28 @@ class AppDatabase {
     if (lower.contains('core') || lower.contains('abdominal')) {
       return 'Core, Reto abdominal, Oblíquos, Transverso abdominal';
     }
-    if (lower.contains('cardio') || lower.contains('passadeira')) {
+    if (lower.contains('passadeira')) return 'Passadeira';
+    if (lower.contains('bicicleta')) return 'Bicicleta';
+    if (lower.contains('elÃ­ptica') || lower.contains('eliptica')) {
+      return 'Elíptica';
+    }
+    if (lower.contains('corda')) return 'Corda de saltar';
+    if (lower.contains('corrida') || lower.contains('caminhada')) {
+      return 'Peso corporal';
+    }
+    if (lower.contains('karate')) return 'Peso corporal';
+    if (lower.contains('jiu-jitsu') || lower.contains('grappling')) {
+      return 'Tatami / espaço de artes marciais';
+    }
+    if (lower.contains('bicicleta')) return 'Bicicleta';
+    if (lower.contains('elÃ­ptica') || lower.contains('eliptica')) {
+      return 'Elíptica';
+    }
+    if (lower.contains('corda')) return 'Corda de saltar';
+    if (lower.contains('corrida exterior')) return 'Corrida exterior';
+    if (lower.contains('caminhada exterior')) return 'Caminhada exterior';
+    if (lower.contains('hiit')) return 'Cardio';
+    if (lower.contains('cardio')) {
       return 'Cardio';
     }
     if (lower.contains('karate')) return 'Karate, Mobilidade, Core';
@@ -631,12 +705,19 @@ class AppDatabase {
     DateTime? birthDate,
     String sex = '',
     String trainingLocation = '',
+    List<String> trainingLocations = const [],
     List<String> initialGoals = const [],
     Map<String, String> availableEquipment = const {},
     String notes = '',
   }) async {
     final db = await database;
     final now = DateTime.now();
+    final selectedLocations = trainingLocations.isEmpty
+        ? TrainingLocationService.parse(trainingLocation)
+        : trainingLocations.toSet();
+    final serializedLocations = TrainingLocationService.serialize(
+      selectedLocations,
+    );
     final profile = Profile(
       name: name.trim(),
       pinHash: PinService.hashPin(pin),
@@ -646,7 +727,7 @@ class AppDatabase {
       heightCm: heightCm,
       birthDate: birthDate,
       sex: sex.trim(),
-      trainingLocation: trainingLocation.trim(),
+      trainingLocation: serializedLocations,
       initialGoals: initialGoals.join(', '),
       notes: notes.trim(),
     );
@@ -671,8 +752,13 @@ class AppDatabase {
       await _insertProfileEquipment(
         txn,
         profileId: profileId,
-        trainingLocation: trainingLocation,
+        trainingLocation: serializedLocations,
         availableEquipment: availableEquipment,
+      );
+      await _insertProfileTrainingLocations(
+        txn,
+        profileId: profileId,
+        selectedLocations: selectedLocations,
       );
       return profileId;
     });
@@ -681,13 +767,24 @@ class AppDatabase {
   }
 
   Future<void> updateProfile(Profile profile) async {
-    await (await database).update(
-      'profiles',
-      profile.copyWith(updatedAt: DateTime.now()).toMap()..remove('id'),
-      where: 'id = ?',
-      whereArgs: [profile.id],
-    );
-    _activeProfile = profile.copyWith(updatedAt: DateTime.now());
+    final updated = profile.copyWith(updatedAt: DateTime.now());
+    final db = await database;
+    await db.transaction((txn) async {
+      await txn.update(
+        'profiles',
+        updated.toMap()..remove('id'),
+        where: 'id = ?',
+        whereArgs: [profile.id],
+      );
+      await _insertProfileTrainingLocations(
+        txn,
+        profileId: profile.id!,
+        selectedLocations: TrainingLocationService.parse(
+          updated.trainingLocation,
+        ),
+      );
+    });
+    _activeProfile = updated;
   }
 
   Future<void> _insertDefaultGoals(
@@ -730,6 +827,24 @@ class AppDatabase {
         ).toMap()..remove('id'),
         conflictAlgorithm: ConflictAlgorithm.replace,
       );
+    }
+  }
+
+  Future<void> _insertProfileTrainingLocations(
+    DatabaseExecutor db, {
+    required int profileId,
+    required Set<String> selectedLocations,
+  }) async {
+    final now = DateTime.now();
+    for (final option in TrainingLocationService.options) {
+      await db.insert('profile_training_locations', {
+        'profile_id': profileId,
+        'location_key': option.toLowerCase().replaceAll(' ', '_'),
+        'location_name': option,
+        'is_selected': selectedLocations.contains(option) ? 1 : 0,
+        'created_at': now.toIso8601String(),
+        'updated_at': now.toIso8601String(),
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
     }
   }
 

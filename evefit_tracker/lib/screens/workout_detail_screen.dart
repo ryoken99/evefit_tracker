@@ -356,11 +356,22 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
             workoutType: workoutType,
             showAllWithoutEquipment: showAll,
           );
+          final filterOptions = ExerciseFilterService.contextualGroups(
+            exercises: exercises,
+            trainingLocation: profile?.trainingLocation ?? '',
+            availableEquipmentKeys: equipment,
+            workoutType: workoutType,
+            showAll: showAll,
+          );
+          if (!filterOptions.contains(filter)) {
+            filter = filterOptions.first;
+          }
           final visible = base.where((exercise) {
             final matchesQuery = exercise.name.toLowerCase().contains(
               query.toLowerCase(),
             );
-            return matchesQuery && _matchesFilter(exercise, filter);
+            return matchesQuery &&
+                (showAll || _matchesFilter(exercise, filter));
           }).toList();
           return Padding(
             padding: EdgeInsets.fromLTRB(
@@ -396,14 +407,15 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                   const SizedBox(height: 10),
                   DropdownButtonFormField<String>(
                     initialValue: filter,
-                    items: filters
+                    items: filterOptions
                         .map(
                           (item) =>
                               DropdownMenuItem(value: item, child: Text(item)),
                         )
                         .toList(),
-                    onChanged: (value) =>
-                        setSheetState(() => filter = value ?? filters.first),
+                    onChanged: (value) => setSheetState(
+                      () => filter = value ?? filterOptions.first,
+                    ),
                     decoration: const InputDecoration(
                       labelText: 'Grupo muscular',
                     ),

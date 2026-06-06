@@ -31,17 +31,34 @@ class ExerciseFilterService {
     required WorkoutType? workoutType,
     bool showAllWithoutEquipment = false,
   }) {
+    if (showAllWithoutEquipment) return exercises;
     return exercises.where((exercise) {
-      if (!showAllWithoutEquipment &&
-          !_matchesEquipment(
-            exercise,
-            trainingLocation,
-            availableEquipmentKeys,
-          )) {
-        return false;
-      }
-      return _matchesWorkoutType(exercise, workoutType);
+      if (!_matchesWorkoutType(exercise, workoutType)) return false;
+      return _matchesEquipment(
+        exercise,
+        trainingLocation,
+        availableEquipmentKeys,
+      );
     }).toList();
+  }
+
+  static List<String> contextualGroups({
+    required List<Exercise> exercises,
+    required String trainingLocation,
+    required Set<String> availableEquipmentKeys,
+    required WorkoutType? workoutType,
+    required bool showAll,
+  }) {
+    final visible = filter(
+      exercises: exercises,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+      workoutType: workoutType,
+      showAllWithoutEquipment: showAll,
+    );
+    final groups = visible.map((item) => item.muscleGroup).toSet().toList()
+      ..sort();
+    return ['Todos', ...groups];
   }
 
   static bool _matchesEquipment(
@@ -54,7 +71,14 @@ class ExerciseFilterService {
       return true;
     }
     if (location.contains('exterior')) {
-      return _containsAny(exercise, ['peso corporal', 'passadeira', 'cardio']);
+      return _containsAny(exercise, [
+        'peso corporal',
+        'passadeira',
+        'caminhada',
+        'corrida',
+        'cardio',
+        'mobilidade',
+      ]);
     }
     if (location.contains('dojo') || location.contains('marciais')) {
       return _containsAny(exercise, [
@@ -63,6 +87,7 @@ class ExerciseFilterService {
         'karate',
         'jiu-jitsu',
         'mobilidade',
+        'core',
       ]);
     }
     if (availableEquipmentKeys.isEmpty) {
@@ -77,43 +102,92 @@ class ExerciseFilterService {
 
   static bool _matchesWorkoutType(Exercise exercise, WorkoutType? workoutType) {
     if (workoutType == null) return true;
+    final typeName = workoutType.name.toLowerCase();
+    final specific = _specificMatchers(typeName);
+    if (specific.isNotEmpty) return _containsAny(exercise, specific);
+
     final groups = workoutType.muscleGroups
         .split(',')
         .map((item) => item.trim().toLowerCase())
         .where((item) => item.isNotEmpty)
         .toList();
-    final typeName = workoutType.name.toLowerCase();
-    if (groups.isEmpty) {
-      groups.addAll(_groupsForTypeName(typeName));
-    }
+    if (groups.isEmpty) groups.addAll(_groupsForTypeName(typeName));
     if (groups.isEmpty) return true;
-    final haystack =
-        '${exercise.name} ${exercise.muscleGroup} ${exercise.secondaryMuscleGroups}'
-            .toLowerCase();
-    return groups.any(haystack.contains);
+    return _containsAny(exercise, groups);
+  }
+
+  static List<String> _specificMatchers(String typeName) {
+    if (typeName.contains('passadeira')) return ['passadeira'];
+    if (typeName.contains('bicicleta')) return ['bicicleta'];
+    if (typeName.contains('elíptica') || typeName.contains('eliptica')) {
+      return ['elíptica', 'eliptica'];
+    }
+    if (typeName.contains('corda')) return ['corda de saltar'];
+    if (typeName.contains('corrida exterior')) return ['corrida exterior'];
+    if (typeName.contains('caminhada exterior')) return ['caminhada exterior'];
+    if (typeName.contains('karate')) {
+      return ['karate', 'kihon', 'kata', 'kumite', 'sombra de karate'];
+    }
+    if (typeName.contains('jiu-jitsu') || typeName.contains('jiu jitsu')) {
+      return [
+        'jiu-jitsu',
+        'shrimp',
+        'grappling',
+        'guarda',
+        'technical stand-up',
+      ];
+    }
+    return [];
   }
 
   static List<String> _groupsForTypeName(String typeName) {
-    if (typeName.contains('cardio') || typeName.contains('passadeira')) {
-      return ['cardio', 'passadeira'];
+    if (typeName.contains('cardio') || typeName.contains('hiit')) {
+      return [
+        'cardio',
+        'passadeira',
+        'bicicleta',
+        'elíptica',
+        'eliptica',
+        'corda',
+        'caminhada',
+        'corrida',
+      ];
     }
     if (typeName.contains('perna') || typeName.contains('legs')) {
-      return ['pernas', 'glúteo', 'quadríceps', 'posterior', 'gémeos'];
+      return [
+        'pernas',
+        'glúteo',
+        'gluteo',
+        'quadríceps',
+        'quadriceps',
+        'posterior',
+        'adutores',
+        'abdutores',
+        'gémeos',
+        'gemeos',
+        'tibial',
+      ];
     }
     if (typeName.contains('bíceps') || typeName.contains('bicep')) {
-      return ['bíceps', 'braquial', 'braquiorradial'];
+      return ['bíceps', 'bicep', 'braquial', 'braquiorradial', 'curl'];
     }
     if (typeName.contains('tríceps') || typeName.contains('tricep')) {
-      return ['tríceps'];
+      return ['tríceps', 'tricep'];
     }
     if (typeName.contains('core') || typeName.contains('abdominal')) {
-      return ['core', 'abdominal', 'oblíquo', 'lombar'];
+      return ['core', 'abdominal', 'oblíquo', 'obliquo', 'lombar', 'prancha'];
     }
-    if (typeName.contains('push')) return ['peito', 'ombros', 'tríceps'];
-    if (typeName.contains('pull')) return ['costas', 'bíceps', 'antebraço'];
+    if (typeName.contains('push')) {
+      return ['peito', 'ombros', 'tríceps', 'tricep'];
+    }
+    if (typeName.contains('pull')) {
+      return ['costas', 'bíceps', 'bicep', 'antebraço'];
+    }
     if (typeName.contains('ombro')) return ['ombros', 'deltoide'];
     if (typeName.contains('peito')) return ['peito'];
-    if (typeName.contains('costas')) return ['costas', 'dorsal'];
+    if (typeName.contains('costas')) {
+      return ['costas', 'dorsal', 'remo', 'puxada'];
+    }
     return [];
   }
 

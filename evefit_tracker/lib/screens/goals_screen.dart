@@ -59,7 +59,6 @@ class _GoalsScreenState extends State<GoalsScreen> {
           final measurements = snapshot.data![1] as List;
           final workoutsThisWeek = snapshot.data![2] as int;
           final latest = measurements.isEmpty ? null : measurements.first;
-
           return ListView(
             padding: const EdgeInsets.all(16),
             children: [
@@ -82,22 +81,21 @@ class _GoalsScreenState extends State<GoalsScreen> {
                   padding: const EdgeInsets.only(bottom: 10),
                   child: FutureBuilder<List<GoalMilestone>>(
                     future: widget.database.goalMilestones(goal.id!),
-                    builder: (context, milestonesSnapshot) {
+                    builder: (context, milestoneSnapshot) {
                       final currentMetric =
                           DashboardMetricService.numericValueFor(
                             goal.metricKey,
                             latest,
                           );
-                      final progress = _progressFor(
-                        goal,
-                        currentMetric,
-                        workoutsThisWeek,
-                      );
                       return _GoalCard(
                         goal: goal,
-                        progress: progress,
                         currentValue: currentMetric ?? goal.currentValue,
-                        milestones: milestonesSnapshot.data ?? const [],
+                        progress: _progressFor(
+                          goal,
+                          currentMetric,
+                          workoutsThisWeek,
+                        ),
+                        milestones: milestoneSnapshot.data ?? const [],
                         onToggle: (completed) async {
                           await widget.database.setGoalCompleted(
                             goal,
@@ -156,7 +154,10 @@ class _GoalsScreenState extends State<GoalsScreen> {
       text: goal?.frequencyTarget?.toString() ?? '',
     );
     final notes = TextEditingController(text: goal?.notes ?? '');
-    final milestoneText = TextEditingController();
+    final milestoneName = TextEditingController();
+    final milestoneValue = TextEditingController();
+    final milestoneDrafts = <_MilestoneDraft>[];
+    var advanced = false;
     var phase = goal?.phase ?? phases.first;
     var category = goal?.category ?? categories.last;
     var metricKey = goal?.metricKey ?? 'manual';
@@ -176,146 +177,267 @@ class _GoalsScreenState extends State<GoalsScreen> {
             MediaQuery.viewInsetsOf(context).bottom + 16,
           ),
           child: SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.86,
-            child: ListView(
+            height: MediaQuery.sizeOf(context).height * 0.88,
+            child: Column(
               children: [
-                Text(
-                  goal == null ? 'Criar objetivo' : 'Editar objetivo',
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: title,
-                  decoration: const InputDecoration(labelText: 'Título'),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: description,
-                  minLines: 2,
-                  maxLines: 3,
-                  decoration: const InputDecoration(labelText: 'Descrição'),
-                ),
-                const SizedBox(height: 10),
-                DropdownButtonFormField<String>(
-                  initialValue: phase,
-                  items: phases
-                      .map(
-                        (item) =>
-                            DropdownMenuItem(value: item, child: Text(item)),
-                      )
-                      .toList(),
-                  onChanged: (value) =>
-                      setSheetState(() => phase = value ?? phase),
-                  decoration: const InputDecoration(labelText: 'Fase'),
-                ),
-                const SizedBox(height: 10),
-                DropdownButtonFormField<String>(
-                  initialValue: category,
-                  items: categories
-                      .map(
-                        (item) =>
-                            DropdownMenuItem(value: item, child: Text(item)),
-                      )
-                      .toList(),
-                  onChanged: (value) =>
-                      setSheetState(() => category = value ?? category),
-                  decoration: const InputDecoration(labelText: 'Categoria'),
-                ),
-                const SizedBox(height: 10),
-                DropdownButtonFormField<String>(
-                  initialValue: metricKey,
-                  items: [
-                    const DropdownMenuItem(
-                      value: 'manual',
-                      child: Text('Manual'),
-                    ),
-                    const DropdownMenuItem(
-                      value: 'frequency_week',
-                      child: Text('Treinos por semana'),
-                    ),
-                    for (final metric in DashboardMetricService.definitions)
-                      DropdownMenuItem(
-                        value: metric.key,
-                        child: Text(metric.title),
+                Expanded(
+                  child: ListView(
+                    children: [
+                      Text(
+                        goal == null ? 'Criar objetivo' : 'Editar objetivo',
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
-                  ],
-                  onChanged: (value) =>
-                      setSheetState(() => metricKey = value ?? metricKey),
-                  decoration: const InputDecoration(
-                    labelText: 'Métrica associada',
+                      const SizedBox(height: 6),
+                      const Text(
+                        'Cria um objetivo para acompanhar a tua evolução. Podes ligar o objetivo a uma medida, ao peso, à frequência de treino ou controlar manualmente.',
+                      ),
+                      const SizedBox(height: 12),
+                      _SectionTitle('1. O que queres melhorar?'),
+                      TextField(
+                        controller: title,
+                        decoration: const InputDecoration(
+                          labelText: 'Título do objetivo',
+                          hintText: 'Ex: Treinar 4 vezes por semana',
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        controller: description,
+                        minLines: 2,
+                        maxLines: 3,
+                        decoration: const InputDecoration(
+                          labelText: 'Descrição opcional',
+                        ),
+                      ),
+                      const SizedBox(height: 14),
+                      _SectionTitle('2. Métrica associada'),
+                      DropdownButtonFormField<String>(
+                        initialValue: metricKey,
+                        items: [
+                          const DropdownMenuItem(
+                            value: 'manual',
+                            child: Text('Objetivo manual'),
+                          ),
+                          const DropdownMenuItem(
+                            value: 'frequency_week',
+                            child: Text('Frequência de treino'),
+                          ),
+                          for (final metric
+                              in DashboardMetricService.definitions)
+                            DropdownMenuItem(
+                              value: metric.key,
+                              child: Text(metric.title),
+                            ),
+                        ],
+                        onChanged: (value) =>
+                            setSheetState(() => metricKey = value ?? metricKey),
+                        decoration: const InputDecoration(labelText: 'Métrica'),
+                      ),
+                      const SizedBox(height: 10),
+                      DropdownButtonFormField<String>(
+                        initialValue: periodicity,
+                        items: periodicities
+                            .map(
+                              (item) => DropdownMenuItem(
+                                value: item,
+                                child: Text(item),
+                              ),
+                            )
+                            .toList(),
+                        onChanged: (value) => setSheetState(
+                          () => periodicity = value ?? periodicity,
+                        ),
+                        decoration: const InputDecoration(
+                          labelText: 'Periodicidade',
+                        ),
+                      ),
+                      const SizedBox(height: 14),
+                      _SectionTitle('3. Valores do objetivo'),
+                      Row(
+                        children: [
+                          Expanded(child: _NumberField('Inicial', initial)),
+                          const SizedBox(width: 8),
+                          Expanded(child: _NumberField('Alvo', target)),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        controller: unit,
+                        decoration: const InputDecoration(labelText: 'Unidade'),
+                      ),
+                      const SizedBox(height: 14),
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        value: advanced,
+                        title: const Text('Modo avançado'),
+                        subtitle: const Text(
+                          'Mostra valor atual manual, progresso manual, categoria, fase e notas técnicas.',
+                        ),
+                        onChanged: (value) =>
+                            setSheetState(() => advanced = value),
+                      ),
+                      if (advanced) ...[
+                        const SizedBox(height: 8),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: _NumberField('Valor atual', current),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: _NumberField('Progresso %', manual),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          controller: frequency,
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
+                            labelText: 'Alvo de frequência',
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        DropdownButtonFormField<String>(
+                          initialValue: phase,
+                          items: phases
+                              .map(
+                                (item) => DropdownMenuItem(
+                                  value: item,
+                                  child: Text(item),
+                                ),
+                              )
+                              .toList(),
+                          onChanged: (value) =>
+                              setSheetState(() => phase = value ?? phase),
+                          decoration: const InputDecoration(labelText: 'Fase'),
+                        ),
+                        const SizedBox(height: 10),
+                        DropdownButtonFormField<String>(
+                          initialValue: category,
+                          items: categories
+                              .map(
+                                (item) => DropdownMenuItem(
+                                  value: item,
+                                  child: Text(item),
+                                ),
+                              )
+                              .toList(),
+                          onChanged: (value) =>
+                              setSheetState(() => category = value ?? category),
+                          decoration: const InputDecoration(
+                            labelText: 'Categoria',
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          controller: notes,
+                          minLines: 2,
+                          maxLines: 3,
+                          decoration: const InputDecoration(
+                            labelText: 'Notas técnicas',
+                          ),
+                        ),
+                      ],
+                      const SizedBox(height: 14),
+                      _SectionTitle('4. Milestones'),
+                      const Text(
+                        'Milestones são pequenos marcos até ao objetivo final.',
+                      ),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 6,
+                        runSpacing: 6,
+                        children: [
+                          for (final item in milestoneDrafts)
+                            Chip(
+                              label: Text(
+                                item.value == null
+                                    ? item.name
+                                    : '${item.name} · ${item.value}',
+                              ),
+                            ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              controller: milestoneName,
+                              decoration: const InputDecoration(
+                                labelText: 'Nome do marco',
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          SizedBox(
+                            width: 96,
+                            child: TextField(
+                              controller: milestoneValue,
+                              keyboardType:
+                                  const TextInputType.numberWithOptions(
+                                    decimal: true,
+                                  ),
+                              decoration: const InputDecoration(
+                                labelText: 'Valor',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          TextButton.icon(
+                            onPressed: () => setSheetState(() {
+                              final value = _num(milestoneValue.text);
+                              final name = milestoneName.text.trim();
+                              if (name.isNotEmpty || value != null) {
+                                milestoneDrafts.add(
+                                  _MilestoneDraft(
+                                    name.isEmpty
+                                        ? '${value!.toStringAsFixed(1)} ${unit.text}'
+                                        : name,
+                                    value,
+                                  ),
+                                );
+                                milestoneName.clear();
+                                milestoneValue.clear();
+                              }
+                            }),
+                            icon: const Icon(Icons.add),
+                            label: const Text('Adicionar marco'),
+                          ),
+                          TextButton.icon(
+                            onPressed: () => setSheetState(() {
+                              milestoneDrafts
+                                ..clear()
+                                ..addAll(
+                                  _generateMilestones(
+                                    _num(initial.text),
+                                    _num(target.text),
+                                    unit.text,
+                                  ),
+                                );
+                            }),
+                            icon: const Icon(Icons.auto_awesome),
+                            label: const Text('Gerar milestones'),
+                          ),
+                        ],
+                      ),
+                      if (error != null) ...[
+                        const SizedBox(height: 10),
+                        Text(
+                          error!,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.error,
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
                 const SizedBox(height: 10),
-                DropdownButtonFormField<String>(
-                  initialValue: periodicity,
-                  items: periodicities
-                      .map(
-                        (item) =>
-                            DropdownMenuItem(value: item, child: Text(item)),
-                      )
-                      .toList(),
-                  onChanged: (value) =>
-                      setSheetState(() => periodicity = value ?? periodicity),
-                  decoration: const InputDecoration(labelText: 'Periodicidade'),
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Expanded(child: _NumberField('Valor inicial', initial)),
-                    const SizedBox(width: 8),
-                    Expanded(child: _NumberField('Valor atual', current)),
-                    const SizedBox(width: 8),
-                    Expanded(child: _NumberField('Valor alvo', target)),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: unit,
-                  decoration: const InputDecoration(labelText: 'Unidade'),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: manual,
-                  keyboardType: const TextInputType.numberWithOptions(
-                    decimal: true,
-                  ),
-                  decoration: const InputDecoration(
-                    labelText: 'Progresso manual %',
-                  ),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: frequency,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    labelText: 'Alvo de frequência',
-                  ),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: milestoneText,
-                  decoration: const InputDecoration(
-                    labelText: 'Milestones separados por vírgula',
-                  ),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: notes,
-                  minLines: 2,
-                  maxLines: 3,
-                  decoration: const InputDecoration(labelText: 'Notas'),
-                ),
-                if (error != null) ...[
-                  const SizedBox(height: 10),
-                  Text(
-                    error!,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.error,
-                    ),
-                  ),
-                ],
-                const SizedBox(height: 12),
-                FilledButton(
+                FilledButton.icon(
                   onPressed: () async {
                     if (title.text.trim().isEmpty) {
                       setSheetState(
@@ -347,17 +469,13 @@ class _GoalsScreenState extends State<GoalsScreen> {
                         ? await widget.database.insertGoal(value)
                         : goal.id!;
                     if (goal == null) {
-                      final milestones = milestoneText.text
-                          .split(',')
-                          .map((item) => item.trim())
-                          .where((item) => item.isNotEmpty)
-                          .toList();
-                      for (var i = 0; i < milestones.length; i++) {
+                      for (var i = 0; i < milestoneDrafts.length; i++) {
+                        final milestone = milestoneDrafts[i];
                         await widget.database.insertGoalMilestone(
                           GoalMilestone(
                             goalId: goalId,
-                            title: milestones[i],
-                            targetValue: _num(milestones[i].split(' ').first),
+                            title: milestone.name,
+                            targetValue: milestone.value,
                             unit: unit.text.trim(),
                             status: i == 0 ? 'in_progress' : 'locked',
                             sortOrder: i,
@@ -370,9 +488,8 @@ class _GoalsScreenState extends State<GoalsScreen> {
                     }
                     if (context.mounted) Navigator.pop(context, true);
                   },
-                  child: Text(
-                    goal == null ? 'Criar objetivo' : 'Guardar objetivo',
-                  ),
+                  icon: const Icon(Icons.save_outlined),
+                  label: const Text('Guardar objetivo'),
                 ),
               ],
             ),
@@ -390,11 +507,28 @@ class _GoalsScreenState extends State<GoalsScreen> {
       manual,
       frequency,
       notes,
-      milestoneText,
+      milestoneName,
+      milestoneValue,
     ]) {
       controller.dispose();
     }
     if (saved == true) setState(() {});
+  }
+
+  List<_MilestoneDraft> _generateMilestones(
+    double? initial,
+    double? target,
+    String unit,
+  ) {
+    if (initial == null || target == null || initial == target) return const [];
+    final step = (target - initial) / 5;
+    return [
+      for (var i = 1; i <= 5; i++)
+        _MilestoneDraft(
+          '${(initial + step * i).toStringAsFixed(1)} $unit'.trim(),
+          initial + step * i,
+        ),
+    ];
   }
 
   Future<void> _deleteGoal(Goal goal) async {
@@ -525,6 +659,25 @@ class _GoalCard extends StatelessWidget {
   }
 }
 
+class _SectionTitle extends StatelessWidget {
+  const _SectionTitle(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Text(
+        text,
+        style: Theme.of(
+          context,
+        ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+      ),
+    );
+  }
+}
+
 class _NumberField extends StatelessWidget {
   const _NumberField(this.label, this.controller);
 
@@ -539,4 +692,11 @@ class _NumberField extends StatelessWidget {
       decoration: InputDecoration(labelText: label),
     );
   }
+}
+
+class _MilestoneDraft {
+  const _MilestoneDraft(this.name, this.value);
+
+  final String name;
+  final double? value;
 }

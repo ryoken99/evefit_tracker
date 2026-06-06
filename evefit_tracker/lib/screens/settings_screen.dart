@@ -5,9 +5,10 @@ import 'package:url_launcher/url_launcher.dart';
 import '../database/app_database.dart';
 import '../models/profile.dart';
 import '../services/pin_service.dart';
+import '../services/training_location_service.dart';
 import 'profile_gate_screen.dart';
 
-const appVersionLabel = 'v0.5.1';
+const appVersionLabel = 'v0.5.2';
 const githubRepoUrl = 'https://github.com/ryoken99/evefit_tracker';
 const githubLatestReleaseUrl = '$githubRepoUrl/releases/latest';
 
@@ -43,7 +44,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           FilledButton.icon(
             onPressed: () => _openUrl(githubLatestReleaseUrl),
             icon: const Icon(Icons.system_update_alt),
-            label: const Text('Ver atualizações v0.5.1'),
+            label: const Text('Ver atualizações v0.5.2'),
           ),
           TextButton.icon(
             onPressed: () => _openUrl(githubRepoUrl),
@@ -115,6 +116,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final currentPin = TextEditingController();
     final newPin = TextEditingController();
     final confirmPin = TextEditingController();
+    final selectedLocations = TrainingLocationService.parse(
+      profile.trainingLocation,
+    );
     String? error;
     final saved = await showModalBottomSheet<Profile>(
       context: context,
@@ -147,6 +151,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 maxLines: 4,
                 decoration: const InputDecoration(labelText: 'Notas'),
               ),
+              const SizedBox(height: 16),
+              Text(
+                'Onde treinas?',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 8),
+              for (final option in TrainingLocationService.options)
+                CheckboxListTile(
+                  value: selectedLocations.contains(option),
+                  title: Text(option),
+                  onChanged: (value) => setSheetState(() {
+                    if (value == true) {
+                      selectedLocations.add(option);
+                    } else {
+                      selectedLocations.remove(option);
+                    }
+                  }),
+                ),
               const SizedBox(height: 16),
               Text(
                 'Alterar PIN',
@@ -205,6 +227,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   final updated = profile.copyWith(
                     name: name.text.trim(),
                     pinHash: pinHash,
+                    trainingLocation: TrainingLocationService.serialize(
+                      selectedLocations,
+                    ),
                     notes: notes.text.trim(),
                     updatedAt: DateTime.now(),
                   );
