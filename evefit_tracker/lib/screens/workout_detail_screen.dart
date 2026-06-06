@@ -9,6 +9,7 @@ import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
 import '../models/workout_type.dart';
 import '../services/exercise_filter_service.dart';
+import '../services/workout_taxonomy.dart';
 
 class WorkoutDetailScreen extends StatefulWidget {
   const WorkoutDetailScreen({
@@ -201,6 +202,7 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
   Future<void> _editWorkout() async {
     var type = _entry.workout.workoutType;
     var date = _entry.workout.date;
+    final typeOptions = {type, ...SeedData.workoutTypes}.toList();
     final duration = TextEditingController(
       text: _entry.workout.durationMinutes?.toString() ?? '',
     );
@@ -241,10 +243,12 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
               const SizedBox(height: 10),
               DropdownButtonFormField<String>(
                 initialValue: type,
-                items: SeedData.workoutTypes
+                items: typeOptions
                     .map(
-                      (item) =>
-                          DropdownMenuItem(value: item, child: Text(item)),
+                      (item) => DropdownMenuItem(
+                        value: item,
+                        child: Text(WorkoutTaxonomy.displayWithSection(item)),
+                      ),
                     )
                     .toList(),
                 onChanged: (value) => setSheetState(() => type = value ?? type),
@@ -273,6 +277,10 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                       id: _entry.workout.id,
                       date: date,
                       workoutType: type,
+                      workoutTypeId: _entry.workout.workoutTypeId,
+                      muscleGroups: WorkoutTaxonomy.groupsFor(type).isEmpty
+                          ? _entry.workout.muscleGroups
+                          : WorkoutTaxonomy.groupsFor(type).join(', '),
                       durationMinutes: int.tryParse(duration.text),
                       notes: notes.text.trim(),
                     ),

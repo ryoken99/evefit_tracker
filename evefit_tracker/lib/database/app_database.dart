@@ -19,6 +19,7 @@ import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/pin_service.dart';
 import '../services/training_location_service.dart';
+import '../services/workout_taxonomy.dart';
 import 'seed_data.dart';
 
 class WorkoutEntry {
@@ -57,13 +58,14 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 7,
+      version: 8,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
         await _migrateV51(db);
         await _migrateV52(db);
         await _migrateV53(db);
+        await _migrateV60(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -83,6 +85,9 @@ class AppDatabase {
         }
         if (oldVersion < 7) {
           await _migrateV53(db);
+        }
+        if (oldVersion < 8) {
+          await _migrateV60(db);
         }
       },
     );
@@ -144,6 +149,7 @@ class AppDatabase {
             name: name,
             muscleGroup: entry.key,
             isDefault: true,
+            secondaryMuscleGroups: _secondaryGroupsFor(name, entry.key),
             equipment: _equipmentFor(name),
             description: _descriptionFor(name, entry.key),
             executionSteps: _stepsFor(name),
@@ -241,6 +247,14 @@ class AppDatabase {
     }
   }
 
+  Future<void> _migrateV60(Database db) async {
+    await _seedWorkoutTypes(db);
+    await _seedExercises(db);
+    await _backfillSpecificWorkoutTypes(db);
+    await _refreshDefaultWorkoutTypes(db);
+    await _refreshDefaultExerciseDetails(db);
+  }
+
   Future<void> _createProfileTrainingLocationsTable(Database db) async {
     await db.execute(
       'CREATE TABLE IF NOT EXISTS profile_training_locations(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER NOT NULL, location_key TEXT NOT NULL, location_name TEXT NOT NULL, is_selected INTEGER NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(profile_id, location_key))',
@@ -248,25 +262,62 @@ class AppDatabase {
   }
 
   Future<void> _backfillSpecificWorkoutTypes(Database db) async {
-    const updates = {
-      'Passadeira': 'Passadeira',
-      'Bicicleta': 'Bicicleta',
-      'Elíptica': 'Elíptica',
-      'Corda de saltar': 'Corda de saltar',
-      'Corrida exterior': 'Corrida exterior',
-      'Caminhada exterior': 'Caminhada exterior',
-      'Cardio geral': 'Cardio',
-      'HIIT': 'Cardio',
-      'Karate': 'Karate',
-      'Jiu-Jitsu': 'Jiu-Jitsu',
-    };
-    for (final entry in updates.entries) {
+    for (final name in SeedData.workoutTypes) {
       await db.update(
         'workout_types',
-        {'muscle_groups': entry.value},
+        {'muscle_groups': _defaultGroupsForWorkoutType(name)},
         where: 'name = ?',
-        whereArgs: [entry.key],
+        whereArgs: [name],
       );
+    }
+  }
+
+  Future<void> _refreshDefaultWorkoutTypes(Database db) async {
+    final now = DateTime.now().toIso8601String();
+    final validNames = SeedData.workoutTypes.toSet();
+    for (final name in validNames) {
+      await db.update(
+        'workout_types',
+        {
+          'description': 'Tipo de treino predefinido v0.6.0.',
+          'muscle_groups': _defaultGroupsForWorkoutType(name),
+          'is_hidden': 0,
+          'updated_at': now,
+        },
+        where: 'profile_id IS NULL AND name = ?',
+        whereArgs: [name],
+      );
+    }
+    await db.update(
+      'workout_types',
+      {'is_hidden': 1, 'updated_at': now},
+      where:
+          'profile_id IS NULL AND is_default = 1 AND name NOT IN (${List.filled(validNames.length, '?').join(',')})',
+      whereArgs: validNames.toList(),
+    );
+  }
+
+  Future<void> _refreshDefaultExerciseDetails(Database db) async {
+    final now = DateTime.now().toIso8601String();
+    for (final entry in SeedData.exercisesByGroup.entries) {
+      for (final name in entry.value) {
+        await db.update(
+          'exercises',
+          {
+            'muscle_group': entry.key,
+            'primary_muscle_group': entry.key,
+            'secondary_muscle_groups': _secondaryGroupsFor(name, entry.key),
+            'equipment': _equipmentFor(name),
+            'description': _descriptionFor(name, entry.key),
+            'execution_steps': _stepsFor(name),
+            'common_mistakes': _commonMistakesFor(name),
+            'safety_notes': _safetyNotesFor(name),
+            'updated_at': now,
+          },
+          where: 'is_default = 1 AND name = ?',
+          whereArgs: [name],
+        );
+      }
     }
   }
 
@@ -597,74 +648,7 @@ class AppDatabase {
   }
 
   String _defaultGroupsForWorkoutType(String name) {
-    final lower = name.toLowerCase();
-    if (lower.contains('full')) return 'Peito, Costas, Ombros, Pernas, Core';
-    if (lower.contains('upper')) return 'Peito, Costas, Ombros, Braços';
-    if (lower.contains('lower') || lower.contains('legs')) {
-      return 'Pernas, Glúteo máximo, Quadríceps, Posterior de coxa, Gémeos';
-    }
-    if (lower.contains('push')) return 'Peito, Ombros, Tríceps';
-    if (lower.contains('pull')) return 'Costas, Bíceps, Antebraço e mão';
-    if (lower.contains('costas')) return 'Costas, Dorsal / latíssimo do dorso';
-    if (lower.contains('ombros')) return 'Ombros, Deltoide lateral';
-    if (lower.contains('peito')) return 'Peito';
-    if (lower.contains('bíceps') || lower.contains('bicep')) {
-      return 'Bíceps, Braquial, Braquiorradial';
-    }
-    if (lower.contains('tríceps') || lower.contains('tricep')) {
-      return 'Tríceps cabeça longa, Tríceps cabeça lateral, Tríceps cabeça medial';
-    }
-    if (lower.contains('antebra')) return 'Antebraço e mão, Força de pega';
-    if (lower.contains('core') || lower.contains('abdominal')) {
-      return 'Core, Reto abdominal, Oblíquos, Transverso abdominal';
-    }
-    if (lower.contains('passadeira')) return 'Passadeira';
-    if (lower.contains('bicicleta')) return 'Bicicleta';
-    if (lower.contains('elÃ­ptica') || lower.contains('eliptica')) {
-      return 'Elíptica';
-    }
-    if (lower.contains('corda')) return 'Corda de saltar';
-    if (lower.contains('corrida') || lower.contains('caminhada')) {
-      return 'Peso corporal';
-    }
-    if (lower.contains('karate')) return 'Peso corporal';
-    if (lower.contains('jiu-jitsu') || lower.contains('grappling')) {
-      return 'Tatami / espaço de artes marciais';
-    }
-    if (lower.contains('bicicleta')) return 'Bicicleta';
-    if (lower.contains('elÃ­ptica') || lower.contains('eliptica')) {
-      return 'Elíptica';
-    }
-    if (lower.contains('corda')) return 'Corda de saltar';
-    if (lower.contains('corrida exterior')) return 'Corrida exterior';
-    if (lower.contains('caminhada exterior')) return 'Caminhada exterior';
-    if (lower.contains('hiit')) return 'Cardio';
-    if (lower.contains('cardio')) {
-      return 'Cardio';
-    }
-    if (lower.contains('karate')) return 'Karate, Mobilidade, Core';
-    if (lower.contains('jiu')) {
-      return 'Jiu-Jitsu, Mobilidade, Força de pega, Core';
-    }
-    if (lower.contains('mobilidade')) return 'Mobilidade';
-    if (lower.contains('along')) return 'Alongamento';
-    if (lower.contains('glúte') || lower.contains('glute')) {
-      return 'Glúteo máximo, Glúteo médio, Glúteo mínimo';
-    }
-    if (lower.contains('quadr')) {
-      return 'Quadríceps, Reto femoral, Vasto lateral, Vasto medial, Vasto intermédio';
-    }
-    if (lower.contains('posterior')) {
-      return 'Posterior de coxa, Bíceps femoral, Semitendinoso, Semimembranoso';
-    }
-    if (lower.contains('géme') || lower.contains('geme')) {
-      return 'Gémeos, Sóleo';
-    }
-    if (lower.contains('trap')) {
-      return 'Trapézio superior, Trapézio médio, Trapézio inferior';
-    }
-    if (lower.contains('pesco')) return 'Pescoço';
-    return '';
+    return WorkoutTaxonomy.groupsFor(name).join(', ');
   }
 
   Future<void> _backfillExerciseDetails(Database db) async {
@@ -686,21 +670,161 @@ class AppDatabase {
   }
 
   String _equipmentFor(String name) {
-    final lower = name.toLowerCase();
-    if (lower.contains('halter')) return 'Halteres';
-    if (lower.contains('barra')) return 'Barra';
-    if (lower.contains('máquina') || lower.contains('cabo')) {
-      return 'Máquina/cabo';
-    }
+    final lower = WorkoutTaxonomy.normalize(name);
     if (lower.contains('passadeira')) return 'Passadeira';
-    return 'Peso corporal ou equipamento simples';
+    if (lower.contains('bicicleta')) return 'Bicicleta';
+    if (lower.contains('eliptica')) return 'Elíptica';
+    if (lower.contains('corda de saltar') || lower.contains('hiit corda')) {
+      return 'Corda de saltar';
+    }
+    if (lower.contains('cabo') ||
+        lower.contains('crossover') ||
+        lower.contains('face pull') ||
+        lower.contains('puxada') ||
+        lower.contains('remo baixo') ||
+        lower.contains('remo sentado') ||
+        lower.contains('chest press')) {
+      return 'Cabo ou máquina';
+    }
+    if (lower.contains('maquina') ||
+        lower.contains('leg press') ||
+        lower.contains('extensao de perna') ||
+        lower.contains('curl de perna') ||
+        lower.contains('adutor') ||
+        lower.contains('abdutor')) {
+      return 'Máquina';
+    }
+    if (lower.contains('halter') ||
+        lower.contains('goblet') ||
+        lower.contains('arnold') ||
+        lower.contains('kickback') ||
+        lower.contains('extensao unilateral') ||
+        lower.contains('extensao francesa') ||
+        lower.contains('aperto isometrico')) {
+      return 'Halteres';
+    }
+    if (lower.contains('barra') || lower.contains('supino fechado')) {
+      return 'Barra, banco';
+    }
+    if (lower.contains('plate') || lower.contains('pinch')) {
+      return 'Discos';
+    }
+    if (lower.contains('chin-up') ||
+        lower.contains('dead hang') ||
+        lower.contains('remo invertido') ||
+        lower.contains('towel grip')) {
+      return 'Barra fixa';
+    }
+    if (lower.contains('elastico') ||
+        lower.contains('rotacao externa') ||
+        lower.contains('rotacao interna')) {
+      return 'Elásticos';
+    }
+    if (lower.contains('jiu-jitsu') ||
+        lower.contains('grappling') ||
+        lower.contains('shrimp') ||
+        lower.contains('guarda')) {
+      return 'Tatami';
+    }
+    return 'Peso corporal';
   }
 
-  String _descriptionFor(String name, String group) =>
-      '$name trabalha principalmente $group com foco em controlo, amplitude e progressão.';
+  String _secondaryGroupsFor(String name, String group) {
+    final lower = WorkoutTaxonomy.normalize(name);
+    if (lower.contains('supino') || lower.contains('flex')) {
+      return 'Ombros, tríceps';
+    }
+    if (lower.contains('remo') || lower.contains('puxada')) {
+      return 'Bíceps, antebraço, trapézio';
+    }
+    if (lower.contains('curl')) return 'Braquial, braquiorradial, antebraço';
+    if (lower.contains('triceps') || lower.contains('dips')) return 'Ombros';
+    if (lower.contains('agachamento') || lower.contains('lunges')) {
+      return 'Glúteos, posterior de coxa, core';
+    }
+    if (lower.contains('peso morto') || lower.contains('hip thrust')) {
+      return 'Glúteos, lombar, posterior de coxa';
+    }
+    if (group == 'Cardio') return 'Core, pernas, sistema cardiovascular';
+    if (group == 'Karate') return 'Core, ancas, ombros';
+    if (group == 'Jiu-Jitsu') return 'Core, ancas, pega';
+    return '';
+  }
 
-  String _stepsFor(String name) =>
-      '1. Prepara a posição inicial. 2. Faz $name com movimento controlado. 3. Mantém a respiração e a postura. 4. Regressa devagar à posição inicial.';
+  String _descriptionFor(String name, String group) {
+    final lower = WorkoutTaxonomy.normalize(name);
+    if (lower.contains('passadeira')) {
+      return '$name é uma opção de cardio em passadeira para trabalhar resistência, ritmo e controlo da passada sem misturar outras máquinas.';
+    }
+    if (lower.contains('bicicleta')) {
+      return '$name trabalha o sistema cardiovascular e as pernas usando bicicleta, com intensidade ajustada pela cadência e resistência.';
+    }
+    if (lower.contains('eliptica')) {
+      return '$name é cardio de baixo impacto na elíptica, útil para elevar a frequência cardíaca com menor stress articular.';
+    }
+    if (lower.contains('corda')) {
+      return '$name desenvolve coordenação, ritmo, capacidade cardiovascular e elasticidade dos tornozelos com corda de saltar.';
+    }
+    if (group == 'Karate') {
+      return '$name é um drill de Karate para técnica, deslocamento, postura e condicionamento específico sem incluir drills exclusivos de Jiu-Jitsu.';
+    }
+    if (group == 'Jiu-Jitsu') {
+      return '$name é um drill de Jiu-Jitsu para mobilidade no solo, base, core e pega sem incluir conteúdo exclusivo de Karate.';
+    }
+    return '$name trabalha principalmente $group, com atenção à postura, amplitude útil, respiração e progressão adequada ao nível atual.';
+  }
+
+  String _stepsFor(String name) {
+    final lower = WorkoutTaxonomy.normalize(name);
+    if (lower.contains('passadeira')) {
+      return '1. Ajusta velocidade e inclinação antes de começar. 2. Mantém o tronco alto e olha em frente. 3. Pisa com cadência regular sem agarrar o corrimão. 4. Reduz gradualmente a intensidade no final.';
+    }
+    if (lower.contains('curl')) {
+      return '1. Segura a carga com punhos neutros e abdómen ativo. 2. Sobe dobrando os cotovelos sem balançar o tronco. 3. Contrai no topo. 4. Desce controlando até quase estender os braços.';
+    }
+    if (lower.contains('agachamento')) {
+      return '1. Coloca os pés firmes à largura adequada. 2. Desce levando a anca para trás e joelhos alinhados. 3. Mantém o tronco estável. 4. Sobe empurrando o chão sem colapsar os joelhos.';
+    }
+    if (lower.contains('peso morto')) {
+      return '1. Aproxima a carga do corpo. 2. Dobra a anca mantendo coluna neutra. 3. Sobe contraindo glúteos e posteriores. 4. Desce a carga junto às pernas sem arredondar a lombar.';
+    }
+    return '1. Prepara a posição inicial e confirma que o equipamento está estável. 2. Executa $name com amplitude controlada. 3. Mantém respiração regular e tronco firme. 4. Regressa devagar sem perder alinhamento.';
+  }
+
+  String _commonMistakesFor(String name) {
+    final lower = WorkoutTaxonomy.normalize(name);
+    if (lower.contains('passadeira') ||
+        lower.contains('corrida') ||
+        lower.contains('sprint')) {
+      return 'Aumentar a velocidade cedo demais, agarrar o corrimão, encurtar a passada ou ignorar aquecimento.';
+    }
+    if (lower.contains('curl')) {
+      return 'Balançar o tronco, afastar os cotovelos do corpo, subir só meia amplitude ou deixar a carga cair.';
+    }
+    if (lower.contains('agachamento') || lower.contains('peso morto')) {
+      return 'Perder coluna neutra, deixar joelhos colapsarem, usar carga excessiva ou cortar amplitude por falta de controlo.';
+    }
+    return 'Usar pressa, perder alinhamento, reduzir amplitude útil ou escolher resistência acima da técnica disponível.';
+  }
+
+  String _safetyNotesFor(String name) {
+    final lower = WorkoutTaxonomy.normalize(name);
+    if (lower.contains('pescoco') || lower.contains('cervical')) {
+      return 'Usa força muito leve e progressiva. Para imediatamente se houver dor aguda, formigueiro, tontura ou pressão na cabeça.';
+    }
+    if (lower.contains('lombar') ||
+        lower.contains('peso morto') ||
+        lower.contains('agachamento')) {
+      return 'Mantém coluna neutra e carga conservadora. Para se sentires dor lombar aguda, perda de controlo ou dor articular.';
+    }
+    if (lower.contains('hiit') ||
+        lower.contains('sprint') ||
+        lower.contains('karate') ||
+        lower.contains('jiu-jitsu')) {
+      return 'Aquece antes, controla a intensidade e para se houver tontura, falta de ar anormal, dor articular ou impacto mal controlado.';
+    }
+    return 'Começa leve, progride gradualmente e interrompe o exercício se surgir dor aguda, tontura ou perda de controlo técnico.';
+  }
 
   Future<void> _addColumnIfMissing(
     Database db,
