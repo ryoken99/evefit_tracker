@@ -14,8 +14,10 @@ class WorkoutCard extends StatelessWidget {
       child: ListTile(
         title: Text(entry.workout.workoutType),
         subtitle: Text(
-          '$date · ${entry.workout.durationMinutes ?? 0} min · ${entry.exerciseCount} exercícios · ${entry.totalSetCount} séries',
+          '$date · ${entry.workout.durationMinutes ?? 0} min · ${entry.exerciseCount} exercícios · ${entry.totalSetCount} séries'
+          '${entry.workout.notes.isEmpty ? '' : '\n${entry.workout.notes}'}',
         ),
+        isThreeLine: entry.workout.notes.isNotEmpty,
         trailing: const Icon(Icons.chevron_right),
       ),
     );

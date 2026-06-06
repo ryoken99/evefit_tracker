@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../models/body_measurement.dart';
+import '../services/dashboard_stats_service.dart';
 
 class MeasurementCard extends StatelessWidget {
   const MeasurementCard({super.key, required this.measurement});
@@ -14,9 +15,9 @@ class MeasurementCard extends StatelessWidget {
       child: ListTile(
         title: Text(date),
         subtitle: Text(
-          'Peso: ${_v(measurement.weightKg, 'kg')} · Braço: ${_v(measurement.rightBicepFlexedCm, 'cm')} · Ombros: ${_v(measurement.shouldersCm, 'cm')}',
+          'Peso: ${_v(measurement.weightKg, 'kg')} · Braço contraído: ${_v(DashboardStatsService.flexedArmCm(measurement), 'cm')}\nOmbros: ${_v(measurement.shouldersCm, 'cm')} · Zona lateral: ${_v(measurement.sideHipAreaCm, 'cm')}',
         ),
-        trailing: Text(_v(measurement.sideHipAreaCm, 'cm')),
+        isThreeLine: true,
       ),
     );
   }

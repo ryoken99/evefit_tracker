@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../database/app_database.dart';
 import '../database/seed_data.dart';
 import '../models/workout.dart';
+import '../services/workout_template_service.dart';
 import '../widgets/workout_card.dart';
 import 'workout_detail_screen.dart';
 
@@ -18,10 +19,6 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: _addWorkout,
-        child: const Icon(Icons.add),
-      ),
       body: FutureBuilder<List<WorkoutEntry>>(
         future: widget.database.workouts(),
         builder: (context, snapshot) {
@@ -39,8 +36,35 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 ),
               ),
               const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: FilledButton.icon(
+                      onPressed: _addWorkout,
+                      icon: const Icon(Icons.add),
+                      label: const Text('Criar treino'),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: _createFromTemplate,
+                      icon: const Icon(Icons.bolt_outlined),
+                      label: const Text('Criar a partir de template'),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
               if (workouts.isEmpty)
-                const Text('Ainda não há treinos guardados.'),
+                const Card(
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      'Ainda não há treinos guardados. Cria o primeiro treino para começar a acompanhar o teu progresso.',
+                    ),
+                  ),
+                ),
               for (final entry in workouts)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
@@ -68,7 +92,42 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   }
 
   Future<void> _addWorkout() async {
-    var type = SeedData.workoutTypes.first;
+    await _openWorkoutForm();
+  }
+
+  Future<void> _createFromTemplate() async {
+    final template = await showModalBottomSheet<WorkoutTemplate>(
+      context: context,
+      showDragHandle: true,
+      builder: (context) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: Text(
+                'Escolher template',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+            for (final item in WorkoutTemplateService.templates)
+              ListTile(
+                title: Text(item.name),
+                subtitle: Text('${item.exerciseNames.length} exercícios'),
+                onTap: () => Navigator.pop(context, item),
+              ),
+          ],
+        ),
+      ),
+    );
+    if (template == null) {
+      return;
+    }
+    await _openWorkoutForm(template: template);
+  }
+
+  Future<void> _openWorkoutForm({WorkoutTemplate? template}) async {
+    var type = template?.name ?? SeedData.workoutTypes.first;
     var date = DateTime.now();
     final duration = TextEditingController();
     final notes = TextEditingController();
@@ -88,7 +147,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
             shrinkWrap: true,
             children: [
               Text(
-                'Novo treino',
+                template == null ? 'Novo treino' : 'Novo treino por template',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 12),
@@ -136,6 +195,16 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 maxLines: 4,
                 decoration: const InputDecoration(labelText: 'Notas'),
               ),
+              if (template != null) ...[
+                const SizedBox(height: 12),
+                Text(
+                  'Exercícios pré-carregados',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: 6),
+                for (final exerciseName in template.exerciseNames)
+                  Text('• $exerciseName'),
+              ],
               const SizedBox(height: 12),
               FilledButton(
                 onPressed: () async {
@@ -145,22 +214,27 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                     durationMinutes: int.tryParse(duration.text),
                     notes: notes.text.trim(),
                   );
-                  final id = await widget.database.insertWorkout(workout);
-                  if (context.mounted) {
-                    Navigator.pop(
-                      context,
-                      WorkoutEntry(
-                        workout: Workout(
-                          id: id,
-                          date: workout.date,
-                          workoutType: workout.workoutType,
-                          durationMinutes: workout.durationMinutes,
-                          notes: workout.notes,
-                        ),
-                        sets: const [],
+                  final id = template == null
+                      ? await widget.database.insertWorkout(workout)
+                      : await widget.database.insertWorkoutFromTemplate(
+                          workout: workout,
+                          exerciseNames: template.exerciseNames,
+                        );
+                  final entries = await widget.database.workouts();
+                  final entry = entries.firstWhere(
+                    (item) => item.workout.id == id,
+                    orElse: () => WorkoutEntry(
+                      workout: Workout(
+                        id: id,
+                        date: workout.date,
+                        workoutType: workout.workoutType,
+                        durationMinutes: workout.durationMinutes,
+                        notes: workout.notes,
                       ),
-                    );
-                  }
+                      sets: const [],
+                    ),
+                  );
+                  if (context.mounted) Navigator.pop(context, entry);
                 },
                 child: const Text('Guardar treino'),
               ),

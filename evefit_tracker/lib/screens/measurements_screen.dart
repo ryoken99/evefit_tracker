@@ -57,24 +57,88 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
   Future<void> _openMeasurementDetails(BodyMeasurement measurement) async {
     final changed = await showModalBottomSheet<bool>(
       context: context,
+      isScrollControlled: true,
       showDragHandle: true,
       builder: (context) => Padding(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        padding: EdgeInsets.fromLTRB(
+          16,
+          0,
+          16,
+          MediaQuery.viewInsetsOf(context).bottom + 16,
+        ),
+        child: ListView(
+          shrinkWrap: true,
           children: [
             Text(
               DateFormat('dd/MM/yyyy').format(measurement.date),
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
-            Text('Peso: ${_value(measurement.weightKg, 'kg')}'),
-            Text(
-              'Braço contraído: ${_value(measurement.rightBicepFlexedCm ?? measurement.leftBicepFlexedCm, 'cm')}',
+            _DetailRow(
+              label: 'Peso',
+              value: _value(measurement.weightKg, 'kg'),
             ),
-            Text('Ombros: ${_value(measurement.shouldersCm, 'cm')}'),
-            Text('Zona lateral: ${_value(measurement.sideHipAreaCm, 'cm')}'),
+            _DetailRow(
+              label: 'Gordura corporal',
+              value: _value(measurement.bodyFatPercentage, '%'),
+            ),
+            _DetailRow(
+              label: 'Massa muscular',
+              value: _value(measurement.muscleMassKg, 'kg'),
+            ),
+            _DetailRow(
+              label: 'Bíceps esquerdo relaxado',
+              value: _value(measurement.leftBicepRelaxedCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Bíceps esquerdo contraído',
+              value: _value(measurement.leftBicepFlexedCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Bíceps direito relaxado',
+              value: _value(measurement.rightBicepRelaxedCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Bíceps direito contraído',
+              value: _value(measurement.rightBicepFlexedCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Ombros',
+              value: _value(measurement.shouldersCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Peito',
+              value: _value(measurement.chestCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Cintura',
+              value: _value(measurement.waistCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Zona lateral acima da anca',
+              value: _value(measurement.sideHipAreaCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Abdómen',
+              value: _value(measurement.abdomenCm, 'cm'),
+            ),
+            _DetailRow(label: 'Anca', value: _value(measurement.hipsCm, 'cm')),
+            _DetailRow(
+              label: 'Coxa esquerda',
+              value: _value(measurement.leftThighCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Coxa direita',
+              value: _value(measurement.rightThighCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Gémeo esquerdo',
+              value: _value(measurement.leftCalfCm, 'cm'),
+            ),
+            _DetailRow(
+              label: 'Gémeo direito',
+              value: _value(measurement.rightCalfCm, 'cm'),
+            ),
             if (measurement.notes.isNotEmpty) ...[
               const SizedBox(height: 8),
               Text(measurement.notes),
@@ -294,6 +358,32 @@ class _Section extends StatelessWidget {
               child: child,
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DetailRow extends StatelessWidget {
+  const _DetailRow({required this.label, required this.value});
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              label,
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.white70),
+            ),
+          ),
+          Text(value),
         ],
       ),
     );

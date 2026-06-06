@@ -7,15 +7,28 @@ import '../models/goal.dart';
 import '../models/progress_photo.dart';
 import '../models/user_profile.dart';
 import '../models/workout.dart';
+import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
 import 'seed_data.dart';
 
 class WorkoutEntry {
-  WorkoutEntry({required this.workout, required this.sets});
+  WorkoutEntry({
+    required this.workout,
+    required this.sets,
+    this.exercises = const [],
+  });
   final Workout workout;
   final List<WorkoutSet> sets;
+  final List<WorkoutExercise> exercises;
 
-  int get exerciseCount => sets.map((set) => set.exerciseId).toSet().length;
+  int get exerciseCount {
+    final ids = {
+      ...exercises.map((exercise) => exercise.exerciseId),
+      ...sets.map((set) => set.exerciseId),
+    };
+    return ids.length;
+  }
+
   int get totalSetCount => sets.length;
 }
 
@@ -30,10 +43,15 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 1,
+      version: 2,
       onCreate: (db, version) async {
         await _createTables(db);
         await _seed(db);
+      },
+      onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 2) {
+          await _createWorkoutExercisesTable(db);
+        }
       },
     );
   }
@@ -54,11 +72,18 @@ class AppDatabase {
     await db.execute(
       'CREATE TABLE workout_sets(id INTEGER PRIMARY KEY AUTOINCREMENT, workout_id INTEGER NOT NULL, exercise_id INTEGER NOT NULL, set_number INTEGER NOT NULL, weight_kg REAL, reps INTEGER NOT NULL, rpe REAL, notes TEXT, FOREIGN KEY(workout_id) REFERENCES workouts(id) ON DELETE CASCADE, FOREIGN KEY(exercise_id) REFERENCES exercises(id))',
     );
+    await _createWorkoutExercisesTable(db);
     await db.execute(
       'CREATE TABLE progress_photos(id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT NOT NULL, photo_type TEXT NOT NULL, file_path TEXT NOT NULL, weight_kg REAL, notes TEXT)',
     );
     await db.execute(
       'CREATE TABLE goals(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, description TEXT, phase TEXT NOT NULL, is_active INTEGER NOT NULL, created_at TEXT NOT NULL, completed_at TEXT)',
+    );
+  }
+
+  Future<void> _createWorkoutExercisesTable(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS workout_exercises(id INTEGER PRIMARY KEY AUTOINCREMENT, workout_id INTEGER NOT NULL, exercise_id INTEGER NOT NULL, notes TEXT, UNIQUE(workout_id, exercise_id), FOREIGN KEY(workout_id) REFERENCES workouts(id) ON DELETE CASCADE, FOREIGN KEY(exercise_id) REFERENCES exercises(id))',
     );
   }
 
@@ -126,8 +151,97 @@ class AppDatabase {
     return (await database).insert('workouts', workout.toMap()..remove('id'));
   }
 
+  Future<void> updateWorkout(Workout workout) async {
+    await (await database).update(
+      'workouts',
+      workout.toMap()..remove('id'),
+      where: 'id = ?',
+      whereArgs: [workout.id],
+    );
+  }
+
+  Future<void> deleteWorkout(int id) async {
+    final db = await database;
+    await db.transaction((txn) async {
+      await txn.delete(
+        'workout_sets',
+        where: 'workout_id = ?',
+        whereArgs: [id],
+      );
+      await txn.delete(
+        'workout_exercises',
+        where: 'workout_id = ?',
+        whereArgs: [id],
+      );
+      await txn.delete('workouts', where: 'id = ?', whereArgs: [id]);
+    });
+  }
+
+  Future<int> insertWorkoutFromTemplate({
+    required Workout workout,
+    required List<String> exerciseNames,
+  }) async {
+    final db = await database;
+    return db.transaction((txn) async {
+      final workoutId = await txn.insert(
+        'workouts',
+        workout.toMap()..remove('id'),
+      );
+      for (final name in exerciseNames) {
+        final rows = await txn.query(
+          'exercises',
+          columns: ['id'],
+          where: 'name = ?',
+          whereArgs: [name],
+          limit: 1,
+        );
+        if (rows.isNotEmpty) {
+          await txn.insert('workout_exercises', {
+            'workout_id': workoutId,
+            'exercise_id': rows.first['id'],
+            'notes': '',
+          }, conflictAlgorithm: ConflictAlgorithm.ignore);
+        }
+      }
+      return workoutId;
+    });
+  }
+
+  Future<void> insertWorkoutExercise(WorkoutExercise exercise) async {
+    await (await database).insert(
+      'workout_exercises',
+      exercise.toMap()..remove('id'),
+      conflictAlgorithm: ConflictAlgorithm.ignore,
+    );
+  }
+
   Future<void> insertWorkoutSet(WorkoutSet set) async {
-    await (await database).insert('workout_sets', set.toMap()..remove('id'));
+    final db = await database;
+    await db.transaction((txn) async {
+      await txn.insert('workout_exercises', {
+        'workout_id': set.workoutId,
+        'exercise_id': set.exerciseId,
+        'notes': '',
+      }, conflictAlgorithm: ConflictAlgorithm.ignore);
+      await txn.insert('workout_sets', set.toMap()..remove('id'));
+    });
+  }
+
+  Future<void> updateWorkoutSet(WorkoutSet set) async {
+    await (await database).update(
+      'workout_sets',
+      set.toMap()..remove('id'),
+      where: 'id = ?',
+      whereArgs: [set.id],
+    );
+  }
+
+  Future<void> deleteWorkoutSet(int id) async {
+    await (await database).delete(
+      'workout_sets',
+      where: 'id = ?',
+      whereArgs: [id],
+    );
   }
 
   Future<void> insertWorkoutWithSet(Workout workout, WorkoutSet set) async {
@@ -154,10 +268,15 @@ class AppDatabase {
         'SELECT workout_sets.*, exercises.name AS exercise_name FROM workout_sets JOIN exercises ON exercises.id = workout_sets.exercise_id WHERE workout_id = ? ORDER BY set_number',
         [workout.id],
       );
+      final exerciseRows = await db.rawQuery(
+        'SELECT workout_exercises.*, exercises.name AS exercise_name, exercises.muscle_group AS muscle_group FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id WHERE workout_id = ? ORDER BY workout_exercises.id',
+        [workout.id],
+      );
       entries.add(
         WorkoutEntry(
           workout: workout,
           sets: setRows.map(WorkoutSet.fromMap).toList(),
+          exercises: exerciseRows.map(WorkoutExercise.fromMap).toList(),
         ),
       );
     }
@@ -182,6 +301,23 @@ class AppDatabase {
     await (await database).insert(
       'progress_photos',
       photo.toMap()..remove('id'),
+    );
+  }
+
+  Future<void> updatePhoto(ProgressPhoto photo) async {
+    await (await database).update(
+      'progress_photos',
+      photo.toMap()..remove('id'),
+      where: 'id = ?',
+      whereArgs: [photo.id],
+    );
+  }
+
+  Future<void> deletePhoto(int id) async {
+    await (await database).delete(
+      'progress_photos',
+      where: 'id = ?',
+      whereArgs: [id],
     );
   }
 
@@ -215,6 +351,9 @@ class AppDatabase {
     return {
       'medidas': await db.query('body_measurements', orderBy: 'date'),
       'treinos': await db.query('workouts', orderBy: 'date'),
+      'exercicios_treino': await db.rawQuery(
+        'SELECT workout_exercises.id, workout_exercises.workout_id, workout_exercises.exercise_id, exercises.name AS exercise_name, exercises.muscle_group, workout_exercises.notes FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id ORDER BY workout_id, workout_exercises.id',
+      ),
       'series': await db.query(
         'workout_sets',
         orderBy: 'workout_id, set_number',

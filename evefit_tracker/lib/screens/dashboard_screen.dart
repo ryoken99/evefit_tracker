@@ -4,6 +4,7 @@ import '../database/app_database.dart';
 import '../models/body_measurement.dart';
 import '../models/user_profile.dart';
 import '../services/csv_export_service.dart';
+import '../services/dashboard_stats_service.dart';
 import '../widgets/progress_chart.dart';
 import '../widgets/stat_card.dart';
 
@@ -31,7 +32,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         final profile = snapshot.data![0] as UserProfile;
         final measurements = snapshot.data![1] as List<BodyMeasurement>;
         final workoutsThisWeek = snapshot.data![2] as int;
-        final latest = measurements.first;
+        final latest = measurements.isEmpty ? null : measurements.first;
         final days = DateTime.now().difference(profile.startDate).inDays;
 
         return RefreshIndicator(
@@ -89,22 +90,24 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 children: [
                   StatCard(
                     label: 'Peso atual',
-                    value: _value(latest.weightKg, 'kg'),
+                    value: _value(latest?.weightKg, 'kg'),
                   ),
                   StatCard(
                     label: 'Braço contraído',
                     value: _value(
-                      latest.rightBicepFlexedCm ?? latest.leftBicepFlexedCm,
+                      latest == null
+                          ? null
+                          : DashboardStatsService.flexedArmCm(latest),
                       'cm',
                     ),
                   ),
                   StatCard(
                     label: 'Ombros',
-                    value: _value(latest.shouldersCm, 'cm'),
+                    value: _value(latest?.shouldersCm, 'cm'),
                   ),
                   StatCard(
                     label: 'Zona lateral',
-                    value: _value(latest.sideHipAreaCm, 'cm'),
+                    value: _value(latest?.sideHipAreaCm, 'cm'),
                   ),
                   StatCard(
                     label: 'Treinos esta semana',
@@ -137,7 +140,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ProgressChart(
                 title: 'Braço contraído ao longo do tempo',
                 values: measurements
-                    .map((m) => m.rightBicepFlexedCm ?? m.leftBicepFlexedCm)
+                    .map(DashboardStatsService.flexedArmCm)
                     .toList(),
               ),
               const SizedBox(height: 10),
