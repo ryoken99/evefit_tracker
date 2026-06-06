@@ -180,11 +180,16 @@ class ExerciseFilterService {
     if (availableEquipmentKeys.isEmpty) {
       return _containsAny(exercise, ['peso corporal', 'nenhum equipamento']);
     }
+    final effectiveEquipmentKeys = {
+      'bodyweight',
+      'none',
+      ...availableEquipmentKeys,
+    };
     final exerciseEquipment = TrainingArchitecture.tagsForExercise(
       exercise,
     ).equipmentKeys;
-    if (exerciseEquipment.any(availableEquipmentKeys.contains)) return true;
-    for (final key in availableEquipmentKeys) {
+    if (exerciseEquipment.any(effectiveEquipmentKeys.contains)) return true;
+    for (final key in effectiveEquipmentKeys) {
       final aliases = _equipmentAliases[key] ?? [key];
       if (_containsAny(exercise, aliases)) return true;
     }

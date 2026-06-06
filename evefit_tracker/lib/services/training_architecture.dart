@@ -1129,6 +1129,8 @@ class TrainingArchitecture {
       'curl martelo',
       'curl alternado',
       'curl concentrado',
+      'curl isometrico',
+      'curl isométrico',
       'curl com barra',
       'curl no cabo',
       'chin-up',
@@ -1295,6 +1297,11 @@ class TrainingArchitecture {
       'hollow',
       'pallof',
       'bird dog',
+      'russian twist',
+      'bicycle crunch',
+      'vacuum',
+      'flutter',
+      'toe touches',
     ])) {
       add(
         region: 'core',
@@ -1407,6 +1414,18 @@ class TrainingArchitecture {
       'respiração',
     ])) {
       add(region: 'mobility_recovery', group: 'general_mobility');
+      if (_has(haystack, ['anca', 'hip'])) {
+        add(region: 'mobility_recovery', group: 'hip_mobility');
+      }
+      if (_has(haystack, ['ombro'])) {
+        add(region: 'mobility_recovery', group: 'shoulder_mobility');
+      }
+      if (_has(haystack, ['toracica', 'torácica'])) {
+        add(region: 'mobility_recovery', group: 'thoracic_mobility');
+      }
+      if (_has(haystack, ['tornozelo'])) {
+        add(region: 'mobility_recovery', group: 'ankle_mobility');
+      }
     }
     if (regionKeys.isEmpty) {
       regionKeys.add('custom');

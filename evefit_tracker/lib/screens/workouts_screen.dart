@@ -5,6 +5,7 @@ import '../models/workout.dart';
 import '../models/workout_template.dart';
 import '../models/workout_type.dart';
 import '../services/training_architecture.dart';
+import '../services/training_flow.dart';
 import '../services/workout_taxonomy.dart';
 import '../services/workout_template_service.dart';
 import '../widgets/workout_card.dart';
@@ -133,10 +134,15 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     final types = await widget.database.workoutTypes();
     final customTemplates = await widget.database.workoutTemplates();
     if (!mounted) return;
-    var selection = template == null
-        ? const TrainingSelection(regionKey: 'full_body')
-        : TrainingArchitecture.legacySelectionFor(template.name);
-    var type = TrainingArchitecture.labelForSelection(selection);
+    var flow = template == null
+        ? const TrainingFlowSelection(
+            typeKey: 'strength',
+            equipmentKey: 'bodyweight',
+            regionKey: 'full_body',
+          )
+        : _flowForLegacyTemplate(template.name);
+    var selection = TrainingFlow.toTrainingSelection(flow);
+    var type = TrainingFlow.suggestedWorkoutName(flow);
     int? workoutTypeId = _typeIdFor(types, type);
     var date = DateTime.now();
     var selectedGroups = <String>{};
@@ -182,126 +188,236 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
               ),
               const SizedBox(height: 10),
               _ChoiceTile(
-                label: 'Região corporal / domínio',
-                value: _regionName(selection.regionKey),
+                label: 'Tipo de treino',
+                value: _flowTypeName(flow.typeKey),
                 onTap: () async {
-                  final picked = await _pickFromList<TrainingRegion>(
-                    title: 'Escolher região',
-                    items: TrainingArchitecture.regions,
-                    labelFor: (item) => item.name,
+                  final picked = await _pickFromList<MapEntry<String, String>>(
+                    title: 'Escolher tipo de treino',
+                    items: TrainingFlow.types.entries.toList(),
+                    labelFor: (item) => item.value,
                   );
                   if (picked == null) return;
                   setSheetState(() {
-                    selection = TrainingSelection(regionKey: picked.key);
-                    type = TrainingArchitecture.labelForSelection(selection);
+                    flow = _defaultFlowForType(picked.key);
+                    selection = TrainingFlow.toTrainingSelection(flow);
+                    type = TrainingFlow.suggestedWorkoutName(flow);
                     workoutName.text = type;
                     workoutTypeId = _typeIdFor(types, type);
                   });
                 },
               ),
               const SizedBox(height: 8),
-              _ChoiceTile(
-                label: 'Grupo principal',
-                value: selection.groupKey.isEmpty
-                    ? 'Escolher grupo'
-                    : _groupName(selection.groupKey),
-                enabled: selection.regionKey.isNotEmpty,
-                onTap: () async {
-                  final groups = TrainingArchitecture.groupsForRegion(
-                    selection.regionKey,
-                  );
-                  final picked = await _pickFromList<TrainingGroup>(
-                    title: 'Escolher grupo principal',
-                    items: groups,
-                    labelFor: (item) => item.name,
-                  );
-                  if (picked == null) return;
-                  setSheetState(() {
-                    selection = TrainingSelection(
-                      regionKey: picked.regionKey,
-                      groupKey: picked.key,
+              if (flow.typeKey == 'strength') ...[
+                _ChoiceTile(
+                  label: 'Equipamento disponível',
+                  value: flow.equipmentKey.isEmpty
+                      ? 'Peso corporal'
+                      : _equipmentName(flow.equipmentKey),
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingEquipment>(
+                      title: 'Escolher equipamento',
+                      items: TrainingArchitecture.equipment,
+                      labelFor: (item) => item.name,
                     );
-                    type = TrainingArchitecture.labelForSelection(selection);
-                    workoutName.text = type;
-                    workoutTypeId = _typeIdFor(types, type);
-                  });
-                },
-              ),
-              const SizedBox(height: 8),
-              _ChoiceTile(
-                label: 'Subgrupo / foco',
-                value: selection.subgroupKey.isEmpty
-                    ? 'Opcional'
-                    : _subgroupName(selection.subgroupKey),
-                enabled: selection.groupKey.isNotEmpty,
-                onTap: () async {
-                  final subgroups = TrainingArchitecture.subgroupsForGroup(
-                    selection.groupKey,
-                  );
-                  final picked = await _pickFromList<TrainingSubgroup>(
-                    title: 'Escolher subgrupo',
-                    items: subgroups,
-                    labelFor: (item) => item.name,
-                    allowClear: true,
-                  );
-                  setSheetState(() {
-                    selection = selection.copyWith(
-                      subgroupKey: picked?.key ?? '',
-                      specificMuscleKey: '',
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(equipmentKey: picked.key);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: 'Região corporal',
+                  value: _regionName(flow.regionKey),
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingRegion>(
+                      title: 'Escolher região corporal',
+                      items: _strengthRegions(),
+                      labelFor: (item) => item.name,
                     );
-                    type = TrainingArchitecture.labelForSelection(selection);
-                    workoutName.text = type;
-                    workoutTypeId = _typeIdFor(types, type);
-                  });
-                },
-              ),
-              const SizedBox(height: 8),
-              _ChoiceTile(
-                label: 'Músculo específico',
-                value: selection.specificMuscleKey.isEmpty
-                    ? 'Opcional'
-                    : _muscleName(selection.specificMuscleKey),
-                enabled: selection.subgroupKey.isNotEmpty,
-                onTap: () async {
-                  final muscles = TrainingArchitecture.musclesForSubgroup(
-                    selection.subgroupKey,
-                  );
-                  final picked = await _pickFromList<TrainingMuscle>(
-                    title: 'Escolher músculo específico',
-                    items: muscles,
-                    labelFor: (item) => item.name,
-                    allowClear: true,
-                  );
-                  setSheetState(() {
-                    selection = selection.copyWith(
-                      specificMuscleKey: picked?.key ?? '',
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(
+                        regionKey: picked.key,
+                        groupKey: '',
+                        focusKey: '',
+                      );
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: 'Grupo muscular',
+                  value: flow.groupKey.isEmpty
+                      ? 'Opcional'
+                      : _groupName(flow.groupKey),
+                  enabled: _strengthGroupsForRegion(flow.regionKey).isNotEmpty,
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingGroup>(
+                      title: 'Escolher grupo muscular',
+                      items: _strengthGroupsForRegion(flow.regionKey),
+                      labelFor: (item) => item.name,
+                      allowClear: true,
                     );
-                    type = TrainingArchitecture.labelForSelection(selection);
-                    workoutName.text = type;
-                    workoutTypeId = _typeIdFor(types, type);
-                  });
-                },
-              ),
-              const SizedBox(height: 8),
-              _ChoiceTile(
-                label: 'Equipamento/filtro',
-                value: selection.equipmentKey.isEmpty
-                    ? 'Opcional'
-                    : _equipmentName(selection.equipmentKey),
-                onTap: () async {
-                  final picked = await _pickFromList<TrainingEquipment>(
-                    title: 'Escolher equipamento',
-                    items: TrainingArchitecture.equipment,
-                    labelFor: (item) => item.name,
-                    allowClear: true,
-                  );
-                  setSheetState(() {
-                    selection = selection.copyWith(
-                      equipmentKey: picked?.key ?? '',
-                    );
-                  });
-                },
-              ),
+                    setSheetState(() {
+                      flow = flow.copyWith(
+                        groupKey: picked?.key ?? '',
+                        focusKey: '',
+                      );
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: TrainingFlow.finalFocusLabel(flow.typeKey),
+                  value: flow.focusKey.isEmpty
+                      ? 'Opcional'
+                      : _strengthFocusName(flow.focusKey),
+                  enabled: _strengthFocusOptions(flow.groupKey).isNotEmpty,
+                  onTap: () async {
+                    final picked =
+                        await _pickFromList<MapEntry<String, String>>(
+                          title: 'Escolher músculo específico',
+                          items: _strengthFocusOptions(flow.groupKey),
+                          labelFor: (item) => item.value,
+                          allowClear: true,
+                        );
+                    setSheetState(() {
+                      flow = flow.copyWith(focusKey: picked?.key ?? '');
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+              ] else if (flow.typeKey == 'cardio') ...[
+                _ChoiceTile(
+                  label: 'Equipamento/modalidade',
+                  value: _cardioModeName(flow),
+                  onTap: () async {
+                    final picked =
+                        await _pickFromList<MapEntry<String, String>>(
+                          title: 'Escolher modalidade',
+                          items: _cardioModeOptions(),
+                          labelFor: (item) => item.value,
+                        );
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(
+                        equipmentKey: _equipmentKeyForCardioMode(picked.key),
+                        cardioFocusKey: picked.key,
+                      );
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: TrainingFlow.finalFocusLabel(flow.typeKey),
+                  value: _cardioFocusName(flow.cardioFocusKey),
+                  onTap: () async {
+                    final picked =
+                        await _pickFromList<MapEntry<String, String>>(
+                          title: 'Escolher foco cardio',
+                          items: _cardioFocusOptions(flow.equipmentKey),
+                          labelFor: (item) => item.value,
+                        );
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(cardioFocusKey: picked.key);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+              ] else if (flow.typeKey == 'martial_arts') ...[
+                _ChoiceTile(
+                  label: 'Arte marcial',
+                  value: _martialName(flow.martialArtKey),
+                  onTap: () async {
+                    final picked =
+                        await _pickFromList<MapEntry<String, String>>(
+                          title: 'Escolher arte marcial',
+                          items: TrainingFlow.martialLabels.entries.toList(),
+                          labelFor: (item) => item.value,
+                        );
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(martialArtKey: picked.key);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: TrainingFlow.finalFocusLabel(flow.typeKey),
+                  value: _martialName(flow.martialArtKey),
+                  enabled: false,
+                  onTap: () {},
+                ),
+              ] else if (flow.typeKey == 'mobility') ...[
+                _ChoiceTile(
+                  label: TrainingFlow.finalFocusLabel(flow.typeKey),
+                  value: _mobilityName(flow.mobilityZoneKey),
+                  onTap: () async {
+                    final picked =
+                        await _pickFromList<MapEntry<String, String>>(
+                          title: 'Escolher zona/foco',
+                          items: TrainingFlow.mobilityLabels.entries.toList(),
+                          labelFor: (item) => item.value,
+                        );
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(mobilityZoneKey: picked.key);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+              ] else if (flow.typeKey == 'recovery') ...[
+                _ChoiceTile(
+                  label: TrainingFlow.finalFocusLabel(flow.typeKey),
+                  value: _recoveryName(flow.recoveryKey),
+                  onTap: () async {
+                    final picked =
+                        await _pickFromList<MapEntry<String, String>>(
+                          title: 'Escolher tipo de recuperação',
+                          items: TrainingFlow.recoveryLabels.entries.toList(),
+                          labelFor: (item) => item.value,
+                        );
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(recoveryKey: picked.key);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+              ],
               const SizedBox(height: 10),
               TextField(
                 controller: workoutName,
@@ -401,7 +517,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 ),
                 const SizedBox(height: 6),
                 for (final exerciseName in template.exerciseNames)
-                  Text('• $exerciseName'),
+                  Text('⬢ $exerciseName'),
               ],
               const SizedBox(height: 12),
               FilledButton(
@@ -480,6 +596,176 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     return null;
   }
 
+  TrainingFlowSelection _defaultFlowForType(String typeKey) {
+    return switch (typeKey) {
+      'strength' => const TrainingFlowSelection(
+        typeKey: 'strength',
+        equipmentKey: 'bodyweight',
+        regionKey: 'full_body',
+      ),
+      'cardio' => const TrainingFlowSelection(
+        typeKey: 'cardio',
+        equipmentKey: 'bodyweight',
+        cardioFocusKey: 'no_equipment',
+      ),
+      'martial_arts' => const TrainingFlowSelection(
+        typeKey: 'martial_arts',
+        martialArtKey: 'karate',
+      ),
+      'mobility' => const TrainingFlowSelection(
+        typeKey: 'mobility',
+        mobilityZoneKey: 'general_mobility',
+      ),
+      'recovery' => const TrainingFlowSelection(
+        typeKey: 'recovery',
+        recoveryKey: 'easy_walk',
+      ),
+      _ => const TrainingFlowSelection(typeKey: 'custom'),
+    };
+  }
+
+  TrainingFlowSelection _flowForLegacyTemplate(String name) {
+    final legacy = TrainingArchitecture.legacySelectionFor(name);
+    if (legacy.regionKey == 'cardio') {
+      return TrainingFlowSelection(
+        typeKey: 'cardio',
+        equipmentKey: legacy.equipmentKey.isEmpty
+            ? legacy.subgroupKey
+            : legacy.equipmentKey,
+        cardioFocusKey: legacy.subgroupKey.isEmpty
+            ? 'no_equipment'
+            : legacy.subgroupKey,
+      );
+    }
+    if (legacy.regionKey == 'martial_arts') {
+      return TrainingFlowSelection(
+        typeKey: 'martial_arts',
+        martialArtKey: legacy.groupKey == 'jiu_jitsu' ? 'jiu_jitsu' : 'karate',
+      );
+    }
+    if (legacy.regionKey == 'mobility_recovery') {
+      return TrainingFlowSelection(
+        typeKey: 'mobility',
+        mobilityZoneKey: legacy.groupKey.isEmpty
+            ? 'general_mobility'
+            : legacy.groupKey,
+      );
+    }
+    return TrainingFlowSelection(
+      typeKey: 'strength',
+      equipmentKey: legacy.equipmentKey.isEmpty
+          ? 'bodyweight'
+          : legacy.equipmentKey,
+      regionKey: legacy.regionKey.isEmpty ? 'full_body' : legacy.regionKey,
+      groupKey: legacy.groupKey,
+    );
+  }
+
+  String _flowTypeName(String key) =>
+      TrainingFlow.types[key] ?? TrainingFlow.types['custom']!;
+
+  List<TrainingRegion> _strengthRegions() {
+    const keys = {'full_body', 'upper', 'lower', 'core'};
+    return TrainingArchitecture.regions
+        .where((item) => keys.contains(item.key))
+        .toList();
+  }
+
+  List<TrainingGroup> _strengthGroupsForRegion(String regionKey) {
+    if (regionKey == 'full_body') {
+      return const [];
+    }
+    return TrainingArchitecture.groupsForRegion(regionKey);
+  }
+
+  List<MapEntry<String, String>> _strengthFocusOptions(String groupKey) {
+    final keys = switch (groupKey) {
+      'arms' => {'arms_complete', 'biceps', 'triceps'},
+      'forearm_hand' => {
+        'forearm_complete',
+        'forearm_flexors',
+        'forearm_extensors',
+        'pronators',
+        'supinators',
+        'wrist',
+        'fingers',
+        'support_grip',
+        'pinch_grip',
+        'general_grip',
+      },
+      _ => <String>{},
+    };
+    return TrainingFlow.strengthFocusLabels.entries
+        .where((item) => keys.contains(item.key))
+        .toList();
+  }
+
+  String _strengthFocusName(String key) =>
+      TrainingFlow.strengthFocusLabels[key] ?? key;
+
+  List<MapEntry<String, String>> _cardioModeOptions() {
+    const keys = [
+      'no_equipment',
+      'treadmill',
+      'bike',
+      'elliptical',
+      'jump_rope',
+      'outdoor_walk',
+      'outdoor_run',
+      'hiit',
+    ];
+    return keys
+        .map((key) => MapEntry(key, TrainingFlow.cardioLabels[key]!))
+        .toList();
+  }
+
+  List<MapEntry<String, String>> _cardioFocusOptions(String equipmentKey) {
+    final keys = switch (equipmentKey) {
+      'treadmill' => ['treadmill', 'aerobic_endurance', 'hiit'],
+      'bike' => ['bike', 'aerobic_endurance', 'hiit'],
+      'elliptical' => ['elliptical', 'aerobic_endurance'],
+      'jump_rope' => ['jump_rope', 'hiit'],
+      'outdoor_space' => ['outdoor_walk', 'outdoor_run', 'hiit'],
+      _ => ['no_equipment', 'hiit'],
+    };
+    return keys
+        .map((key) => MapEntry(key, TrainingFlow.cardioLabels[key]!))
+        .toList();
+  }
+
+  String _equipmentKeyForCardioMode(String modeKey) {
+    return switch (modeKey) {
+      'no_equipment' || 'hiit' => 'bodyweight',
+      'outdoor_walk' || 'outdoor_run' => 'outdoor_space',
+      _ => modeKey,
+    };
+  }
+
+  String _cardioModeName(TrainingFlowSelection flow) {
+    if (flow.cardioFocusKey == 'no_equipment') {
+      return TrainingFlow.cardioLabels['no_equipment']!;
+    }
+    if (flow.cardioFocusKey == 'outdoor_walk' ||
+        flow.cardioFocusKey == 'outdoor_run' ||
+        flow.cardioFocusKey == 'hiit') {
+      return TrainingFlow.cardioLabels[flow.cardioFocusKey]!;
+    }
+    return TrainingFlow.cardioLabels[flow.equipmentKey] ??
+        _equipmentName(flow.equipmentKey);
+  }
+
+  String _cardioFocusName(String key) =>
+      TrainingFlow.cardioLabels[key] ?? 'Sem equipamento';
+
+  String _martialName(String key) =>
+      TrainingFlow.martialLabels[key] ?? 'Karate';
+
+  String _mobilityName(String key) =>
+      TrainingFlow.mobilityLabels[key] ?? 'Geral';
+
+  String _recoveryName(String key) =>
+      TrainingFlow.recoveryLabels[key] ?? 'Caminhada leve';
+
   String _typeGroupsFor(List<WorkoutType> types, String name) {
     for (final type in types) {
       if (type.name == name && type.muscleGroups.trim().isNotEmpty) {
@@ -497,7 +783,8 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     final values = [
       if (selection.regionKey.isNotEmpty) _regionName(selection.regionKey),
       if (selection.groupKey.isNotEmpty) _groupName(selection.groupKey),
-      if (selection.subgroupKey.isNotEmpty) _subgroupName(selection.subgroupKey),
+      if (selection.subgroupKey.isNotEmpty)
+        _subgroupName(selection.subgroupKey),
       if (selection.specificMuscleKey.isNotEmpty)
         _muscleName(selection.specificMuscleKey),
       if (selection.equipmentKey.isNotEmpty)

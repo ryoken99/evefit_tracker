@@ -421,22 +421,26 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                     onChanged: (value) => setSheetState(() => showAll = value),
                   ),
                   const SizedBox(height: 10),
-                  DropdownButtonFormField<String>(
-                    initialValue: filter,
-                    items: filterOptions
-                        .map(
-                          (item) =>
-                              DropdownMenuItem(value: item, child: Text(item)),
-                        )
-                        .toList(),
-                    onChanged: (value) => setSheetState(
-                      () => filter = value ?? filterOptions.first,
+                  if (filterOptions.length > 2) ...[
+                    DropdownButtonFormField<String>(
+                      initialValue: filter,
+                      items: filterOptions
+                          .map(
+                            (item) => DropdownMenuItem(
+                              value: item,
+                              child: Text(item),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (value) => setSheetState(
+                        () => filter = value ?? filterOptions.first,
+                      ),
+                      decoration: const InputDecoration(
+                        labelText: 'Grupo muscular',
+                      ),
                     ),
-                    decoration: const InputDecoration(
-                      labelText: 'Grupo muscular',
-                    ),
-                  ),
-                  const SizedBox(height: 10),
+                    const SizedBox(height: 10),
+                  ],
                   Expanded(
                     child: visible.isEmpty
                         ? const Center(
