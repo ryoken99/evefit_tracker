@@ -39,6 +39,7 @@ class _PhotosScreenState extends State<PhotosScreen> {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
+          final photos = snapshot.data!;
           return ListView(
             padding: const EdgeInsets.all(16),
             children: [
@@ -49,9 +50,9 @@ class _PhotosScreenState extends State<PhotosScreen> {
                 ),
               ),
               const SizedBox(height: 12),
-              if (snapshot.data!.isEmpty)
+              if (photos.isEmpty)
                 const Text('Ainda não há fotos de progresso.'),
-              for (final photo in snapshot.data!)
+              for (final photo in photos)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: Card(
@@ -89,6 +90,7 @@ class _PhotosScreenState extends State<PhotosScreen> {
     final notes = TextEditingController();
     final source = await showModalBottomSheet<ImageSource>(
       context: context,
+      showDragHandle: true,
       builder: (context) => SafeArea(
         child: Wrap(
           children: [
@@ -106,20 +108,25 @@ class _PhotosScreenState extends State<PhotosScreen> {
         ),
       ),
     );
-    if (source == null) return;
+    if (source == null) {
+      return;
+    }
     final picked = await ImagePicker().pickImage(
       source: source,
       imageQuality: 85,
     );
-    if (picked == null || !mounted) return;
+    if (picked == null || !mounted) {
+      return;
+    }
     final saved = await showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
+      showDragHandle: true,
       builder: (context) => StatefulBuilder(
         builder: (context, setSheetState) => Padding(
           padding: EdgeInsets.fromLTRB(
             16,
-            16,
+            0,
             16,
             MediaQuery.viewInsetsOf(context).bottom + 16,
           ),
@@ -169,7 +176,7 @@ class _PhotosScreenState extends State<PhotosScreen> {
                       weightKg: double.tryParse(
                         weight.text.replaceAll(',', '.'),
                       ),
-                      notes: notes.text,
+                      notes: notes.text.trim(),
                     ),
                   );
                   if (context.mounted) Navigator.pop(context, true);
@@ -183,6 +190,8 @@ class _PhotosScreenState extends State<PhotosScreen> {
     );
     weight.dispose();
     notes.dispose();
-    if (saved == true) setState(() {});
+    if (saved == true) {
+      setState(() {});
+    }
   }
 }

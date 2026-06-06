@@ -14,9 +14,9 @@ class WorkoutCard extends StatelessWidget {
       child: ListTile(
         title: Text(entry.workout.workoutType),
         subtitle: Text(
-          '$date · ${entry.workout.durationMinutes ?? 0} min\n${entry.sets.map((s) => '${s.exerciseName}: ${s.weightKg ?? 0} kg x ${s.reps} reps RPE ${s.rpe ?? '-'}').join('\n')}',
+          '$date · ${entry.workout.durationMinutes ?? 0} min · ${entry.exerciseCount} exercícios · ${entry.totalSetCount} séries',
         ),
-        isThreeLine: true,
+        trailing: const Icon(Icons.chevron_right),
       ),
     );
   }

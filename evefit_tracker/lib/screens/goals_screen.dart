@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 import '../database/app_database.dart';
 import '../models/goal.dart';
 
-class GoalsScreen extends StatelessWidget {
+class GoalsScreen extends StatefulWidget {
   const GoalsScreen({super.key, required this.database});
   final AppDatabase database;
 
   @override
+  State<GoalsScreen> createState() => _GoalsScreenState();
+}
+
+class _GoalsScreenState extends State<GoalsScreen> {
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Goal>>(
-      future: database.goals(),
+      future: widget.database.goals(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
@@ -38,9 +43,17 @@ class GoalsScreen extends StatelessWidget {
                   child: Card(
                     child: CheckboxListTile(
                       value: goal.completedAt != null,
-                      onChanged: null,
+                      onChanged: (value) async {
+                        await widget.database.setGoalCompleted(
+                          goal,
+                          value ?? false,
+                        );
+                        setState(() {});
+                      },
                       title: Text(goal.title),
-                      subtitle: Text(goal.isActive ? 'Ativo' : 'Inativo'),
+                      subtitle: Text(
+                        '${goal.phase} · ${goal.completedAt == null ? 'Ativo' : 'Concluído'}',
+                      ),
                     ),
                   ),
                 ),

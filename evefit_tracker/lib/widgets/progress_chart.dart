@@ -18,9 +18,14 @@ class ProgressChart extends StatelessWidget {
             Text(title, style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 12),
             if (points.length < 2)
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 24),
-                child: Text('Ainda não há dados suficientes para o gráfico.'),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 24),
+                child: Text(
+                  'Ainda não há dados suficientes para gerar este gráfico.',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
+                ),
               )
             else
               SizedBox(

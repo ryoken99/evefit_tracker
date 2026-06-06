@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../database/app_database.dart';
 import '../database/seed_data.dart';
-import '../models/exercise.dart';
 import '../models/workout.dart';
-import '../models/workout_set.dart';
 import '../widgets/workout_card.dart';
+import 'workout_detail_screen.dart';
 
 class WorkoutsScreen extends StatefulWidget {
   const WorkoutsScreen({super.key, required this.database});
@@ -29,6 +28,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
+          final workouts = snapshot.data!;
           return ListView(
             padding: const EdgeInsets.all(16),
             children: [
@@ -39,12 +39,26 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 ),
               ),
               const SizedBox(height: 12),
-              if (snapshot.data!.isEmpty)
+              if (workouts.isEmpty)
                 const Text('Ainda não há treinos guardados.'),
-              for (final entry in snapshot.data!)
+              for (final entry in workouts)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
-                  child: WorkoutCard(entry: entry),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(8),
+                    onTap: () async {
+                      await Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => WorkoutDetailScreen(
+                            database: widget.database,
+                            entry: entry,
+                          ),
+                        ),
+                      );
+                      setState(() {});
+                    },
+                    child: WorkoutCard(entry: entry),
+                  ),
                 ),
             ],
           );
@@ -54,23 +68,19 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   }
 
   Future<void> _addWorkout() async {
-    final exercises = await widget.database.exercises();
-    if (!mounted) return;
     var type = SeedData.workoutTypes.first;
-    var exercise = exercises.first;
+    var date = DateTime.now();
     final duration = TextEditingController();
-    final weight = TextEditingController();
-    final reps = TextEditingController(text: '10');
-    final rpe = TextEditingController(text: '8');
     final notes = TextEditingController();
-    final saved = await showModalBottomSheet<bool>(
+    final savedEntry = await showModalBottomSheet<WorkoutEntry>(
       context: context,
       isScrollControlled: true,
+      showDragHandle: true,
       builder: (context) => StatefulBuilder(
         builder: (context, setSheetState) => Padding(
           padding: EdgeInsets.fromLTRB(
             16,
-            16,
+            0,
             16,
             MediaQuery.viewInsetsOf(context).bottom + 16,
           ),
@@ -82,6 +92,24 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 12),
+              OutlinedButton.icon(
+                onPressed: () async {
+                  final picked = await showDatePicker(
+                    context: context,
+                    initialDate: date,
+                    firstDate: DateTime(2020),
+                    lastDate: DateTime.now().add(const Duration(days: 1)),
+                  );
+                  if (picked != null) {
+                    setSheetState(() => date = picked);
+                  }
+                },
+                icon: const Icon(Icons.calendar_today_outlined),
+                label: Text(
+                  '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}',
+                ),
+              ),
+              const SizedBox(height: 10),
               DropdownButtonFormField<String>(
                 initialValue: type,
                 items: SeedData.workoutTypes
@@ -94,21 +122,6 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 decoration: const InputDecoration(labelText: 'Tipo de treino'),
               ),
               const SizedBox(height: 10),
-              DropdownButtonFormField<Exercise>(
-                initialValue: exercise,
-                items: exercises
-                    .map(
-                      (item) => DropdownMenuItem(
-                        value: item,
-                        child: Text('${item.name} · ${item.muscleGroup}'),
-                      ),
-                    )
-                    .toList(),
-                onChanged: (value) =>
-                    setSheetState(() => exercise = value ?? exercise),
-                decoration: const InputDecoration(labelText: 'Exercício'),
-              ),
-              const SizedBox(height: 10),
               TextField(
                 controller: duration,
                 keyboardType: TextInputType.number,
@@ -118,51 +131,36 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
               ),
               const SizedBox(height: 10),
               TextField(
-                controller: weight,
-                keyboardType: const TextInputType.numberWithOptions(
-                  decimal: true,
-                ),
-                decoration: const InputDecoration(labelText: 'Peso em kg'),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: reps,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: 'Repetições'),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: rpe,
-                keyboardType: const TextInputType.numberWithOptions(
-                  decimal: true,
-                ),
-                decoration: const InputDecoration(labelText: 'RPE 1 a 10'),
-              ),
-              const SizedBox(height: 10),
-              TextField(
                 controller: notes,
-                decoration: const InputDecoration(labelText: 'Notas opcionais'),
+                minLines: 2,
+                maxLines: 4,
+                decoration: const InputDecoration(labelText: 'Notas'),
               ),
               const SizedBox(height: 12),
               FilledButton(
                 onPressed: () async {
-                  await widget.database.insertWorkoutWithSet(
-                    Workout(
-                      date: DateTime.now(),
-                      workoutType: type,
-                      durationMinutes: int.tryParse(duration.text),
-                      notes: notes.text,
-                    ),
-                    WorkoutSet(
-                      exerciseId: exercise.id!,
-                      setNumber: 1,
-                      weightKg: _num(weight),
-                      reps: int.tryParse(reps.text) ?? 0,
-                      rpe: _num(rpe),
-                      notes: notes.text,
-                    ),
+                  final workout = Workout(
+                    date: date,
+                    workoutType: type,
+                    durationMinutes: int.tryParse(duration.text),
+                    notes: notes.text.trim(),
                   );
-                  if (context.mounted) Navigator.pop(context, true);
+                  final id = await widget.database.insertWorkout(workout);
+                  if (context.mounted) {
+                    Navigator.pop(
+                      context,
+                      WorkoutEntry(
+                        workout: Workout(
+                          id: id,
+                          date: workout.date,
+                          workoutType: workout.workoutType,
+                          durationMinutes: workout.durationMinutes,
+                          notes: workout.notes,
+                        ),
+                        sets: const [],
+                      ),
+                    );
+                  }
                 },
                 child: const Text('Guardar treino'),
               ),
@@ -171,12 +169,17 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
         ),
       ),
     );
-    for (final c in [duration, weight, reps, rpe, notes]) {
-      c.dispose();
+    duration.dispose();
+    notes.dispose();
+    if (savedEntry != null && mounted) {
+      setState(() {});
+      await Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) =>
+              WorkoutDetailScreen(database: widget.database, entry: savedEntry),
+        ),
+      );
+      setState(() {});
     }
-    if (saved == true) setState(() {});
   }
-
-  double? _num(TextEditingController controller) =>
-      double.tryParse(controller.text.replaceAll(',', '.'));
 }

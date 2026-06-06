@@ -14,6 +14,9 @@ class WorkoutEntry {
   WorkoutEntry({required this.workout, required this.sets});
   final Workout workout;
   final List<WorkoutSet> sets;
+
+  int get exerciseCount => sets.map((set) => set.exerciseId).toSet().length;
+  int get totalSetCount => sets.length;
 }
 
 class AppDatabase {
@@ -94,12 +97,37 @@ class AppDatabase {
     );
   }
 
+  Future<void> updateMeasurement(BodyMeasurement measurement) async {
+    await (await database).update(
+      'body_measurements',
+      measurement.toMap()..remove('id'),
+      where: 'id = ?',
+      whereArgs: [measurement.id],
+    );
+  }
+
+  Future<void> deleteMeasurement(int id) async {
+    await (await database).delete(
+      'body_measurements',
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
   Future<List<Exercise>> exercises() async {
     final rows = await (await database).query(
       'exercises',
       orderBy: 'muscle_group, name',
     );
     return rows.map(Exercise.fromMap).toList();
+  }
+
+  Future<int> insertWorkout(Workout workout) async {
+    return (await database).insert('workouts', workout.toMap()..remove('id'));
+  }
+
+  Future<void> insertWorkoutSet(WorkoutSet set) async {
+    await (await database).insert('workout_sets', set.toMap()..remove('id'));
   }
 
   Future<void> insertWorkoutWithSet(Workout workout, WorkoutSet set) async {
@@ -168,6 +196,18 @@ class AppDatabase {
   Future<List<Goal>> goals() async {
     final rows = await (await database).query('goals', orderBy: 'phase, id');
     return rows.map(Goal.fromMap).toList();
+  }
+
+  Future<void> setGoalCompleted(Goal goal, bool completed) async {
+    await (await database).update(
+      'goals',
+      {
+        'is_active': completed ? 0 : 1,
+        'completed_at': completed ? DateTime.now().toIso8601String() : null,
+      },
+      where: 'id = ?',
+      whereArgs: [goal.id],
+    );
   }
 
   Future<Map<String, List<Map<String, Object?>>>> exportData() async {
