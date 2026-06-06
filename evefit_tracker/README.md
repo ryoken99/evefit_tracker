@@ -1,16 +1,20 @@
 # EveFit Tracker
 
-Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, medidas corporais, fotos de progresso e objetivos.
+Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados corporais, fotos de progresso e objetivos.
 
 ## Estado atual
 
 - MVP Android implementado.
 - SQLite local sem perfil pessoal pré-criado.
-- Navegacao com 5 separadores: Dashboard, Treinos, Medidas, Fotos e Objetivos.
-- Formularios para adicionar medidas, criar treino basico com exercicio/serie e guardar fotos.
+- Navegacao com 5 separadores: Dashboard, Treinos, Dados, Fotos e Objetivos.
+- Formulario Dados para registar balanca, composicao corporal, medidas, dobras cutaneas e notas.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- APK release v0.5.2 gerado localmente em `build/app/outputs/flutter-apk/app-release.apk`.
+- APK release v0.5.3 gerado localmente em `build/app/outputs/flutter-apk/app-release.apk`.
+- Aba Medidas renomeada para Dados.
+- Dados de balanca e composicao corporal expandidos.
+- IMC calculado, idade/altura no perfil e racios cintura/anca e cintura/altura preparados.
+- Dobras cutaneas opcionais em seccao propria.
 - Locais de treino com multipla escolha.
 - Objetivos com formulario mais simples e modo avancado opcional.
 - Filtros especificos para Passadeira, Bicicleta, Eliptica, Karate e Jiu-Jitsu.

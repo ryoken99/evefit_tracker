@@ -57,12 +57,13 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 6,
+      version: 7,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
         await _migrateV51(db);
         await _migrateV52(db);
+        await _migrateV53(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -79,6 +80,9 @@ class AppDatabase {
         }
         if (oldVersion < 6) {
           await _migrateV52(db);
+        }
+        if (oldVersion < 7) {
+          await _migrateV53(db);
         }
       },
     );
@@ -218,6 +222,22 @@ class AppDatabase {
         profileId: profileId,
         selectedLocations: locations,
       );
+    }
+  }
+
+  Future<void> _migrateV53(Database db) async {
+    for (final column in _bodyDataV53Columns.entries) {
+      await _addColumnIfMissing(
+        db,
+        'body_measurements',
+        column.key,
+        column.value,
+      );
+    }
+    await _addColumnIfMissing(db, 'profiles', 'activity_level', 'TEXT');
+    final profiles = await db.query('profiles', columns: ['id']);
+    for (final row in profiles) {
+      await _insertDefaultDashboardWidgets(db, row['id'] as int);
     }
   }
 
@@ -388,6 +408,37 @@ class AppDatabase {
     'skinfold_triceps_mm': 'REAL',
     'skinfold_midaxillary_mm': 'REAL',
     'skinfold_thigh_mm': 'REAL',
+  };
+
+  static const _bodyDataV53Columns = {
+    'height_cm': 'REAL',
+    'scale_bmi': 'REAL',
+    'calculated_bmi': 'REAL',
+    'body_score': 'REAL',
+    'fat_mass_kg': 'REAL',
+    'fat_free_body_weight_kg': 'REAL',
+    'skeletal_muscle_mass_kg': 'REAL',
+    'standard_weight_kg': 'REAL',
+    'weight_control_kg': 'REAL',
+    'fat_control_kg': 'REAL',
+    'muscle_control_kg': 'REAL',
+    'resting_heart_rate_bpm': 'REAL',
+    'body_type': 'TEXT',
+    'chest_upper_cm': 'REAL',
+    'chest_middle_cm': 'REAL',
+    'chest_lower_cm': 'REAL',
+    'chest_total_cm': 'REAL',
+    'waist_to_hip_ratio': 'REAL',
+    'waist_to_height_ratio': 'REAL',
+    'biceps_skinfold_mm': 'REAL',
+    'triceps_skinfold_mm': 'REAL',
+    'chest_skinfold_mm': 'REAL',
+    'abdominal_skinfold_mm': 'REAL',
+    'suprailiac_skinfold_mm': 'REAL',
+    'subscapular_skinfold_mm': 'REAL',
+    'midaxillary_skinfold_mm': 'REAL',
+    'thigh_skinfold_mm': 'REAL',
+    'medial_calf_skinfold_mm': 'REAL',
   };
 
   static const _exerciseExtraColumns = {
@@ -660,7 +711,13 @@ class AppDatabase {
     final info = await db.rawQuery('PRAGMA table_info($table)');
     final exists = info.any((row) => row['name'] == column);
     if (!exists) {
-      await db.execute('ALTER TABLE $table ADD COLUMN $column $type');
+      try {
+        await db.execute('ALTER TABLE $table ADD COLUMN $column $type');
+      } on DatabaseException {
+        // Some older installs may already have received a column through a
+        // partially completed migration. Re-reading PRAGMA on the next launch is
+        // enough; the migration must never drop user data.
+      }
     }
   }
 
@@ -704,6 +761,7 @@ class AppDatabase {
     double? heightCm,
     DateTime? birthDate,
     String sex = '',
+    String activityLevel = '',
     String trainingLocation = '',
     List<String> trainingLocations = const [],
     List<String> initialGoals = const [],
@@ -727,6 +785,7 @@ class AppDatabase {
       heightCm: heightCm,
       birthDate: birthDate,
       sex: sex.trim(),
+      activityLevel: activityLevel.trim(),
       trainingLocation: serializedLocations,
       initialGoals: initialGoals.join(', '),
       notes: notes.trim(),

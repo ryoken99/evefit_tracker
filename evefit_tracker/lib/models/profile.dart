@@ -9,6 +9,7 @@ class Profile {
     this.heightCm,
     this.birthDate,
     this.sex = '',
+    this.activityLevel = '',
     this.trainingLocation = '',
     this.initialGoals = '',
     this.notes = '',
@@ -23,6 +24,7 @@ class Profile {
   final double? heightCm;
   final DateTime? birthDate;
   final String sex;
+  final String activityLevel;
   final String trainingLocation;
   final String initialGoals;
   final String notes;
@@ -41,6 +43,7 @@ class Profile {
         ? null
         : DateTime.parse(map['birth_date'] as String),
     sex: map['sex'] as String? ?? '',
+    activityLevel: map['activity_level'] as String? ?? '',
     trainingLocation: map['training_location'] as String? ?? '',
     initialGoals: map['initial_goals'] as String? ?? '',
     notes: map['notes'] as String? ?? '',
@@ -56,6 +59,7 @@ class Profile {
     'height_cm': heightCm,
     'birth_date': birthDate?.toIso8601String(),
     'sex': sex,
+    'activity_level': activityLevel,
     'training_location': trainingLocation,
     'initial_goals': initialGoals,
     'notes': notes,
@@ -71,6 +75,7 @@ class Profile {
     double? heightCm,
     DateTime? birthDate,
     String? sex,
+    String? activityLevel,
     String? trainingLocation,
     String? initialGoals,
     String? notes,
@@ -85,6 +90,7 @@ class Profile {
       heightCm: heightCm ?? this.heightCm,
       birthDate: birthDate ?? this.birthDate,
       sex: sex ?? this.sex,
+      activityLevel: activityLevel ?? this.activityLevel,
       trainingLocation: trainingLocation ?? this.trainingLocation,
       initialGoals: initialGoals ?? this.initialGoals,
       notes: notes ?? this.notes,

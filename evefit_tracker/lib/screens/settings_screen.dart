@@ -8,7 +8,7 @@ import '../services/pin_service.dart';
 import '../services/training_location_service.dart';
 import 'profile_gate_screen.dart';
 
-const appVersionLabel = 'v0.5.2';
+const appVersionLabel = 'v0.5.3';
 const githubRepoUrl = 'https://github.com/ryoken99/evefit_tracker';
 const githubLatestReleaseUrl = '$githubRepoUrl/releases/latest';
 
@@ -44,7 +44,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           FilledButton.icon(
             onPressed: () => _openUrl(githubLatestReleaseUrl),
             icon: const Icon(Icons.system_update_alt),
-            label: const Text('Ver atualizações v0.5.2'),
+            label: const Text('Ver atualizações v0.5.3'),
           ),
           TextButton.icon(
             onPressed: () => _openUrl(githubRepoUrl),
@@ -112,6 +112,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _editProfile(Profile profile) async {
     final name = TextEditingController(text: profile.name);
+    final height = TextEditingController(
+      text: profile.heightCm?.toString() ?? '',
+    );
     final notes = TextEditingController(text: profile.notes.trim());
     final currentPin = TextEditingController();
     final newPin = TextEditingController();
@@ -119,6 +122,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final selectedLocations = TrainingLocationService.parse(
       profile.trainingLocation,
     );
+    var sex = profile.sex;
+    var activityLevel = profile.activityLevel;
     String? error;
     final saved = await showModalBottomSheet<Profile>(
       context: context,
@@ -143,6 +148,56 @@ class _SettingsScreenState extends State<SettingsScreen> {
               TextField(
                 controller: name,
                 decoration: const InputDecoration(labelText: 'Nome'),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: height,
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
+                decoration: const InputDecoration(labelText: 'Altura'),
+              ),
+              const SizedBox(height: 10),
+              DropdownButtonFormField<String>(
+                initialValue: sex.isEmpty ? null : sex,
+                items:
+                    const [
+                          'Feminino',
+                          'Masculino',
+                          'Outro',
+                          'Prefiro não indicar',
+                        ]
+                        .map(
+                          (item) =>
+                              DropdownMenuItem(value: item, child: Text(item)),
+                        )
+                        .toList(),
+                onChanged: (value) => setSheetState(() => sex = value ?? ''),
+                decoration: const InputDecoration(
+                  labelText: 'Sexo de referência para fórmulas',
+                ),
+              ),
+              const SizedBox(height: 10),
+              DropdownButtonFormField<String>(
+                initialValue: activityLevel.isEmpty ? null : activityLevel,
+                items:
+                    const [
+                          'Sedentário',
+                          'Leve',
+                          'Moderado',
+                          'Ativo',
+                          'Muito ativo',
+                        ]
+                        .map(
+                          (item) =>
+                              DropdownMenuItem(value: item, child: Text(item)),
+                        )
+                        .toList(),
+                onChanged: (value) =>
+                    setSheetState(() => activityLevel = value ?? ''),
+                decoration: const InputDecoration(
+                  labelText: 'Nível de atividade',
+                ),
               ),
               const SizedBox(height: 10),
               TextField(
@@ -227,6 +282,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   final updated = profile.copyWith(
                     name: name.text.trim(),
                     pinHash: pinHash,
+                    heightCm: _optionalDouble(height.text),
+                    sex: sex,
+                    activityLevel: activityLevel,
                     trainingLocation: TrainingLocationService.serialize(
                       selectedLocations,
                     ),
@@ -243,7 +301,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
     );
-    for (final controller in [name, notes, currentPin, newPin, confirmPin]) {
+    for (final controller in [
+      name,
+      height,
+      notes,
+      currentPin,
+      newPin,
+      confirmPin,
+    ]) {
       controller.dispose();
     }
     if (saved != null) {
@@ -273,4 +338,10 @@ class _PinField extends StatelessWidget {
       decoration: InputDecoration(labelText: label, counterText: ''),
     );
   }
+}
+
+double? _optionalDouble(String text) {
+  final normalized = text.trim().replaceAll(',', '.');
+  if (normalized.isEmpty) return null;
+  return double.tryParse(normalized);
 }

@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import '../database/app_database.dart';
 import '../models/body_measurement.dart';
+import '../services/body_data_service.dart';
 import '../widgets/measurement_card.dart';
 
 class MeasurementsScreen extends StatefulWidget {
@@ -32,12 +33,21 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
             padding: const EdgeInsets.all(16),
             children: [
               Text(
-                'Medidas',
+                'Dados',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 4),
+              Text(
+                'Regista valores de balança, composição corporal, medidas e dados avançados opcionais.',
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: Colors.white70),
+              ),
               const SizedBox(height: 12),
+              if (measurements.isEmpty)
+                const Text('Ainda não existem registos corporais.'),
               for (final item in measurements)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
@@ -74,71 +84,9 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
-            _DetailRow(
-              label: 'Peso',
-              value: _value(measurement.weightKg, 'kg'),
-            ),
-            _DetailRow(
-              label: 'Gordura corporal',
-              value: _value(measurement.bodyFatPercentage, '%'),
-            ),
-            _DetailRow(
-              label: 'Massa muscular',
-              value: _value(measurement.muscleMassKg, 'kg'),
-            ),
-            _DetailRow(
-              label: 'Bíceps esquerdo relaxado',
-              value: _value(measurement.leftBicepRelaxedCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Bíceps esquerdo contraído',
-              value: _value(measurement.leftBicepFlexedCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Bíceps direito relaxado',
-              value: _value(measurement.rightBicepRelaxedCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Bíceps direito contraído',
-              value: _value(measurement.rightBicepFlexedCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Ombros',
-              value: _value(measurement.shouldersCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Peito',
-              value: _value(measurement.chestCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Cintura',
-              value: _value(measurement.waistCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Zona lateral acima da anca',
-              value: _value(measurement.sideHipAreaCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Abdómen',
-              value: _value(measurement.abdomenCm, 'cm'),
-            ),
-            _DetailRow(label: 'Anca', value: _value(measurement.hipsCm, 'cm')),
-            _DetailRow(
-              label: 'Coxa esquerda',
-              value: _value(measurement.leftThighCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Coxa direita',
-              value: _value(measurement.rightThighCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Gémeo esquerdo',
-              value: _value(measurement.leftCalfCm, 'cm'),
-            ),
-            _DetailRow(
-              label: 'Gémeo direito',
-              value: _value(measurement.rightCalfCm, 'cm'),
-            ),
+            for (final section in _detailSections(measurement))
+              if (section.rows.isNotEmpty)
+                _DetailSection(title: section.title, rows: section.rows),
             if (measurement.notes.isNotEmpty) ...[
               const SizedBox(height: 8),
               Text(measurement.notes),
@@ -163,9 +111,9 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
                       final confirmed = await showDialog<bool>(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: const Text('Apagar medição'),
+                          title: const Text('Apagar registo'),
                           content: const Text(
-                            'Tens a certeza que queres apagar esta medição?',
+                            'Tens a certeza que queres apagar este registo corporal?',
                           ),
                           actions: [
                             TextButton(
@@ -204,7 +152,10 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
   }
 
   Future<void> _openMeasurementForm({BodyMeasurement? measurement}) async {
-    final fields = _MeasurementFields(measurement);
+    final fields = _MeasurementFields(
+      measurement,
+      profileHeightCm: widget.database.activeProfile?.heightCm,
+    );
     final saved = await showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
@@ -220,91 +171,21 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
           shrinkWrap: true,
           children: [
             Text(
-              measurement == null ? 'Nova medição' : 'Editar medição',
+              measurement == null
+                  ? 'Novo registo corporal'
+                  : 'Editar registo corporal',
               style: Theme.of(context).textTheme.titleLarge,
             ),
+            const SizedBox(height: 6),
+            Text(
+              'Campos vazios ficam por preencher. As referências são estimativas gerais e não substituem avaliação médica ou profissional.',
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.white70),
+            ),
             const SizedBox(height: 12),
-            _Section(
-              title: 'Peso e composição',
-              children: [
-                _NumberField(label: 'Peso', controller: fields.weight),
-                _NumberField(
-                  label: 'Gordura corporal %',
-                  controller: fields.bodyFat,
-                ),
-                _NumberField(
-                  label: 'Massa muscular',
-                  controller: fields.muscleMass,
-                ),
-              ],
-            ),
-            _Section(
-              title: 'Braços',
-              children: [
-                _NumberField(
-                  label: 'Bíceps esquerdo relaxado',
-                  controller: fields.leftRelaxed,
-                ),
-                _NumberField(
-                  label: 'Bíceps esquerdo contraído',
-                  controller: fields.leftFlexed,
-                ),
-                _NumberField(
-                  label: 'Bíceps direito relaxado',
-                  controller: fields.rightRelaxed,
-                ),
-                _NumberField(
-                  label: 'Bíceps direito contraído',
-                  controller: fields.rightFlexed,
-                ),
-              ],
-            ),
-            _Section(
-              title: 'Tronco',
-              children: [
-                _NumberField(label: 'Ombros', controller: fields.shoulders),
-                _NumberField(label: 'Peito', controller: fields.chest),
-                _NumberField(label: 'Cintura', controller: fields.waist),
-                _NumberField(
-                  label: 'Zona lateral acima da anca',
-                  controller: fields.sideHip,
-                ),
-                _NumberField(label: 'Abdómen', controller: fields.abdomen),
-                _NumberField(label: 'Anca', controller: fields.hips),
-              ],
-            ),
-            _Section(
-              title: 'Pernas',
-              children: [
-                _NumberField(
-                  label: 'Coxa esquerda',
-                  controller: fields.leftThigh,
-                ),
-                _NumberField(
-                  label: 'Coxa direita',
-                  controller: fields.rightThigh,
-                ),
-                _NumberField(
-                  label: 'Gémeo esquerdo',
-                  controller: fields.leftCalf,
-                ),
-                _NumberField(
-                  label: 'Gémeo direito',
-                  controller: fields.rightCalf,
-                ),
-              ],
-            ),
-            _Section(
-              title: 'Notas',
-              children: [
-                TextField(
-                  controller: fields.notes,
-                  minLines: 2,
-                  maxLines: 4,
-                  decoration: const InputDecoration(labelText: 'Notas'),
-                ),
-              ],
-            ),
+            for (final section in _formSections)
+              _FormSection(section: section, fields: fields),
             FilledButton(
               onPressed: () async {
                 final value = fields.toMeasurement(measurement);
@@ -316,7 +197,7 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
                 if (context.mounted) Navigator.pop(context, true);
               },
               child: Text(
-                measurement == null ? 'Guardar medição' : 'Guardar alterações',
+                measurement == null ? 'Guardar dados' : 'Guardar alterações',
               ),
             ),
           ],
@@ -329,19 +210,76 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
     }
   }
 
-  String _value(double? value, String unit) =>
-      value == null ? '-' : '${value.toStringAsFixed(1)} $unit';
+  List<_DetailSectionData> _detailSections(BodyMeasurement measurement) {
+    final values = _MeasurementFields.valuesFrom(measurement);
+    return _formSections
+        .where((section) => section.title != 'Notas')
+        .map(
+          (section) => _DetailSectionData(
+            section.title,
+            section.fields
+                .map((field) {
+                  final value = values[field.key];
+                  if (value == null || value.isEmpty) return null;
+                  return _DetailRowData(field.label, '$value${field.unitText}');
+                })
+                .whereType<_DetailRowData>()
+                .toList(),
+          ),
+        )
+        .toList();
+  }
 }
 
-class _Section extends StatelessWidget {
-  const _Section({required this.title, required this.children});
+class _FormSection extends StatelessWidget {
+  const _FormSection({required this.section, required this.fields});
+  final _SectionSpec section;
+  final _MeasurementFields fields;
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      tilePadding: EdgeInsets.zero,
+      initiallyExpanded: section.initiallyExpanded,
+      title: Text(section.title),
+      children: [
+        for (final field in section.fields)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: field.isText
+                ? TextField(
+                    controller: fields.controller(field.key),
+                    decoration: InputDecoration(labelText: field.label),
+                  )
+                : _NumberField(
+                    label: field.label,
+                    controller: fields.controller(field.key),
+                  ),
+          ),
+        if (section.title == 'Notas')
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: TextField(
+              controller: fields.notes,
+              minLines: 2,
+              maxLines: 4,
+              decoration: const InputDecoration(labelText: 'Notas'),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+class _DetailSection extends StatelessWidget {
+  const _DetailSection({required this.title, required this.rows});
   final String title;
-  final List<Widget> children;
+  final List<_DetailRowData> rows;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.only(bottom: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -351,13 +289,9 @@ class _Section extends StatelessWidget {
               context,
             ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
           ),
-          const SizedBox(height: 10),
-          ...children.map(
-            (child) => Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: child,
-            ),
-          ),
+          const SizedBox(height: 6),
+          for (final row in rows)
+            _DetailRow(label: row.label, value: row.value),
         ],
       ),
     );
@@ -406,101 +340,372 @@ class _NumberField extends StatelessWidget {
 }
 
 class _MeasurementFields {
-  _MeasurementFields(BodyMeasurement? measurement)
-    : weight = _controller(measurement?.weightKg),
-      bodyFat = _controller(measurement?.bodyFatPercentage),
-      muscleMass = _controller(measurement?.muscleMassKg),
-      leftRelaxed = _controller(measurement?.leftBicepRelaxedCm),
-      leftFlexed = _controller(measurement?.leftBicepFlexedCm),
-      rightRelaxed = _controller(measurement?.rightBicepRelaxedCm),
-      rightFlexed = _controller(measurement?.rightBicepFlexedCm),
-      shoulders = _controller(measurement?.shouldersCm),
-      chest = _controller(measurement?.chestCm),
-      waist = _controller(measurement?.waistCm),
-      sideHip = _controller(measurement?.sideHipAreaCm),
-      abdomen = _controller(measurement?.abdomenCm),
-      hips = _controller(measurement?.hipsCm),
-      leftThigh = _controller(measurement?.leftThighCm),
-      rightThigh = _controller(measurement?.rightThighCm),
-      leftCalf = _controller(measurement?.leftCalfCm),
-      rightCalf = _controller(measurement?.rightCalfCm),
-      notes = TextEditingController(text: measurement?.notes ?? '');
+  _MeasurementFields(BodyMeasurement? measurement, {double? profileHeightCm})
+    : notes = TextEditingController(text: measurement?.notes ?? '') {
+    final values = valuesFrom(measurement);
+    if ((values['height_cm'] ?? '').isEmpty && profileHeightCm != null) {
+      values['height_cm'] = profileHeightCm.toString();
+    }
+    for (final field in _allFields) {
+      _controllers[field.key] = TextEditingController(
+        text: values[field.key] ?? '',
+      );
+    }
+  }
 
-  final TextEditingController weight;
-  final TextEditingController bodyFat;
-  final TextEditingController muscleMass;
-  final TextEditingController leftRelaxed;
-  final TextEditingController leftFlexed;
-  final TextEditingController rightRelaxed;
-  final TextEditingController rightFlexed;
-  final TextEditingController shoulders;
-  final TextEditingController chest;
-  final TextEditingController waist;
-  final TextEditingController sideHip;
-  final TextEditingController abdomen;
-  final TextEditingController hips;
-  final TextEditingController leftThigh;
-  final TextEditingController rightThigh;
-  final TextEditingController leftCalf;
-  final TextEditingController rightCalf;
   final TextEditingController notes;
+  final Map<String, TextEditingController> _controllers = {};
+
+  TextEditingController controller(String key) => _controllers[key]!;
 
   BodyMeasurement toMeasurement(BodyMeasurement? existing) {
+    final height = _num('height_cm');
+    final weight = _num('weight_kg');
+    final waist = _num('waist_cm');
+    final hips = _num('hips_cm');
     return BodyMeasurement(
       id: existing?.id,
+      profileId: existing?.profileId,
       date: existing?.date ?? DateTime.now(),
-      weightKg: _num(weight),
-      bodyFatPercentage: _num(bodyFat),
-      muscleMassKg: _num(muscleMass),
-      leftBicepRelaxedCm: _num(leftRelaxed),
-      leftBicepFlexedCm: _num(leftFlexed),
-      rightBicepRelaxedCm: _num(rightRelaxed),
-      rightBicepFlexedCm: _num(rightFlexed),
-      shouldersCm: _num(shoulders),
-      chestCm: _num(chest),
-      waistCm: _num(waist),
-      sideHipAreaCm: _num(sideHip),
-      abdomenCm: _num(abdomen),
-      hipsCm: _num(hips),
-      leftThighCm: _num(leftThigh),
-      rightThighCm: _num(rightThigh),
-      leftCalfCm: _num(leftCalf),
-      rightCalfCm: _num(rightCalf),
+      heightCm: height,
+      weightKg: weight,
+      bmi: _num('scale_bmi'),
+      scaleBmi: _num('scale_bmi'),
+      calculatedBmi: BodyDataService.calculateBmi(
+        weightKg: weight,
+        heightCm: height,
+      ),
+      bodyScore: _num('body_score'),
+      bodyFatPercentage: _num('body_fat_percentage'),
+      fatMassKg: _num('fat_mass_kg'),
+      fatFreeBodyWeightKg: _num('fat_free_body_weight_kg'),
+      muscleMassKg: _num('muscle_mass_kg'),
+      musclePercentage: _num('muscle_percentage'),
+      skeletalMuscleMassKg: _num('skeletal_muscle_mass_kg'),
+      boneMassKg: _num('bone_mass_kg'),
+      bodyWaterPercentage: _num('body_water_percentage'),
+      proteinPercentage: _num('protein_percentage'),
+      subcutaneousFatPercentage: _num('subcutaneous_fat_percentage'),
+      visceralFat: _num('visceral_fat'),
+      basalMetabolismKcal: _num('basal_metabolism_kcal'),
+      bodyAge: _num('body_age'),
+      standardWeightKg: _num('standard_weight_kg'),
+      weightControlKg: _num('weight_control_kg'),
+      fatControlKg: _num('fat_control_kg'),
+      muscleControlKg: _num('muscle_control_kg'),
+      restingHeartRateBpm: _num('resting_heart_rate_bpm'),
+      bodyType: _text('body_type'),
+      neckCm: _num('neck_cm'),
+      shouldersCm: _num('shoulders_cm'),
+      upperChestCm: _num('upper_chest_cm'),
+      midChestCm: _num('mid_chest_cm'),
+      lowerChestCm: _num('lower_chest_cm'),
+      chestCm: _num('chest_cm'),
+      backWidthCm: _num('back_width_cm'),
+      waistCm: waist,
+      abdomenCm: _num('abdomen_cm'),
+      sideHipAreaCm: _num('side_hip_area_cm'),
+      hipsCm: hips,
+      glutesCm: _num('glutes_cm'),
+      waistToHipRatio: BodyDataService.waistToHipRatio(
+        waistCm: waist,
+        hipsCm: hips,
+      ),
+      waistToHeightRatio: BodyDataService.waistToHeightRatio(
+        waistCm: waist,
+        heightCm: height,
+      ),
+      leftBicepRelaxedCm: _num('left_bicep_relaxed_cm'),
+      leftBicepFlexedCm: _num('left_bicep_flexed_cm'),
+      rightBicepRelaxedCm: _num('right_bicep_relaxed_cm'),
+      rightBicepFlexedCm: _num('right_bicep_flexed_cm'),
+      leftForearmCm: _num('left_forearm_cm'),
+      rightForearmCm: _num('right_forearm_cm'),
+      leftWristCm: _num('left_wrist_cm'),
+      rightWristCm: _num('right_wrist_cm'),
+      leftHandCm: _num('left_hand_cm'),
+      rightHandCm: _num('right_hand_cm'),
+      leftUpperThighCm: _num('left_upper_thigh_cm'),
+      leftMidThighCm: _num('left_mid_thigh_cm'),
+      rightUpperThighCm: _num('right_upper_thigh_cm'),
+      rightMidThighCm: _num('right_mid_thigh_cm'),
+      leftCalfCm: _num('left_calf_cm'),
+      rightCalfCm: _num('right_calf_cm'),
+      leftAnkleCm: _num('left_ankle_cm'),
+      rightAnkleCm: _num('right_ankle_cm'),
+      skinfoldChestMm: _num('chest_skinfold_mm'),
+      skinfoldAbdominalMm: _num('abdominal_skinfold_mm'),
+      skinfoldSuprailiacMm: _num('suprailiac_skinfold_mm'),
+      skinfoldSubscapularMm: _num('subscapular_skinfold_mm'),
+      skinfoldTricepsMm: _num('triceps_skinfold_mm'),
+      skinfoldMidaxillaryMm: _num('midaxillary_skinfold_mm'),
+      skinfoldThighMm: _num('thigh_skinfold_mm'),
+      bicepsSkinfoldMm: _num('biceps_skinfold_mm'),
+      medialCalfSkinfoldMm: _num('medial_calf_skinfold_mm'),
       notes: notes.text.trim(),
     );
   }
 
   void dispose() {
-    for (final controller in [
-      weight,
-      bodyFat,
-      muscleMass,
-      leftRelaxed,
-      leftFlexed,
-      rightRelaxed,
-      rightFlexed,
-      shoulders,
-      chest,
-      waist,
-      sideHip,
-      abdomen,
-      hips,
-      leftThigh,
-      rightThigh,
-      leftCalf,
-      rightCalf,
-      notes,
-    ]) {
+    for (final controller in [..._controllers.values, notes]) {
       controller.dispose();
     }
   }
 
-  static TextEditingController _controller(double? value) =>
-      TextEditingController(text: value?.toString() ?? '');
-
-  static double? _num(TextEditingController controller) {
-    final text = controller.text.trim().replaceAll(',', '.');
+  double? _num(String key) {
+    final text = _text(key).replaceAll(',', '.');
     if (text.isEmpty) return null;
     return double.tryParse(text);
   }
+
+  String _text(String key) => controller(key).text.trim();
+
+  static Map<String, String> valuesFrom(BodyMeasurement? measurement) {
+    if (measurement == null) return {};
+    String n(double? value) => value?.toString() ?? '';
+    return {
+      'height_cm': n(measurement.heightCm),
+      'weight_kg': n(measurement.weightKg),
+      'scale_bmi': n(measurement.scaleBmi ?? measurement.bmi),
+      'calculated_bmi': n(measurement.calculatedBmi),
+      'body_score': n(measurement.bodyScore),
+      'body_fat_percentage': n(measurement.bodyFatPercentage),
+      'fat_mass_kg': n(measurement.fatMassKg),
+      'fat_free_body_weight_kg': n(measurement.fatFreeBodyWeightKg),
+      'muscle_mass_kg': n(measurement.muscleMassKg),
+      'muscle_percentage': n(measurement.musclePercentage),
+      'skeletal_muscle_mass_kg': n(measurement.skeletalMuscleMassKg),
+      'bone_mass_kg': n(measurement.boneMassKg),
+      'body_water_percentage': n(measurement.bodyWaterPercentage),
+      'protein_percentage': n(measurement.proteinPercentage),
+      'subcutaneous_fat_percentage': n(measurement.subcutaneousFatPercentage),
+      'visceral_fat': n(measurement.visceralFat),
+      'basal_metabolism_kcal': n(measurement.basalMetabolismKcal),
+      'body_age': n(measurement.bodyAge),
+      'standard_weight_kg': n(measurement.standardWeightKg),
+      'weight_control_kg': n(measurement.weightControlKg),
+      'fat_control_kg': n(measurement.fatControlKg),
+      'muscle_control_kg': n(measurement.muscleControlKg),
+      'resting_heart_rate_bpm': n(measurement.restingHeartRateBpm),
+      'body_type': measurement.bodyType,
+      'neck_cm': n(measurement.neckCm),
+      'shoulders_cm': n(measurement.shouldersCm),
+      'upper_chest_cm': n(measurement.upperChestCm),
+      'mid_chest_cm': n(measurement.midChestCm),
+      'lower_chest_cm': n(measurement.lowerChestCm),
+      'chest_cm': n(measurement.chestCm),
+      'back_width_cm': n(measurement.backWidthCm),
+      'waist_cm': n(measurement.waistCm),
+      'abdomen_cm': n(measurement.abdomenCm),
+      'side_hip_area_cm': n(measurement.sideHipAreaCm),
+      'hips_cm': n(measurement.hipsCm),
+      'glutes_cm': n(measurement.glutesCm),
+      'waist_to_hip_ratio': n(measurement.waistToHipRatio),
+      'waist_to_height_ratio': n(measurement.waistToHeightRatio),
+      'left_bicep_relaxed_cm': n(measurement.leftBicepRelaxedCm),
+      'left_bicep_flexed_cm': n(measurement.leftBicepFlexedCm),
+      'right_bicep_relaxed_cm': n(measurement.rightBicepRelaxedCm),
+      'right_bicep_flexed_cm': n(measurement.rightBicepFlexedCm),
+      'left_forearm_cm': n(measurement.leftForearmCm),
+      'right_forearm_cm': n(measurement.rightForearmCm),
+      'left_wrist_cm': n(measurement.leftWristCm),
+      'right_wrist_cm': n(measurement.rightWristCm),
+      'left_hand_cm': n(measurement.leftHandCm),
+      'right_hand_cm': n(measurement.rightHandCm),
+      'left_upper_thigh_cm': n(measurement.leftUpperThighCm),
+      'left_mid_thigh_cm': n(measurement.leftMidThighCm),
+      'right_upper_thigh_cm': n(measurement.rightUpperThighCm),
+      'right_mid_thigh_cm': n(measurement.rightMidThighCm),
+      'left_calf_cm': n(measurement.leftCalfCm),
+      'right_calf_cm': n(measurement.rightCalfCm),
+      'left_ankle_cm': n(measurement.leftAnkleCm),
+      'right_ankle_cm': n(measurement.rightAnkleCm),
+      'chest_skinfold_mm': n(measurement.skinfoldChestMm),
+      'abdominal_skinfold_mm': n(measurement.skinfoldAbdominalMm),
+      'suprailiac_skinfold_mm': n(measurement.skinfoldSuprailiacMm),
+      'subscapular_skinfold_mm': n(measurement.skinfoldSubscapularMm),
+      'triceps_skinfold_mm': n(measurement.skinfoldTricepsMm),
+      'biceps_skinfold_mm': n(measurement.bicepsSkinfoldMm),
+      'midaxillary_skinfold_mm': n(measurement.skinfoldMidaxillaryMm),
+      'thigh_skinfold_mm': n(measurement.skinfoldThighMm),
+      'medial_calf_skinfold_mm': n(measurement.medialCalfSkinfoldMm),
+    };
+  }
 }
+
+class _SectionSpec {
+  const _SectionSpec({
+    required this.title,
+    required this.fields,
+    this.initiallyExpanded = false,
+  });
+  final String title;
+  final List<_FieldSpec> fields;
+  final bool initiallyExpanded;
+}
+
+class _FieldSpec {
+  const _FieldSpec(this.key, this.label, {this.unit = '', this.isText = false});
+  final String key;
+  final String label;
+  final String unit;
+  final bool isText;
+
+  String get unitText => unit.isEmpty ? '' : ' $unit';
+}
+
+class _DetailSectionData {
+  const _DetailSectionData(this.title, this.rows);
+  final String title;
+  final List<_DetailRowData> rows;
+}
+
+class _DetailRowData {
+  const _DetailRowData(this.label, this.value);
+  final String label;
+  final String value;
+}
+
+const _formSections = [
+  _SectionSpec(
+    title: 'Resumo',
+    initiallyExpanded: true,
+    fields: [
+      _FieldSpec('height_cm', 'Altura', unit: 'cm'),
+      _FieldSpec('weight_kg', 'Peso', unit: 'kg'),
+      _FieldSpec('scale_bmi', 'IMC da balança'),
+      _FieldSpec('body_score', 'Body score / pontuação corporal'),
+      _FieldSpec(
+        'resting_heart_rate_bpm',
+        'Frequência cardíaca em repouso',
+        unit: 'bpm',
+      ),
+      _FieldSpec('body_type', 'Tipo corporal', isText: true),
+    ],
+  ),
+  _SectionSpec(
+    title: 'Balança / composição corporal',
+    fields: [
+      _FieldSpec(
+        'body_fat_percentage',
+        'Percentagem de gordura corporal',
+        unit: '%',
+      ),
+      _FieldSpec('fat_mass_kg', 'Massa gorda', unit: 'kg'),
+      _FieldSpec(
+        'fat_free_body_weight_kg',
+        'Massa livre de gordura / peso sem gordura',
+        unit: 'kg',
+      ),
+      _FieldSpec('muscle_mass_kg', 'Massa muscular', unit: 'kg'),
+      _FieldSpec('muscle_percentage', 'Percentagem muscular', unit: '%'),
+      _FieldSpec(
+        'skeletal_muscle_mass_kg',
+        'Massa muscular esquelética',
+        unit: 'kg',
+      ),
+      _FieldSpec('bone_mass_kg', 'Massa óssea', unit: 'kg'),
+      _FieldSpec('body_water_percentage', 'Água corporal', unit: '%'),
+      _FieldSpec('protein_percentage', 'Proteína corporal', unit: '%'),
+      _FieldSpec(
+        'subcutaneous_fat_percentage',
+        'Gordura subcutânea',
+        unit: '%',
+      ),
+      _FieldSpec('visceral_fat', 'Gordura visceral / rating visceral'),
+      _FieldSpec(
+        'basal_metabolism_kcal',
+        'Metabolismo basal / BMR',
+        unit: 'kcal',
+      ),
+      _FieldSpec('body_age', 'Idade corporal / metabólica'),
+      _FieldSpec('standard_weight_kg', 'Peso padrão sugerido', unit: 'kg'),
+      _FieldSpec('weight_control_kg', 'Controlo de peso sugerido', unit: 'kg'),
+      _FieldSpec('fat_control_kg', 'Controlo de gordura sugerido', unit: 'kg'),
+      _FieldSpec('muscle_control_kg', 'Controlo muscular sugerido', unit: 'kg'),
+    ],
+  ),
+  _SectionSpec(
+    title: 'Tronco',
+    fields: [
+      _FieldSpec('neck_cm', 'Pescoço', unit: 'cm'),
+      _FieldSpec('shoulders_cm', 'Ombros', unit: 'cm'),
+      _FieldSpec('upper_chest_cm', 'Peito alto', unit: 'cm'),
+      _FieldSpec('mid_chest_cm', 'Peito médio', unit: 'cm'),
+      _FieldSpec('lower_chest_cm', 'Peito baixo', unit: 'cm'),
+      _FieldSpec('chest_cm', 'Peito total', unit: 'cm'),
+      _FieldSpec('back_width_cm', 'Costas / largura dorsal', unit: 'cm'),
+      _FieldSpec('waist_cm', 'Cintura', unit: 'cm'),
+      _FieldSpec('abdomen_cm', 'Abdómen ao nível do umbigo', unit: 'cm'),
+      _FieldSpec('side_hip_area_cm', 'Zona lateral acima da anca', unit: 'cm'),
+      _FieldSpec('hips_cm', 'Anca', unit: 'cm'),
+      _FieldSpec('glutes_cm', 'Glúteos', unit: 'cm'),
+      _FieldSpec('waist_to_hip_ratio', 'Relação cintura/anca'),
+      _FieldSpec('waist_to_height_ratio', 'Relação cintura/altura'),
+    ],
+  ),
+  _SectionSpec(
+    title: 'Braços e mãos',
+    fields: [
+      _FieldSpec(
+        'left_bicep_relaxed_cm',
+        'Braço esquerdo relaxado',
+        unit: 'cm',
+      ),
+      _FieldSpec(
+        'left_bicep_flexed_cm',
+        'Braço esquerdo contraído',
+        unit: 'cm',
+      ),
+      _FieldSpec(
+        'right_bicep_relaxed_cm',
+        'Braço direito relaxado',
+        unit: 'cm',
+      ),
+      _FieldSpec(
+        'right_bicep_flexed_cm',
+        'Braço direito contraído',
+        unit: 'cm',
+      ),
+      _FieldSpec('left_forearm_cm', 'Antebraço esquerdo', unit: 'cm'),
+      _FieldSpec('right_forearm_cm', 'Antebraço direito', unit: 'cm'),
+      _FieldSpec('left_wrist_cm', 'Punho esquerdo', unit: 'cm'),
+      _FieldSpec('right_wrist_cm', 'Punho direito', unit: 'cm'),
+      _FieldSpec('left_hand_cm', 'Mão esquerda', unit: 'cm'),
+      _FieldSpec('right_hand_cm', 'Mão direita', unit: 'cm'),
+    ],
+  ),
+  _SectionSpec(
+    title: 'Pernas',
+    fields: [
+      _FieldSpec('left_upper_thigh_cm', 'Coxa esquerda alta', unit: 'cm'),
+      _FieldSpec('left_mid_thigh_cm', 'Coxa esquerda média', unit: 'cm'),
+      _FieldSpec('right_upper_thigh_cm', 'Coxa direita alta', unit: 'cm'),
+      _FieldSpec('right_mid_thigh_cm', 'Coxa direita média', unit: 'cm'),
+      _FieldSpec('left_calf_cm', 'Gémeo esquerdo', unit: 'cm'),
+      _FieldSpec('right_calf_cm', 'Gémeo direito', unit: 'cm'),
+      _FieldSpec('left_ankle_cm', 'Tornozelo esquerdo', unit: 'cm'),
+      _FieldSpec('right_ankle_cm', 'Tornozelo direito', unit: 'cm'),
+    ],
+  ),
+  _SectionSpec(
+    title: 'Dobras cutâneas',
+    fields: [
+      _FieldSpec('chest_skinfold_mm', 'Dobra peitoral', unit: 'mm'),
+      _FieldSpec('abdominal_skinfold_mm', 'Dobra abdominal', unit: 'mm'),
+      _FieldSpec('suprailiac_skinfold_mm', 'Dobra supra-ilíaca', unit: 'mm'),
+      _FieldSpec('subscapular_skinfold_mm', 'Dobra subescapular', unit: 'mm'),
+      _FieldSpec('triceps_skinfold_mm', 'Dobra tricipital', unit: 'mm'),
+      _FieldSpec('biceps_skinfold_mm', 'Dobra bicipital', unit: 'mm'),
+      _FieldSpec('midaxillary_skinfold_mm', 'Dobra axilar média', unit: 'mm'),
+      _FieldSpec('thigh_skinfold_mm', 'Dobra coxa', unit: 'mm'),
+      _FieldSpec('medial_calf_skinfold_mm', 'Dobra gémeo medial', unit: 'mm'),
+    ],
+  ),
+  _SectionSpec(title: 'Notas', fields: []),
+];
+
+final _allFields = [
+  for (final section in _formSections)
+    for (final field in section.fields) field,
+];

@@ -191,6 +191,7 @@ Future<Profile?> showCreateProfileSheet({
   var step = 0;
   final selectedLocations = <String>{'Ginásio'};
   var sex = '';
+  var activityLevel = '';
   DateTime? birthDate;
   final selectedEquipment = <String, String>{};
   final selectedGoals = <String>{};
@@ -242,8 +243,11 @@ Future<Profile?> showCreateProfileSheet({
                   height: height,
                   notes: notes,
                   sex: sex,
+                  activityLevel: activityLevel,
                   birthDate: birthDate,
                   onSexChanged: (value) => setSheetState(() => sex = value),
+                  onActivityChanged: (value) =>
+                      setSheetState(() => activityLevel = value),
                   onBirthDateChanged: (value) =>
                       setSheetState(() => birthDate = value),
                 )
@@ -330,6 +334,7 @@ Future<Profile?> showCreateProfileSheet({
                           heightCm: _optionalDouble(height.text),
                           birthDate: birthDate,
                           sex: sex,
+                          activityLevel: activityLevel,
                           trainingLocations: selectedLocations.toList(),
                           initialGoals: selectedGoals.toList(),
                           availableEquipment: hasGym
@@ -364,8 +369,10 @@ class _ProfileStep extends StatelessWidget {
     required this.height,
     required this.notes,
     required this.sex,
+    required this.activityLevel,
     required this.birthDate,
     required this.onSexChanged,
+    required this.onActivityChanged,
     required this.onBirthDateChanged,
   });
 
@@ -375,8 +382,10 @@ class _ProfileStep extends StatelessWidget {
   final TextEditingController height;
   final TextEditingController notes;
   final String sex;
+  final String activityLevel;
   final DateTime? birthDate;
   final ValueChanged<String> onSexChanged;
+  final ValueChanged<String> onActivityChanged;
   final ValueChanged<DateTime> onBirthDateChanged;
 
   @override
@@ -405,6 +414,18 @@ class _ProfileStep extends StatelessWidget {
               .toList(),
           onChanged: (value) => onSexChanged(value ?? ''),
           decoration: const InputDecoration(labelText: 'Sexo opcional'),
+        ),
+        const SizedBox(height: 10),
+        DropdownButtonFormField<String>(
+          initialValue: activityLevel.isEmpty ? null : activityLevel,
+          items:
+              const ['Sedentário', 'Leve', 'Moderado', 'Ativo', 'Muito ativo']
+                  .map(
+                    (item) => DropdownMenuItem(value: item, child: Text(item)),
+                  )
+                  .toList(),
+          onChanged: (value) => onActivityChanged(value ?? ''),
+          decoration: const InputDecoration(labelText: 'Nível de atividade'),
         ),
         const SizedBox(height: 10),
         OutlinedButton.icon(

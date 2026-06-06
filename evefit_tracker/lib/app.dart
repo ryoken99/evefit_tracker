@@ -98,7 +98,7 @@ class _EveFitHomeState extends State<EveFitHome> {
           NavigationDestination(
             icon: Icon(Icons.monitor_weight_outlined),
             selectedIcon: Icon(Icons.monitor_weight),
-            label: 'Medidas',
+            label: 'Dados',
           ),
           NavigationDestination(
             icon: Icon(Icons.photo_library_outlined),

@@ -20,6 +20,16 @@ class DashboardMetricService {
     DashboardMetricDefinition(key: 'weight', title: 'Peso atual', unit: 'kg'),
     DashboardMetricDefinition(key: 'bmi', title: 'IMC', unit: ''),
     DashboardMetricDefinition(
+      key: 'scale_bmi',
+      title: 'IMC da balança',
+      unit: '',
+    ),
+    DashboardMetricDefinition(
+      key: 'body_score',
+      title: 'Pontuação corporal',
+      unit: '',
+    ),
+    DashboardMetricDefinition(
       key: 'body_fat',
       title: 'Gordura corporal',
       unit: '%',
@@ -27,6 +37,16 @@ class DashboardMetricService {
     DashboardMetricDefinition(
       key: 'muscle_mass',
       title: 'Massa muscular',
+      unit: 'kg',
+    ),
+    DashboardMetricDefinition(
+      key: 'fat_mass',
+      title: 'Massa gorda',
+      unit: 'kg',
+    ),
+    DashboardMetricDefinition(
+      key: 'fat_free_body_weight',
+      title: 'Peso sem gordura',
       unit: 'kg',
     ),
     DashboardMetricDefinition(
@@ -65,9 +85,19 @@ class DashboardMetricService {
       unit: 'kcal',
     ),
     DashboardMetricDefinition(
+      key: 'skeletal_muscle_mass',
+      title: 'Massa muscular esquelética',
+      unit: 'kg',
+    ),
+    DashboardMetricDefinition(
       key: 'body_age',
       title: 'Idade corporal',
       unit: 'anos',
+    ),
+    DashboardMetricDefinition(
+      key: 'resting_heart_rate',
+      title: 'Frequência cardíaca em repouso',
+      unit: 'bpm',
     ),
     DashboardMetricDefinition(key: 'neck', title: 'Pescoço', unit: 'cm'),
     DashboardMetricDefinition(key: 'shoulders', title: 'Ombros', unit: 'cm'),
@@ -105,6 +135,16 @@ class DashboardMetricService {
     ),
     DashboardMetricDefinition(key: 'hips', title: 'Anca', unit: 'cm'),
     DashboardMetricDefinition(key: 'glutes', title: 'Glúteos', unit: 'cm'),
+    DashboardMetricDefinition(
+      key: 'waist_to_hip_ratio',
+      title: 'Relação cintura/anca',
+      unit: '',
+    ),
+    DashboardMetricDefinition(
+      key: 'waist_to_height_ratio',
+      title: 'Relação cintura/altura',
+      unit: '',
+    ),
     DashboardMetricDefinition(
       key: 'left_bicep_relaxed',
       title: 'Bíceps esquerdo relaxado',
@@ -265,17 +305,24 @@ class DashboardMetricService {
     if (measurement == null) return null;
     return switch (key) {
       'weight' => measurement.weightKg,
-      'bmi' => measurement.bmi,
+      'bmi' =>
+        measurement.calculatedBmi ?? measurement.bmi ?? measurement.scaleBmi,
+      'scale_bmi' => measurement.scaleBmi,
+      'body_score' => measurement.bodyScore,
       'body_fat' => measurement.bodyFatPercentage,
       'muscle_mass' => measurement.muscleMassKg,
+      'fat_mass' => measurement.fatMassKg,
+      'fat_free_body_weight' => measurement.fatFreeBodyWeightKg,
       'muscle_percentage' => measurement.musclePercentage,
       'body_water' => measurement.bodyWaterPercentage,
       'protein' => measurement.proteinPercentage,
       'subcutaneous_fat' => measurement.subcutaneousFatPercentage,
       'visceral_fat' => measurement.visceralFat,
       'bone_mass' => measurement.boneMassKg,
+      'skeletal_muscle_mass' => measurement.skeletalMuscleMassKg,
       'basal_metabolism' => measurement.basalMetabolismKcal,
       'body_age' => measurement.bodyAge,
+      'resting_heart_rate' => measurement.restingHeartRateBpm,
       'neck' => measurement.neckCm,
       'shoulders' => measurement.shouldersCm,
       'upper_chest' => measurement.upperChestCm,
@@ -288,6 +335,8 @@ class DashboardMetricService {
       'side_hip_area' => measurement.sideHipAreaCm,
       'hips' => measurement.hipsCm,
       'glutes' => measurement.glutesCm,
+      'waist_to_hip_ratio' => measurement.waistToHipRatio,
+      'waist_to_height_ratio' => measurement.waistToHeightRatio,
       'left_bicep_relaxed' => measurement.leftBicepRelaxedCm,
       'left_bicep_flexed' => measurement.leftBicepFlexedCm,
       'right_bicep_relaxed' => measurement.rightBicepRelaxedCm,
