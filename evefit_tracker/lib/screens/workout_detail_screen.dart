@@ -9,6 +9,7 @@ import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
 import '../models/workout_type.dart';
 import '../services/exercise_filter_service.dart';
+import '../services/training_architecture.dart';
 import '../services/workout_taxonomy.dart';
 
 class WorkoutDetailScreen extends StatefulWidget {
@@ -281,6 +282,11 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                       muscleGroups: WorkoutTaxonomy.groupsFor(type).isEmpty
                           ? _entry.workout.muscleGroups
                           : WorkoutTaxonomy.groupsFor(type).join(', '),
+                      regionKey: _entry.workout.regionKey,
+                      groupKey: _entry.workout.groupKey,
+                      subgroupKey: _entry.workout.subgroupKey,
+                      specificMuscleKey: _entry.workout.specificMuscleKey,
+                      equipmentKey: _entry.workout.equipmentKey,
                       durationMinutes: int.tryParse(duration.text),
                       notes: notes.text.trim(),
                     ),
@@ -351,18 +357,19 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
     );
+    final selection = _selectionForWorkout(_entry.workout);
     return showModalBottomSheet<Exercise>(
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
       builder: (context) => StatefulBuilder(
         builder: (context, setSheetState) {
-          final base = ExerciseFilterService.filter(
+          final base = ExerciseFilterService.getAvailableExercises(
             exercises: exercises,
             trainingLocation: profile?.trainingLocation ?? '',
             availableEquipmentKeys: equipment,
-            workoutType: workoutType,
-            showAllWithoutEquipment: showAll,
+            selection: selection,
+            showAllExercises: showAll,
           );
           final filterOptions = ExerciseFilterService.contextualGroups(
             exercises: exercises,
@@ -374,7 +381,8 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
           if (!filterOptions.contains(filter)) {
             filter = filterOptions.first;
           }
-          final visible = base.where((exercise) {
+          final visible = base.where((item) {
+            final exercise = item.exercise;
             final matchesQuery = exercise.name.toLowerCase().contains(
               query.toLowerCase(),
             );
@@ -437,11 +445,16 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                         : ListView.builder(
                             itemCount: visible.length,
                             itemBuilder: (context, index) {
-                              final exercise = visible[index];
+                              final item = visible[index];
+                              final exercise = item.exercise;
                               return ListTile(
+                                enabled: item.isAvailable || showAll,
+                                isThreeLine: !item.isAvailable && showAll,
                                 title: Text(exercise.name),
                                 subtitle: Text(
-                                  exercise.description.isEmpty
+                                  !item.isAvailable && showAll
+                                      ? '${exercise.muscleGroup} · ${exercise.equipment}\n${item.unavailableReason}'
+                                      : exercise.description.isEmpty
                                       ? exercise.muscleGroup
                                       : '${exercise.muscleGroup} · ${exercise.equipment}',
                                 ),
@@ -477,6 +490,23 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
       'Outro' => false,
       _ => group.contains(filter.toLowerCase()),
     };
+  }
+
+  TrainingSelection _selectionForWorkout(Workout workout) {
+    if (workout.regionKey.isNotEmpty ||
+        workout.groupKey.isNotEmpty ||
+        workout.subgroupKey.isNotEmpty ||
+        workout.specificMuscleKey.isNotEmpty ||
+        workout.equipmentKey.isNotEmpty) {
+      return TrainingSelection(
+        regionKey: workout.regionKey,
+        groupKey: workout.groupKey,
+        subgroupKey: workout.subgroupKey,
+        specificMuscleKey: workout.specificMuscleKey,
+        equipmentKey: workout.equipmentKey,
+      );
+    }
+    return TrainingArchitecture.legacySelectionFor(workout.workoutType);
   }
 
   void _showExerciseInfo(Exercise exercise) {

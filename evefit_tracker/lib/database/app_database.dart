@@ -18,6 +18,7 @@ import '../models/workout_template.dart';
 import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/pin_service.dart';
+import '../services/training_architecture.dart';
 import '../services/training_location_service.dart';
 import '../services/workout_taxonomy.dart';
 import 'seed_data.dart';
@@ -58,7 +59,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 8,
+      version: 9,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -66,6 +67,7 @@ class AppDatabase {
         await _migrateV52(db);
         await _migrateV53(db);
         await _migrateV60(db);
+        await _migrateV70(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -89,6 +91,9 @@ class AppDatabase {
         if (oldVersion < 8) {
           await _migrateV60(db);
         }
+        if (oldVersion < 9) {
+          await _migrateV70(db);
+        }
       },
     );
   }
@@ -102,7 +107,7 @@ class AppDatabase {
       'CREATE TABLE body_measurements(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER, date TEXT NOT NULL, weight_kg REAL, body_fat_percentage REAL, muscle_mass_kg REAL, left_bicep_relaxed_cm REAL, left_bicep_flexed_cm REAL, right_bicep_relaxed_cm REAL, right_bicep_flexed_cm REAL, shoulders_cm REAL, chest_cm REAL, waist_cm REAL, side_hip_area_cm REAL, abdomen_cm REAL, hips_cm REAL, left_thigh_cm REAL, right_thigh_cm REAL, left_calf_cm REAL, right_calf_cm REAL, notes TEXT)',
     );
     await db.execute(
-      'CREATE TABLE workouts(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER, date TEXT NOT NULL, workout_type TEXT NOT NULL, duration_minutes INTEGER, notes TEXT)',
+      'CREATE TABLE workouts(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER, date TEXT NOT NULL, workout_type TEXT NOT NULL, duration_minutes INTEGER, notes TEXT, workout_region_key TEXT, workout_group_key TEXT, workout_subgroup_key TEXT, workout_specific_muscle_key TEXT, workout_equipment_key TEXT)',
     );
     await db.execute(
       'CREATE TABLE exercises(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, muscle_group TEXT NOT NULL, is_default INTEGER NOT NULL, notes TEXT)',
@@ -253,6 +258,133 @@ class AppDatabase {
     await _backfillSpecificWorkoutTypes(db);
     await _refreshDefaultWorkoutTypes(db);
     await _refreshDefaultExerciseDetails(db);
+  }
+
+  Future<void> _migrateV70(Database db) async {
+    await _addColumnIfMissing(db, 'workouts', 'workout_region_key', 'TEXT');
+    await _addColumnIfMissing(db, 'workouts', 'workout_group_key', 'TEXT');
+    await _addColumnIfMissing(db, 'workouts', 'workout_subgroup_key', 'TEXT');
+    await _addColumnIfMissing(
+      db,
+      'workouts',
+      'workout_specific_muscle_key',
+      'TEXT',
+    );
+    await _addColumnIfMissing(db, 'workouts', 'workout_equipment_key', 'TEXT');
+    await _createTrainingArchitectureTables(db);
+    await _seedTrainingArchitecture(db);
+    await _seedExercises(db);
+    await _refreshDefaultExerciseDetails(db);
+    await _backfillWorkoutArchitecture(db);
+  }
+
+  Future<void> _createTrainingArchitectureTables(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS body_regions(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, name TEXT NOT NULL, description TEXT, sort_order INTEGER NOT NULL, is_default INTEGER NOT NULL)',
+    );
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS workout_focuses(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, region_key TEXT, group_key TEXT, subgroup_key TEXT, specific_muscle_key TEXT, name TEXT NOT NULL, description TEXT, is_specific INTEGER NOT NULL, sort_order INTEGER NOT NULL, is_default INTEGER NOT NULL)',
+    );
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS equipment(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, name TEXT NOT NULL, category TEXT, description TEXT, is_default INTEGER NOT NULL)',
+    );
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS exercise_equipment(exercise_id INTEGER NOT NULL, equipment_key TEXT NOT NULL, is_required INTEGER NOT NULL, is_optional INTEGER NOT NULL, UNIQUE(exercise_id, equipment_key))',
+    );
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS exercise_muscles(exercise_id INTEGER NOT NULL, muscle_key TEXT NOT NULL, role TEXT NOT NULL, UNIQUE(exercise_id, muscle_key, role))',
+    );
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS exercise_focus_map(exercise_id INTEGER NOT NULL, focus_key TEXT NOT NULL, match_strength TEXT NOT NULL, UNIQUE(exercise_id, focus_key))',
+    );
+  }
+
+  Future<void> _seedTrainingArchitecture(Database db) async {
+    for (final region in TrainingArchitecture.regions) {
+      await db.insert('body_regions', {
+        'key': region.key,
+        'name': region.name,
+        'description': region.description,
+        'sort_order': region.sortOrder,
+        'is_default': 1,
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+    for (final equipment in TrainingArchitecture.equipment) {
+      await db.insert('equipment', {
+        'key': equipment.key,
+        'name': equipment.name,
+        'category': equipment.category,
+        'description': equipment.description,
+        'is_default': 1,
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+    for (final group in TrainingArchitecture.groups) {
+      await db.insert('workout_focuses', {
+        'key': group.key,
+        'region_key': group.regionKey,
+        'group_key': group.key,
+        'subgroup_key': '',
+        'specific_muscle_key': '',
+        'name': group.name,
+        'description': group.description,
+        'is_specific': 0,
+        'sort_order': group.sortOrder,
+        'is_default': 1,
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+    for (final subgroup in TrainingArchitecture.subgroups) {
+      await db.insert('workout_focuses', {
+        'key': subgroup.key,
+        'region_key': subgroup.regionKey,
+        'group_key': subgroup.groupKey,
+        'subgroup_key': subgroup.key,
+        'specific_muscle_key': '',
+        'name': subgroup.name,
+        'description': subgroup.description,
+        'is_specific': 1,
+        'sort_order': subgroup.sortOrder,
+        'is_default': 1,
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+    for (final muscle in TrainingArchitecture.muscles) {
+      await db.insert('workout_focuses', {
+        'key': muscle.key,
+        'region_key': muscle.regionKey,
+        'group_key': muscle.groupKey,
+        'subgroup_key': muscle.subgroupKey,
+        'specific_muscle_key': muscle.key,
+        'name': muscle.name,
+        'description': muscle.description,
+        'is_specific': 1,
+        'sort_order': muscle.sortOrder,
+        'is_default': 1,
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+  }
+
+  Future<void> _backfillWorkoutArchitecture(Database db) async {
+    final rows = await db.query(
+      'workouts',
+      columns: ['id', 'workout_type'],
+      where: 'workout_region_key IS NULL OR workout_region_key = ""',
+    );
+    for (final row in rows) {
+      final selection = TrainingArchitecture.legacySelectionFor(
+        row['workout_type'] as String? ?? '',
+      );
+      await db.update(
+        'workouts',
+        {
+          'workout_region_key': selection.regionKey,
+          'workout_group_key': selection.groupKey,
+          'workout_subgroup_key': selection.subgroupKey,
+          'workout_specific_muscle_key': selection.specificMuscleKey,
+          'workout_equipment_key': selection.equipmentKey,
+        },
+        where: 'id = ?',
+        whereArgs: [row['id']],
+      );
+    }
   }
 
   Future<void> _createProfileTrainingLocationsTable(Database db) async {
@@ -691,33 +823,44 @@ class AppDatabase {
         lower.contains('extensao de perna') ||
         lower.contains('curl de perna') ||
         lower.contains('adutor') ||
-        lower.contains('abdutor')) {
+        lower.contains('abdutor') ||
+        lower.contains('puxada alta') ||
+        lower.contains('remo sentado')) {
       return 'Máquina';
     }
     if (lower.contains('halter') ||
         lower.contains('goblet') ||
         lower.contains('arnold') ||
         lower.contains('kickback') ||
+        lower.contains('peso morto romeno com halteres') ||
         lower.contains('extensao unilateral') ||
         lower.contains('extensao francesa') ||
         lower.contains('aperto isometrico')) {
       return 'Halteres';
     }
-    if (lower.contains('barra') || lower.contains('supino fechado')) {
+    if (lower.contains('barra') ||
+        lower.contains('supino fechado') ||
+        lower.contains('agachamento com barra') ||
+        lower.contains('good morning') ||
+        lower.contains('triceps testa')) {
       return 'Barra, banco';
     }
     if (lower.contains('plate') || lower.contains('pinch')) {
       return 'Discos';
     }
     if (lower.contains('chin-up') ||
+        lower.contains('pull-up') ||
         lower.contains('dead hang') ||
+        lower.contains('elevacao de joelhos suspenso') ||
         lower.contains('remo invertido') ||
         lower.contains('towel grip')) {
       return 'Barra fixa';
     }
     if (lower.contains('elastico') ||
         lower.contains('rotacao externa') ||
-        lower.contains('rotacao interna')) {
+        lower.contains('rotacao interna') ||
+        lower.contains('pull-apart') ||
+        lower.contains('com elastico')) {
       return 'Elásticos';
     }
     if (lower.contains('jiu-jitsu') ||

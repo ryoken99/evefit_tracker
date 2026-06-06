@@ -4,6 +4,7 @@ import '../database/app_database.dart';
 import '../models/workout.dart';
 import '../models/workout_template.dart';
 import '../models/workout_type.dart';
+import '../services/training_architecture.dart';
 import '../services/workout_taxonomy.dart';
 import '../services/workout_template_service.dart';
 import '../widgets/workout_card.dart';
@@ -132,10 +133,14 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     final types = await widget.database.workoutTypes();
     final customTemplates = await widget.database.workoutTemplates();
     if (!mounted) return;
-    var type = template?.name ?? (types.isEmpty ? 'Outro' : types.first.name);
+    var selection = template == null
+        ? const TrainingSelection(regionKey: 'full_body')
+        : TrainingArchitecture.legacySelectionFor(template.name);
+    var type = TrainingArchitecture.labelForSelection(selection);
     int? workoutTypeId = _typeIdFor(types, type);
     var date = DateTime.now();
     var selectedGroups = <String>{};
+    final workoutName = TextEditingController(text: type);
     final duration = TextEditingController();
     final notes = TextEditingController();
     final savedEntry = await showModalBottomSheet<WorkoutEntry>(
@@ -176,23 +181,133 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 ),
               ),
               const SizedBox(height: 10),
-              InputDecorator(
-                decoration: const InputDecoration(labelText: 'Tipo de treino'),
-                child: ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(type),
-                  subtitle: Text(
-                    WorkoutTaxonomy.sectionFor(type)?.title ?? 'Personalizado',
-                  ),
-                  trailing: const Icon(Icons.keyboard_arrow_down),
-                  onTap: () async {
-                    final picked = await _pickWorkoutType(types);
-                    if (picked == null) return;
-                    setSheetState(() {
-                      type = picked.name;
-                      workoutTypeId = picked.id;
-                    });
-                  },
+              _ChoiceTile(
+                label: 'Região corporal / domínio',
+                value: _regionName(selection.regionKey),
+                onTap: () async {
+                  final picked = await _pickFromList<TrainingRegion>(
+                    title: 'Escolher região',
+                    items: TrainingArchitecture.regions,
+                    labelFor: (item) => item.name,
+                  );
+                  if (picked == null) return;
+                  setSheetState(() {
+                    selection = TrainingSelection(regionKey: picked.key);
+                    type = TrainingArchitecture.labelForSelection(selection);
+                    workoutName.text = type;
+                    workoutTypeId = _typeIdFor(types, type);
+                  });
+                },
+              ),
+              const SizedBox(height: 8),
+              _ChoiceTile(
+                label: 'Grupo principal',
+                value: selection.groupKey.isEmpty
+                    ? 'Escolher grupo'
+                    : _groupName(selection.groupKey),
+                enabled: selection.regionKey.isNotEmpty,
+                onTap: () async {
+                  final groups = TrainingArchitecture.groupsForRegion(
+                    selection.regionKey,
+                  );
+                  final picked = await _pickFromList<TrainingGroup>(
+                    title: 'Escolher grupo principal',
+                    items: groups,
+                    labelFor: (item) => item.name,
+                  );
+                  if (picked == null) return;
+                  setSheetState(() {
+                    selection = TrainingSelection(
+                      regionKey: picked.regionKey,
+                      groupKey: picked.key,
+                    );
+                    type = TrainingArchitecture.labelForSelection(selection);
+                    workoutName.text = type;
+                    workoutTypeId = _typeIdFor(types, type);
+                  });
+                },
+              ),
+              const SizedBox(height: 8),
+              _ChoiceTile(
+                label: 'Subgrupo / foco',
+                value: selection.subgroupKey.isEmpty
+                    ? 'Opcional'
+                    : _subgroupName(selection.subgroupKey),
+                enabled: selection.groupKey.isNotEmpty,
+                onTap: () async {
+                  final subgroups = TrainingArchitecture.subgroupsForGroup(
+                    selection.groupKey,
+                  );
+                  final picked = await _pickFromList<TrainingSubgroup>(
+                    title: 'Escolher subgrupo',
+                    items: subgroups,
+                    labelFor: (item) => item.name,
+                    allowClear: true,
+                  );
+                  setSheetState(() {
+                    selection = selection.copyWith(
+                      subgroupKey: picked?.key ?? '',
+                      specificMuscleKey: '',
+                    );
+                    type = TrainingArchitecture.labelForSelection(selection);
+                    workoutName.text = type;
+                    workoutTypeId = _typeIdFor(types, type);
+                  });
+                },
+              ),
+              const SizedBox(height: 8),
+              _ChoiceTile(
+                label: 'Músculo específico',
+                value: selection.specificMuscleKey.isEmpty
+                    ? 'Opcional'
+                    : _muscleName(selection.specificMuscleKey),
+                enabled: selection.subgroupKey.isNotEmpty,
+                onTap: () async {
+                  final muscles = TrainingArchitecture.musclesForSubgroup(
+                    selection.subgroupKey,
+                  );
+                  final picked = await _pickFromList<TrainingMuscle>(
+                    title: 'Escolher músculo específico',
+                    items: muscles,
+                    labelFor: (item) => item.name,
+                    allowClear: true,
+                  );
+                  setSheetState(() {
+                    selection = selection.copyWith(
+                      specificMuscleKey: picked?.key ?? '',
+                    );
+                    type = TrainingArchitecture.labelForSelection(selection);
+                    workoutName.text = type;
+                    workoutTypeId = _typeIdFor(types, type);
+                  });
+                },
+              ),
+              const SizedBox(height: 8),
+              _ChoiceTile(
+                label: 'Equipamento/filtro',
+                value: selection.equipmentKey.isEmpty
+                    ? 'Opcional'
+                    : _equipmentName(selection.equipmentKey),
+                onTap: () async {
+                  final picked = await _pickFromList<TrainingEquipment>(
+                    title: 'Escolher equipamento',
+                    items: TrainingArchitecture.equipment,
+                    labelFor: (item) => item.name,
+                    allowClear: true,
+                  );
+                  setSheetState(() {
+                    selection = selection.copyWith(
+                      equipmentKey: picked?.key ?? '',
+                    );
+                  });
+                },
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: workoutName,
+                decoration: const InputDecoration(
+                  labelText: 'Nome do treino',
+                  prefixIcon: Icon(Icons.edit_outlined),
                 ),
               ),
               const SizedBox(height: 8),
@@ -263,7 +378,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       description: notes.text.trim(),
                       workoutTypeId: workoutTypeId,
                       muscleGroups: selectedGroups.isEmpty
-                          ? _typeGroupsFor(types, type)
+                          ? _groupsForSelection(selection, types, type)
                           : selectedGroups.join(', '),
                       createdAt: DateTime.now(),
                       updatedAt: DateTime.now(),
@@ -293,11 +408,18 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 onPressed: () async {
                   final workout = Workout(
                     date: date,
-                    workoutType: type,
+                    workoutType: workoutName.text.trim().isEmpty
+                        ? type
+                        : workoutName.text.trim(),
                     workoutTypeId: workoutTypeId,
                     muscleGroups: selectedGroups.isEmpty
-                        ? _typeGroupsFor(types, type)
+                        ? _groupsForSelection(selection, types, type)
                         : selectedGroups.join(', '),
+                    regionKey: selection.regionKey,
+                    groupKey: selection.groupKey,
+                    subgroupKey: selection.subgroupKey,
+                    specificMuscleKey: selection.specificMuscleKey,
+                    equipmentKey: selection.equipmentKey,
                     durationMinutes: int.tryParse(duration.text),
                     notes: notes.text.trim(),
                   );
@@ -315,6 +437,12 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                         id: id,
                         date: workout.date,
                         workoutType: workout.workoutType,
+                        muscleGroups: workout.muscleGroups,
+                        regionKey: workout.regionKey,
+                        groupKey: workout.groupKey,
+                        subgroupKey: workout.subgroupKey,
+                        specificMuscleKey: workout.specificMuscleKey,
+                        equipmentKey: workout.equipmentKey,
                         durationMinutes: workout.durationMinutes,
                         notes: workout.notes,
                       ),
@@ -330,6 +458,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
         ),
       ),
     );
+    workoutName.dispose();
     duration.dispose();
     notes.dispose();
     if (savedEntry != null && mounted) {
@@ -360,127 +489,102 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     return WorkoutTaxonomy.groupsFor(name).join(', ');
   }
 
-  Future<WorkoutType?> _pickWorkoutType(List<WorkoutType> databaseTypes) async {
-    final now = DateTime.now();
-    final byName = {
-      for (final type in databaseTypes) type.name: type,
-      for (final name in WorkoutTaxonomy.defaultTypeNames)
-        name: WorkoutType(
-          name: name,
-          muscleGroups: WorkoutTaxonomy.groupsFor(name).join(', '),
-          isDefault: true,
-          createdAt: now,
-          updatedAt: now,
-        ),
-    };
-    var query = '';
-    return showModalBottomSheet<WorkoutType>(
+  String _groupsForSelection(
+    TrainingSelection selection,
+    List<WorkoutType> types,
+    String fallbackType,
+  ) {
+    final values = [
+      if (selection.regionKey.isNotEmpty) _regionName(selection.regionKey),
+      if (selection.groupKey.isNotEmpty) _groupName(selection.groupKey),
+      if (selection.subgroupKey.isNotEmpty) _subgroupName(selection.subgroupKey),
+      if (selection.specificMuscleKey.isNotEmpty)
+        _muscleName(selection.specificMuscleKey),
+      if (selection.equipmentKey.isNotEmpty)
+        _equipmentName(selection.equipmentKey),
+    ].where((item) => item.isNotEmpty).join(', ');
+    if (values.isNotEmpty) return values;
+    return _typeGroupsFor(types, fallbackType);
+  }
+
+  Future<T?> _pickFromList<T>({
+    required String title,
+    required List<T> items,
+    required String Function(T item) labelFor,
+    bool allowClear = false,
+  }) async {
+    if (items.isEmpty && !allowClear) return null;
+    return showModalBottomSheet<T?>(
       context: context,
-      isScrollControlled: true,
       showDragHandle: true,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setSheetState) {
-          final normalizedQuery = WorkoutTaxonomy.normalize(query);
-          bool matches(String name) {
-            if (normalizedQuery.isEmpty) return true;
-            final section = WorkoutTaxonomy.sectionFor(name)?.title ?? '';
-            return WorkoutTaxonomy.normalize(
-              '$section $name',
-            ).contains(normalizedQuery);
-          }
-
-          final customTypes =
-              byName.values
-                  .where(
-                    (type) => WorkoutTaxonomy.sectionFor(type.name) == null,
-                  )
-                  .where((type) => matches(type.name))
-                  .toList()
-                ..sort((a, b) => a.name.compareTo(b.name));
-
-          return SafeArea(
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(
-                16,
-                0,
-                16,
-                MediaQuery.viewInsetsOf(context).bottom + 16,
-              ),
-              child: SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.82,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Selecionar tipo de treino',
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    const SizedBox(height: 12),
-                    TextField(
-                      autofocus: true,
-                      decoration: const InputDecoration(
-                        labelText: 'Pesquisar tipo',
-                        prefixIcon: Icon(Icons.search),
-                      ),
-                      onChanged: (value) =>
-                          setSheetState(() => query = value.trim()),
-                    ),
-                    const SizedBox(height: 12),
-                    Expanded(
-                      child: ListView(
-                        children: [
-                          for (final section in WorkoutTaxonomy.sections) ...[
-                            if (section.types.any(matches)) ...[
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                  top: 12,
-                                  bottom: 4,
-                                ),
-                                child: Text(
-                                  section.title,
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(fontWeight: FontWeight.w700),
-                                ),
-                              ),
-                              for (final name in section.types.where(matches))
-                                ListTile(
-                                  dense: true,
-                                  title: Text(name),
-                                  onTap: () =>
-                                      Navigator.pop(context, byName[name]),
-                                ),
-                            ],
-                          ],
-                          if (customTypes.isNotEmpty) ...[
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 12,
-                                bottom: 4,
-                              ),
-                              child: Text(
-                                'Personalizado',
-                                style: Theme.of(context).textTheme.titleSmall
-                                    ?.copyWith(fontWeight: FontWeight.w700),
-                              ),
-                            ),
-                            for (final type in customTypes)
-                              ListTile(
-                                dense: true,
-                                title: Text(type.name),
-                                onTap: () => Navigator.pop(context, type),
-                              ),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+      builder: (context) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: Text(title, style: Theme.of(context).textTheme.titleLarge),
             ),
-          );
-        },
+            if (allowClear)
+              ListTile(
+                leading: const Icon(Icons.clear),
+                title: const Text('Sem filtro específico'),
+                onTap: () => Navigator.pop(context),
+              ),
+            for (final item in items)
+              ListTile(
+                title: Text(labelFor(item)),
+                onTap: () => Navigator.pop(context, item),
+              ),
+          ],
+        ),
       ),
     );
+  }
+
+  String _regionName(String key) {
+    return TrainingArchitecture.regions
+        .firstWhere(
+          (item) => item.key == key,
+          orElse: () => TrainingArchitecture.regions.first,
+        )
+        .name;
+  }
+
+  String _groupName(String key) {
+    return TrainingArchitecture.groups
+        .firstWhere(
+          (item) => item.key == key,
+          orElse: () => TrainingArchitecture.groups.first,
+        )
+        .name;
+  }
+
+  String _subgroupName(String key) {
+    return TrainingArchitecture.subgroups
+        .firstWhere(
+          (item) => item.key == key,
+          orElse: () => TrainingArchitecture.subgroups.first,
+        )
+        .name;
+  }
+
+  String _muscleName(String key) {
+    return TrainingArchitecture.muscles
+        .firstWhere(
+          (item) => item.key == key,
+          orElse: () => TrainingArchitecture.muscles.first,
+        )
+        .name;
+  }
+
+  String _equipmentName(String key) {
+    return TrainingArchitecture.equipment
+        .firstWhere(
+          (item) => item.key == key,
+          orElse: () => TrainingArchitecture.equipment.first,
+        )
+        .name;
   }
 
   Future<String?> _askTemplateName() async {
@@ -544,6 +648,34 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
       isDefault: false,
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
+    );
+  }
+}
+
+class _ChoiceTile extends StatelessWidget {
+  const _ChoiceTile({
+    required this.label,
+    required this.value,
+    required this.onTap,
+    this.enabled = true,
+  });
+
+  final String label;
+  final String value;
+  final VoidCallback onTap;
+  final bool enabled;
+
+  @override
+  Widget build(BuildContext context) {
+    return InputDecorator(
+      decoration: InputDecoration(labelText: label),
+      child: ListTile(
+        enabled: enabled,
+        contentPadding: EdgeInsets.zero,
+        title: Text(value),
+        trailing: const Icon(Icons.keyboard_arrow_down),
+        onTap: enabled ? onTap : null,
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import '../models/exercise.dart';
 import '../models/workout_type.dart';
+import 'training_architecture.dart';
 import 'workout_taxonomy.dart';
 
 class ExerciseFilterService {
@@ -34,14 +35,27 @@ class ExerciseFilterService {
     bool showAllWithoutEquipment = false,
   }) {
     if (showAllWithoutEquipment) return exercises;
-    return exercises.where((exercise) {
-      if (!_matchesWorkoutType(exercise, workoutType)) return false;
-      return _matchesEquipment(
-        exercise,
-        trainingLocation,
-        availableEquipmentKeys,
-      );
-    }).toList();
+    if (workoutType != null &&
+        TrainingArchitecture.legacySelectionFor(workoutType.name).regionKey ==
+            'custom' &&
+        workoutType.muscleGroups.trim().isNotEmpty) {
+      return exercises.where((exercise) {
+        if (!_matchesWorkoutType(exercise, workoutType)) return false;
+        return _matchesEquipment(
+          exercise,
+          trainingLocation,
+          availableEquipmentKeys,
+        );
+      }).toList();
+    }
+    final selection = _selectionForWorkoutType(workoutType);
+    return getAvailableExercises(
+      exercises: exercises,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+      selection: selection,
+      showAllExercises: showAllWithoutEquipment,
+    ).map((item) => item.exercise).toList();
   }
 
   static List<String> contextualGroups({
@@ -61,6 +75,38 @@ class ExerciseFilterService {
     final groups = visible.map((item) => item.muscleGroup).toSet().toList()
       ..sort();
     return ['Todos', ...groups];
+  }
+
+  static List<ExerciseAvailability> getAvailableExercises({
+    required List<Exercise> exercises,
+    required String trainingLocation,
+    required Set<String> availableEquipmentKeys,
+    required TrainingSelection selection,
+    required bool showAllExercises,
+  }) {
+    final availability = exercises.map((exercise) {
+      final matchesSelection = TrainingArchitecture.matchesSelection(
+        exercise,
+        selection,
+      );
+      final matchesEquipment = _matchesEquipment(
+        exercise,
+        trainingLocation,
+        availableEquipmentKeys,
+      );
+      final isAvailable = matchesSelection && matchesEquipment;
+      return ExerciseAvailability(
+        exercise: exercise,
+        isAvailable: isAvailable,
+        unavailableReason: isAvailable
+            ? ''
+            : !matchesSelection
+            ? 'Indisponível pelo filtro anatómico selecionado.'
+            : 'Indisponível com o teu equipamento/local atual.',
+      );
+    }).toList();
+    if (showAllExercises) return availability;
+    return availability.where((item) => item.isAvailable).toList();
   }
 
   static bool _matchesWorkoutType(Exercise exercise, WorkoutType? workoutType) {
@@ -84,6 +130,15 @@ class ExerciseFilterService {
       secondaryGroups: exercise.secondaryMuscleGroups,
       equipment: exercise.equipment,
     );
+  }
+
+  static TrainingSelection _selectionForWorkoutType(WorkoutType? workoutType) {
+    if (workoutType == null) return const TrainingSelection();
+    final selection = TrainingArchitecture.legacySelectionFor(workoutType.name);
+    if (selection.regionKey != 'custom' || workoutType.muscleGroups.isEmpty) {
+      return selection;
+    }
+    return const TrainingSelection();
   }
 
   static bool _matchesEquipment(
@@ -125,6 +180,10 @@ class ExerciseFilterService {
     if (availableEquipmentKeys.isEmpty) {
       return _containsAny(exercise, ['peso corporal', 'nenhum equipamento']);
     }
+    final exerciseEquipment = TrainingArchitecture.tagsForExercise(
+      exercise,
+    ).equipmentKeys;
+    if (exerciseEquipment.any(availableEquipmentKeys.contains)) return true;
     for (final key in availableEquipmentKeys) {
       final aliases = _equipmentAliases[key] ?? [key];
       if (_containsAny(exercise, aliases)) return true;
