@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../database/app_database.dart';
 import '../models/body_measurement.dart';
+import '../models/dashboard_widget_config.dart';
 import '../models/user_profile.dart';
 import '../services/csv_export_service.dart';
-import '../services/dashboard_stats_service.dart';
-import 'settings_screen.dart';
+import '../services/dashboard_metric_service.dart';
 import '../widgets/progress_chart.dart';
 import '../widgets/stat_card.dart';
+import 'settings_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({
@@ -15,6 +16,7 @@ class DashboardScreen extends StatefulWidget {
     required this.database,
     required this.onProfileLocked,
   });
+
   final AppDatabase database;
   final VoidCallback onProfileLocked;
 
@@ -30,46 +32,56 @@ class _DashboardScreenState extends State<DashboardScreen> {
         widget.database.profile(),
         widget.database.measurements(),
         widget.database.workoutsThisWeek(),
+        widget.database.dashboardWidgets(),
       ]),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         }
+
         final profile = snapshot.data![0] as UserProfile;
         final measurements = snapshot.data![1] as List<BodyMeasurement>;
         final workoutsThisWeek = snapshot.data![2] as int;
+        final dashboardWidgets =
+            snapshot.data![3] as List<DashboardWidgetConfig>;
         final latest = measurements.isEmpty ? null : measurements.first;
         final days = DateTime.now().difference(profile.startDate).inDays;
+        final visibleWidgets = dashboardWidgets
+            .where((item) => item.isVisible)
+            .take(12)
+            .toList();
 
         return RefreshIndicator(
           onRefresh: () async => setState(() {}),
           child: ListView(
             padding: const EdgeInsets.all(16),
             children: [
-              Text(
-                'EveFit Tracker',
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: IconButton(
-                  tooltip: 'Definições',
-                  onPressed: () async {
-                    await Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => SettingsScreen(
-                          database: widget.database,
-                          onProfileLocked: widget.onProfileLocked,
-                          onProfileChanged: (_) => setState(() {}),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'EveFit Tracker',
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  IconButton(
+                    tooltip: 'Definições',
+                    onPressed: () async {
+                      await Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => SettingsScreen(
+                            database: widget.database,
+                            onProfileLocked: widget.onProfileLocked,
+                            onProfileChanged: (_) => setState(() {}),
+                          ),
                         ),
-                      ),
-                    );
-                    setState(() {});
-                  },
-                  icon: const Icon(Icons.settings_outlined),
-                ),
+                      );
+                      setState(() {});
+                    },
+                    icon: const Icon(Icons.settings_outlined),
+                  ),
+                ],
               ),
               const SizedBox(height: 4),
               Text(
@@ -82,12 +94,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   context,
                 ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
               ),
-              const SizedBox(height: 14),
-              const Text(
-                'Objetivo atual: construir V-shape sem perder composição corporal.',
-              ),
-              const SizedBox(height: 6),
-              const Text('Fase atual: Construção de V-shape'),
               const SizedBox(height: 16),
               Card(
                 child: Padding(
@@ -119,32 +125,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: [
-                  StatCard(
-                    label: 'Peso atual',
-                    value: _value(latest?.weightKg, 'kg'),
-                  ),
-                  StatCard(
-                    label: 'Braço contraído',
-                    value: _value(
-                      latest == null
-                          ? null
-                          : DashboardStatsService.flexedArmCm(latest),
-                      'cm',
+                  for (final item in visibleWidgets)
+                    StatCard(
+                      label: item.title,
+                      value: DashboardMetricService.valueFor(
+                        item.metricKey,
+                        latest,
+                        workoutsThisWeek: workoutsThisWeek,
+                        daysSinceStart: days,
+                      ),
                     ),
-                  ),
-                  StatCard(
-                    label: 'Ombros',
-                    value: _value(latest?.shouldersCm, 'cm'),
-                  ),
-                  StatCard(
-                    label: 'Zona lateral',
-                    value: _value(latest?.sideHipAreaCm, 'cm'),
-                  ),
-                  StatCard(
-                    label: 'Treinos esta semana',
-                    value: '$workoutsThisWeek',
-                  ),
-                  StatCard(label: 'Dias desde início', value: '$days'),
                 ],
               ),
               const SizedBox(height: 16),
@@ -162,27 +152,31 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 icon: const Icon(Icons.file_download_outlined),
                 label: const Text('Exportar dados'),
               ),
+              const SizedBox(height: 10),
+              OutlinedButton.icon(
+                onPressed: () => _editDashboard(dashboardWidgets),
+                icon: const Icon(Icons.tune_outlined),
+                label: const Text('Editar Dashboard'),
+              ),
               const SizedBox(height: 16),
-              ProgressChart(
-                title: 'Peso ao longo do tempo',
-                values: measurements.map((m) => m.weightKg).toList(),
+              _metricChart('Peso ao longo do tempo', 'weight', measurements),
+              const SizedBox(height: 10),
+              _metricChart(
+                'Braço contraído ao longo do tempo',
+                'avg_biceps_flexed',
+                measurements,
               ),
               const SizedBox(height: 10),
-              ProgressChart(
-                title: 'Braço contraído ao longo do tempo',
-                values: measurements
-                    .map(DashboardStatsService.flexedArmCm)
-                    .toList(),
+              _metricChart(
+                'Zona lateral acima da anca ao longo do tempo',
+                'side_hip_area',
+                measurements,
               ),
               const SizedBox(height: 10),
-              ProgressChart(
-                title: 'Zona lateral acima da anca ao longo do tempo',
-                values: measurements.map((m) => m.sideHipAreaCm).toList(),
-              ),
-              const SizedBox(height: 10),
-              ProgressChart(
-                title: 'Ombros ao longo do tempo',
-                values: measurements.map((m) => m.shouldersCm).toList(),
+              _metricChart(
+                'Ombros ao longo do tempo',
+                'shoulders',
+                measurements,
               ),
             ],
           ),
@@ -191,6 +185,66 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 
-  String _value(double? value, String unit) =>
-      value == null ? '-' : '${value.toStringAsFixed(1)} $unit';
+  Widget _metricChart(
+    String title,
+    String metricKey,
+    List<BodyMeasurement> measurements,
+  ) {
+    return ProgressChart(
+      title: title,
+      values: DashboardMetricService.valuesFor(metricKey, measurements),
+    );
+  }
+
+  Future<void> _editDashboard(List<DashboardWidgetConfig> widgets) async {
+    final changed = await showModalBottomSheet<bool>(
+      context: context,
+      showDragHandle: true,
+      isScrollControlled: true,
+      builder: (context) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+          children: [
+            Text(
+              'Editar Dashboard',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 8),
+            for (final item in widgets)
+              SwitchListTile(
+                value: item.isVisible,
+                title: Text(item.title),
+                subtitle: Text(item.metricKey),
+                onChanged: (value) async {
+                  await widget.database.updateDashboardWidget(
+                    DashboardWidgetConfig(
+                      id: item.id,
+                      profileId: item.profileId,
+                      metricKey: item.metricKey,
+                      title: item.title,
+                      isVisible: value,
+                      sortOrder: item.sortOrder,
+                      createdAt: item.createdAt,
+                      updatedAt: DateTime.now(),
+                    ),
+                  );
+                  if (context.mounted) Navigator.pop(context, true);
+                },
+              ),
+            const SizedBox(height: 8),
+            OutlinedButton.icon(
+              onPressed: () async {
+                await widget.database.resetDashboardWidgets();
+                if (context.mounted) Navigator.pop(context, true);
+              },
+              icon: const Icon(Icons.restart_alt),
+              label: const Text('Restaurar defaults'),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (changed == true) setState(() {});
+  }
 }

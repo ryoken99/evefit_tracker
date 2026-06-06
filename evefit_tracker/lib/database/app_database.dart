@@ -2,14 +2,19 @@ import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
 
 import '../models/body_measurement.dart';
+import '../models/dashboard_widget_config.dart';
 import '../models/exercise.dart';
 import '../models/goal.dart';
+import '../models/muscle_group.dart';
 import '../models/profile.dart';
 import '../models/progress_photo.dart';
 import '../models/user_profile.dart';
 import '../models/workout.dart';
 import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
+import '../models/workout_template.dart';
+import '../models/workout_type.dart';
+import '../services/dashboard_metric_service.dart';
 import '../services/pin_service.dart';
 import 'seed_data.dart';
 
@@ -49,9 +54,10 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 3,
+      version: 4,
       onCreate: (db, version) async {
         await _createTables(db);
+        await _migrateV5(db);
         await _seedExercises(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
@@ -60,6 +66,9 @@ class AppDatabase {
         }
         if (oldVersion < 3) {
           await _migrateProfiles(db);
+        }
+        if (oldVersion < 4) {
+          await _migrateV5(db);
         }
       },
     );
@@ -104,15 +113,83 @@ class AppDatabase {
   }
 
   Future<void> _seedExercises(Database db) async {
+    final now = DateTime.now().toIso8601String();
     for (final entry in SeedData.exercisesByGroup.entries) {
       for (final name in entry.value) {
         await db.insert(
           'exercises',
-          Exercise(name: name, muscleGroup: entry.key, isDefault: true).toMap(),
+          Exercise(
+            name: name,
+            muscleGroup: entry.key,
+            isDefault: true,
+            equipment: _equipmentFor(name),
+            description: _descriptionFor(name, entry.key),
+            executionSteps: _stepsFor(name),
+            commonMistakes:
+                'Evitar balanço excessivo, amplitude incompleta e carga que obrigue a perder a postura.',
+            safetyNotes:
+                'Começa leve, controla a fase excêntrica e pára se houver dor articular.',
+            createdAt: DateTime.parse(now),
+            updatedAt: DateTime.parse(now),
+          ).toMap(),
           conflictAlgorithm: ConflictAlgorithm.ignore,
         );
       }
     }
+  }
+
+  Future<void> _migrateV5(Database db) async {
+    await _createDashboardWidgetsTable(db);
+    await _createWorkoutTypesTable(db);
+    await _createMuscleGroupsTable(db);
+    await _createWorkoutTemplatesTables(db);
+
+    for (final column in _bodyMeasurementExtraColumns.entries) {
+      await _addColumnIfMissing(
+        db,
+        'body_measurements',
+        column.key,
+        column.value,
+      );
+    }
+    for (final column in _exerciseExtraColumns.entries) {
+      await _addColumnIfMissing(db, 'exercises', column.key, column.value);
+    }
+    await _addColumnIfMissing(db, 'workouts', 'workout_type_id', 'INTEGER');
+    await _addColumnIfMissing(db, 'workouts', 'muscle_groups', 'TEXT');
+    for (final column in _goalExtraColumns.entries) {
+      await _addColumnIfMissing(db, 'goals', column.key, column.value);
+    }
+    await _seedMuscleGroups(db);
+    await _seedWorkoutTypes(db);
+    await _backfillExerciseDetails(db);
+  }
+
+  Future<void> _createDashboardWidgetsTable(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS dashboard_widgets(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER NOT NULL, metric_key TEXT NOT NULL, title TEXT NOT NULL, is_visible INTEGER NOT NULL, sort_order INTEGER NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(profile_id, metric_key))',
+    );
+  }
+
+  Future<void> _createWorkoutTypesTable(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS workout_types(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER, name TEXT NOT NULL, description TEXT, is_default INTEGER NOT NULL, is_hidden INTEGER NOT NULL DEFAULT 0, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(profile_id, name))',
+    );
+  }
+
+  Future<void> _createMuscleGroupsTable(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS muscle_groups(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, parent_group TEXT, description TEXT, is_default INTEGER NOT NULL)',
+    );
+  }
+
+  Future<void> _createWorkoutTemplatesTables(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS workout_templates(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER NOT NULL, name TEXT NOT NULL, description TEXT, workout_type_id INTEGER, muscle_groups TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL)',
+    );
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS workout_template_exercises(id INTEGER PRIMARY KEY AUTOINCREMENT, template_id INTEGER NOT NULL, exercise_id INTEGER NOT NULL, sort_order INTEGER NOT NULL, default_sets INTEGER, default_reps INTEGER, default_weight_kg REAL, notes TEXT, FOREIGN KEY(template_id) REFERENCES workout_templates(id) ON DELETE CASCADE, FOREIGN KEY(exercise_id) REFERENCES exercises(id))',
+    );
   }
 
   Future<void> _migrateProfiles(Database db) async {
@@ -162,6 +239,149 @@ class AppDatabase {
       whereArgs: [''],
     );
   }
+
+  static const _bodyMeasurementExtraColumns = {
+    'bmi': 'REAL',
+    'muscle_percentage': 'REAL',
+    'body_water_percentage': 'REAL',
+    'protein_percentage': 'REAL',
+    'subcutaneous_fat_percentage': 'REAL',
+    'visceral_fat': 'REAL',
+    'bone_mass_kg': 'REAL',
+    'basal_metabolism_kcal': 'REAL',
+    'body_age': 'REAL',
+    'neck_cm': 'REAL',
+    'left_tricep_cm': 'REAL',
+    'right_tricep_cm': 'REAL',
+    'left_forearm_cm': 'REAL',
+    'right_forearm_cm': 'REAL',
+    'left_wrist_cm': 'REAL',
+    'right_wrist_cm': 'REAL',
+    'left_hand_cm': 'REAL',
+    'right_hand_cm': 'REAL',
+    'upper_chest_cm': 'REAL',
+    'mid_chest_cm': 'REAL',
+    'lower_chest_cm': 'REAL',
+    'back_width_cm': 'REAL',
+    'glutes_cm': 'REAL',
+    'left_upper_thigh_cm': 'REAL',
+    'left_mid_thigh_cm': 'REAL',
+    'right_upper_thigh_cm': 'REAL',
+    'right_mid_thigh_cm': 'REAL',
+    'left_ankle_cm': 'REAL',
+    'right_ankle_cm': 'REAL',
+    'skinfold_chest_mm': 'REAL',
+    'skinfold_abdominal_mm': 'REAL',
+    'skinfold_suprailiac_mm': 'REAL',
+    'skinfold_subscapular_mm': 'REAL',
+    'skinfold_triceps_mm': 'REAL',
+    'skinfold_midaxillary_mm': 'REAL',
+    'skinfold_thigh_mm': 'REAL',
+  };
+
+  static const _exerciseExtraColumns = {
+    'primary_muscle_group': 'TEXT',
+    'secondary_muscle_groups': 'TEXT',
+    'equipment': 'TEXT',
+    'description': 'TEXT',
+    'execution_steps': 'TEXT',
+    'common_mistakes': 'TEXT',
+    'safety_notes': 'TEXT',
+    'is_hidden': 'INTEGER NOT NULL DEFAULT 0',
+    'created_at': 'TEXT',
+    'updated_at': 'TEXT',
+  };
+
+  static const _goalExtraColumns = {
+    'metric_key': 'TEXT',
+    'initial_value': 'REAL',
+    'target_value': 'REAL',
+    'unit': 'TEXT',
+    'start_date': 'TEXT',
+    'target_date': 'TEXT',
+    'manual_progress': 'REAL',
+    'notes': 'TEXT',
+  };
+
+  Future<void> _seedMuscleGroups(Database db) async {
+    const groups = {
+      'Costas': 'Dorsal, romboides, trapézio e lombar.',
+      'Ombros':
+          'Deltoide anterior, lateral, posterior e estabilidade escapular.',
+      'Peito': 'Peitoral superior, médio e inferior.',
+      'Bíceps e braquial': 'Bíceps, braquial e braquiorradial.',
+      'Tríceps': 'Cabeça longa, lateral e medial do tríceps.',
+      'Antebraço, punho, mão e pega':
+          'Flexores/extensores do punho e força de pega.',
+      'Core e abdominal': 'Abdómen, oblíquos, transverso e lombar.',
+      'Pernas': 'Quadricípite, posterior, glúteos, adutores e gémeos.',
+      'Cardio': 'Condicionamento e resistência.',
+    };
+    for (final entry in groups.entries) {
+      await db.insert(
+        'muscle_groups',
+        MuscleGroup(
+          name: entry.key,
+          parentGroup: '',
+          description: entry.value,
+          isDefault: true,
+        ).toMap()..remove('id'),
+        conflictAlgorithm: ConflictAlgorithm.ignore,
+      );
+    }
+  }
+
+  Future<void> _seedWorkoutTypes(Database db) async {
+    final now = DateTime.now();
+    for (final name in SeedData.workoutTypes) {
+      await db.insert(
+        'workout_types',
+        WorkoutType(
+          name: name,
+          description: 'Tipo de treino predefinido.',
+          isDefault: true,
+          createdAt: now,
+          updatedAt: now,
+        ).toMap()..remove('id'),
+        conflictAlgorithm: ConflictAlgorithm.ignore,
+      );
+    }
+  }
+
+  Future<void> _backfillExerciseDetails(Database db) async {
+    await db.rawUpdate(
+      'UPDATE exercises SET primary_muscle_group = muscle_group WHERE primary_muscle_group IS NULL OR primary_muscle_group = ""',
+    );
+    await db.rawUpdate(
+      'UPDATE exercises SET description = "Exercício de força para desenvolver o grupo muscular principal com técnica controlada." WHERE description IS NULL OR description = ""',
+    );
+    await db.rawUpdate(
+      'UPDATE exercises SET execution_steps = "1. Ajusta a posição inicial. 2. Mantém o tronco estável. 3. Executa a repetição com controlo. 4. Regressa sem perder tensão." WHERE execution_steps IS NULL OR execution_steps = ""',
+    );
+    await db.rawUpdate(
+      'UPDATE exercises SET common_mistakes = "Carga excessiva, balanço do corpo e amplitude incompleta." WHERE common_mistakes IS NULL OR common_mistakes = ""',
+    );
+    await db.rawUpdate(
+      'UPDATE exercises SET safety_notes = "Usa carga progressiva e interrompe se surgir dor articular." WHERE safety_notes IS NULL OR safety_notes = ""',
+    );
+  }
+
+  String _equipmentFor(String name) {
+    final lower = name.toLowerCase();
+    if (lower.contains('halter')) return 'Halteres';
+    if (lower.contains('barra')) return 'Barra';
+    if (lower.contains('máquina') || lower.contains('cabo')) {
+      return 'Máquina/cabo';
+    }
+    if (lower.contains('passadeira')) return 'Passadeira';
+    return 'Peso corporal ou equipamento simples';
+  }
+
+  String _descriptionFor(String name, String group) =>
+      '$name trabalha principalmente $group com foco em controlo, amplitude e progressão.';
+
+  String _stepsFor(String name) =>
+      '1. Prepara a posição inicial. 2. Faz $name com movimento controlado. 3. Mantém a respiração e a postura. 4. Regressa devagar à posição inicial.';
 
   Future<void> _addColumnIfMissing(
     Database db,
@@ -232,6 +452,7 @@ class AppDatabase {
         profile.toMap()..remove('id'),
       );
       await _insertDefaultGoals(txn, profileId);
+      await _insertDefaultDashboardWidgets(txn, profileId);
       return profileId;
     });
     _activeProfile = profile.copyWith(id: id);
@@ -255,6 +476,31 @@ class AppDatabase {
         goal.toMap()
           ..remove('id')
           ..['profile_id'] = profileId,
+      );
+    }
+  }
+
+  Future<void> _insertDefaultDashboardWidgets(
+    DatabaseExecutor db,
+    int profileId,
+  ) async {
+    final now = DateTime.now();
+    for (var i = 0; i < DashboardMetricService.definitions.length; i++) {
+      final definition = DashboardMetricService.definitions[i];
+      await db.insert(
+        'dashboard_widgets',
+        DashboardWidgetConfig(
+          profileId: profileId,
+          metricKey: definition.key,
+          title: definition.title,
+          isVisible: DashboardMetricService.defaultKeys.contains(
+            definition.key,
+          ),
+          sortOrder: i,
+          createdAt: now,
+          updatedAt: now,
+        ).toMap()..remove('id'),
+        conflictAlgorithm: ConflictAlgorithm.ignore,
       );
     }
   }
@@ -321,12 +567,119 @@ class AppDatabase {
     );
   }
 
+  Future<List<DashboardWidgetConfig>> dashboardWidgets() async {
+    final db = await database;
+    final profileId = _requireProfileId();
+    final existing = await db.query(
+      'dashboard_widgets',
+      where: 'profile_id = ?',
+      whereArgs: [profileId],
+      orderBy: 'sort_order',
+    );
+    if (existing.isEmpty) {
+      await _insertDefaultDashboardWidgets(db, profileId);
+      final rows = await db.query(
+        'dashboard_widgets',
+        where: 'profile_id = ?',
+        whereArgs: [profileId],
+        orderBy: 'sort_order',
+      );
+      return rows.map(DashboardWidgetConfig.fromMap).toList();
+    }
+    return existing.map(DashboardWidgetConfig.fromMap).toList();
+  }
+
+  Future<void> updateDashboardWidget(DashboardWidgetConfig widget) async {
+    await (await database).update(
+      'dashboard_widgets',
+      widget.toMap()
+        ..remove('id')
+        ..['profile_id'] = _requireProfileId()
+        ..['updated_at'] = DateTime.now().toIso8601String(),
+      where: 'id = ? AND profile_id = ?',
+      whereArgs: [widget.id, _requireProfileId()],
+    );
+  }
+
+  Future<void> resetDashboardWidgets() async {
+    final db = await database;
+    final profileId = _requireProfileId();
+    await db.delete(
+      'dashboard_widgets',
+      where: 'profile_id = ?',
+      whereArgs: [profileId],
+    );
+    await _insertDefaultDashboardWidgets(db, profileId);
+  }
+
   Future<List<Exercise>> exercises() async {
     final rows = await (await database).query(
       'exercises',
+      where: 'is_hidden = 0 OR is_hidden IS NULL',
       orderBy: 'muscle_group, name',
     );
     return rows.map(Exercise.fromMap).toList();
+  }
+
+  Future<void> insertExercise(Exercise exercise) async {
+    final now = DateTime.now();
+    await (await database).insert(
+      'exercises',
+      (exercise.toMap()
+        ..remove('id')
+        ..['created_at'] = (exercise.createdAt ?? now).toIso8601String()
+        ..['updated_at'] = (exercise.updatedAt ?? now).toIso8601String()),
+    );
+  }
+
+  Future<void> updateExercise(Exercise exercise) async {
+    await (await database).update(
+      'exercises',
+      (exercise.toMap()..remove('id'))
+        ..['updated_at'] = DateTime.now().toIso8601String(),
+      where: 'id = ?',
+      whereArgs: [exercise.id],
+    );
+  }
+
+  Future<void> deleteExercise(int id) async {
+    await (await database).update(
+      'exercises',
+      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
+  Future<List<WorkoutType>> workoutTypes() async {
+    final profileId = _requireProfileId();
+    final rows = await (await database).query(
+      'workout_types',
+      where: '(profile_id IS NULL OR profile_id = ?) AND is_hidden = 0',
+      whereArgs: [profileId],
+      orderBy: 'is_default DESC, name',
+    );
+    return rows.map(WorkoutType.fromMap).toList();
+  }
+
+  Future<int> insertWorkoutType(String name, {String description = ''}) async {
+    final now = DateTime.now();
+    return (await database).insert(
+      'workout_types',
+      WorkoutType(
+        profileId: _requireProfileId(),
+        name: name.trim(),
+        description: description.trim(),
+        isDefault: false,
+        createdAt: now,
+        updatedAt: now,
+      ).toMap()..remove('id'),
+    );
+  }
+
+  Future<List<MuscleGroup>> muscleGroups() async {
+    final rows = await (await database).query('muscle_groups', orderBy: 'name');
+    return rows.map(MuscleGroup.fromMap).toList();
   }
 
   Future<int> insertWorkout(Workout workout) async {
@@ -400,6 +753,23 @@ class AppDatabase {
     });
   }
 
+  Future<List<CustomWorkoutTemplate>> workoutTemplates() async {
+    final rows = await (await database).query(
+      'workout_templates',
+      where: 'profile_id = ?',
+      whereArgs: [_requireProfileId()],
+      orderBy: 'name',
+    );
+    return rows.map(CustomWorkoutTemplate.fromMap).toList();
+  }
+
+  Future<int> insertWorkoutTemplate(CustomWorkoutTemplate template) async {
+    return (await database).insert(
+      'workout_templates',
+      (template.toMap()..remove('id'))..['profile_id'] = _requireProfileId(),
+    );
+  }
+
   Future<void> insertWorkoutExercise(WorkoutExercise exercise) async {
     await (await database).insert(
       'workout_exercises',
@@ -459,7 +829,7 @@ class AppDatabase {
         [workout.id, profileId],
       );
       final exerciseRows = await db.rawQuery(
-        'SELECT workout_exercises.*, exercises.name AS exercise_name, exercises.muscle_group AS muscle_group FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id WHERE workout_id = ? AND workout_exercises.profile_id = ? ORDER BY workout_exercises.id',
+        'SELECT workout_exercises.*, exercises.name AS exercise_name, exercises.primary_muscle_group AS muscle_group FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id WHERE workout_id = ? AND workout_exercises.profile_id = ? ORDER BY workout_exercises.id',
         [workout.id, profileId],
       );
       entries.add(

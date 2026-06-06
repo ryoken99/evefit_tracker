@@ -10,7 +10,11 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, medidas 
 - Formularios para adicionar medidas, criar treino basico com exercicio/serie e guardar fotos.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- APK release v0.4.0 gerado localmente em `build/app/outputs/flutter-apk/app-release.apk`.
+- APK release v0.5.0 gerado localmente em `build/app/outputs/flutter-apk/app-release.apk`.
+- Dashboard editavel por perfil com metricas configuraveis.
+- Tipos de treino e templates personalizados.
+- Grupos musculares e catalogo de exercicios expandidos com descricao tecnica.
+- Medidas corporais expandidas e objetivos preparados para progresso por metrica.
 
 ## Stack
 

@@ -5,6 +5,7 @@ import '../database/app_database.dart';
 
 class WorkoutCard extends StatelessWidget {
   const WorkoutCard({super.key, required this.entry});
+
   final WorkoutEntry entry;
 
   @override
@@ -15,9 +16,12 @@ class WorkoutCard extends StatelessWidget {
         title: Text(entry.workout.workoutType),
         subtitle: Text(
           '$date · ${entry.workout.durationMinutes ?? 0} min · ${entry.exerciseCount} exercícios · ${entry.totalSetCount} séries'
+          '${entry.workout.muscleGroups.isEmpty ? '' : '\n${entry.workout.muscleGroups}'}'
           '${entry.workout.notes.isEmpty ? '' : '\n${entry.workout.notes}'}',
         ),
-        isThreeLine: entry.workout.notes.isNotEmpty,
+        isThreeLine:
+            entry.workout.notes.isNotEmpty ||
+            entry.workout.muscleGroups.isNotEmpty,
         trailing: const Icon(Icons.chevron_right),
       ),
     );
