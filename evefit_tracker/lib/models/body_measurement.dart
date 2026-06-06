@@ -1,6 +1,7 @@
 class BodyMeasurement {
   BodyMeasurement({
     this.id,
+    this.profileId,
     required this.date,
     this.weightKg,
     this.bodyFatPercentage,
@@ -23,6 +24,7 @@ class BodyMeasurement {
   });
 
   final int? id;
+  final int? profileId;
   final DateTime date;
   final double? weightKg;
   final double? bodyFatPercentage;
@@ -45,6 +47,7 @@ class BodyMeasurement {
 
   factory BodyMeasurement.fromMap(Map<String, Object?> map) => BodyMeasurement(
     id: map['id'] as int?,
+    profileId: map['profile_id'] as int?,
     date: DateTime.parse(map['date'] as String),
     weightKg: _d(map['weight_kg']),
     bodyFatPercentage: _d(map['body_fat_percentage']),
@@ -68,6 +71,7 @@ class BodyMeasurement {
 
   Map<String, Object?> toMap() => {
     'id': id,
+    'profile_id': profileId,
     'date': date.toIso8601String(),
     'weight_kg': weightKg,
     'body_fat_percentage': bodyFatPercentage,

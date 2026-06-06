@@ -5,6 +5,7 @@ import 'screens/dashboard_screen.dart';
 import 'screens/goals_screen.dart';
 import 'screens/measurements_screen.dart';
 import 'screens/photos_screen.dart';
+import 'screens/profile_gate_screen.dart';
 import 'screens/workouts_screen.dart';
 import 'theme/app_theme.dart';
 
@@ -17,13 +18,46 @@ class EveFitApp extends StatelessWidget {
       title: 'EveFit Tracker',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark(),
-      home: const EveFitHome(),
+      home: const EveFitRoot(),
+    );
+  }
+}
+
+class EveFitRoot extends StatefulWidget {
+  const EveFitRoot({super.key});
+
+  @override
+  State<EveFitRoot> createState() => _EveFitRootState();
+}
+
+class _EveFitRootState extends State<EveFitRoot> {
+  final _db = AppDatabase.instance;
+  bool _unlocked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_unlocked) {
+      return ProfileGateScreen(
+        database: _db,
+        onUnlocked: (_) => setState(() => _unlocked = true),
+      );
+    }
+    return EveFitHome(
+      database: _db,
+      onProfileLocked: () => setState(() => _unlocked = false),
     );
   }
 }
 
 class EveFitHome extends StatefulWidget {
-  const EveFitHome({super.key});
+  const EveFitHome({
+    super.key,
+    required this.database,
+    required this.onProfileLocked,
+  });
+
+  final AppDatabase database;
+  final VoidCallback onProfileLocked;
 
   @override
   State<EveFitHome> createState() => _EveFitHomeState();
@@ -31,14 +65,16 @@ class EveFitHome extends StatefulWidget {
 
 class _EveFitHomeState extends State<EveFitHome> {
   int _index = 0;
-  final _db = AppDatabase.instance;
 
   late final List<Widget> _screens = [
-    DashboardScreen(database: _db),
-    WorkoutsScreen(database: _db),
-    MeasurementsScreen(database: _db),
-    PhotosScreen(database: _db),
-    GoalsScreen(database: _db),
+    DashboardScreen(
+      database: widget.database,
+      onProfileLocked: widget.onProfileLocked,
+    ),
+    WorkoutsScreen(database: widget.database),
+    MeasurementsScreen(database: widget.database),
+    PhotosScreen(database: widget.database),
+    GoalsScreen(database: widget.database),
   ];
 
   @override

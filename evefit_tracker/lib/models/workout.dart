@@ -1,6 +1,7 @@
 class Workout {
   Workout({
     this.id,
+    this.profileId,
     required this.date,
     required this.workoutType,
     this.durationMinutes,
@@ -8,6 +9,7 @@ class Workout {
   });
 
   final int? id;
+  final int? profileId;
   final DateTime date;
   final String workoutType;
   final int? durationMinutes;
@@ -15,6 +17,7 @@ class Workout {
 
   factory Workout.fromMap(Map<String, Object?> map) => Workout(
     id: map['id'] as int?,
+    profileId: map['profile_id'] as int?,
     date: DateTime.parse(map['date'] as String),
     workoutType: map['workout_type'] as String,
     durationMinutes: map['duration_minutes'] as int?,
@@ -23,6 +26,7 @@ class Workout {
 
   Map<String, Object?> toMap() => {
     'id': id,
+    'profile_id': profileId,
     'date': date.toIso8601String(),
     'workout_type': workoutType,
     'duration_minutes': durationMinutes,

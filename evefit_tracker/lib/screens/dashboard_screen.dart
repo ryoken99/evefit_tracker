@@ -5,12 +5,18 @@ import '../models/body_measurement.dart';
 import '../models/user_profile.dart';
 import '../services/csv_export_service.dart';
 import '../services/dashboard_stats_service.dart';
+import 'settings_screen.dart';
 import '../widgets/progress_chart.dart';
 import '../widgets/stat_card.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key, required this.database});
+  const DashboardScreen({
+    super.key,
+    required this.database,
+    required this.onProfileLocked,
+  });
   final AppDatabase database;
+  final VoidCallback onProfileLocked;
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -46,6 +52,29 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  tooltip: 'Definições',
+                  onPressed: () async {
+                    await Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => SettingsScreen(
+                          database: widget.database,
+                          onProfileLocked: widget.onProfileLocked,
+                          onProfileChanged: (_) => setState(() {}),
+                        ),
+                      ),
+                    );
+                    setState(() {});
+                  },
+                  icon: const Icon(Icons.settings_outlined),
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                'Perfil: ${widget.database.activeProfile?.name ?? profile.name}',
+              ),
               const SizedBox(height: 4),
               Text(
                 '${profile.name} · ${profile.heightCm.toStringAsFixed(0)} cm · objetivo ${profile.mainGoal}',
@@ -57,6 +86,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               const Text(
                 'Objetivo atual: construir V-shape sem perder composição corporal.',
               ),
+              const SizedBox(height: 6),
+              const Text('Fase atual: Construção de V-shape'),
               const SizedBox(height: 16),
               Card(
                 child: Padding(

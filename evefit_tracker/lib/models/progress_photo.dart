@@ -1,6 +1,7 @@
 class ProgressPhoto {
   ProgressPhoto({
     this.id,
+    this.profileId,
     required this.date,
     required this.photoType,
     required this.filePath,
@@ -9,6 +10,7 @@ class ProgressPhoto {
   });
 
   final int? id;
+  final int? profileId;
   final DateTime date;
   final String photoType;
   final String filePath;
@@ -17,6 +19,7 @@ class ProgressPhoto {
 
   factory ProgressPhoto.fromMap(Map<String, Object?> map) => ProgressPhoto(
     id: map['id'] as int?,
+    profileId: map['profile_id'] as int?,
     date: DateTime.parse(map['date'] as String),
     photoType: map['photo_type'] as String,
     filePath: map['file_path'] as String,
@@ -28,6 +31,7 @@ class ProgressPhoto {
 
   Map<String, Object?> toMap() => {
     'id': id,
+    'profile_id': profileId,
     'date': date.toIso8601String(),
     'photo_type': photoType,
     'file_path': filePath,

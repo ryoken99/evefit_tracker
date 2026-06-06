@@ -1,6 +1,7 @@
 class WorkoutSet {
   WorkoutSet({
     this.id,
+    this.profileId,
     this.workoutId,
     required this.exerciseId,
     required this.setNumber,
@@ -12,6 +13,7 @@ class WorkoutSet {
   });
 
   final int? id;
+  final int? profileId;
   final int? workoutId;
   final int exerciseId;
   final int setNumber;
@@ -23,6 +25,7 @@ class WorkoutSet {
 
   factory WorkoutSet.fromMap(Map<String, Object?> map) => WorkoutSet(
     id: map['id'] as int?,
+    profileId: map['profile_id'] as int?,
     workoutId: map['workout_id'] as int?,
     exerciseId: map['exercise_id'] as int,
     setNumber: map['set_number'] as int,
@@ -37,6 +40,7 @@ class WorkoutSet {
 
   Map<String, Object?> toMap() => {
     'id': id,
+    'profile_id': profileId,
     'workout_id': workoutId,
     'exercise_id': exerciseId,
     'set_number': setNumber,
