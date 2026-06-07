@@ -433,8 +433,10 @@ class TrainingFlow {
     'hip_mobility': 'Anca',
     'hamstring_mobility': 'Posterior de coxa',
     'glute_mobility': 'Glúteos',
+    'quadriceps_mobility': 'Quadríceps',
     'ankle_mobility': 'Tornozelo',
     'calf_mobility': 'Gémeos',
+    'wrist_mobility': 'Punhos',
     'neck_mobility': 'Pescoço',
   };
 

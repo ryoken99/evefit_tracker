@@ -732,7 +732,7 @@ class _InfoLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = value.trim().isEmpty
-        ? 'Descrição ainda incompleta. Este exercício será melhorado numa próxima versão.'
+        ? 'Sem informação adicional.'
         : value.trim();
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),

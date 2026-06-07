@@ -1103,7 +1103,10 @@ class TrainingArchitecture {
   }
 
   static ExerciseArchitectureTags tagsForExercise(Exercise exercise) {
-    final haystack = WorkoutTaxonomy.normalize(
+    final primaryHaystack = WorkoutTaxonomy.normalize(
+      '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
+    );
+    final detailHaystack = WorkoutTaxonomy.normalize(
       '${exercise.name} ${exercise.muscleGroup} '
       '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
     );
@@ -1124,7 +1127,7 @@ class TrainingArchitecture {
       muscleKeys.addAll(muscles);
     }
 
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'curl com halteres',
       'curl martelo',
       'curl alternado',
@@ -1142,11 +1145,13 @@ class TrainingArchitecture {
         muscles: ['biceps', 'brachialis', 'brachioradialis'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'triceps',
       'tríceps',
       'flexoes fechadas',
       'flexões fechadas',
+      'flexoes diamante',
+      'flexões diamante',
       'supino fechado',
       'fundos entre apoios',
       'dips para triceps',
@@ -1158,7 +1163,7 @@ class TrainingArchitecture {
         muscles: ['triceps_long', 'triceps_lateral', 'triceps_medial'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'wrist',
       'farmer',
       'dead hang',
@@ -1183,15 +1188,22 @@ class TrainingArchitecture {
         muscles: ['grip_support'],
       );
     }
-    if (_has(haystack, [
-      'supino',
-      'flexoes',
-      'flexões',
-      'aberturas',
-      'chest press',
-      'crossover',
-      'dips para peito',
-    ])) {
+    if (_has(primaryHaystack, [
+          'supino',
+          'flexoes',
+          'flexões',
+          'aberturas',
+          'chest press',
+          'crossover',
+          'dips para peito',
+        ]) &&
+        !_has(primaryHaystack, [
+          'supino fechado',
+          'flexoes fechadas',
+          'flexões fechadas',
+          'flexoes diamante',
+          'flexões diamante',
+        ])) {
       add(
         region: 'upper',
         group: 'chest',
@@ -1199,7 +1211,7 @@ class TrainingArchitecture {
         muscles: ['upper_chest', 'mid_chest', 'lower_chest'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'remo',
       'puxada',
       'pullover',
@@ -1214,12 +1226,18 @@ class TrainingArchitecture {
         muscles: ['lats', 'rhomboids'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'elevacao lateral',
       'elevação lateral',
       'press militar',
       'arnold',
       'reverse fly',
+      'face pull',
+      'pull-apart',
+      'wall slides',
+      'wall slide',
+      'scapular push-up',
+      'pike push-up',
       'rotacao externa',
       'rotação externa',
     ])) {
@@ -1230,7 +1248,7 @@ class TrainingArchitecture {
         muscles: ['deltoid_lateral'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'agachamento',
       'leg press',
       'extensao de perna',
@@ -1246,7 +1264,7 @@ class TrainingArchitecture {
         muscles: ['rectus_femoris', 'vastus_lateralis'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'peso morto',
       'posterior',
       'curl de perna',
@@ -1259,7 +1277,7 @@ class TrainingArchitecture {
         muscles: ['biceps_femoris'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'gluteo',
       'glúteo',
       'hip thrust',
@@ -1274,7 +1292,7 @@ class TrainingArchitecture {
         muscles: ['glute_max', 'glute_med'],
       );
     }
-    if (_has(haystack, ['gemeos', 'gémeos', 'soleo', 'sóleo'])) {
+    if (_has(primaryHaystack, ['gemeos', 'gémeos', 'soleo', 'sóleo'])) {
       add(
         region: 'lower',
         group: 'calves',
@@ -1282,13 +1300,13 @@ class TrainingArchitecture {
         muscles: ['calves', 'soleus'],
       );
     }
-    if (_has(haystack, ['adutor', 'aducao', 'adução'])) {
+    if (_has(primaryHaystack, ['adutor', 'aducao', 'adução'])) {
       add(region: 'lower', group: 'adductors', subgroup: 'adductors');
     }
-    if (_has(haystack, ['abdutor', 'abducao', 'abdução'])) {
+    if (_has(primaryHaystack, ['abdutor', 'abducao', 'abdução'])) {
       add(region: 'lower', group: 'abductors', subgroup: 'abductors');
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'core',
       'abdominal',
       'prancha',
@@ -1310,7 +1328,7 @@ class TrainingArchitecture {
         muscles: ['rectus_abdominis', 'anti_extension'],
       );
     }
-    if (_has(haystack, ['passadeira'])) {
+    if (_has(primaryHaystack, ['passadeira'])) {
       add(
         region: 'cardio',
         group: 'cardio_general',
@@ -1323,7 +1341,7 @@ class TrainingArchitecture {
         subgroup: 'treadmill',
         muscles: ['aerobic_endurance'],
       );
-    } else if (_has(haystack, ['bicicleta'])) {
+    } else if (_has(primaryHaystack, ['bicicleta'])) {
       add(
         region: 'cardio',
         group: 'cardio_general',
@@ -1336,7 +1354,7 @@ class TrainingArchitecture {
         subgroup: 'bike',
         muscles: ['aerobic_endurance'],
       );
-    } else if (_has(haystack, ['eliptica', 'elíptica'])) {
+    } else if (_has(primaryHaystack, ['eliptica', 'elíptica'])) {
       add(
         region: 'cardio',
         group: 'cardio_general',
@@ -1349,7 +1367,7 @@ class TrainingArchitecture {
         subgroup: 'elliptical',
         muscles: ['aerobic_endurance'],
       );
-    } else if (_has(haystack, ['corda'])) {
+    } else if (_has(primaryHaystack, ['corda'])) {
       add(
         region: 'cardio',
         group: 'cardio_general',
@@ -1362,7 +1380,7 @@ class TrainingArchitecture {
         subgroup: 'jump_rope',
         muscles: ['aerobic_endurance'],
       );
-    } else if (_has(haystack, [
+    } else if (_has(primaryHaystack, [
       'corrida exterior',
       'caminhada exterior',
       'sprints exterior',
@@ -1379,13 +1397,22 @@ class TrainingArchitecture {
         subgroup: 'outdoor_run',
         muscles: ['aerobic_endurance'],
       );
-    } else if (_has(haystack, ['hiit'])) {
+    } else if (_has(primaryHaystack, ['hiit'])) {
       add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
       add(region: 'cardio', group: 'cardio_general', subgroup: 'hiit');
-    } else if (_has(haystack, ['circuito cardio'])) {
+    } else if (_has(primaryHaystack, [
+      'circuito cardio',
+      'marcha no lugar',
+      'jumping jacks',
+      'burpees',
+      'skaters',
+      'high knees',
+      'mountain climbers',
+    ])) {
       add(region: 'cardio', group: 'cardio_general', subgroup: 'hiit');
+      add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
     }
-    if (_has(haystack, ['karate', 'kihon', 'kata', 'kumite'])) {
+    if (_has(primaryHaystack, ['karate', 'kihon', 'kata', 'kumite'])) {
       add(
         region: 'martial_arts',
         group: 'karate',
@@ -1393,7 +1420,7 @@ class TrainingArchitecture {
         muscles: ['karate_technical'],
       );
     }
-    if (_has(haystack, [
+    if (_has(primaryHaystack, [
       'jiu-jitsu',
       'jiu jitsu',
       'shrimp',
@@ -1407,30 +1434,74 @@ class TrainingArchitecture {
         muscles: ['jiu_jitsu_technical'],
       );
     }
-    if (_has(haystack, [
+    if (_has(detailHaystack, [
       'mobilidade',
       'alongamento',
       'respiracao',
       'respiração',
+      'wall slides',
+      'cat-cow',
+      'open book',
+      'pigeon',
+      '90/90',
+      'chin tuck',
+      'cervical',
+      'circulos',
+      'círculos',
+      'relaxamento',
     ])) {
       add(region: 'mobility_recovery', group: 'general_mobility');
-      if (_has(haystack, ['alongamento'])) {
+      if (_has(detailHaystack, ['alongamento'])) {
         add(region: 'mobility_recovery', group: 'stretching');
       }
-      if (_has(haystack, ['respiracao', 'respiração'])) {
+      if (_has(detailHaystack, ['respiracao', 'respiração'])) {
         add(region: 'mobility_recovery', group: 'breathing');
       }
-      if (_has(haystack, ['anca', 'hip'])) {
+      if (_has(detailHaystack, ['anca', 'hip', '90/90'])) {
         add(region: 'mobility_recovery', group: 'hip_mobility');
       }
-      if (_has(haystack, ['ombro'])) {
+      if (_has(detailHaystack, [
+        'gluteo',
+        'glúteo',
+        'piriforme',
+        'pigeon',
+        'figura 4',
+        '90/90',
+      ])) {
+        add(region: 'mobility_recovery', group: 'glute_mobility');
+      }
+      if (_has(detailHaystack, ['posterior de coxa', 'hamstring'])) {
+        add(region: 'mobility_recovery', group: 'hamstring_mobility');
+      }
+      if (_has(detailHaystack, ['quadriceps', 'quadríceps'])) {
+        add(region: 'mobility_recovery', group: 'quadriceps_mobility');
+      }
+      if (_has(detailHaystack, ['ombro'])) {
         add(region: 'mobility_recovery', group: 'shoulder_mobility');
       }
-      if (_has(haystack, ['toracica', 'torácica'])) {
+      if (_has(detailHaystack, ['peitoral', 'peito'])) {
+        add(region: 'mobility_recovery', group: 'chest_mobility');
+      }
+      if (_has(detailHaystack, ['dorsal', 'costas'])) {
+        add(region: 'mobility_recovery', group: 'back_mobility');
+      }
+      if (_has(detailHaystack, ['toracica', 'torácica'])) {
         add(region: 'mobility_recovery', group: 'thoracic_mobility');
       }
-      if (_has(haystack, ['tornozelo'])) {
+      if (_has(detailHaystack, ['tornozelo'])) {
         add(region: 'mobility_recovery', group: 'ankle_mobility');
+      }
+      if (_has(detailHaystack, ['gemeos', 'gémeos'])) {
+        add(region: 'mobility_recovery', group: 'calf_mobility');
+      }
+      if (_has(detailHaystack, ['pescoco', 'pescoço', 'cervical'])) {
+        add(region: 'mobility_recovery', group: 'neck_mobility');
+      }
+      if (_has(detailHaystack, ['punho', 'punhos'])) {
+        add(region: 'mobility_recovery', group: 'wrist_mobility');
+      }
+      if (_has(detailHaystack, ['caminhada leve', 'relaxamento'])) {
+        add(region: 'mobility_recovery', group: 'active_recovery');
       }
     }
     if (regionKeys.isEmpty) {

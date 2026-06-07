@@ -60,7 +60,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 10,
+      version: 11,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -70,6 +70,7 @@ class AppDatabase {
         await _migrateV60(db);
         await _migrateV70(db);
         await _migrateV75(db);
+        await _migrateV76(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -98,6 +99,9 @@ class AppDatabase {
         }
         if (oldVersion < 10) {
           await _migrateV75(db);
+        }
+        if (oldVersion < 11) {
+          await _migrateV76(db);
         }
       },
     );
@@ -163,10 +167,8 @@ class AppDatabase {
             equipment: _equipmentFor(name),
             description: _descriptionFor(name, entry.key),
             executionSteps: _stepsFor(name),
-            commonMistakes:
-                'Evitar balanço excessivo, amplitude incompleta e carga que obrigue a perder a postura.',
-            safetyNotes:
-                'Começa leve, controla a fase excêntrica e pára se houver dor articular.',
+            commonMistakes: _commonMistakesFor(name),
+            safetyNotes: _safetyNotesFor(name),
             createdAt: DateTime.parse(now),
             updatedAt: DateTime.parse(now),
           ).toMap(),
@@ -284,6 +286,17 @@ class AppDatabase {
   }
 
   Future<void> _migrateV75(Database db) async {
+    await _seedExercises(db);
+    await _refreshDefaultExerciseDetails(db);
+    await db.update(
+      'exercises',
+      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
+      where: 'is_default = 1 AND name = ?',
+      whereArgs: ['Face pull'],
+    );
+  }
+
+  Future<void> _migrateV76(Database db) async {
     await _seedExercises(db);
     await _refreshDefaultExerciseDetails(db);
     await db.update(
@@ -819,6 +832,37 @@ class AppDatabase {
 
   String _equipmentFor(String name) {
     final lower = WorkoutTaxonomy.normalize(name);
+    if (lower.contains('sem carga') ||
+        lower.contains('peso corporal') ||
+        lower.contains('flexoes') ||
+        lower.contains('flexões') ||
+        lower.contains('prancha') ||
+        lower.contains('crunch') ||
+        lower.contains('dead bug') ||
+        lower.contains('hollow') ||
+        lower.contains('bird dog') ||
+        lower.contains('superman') ||
+        lower.contains('mountain climbers') ||
+        lower.contains('marcha no lugar') ||
+        lower.contains('jumping jacks') ||
+        lower.contains('burpees') ||
+        lower.contains('skaters') ||
+        lower.contains('high knees') ||
+        lower.contains('caminhada leve') ||
+        lower.contains('alongamento') ||
+        lower.contains('mobilidade') ||
+        lower.contains('respiracao') ||
+        lower.contains('respiração') ||
+        lower.contains('cat-cow') ||
+        lower.contains('open book') ||
+        lower.contains('pigeon') ||
+        lower.contains('90/90') ||
+        lower.contains('chin tuck') ||
+        lower.contains('wall slides') ||
+        lower.contains('circulos') ||
+        lower.contains('círculos')) {
+      return 'Peso corporal';
+    }
     if (lower.contains('passadeira')) return 'Passadeira';
     if (lower.contains('bicicleta')) return 'Bicicleta';
     if (lower.contains('eliptica')) return 'Elíptica';
@@ -832,9 +876,9 @@ class AppDatabase {
         lower.contains('com elastico')) {
       return 'Elásticos';
     }
+    if (lower.contains('face pull no cabo')) return 'Cabo alto / polia';
     if (lower.contains('cabo') ||
         lower.contains('crossover') ||
-        lower.contains('face pull') ||
         lower.contains('puxada') ||
         lower.contains('remo baixo') ||
         lower.contains('remo sentado') ||
@@ -890,6 +934,40 @@ class AppDatabase {
 
   String _secondaryGroupsFor(String name, String group) {
     final lower = WorkoutTaxonomy.normalize(name);
+    if (group == 'Mobilidade') {
+      if (lower.contains('cervical') || lower.contains('pescoco')) {
+        return 'Trapézio superior, respiração, controlo cervical';
+      }
+      if (lower.contains('gluteo') ||
+          lower.contains('glúteo') ||
+          lower.contains('piriforme') ||
+          lower.contains('pigeon') ||
+          lower.contains('figura 4') ||
+          lower.contains('90/90')) {
+        return 'Anca, piriforme, rotadores externos da anca';
+      }
+      if (lower.contains('posterior de coxa') || lower.contains('posterior')) {
+        return 'Anca, gémeos, mobilidade da cadeia posterior';
+      }
+      if (lower.contains('ombro')) {
+        return 'Escápulas, peitoral, coluna torácica';
+      }
+      if (lower.contains('peitoral')) return 'Ombros, escápulas, respiração';
+      if (lower.contains('dorsal')) return 'Costas, ombros, respiração';
+      if (lower.contains('toracica') || lower.contains('torácica')) {
+        return 'Costas, escápulas, respiração';
+      }
+      if (lower.contains('anca')) return 'Glúteos, flexores da anca, core';
+      if (lower.contains('gemeos') || lower.contains('gémeos')) {
+        return 'Tornozelo, sóleo, pé';
+      }
+      if (lower.contains('tornozelo')) return 'Gémeos, sóleo, pé';
+      if (lower.contains('punho')) return 'Antebraço, dedos, cotovelo';
+      if (lower.contains('respiracao') || lower.contains('respiração')) {
+        return 'Diafragma, relaxamento, controlo respiratório';
+      }
+      return 'Respiração, controlo articular, amplitude confortável';
+    }
     if (lower.contains('supino') || lower.contains('flex')) {
       return 'Ombros, tríceps';
     }
@@ -907,11 +985,17 @@ class AppDatabase {
     if (group == 'Cardio') return 'Core, pernas, sistema cardiovascular';
     if (group == 'Karate') return 'Core, ancas, ombros';
     if (group == 'Jiu-Jitsu') return 'Core, ancas, pega';
-    return '';
+    if (group == 'Pescoço') {
+      return 'Trapézio superior, estabilizadores cervicais';
+    }
+    return 'Sem secundários relevantes';
   }
 
   String _descriptionFor(String name, String group) {
     final lower = WorkoutTaxonomy.normalize(name);
+    if (group == 'Mobilidade') {
+      return '$name é um exercício de mobilidade ou alongamento para melhorar amplitude confortável, aliviar tensão e ensinar controlo da zona alvo sem carga externa.';
+    }
     if (lower.contains('passadeira')) {
       return '$name é uma opção de cardio em passadeira para trabalhar resistência, ritmo e controlo da passada sem misturar outras máquinas.';
     }
@@ -924,17 +1008,66 @@ class AppDatabase {
     if (lower.contains('corda')) {
       return '$name desenvolve coordenação, ritmo, capacidade cardiovascular e elasticidade dos tornozelos com corda de saltar.';
     }
+    if (lower.contains('curl')) {
+      return '$name é um exercício de flexão do cotovelo para treinar principalmente bíceps e músculos do braço, usando carga controlável.';
+    }
+    if (lower.contains('supino')) {
+      return '$name é um exercício de empurrar para treinar principalmente o peito; ombros e tríceps ajudam, mas não são o foco principal.';
+    }
+    if (lower.contains('flex')) {
+      return '$name usa o peso corporal para treinar o padrão de empurrar, com foco definido pelo tipo de flexão escolhido.';
+    }
+    if (lower.contains('remo') || lower.contains('puxada')) {
+      return '$name treina o padrão de puxar para desenvolver costas, controlo das escápulas e força de braços como apoio.';
+    }
+    if (lower.contains('agachamento') ||
+        lower.contains('lunges') ||
+        lower.contains('step-up') ||
+        lower.contains('wall sit')) {
+      return '$name trabalha pernas com foco em controlo de joelho, anca e tronco durante o padrão de agachar ou avançar.';
+    }
+    if (lower.contains('ponte') || lower.contains('hip thrust')) {
+      return '$name treina extensão da anca com foco em glúteos, mantendo a lombar controlada.';
+    }
+    if (lower.contains('prancha') ||
+        lower.contains('crunch') ||
+        lower.contains('dead bug') ||
+        lower.contains('hollow') ||
+        lower.contains('pallof')) {
+      return '$name treina o core para resistir a movimento excessivo do tronco e controlar a respiração.';
+    }
     if (group == 'Karate') {
       return '$name é um drill de Karate para técnica, deslocamento, postura e condicionamento específico sem incluir drills exclusivos de Jiu-Jitsu.';
     }
     if (group == 'Jiu-Jitsu') {
       return '$name é um drill de Jiu-Jitsu para mobilidade no solo, base, core e pega sem incluir conteúdo exclusivo de Karate.';
     }
-    return '$name trabalha principalmente $group, com atenção à postura, amplitude útil, respiração e progressão adequada ao nível atual.';
+    return '$name trabalha principalmente $group com uma variação clara de equipamento, amplitude controlada e ritmo adequado para iniciantes.';
   }
 
   String _stepsFor(String name) {
     final lower = WorkoutTaxonomy.normalize(name);
+    if (lower.contains('alongamento cervical') ||
+        lower.contains('rotacao cervical') ||
+        lower.contains('rotação cervical') ||
+        lower.contains('inclinação lateral do pescoco') ||
+        lower.contains('inclinação lateral do pescoço') ||
+        lower.contains('chin tuck')) {
+      return '1. Senta-te ou fica de pé com a coluna direita e os ombros relaxados. 2. Olha em frente e mantém o queixo nivelado. 3. Move a cabeça lentamente apenas até sentires tensão leve. 4. Respira devagar durante 15 a 30 segundos ou faz repetições curtas controladas. 5. Volta ao centro sem impulso e repete para o outro lado quando aplicável.';
+    }
+    if (lower.contains('alongamento') || lower.contains('mobilidade')) {
+      return '1. Coloca a zona alvo numa posição confortável, sem dor. 2. Ajusta o apoio das mãos ou pés para controlar a intensidade. 3. Move-te devagar até sentires tensão leve e respirável. 4. Mantém 15 a 30 segundos ou faz 6 a 10 repetições suaves. 5. Sai da posição lentamente antes de trocar de lado.';
+    }
+    if (lower.contains('respiracao') || lower.contains('respiração')) {
+      return '1. Deita-te ou senta-te com apoio confortável. 2. Coloca uma mão no abdómen e outra no peito. 3. Inspira pelo nariz levando o ar para a barriga. 4. Expira devagar pela boca sem prender os ombros. 5. Repete durante 2 a 5 minutos com ritmo calmo.';
+    }
+    if (lower.contains('marcha no lugar') ||
+        lower.contains('jumping jacks') ||
+        lower.contains('burpees') ||
+        lower.contains('skaters') ||
+        lower.contains('high knees')) {
+      return '1. Define uma zona livre à tua volta. 2. Começa em ritmo leve durante 20 a 30 segundos. 3. Mantém passos ou saltos controlados sem prender a respiração. 4. Aumenta a intensidade apenas se conseguires aterrar com controlo. 5. Abranda gradualmente antes de parar.';
+    }
     if (lower.contains('passadeira')) {
       return '1. Ajusta velocidade e inclinação antes de começar. 2. Mantém o tronco alto e olha em frente. 3. Pisa com cadência regular sem agarrar o corrimão. 4. Reduz gradualmente a intensidade no final.';
     }
@@ -947,7 +1080,19 @@ class AppDatabase {
     if (lower.contains('peso morto')) {
       return '1. Aproxima a carga do corpo. 2. Dobra a anca mantendo coluna neutra. 3. Sobe contraindo glúteos e posteriores. 4. Desce a carga junto às pernas sem arredondar a lombar.';
     }
-    return '1. Prepara a posição inicial e confirma que o equipamento está estável. 2. Executa $name com amplitude controlada. 3. Mantém respiração regular e tronco firme. 4. Regressa devagar sem perder alinhamento.';
+    if (lower.contains('flex')) {
+      return '1. Apoia as mãos no chão ou num suporte à largura dos ombros. 2. Estica o corpo dos ombros aos tornozelos e contrai ligeiramente o abdómen. 3. Desce dobrando os cotovelos sem deixar a anca cair. 4. Empurra o chão até quase estender os braços. 5. Inspira ao descer e expira ao subir.';
+    }
+    if (lower.contains('remo') || lower.contains('puxada')) {
+      return '1. Segura a pega ou carga com os ombros afastados das orelhas. 2. Inicia o movimento puxando as escápulas para trás e para baixo. 3. Puxa até os cotovelos passarem a linha do tronco ou até ao ponto confortável. 4. Pausa por um instante. 5. Volta devagar sem perder controlo dos ombros.';
+    }
+    if (lower.contains('triceps') || lower.contains('tríceps')) {
+      return '1. Posiciona braços e tronco de forma estável. 2. Mantém os cotovelos apontados na direção da variação escolhida. 3. Estende os cotovelos até contrair o tríceps. 4. Regressa controlando a descida. 5. Usa uma carga que não force punhos ou cotovelos.';
+    }
+    if (lower.contains('prancha')) {
+      return '1. Apoia antebraços ou mãos no chão. 2. Alinha ombros, anca e tornozelos. 3. Contrai ligeiramente abdómen e glúteos. 4. Respira sem deixar a lombar afundar. 5. Termina quando já não consegues manter o alinhamento.';
+    }
+    return '1. Ajusta pés, mãos e carga para começares sem desconforto. 2. Mantém o abdómen ligeiramente contraído para controlar o tronco. 3. Faz o movimento principal de forma lenta e previsível. 4. Respira durante a repetição sem prender o ar em excesso. 5. Volta à posição inicial com a mesma trajetória.';
   }
 
   String _commonMistakesFor(String name) {
@@ -963,7 +1108,12 @@ class AppDatabase {
     if (lower.contains('agachamento') || lower.contains('peso morto')) {
       return 'Perder coluna neutra, deixar joelhos colapsarem, usar carga excessiva ou cortar amplitude por falta de controlo.';
     }
-    return 'Usar pressa, perder alinhamento, reduzir amplitude útil ou escolher resistência acima da técnica disponível.';
+    if (lower.contains('alongamento') ||
+        lower.contains('mobilidade') ||
+        lower.contains('cervical')) {
+      return 'Forçar dor, prender a respiração, fazer movimentos bruscos ou tentar ganhar amplitude à força.';
+    }
+    return 'Usar pressa, compensar com outra zona do corpo, cortar amplitude útil ou escolher uma resistência que muda a trajetória.';
   }
 
   String _safetyNotesFor(String name) {
