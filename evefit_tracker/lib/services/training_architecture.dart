@@ -1150,6 +1150,10 @@ class TrainingArchitecture {
       'curl martelo',
       'curl alternado',
       'curl concentrado',
+      'curl inclinado',
+      'curl inverso com halteres',
+      'curl zottman',
+      'curl cruzado no corpo',
       'curl isometrico',
       'curl isométrico',
       'curl com barra',
@@ -1207,6 +1211,32 @@ class TrainingArchitecture {
       );
     }
     if (_has(primaryHaystack, [
+      'trapezio',
+      'trapÃ©zio',
+      'encolhimento',
+      'remo alto',
+    ])) {
+      add(
+        region: 'upper',
+        group: 'traps_scapula',
+        subgroup: 'traps',
+        muscles: ['upper_traps', 'mid_traps', 'lower_traps'],
+      );
+    }
+    if (_has(primaryHaystack, [
+      'pescoco',
+      'pescoÃ§o',
+      'cervical',
+      'chin tuck',
+    ])) {
+      add(
+        region: 'upper',
+        group: 'neck',
+        subgroup: 'neck',
+        muscles: ['cervical_stabilizers'],
+      );
+    }
+    if (_has(primaryHaystack, [
           'supino',
           'flexoes',
           'flexões',
@@ -1248,6 +1278,8 @@ class TrainingArchitecture {
     if (_has(primaryHaystack, [
       'elevacao lateral',
       'elevação lateral',
+      'elevacao posterior',
+      'elevaÃ§Ã£o posterior',
       'press militar',
       'arnold',
       'reverse fly',
@@ -1311,7 +1343,13 @@ class TrainingArchitecture {
         muscles: ['glute_max', 'glute_med'],
       );
     }
-    if (_has(primaryHaystack, ['gemeos', 'gémeos', 'soleo', 'sóleo'])) {
+    if (_has(primaryHaystack, [
+      'gemeos',
+      'gémeos',
+      'soleo',
+      'sóleo',
+      'tibial',
+    ])) {
       add(
         region: 'lower',
         group: 'calves',
@@ -1523,9 +1561,46 @@ class TrainingArchitecture {
         add(region: 'mobility_recovery', group: 'active_recovery');
       }
     }
+    final normalizedExerciseGroup = WorkoutTaxonomy.normalize(
+      exercise.muscleGroup,
+    );
+    if (normalizedExerciseGroup == 'mobilidade') {
+      const mobilityGroups = {
+        'general_mobility',
+        'shoulder_mobility',
+        'hip_mobility',
+        'ankle_mobility',
+        'thoracic_mobility',
+        'stretching',
+        'active_recovery',
+        'breathing',
+        'posture',
+        'glute_mobility',
+        'hamstring_mobility',
+        'quadriceps_mobility',
+        'chest_mobility',
+        'back_mobility',
+        'calf_mobility',
+        'neck_mobility',
+        'wrist_mobility',
+      };
+      regionKeys
+        ..clear()
+        ..add('mobility_recovery');
+      groupKeys.removeWhere((key) => !mobilityGroups.contains(key));
+      if (groupKeys.isEmpty) groupKeys.add('general_mobility');
+      subgroupKeys.clear();
+      muscleKeys.clear();
+    }
     if (regionKeys.isEmpty) {
       regionKeys.add('custom');
       groupKeys.add('custom_workout');
+    }
+    if (regionKeys.contains('lower')) {
+      groupKeys.add('legs');
+    }
+    if (regionKeys.contains('core')) {
+      groupKeys.add('core');
     }
 
     return ExerciseArchitectureTags(

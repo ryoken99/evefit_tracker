@@ -116,6 +116,8 @@ class ExerciseCatalogDetailService {
       'curl martelo',
       'curl concentrado',
       'curl inclinado',
+      'curl zottman',
+      'curl cruzado no corpo',
       'curl spider',
       'curl 21',
       'curl isometrico',
@@ -132,6 +134,7 @@ class ExerciseCatalogDetailService {
       'desvio ulnar',
       'finger curls',
       'farmer walk',
+      'farmer hold',
       'remada unilateral',
       'remo unilateral',
     ])) {
@@ -293,6 +296,18 @@ class ExerciseCatalogDetailService {
     if (_has(n, ['extensao francesa'])) {
       return '$name é uma extensão de cotovelo para tríceps, com a carga a descer atrás da cabeça ou numa linha semelhante. O foco é estender o cotovelo sem arquear a lombar.';
     }
+    if (_has(n, ['supino com barra'])) {
+      return '$name é um exercício de empurrar no banco plano para treinar o peito com uma barra. A barra desce até à zona média ou ligeiramente baixa do peito e sobe numa linha controlada, com omoplatas firmes e pés estáveis no chão.';
+    }
+    if (_has(n, ['passadeira aquecimento'])) {
+      return '$name é uma entrada progressiva no treino cardiovascular. Serve para preparar articulações, respiração, ritmo cardíaco e temperatura corporal antes de caminhar mais rápido, correr ou fazer intervalos.';
+    }
+    if (_has(n, ['passadeira cooldown'])) {
+      return '$name é a redução gradual da intensidade no fim do treino. Serve para evitar parar de repente, deixar a respiração acalmar e sair da passadeira com equilíbrio e sensação de estabilidade.';
+    }
+    if (_has(n, ['puxada alta pega neutra'])) {
+      return '$name é uma puxada vertical na máquina ou polia alta com as palmas viradas uma para a outra. O objetivo é puxar a pega até à parte alta do peito usando dorsais e escápulas, sem levar a barra atrás da nuca.';
+    }
     if (group == 'Mobilidade') {
       return '$name é um exercício de mobilidade ou alongamento para a zona indicada pelo nome. Ajuda a ganhar alcance confortável, reduzir rigidez e melhorar controlo respiratório sem carga externa.';
     }
@@ -449,6 +464,18 @@ class ExerciseCatalogDetailService {
     if (_has(n, ['supino declinado na maquina'])) {
       return '1. Ajusta o assento para as pegas ficarem na linha baixa do peito. 2. Encosta as costas no apoio e segura as pegas com punhos alinhados. 3. Escolhe uma carga que consigas mover sem tirar os ombros do apoio. 4. Empurra as pegas até quase estender os cotovelos. 5. Regressa devagar até sentir alongamento confortável no peito. 6. Inspira no retorno e expira ao empurrar. 7. Mantém a cabeça apoiada e evita levantar a anca.';
     }
+    if (_has(n, ['supino com barra'])) {
+      return '1. Deita-te no banco com os olhos aproximadamente debaixo da barra e os pés no chão. 2. Junta ligeiramente as omoplatas, abre o peito e mantém glúteos no banco. 3. Segura a barra com pega um pouco mais larga que os ombros e punhos alinhados por cima dos cotovelos. 4. Tira a barra do suporte com controlo, usando ajuda se a carga for pesada. 5. Desce a barra até à zona média ou ligeiramente baixa do peito, sem abrir totalmente os cotovelos para os lados. 6. Empurra a barra para cima até quase estender os braços, mantendo a trajetória sobre o peito. 7. Inspira antes e durante a descida, expira ao empurrar e volta ao suporte só quando a barra estiver estável.';
+    }
+    if (_has(n, ['passadeira aquecimento'])) {
+      return '1. Começa devagar, numa caminhada fácil em que consegues falar sem esforço. 2. Mantém a intensidade baixa, tronco alto, olhar em frente e mãos livres se te sentires estável. 3. Durante 5 a 10 minutos, aumenta gradualmente a velocidade ou a inclinação leve. 4. Usa este tempo para aquecer tornozelos, joelhos, ancas, respiração e temperatura corporal. 5. Não comeces intenso nem entres logo em corrida ou sprints. 6. Termina o aquecimento quando a respiração estiver mais ativa, mas ainda controlada.';
+    }
+    if (_has(n, ['passadeira cooldown'])) {
+      return '1. No fim da parte principal, reduz a velocidade em vez de parar de repente. 2. Caminha a ritmo fácil durante 3 a 8 minutos. 3. Mantém as passadas curtas e o tronco alto enquanto a respiração acalmar. 4. Se usaste inclinação, baixa a inclinação primeiro e depois reduz a velocidade. 5. Só sai da passadeira quando te sentires estável e sem tontura. 6. Usa os apoios laterais apenas para equilíbrio ao abrandar ou sair.';
+    }
+    if (_has(n, ['puxada alta pega neutra'])) {
+      return '1. Senta-te na máquina de puxada alta e ajusta o apoio das coxas para as pernas ficarem firmes. 2. Agarra a pega neutra com as palmas viradas uma para a outra. 3. Mantém peito ligeiramente aberto, tronco alto e ombros afastados das orelhas. 4. Puxa a pega para baixo até à parte alta do peito, levando os cotovelos para baixo e ligeiramente para trás. 5. Não puxes atrás da nuca e não balances o tronco para iniciar o movimento. 6. Controla a subida até os braços quase estenderem sem deixar os ombros subir para as orelhas. 7. Inspira durante a subida e expira ao puxar.';
+    }
     if (group == 'Mobilidade') return _mobilitySteps(name);
     if (group == 'Cardio') return _cardioSteps(name);
     if (group == 'Karate') return _martialSteps(name, 'Karate');
@@ -469,6 +496,18 @@ class ExerciseCatalogDetailService {
 
   static String commonMistakesFor(String name, String group) {
     final n = _n(name);
+    if (_has(n, ['supino com barra'])) {
+      return 'Deitar demasiado longe do suporte, deixar os punhos dobrados para trás, abrir os cotovelos a noventa graus, bater a barra no peito, tirar os pés do chão ou tentar guardar a barra sem a alinhar no suporte.';
+    }
+    if (_has(n, ['passadeira aquecimento'])) {
+      return 'Começar a correr sem preparação, aumentar velocidade cedo demais, agarrar os apoios durante todo o tempo, usar inclinação alta logo no início ou terminar ainda com respiração completamente fria.';
+    }
+    if (_has(n, ['passadeira cooldown'])) {
+      return 'Parar a passadeira de repente, saltar para fora ainda ofegante, manter inclinação alta no fim, agarrar os apoios e arrastar os pés ou sair antes de recuperar equilíbrio.';
+    }
+    if (_has(n, ['puxada alta pega neutra'])) {
+      return 'Puxar atrás da nuca, encolher ombros, balançar o tronco para ganhar impulso, deixar o apoio das coxas solto, puxar só com braços ou largar a subida sem controlo.';
+    }
     if (group == 'Mobilidade') {
       return 'Forçar dor em vez de tensão leve, prender a respiração, fazer balanços rápidos, perder o apoio da coluna ou tentar aumentar alcance à custa da articulação.';
     }
@@ -514,6 +553,18 @@ class ExerciseCatalogDetailService {
 
   static String safetyNotesFor(String name, String group) {
     final n = _n(name);
+    if (_has(n, ['supino com barra'])) {
+      return 'Usa pins de segurança ou pede ajuda quando a carga for desafiante. Para se houver dor no ombro, cotovelo ou punho, e nunca deixes a barra descer para o pescoço.';
+    }
+    if (_has(n, ['passadeira aquecimento'])) {
+      return 'Mantém intensidade leve a moderada. Reduz a velocidade se sentires falta de coordenação, dor articular, tontura ou respiração demasiado acelerada para o início do treino.';
+    }
+    if (_has(n, ['passadeira cooldown'])) {
+      return 'Não pares de repente depois de esforço intenso. Continua a caminhar até a respiração acalmar e usa os apoios ao sair se houver tontura ou sensação de instabilidade.';
+    }
+    if (_has(n, ['puxada alta pega neutra'])) {
+      return 'Escolhe carga que permita controlar a subida. Evita puxar atrás da nuca e para se houver dor no ombro, cotovelo, punho ou formigueiro no braço.';
+    }
     if (_has(n, ['pescoco', 'cervical', 'chin tuck'])) {
       return 'Usa força muito leve. Para se houver dor aguda, tontura, formigueiro, pressão na cabeça, visão turva ou dor a irradiar para ombro e braço.';
     }
@@ -577,7 +628,7 @@ class ExerciseCatalogDetailService {
       '1. Escolhe halteres que consigas controlar do início ao fim. 2. Segura os halteres com punhos neutros, sem deixar a mão dobrar para trás. 3. Coloca pés à largura da anca e ativa ligeiramente o abdómen. 4. Move os halteres na amplitude confortável indicada pelo exercício, mantendo cotovelos e ombros na linha mais segura. 5. Pausa por um instante no ponto de maior esforço. 6. Regressa devagar sem deixar os halteres cair. 7. Inspira na fase de descida ou preparação e expira na fase de subida ou esforço.';
 
   static String _barbellSteps(String name) =>
-      '1. Aproxima-te da barra e escolhe uma pega segura, normalmente à largura dos ombros ou um pouco mais aberta conforme $name. 2. Alinha punhos, cotovelos e tronco antes de tirar a barra do apoio ou do chão. 3. Mantém a barra perto da linha de força do corpo. 4. Executa a amplitude confortável sem perder a posição da lombar. 5. Controla a barra na descida e evita bater no suporte. 6. Inspira antes da fase difícil e expira ao terminar o esforço. 7. Começa leve até a trajetória ficar consistente.';
+      '1. Aproxima-te da barra e escolhe uma pega segura, normalmente à largura dos ombros ou um pouco mais aberta conforme $name. 2. Alinha punhos, cotovelos e tronco antes de tirar a barra do apoio ou do chão. 3. Mantém a barra perto da linha de força do corpo. 4. Executa a amplitude confortável sem perder a posição da lombar. 5. Controla a barra na descida e evita bater no suporte. 6. Inspira antes da fase difícil e expira ao terminar o esforço. 7. Usa a barra vazia ou uma carga que permita repetir a mesma trajetória sem perder punhos, ombros e lombar.';
 
   static String _cableSteps(String name) =>
       '1. Ajusta a polia à altura indicada pela variação de $name. 2. Escolhe uma pega que permita punhos alinhados e ombros relaxados. 3. Dá um passo para criar tensão no cabo antes da primeira repetição. 4. Move a pega na amplitude confortável do exercício sem puxar com balanço do tronco. 5. Pausa brevemente no ponto de contração. 6. Deixa o cabo regressar devagar, mantendo tensão. 7. Inspira no retorno e expira quando puxas ou empurras.';

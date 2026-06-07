@@ -61,7 +61,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 12,
+      version: 13,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -73,6 +73,7 @@ class AppDatabase {
         await _migrateV75(db);
         await _migrateV76(db);
         await _migrateV77(db);
+        await _migrateV78(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -107,6 +108,9 @@ class AppDatabase {
         }
         if (oldVersion < 12) {
           await _migrateV77(db);
+        }
+        if (oldVersion < 13) {
+          await _migrateV78(db);
         }
       },
     );
@@ -328,6 +332,11 @@ class AppDatabase {
         'ExtensÃ£o francesa',
       ],
     );
+  }
+
+  Future<void> _migrateV78(Database db) async {
+    await _seedExercises(db);
+    await _refreshDefaultExerciseDetails(db);
   }
 
   Future<void> _createTrainingArchitectureTables(Database db) async {
