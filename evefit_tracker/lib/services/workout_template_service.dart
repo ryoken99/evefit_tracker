@@ -28,7 +28,7 @@ class WorkoutTemplateService {
         'Press militar com halteres',
         'Elevação lateral',
         'Extensão de tríceps no cabo',
-        'Tríceps testa',
+        'Tríceps testa com barra EZ',
       ],
     ),
     WorkoutTemplate(
@@ -57,7 +57,7 @@ class WorkoutTemplateService {
     WorkoutTemplate(
       name: 'Pernas + Core',
       exerciseNames: [
-        'Agachamento',
+        'Agachamento com peso corporal',
         'Agachamento goblet',
         'Peso morto romeno',
         'Extensão de perna na máquina',

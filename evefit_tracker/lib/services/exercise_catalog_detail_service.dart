@@ -37,6 +37,48 @@ class ExerciseCatalogDetailService {
 
   static String equipmentFor(String name) {
     final n = _n(name);
+    if (_has(n, ['flexao classica', 'flexao aberta', 'flexao arqueiro'])) {
+      return 'Peso corporal';
+    }
+    if (_has(n, ['flexao com joelhos apoiados'])) {
+      return 'Peso corporal, tapete / colchonete';
+    }
+    if (_has(n, ['flexao inclinada', 'flexao declinada'])) {
+      return 'Peso corporal, banco / cadeira / apoio';
+    }
+    if (_has(n, ['agachamento com peso corporal', 'agachamento sumo'])) {
+      return 'Peso corporal';
+    }
+    if (_has(n, ['agachamento para cadeira'])) {
+      return 'Peso corporal, banco / cadeira / apoio';
+    }
+    if (_has(n, ['agachamento com mochila', 'lunges com mochila'])) {
+      return 'Mochila com peso';
+    }
+    if (_has(n, ['agachamento com garrafao'])) return 'Garrafão de água';
+    if (_has(n, ['remo invertido em mesa resistente'])) {
+      return 'Mesa resistente';
+    }
+    if (_has(n, ['mobilidade de ombro com cabo de vassoura'])) {
+      return 'Cabo de vassoura';
+    }
+    if (_has(n, ['triceps testa com barra ez'])) return 'Barra EZ';
+    if (_has(n, ['curl 21 com halteres', 'curl arrastado com halteres'])) {
+      return 'Halteres';
+    }
+    if (_has(n, [
+      'extensao acima da cabeca com halter',
+      'press fechado com halteres',
+      'tate press',
+      'suitcase carry',
+      'hold estatico com halteres',
+      'rotacao controlada com halter leve',
+    ])) {
+      return _has(n, ['suitcase carry'])
+          ? 'Halteres, espaço livre'
+          : 'Halteres';
+    }
+    if (_has(n, ['agachamento com halteres ao lado'])) return 'Halteres';
     if (_has(n, ['aberturas inclinadas com halteres'])) {
       return 'Halteres, banco inclinado';
     }
@@ -275,6 +317,25 @@ class ExerciseCatalogDetailService {
 
   static String descriptionFor(String name, String group) {
     final n = _n(name);
+    if (_has(n, ['flexao classica'])) {
+      return '$name é um exercício de peso corporal em que ficas em prancha alta, dobras os braços para aproximar o peito do chão e empurras o corpo de volta para cima. Serve para treinar peito, tríceps, ombros e controlo do tronco sem equipamento.';
+    }
+    if (_has(n, ['agachamento com peso corporal'])) {
+      return '$name é um exercício de pernas em que dobras a anca e os joelhos para baixar o corpo como se fosses sentar, voltando depois a ficar de pé. Serve para treinar quadríceps, glúteos e controlo da anca sem carga externa.';
+    }
+    if (_has(n, [
+      'agachamento com mochila',
+      'agachamento com garrafao',
+      'lunges com mochila',
+    ])) {
+      return '$name é uma variação caseira de treino de pernas. Usa uma carga improvisada de forma controlada, mantendo o objeto estável e junto ao corpo para treinar pernas sem transformar o movimento num risco de queda ou escorregamento.';
+    }
+    if (_has(n, ['remo invertido em mesa resistente'])) {
+      return '$name é uma remada de peso corporal feita apenas com uma mesa muito firme. O corpo fica inclinado debaixo da mesa e puxas o peito na direção da borda, treinando costas e pega com atenção máxima à estabilidade do apoio.';
+    }
+    if (_has(n, ['mobilidade de ombro com cabo de vassoura'])) {
+      return '$name usa um bastão leve e estável para explorar mobilidade de ombro sem carga. O objetivo é mover os braços com alcance suave, respiração calma e controlo, sem forçar a articulação.';
+    }
     if (_has(n, ['alongamento cervical leve'])) {
       return '$name é um alongamento suave para reduzir tensão no pescoço e melhorar mobilidade cervical. O movimento inclina a cabeça com cuidado para criar uma tensão leve, nunca dor.';
     }
@@ -309,7 +370,7 @@ class ExerciseCatalogDetailService {
       return '$name é uma puxada vertical na máquina ou polia alta com as palmas viradas uma para a outra. O objetivo é puxar a pega até à parte alta do peito usando dorsais e escápulas, sem levar a barra atrás da nuca.';
     }
     if (group == 'Mobilidade') {
-      return '$name é um exercício de mobilidade ou alongamento para a zona indicada pelo nome. Ajuda a ganhar alcance confortável, reduzir rigidez e melhorar controlo respiratório sem carga externa.';
+      return '$name é um exercício de mobilidade ou alongamento para a zona indicada pelo nome. Ajuda a ganhar alcance que consegues respirar sem dor, reduzir rigidez e melhorar controlo respiratório sem carga externa.';
     }
     if (group == 'Cardio') {
       return '$name é uma opção cardiovascular para trabalhar resistência, ritmo ou intervalos. A intensidade deve permitir manter técnica, respiração regular e perceção clara de fadiga.';
@@ -426,11 +487,30 @@ class ExerciseCatalogDetailService {
     ])) {
       return '$name treina antebraço, punho ou força de pega. O foco é controlar a mão e o punho enquanto a carga tenta abrir a pega, rodar o antebraço ou desviar o alinhamento.';
     }
-    return '$name trabalha o padrão principal de $group associado à ficha do exercício. A execução usa o equipamento indicado com respiração regular, alcance confortável e controlo do início ao fim.';
+    return '$name trabalha o padrão principal de $group associado à ficha do exercício. A execução usa o equipamento indicado com respiração regular e alcance limitado ao ponto em que ainda controlas articulações e retorno.';
   }
 
   static String stepsFor(String name, String group) {
     final n = _n(name);
+    if (_has(n, ['flexao classica'])) {
+      return '1. Coloca-te no chão em posição de prancha alta. 2. Apoia as mãos ligeiramente mais largas que os ombros, com dedos apontados para a frente ou ligeiramente para fora. 3. Estica as pernas para trás e apoia a ponta dos pés no chão. 4. Mantém o corpo em linha reta da cabeça aos calcanhares. 5. Contrai ligeiramente abdómen e glúteos para não deixar a anca cair. 6. Olha para o chão um pouco à frente das mãos, sem levantar demasiado a cabeça. 7. Desce devagar dobrando os cotovelos numa diagonal natural, cerca de 30 a 60 graus do tronco. 8. Aproxima o peito do chão até uma distância que controles sem dor. 9. Empurra o chão com as mãos e sobe até quase estender os braços. 10. Inspira ao descer e expira ao subir. 11. Se for difícil, faz com joelhos apoiados ou com as mãos numa superfície elevada.';
+    }
+    if (_has(n, ['agachamento com peso corporal'])) {
+      return '1. Fica de pé com os pés à largura dos ombros ou ligeiramente mais afastados. 2. Aponta os dedos dos pés um pouco para fora se isso deixar a anca mais confortável. 3. Mantém peito aberto, ombros relaxados e olhar em frente. 4. Contrai ligeiramente o abdómen. 5. Inicia o movimento levando a anca para trás e dobrando os joelhos. 6. Desce como se fosses sentar numa cadeira. 7. Mantém os joelhos alinhados com a direção dos pés, sem deixar cair para dentro. 8. Desce até as coxas ficarem perto de paralelas ao chão, ou até onde conseguires sem perder calcanhares no chão. 9. Empurra o chão com os pés e sobe até ficares de pé. 10. Inspira ao descer e expira ao subir. 11. Usa uma cadeira atrás de ti como referência se fores iniciante.';
+    }
+    if (_has(n, [
+      'agachamento com mochila',
+      'agachamento com garrafao',
+      'lunges com mochila',
+    ])) {
+      return '1. Confirma que a mochila, garrafão ou carga caseira está fechada, estável e não escorregadia. 2. Segura a carga junto ao tronco ou coloca a mochila bem ajustada às costas. 3. Mantém os pés firmes no chão e cria espaço livre à volta. 4. Dobra anca e joelhos devagar, mantendo a carga sem balançar. 5. Desce só até onde controlas joelhos, anca e coluna. 6. Sobe empurrando o chão, sem deixar o objeto puxar o tronco para a frente. 7. Inspira ao descer e expira ao subir. 8. Para se a carga se mover dentro da mochila, se o garrafão escorregar ou se sentires dor aguda.';
+    }
+    if (_has(n, ['remo invertido em mesa resistente'])) {
+      return '1. Usa apenas uma mesa pesada, estável e que não deslize; não uses mesa leve ou dobrável. 2. Deita-te por baixo da borda e segura a mesa com as mãos à largura dos ombros. 3. Estica as pernas ou dobra os joelhos para facilitar. 4. Mantém corpo em linha reta e ombros afastados das orelhas. 5. Puxa o peito na direção da borda da mesa, juntando ligeiramente as escápulas. 6. Desce devagar até quase estender os braços. 7. Inspira ao descer e expira ao puxar. 8. Para se a mesa mexer, ranger, escorregar ou se a pega não parecer segura.';
+    }
+    if (_has(n, ['mobilidade de ombro com cabo de vassoura'])) {
+      return '1. Segura o cabo de vassoura com as duas mãos, bem mais largo que os ombros. 2. Fica de pé com pés firmes e estáveis, costelas baixas e pescoço relaxado. 3. Leva o bastão devagar à frente e acima da cabeça até sentires alongamento leve nos ombros ou peitoral. 4. Não forces para passar atrás do corpo se houver dor ou bloqueio. 5. Respira devagar durante 15 a 30 segundos ou faz repetições lentas. 6. Regressa pelo mesmo caminho com controlo. 7. Alarga a pega para facilitar e encurta apenas se o movimento ficar confortável.';
+    }
     if (_has(n, ['alongamento cervical leve'])) {
       return '1. Senta-te ou fica de pé com a coluna direita e os ombros relaxados. 2. Olha em frente e mantém o queixo nivelado. 3. Inclina a cabeça devagar para o lado, levando a orelha na direção do ombro sem puxar com força. 4. Para quando sentires tensão leve no lado do pescoço e respira lentamente durante 15 a 30 segundos. 5. Regressa ao centro com cuidado e repete para o outro lado. 6. Mantém o tronco quieto e termina se surgir tontura, formigueiro, dor irradiada ou pressão na cabeça.';
     }
@@ -496,6 +576,25 @@ class ExerciseCatalogDetailService {
 
   static String commonMistakesFor(String name, String group) {
     final n = _n(name);
+    if (_has(n, ['flexao classica'])) {
+      return 'Deixar a anca cair, levantar demasiado a anca, abrir os cotovelos a noventa graus, descer só a cabeça, fazer repetições rápidas demais, prender a respiração ou perder a linha entre cabeça, tronco e pernas.';
+    }
+    if (_has(n, ['agachamento com peso corporal'])) {
+      return 'Deixar joelhos cair para dentro, levantar calcanhares, arredondar a lombar, descer sem usar a anca, olhar para baixo o tempo todo ou subir sem terminar a extensão da anca.';
+    }
+    if (_has(n, [
+      'agachamento com mochila',
+      'agachamento com garrafao',
+      'lunges com mochila',
+    ])) {
+      return 'Usar mochila solta, garrafão escorregadio, carga que balança, pés sem espaço, joelhos a cair para dentro, tronco a inclinar por causa da carga ou continuar quando o objeto deixa de estar estável.';
+    }
+    if (_has(n, ['remo invertido em mesa resistente'])) {
+      return 'Usar mesa leve, dobrável ou escorregadia, puxar com balanço, encolher os ombros, dobrar a anca, largar a pega de repente ou continuar se a mesa mexer.';
+    }
+    if (_has(n, ['mobilidade de ombro com cabo de vassoura'])) {
+      return 'Usar pega demasiado estreita, arquear a lombar, forçar dor no ombro, levantar os ombros para as orelhas, prender a respiração ou mover o bastão depressa.';
+    }
     if (_has(n, ['supino com barra'])) {
       return 'Deitar demasiado longe do suporte, deixar os punhos dobrados para trás, abrir os cotovelos a noventa graus, bater a barra no peito, tirar os pés do chão ou tentar guardar a barra sem a alinhar no suporte.';
     }
@@ -553,6 +652,25 @@ class ExerciseCatalogDetailService {
 
   static String safetyNotesFor(String name, String group) {
     final n = _n(name);
+    if (_has(n, ['flexao classica'])) {
+      return 'Para se sentires dor no ombro, cotovelo ou punho. Reduz a amplitude, apoia os joelhos ou usa uma superfície elevada se ainda não tiveres força para manter a prancha alinhada.';
+    }
+    if (_has(n, ['agachamento com peso corporal'])) {
+      return 'Usa uma cadeira como referência se fores iniciante. Para se sentires dor aguda no joelho, anca ou lombar, ou se não conseguires manter calcanhares e joelhos estáveis.';
+    }
+    if (_has(n, [
+      'agachamento com mochila',
+      'agachamento com garrafao',
+      'lunges com mochila',
+    ])) {
+      return 'Usa apenas objetos fechados, estáveis e não escorregadios. Para se a carga se deslocar, se perderes equilíbrio ou se sentires dor aguda no joelho, anca, lombar ou punho.';
+    }
+    if (_has(n, ['remo invertido em mesa resistente'])) {
+      return 'Usa apenas mesa resistente e pesada, em piso que não escorrega. Para imediatamente se a mesa mexer, se a pega falhar ou se houver dor no ombro, cotovelo ou punho.';
+    }
+    if (_has(n, ['mobilidade de ombro com cabo de vassoura'])) {
+      return 'O bastão serve só como guia leve. Para se houver dor aguda, formigueiro, pressão no ombro ou necessidade de arquear a lombar para completar o movimento.';
+    }
     if (_has(n, ['supino com barra'])) {
       return 'Usa pins de segurança ou pede ajuda quando a carga for desafiante. Para se houver dor no ombro, cotovelo ou punho, e nunca deixes a barra descer para o pescoço.';
     }
@@ -625,22 +743,22 @@ class ExerciseCatalogDetailService {
       '1. Começa em base estável de $art, com pés ativos e joelhos ligeiramente fletidos. 2. Define o objetivo técnico de $name antes de aumentar velocidade. 3. Executa a primeira repetição devagar, coordenando anca, tronco, braços e olhar. 4. Regressa à base com controlo e sem cruzar os pés de forma insegura. 5. Respira a cada repetição e mantém maxilar relaxado. 6. Faz séries curtas de 30 a 60 segundos, descansando antes de perder precisão.';
 
   static String _dumbbellSteps(String name) =>
-      '1. Escolhe halteres que consigas controlar do início ao fim. 2. Segura os halteres com punhos neutros, sem deixar a mão dobrar para trás. 3. Coloca pés à largura da anca e ativa ligeiramente o abdómen. 4. Move os halteres na amplitude confortável indicada pelo exercício, mantendo cotovelos e ombros na linha mais segura. 5. Pausa por um instante no ponto de maior esforço. 6. Regressa devagar sem deixar os halteres cair. 7. Inspira na fase de descida ou preparação e expira na fase de subida ou esforço.';
+      '1. Escolhe halteres que consigas controlar do início ao fim. 2. Segura os halteres com punhos neutros, sem deixar a mão dobrar para trás. 3. Coloca pés à largura da anca e ativa ligeiramente o abdómen. 4. Move os halteres até ao ponto em que cotovelos e ombros continuam alinhados e sem dor. 5. Pausa por um instante no ponto de maior esforço. 6. Regressa devagar sem deixar os halteres cair. 7. Inspira na fase de descida ou preparação e expira na fase de subida ou esforço.';
 
   static String _barbellSteps(String name) =>
-      '1. Aproxima-te da barra e escolhe uma pega segura, normalmente à largura dos ombros ou um pouco mais aberta conforme $name. 2. Alinha punhos, cotovelos e tronco antes de tirar a barra do apoio ou do chão. 3. Mantém a barra perto da linha de força do corpo. 4. Executa a amplitude confortável sem perder a posição da lombar. 5. Controla a barra na descida e evita bater no suporte. 6. Inspira antes da fase difícil e expira ao terminar o esforço. 7. Usa a barra vazia ou uma carga que permita repetir a mesma trajetória sem perder punhos, ombros e lombar.';
+      '1. Aproxima-te da barra e escolhe uma pega segura, normalmente à largura dos ombros ou um pouco mais aberta conforme $name. 2. Alinha punhos, cotovelos e tronco antes de tirar a barra do apoio ou do chão. 3. Mantém a barra perto da linha de força do corpo. 4. Sobe, desce ou move a barra só até onde consegues manter lombar, punhos e ombros alinhados, conforme a direção do exercício. 5. Controla a barra na descida e evita bater no suporte. 6. Inspira antes da fase difícil e expira ao terminar o esforço. 7. Usa a barra vazia ou uma carga que permita repetir a mesma trajetória sem perder punhos, ombros e lombar.';
 
   static String _cableSteps(String name) =>
-      '1. Ajusta a polia à altura indicada pela variação de $name. 2. Escolhe uma pega que permita punhos alinhados e ombros relaxados. 3. Dá um passo para criar tensão no cabo antes da primeira repetição. 4. Move a pega na amplitude confortável do exercício sem puxar com balanço do tronco. 5. Pausa brevemente no ponto de contração. 6. Deixa o cabo regressar devagar, mantendo tensão. 7. Inspira no retorno e expira quando puxas ou empurras.';
+      '1. Ajusta a polia à altura indicada pela variação de $name. 2. Escolhe uma pega que permita punhos alinhados e ombros relaxados. 3. Dá um passo para criar tensão no cabo antes da primeira repetição. 4. Move a pega até ao ponto em que a articulação alvo continua estável, dobrando ou estendendo os cotovelos conforme o exercício, sem puxar com balanço do tronco. 5. Pausa brevemente no ponto de contração. 6. Deixa o cabo regressar devagar, mantendo tensão. 7. Inspira no retorno e expira quando puxas ou empurras.';
 
   static String _machineSteps(String name) =>
-      '1. Ajusta banco, encosto e pegas para a articulação principal ficar alinhada com o eixo da máquina. 2. Seleciona carga leve para testar o caminho da máquina. 3. Segura as pegas com punhos alinhados ou apoia os pés no local indicado. 4. Empurra ou puxa pela amplitude confortável sem bater os pesos. 5. Regressa devagar até sentires alongamento ou flexão segura. 6. Inspira no retorno e expira no esforço. 7. Mantém costas e cabeça apoiadas quando a máquina tiver apoio.';
+      '1. Ajusta banco, encosto e pegas para a articulação principal ficar alinhada com o eixo da máquina. 2. Seleciona carga leve para testar o caminho da máquina. 3. Segura as pegas com punhos alinhados ou apoia os pés no local indicado. 4. Empurra ou puxa enquanto dobras ou estendes a articulação alvo, parando antes de a máquina causar dor ou tirar as costas do apoio. 5. Regressa devagar até sentires alongamento ou flexão segura. 6. Inspira no retorno e expira no esforço. 7. Mantém costas e cabeça apoiadas quando a máquina tiver apoio.';
 
   static String _pullupBarSteps(String name) =>
       '1. Segura a barra fixa com a pega indicada por $name e mãos firmes. 2. Começa pendurado com ombros ativos, sem deixar o pescoço encolher. 3. Organiza costelas e abdómen para evitar balanço excessivo. 4. Puxa, sustenta ou eleva as pernas conforme o exercício, respeitando a amplitude que controlas. 5. Desce ou relaxa devagar sem soltar a barra de repente. 6. Inspira antes da fase difícil e expira durante o esforço. 7. Usa apoio dos pés ou elástico se ainda não controlas o peso corporal.';
 
   static String _bandSteps(String name) =>
-      '1. Prende ou segura o elástico num ponto seguro e na altura adequada para $name. 2. Agarra o elástico com punhos alinhados e tensão leve antes de começar. 3. Afasta-te apenas o suficiente para sentir resistência sem perder controlo. 4. Move os braços pela amplitude confortável sem deixar o elástico puxar os ombros. 5. Pausa no ponto de maior tensão. 6. Regressa devagar até manter tensão leve. 7. Inspira no retorno e expira ao afastar ou puxar o elástico.';
+      '1. Prende ou segura o elástico num ponto seguro e na altura adequada para $name. 2. Agarra o elástico com punhos alinhados e tensão leve antes de começar. 3. Afasta-te apenas o suficiente para sentir resistência sem perder controlo. 4. Dobra, estende ou abre os braços conforme o exercício, parando antes de o elástico puxar ombros ou punhos para fora da linha. 5. Pausa no ponto de maior tensão. 6. Regressa devagar até manter tensão leve. 7. Inspira no retorno e expira ao afastar ou puxar o elástico.';
 
   static String _bodyweightSteps(String name) =>
       '1. Posiciona mãos, pés ou apoios de acordo com $name, usando uma base firme. 2. Alinha cabeça, tronco e anca antes de iniciar. 3. Ativa ligeiramente abdómen e glúteos para proteger lombar. 4. Dobra ou estende as articulações pela amplitude que consegues controlar. 5. Pausa se precisares de reorganizar a posição. 6. Regressa devagar sem cair no chão ou perder equilíbrio. 7. Inspira na fase mais fácil e expira no esforço.';

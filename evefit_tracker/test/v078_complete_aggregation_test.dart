@@ -28,7 +28,7 @@ void main() {
             'Curl alternado',
             'Curl martelo',
             'Curl concentrado',
-            'Curl inclinado',
+            'Curl inclinado com halteres',
             'Curl Zottman',
             'Curl inverso com halteres',
             'Curl cruzado no corpo',
@@ -42,8 +42,8 @@ void main() {
             'Reverse wrist curl',
             'Pronação com halter',
             'Supinação com halter',
-            'Desvio radial do punho',
-            'Desvio ulnar do punho',
+            'Desvio radial com halter',
+            'Desvio ulnar com halter',
             'Aperto isométrico',
             'Farmer hold',
             'Farmer walk',
@@ -68,7 +68,11 @@ void main() {
           ),
           equipment: {'bodyweight'},
         ),
-        containsAll(['Flexões', 'Flexões inclinadas', 'Flexões declinadas']),
+        containsAll([
+          'Flexão clássica',
+          'Flexão inclinada',
+          'Flexão declinada',
+        ]),
       );
 
       expect(
@@ -104,7 +108,7 @@ void main() {
           equipment: {'bodyweight', 'bench'},
         ),
         containsAll([
-          'Agachamento peso corporal',
+          'Agachamento com peso corporal',
           'Lunges',
           'Ponte de glúteo',
           'Gémeos em pé',
@@ -248,7 +252,7 @@ void main() {
           ),
           equipment: {'bodyweight', 'bench'},
         ),
-        containsAll(['Agachamento peso corporal', 'Wall sit', 'Lunges']),
+        containsAll(['Agachamento com peso corporal', 'Wall sit', 'Lunges']),
       );
 
       expect(

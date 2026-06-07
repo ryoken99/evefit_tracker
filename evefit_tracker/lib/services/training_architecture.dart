@@ -971,6 +971,48 @@ class TrainingArchitecture {
       description: 'Banco plano ou ajustável.',
     ),
     TrainingEquipment(
+      key: 'chair_support',
+      name: 'Banco / cadeira / apoio',
+      category: 'support',
+      description: 'Apoio doméstico resistente para variações inclinadas.',
+    ),
+    TrainingEquipment(
+      key: 'weighted_backpack',
+      name: 'Mochila com peso',
+      category: 'home_weight',
+      description: 'Mochila com livros ou carga estável.',
+    ),
+    TrainingEquipment(
+      key: 'water_bottles',
+      name: 'Garrafas de água',
+      category: 'home_weight',
+      description: 'Garrafas pequenas usadas como carga leve.',
+    ),
+    TrainingEquipment(
+      key: 'water_jug',
+      name: 'Garrafão de água',
+      category: 'home_weight',
+      description: 'Garrafão usado como carga caseira.',
+    ),
+    TrainingEquipment(
+      key: 'stable_step',
+      name: 'Degrau / escada estável',
+      category: 'support',
+      description: 'Degrau fixo e antiderrapante.',
+    ),
+    TrainingEquipment(
+      key: 'sturdy_table',
+      name: 'Mesa resistente',
+      category: 'support',
+      description: 'Mesa firme apenas para remadas se for segura.',
+    ),
+    TrainingEquipment(
+      key: 'broomstick',
+      name: 'Cabo de vassoura',
+      category: 'mobility',
+      description: 'Bastão leve para mobilidade.',
+    ),
+    TrainingEquipment(
       key: 'incline_bench',
       name: 'Banco inclinado',
       category: 'support',
@@ -1154,6 +1196,8 @@ class TrainingArchitecture {
       'curl inverso com halteres',
       'curl zottman',
       'curl cruzado no corpo',
+      'curl 21',
+      'curl arrastado',
       'curl isometrico',
       'curl isométrico',
       'curl com barra',
@@ -1170,10 +1214,18 @@ class TrainingArchitecture {
     if (_has(primaryHaystack, [
       'triceps',
       'tríceps',
+      'tate press',
+      'press fechado com halteres',
+      'extensao acima da cabeca',
+      'extensão acima da cabeça',
       'flexoes fechadas',
       'flexões fechadas',
+      'flexao fechada',
+      'flexão fechada',
       'flexoes diamante',
       'flexões diamante',
+      'flexao diamante',
+      'flexão diamante',
       'supino fechado',
       'fundos entre apoios',
       'dips para triceps',
@@ -1188,8 +1240,19 @@ class TrainingArchitecture {
     if (_has(primaryHaystack, [
       'wrist',
       'farmer',
+      'suitcase',
+      'hold estatico',
+      'hold estático',
       'dead hang',
       'aperto',
+      'pronacao',
+      'pronação',
+      'supinacao',
+      'supinação',
+      'desvio radial',
+      'desvio ulnar',
+      'rotacao controlada',
+      'rotação controlada',
       'pinch',
       'plate hold',
       'towel',
@@ -1240,6 +1303,8 @@ class TrainingArchitecture {
           'supino',
           'flexoes',
           'flexões',
+          'flexao',
+          'flexão',
           'aberturas',
           'chest press',
           'crossover',
@@ -1267,6 +1332,7 @@ class TrainingArchitecture {
       'dorsal',
       'costas',
       'hiperextensao',
+      'face pull',
     ])) {
       add(
         region: 'upper',
@@ -1307,6 +1373,10 @@ class TrainingArchitecture {
       'wall sit',
       'step-up',
       'lunges',
+      'mochila',
+      'garrafao',
+      'garrafão',
+      'smith',
     ])) {
       add(
         region: 'lower',
@@ -1624,6 +1694,13 @@ class TrainingArchitecture {
     addIf('barbell', ['barra', 'barbell']);
     addIf('plates', ['disco', 'plate']);
     addIf('bench', ['banco']);
+    addIf('chair_support', ['cadeira', 'apoio']);
+    addIf('weighted_backpack', ['mochila']);
+    addIf('water_bottles', ['garrafas de agua', 'garrafas de Ã¡gua']);
+    addIf('water_jug', ['garrafao', 'garrafÃ£o']);
+    addIf('stable_step', ['degrau', 'escada estavel', 'escada estÃ¡vel']);
+    addIf('sturdy_table', ['mesa resistente']);
+    addIf('broomstick', ['cabo de vassoura']);
     addIf('incline_bench', ['banco inclinado']);
     addIf('decline_bench', ['banco declinado']);
     addIf('parallel_bars', ['paralelas']);
