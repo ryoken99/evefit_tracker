@@ -145,10 +145,12 @@ class ExerciseFilterService {
     required bool showAllExercises,
   }) {
     final availability = exercises.map((exercise) {
-      final matchesSelection = TrainingArchitecture.matchesSelection(
-        exercise,
-        selection,
-      );
+      final matchesSelection =
+          TrainingArchitecture.matchesSelection(
+            exercise,
+            _baseSelectionForHierarchy(selection),
+          ) &&
+          _matchesHierarchyFocus(exercise, selection);
       final matchesEquipment = _matchesEquipment(
         exercise,
         trainingLocation,
@@ -255,6 +257,125 @@ class ExerciseFilterService {
     }
     return false;
   }
+
+  static TrainingSelection _baseSelectionForHierarchy(
+    TrainingSelection selection,
+  ) {
+    if (selection.regionKey == 'core') {
+      return TrainingSelection(
+        regionKey: selection.regionKey,
+        equipmentKey: selection.equipmentKey,
+      );
+    }
+    if (!_hierarchyFocusKeywords.containsKey(selection.subgroupKey) &&
+        !_hierarchyFocusKeywords.containsKey(selection.specificMuscleKey)) {
+      return selection;
+    }
+    return TrainingSelection(
+      regionKey: selection.regionKey,
+      groupKey: selection.groupKey,
+      equipmentKey: selection.equipmentKey,
+    );
+  }
+
+  static bool _matchesHierarchyFocus(
+    Exercise exercise,
+    TrainingSelection selection,
+  ) {
+    final focus = selection.specificMuscleKey.isNotEmpty
+        ? selection.specificMuscleKey
+        : selection.subgroupKey;
+    if (focus.isEmpty) return true;
+    final keywords = _hierarchyFocusKeywords[focus];
+    if (keywords == null || keywords.isEmpty) return true;
+    return _containsAny(exercise, keywords);
+  }
+
+  static const _hierarchyFocusKeywords = {
+    'arms_complete': <String>[],
+    'chest_complete': <String>[],
+    'back_complete': <String>[],
+    'shoulders_complete': <String>[],
+    'core_complete': <String>[],
+    'legs_complete': <String>[],
+    'forearm_complete': <String>[],
+    'abs_complete': <String>[],
+    'biceps_brachii': ['bíceps', 'biceps', 'curl', 'chin-up'],
+    'biceps': ['bíceps', 'biceps', 'curl', 'chin-up'],
+    'brachialis': ['braquial', 'martelo'],
+    'brachioradialis': ['braquiorradial', 'martelo', 'inverso'],
+    'coracobrachialis': ['coracobraquial'],
+    'triceps': ['tríceps', 'triceps', 'flexões fechadas', 'fundos'],
+    'triceps_long': ['tríceps', 'triceps', 'acima da cabeça', 'francesa'],
+    'triceps_lateral': ['tríceps', 'triceps', 'corda', 'cabo'],
+    'triceps_medial': ['tríceps', 'triceps', 'fechadas'],
+    'forearm_flexors': ['wrist curl', 'flexores', 'finger curls'],
+    'forearm_extensors': ['reverse wrist', 'extensores', 'extensão de dedos'],
+    'pronators': ['pronação', 'pronacao', 'pronadores'],
+    'supinators': ['supinação', 'supinacao', 'supinadores'],
+    'wrist': ['punho', 'wrist', 'desvio radial', 'desvio ulnar'],
+    'fingers': ['dedos', 'finger'],
+    'support_grip': ['farmer', 'dead hang', 'suporte'],
+    'pinch_grip': ['pinça', 'pinca', 'pinch', 'plate hold'],
+    'general_grip': ['pega', 'grip', 'dead hang', 'farmer'],
+    'upper_chest': ['inclinado', 'declinadas', 'superior'],
+    'mid_chest': ['supino', 'flexões', 'aberturas', 'chest press'],
+    'lower_chest': ['declinado', 'dips', 'inferior', 'flexões inclinadas'],
+    'serratus_anterior': ['serrátil', 'serratil', 'scapular', 'wall slide'],
+    'back_upper': [
+      'trapézio',
+      'trapezio',
+      'romboides',
+      'face pull',
+      'escapular',
+    ],
+    'back_mid': ['romboides', 'remo', 'redondo', 'dorsal'],
+    'back_lower': ['lombar', 'eretores', 'hiperextensão', 'hiperextensao'],
+    'back_width': ['puxada', 'dorsal', 'latíssimo', 'latissimo'],
+    'back_thickness': ['remo', 'romboides', 'trapézio médio', 'trapezio medio'],
+    'lower_abs': [
+      'reverse crunch',
+      'elevação de pernas',
+      'elevacao de pernas',
+      'inferior',
+    ],
+    'lateral_abs': [
+      'prancha lateral',
+      'russian twist',
+      'bicycle crunch',
+      'oblíquos',
+      'obliquos',
+    ],
+    'upper_abs': ['crunch', 'superior'],
+    'mid_abs': ['crunch', 'abdominal médio', 'abdominal medio'],
+    'rectus_abdominis': ['reto abdominal', 'crunch'],
+    'external_obliques': ['oblíquos', 'obliquos', 'russian twist'],
+    'internal_obliques': ['oblíquos', 'obliquos', 'bicycle crunch'],
+    'transverse_abdominis': ['transverso', 'vacuum'],
+    'anti_rotation': ['anti-rotação', 'anti-rotacao', 'pallof'],
+    'anti_extension': ['anti-extensão', 'anti-extensao', 'prancha', 'hollow'],
+    'anti_lateral_flexion': [
+      'anti-flexão lateral',
+      'anti-flexao lateral',
+      'side bend',
+    ],
+    'deep_stability': ['estabilidade', 'dead bug', 'bird dog'],
+    'quadriceps_complete': [
+      'quadríceps',
+      'quadriceps',
+      'agachamento',
+      'leg press',
+    ],
+    'hamstrings_complete': ['posterior', 'romeno', 'curl de perna'],
+    'glutes_complete': ['glúteo', 'gluteo', 'hip thrust', 'ponte'],
+    'adductors': ['adutor', 'adutores'],
+    'abductors': ['abdutor', 'abdutores', 'abdução', 'abducao'],
+    'calves': ['gémeos', 'gemeos', 'calf'],
+    'soleus': ['sóleo', 'soleo'],
+    'tibialis_anterior': ['tibial anterior'],
+    'ankle': ['tornozelo'],
+    'ankle_stability': ['tornozelo', 'estabilidade'],
+  };
 
   static bool _containsAny(Exercise exercise, List<String> values) {
     final haystack = WorkoutTaxonomy.normalize(

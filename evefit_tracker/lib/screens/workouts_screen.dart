@@ -246,6 +246,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       flow = flow.copyWith(
                         regionKey: picked.key,
                         groupKey: '',
+                        subzoneKey: '',
                         focusKey: '',
                       );
                       selection = TrainingFlow.toTrainingSelection(flow);
@@ -272,6 +273,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                     setSheetState(() {
                       flow = flow.copyWith(
                         groupKey: picked?.key ?? '',
+                        subzoneKey: '',
                         focusKey: '',
                       );
                       selection = TrainingFlow.toTrainingSelection(flow);
@@ -283,21 +285,24 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 ),
                 const SizedBox(height: 8),
                 _ChoiceTile(
-                  label: TrainingFlow.finalFocusLabel(flow.typeKey),
-                  value: flow.focusKey.isEmpty
+                  label: 'Subzona anatómica',
+                  value: flow.subzoneKey.isEmpty
                       ? 'Opcional'
-                      : _strengthFocusName(flow.focusKey),
-                  enabled: _strengthFocusOptions(flow.groupKey).isNotEmpty,
+                      : _strengthFocusName(flow.subzoneKey),
+                  enabled: _strengthSubzoneOptions(flow).isNotEmpty,
                   onTap: () async {
                     final picked =
                         await _pickFromList<MapEntry<String, String>>(
-                          title: 'Escolher músculo específico',
-                          items: _strengthFocusOptions(flow.groupKey),
+                          title: 'Escolher subzona anatómica',
+                          items: _strengthSubzoneOptions(flow),
                           labelFor: (item) => item.value,
                           allowClear: true,
                         );
                     setSheetState(() {
-                      flow = flow.copyWith(focusKey: picked?.key ?? '');
+                      flow = flow.copyWith(
+                        subzoneKey: picked?.key ?? '',
+                        focusKey: '',
+                      );
                       selection = TrainingFlow.toTrainingSelection(flow);
                       type = TrainingFlow.suggestedWorkoutName(flow);
                       workoutName.text = type;
@@ -305,6 +310,35 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                     });
                   },
                 ),
+                if (TrainingFlow.requiresStrengthSpecificFocus(
+                  _strengthHierarchyGroupKey(flow),
+                  flow.subzoneKey,
+                )) ...[
+                  const SizedBox(height: 8),
+                  _ChoiceTile(
+                    label: TrainingFlow.finalFocusLabel(flow.typeKey),
+                    value: flow.focusKey.isEmpty
+                        ? 'Opcional'
+                        : _strengthFocusName(flow.focusKey),
+                    enabled: _strengthSpecificOptions(flow).isNotEmpty,
+                    onTap: () async {
+                      final picked =
+                          await _pickFromList<MapEntry<String, String>>(
+                            title: 'Escolher músculo específico/foco',
+                            items: _strengthSpecificOptions(flow),
+                            labelFor: (item) => item.value,
+                            allowClear: true,
+                          );
+                      setSheetState(() {
+                        flow = flow.copyWith(focusKey: picked?.key ?? '');
+                        selection = TrainingFlow.toTrainingSelection(flow);
+                        type = TrainingFlow.suggestedWorkoutName(flow);
+                        workoutName.text = type;
+                        workoutTypeId = _typeIdFor(types, type);
+                      });
+                    },
+                  ),
+                ],
               ] else if (flow.typeKey == 'cardio') ...[
                 _ChoiceTile(
                   label: 'Equipamento/modalidade',
@@ -691,26 +725,27 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
         .toList();
   }
 
-  List<MapEntry<String, String>> _strengthFocusOptions(String groupKey) {
-    final keys = switch (groupKey) {
-      'arms' => {'arms_complete', 'biceps', 'triceps'},
-      'forearm_hand' => {
-        'forearm_complete',
-        'forearm_flexors',
-        'forearm_extensors',
-        'pronators',
-        'supinators',
-        'wrist',
-        'fingers',
-        'support_grip',
-        'pinch_grip',
-        'general_grip',
-      },
-      _ => <String>{},
-    };
-    return TrainingFlow.strengthFocusLabels.entries
-        .where((item) => keys.contains(item.key))
-        .toList();
+  String _strengthHierarchyGroupKey(TrainingFlowSelection flow) {
+    if (flow.regionKey == 'core') return 'core';
+    if (flow.regionKey == 'lower') return 'legs';
+    return flow.groupKey;
+  }
+
+  List<MapEntry<String, String>> _strengthSubzoneOptions(
+    TrainingFlowSelection flow,
+  ) {
+    return TrainingFlow.strengthSubzonesForGroup(
+      _strengthHierarchyGroupKey(flow),
+    );
+  }
+
+  List<MapEntry<String, String>> _strengthSpecificOptions(
+    TrainingFlowSelection flow,
+  ) {
+    return TrainingFlow.strengthSpecificOptions(
+      _strengthHierarchyGroupKey(flow),
+      flow.subzoneKey,
+    );
   }
 
   String _strengthFocusName(String key) =>
