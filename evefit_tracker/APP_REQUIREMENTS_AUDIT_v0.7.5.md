@@ -15,7 +15,7 @@ Estados usados: FEITO, PARCIAL, NÃO FEITO, COM BUG, CORRIGIDO, ADIADO COM JUSTI
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | APK-01 | APK e release | APK release gerado no caminho correto | FEITO | Release v0.7.3 existia; APK anterior em `build/app/outputs/flutter-apk/app-release.apk` | `flutter build apk --release` gerou `build/app/outputs/flutter-apk/app-release.apk` com 54.362.897 bytes | `Get-ChildItem build\app\outputs\flutter-apk\` | CORRIGIDO |
 | APK-02 | APK e release | Versão atualizada para v0.7.5 | COM BUG | `pubspec.yaml:19` estava `0.7.3+12`; `settings_screen.dart:12` estava `v0.7.3` | `pubspec.yaml` atualizado para `0.7.5+13`; labels de Settings atualizados para `v0.7.5` | `rg "^version:|v0.7.5"` | CORRIGIDO |
-| APK-03 | APK e release | GitHub Release criada e APK anexado | NÃO FEITO | `gh release list` mostra até v0.7.3, não v0.7.5 | Pendente | `gh release view v0.7.5` | NÃO FEITO |
+| APK-03 | APK e release | GitHub Release criada e APK anexado | NÃO FEITO | `gh release list` mostrava até v0.7.3, não v0.7.5 | Release criada em `https://github.com/ryoken99/evefit_tracker/releases/tag/v0.7.5` com `app-release.apk` anexado | `gh release create v0.7.5 ...`; `gh release view v0.7.5` | CORRIGIDO |
 | APK-04 | APK e release | Botão de atualização e versão visível | COM BUG | `settings_screen.dart:41-48` mostrava `v0.7.3` | `appVersionLabel` e botão alterados para `v0.7.5` | `rg "v0.7.5" lib/screens/settings_screen.dart` | CORRIGIDO |
 | PERF-01 | Perfis | App inicia sem dados pessoais públicos | FEITO | `AppDatabase._ensureDefaultProfile` cria perfil genérico `Utilizador` só local; `ProfileGateScreen` pede seleção/PIN | Nenhuma | `profile_pin_test.dart`, leitura de `app_database.dart` | FEITO |
 | PERF-02 | Perfis | Cada utilizador cria perfil próprio | FEITO | `profile_gate_screen.dart` inclui criação de perfil; `AppDatabase.createProfile` | Nenhuma | `profile_pin_test.dart` parcial | FEITO |
@@ -83,4 +83,4 @@ Bloqueios reais encontrados antes de editar código e estado atual:
 - Personalizado restringia indevidamente por `custom_workout`; corrigido.
 - Face pull com elástico caía como cabo/máquina por ordem de matching; corrigido.
 - Faltava suíte v0.7.5 específica; criada e integrada.
-- APK v0.7.5 foi gerado localmente. Release GitHub ainda será criada no passo final.
+- APK v0.7.5 foi gerado localmente e anexado à release GitHub v0.7.5.

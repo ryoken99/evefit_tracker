@@ -43,5 +43,8 @@ Executado:
 - `flutter build apk --release`: passou.
 - APK confirmado em `build/app/outputs/flutter-apk/app-release.apk` com 54.362.897 bytes.
 
-Pendente para finalização:
-- Commit, push e criação da release `v0.7.5`.
+Finalização:
+- Commit inicial criado: `aae3b84 Release v0.7.5 full requirements audit`.
+- Branch publicado: `codex/v0.7.5-full-audit`.
+- Release criada: `https://github.com/ryoken99/evefit_tracker/releases/tag/v0.7.5`.
+- Este log foi atualizado depois da release para registar a evidência final.

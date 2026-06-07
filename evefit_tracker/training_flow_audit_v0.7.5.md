@@ -144,6 +144,7 @@ Com `Mostrar todos`:
 - Regressão completa após correções: `flutter test` passou 120/120.
 - Validação final local: `flutter pub get`, `flutter analyze`, `flutter test` e `flutter build apk --release` passaram.
 - APK confirmado: `build/app/outputs/flutter-apk/app-release.apk`.
+- Release GitHub: `https://github.com/ryoken99/evefit_tracker/releases/tag/v0.7.5`.
 
 ## Limitações conhecidas
 
