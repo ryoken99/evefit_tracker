@@ -971,6 +971,24 @@ class TrainingArchitecture {
       description: 'Banco plano ou ajustável.',
     ),
     TrainingEquipment(
+      key: 'incline_bench',
+      name: 'Banco inclinado',
+      category: 'support',
+      description: 'Banco inclinado para supinos e aberturas.',
+    ),
+    TrainingEquipment(
+      key: 'decline_bench',
+      name: 'Banco declinado',
+      category: 'support',
+      description: 'Banco declinado para variações de supino.',
+    ),
+    TrainingEquipment(
+      key: 'parallel_bars',
+      name: 'Paralelas',
+      category: 'support',
+      description: 'Paralelas ou estação de dips.',
+    ),
+    TrainingEquipment(
       key: 'machine',
       name: 'Máquina multifunções',
       category: 'machine',
@@ -1196,6 +1214,7 @@ class TrainingArchitecture {
           'chest press',
           'crossover',
           'dips para peito',
+          'dips assistidos para peito',
         ]) &&
         !_has(primaryHaystack, [
           'supino fechado',
@@ -1530,6 +1549,9 @@ class TrainingArchitecture {
     addIf('barbell', ['barra', 'barbell']);
     addIf('plates', ['disco', 'plate']);
     addIf('bench', ['banco']);
+    addIf('incline_bench', ['banco inclinado']);
+    addIf('decline_bench', ['banco declinado']);
+    addIf('parallel_bars', ['paralelas']);
     addIf('machine', ['maquina', 'máquina', 'multifuncoes']);
     addIf('high_cable', ['cabo alto']);
     addIf('low_cable', ['cabo baixo']);
