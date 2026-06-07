@@ -9,7 +9,7 @@ import '../services/profile_preferences_service.dart';
 import '../services/training_location_service.dart';
 import 'profile_gate_screen.dart';
 
-const appVersionLabel = 'v0.7.3';
+const appVersionLabel = 'v0.7.5';
 const githubRepoUrl = 'https://github.com/ryoken99/evefit_tracker';
 const githubLatestReleaseUrl = '$githubRepoUrl/releases/latest';
 
@@ -45,7 +45,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           FilledButton.icon(
             onPressed: () => _openUrl(githubLatestReleaseUrl),
             icon: const Icon(Icons.system_update_alt),
-            label: const Text('Ver atualizações v0.7.3'),
+            label: const Text('Ver atualizações v0.7.5'),
           ),
           TextButton.icon(
             onPressed: () => _openUrl(githubRepoUrl),

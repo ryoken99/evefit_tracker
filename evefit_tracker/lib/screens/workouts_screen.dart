@@ -355,9 +355,14 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                         );
                     if (picked == null) return;
                     setSheetState(() {
+                      final equipmentKey = _equipmentKeyForCardioMode(
+                        picked.key,
+                      );
                       flow = flow.copyWith(
-                        equipmentKey: _equipmentKeyForCardioMode(picked.key),
-                        cardioFocusKey: picked.key,
+                        equipmentKey: equipmentKey,
+                        cardioFocusKey: TrainingFlow.defaultCardioFocusForMode(
+                          picked.key,
+                        ),
                       );
                       selection = TrainingFlow.toTrainingSelection(flow);
                       type = TrainingFlow.suggestedWorkoutName(flow);
@@ -400,7 +405,12 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                         );
                     if (picked == null) return;
                     setSheetState(() {
-                      flow = flow.copyWith(martialArtKey: picked.key);
+                      flow = flow.copyWith(
+                        martialArtKey: picked.key,
+                        focusKey: TrainingFlow.defaultMartialFocusForArt(
+                          picked.key,
+                        ),
+                      );
                       selection = TrainingFlow.toTrainingSelection(flow);
                       type = TrainingFlow.suggestedWorkoutName(flow);
                       workoutName.text = type;
@@ -411,9 +421,25 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 const SizedBox(height: 8),
                 _ChoiceTile(
                   label: TrainingFlow.finalFocusLabel(flow.typeKey),
-                  value: _martialName(flow.martialArtKey),
-                  enabled: false,
-                  onTap: () {},
+                  value: _martialFocusName(flow),
+                  onTap: () async {
+                    final picked =
+                        await _pickFromList<MapEntry<String, String>>(
+                          title: 'Escolher foco técnico',
+                          items: TrainingFlow.martialFocusOptions(
+                            flow.martialArtKey,
+                          ),
+                          labelFor: (item) => item.value,
+                        );
+                    if (picked == null) return;
+                    setSheetState(() {
+                      flow = flow.copyWith(focusKey: picked.key);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
                 ),
               ] else if (flow.typeKey == 'mobility') ...[
                 _ChoiceTile(
@@ -450,6 +476,131 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                     if (picked == null) return;
                     setSheetState(() {
                       flow = flow.copyWith(recoveryKey: picked.key);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+              ] else if (flow.typeKey == 'custom') ...[
+                _ChoiceTile(
+                  label: 'Equipamento opcional',
+                  value: flow.equipmentKey.isEmpty
+                      ? 'Opcional'
+                      : _equipmentName(flow.equipmentKey),
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingEquipment>(
+                      title: 'Escolher equipamento opcional',
+                      items: _availableStrengthEquipment(profileEquipment),
+                      labelFor: (item) => item.name,
+                      allowClear: true,
+                    );
+                    setSheetState(() {
+                      flow = flow.copyWith(equipmentKey: picked?.key ?? '');
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: 'Região opcional',
+                  value: flow.regionKey.isEmpty
+                      ? 'Opcional'
+                      : _regionName(flow.regionKey),
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingRegion>(
+                      title: 'Escolher região opcional',
+                      items: _customRegions(),
+                      labelFor: (item) => item.name,
+                      allowClear: true,
+                    );
+                    setSheetState(() {
+                      flow = flow.copyWith(
+                        regionKey: picked?.key ?? '',
+                        groupKey: '',
+                        subzoneKey: '',
+                        focusKey: '',
+                      );
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: 'Grupo opcional',
+                  value: flow.groupKey.isEmpty
+                      ? 'Opcional'
+                      : _groupName(flow.groupKey),
+                  enabled: _customGroups(flow).isNotEmpty,
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingGroup>(
+                      title: 'Escolher grupo opcional',
+                      items: _customGroups(flow),
+                      labelFor: (item) => item.name,
+                      allowClear: true,
+                    );
+                    setSheetState(() {
+                      flow = flow.copyWith(
+                        groupKey: picked?.key ?? '',
+                        subzoneKey: '',
+                        focusKey: '',
+                      );
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: 'Subzona opcional',
+                  value: flow.subzoneKey.isEmpty
+                      ? 'Opcional'
+                      : _subgroupName(flow.subzoneKey),
+                  enabled: _customSubgroups(flow).isNotEmpty,
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingSubgroup>(
+                      title: 'Escolher subzona opcional',
+                      items: _customSubgroups(flow),
+                      labelFor: (item) => item.name,
+                      allowClear: true,
+                    );
+                    setSheetState(() {
+                      flow = flow.copyWith(
+                        subzoneKey: picked?.key ?? '',
+                        focusKey: '',
+                      );
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                ),
+                const SizedBox(height: 8),
+                _ChoiceTile(
+                  label: 'Músculo/foco opcional',
+                  value: flow.focusKey.isEmpty
+                      ? 'Opcional'
+                      : _muscleName(flow.focusKey),
+                  enabled: _customMuscles(flow).isNotEmpty,
+                  onTap: () async {
+                    final picked = await _pickFromList<TrainingMuscle>(
+                      title: 'Escolher músculo/foco opcional',
+                      items: _customMuscles(flow),
+                      labelFor: (item) => item.name,
+                      allowClear: true,
+                    );
+                    setSheetState(() {
+                      flow = flow.copyWith(focusKey: picked?.key ?? '');
                       selection = TrainingFlow.toTrainingSelection(flow);
                       type = TrainingFlow.suggestedWorkoutName(flow);
                       workoutName.text = type;
@@ -651,6 +802,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
       'martial_arts' => const TrainingFlowSelection(
         typeKey: 'martial_arts',
         martialArtKey: 'karate',
+        focusKey: 'karate_complete',
       ),
       'mobility' => const TrainingFlowSelection(
         typeKey: 'mobility',
@@ -678,9 +830,11 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
       );
     }
     if (legacy.regionKey == 'martial_arts') {
+      final artKey = legacy.groupKey == 'jiu_jitsu' ? 'jiu_jitsu' : 'karate';
       return TrainingFlowSelection(
         typeKey: 'martial_arts',
-        martialArtKey: legacy.groupKey == 'jiu_jitsu' ? 'jiu_jitsu' : 'karate',
+        martialArtKey: artKey,
+        focusKey: TrainingFlow.defaultMartialFocusForArt(artKey),
       );
     }
     if (legacy.regionKey == 'mobility_recovery') {
@@ -711,9 +865,41 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
         .toList();
   }
 
+  List<TrainingRegion> _customRegions() {
+    return TrainingArchitecture.regions
+        .where((item) => item.key != 'custom')
+        .toList();
+  }
+
+  List<TrainingGroup> _customGroups(TrainingFlowSelection flow) {
+    if (flow.regionKey.isEmpty) return const [];
+    return TrainingArchitecture.groupsForRegion(flow.regionKey);
+  }
+
+  List<TrainingSubgroup> _customSubgroups(TrainingFlowSelection flow) {
+    if (flow.groupKey.isEmpty) return const [];
+    return TrainingArchitecture.subgroupsForGroup(flow.groupKey);
+  }
+
+  List<TrainingMuscle> _customMuscles(TrainingFlowSelection flow) {
+    if (flow.subzoneKey.isEmpty) return const [];
+    return TrainingArchitecture.musclesForSubgroup(flow.subzoneKey);
+  }
+
   List<TrainingGroup> _strengthGroupsForRegion(String regionKey) {
     if (regionKey == 'full_body') {
       return const [];
+    }
+    if (regionKey == 'lower') {
+      return const [
+        TrainingGroup(
+          key: 'legs',
+          regionKey: 'lower',
+          name: 'Pernas',
+          description: 'Pernas completas, coxa/anca e perna inferior/pé.',
+          sortOrder: 1,
+        ),
+      ];
     }
     return TrainingArchitecture.groupsForRegion(regionKey);
   }
@@ -762,17 +948,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   }
 
   List<MapEntry<String, String>> _cardioFocusOptions(String equipmentKey) {
-    final keys = switch (equipmentKey) {
-      'treadmill' => ['treadmill', 'aerobic_endurance', 'hiit'],
-      'bike' => ['bike', 'aerobic_endurance', 'hiit'],
-      'elliptical' => ['elliptical', 'aerobic_endurance'],
-      'jump_rope' => ['jump_rope', 'hiit'],
-      'outdoor_space' => ['outdoor_walk', 'outdoor_run', 'hiit'],
-      _ => ['no_equipment', 'hiit'],
-    };
-    return keys
-        .map((key) => MapEntry(key, TrainingFlow.cardioLabels[key]!))
-        .toList();
+    return TrainingFlow.cardioFocusOptionsForEquipment(equipmentKey);
   }
 
   String _equipmentKeyForCardioMode(String modeKey) {
@@ -801,6 +977,14 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
 
   String _martialName(String key) =>
       TrainingFlow.martialLabels[key] ?? 'Karate';
+
+  String _martialFocusName(TrainingFlowSelection flow) {
+    final key = flow.focusKey.isEmpty
+        ? TrainingFlow.defaultMartialFocusForArt(flow.martialArtKey)
+        : flow.focusKey;
+    return TrainingFlow.martialFocusLabels[key] ??
+        _martialName(flow.martialArtKey);
+  }
 
   String _mobilityName(String key) =>
       TrainingFlow.mobilityLabels[key] ?? 'Geral';
@@ -881,6 +1065,8 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   }
 
   String _groupName(String key) {
+    if (key == 'legs') return 'Pernas';
+    if (key == 'core') return 'Core';
     return TrainingArchitecture.groups
         .firstWhere(
           (item) => item.key == key,

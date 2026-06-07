@@ -37,7 +37,7 @@ class WorkoutTemplateService {
         'Puxada alta na máquina',
         'Remo baixo no gancho de baixo',
         'Remo unilateral com haltere',
-        'Face pull',
+        'Face pull no cabo',
         'Elevação lateral',
         'Elevação posterior',
       ],

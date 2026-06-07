@@ -362,6 +362,7 @@ class TrainingFlow {
     'outdoor_run': 'Corrida exterior',
     'hiit': 'HIIT',
     'aerobic_endurance': 'Resistência aeróbia',
+    'treadmill_intervals': 'Intervalos / HIIT',
   };
 
   static const martialLabels = {
@@ -369,6 +370,58 @@ class TrainingFlow {
     'jiu_jitsu': 'Jiu-Jitsu',
     'martial_conditioning': 'Condicionamento para artes marciais',
     'martial_mobility': 'Mobilidade para artes marciais',
+  };
+
+  static const martialFocusLabels = {
+    'karate_complete': 'Karate completo',
+    'kihon': 'Kihon',
+    'kata': 'Kata',
+    'kumite_technical': 'Kumite técnico',
+    'karate_shadow': 'Sombra de Karate',
+    'karate_footwork': 'Deslocamentos',
+    'karate_guard': 'Guarda',
+    'karate_punches': 'Socos técnicos',
+    'karate_kicks': 'Pontapés técnicos',
+    'karate_mobility': 'Mobilidade para Karate',
+    'karate_conditioning': 'Condicionamento para Karate',
+    'jiu_jitsu_complete': 'Jiu-Jitsu completo',
+    'shrimp': 'Shrimp / fuga de anca',
+    'grappling_bridge': 'Ponte de grappling',
+    'technical_stand_up': 'Technical stand-up',
+    'jiu_jitsu_guard': 'Guarda',
+    'guard_passing': 'Passagem de guarda',
+    'jiu_jitsu_grip': 'Força de pega',
+    'jiu_jitsu_core': 'Core para Jiu-Jitsu',
+    'jiu_jitsu_mobility': 'Mobilidade para Jiu-Jitsu',
+    'jiu_jitsu_conditioning': 'Condicionamento para Jiu-Jitsu',
+  };
+
+  static const _martialFocusByArt = {
+    'karate': [
+      'karate_complete',
+      'kihon',
+      'kata',
+      'kumite_technical',
+      'karate_shadow',
+      'karate_footwork',
+      'karate_guard',
+      'karate_punches',
+      'karate_kicks',
+      'karate_mobility',
+      'karate_conditioning',
+    ],
+    'jiu_jitsu': [
+      'jiu_jitsu_complete',
+      'shrimp',
+      'grappling_bridge',
+      'technical_stand_up',
+      'jiu_jitsu_guard',
+      'guard_passing',
+      'jiu_jitsu_grip',
+      'jiu_jitsu_core',
+      'jiu_jitsu_mobility',
+      'jiu_jitsu_conditioning',
+    ],
   };
 
   static const mobilityLabels = {
@@ -456,7 +509,8 @@ class TrainingFlow {
   static List<MapEntry<String, String>> strengthSubzonesForGroup(
     String groupKey,
   ) {
-    final keys = _strengthSubzones[groupKey] ?? const <String>[];
+    final effectiveKey = groupKey == 'lower' ? 'legs' : groupKey;
+    final keys = _strengthSubzones[effectiveKey] ?? const <String>[];
     return _entriesForStrengthKeys(keys);
   }
 
@@ -487,13 +541,55 @@ class TrainingFlow {
     ];
   }
 
+  static List<MapEntry<String, String>> cardioFocusOptionsForEquipment(
+    String equipmentKey,
+  ) {
+    final keys = switch (equipmentKey) {
+      'treadmill' => ['aerobic_endurance', 'treadmill_intervals'],
+      'bike' => ['aerobic_endurance', 'hiit'],
+      'elliptical' => ['aerobic_endurance'],
+      'jump_rope' => ['jump_rope', 'hiit'],
+      'outdoor_space' => ['outdoor_walk', 'outdoor_run', 'hiit'],
+      _ => ['no_equipment', 'hiit'],
+    };
+    return [
+      for (final key in keys)
+        if (cardioLabels.containsKey(key)) MapEntry(key, cardioLabels[key]!),
+    ];
+  }
+
+  static String defaultCardioFocusForMode(String modeKey) {
+    return switch (modeKey) {
+      'treadmill' || 'bike' || 'elliptical' => 'aerobic_endurance',
+      'jump_rope' => 'jump_rope',
+      'outdoor_walk' || 'outdoor_run' => modeKey,
+      'hiit' => 'hiit',
+      _ => 'no_equipment',
+    };
+  }
+
+  static List<MapEntry<String, String>> martialFocusOptions(
+    String martialArtKey,
+  ) {
+    final keys = _martialFocusByArt[martialArtKey] ?? const <String>[];
+    return [
+      for (final key in keys)
+        if (martialFocusLabels.containsKey(key))
+          MapEntry(key, martialFocusLabels[key]!),
+    ];
+  }
+
+  static String defaultMartialFocusForArt(String martialArtKey) {
+    return switch (martialArtKey) {
+      'jiu_jitsu' => 'jiu_jitsu_complete',
+      _ => 'karate_complete',
+    };
+  }
+
   static String suggestedWorkoutName(TrainingFlowSelection flow) {
     final type = types[flow.typeKey] ?? 'Personalizado';
     final focus = _nameForFlowFocus(flow);
     if (focus.isEmpty) return type;
-    if (flow.typeKey == 'martial_arts' && focus == 'Jiu-Jitsu') {
-      return focus;
-    }
     return '$type - $focus';
   }
 
@@ -504,9 +600,12 @@ class TrainingFlow {
       'martial_arts' => _martialSelection(flow),
       'mobility' => _mobilitySelection(flow),
       'recovery' => _recoverySelection(flow),
-      _ => const TrainingSelection(
-        regionKey: 'custom',
-        groupKey: 'custom_workout',
+      _ => TrainingSelection(
+        regionKey: flow.regionKey,
+        groupKey: flow.groupKey,
+        subgroupKey: flow.subzoneKey,
+        specificMuscleKey: flow.focusKey,
+        equipmentKey: flow.equipmentKey,
       ),
     };
   }
@@ -607,15 +706,21 @@ class TrainingFlow {
   }
 
   static TrainingSelection _cardioSelection(TrainingFlowSelection flow) {
-    final key = flow.cardioFocusKey.isNotEmpty
-        ? flow.cardioFocusKey
-        : flow.equipmentKey;
-    return switch (key) {
-      'treadmill' || 'aerobic_endurance' => TrainingSelection(
+    final modeKey = flow.equipmentKey.isNotEmpty
+        ? flow.equipmentKey
+        : _equipmentKeyForCardioMode(flow.cardioFocusKey);
+    final focusKey = flow.cardioFocusKey;
+    return switch (modeKey) {
+      'treadmill' => TrainingSelection(
         regionKey: 'cardio',
         groupKey: 'cardio_machine',
         subgroupKey: 'treadmill',
-        equipmentKey: flow.equipmentKey == 'treadmill' ? 'treadmill' : '',
+        specificMuscleKey: switch (focusKey) {
+          'aerobic_endurance' => 'treadmill_aerobic',
+          'treadmill_intervals' || 'hiit' => 'treadmill_intervals',
+          _ => '',
+        },
+        equipmentKey: 'treadmill',
       ),
       'bike' => const TrainingSelection(
         regionKey: 'cardio',
@@ -647,7 +752,23 @@ class TrainingFlow {
         subgroupKey: 'outdoor_run',
         equipmentKey: 'outdoor_space',
       ),
+      'outdoor_space' => TrainingSelection(
+        regionKey: 'cardio',
+        groupKey: focusKey == 'hiit' ? 'hiit_group' : 'outdoor_cardio',
+        subgroupKey: switch (focusKey) {
+          'outdoor_walk' => 'outdoor_walk',
+          'hiit' => 'hiit',
+          _ => 'outdoor_run',
+        },
+        equipmentKey: focusKey == 'hiit' ? 'bodyweight' : 'outdoor_space',
+      ),
       'hiit' => const TrainingSelection(
+        regionKey: 'cardio',
+        groupKey: 'hiit_group',
+        subgroupKey: 'hiit',
+        equipmentKey: 'bodyweight',
+      ),
+      'bodyweight' => const TrainingSelection(
         regionKey: 'cardio',
         groupKey: 'hiit_group',
         subgroupKey: 'hiit',
@@ -667,16 +788,21 @@ class TrainingFlow {
   }
 
   static TrainingSelection _martialSelection(TrainingFlowSelection flow) {
+    final focus = flow.focusKey.isNotEmpty
+        ? flow.focusKey
+        : defaultMartialFocusForArt(flow.martialArtKey);
     return switch (flow.martialArtKey) {
-      'karate' => const TrainingSelection(
+      'karate' => TrainingSelection(
         regionKey: 'martial_arts',
         groupKey: 'karate',
         subgroupKey: 'karate_technical',
+        specificMuscleKey: focus == 'karate_complete' ? '' : focus,
       ),
-      'jiu_jitsu' => const TrainingSelection(
+      'jiu_jitsu' => TrainingSelection(
         regionKey: 'martial_arts',
         groupKey: 'jiu_jitsu',
         subgroupKey: 'jiu_jitsu_technical',
+        specificMuscleKey: focus == 'jiu_jitsu_complete' ? '' : focus,
       ),
       _ => const TrainingSelection(regionKey: 'martial_arts'),
     };
@@ -697,12 +823,15 @@ class TrainingFlow {
     final groupKey = switch (flow.recoveryKey) {
       'breathing' => 'breathing',
       'active_recovery' || 'easy_walk' => 'active_recovery',
-      'light_stretching' => 'stretching',
+      'light_stretching' => '',
       _ => 'general_mobility',
     };
     return TrainingSelection(
       regionKey: 'mobility_recovery',
       groupKey: groupKey,
+      specificMuscleKey: flow.recoveryKey == 'light_stretching'
+          ? 'light_stretching'
+          : '',
       equipmentKey: 'bodyweight',
     );
   }
@@ -723,17 +852,42 @@ class TrainingFlow {
             flow.cardioFocusKey != flow.equipmentKey)
           cardioLabels[flow.cardioFocusKey],
       ].whereType<String>().where((item) => item.isNotEmpty).join(' - '),
-      'martial_arts' => martialLabels[flow.martialArtKey] ?? '',
+      'martial_arts' => [
+        martialLabels[flow.martialArtKey] ?? '',
+        if (flow.focusKey.isNotEmpty &&
+            flow.focusKey != defaultMartialFocusForArt(flow.martialArtKey))
+          martialFocusLabels[flow.focusKey] ?? '',
+      ].where((item) => item.isNotEmpty).join(' - '),
       'mobility' => mobilityLabels[flow.mobilityZoneKey] ?? '',
       'recovery' => recoveryLabels[flow.recoveryKey] ?? '',
-      _ => '',
+      _ =>
+        _architectureName(flow.focusKey) ??
+            _architectureName(flow.subzoneKey) ??
+            _architectureName(flow.groupKey) ??
+            _architectureName(flow.regionKey) ??
+            '',
     };
   }
 
   static String? _architectureName(String key) {
     if (key.isEmpty) return null;
-    return TrainingArchitecture.labelForSelection(
-      TrainingSelection(regionKey: key, groupKey: key, subgroupKey: key),
-    );
+    for (final item in TrainingArchitecture.muscles) {
+      if (item.key == key) return item.name;
+    }
+    for (final item in TrainingArchitecture.subgroups) {
+      if (item.key == key) return item.name;
+    }
+    for (final item in TrainingArchitecture.groups) {
+      if (item.key == key) return item.name;
+    }
+    for (final item in TrainingArchitecture.regions) {
+      if (item.key == key) return item.name;
+    }
+    for (final item in TrainingArchitecture.equipment) {
+      if (item.key == key) return item.name;
+    }
+    if (key == 'legs') return 'Pernas';
+    if (key == 'core') return 'Core';
+    return null;
   }
 }

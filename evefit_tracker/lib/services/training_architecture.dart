@@ -1414,6 +1414,12 @@ class TrainingArchitecture {
       'respiração',
     ])) {
       add(region: 'mobility_recovery', group: 'general_mobility');
+      if (_has(haystack, ['alongamento'])) {
+        add(region: 'mobility_recovery', group: 'stretching');
+      }
+      if (_has(haystack, ['respiracao', 'respiração'])) {
+        add(region: 'mobility_recovery', group: 'breathing');
+      }
       if (_has(haystack, ['anca', 'hip'])) {
         add(region: 'mobility_recovery', group: 'hip_mobility');
       }

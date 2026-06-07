@@ -60,7 +60,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 9,
+      version: 10,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -69,6 +69,7 @@ class AppDatabase {
         await _migrateV53(db);
         await _migrateV60(db);
         await _migrateV70(db);
+        await _migrateV75(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -94,6 +95,9 @@ class AppDatabase {
         }
         if (oldVersion < 9) {
           await _migrateV70(db);
+        }
+        if (oldVersion < 10) {
+          await _migrateV75(db);
         }
       },
     );
@@ -277,6 +281,17 @@ class AppDatabase {
     await _seedExercises(db);
     await _refreshDefaultExerciseDetails(db);
     await _backfillWorkoutArchitecture(db);
+  }
+
+  Future<void> _migrateV75(Database db) async {
+    await _seedExercises(db);
+    await _refreshDefaultExerciseDetails(db);
+    await db.update(
+      'exercises',
+      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
+      where: 'is_default = 1 AND name = ?',
+      whereArgs: ['Face pull'],
+    );
   }
 
   Future<void> _createTrainingArchitectureTables(Database db) async {
@@ -810,6 +825,13 @@ class AppDatabase {
     if (lower.contains('corda de saltar') || lower.contains('hiit corda')) {
       return 'Corda de saltar';
     }
+    if (lower.contains('elastico') ||
+        lower.contains('rotacao externa') ||
+        lower.contains('rotacao interna') ||
+        lower.contains('pull-apart') ||
+        lower.contains('com elastico')) {
+      return 'Elásticos';
+    }
     if (lower.contains('cabo') ||
         lower.contains('crossover') ||
         lower.contains('face pull') ||
@@ -856,13 +878,6 @@ class AppDatabase {
         lower.contains('remo invertido') ||
         lower.contains('towel grip')) {
       return 'Barra fixa';
-    }
-    if (lower.contains('elastico') ||
-        lower.contains('rotacao externa') ||
-        lower.contains('rotacao interna') ||
-        lower.contains('pull-apart') ||
-        lower.contains('com elastico')) {
-      return 'Elásticos';
     }
     if (lower.contains('jiu-jitsu') ||
         lower.contains('grappling') ||
