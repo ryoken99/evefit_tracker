@@ -18,6 +18,7 @@ import '../models/workout_template.dart';
 import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/pin_service.dart';
+import '../services/profile_preferences_service.dart';
 import '../services/training_architecture.dart';
 import '../services/training_location_service.dart';
 import '../services/workout_taxonomy.dart';
@@ -1174,27 +1175,8 @@ class AppDatabase {
     }
   }
 
-  static const defaultEquipment = {
-    'bodyweight': 'Peso corporal',
-    'barbell': 'Barra',
-    'dumbbells': 'Halteres',
-    'plates': 'Discos',
-    'bench': 'Banco',
-    'machine': 'Máquina multifunções',
-    'high_cable': 'Cabo alto',
-    'low_cable': 'Cabo baixo',
-    'pullup_bar': 'Barra fixa',
-    'bands': 'Elásticos',
-    'kettlebell': 'Kettlebell',
-    'treadmill': 'Passadeira',
-    'bike': 'Bicicleta',
-    'elliptical': 'Elíptica',
-    'jump_rope': 'Corda de saltar',
-    'heavy_bag': 'Saco de pancada',
-    'tatami': 'Tatami / espaço de artes marciais',
-    'none': 'Nenhum equipamento',
-    'other': 'Outro',
-  };
+  static Map<String, String> get defaultEquipment =>
+      ProfilePreferencesService.equipmentMap;
 
   Future<void> _insertDefaultDashboardWidgets(
     DatabaseExecutor db,
@@ -1301,6 +1283,17 @@ class AppDatabase {
         .where((item) => item.isAvailable)
         .map((item) => item.equipmentKey)
         .toSet();
+  }
+
+  Future<void> updateProfileEquipment(
+    Map<String, String> availableEquipment,
+  ) async {
+    await _insertProfileEquipment(
+      await database,
+      profileId: _requireProfileId(),
+      trainingLocation: '',
+      availableEquipment: availableEquipment,
+    );
   }
 
   Future<List<DashboardWidgetConfig>> dashboardWidgets() async {

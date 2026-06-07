@@ -7,7 +7,6 @@ import '../models/exercise.dart';
 import '../models/workout.dart';
 import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
-import '../models/workout_type.dart';
 import '../services/exercise_filter_service.dart';
 import '../services/training_architecture.dart';
 import '../services/workout_taxonomy.dart';
@@ -349,14 +348,6 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
     var query = '';
     var filter = filters.first;
     var showAll = false;
-    final workoutType = WorkoutType(
-      id: _entry.workout.workoutTypeId,
-      name: _entry.workout.workoutType,
-      muscleGroups: _entry.workout.muscleGroups,
-      isDefault: true,
-      createdAt: DateTime.now(),
-      updatedAt: DateTime.now(),
-    );
     final selection = _selectionForWorkout(_entry.workout);
     return showModalBottomSheet<Exercise>(
       context: context,
@@ -371,13 +362,14 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
             selection: selection,
             showAllExercises: showAll,
           );
-          final filterOptions = ExerciseFilterService.contextualGroups(
-            exercises: exercises,
-            trainingLocation: profile?.trainingLocation ?? '',
-            availableEquipmentKeys: equipment,
-            workoutType: workoutType,
-            showAll: showAll,
-          );
+          final filterOptions =
+              ExerciseFilterService.contextualFiltersForSelection(
+                exercises: exercises,
+                trainingLocation: profile?.trainingLocation ?? '',
+                availableEquipmentKeys: equipment,
+                selection: selection,
+                showAll: showAll,
+              );
           if (!filterOptions.contains(filter)) {
             filter = filterOptions.first;
           }
@@ -444,7 +436,9 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                   Expanded(
                     child: visible.isEmpty
                         ? const Center(
-                            child: Text('Nenhum exercício encontrado.'),
+                            child: Text(
+                              'Com o equipamento atual há poucos exercícios diretos para este foco. Ajusta o perfil/equipamento ou ativa Mostrar todos os exercícios.',
+                            ),
                           )
                         : ListView.builder(
                             itemCount: visible.length,
@@ -485,12 +479,40 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
     if (filter == 'Todos') return true;
     final group = exercise.muscleGroup.toLowerCase();
     final name = exercise.name.toLowerCase();
+    final secondary = exercise.secondaryMuscleGroups.toLowerCase();
+    final haystack = '$name $group $secondary';
     return switch (filter) {
       'Bíceps' => group.contains('bíceps'),
       'Tríceps' => group.contains('tríceps'),
       'Antebraço/Pega' => group.contains('antebraço') || group.contains('pega'),
       'Core' => group.contains('core') || group.contains('abdominal'),
       'Cardio' => name.contains('passadeira') || group.contains('cardio'),
+      'Reto abdominal' =>
+        haystack.contains('reto abdominal') || name.contains('crunch'),
+      'Oblíquos' => haystack.contains('oblíqu') || name.contains('twist'),
+      'Transverso abdominal' =>
+        haystack.contains('transverso') || name.contains('vacuum'),
+      'Anti-rotação' =>
+        haystack.contains('anti-rotação') || name.contains('pallof'),
+      'Anti-extensão' =>
+        haystack.contains('anti-extensão') ||
+            name.contains('hollow') ||
+            name.contains('prancha'),
+      'Lombar' => haystack.contains('lombar'),
+      'Estabilidade do core' =>
+        haystack.contains('estabilidade') ||
+            name.contains('dead bug') ||
+            name.contains('bird dog'),
+      'Aquecimento' => name.contains('aquecimento'),
+      'Caminhada' => name.contains('caminhada'),
+      'Corrida leve' => name.contains('corrida leve'),
+      'Intervalos' => name.contains('interval') || name.contains('sprint'),
+      'Inclinação' => name.contains('inclinação'),
+      'Cooldown' => name.contains('cooldown'),
+      'Braquial' => haystack.contains('braquial'),
+      'Braquiorradial' => haystack.contains('braquiorradial'),
+      'Antebraço relacionado' =>
+        haystack.contains('antebraço') || haystack.contains('pega'),
       'Outro' => false,
       _ => group.contains(filter.toLowerCase()),
     };

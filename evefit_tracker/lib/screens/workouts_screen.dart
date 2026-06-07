@@ -133,6 +133,9 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   Future<void> _openWorkoutForm({WorkoutTemplate? template}) async {
     final types = await widget.database.workoutTypes();
     final customTemplates = await widget.database.workoutTemplates();
+    final profileEquipment = await widget.database.availableEquipmentKeys();
+    final profileLocation =
+        widget.database.activeProfile?.trainingLocation ?? '';
     if (!mounted) return;
     var flow = template == null
         ? const TrainingFlowSelection(
@@ -216,7 +219,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                   onTap: () async {
                     final picked = await _pickFromList<TrainingEquipment>(
                       title: 'Escolher equipamento',
-                      items: TrainingArchitecture.equipment,
+                      items: _availableStrengthEquipment(profileEquipment),
                       labelFor: (item) => item.name,
                     );
                     if (picked == null) return;
@@ -310,7 +313,10 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                     final picked =
                         await _pickFromList<MapEntry<String, String>>(
                           title: 'Escolher modalidade',
-                          items: _cardioModeOptions(),
+                          items: _cardioModeOptions(
+                            profileLocation,
+                            profileEquipment,
+                          ),
                           labelFor: (item) => item.value,
                         );
                     if (picked == null) return;
@@ -678,6 +684,13 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     return TrainingArchitecture.groupsForRegion(regionKey);
   }
 
+  List<TrainingEquipment> _availableStrengthEquipment(Set<String> equipment) {
+    final effective = {'bodyweight', 'none', ...equipment};
+    return TrainingArchitecture.equipment
+        .where((item) => effective.contains(item.key))
+        .toList();
+  }
+
   List<MapEntry<String, String>> _strengthFocusOptions(String groupKey) {
     final keys = switch (groupKey) {
       'arms' => {'arms_complete', 'biceps', 'triceps'},
@@ -703,20 +716,14 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   String _strengthFocusName(String key) =>
       TrainingFlow.strengthFocusLabels[key] ?? key;
 
-  List<MapEntry<String, String>> _cardioModeOptions() {
-    const keys = [
-      'no_equipment',
-      'treadmill',
-      'bike',
-      'elliptical',
-      'jump_rope',
-      'outdoor_walk',
-      'outdoor_run',
-      'hiit',
-    ];
-    return keys
-        .map((key) => MapEntry(key, TrainingFlow.cardioLabels[key]!))
-        .toList();
+  List<MapEntry<String, String>> _cardioModeOptions(
+    String trainingLocation,
+    Set<String> equipment,
+  ) {
+    return TrainingFlow.availableCardioModes(
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: equipment,
+    );
   }
 
   List<MapEntry<String, String>> _cardioFocusOptions(String equipmentKey) {

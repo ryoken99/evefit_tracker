@@ -1,4 +1,5 @@
 import 'training_architecture.dart';
+import 'workout_taxonomy.dart';
 
 class TrainingFlowSelection {
   const TrainingFlowSelection({
@@ -121,6 +122,55 @@ class TrainingFlow {
     'breathing': 'Respiração',
     'active_recovery': 'Recuperação ativa',
   };
+
+  static List<MapEntry<String, String>> availableCardioModes({
+    required String trainingLocation,
+    required Set<String> availableEquipmentKeys,
+  }) {
+    final location = WorkoutTaxonomy.normalize(trainingLocation);
+    final isGym = location.contains('ginasio');
+    final hasOutdoor =
+        location.contains('exterior') ||
+        location.contains('parque') ||
+        availableEquipmentKeys.contains('outdoor_space');
+    final effectiveEquipment = {
+      'bodyweight',
+      'none',
+      ...availableEquipmentKeys,
+      if (isGym) 'treadmill',
+      if (isGym) 'bike',
+      if (isGym) 'elliptical',
+      if (isGym) 'rower',
+      if (isGym) 'stepper',
+      if (isGym) 'air_bike',
+      if (hasOutdoor) 'outdoor_space',
+    };
+    const ordered = [
+      'no_equipment',
+      'treadmill',
+      'bike',
+      'elliptical',
+      'jump_rope',
+      'outdoor_walk',
+      'outdoor_run',
+      'hiit',
+    ];
+    return [
+      for (final key in ordered)
+        if (key == 'no_equipment' ||
+            key == 'hiit' ||
+            effectiveEquipment.contains(_equipmentKeyForCardioMode(key)))
+          MapEntry(key, cardioLabels[key]!),
+    ];
+  }
+
+  static String _equipmentKeyForCardioMode(String modeKey) {
+    return switch (modeKey) {
+      'no_equipment' || 'hiit' => 'bodyweight',
+      'outdoor_walk' || 'outdoor_run' => 'outdoor_space',
+      _ => modeKey,
+    };
+  }
 
   static String finalFocusLabel(String typeKey) {
     return switch (typeKey) {

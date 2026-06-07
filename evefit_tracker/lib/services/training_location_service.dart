@@ -6,6 +6,11 @@ class TrainingLocationService {
     'Casa',
     'Exterior',
     'Dojo / Artes marciais',
+    'Parque',
+    'Hotel / viagem',
+    'Trabalho / pausa rápida',
+    'Piscina',
+    'Fisioterapia / reabilitação',
     'Outro',
   ];
 
@@ -27,6 +32,10 @@ class TrainingLocationService {
     final ordered = [
       for (final option in options)
         if (values.contains(option)) option,
+      ...values
+          .where((item) => item.trim().isNotEmpty && !options.contains(item))
+          .toList()
+        ..sort(),
     ];
     return ordered.join(', ');
   }

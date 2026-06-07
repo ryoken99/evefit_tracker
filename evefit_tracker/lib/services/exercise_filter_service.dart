@@ -77,6 +77,66 @@ class ExerciseFilterService {
     return ['Todos', ...groups];
   }
 
+  static List<String> contextualFiltersForSelection({
+    required List<Exercise> exercises,
+    required String trainingLocation,
+    required Set<String> availableEquipmentKeys,
+    required TrainingSelection selection,
+    required bool showAll,
+  }) {
+    final effectiveSelection = selection.regionKey == 'core'
+        ? selection.copyWith(groupKey: '')
+        : selection;
+    final visible = getAvailableExercises(
+      exercises: exercises,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+      selection: effectiveSelection,
+      showAllExercises: showAll,
+    ).map((item) => item.exercise).toList();
+
+    if (!showAll && selection.regionKey == 'core') {
+      return _orderedContextualFilters(visible, const {
+        'Reto abdominal': ['reto abdominal', 'crunch', 'toe touches'],
+        'Oblíquos': ['obliquos', 'oblíquos', 'russian twist', 'lateral'],
+        'Transverso abdominal': ['transverso', 'vacuum'],
+        'Anti-rotação': ['anti-rotacao', 'anti-rotação', 'pallof'],
+        'Anti-extensão': [
+          'anti-extensao',
+          'anti-extensão',
+          'hollow',
+          'prancha',
+        ],
+        'Lombar': ['lombar', 'hiperextensao', 'hiperextensão'],
+        'Estabilidade do core': ['estabilidade', 'dead bug', 'bird dog'],
+      });
+    }
+
+    if (!showAll && selection.subgroupKey == 'treadmill') {
+      return _orderedContextualFilters(visible, const {
+        'Aquecimento': ['aquecimento'],
+        'Caminhada': ['caminhada'],
+        'Corrida leve': ['corrida leve'],
+        'Intervalos': ['interval', 'sprint'],
+        'Inclinação': ['inclinacao', 'inclinação'],
+        'Cooldown': ['cooldown', 'arrefecimento'],
+      });
+    }
+
+    if (!showAll && selection.specificMuscleKey == 'biceps') {
+      return _orderedContextualFilters(visible, const {
+        'Bíceps': ['biceps', 'bíceps'],
+        'Braquial': ['braquial'],
+        'Braquiorradial': ['braquiorradial'],
+        'Antebraço relacionado': ['antebraco', 'antebraço', 'pega'],
+      });
+    }
+
+    final groups = visible.map((item) => item.muscleGroup).toSet().toList()
+      ..sort();
+    return ['Todos', ...groups];
+  }
+
   static List<ExerciseAvailability> getAvailableExercises({
     required List<Exercise> exercises,
     required String trainingLocation,
@@ -204,5 +264,18 @@ class ExerciseFilterService {
     return values.any(
       (value) => haystack.contains(WorkoutTaxonomy.normalize(value)),
     );
+  }
+
+  static List<String> _orderedContextualFilters(
+    List<Exercise> exercises,
+    Map<String, List<String>> rules,
+  ) {
+    final labels = <String>['Todos'];
+    for (final entry in rules.entries) {
+      if (exercises.any((exercise) => _containsAny(exercise, entry.value))) {
+        labels.add(entry.key);
+      }
+    }
+    return labels;
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../database/app_database.dart';
 import '../models/profile.dart';
 import '../services/pin_service.dart';
+import '../services/profile_preferences_service.dart';
 import '../services/training_location_service.dart';
 
 class ProfileGateScreen extends StatefulWidget {
@@ -196,22 +197,6 @@ Future<Profile?> showCreateProfileSheet({
   final selectedEquipment = <String, String>{};
   final selectedGoals = <String>{};
   String? error;
-  const goals = [
-    'Ganhar massa muscular',
-    'Perder gordura',
-    'Construir V-shape',
-    'Definir abdominal',
-    'Ganhar força',
-    'Melhorar cardio',
-    'Melhorar mobilidade',
-    'Melhorar postura',
-    'Melhorar performance no Karate',
-    'Melhorar performance no Jiu-Jitsu',
-    'Recomposição corporal',
-    'Manutenção',
-    'Outro',
-  ];
-
   final created = await showModalBottomSheet<Profile>(
     context: context,
     isScrollControlled: true,
@@ -264,7 +249,6 @@ Future<Profile?> showCreateProfileSheet({
                 )
               else
                 _GoalStep(
-                  goals: goals,
                   selectedGoals: selectedGoals,
                   onChanged: () => setSheetState(() {}),
                 ),
@@ -513,34 +497,38 @@ class _EquipmentStep extends StatelessWidget {
               : 'Que equipamento tens disponível?',
         ),
         const SizedBox(height: 8),
-        for (final entry in AppDatabase.defaultEquipment.entries)
-          CheckboxListTile(
-            value: hasGym || selectedEquipment.containsKey(entry.key),
-            title: Text(entry.value),
-            onChanged: hasGym
-                ? null
-                : (value) {
-                    if (value == true) {
-                      selectedEquipment[entry.key] = entry.value;
-                    } else {
-                      selectedEquipment.remove(entry.key);
-                    }
-                    onChanged();
-                  },
+        for (final section in ProfilePreferencesService.equipmentSections) ...[
+          Padding(
+            padding: const EdgeInsets.only(top: 12, bottom: 4),
+            child: Text(
+              section.title,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
           ),
+          for (final option in section.options)
+            CheckboxListTile(
+              value: hasGym || selectedEquipment.containsKey(option.key),
+              title: Text(option.name),
+              onChanged: hasGym
+                  ? null
+                  : (value) {
+                      if (value == true) {
+                        selectedEquipment[option.key] = option.name;
+                      } else {
+                        selectedEquipment.remove(option.key);
+                      }
+                      onChanged();
+                    },
+            ),
+        ],
       ],
     );
   }
 }
 
 class _GoalStep extends StatelessWidget {
-  const _GoalStep({
-    required this.goals,
-    required this.selectedGoals,
-    required this.onChanged,
-  });
+  const _GoalStep({required this.selectedGoals, required this.onChanged});
 
-  final List<String> goals;
   final Set<String> selectedGoals;
   final VoidCallback onChanged;
 
@@ -551,19 +539,29 @@ class _GoalStep extends StatelessWidget {
       children: [
         const Text('Escolhe objetivos iniciais.'),
         const SizedBox(height: 8),
-        for (final goal in goals)
-          CheckboxListTile(
-            value: selectedGoals.contains(goal),
-            title: Text(goal),
-            onChanged: (value) {
-              if (value == true) {
-                selectedGoals.add(goal);
-              } else {
-                selectedGoals.remove(goal);
-              }
-              onChanged();
-            },
+        for (final section
+            in ProfilePreferencesService.generalGoalSections) ...[
+          Padding(
+            padding: const EdgeInsets.only(top: 12, bottom: 4),
+            child: Text(
+              section.title,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
           ),
+          for (final goal in section.options)
+            CheckboxListTile(
+              value: selectedGoals.contains(goal),
+              title: Text(goal),
+              onChanged: (value) {
+                if (value == true) {
+                  selectedGoals.add(goal);
+                } else {
+                  selectedGoals.remove(goal);
+                }
+                onChanged();
+              },
+            ),
+        ],
       ],
     );
   }
