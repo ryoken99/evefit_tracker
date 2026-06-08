@@ -303,6 +303,11 @@ class ExerciseFilterService {
   }
 
   static const _primaryOnlyHierarchyFocuses = {
+    'biceps_brachii',
+    'biceps',
+    'brachialis',
+    'brachioradialis',
+    'coracobrachialis',
     'hamstrings_complete',
     'glutes_complete',
   };

@@ -2058,6 +2058,7 @@ class TrainingArchitecture {
     addIf('high_cable', ['cabo alto']);
     addIf('low_cable', ['cabo baixo']);
     if (text.contains('cabo') &&
+        !text.contains('cabo de vassoura') &&
         !keys.contains('high_cable') &&
         !keys.contains('low_cable')) {
       keys.addAll(['high_cable', 'low_cable']);
