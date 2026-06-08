@@ -1,4 +1,5 @@
 import '../models/exercise.dart';
+import 'exercise_catalog_context_service.dart';
 import 'workout_taxonomy.dart';
 
 class TrainingRegion {
@@ -1163,6 +1164,13 @@ class TrainingArchitecture {
   }
 
   static ExerciseArchitectureTags tagsForExercise(Exercise exercise) {
+    final catalogEntry = ExerciseCatalogContextService.entryForExercise(
+      exercise,
+    );
+    if (catalogEntry != null) {
+      return _tagsForCatalogEntry(exercise, catalogEntry);
+    }
+
     final primaryHaystack = WorkoutTaxonomy.normalize(
       '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
     );
@@ -1682,6 +1690,348 @@ class TrainingArchitecture {
     );
   }
 
+  static ExerciseArchitectureTags _tagsForCatalogEntry(
+    Exercise exercise,
+    ExerciseCatalogEntry entry,
+  ) {
+    final regionKeys = <String>{};
+    final groupKeys = <String>{};
+    final subgroupKeys = <String>{};
+    final muscleKeys = <String>{};
+
+    void add({
+      required String region,
+      required String group,
+      String subgroup = '',
+      List<String> muscles = const [],
+    }) {
+      regionKeys.add(region);
+      groupKeys.add(group);
+      if (subgroup.isNotEmpty) subgroupKeys.add(subgroup);
+      muscleKeys.addAll(muscles);
+    }
+
+    final name = ExerciseCatalogContextService.stableKey(
+      entry.name,
+    ).replaceAll('_', ' ');
+    switch (entry.contextKey) {
+      case 'pescoco':
+        add(
+          region: 'upper',
+          group: 'neck',
+          subgroup: 'neck',
+          muscles: ['cervical_stabilizers'],
+        );
+        break;
+      case 'trapezio':
+        add(
+          region: 'upper',
+          group: 'traps_scapula',
+          subgroup: 'traps',
+          muscles: ['upper_traps', 'mid_traps', 'lower_traps'],
+        );
+        break;
+      case 'ombros':
+        add(
+          region: 'upper',
+          group: 'shoulders',
+          subgroup: 'deltoids',
+          muscles: _shoulderMuscles(name),
+        );
+        if (_has(name, ['face pull'])) {
+          add(
+            region: 'upper',
+            group: 'back',
+            subgroup: 'back_thickness',
+            muscles: ['rhomboids'],
+          );
+        }
+        break;
+      case 'peito':
+        add(
+          region: 'upper',
+          group: 'chest',
+          subgroup: 'chest_primary',
+          muscles: _chestMuscles(name),
+        );
+        break;
+      case 'costas':
+        add(
+          region: 'upper',
+          group: 'back',
+          subgroup: _has(name, ['puxada', 'pull-up', 'pullover'])
+              ? 'back_width'
+              : 'back_thickness',
+          muscles: ['lats', 'rhomboids'],
+        );
+        break;
+      case 'biceps':
+        add(
+          region: 'upper',
+          group: 'arms',
+          subgroup: 'anterior_arm',
+          muscles: ['biceps', 'brachialis', 'brachioradialis'],
+        );
+        break;
+      case 'triceps':
+        add(
+          region: 'upper',
+          group: 'arms',
+          subgroup: 'posterior_arm',
+          muscles: ['triceps_long', 'triceps_lateral', 'triceps_medial'],
+        );
+        break;
+      case 'antebraco_pega':
+        add(
+          region: 'upper',
+          group: 'forearm_hand',
+          subgroup: 'grip_strength',
+          muscles: ['grip_support', 'pinch_grip'],
+        );
+        groupKeys.add('arms');
+        break;
+      case 'core':
+        add(
+          region: 'core',
+          group: 'core_stability',
+          subgroup: 'core_general',
+          muscles: _coreMuscles(name),
+        );
+        groupKeys.add('core');
+        if (_has(name, ['mountain climbers'])) {
+          add(region: 'cardio', group: 'cardio_general', subgroup: 'hiit');
+          add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
+        }
+        break;
+      case 'pernas':
+        _addLowerCatalogTags(name, add);
+        groupKeys.add('legs');
+        break;
+      case 'cardio':
+        _addCardioCatalogTags(name, add);
+        break;
+      case 'karate':
+        add(
+          region: 'martial_arts',
+          group: 'karate',
+          subgroup: 'karate_technical',
+          muscles: ['karate_technical'],
+        );
+        break;
+      case 'jiu_jitsu':
+        add(
+          region: 'martial_arts',
+          group: 'jiu_jitsu',
+          subgroup: 'jiu_jitsu_technical',
+          muscles: ['jiu_jitsu_technical'],
+        );
+        break;
+      case 'mobilidade':
+        _addMobilityCatalogTags(name, add);
+        break;
+      default:
+        add(region: 'custom', group: 'custom_workout');
+    }
+
+    return ExerciseArchitectureTags(
+      regionKeys: regionKeys,
+      groupKeys: groupKeys,
+      subgroupKeys: subgroupKeys,
+      muscleKeys: muscleKeys,
+      equipmentKeys: equipmentKeysFor(exercise.equipment),
+    );
+  }
+
+  static List<String> _shoulderMuscles(String name) {
+    if (_has(name, ['posterior', 'reverse fly', 'face pull'])) {
+      return ['posterior_deltoid', 'scapular_stabilizers'];
+    }
+    if (_has(name, ['rotacao externa'])) return ['external_rotators'];
+    if (_has(name, ['rotacao interna'])) return ['internal_rotators'];
+    if (_has(name, ['lateral'])) return ['deltoid_lateral'];
+    if (_has(name, ['frontal', 'press', 'arnold', 'pike'])) {
+      return ['anterior_deltoid', 'deltoid_lateral'];
+    }
+    return ['deltoid_lateral', 'scapular_stabilizers'];
+  }
+
+  static List<String> _chestMuscles(String name) {
+    if (_has(name, ['inclinado', 'declinada', 'pes elevados'])) {
+      return ['upper_chest'];
+    }
+    if (_has(name, ['declinado', 'dips'])) return ['lower_chest'];
+    return ['mid_chest', 'upper_chest', 'lower_chest'];
+  }
+
+  static List<String> _coreMuscles(String name) {
+    if (_has(name, ['pallof'])) return ['anti_rotation'];
+    if (_has(name, ['prancha', 'hollow', 'dead bug'])) {
+      return ['anti_extension', 'deep_stability'];
+    }
+    if (_has(name, ['lateral', 'russian', 'bicycle', 'side bend'])) {
+      return ['external_obliques', 'internal_obliques'];
+    }
+    if (_has(name, ['superman', 'bird dog'])) return ['erectors'];
+    return ['rectus_abdominis', 'transverse_abdominis'];
+  }
+
+  static void _addLowerCatalogTags(
+    String name,
+    void Function({
+      required String region,
+      required String group,
+      String subgroup,
+      List<String> muscles,
+    })
+    add,
+  ) {
+    if (_has(name, ['gluteo', 'ponte', 'hip thrust', 'kickback'])) {
+      add(
+        region: 'lower',
+        group: 'hips_glutes',
+        subgroup: 'glutes',
+        muscles: ['glute_max', 'glute_med'],
+      );
+      return;
+    }
+    if (_has(name, [
+      'posterior',
+      'peso morto',
+      'curl de perna',
+      'good morning',
+    ])) {
+      add(
+        region: 'lower',
+        group: 'hamstrings',
+        subgroup: 'hamstrings',
+        muscles: ['biceps_femoris'],
+      );
+      return;
+    }
+    if (_has(name, ['gemeos', 'soleo', 'tibial', 'saltos'])) {
+      add(
+        region: 'lower',
+        group: 'calves',
+        subgroup: 'calves',
+        muscles: ['calves', 'soleus', 'tibialis_anterior'],
+      );
+      return;
+    }
+    if (_has(name, ['aducao', 'adutor'])) {
+      add(region: 'lower', group: 'adductors', subgroup: 'adductors');
+      return;
+    }
+    if (_has(name, ['abducao', 'abdutor'])) {
+      add(region: 'lower', group: 'abductors', subgroup: 'abductors');
+      return;
+    }
+    add(
+      region: 'lower',
+      group: 'quadriceps',
+      subgroup: 'quadriceps',
+      muscles: ['rectus_femoris', 'vastus_lateralis'],
+    );
+  }
+
+  static void _addCardioCatalogTags(
+    String name,
+    void Function({
+      required String region,
+      required String group,
+      String subgroup,
+      List<String> muscles,
+    })
+    add,
+  ) {
+    if (_has(name, ['passadeira'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'treadmill');
+      add(region: 'cardio', group: 'cardio_machine', subgroup: 'treadmill');
+      if (_has(name, ['hiit'])) {
+        add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
+      }
+    } else if (_has(name, ['bicicleta'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'bike');
+      add(region: 'cardio', group: 'cardio_machine', subgroup: 'bike');
+    } else if (_has(name, ['eliptica'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'elliptical');
+      add(region: 'cardio', group: 'cardio_machine', subgroup: 'elliptical');
+    } else if (_has(name, ['corda'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'jump_rope');
+      add(region: 'cardio', group: 'jump_rope_group', subgroup: 'jump_rope');
+    } else if (_has(name, [
+      'caminhada exterior',
+      'corrida exterior',
+      'sprints exterior',
+    ])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'outdoor_run');
+      add(region: 'cardio', group: 'outdoor_cardio', subgroup: 'outdoor_run');
+    } else {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'hiit');
+      add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
+    }
+  }
+
+  static void _addMobilityCatalogTags(
+    String name,
+    void Function({
+      required String region,
+      required String group,
+      String subgroup,
+      List<String> muscles,
+    })
+    add,
+  ) {
+    add(region: 'mobility_recovery', group: 'general_mobility');
+    if (_has(name, ['alongamento'])) {
+      add(region: 'mobility_recovery', group: 'stretching');
+    }
+    if (_has(name, [
+      'respiracao',
+      'respiracao',
+      'caminhada leve',
+      'relaxamento',
+    ])) {
+      add(region: 'mobility_recovery', group: 'active_recovery');
+      add(region: 'mobility_recovery', group: 'breathing');
+    }
+    if (_has(name, ['anca', '90/90'])) {
+      add(region: 'mobility_recovery', group: 'hip_mobility');
+    }
+    if (_has(name, ['gluteo', 'piriforme', 'pigeon', 'figura 4', '90 90'])) {
+      add(region: 'mobility_recovery', group: 'glute_mobility');
+    }
+    if (_has(name, ['posterior'])) {
+      add(region: 'mobility_recovery', group: 'hamstring_mobility');
+    }
+    if (_has(name, ['quadriceps'])) {
+      add(region: 'mobility_recovery', group: 'quadriceps_mobility');
+    }
+    if (_has(name, ['ombro', 'wall slides'])) {
+      add(region: 'mobility_recovery', group: 'shoulder_mobility');
+    }
+    if (_has(name, ['peitoral'])) {
+      add(region: 'mobility_recovery', group: 'chest_mobility');
+    }
+    if (_has(name, ['dorsal'])) {
+      add(region: 'mobility_recovery', group: 'back_mobility');
+    }
+    if (_has(name, ['toracica', 'cat-cow', 'open book'])) {
+      add(region: 'mobility_recovery', group: 'thoracic_mobility');
+    }
+    if (_has(name, ['tornozelo'])) {
+      add(region: 'mobility_recovery', group: 'ankle_mobility');
+    }
+    if (_has(name, ['gemeos'])) {
+      add(region: 'mobility_recovery', group: 'calf_mobility');
+    }
+    if (_has(name, ['pescoco', 'cervical', 'chin tuck'])) {
+      add(region: 'mobility_recovery', group: 'neck_mobility');
+    }
+    if (_has(name, ['punho'])) {
+      add(region: 'mobility_recovery', group: 'wrist_mobility');
+    }
+  }
+
   static Set<String> equipmentKeysFor(String equipmentText) {
     final text = WorkoutTaxonomy.normalize(equipmentText);
     final keys = <String>{};
@@ -1755,8 +2105,13 @@ class TrainingArchitecture {
   }
 
   static bool _has(String haystack, List<String> needles) {
+    final normalizedHaystack = ExerciseCatalogContextService.stableKey(
+      haystack,
+    ).replaceAll('_', ' ');
     return needles.any(
-      (needle) => haystack.contains(WorkoutTaxonomy.normalize(needle)),
+      (needle) => normalizedHaystack.contains(
+        ExerciseCatalogContextService.stableKey(needle).replaceAll('_', ' '),
+      ),
     );
   }
 

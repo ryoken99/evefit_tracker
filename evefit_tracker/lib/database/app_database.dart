@@ -17,7 +17,7 @@ import '../models/workout_set.dart';
 import '../models/workout_template.dart';
 import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
-import '../services/exercise_catalog_detail_service.dart';
+import '../services/exercise_catalog_context_service.dart';
 import '../services/pin_service.dart';
 import '../services/profile_preferences_service.dart';
 import '../services/training_architecture.dart';
@@ -61,7 +61,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 15,
+      version: 16,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -76,6 +76,7 @@ class AppDatabase {
         await _migrateV78(db);
         await _migrateV79(db);
         await _migrateV710(db);
+        await _migrateV711(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -120,6 +121,9 @@ class AppDatabase {
         if (oldVersion < 15) {
           await _migrateV710(db);
         }
+        if (oldVersion < 16) {
+          await _migrateV711(db);
+        }
       },
     );
   }
@@ -163,36 +167,37 @@ class AppDatabase {
   }
 
   Future<void> _seedExercises(Database db) async {
+    await _ensureExerciseCatalogIdentityColumns(db);
     final now = DateTime.now().toIso8601String();
-    for (final entry in SeedData.exercisesByGroup.entries) {
-      for (final name in entry.value) {
-        final existing = await db.query(
+    for (final entry in ExerciseCatalogContextService.entries) {
+      final existing = await db.query(
+        'exercises',
+        columns: ['id'],
+        where:
+            'is_default = 1 AND (catalog_entry_key = ? OR (name = ? AND muscle_group = ?))',
+        whereArgs: [entry.catalogEntryKey, entry.name, entry.group],
+        limit: 1,
+      );
+      final data = entry.toExercise().toMap()
+        ..remove('id')
+        ..['created_at'] = now
+        ..['updated_at'] = now;
+      if (existing.isNotEmpty) {
+        await db.update(
           'exercises',
-          columns: ['id'],
-          where: 'name = ?',
-          whereArgs: [name],
-          limit: 1,
+          data,
+          where: 'id = ?',
+          whereArgs: [existing.first['id']],
         );
-        if (existing.isNotEmpty) continue;
-        await db.insert(
-          'exercises',
-          Exercise(
-            name: name,
-            muscleGroup: entry.key,
-            isDefault: true,
-            secondaryMuscleGroups: _secondaryGroupsFor(name, entry.key),
-            equipment: _equipmentFor(name),
-            description: _descriptionFor(name, entry.key),
-            executionSteps: _stepsFor(name, entry.key),
-            commonMistakes: _commonMistakesFor(name, entry.key),
-            safetyNotes: _safetyNotesFor(name, entry.key),
-            createdAt: DateTime.parse(now),
-            updatedAt: DateTime.parse(now),
-          ).toMap(),
-          conflictAlgorithm: ConflictAlgorithm.ignore,
-        );
+        continue;
       }
+      await db.insert(
+        'exercises',
+        data,
+        conflictAlgorithm: ConflictAlgorithm.ignore,
+      );
     }
+    await _ensureExerciseCatalogEntryIndex(db);
   }
 
   Future<void> _migrateV5(Database db) async {
@@ -357,6 +362,13 @@ class AppDatabase {
     await _refreshDefaultExerciseDetails(db);
   }
 
+  Future<void> _migrateV711(Database db) async {
+    await _ensureExerciseCatalogIdentityColumns(db);
+    await _seedExercises(db);
+    await _refreshDefaultExerciseDetails(db);
+    await _ensureExerciseCatalogEntryIndex(db);
+  }
+
   Future<void> _createTrainingArchitectureTables(Database db) async {
     await db.execute(
       'CREATE TABLE IF NOT EXISTS body_regions(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, name TEXT NOT NULL, description TEXT, sort_order INTEGER NOT NULL, is_default INTEGER NOT NULL)',
@@ -509,27 +521,21 @@ class AppDatabase {
   }
 
   Future<void> _refreshDefaultExerciseDetails(Database db) async {
+    await _ensureExerciseCatalogIdentityColumns(db);
     final now = DateTime.now().toIso8601String();
-    for (final entry in SeedData.exercisesByGroup.entries) {
-      for (final name in entry.value) {
-        await db.update(
-          'exercises',
-          {
-            'muscle_group': entry.key,
-            'primary_muscle_group': entry.key,
-            'secondary_muscle_groups': _secondaryGroupsFor(name, entry.key),
-            'equipment': _equipmentFor(name),
-            'description': _descriptionFor(name, entry.key),
-            'execution_steps': _stepsFor(name, entry.key),
-            'common_mistakes': _commonMistakesFor(name, entry.key),
-            'safety_notes': _safetyNotesFor(name, entry.key),
-            'updated_at': now,
-          },
-          where: 'is_default = 1 AND name = ?',
-          whereArgs: [name],
-        );
-      }
+    for (final entry in ExerciseCatalogContextService.entries) {
+      await db.update(
+        'exercises',
+        entry.toExercise().toMap()
+          ..remove('id')
+          ..remove('created_at')
+          ..['updated_at'] = now,
+        where:
+            'is_default = 1 AND (catalog_entry_key = ? OR (name = ? AND muscle_group = ?))',
+        whereArgs: [entry.catalogEntryKey, entry.name, entry.group],
+      );
     }
+    await _ensureExerciseCatalogEntryIndex(db);
   }
 
   Future<void> _createProfileEquipmentTable(Database db) async {
@@ -711,6 +717,9 @@ class AppDatabase {
     'execution_steps': 'TEXT',
     'common_mistakes': 'TEXT',
     'safety_notes': 'TEXT',
+    'exercise_key': 'TEXT',
+    'context_key': 'TEXT',
+    'catalog_entry_key': 'TEXT',
     'is_hidden': 'INTEGER NOT NULL DEFAULT 0',
     'created_at': 'TEXT',
     'updated_at': 'TEXT',
@@ -880,24 +889,18 @@ class AppDatabase {
     );
   }
 
-  // Kept as small wrappers for older migration code paths and tests.
-  String _equipmentFor(String name) =>
-      ExerciseCatalogDetailService.equipmentFor(name);
+  Future<void> _ensureExerciseCatalogIdentityColumns(Database db) async {
+    await _addColumnIfMissing(db, 'exercises', 'exercise_key', 'TEXT');
+    await _addColumnIfMissing(db, 'exercises', 'context_key', 'TEXT');
+    await _addColumnIfMissing(db, 'exercises', 'catalog_entry_key', 'TEXT');
+  }
 
-  String _secondaryGroupsFor(String name, String group) =>
-      ExerciseCatalogDetailService.secondaryGroupsFor(name, group);
+  Future<void> _ensureExerciseCatalogEntryIndex(Database db) async {
+    await db.execute(
+      'CREATE UNIQUE INDEX IF NOT EXISTS idx_exercises_catalog_entry_key ON exercises(catalog_entry_key) WHERE catalog_entry_key IS NOT NULL AND catalog_entry_key != ""',
+    );
+  }
 
-  String _descriptionFor(String name, String group) =>
-      ExerciseCatalogDetailService.descriptionFor(name, group);
-
-  String _stepsFor(String name, String group) =>
-      ExerciseCatalogDetailService.stepsFor(name, group);
-
-  String _commonMistakesFor(String name, String group) =>
-      ExerciseCatalogDetailService.commonMistakesFor(name, group);
-
-  String _safetyNotesFor(String name, String group) =>
-      ExerciseCatalogDetailService.safetyNotesFor(name, group);
   Future<void> _addColumnIfMissing(
     Database db,
     String table,

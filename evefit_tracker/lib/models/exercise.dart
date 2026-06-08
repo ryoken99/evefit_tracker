@@ -14,6 +14,9 @@ class Exercise {
     this.createdAt,
     this.updatedAt,
     this.notes = '',
+    this.exerciseKey = '',
+    this.contextKey = '',
+    this.catalogEntryKey = '',
   });
 
   final int? id;
@@ -30,6 +33,9 @@ class Exercise {
   final DateTime? createdAt;
   final DateTime? updatedAt;
   final String notes;
+  final String exerciseKey;
+  final String contextKey;
+  final String catalogEntryKey;
 
   factory Exercise.fromMap(Map<String, Object?> map) => Exercise(
     id: map['id'] as int?,
@@ -53,6 +59,9 @@ class Exercise {
         ? null
         : DateTime.parse(map['updated_at'] as String),
     notes: map['notes'] as String? ?? '',
+    exerciseKey: map['exercise_key'] as String? ?? '',
+    contextKey: map['context_key'] as String? ?? '',
+    catalogEntryKey: map['catalog_entry_key'] as String? ?? '',
   );
 
   Map<String, Object?> toMap() => {
@@ -71,5 +80,8 @@ class Exercise {
     'created_at': createdAt?.toIso8601String(),
     'updated_at': updatedAt?.toIso8601String(),
     'notes': notes,
+    'exercise_key': exerciseKey,
+    'context_key': contextKey,
+    'catalog_entry_key': catalogEntryKey,
   };
 }

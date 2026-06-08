@@ -293,6 +293,7 @@ class ExerciseFilterService {
         ? selection.specificMuscleKey
         : selection.subgroupKey;
     if (focus.isEmpty) return true;
+    if (_matchesExplicitFocusTags(exercise, focus)) return true;
     final keywords = _hierarchyFocusKeywords[focus];
     if (keywords == null || keywords.isEmpty) return true;
     if (_primaryOnlyHierarchyFocuses.contains(focus)) {
@@ -304,6 +305,53 @@ class ExerciseFilterService {
   static const _primaryOnlyHierarchyFocuses = {
     'hamstrings_complete',
     'glutes_complete',
+  };
+
+  static bool _matchesExplicitFocusTags(Exercise exercise, String focus) {
+    final tags = TrainingArchitecture.tagsForExercise(exercise);
+    if (tags.groupKeys.contains(focus) ||
+        tags.subgroupKeys.contains(focus) ||
+        tags.muscleKeys.contains(focus)) {
+      return true;
+    }
+    final aliases = _focusTagAliases[focus];
+    if (aliases == null) return false;
+    return aliases.any(
+      (alias) =>
+          tags.groupKeys.contains(alias) ||
+          tags.subgroupKeys.contains(alias) ||
+          tags.muscleKeys.contains(alias),
+    );
+  }
+
+  static const _focusTagAliases = {
+    'arms_complete': ['arms', 'forearm_hand'],
+    'forearm_complete': ['forearm_hand', 'grip_strength'],
+    'chest_complete': ['chest', 'chest_primary'],
+    'back_complete': ['back', 'back_width', 'back_thickness'],
+    'shoulders_complete': ['shoulders', 'deltoids'],
+    'traps_complete': ['traps_scapula', 'traps'],
+    'neck_complete': ['neck'],
+    'core_complete': ['core', 'core_stability', 'core_general'],
+    'abs_complete': ['core', 'core_stability', 'core_general'],
+    'legs_complete': ['legs', 'quadriceps', 'hamstrings', 'hips_glutes'],
+    'quadriceps_complete': ['quadriceps'],
+    'hamstrings_complete': ['hamstrings'],
+    'glutes_complete': ['hips_glutes', 'glutes'],
+    'lower_leg_complete': ['calves'],
+    'biceps': ['biceps'],
+    'biceps_brachii': ['biceps'],
+    'brachialis': ['brachialis'],
+    'brachioradialis': ['brachioradialis'],
+    'triceps': ['triceps_long', 'triceps_lateral', 'triceps_medial'],
+    'triceps_long': ['triceps_long'],
+    'triceps_lateral': ['triceps_lateral'],
+    'triceps_medial': ['triceps_medial'],
+    'anti_rotation': ['anti_rotation'],
+    'anti_extension': ['anti_extension'],
+    'posterior_deltoid': ['posterior_deltoid'],
+    'external_rotators': ['external_rotators'],
+    'internal_rotators': ['internal_rotators'],
   };
 
   static const _hierarchyFocusKeywords = {
