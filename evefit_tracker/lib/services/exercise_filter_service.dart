@@ -295,8 +295,16 @@ class ExerciseFilterService {
     if (focus.isEmpty) return true;
     final keywords = _hierarchyFocusKeywords[focus];
     if (keywords == null || keywords.isEmpty) return true;
+    if (_primaryOnlyHierarchyFocuses.contains(focus)) {
+      return _containsAnyPrimary(exercise, keywords);
+    }
     return _containsAny(exercise, keywords);
   }
+
+  static const _primaryOnlyHierarchyFocuses = {
+    'hamstrings_complete',
+    'glutes_complete',
+  };
 
   static const _hierarchyFocusKeywords = {
     'arms_complete': <String>[],
@@ -543,6 +551,15 @@ class ExerciseFilterService {
     final haystack = WorkoutTaxonomy.normalize(
       '${exercise.name} ${exercise.muscleGroup} '
       '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
+    );
+    return values.any(
+      (value) => haystack.contains(WorkoutTaxonomy.normalize(value)),
+    );
+  }
+
+  static bool _containsAnyPrimary(Exercise exercise, List<String> values) {
+    final haystack = WorkoutTaxonomy.normalize(
+      '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
     );
     return values.any(
       (value) => haystack.contains(WorkoutTaxonomy.normalize(value)),
