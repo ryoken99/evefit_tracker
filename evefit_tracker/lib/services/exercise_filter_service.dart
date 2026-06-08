@@ -275,7 +275,9 @@ class ExerciseFilterService {
       );
     }
     if (!_hierarchyFocusKeywords.containsKey(selection.subgroupKey) &&
-        !_hierarchyFocusKeywords.containsKey(selection.specificMuscleKey)) {
+        !_hierarchyFocusKeywords.containsKey(selection.specificMuscleKey) &&
+        !_focusTagAliases.containsKey(selection.subgroupKey) &&
+        !_focusTagAliases.containsKey(selection.specificMuscleKey)) {
       return selection;
     }
     return TrainingSelection(
@@ -293,6 +295,51 @@ class ExerciseFilterService {
         ? selection.specificMuscleKey
         : selection.subgroupKey;
     if (focus.isEmpty) return true;
+
+    final tags = TrainingArchitecture.tagsForExercise(exercise);
+
+    // Complete options must aggregate their explicit children instead of
+    // depending on broad text matching.
+    if (focus == 'arms_complete') {
+      return tags.groupKeys.contains('arms') ||
+          tags.groupKeys.contains('forearm_hand') ||
+          tags.subgroupKeys.contains('anterior_arm') ||
+          tags.subgroupKeys.contains('posterior_arm') ||
+          tags.subgroupKeys.contains('grip_strength');
+    }
+    if (focus == 'upper_arm') {
+      return tags.subgroupKeys.contains('anterior_arm') ||
+          tags.subgroupKeys.contains('posterior_arm');
+    }
+    if (focus == 'forearm_hand' || focus == 'forearm_complete') {
+      return tags.groupKeys.contains('forearm_hand') ||
+          tags.subgroupKeys.contains('grip_strength');
+    }
+
+    // Specific muscles must not inherit siblings from the same broad group.
+    if (focus == 'brachialis') return _isBrachialisExercise(exercise);
+    if (focus == 'brachioradialis') return _isBrachioradialisExercise(exercise);
+    if (focus == 'biceps' || focus == 'biceps_brachii') {
+      return _isBicepsDominantExercise(exercise);
+    }
+    if (focus == 'triceps' ||
+        focus == 'triceps_long' ||
+        focus == 'triceps_lateral' ||
+        focus == 'triceps_medial') {
+      return _isTricepsExercise(exercise);
+    }
+    if (focus == 'forearm_flexors' ||
+        focus == 'forearm_extensors' ||
+        focus == 'pronators' ||
+        focus == 'supinators' ||
+        focus == 'wrist' ||
+        focus == 'fingers' ||
+        focus == 'support_grip' ||
+        focus == 'pinch_grip' ||
+        focus == 'general_grip') {
+      return _isForearmHandExercise(exercise, focus);
+    }
+
     if (_matchesExplicitFocusTags(exercise, focus)) return true;
     final keywords = _hierarchyFocusKeywords[focus];
     if (keywords == null || keywords.isEmpty) return true;
@@ -301,6 +348,153 @@ class ExerciseFilterService {
     }
     return _containsAny(exercise, keywords);
   }
+
+  static bool _isBicepsDominantExercise(Exercise exercise) {
+    final text = _normalizedPrimaryText(exercise);
+    return _textHas(text, [
+          'curl com barra',
+          'curl com halteres',
+          'curl alternado',
+          'curl martelo',
+          'curl concentrado',
+          'curl inclinado',
+          'curl spider',
+          'curl no cabo',
+          'curl com elastico',
+          'curl 21',
+          'curl arrastado',
+          'curl isometrico',
+          'chin-up',
+        ]) &&
+        !_textHas(text, ['wrist', 'finger', 'pronacao', 'supinacao']);
+  }
+
+  static bool _isBrachialisExercise(Exercise exercise) {
+    final name = WorkoutTaxonomy.normalize(exercise.name);
+    if (_textHas(name, [
+      'wrist',
+      'finger',
+      'pronacao',
+      'supinacao',
+      'desvio radial',
+      'desvio ulnar',
+      'farmer',
+      'hold',
+      'aperto',
+    ])) {
+      return false;
+    }
+    final text = _normalizedPrimaryText(exercise);
+    final primaryGroup = WorkoutTaxonomy.normalize(exercise.muscleGroup);
+    if (primaryGroup.contains('antebraco') &&
+        !_textHas(name, ['curl inverso'])) {
+      return false;
+    }
+    return _textHas(text, [
+      'curl martelo',
+      'curl cruzado',
+      'curl inverso',
+      'curl zottman',
+      'curl alternado',
+      'curl com halteres',
+      'curl 21',
+      'curl arrastado',
+      'curl isometrico',
+      'curl inclinado',
+      'curl spider',
+      'braquial',
+    ]);
+  }
+
+  static bool _isBrachioradialisExercise(Exercise exercise) {
+    final text = _normalizedDetailText(exercise);
+    return _textHas(text, [
+      'curl martelo',
+      'curl cruzado',
+      'curl inverso',
+      'curl zottman',
+      'braquiorradial',
+    ]);
+  }
+
+  static bool _isTricepsExercise(Exercise exercise) {
+    final text = _normalizedPrimaryText(exercise);
+    return _textHas(text, [
+      'triceps',
+      'tricep',
+      'extensao francesa',
+      'extensao de triceps',
+      'kickback',
+      'tate press',
+      'press fechado',
+      'supino fechado',
+      'flexao fechada',
+      'flexao diamante',
+      'fundos entre apoios',
+      'dips para triceps',
+    ]);
+  }
+
+  static bool _isForearmHandExercise(Exercise exercise, String focus) {
+    final text = _normalizedDetailText(exercise);
+    final isForearm = _textHas(text, [
+      'antebraco',
+      'antebraço',
+      'punho',
+      'pega',
+      'wrist',
+      'farmer',
+      'suitcase',
+      'hold',
+      'dead hang',
+      'aperto',
+      'pronacao',
+      'supinacao',
+      'finger',
+      'pinch',
+      'plate',
+      'towel',
+      'desvio radial',
+      'desvio ulnar',
+    ]);
+    if (!isForearm) return false;
+    if (focus == 'forearm_flexors') {
+      return _textHas(text, ['wrist curl', 'finger']);
+    }
+    if (focus == 'forearm_extensors') {
+      return _textHas(text, ['reverse wrist', 'extensao de dedos']);
+    }
+    if (focus == 'pronators') return _textHas(text, ['pronacao']);
+    if (focus == 'supinators') return _textHas(text, ['supinacao']);
+    if (focus == 'wrist') {
+      return _textHas(text, [
+        'wrist',
+        'punho',
+        'desvio radial',
+        'desvio ulnar',
+      ]);
+    }
+    if (focus == 'fingers') return _textHas(text, ['finger', 'dedos']);
+    if (focus == 'support_grip') {
+      return _textHas(text, ['farmer', 'dead hang', 'suitcase', 'hold']);
+    }
+    if (focus == 'pinch_grip') return _textHas(text, ['pinch', 'plate']);
+    return true;
+  }
+
+  static String _normalizedPrimaryText(Exercise exercise) =>
+      WorkoutTaxonomy.normalize(
+        '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
+      );
+
+  static String _normalizedDetailText(
+    Exercise exercise,
+  ) => WorkoutTaxonomy.normalize(
+    '${exercise.name} ${exercise.muscleGroup} ${exercise.secondaryMuscleGroups} ${exercise.equipment}',
+  );
+
+  static bool _textHas(String text, List<String> values) =>
+      values.any((value) => text.contains(WorkoutTaxonomy.normalize(value)));
 
   static const _primaryOnlyHierarchyFocuses = {
     'biceps_brachii',
@@ -331,6 +525,8 @@ class ExerciseFilterService {
 
   static const _focusTagAliases = {
     'arms_complete': ['arms', 'forearm_hand'],
+    'upper_arm': ['anterior_arm', 'posterior_arm'],
+    'forearm_hand': ['forearm_hand', 'grip_strength'],
     'forearm_complete': ['forearm_hand', 'grip_strength'],
     'chest_complete': ['chest', 'chest_primary'],
     'back_complete': ['back', 'back_width', 'back_thickness'],
@@ -368,6 +564,8 @@ class ExerciseFilterService {
     'neck_complete': <String>[],
     'core_complete': <String>[],
     'legs_complete': <String>[],
+    'upper_arm': <String>[],
+    'forearm_hand': <String>[],
     'forearm_complete': [
       'antebraco',
       'antebraÃ§o',

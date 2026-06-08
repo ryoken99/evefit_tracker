@@ -1088,6 +1088,16 @@ class CatalogQualityGateService {
     'compensar com outra zona do corpo',
     'descricao ainda incompleta',
     'sera melhorado numa proxima versao',
+    'exercicio ou drill para treinar',
+    'familia biceps',
+    'familia triceps',
+    'familia antebraco',
+    'zona alvo',
+    'articulacao principal',
+    'coloca te numa base estavel para',
+    'usa esta amplitude',
+    'conforme a direcao do exercicio',
+    'carga perto da linha do movimento',
   ];
 
   static const _equipmentKeys = [
