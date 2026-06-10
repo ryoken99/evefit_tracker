@@ -130,6 +130,29 @@ class ExerciseFilterService {
       });
     }
 
+    if (!showAll && selection.subgroupKey == 'arms_complete') {
+      return _orderedContextualPredicateFilters(visible, {
+        'Bíceps': (exercise) => _isBicepsDominantExercise(exercise),
+        'Braquial': (exercise) => _isBrachialisExercise(exercise),
+        'Braquiorradial': (exercise) =>
+            _isBrachioradialisExercise(exercise),
+        'Tríceps': (exercise) => _isTricepsExercise(exercise),
+        'Flexores do antebraço': (exercise) =>
+            _isForearmHandExercise(exercise, 'forearm_flexors'),
+        'Extensores do antebraço': (exercise) =>
+            _isForearmHandExercise(exercise, 'forearm_extensors'),
+        'Pronadores': (exercise) =>
+            _isForearmHandExercise(exercise, 'pronators'),
+        'Supinadores': (exercise) =>
+            _isForearmHandExercise(exercise, 'supinators'),
+        'Punho': (exercise) => _isForearmHandExercise(exercise, 'wrist'),
+        'Mão e dedos': (exercise) =>
+            _isForearmHandExercise(exercise, 'fingers'),
+        'Força de pega': (exercise) =>
+            _isForearmHandExercise(exercise, 'general_grip'),
+      });
+    }
+
     if (!showAll && selection.specificMuscleKey == 'biceps') {
       return _orderedContextualFilters(visible, const {
         'Bíceps': ['biceps', 'bíceps'],
@@ -826,6 +849,17 @@ class ExerciseFilterService {
       if (exercises.any((exercise) => _containsAny(exercise, entry.value))) {
         labels.add(entry.key);
       }
+    }
+    return labels;
+  }
+
+  static List<String> _orderedContextualPredicateFilters(
+    List<Exercise> exercises,
+    Map<String, bool Function(Exercise exercise)> rules,
+  ) {
+    final labels = <String>['Todos'];
+    for (final entry in rules.entries) {
+      if (exercises.any(entry.value)) labels.add(entry.key);
     }
     return labels;
   }

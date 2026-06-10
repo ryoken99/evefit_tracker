@@ -201,7 +201,7 @@ class ExerciseCatalogContextService {
     if (_has(normalized, ['serve', 'treinar', 'praticar', 'melhorar'])) {
       return text;
     }
-    return '$text Serve para treinar $group com foco claro em $name, mantendo controlo da área principal e progressão adequada.';
+    return '$text O objetivo de $name é melhorar ${_primaryTarget(name, group)} através de ${_movementSummary(name, group).toLowerCase()}.';
   }
 
   static String _ensureStepContract(
@@ -591,42 +591,750 @@ class ExerciseCatalogContextService {
     String equipment,
     String secondary,
   ) {
-    if (group == 'Cardio') {
-      return _cardioDescription(name, equipment, secondary);
+    return _teachingDescription(
+      name: name,
+      group: group,
+      equipment: equipment,
+      secondary: secondary,
+    );
+  }
+
+  static String _teachingDescription({
+    required String name,
+    required String group,
+    required String equipment,
+    required String secondary,
+  }) {
+    final movement = _movementSummary(name, group);
+    final target = _primaryTarget(name, group);
+    final equipmentCue = _equipmentUseCue(name, equipment);
+    final beginnerCue = _beginnerPurposeCue(name, group);
+    final variant = stableKey(name).length % 3;
+    if (variant == 0) {
+      return '$name: $movement Treina principalmente $target. $equipmentCue $beginnerCue Também ajuda $secondary.';
     }
-    if (group == 'Mobilidade') {
-      return _mobilityDescription(name, equipment, secondary);
+    if (variant == 1) {
+      return '$name: $movement $beginnerCue O trabalho principal é $target. $equipmentCue Como apoio, envolve $secondary.';
     }
-    if (group == 'Karate' || group == 'Jiu-Jitsu') {
-      return '$name é um exercício técnico de $group para praticar coordenação, base, controlo corporal e precisão. Usa $equipment e deve ser feito com velocidade baixa no início, aumentando apenas quando a técnica se mantém limpa. Também trabalha $secondary.';
+    return '$name: $movement $equipmentCue O foco principal é $target. $beginnerCue Em segundo plano, participa $secondary.';
+  }
+
+  static String _movementSummary(String name, String group) {
+    final n = _n(name);
+    if (_has(n, ['farmer walk'])) {
+      return 'caminhada carregada em que seguras dois halteres ao lado do corpo e percorres uma distância curta sem deixar a pega ou a postura ceder.';
     }
-    if (_isCurl(name)) return _curlDescription(name, equipment, secondary);
+    if (_has(n, ['farmer hold'])) {
+      return 'hold bilateral parado em que seguras cargas ao lado do corpo como num farmer walk, mas sem dar passos.';
+    }
+    if (_has(n, ['hold estatico'])) {
+      return 'hold parado de pega em que ficas imóvel a segurar halteres ao lado do corpo durante um tempo definido.';
+    }
+    if (_has(n, ['aperto isometrico'])) {
+      return 'contração de aperto sustentada, focada em fechar a mão com força sem mover o braço.';
+    }
+    if (_has(n, ['suitcase carry'])) {
+      return 'caminhada unilateral carregada; uma carga fica num lado do corpo e o tronco resiste a inclinar.';
+    }
+    if (_has(n, ['dead hang'])) {
+      return 'suspensão na barra fixa para suportar o peso do corpo com mãos, dedos e ombros ativos.';
+    }
+    if (_has(n, ['pinch grip'])) {
+      return 'segurar discos em pinça, apertando com polegar e dedos sem fechar a mão à volta de uma pega grossa.';
+    }
+    if (_has(n, ['plate hold'])) {
+      return 'segurar um ou mais discos pela borda durante tempo definido, sem deixar escorregar.';
+    }
+    if (_has(n, ['towel grip'])) {
+      return 'suspensão ou suporte numa toalha, exigindo que os dedos agarrem tecido em vez de uma barra rígida.';
+    }
+    if (_has(n, ['wrist curl'])) {
+      return 'flexão do punho com antebraços apoiados, levando a palma na direção do antebraço sem mexer o cotovelo.';
+    }
+    if (_has(n, ['reverse wrist'])) {
+      return 'extensão do punho com antebraços apoiados, levantando os nós dos dedos contra a resistência.';
+    }
+    if (_has(n, ['pronacao'])) {
+      return 'rotação do antebraço para virar a palma para baixo usando um halter leve como alavanca.';
+    }
+    if (_has(n, ['supinacao'])) {
+      return 'rotação do antebraço para virar a palma para cima com controlo do cotovelo e do punho.';
+    }
+    if (_has(n, ['desvio radial'])) {
+      return 'inclinação do punho para o lado do polegar, feita devagar com halter leve.';
+    }
+    if (_has(n, ['desvio ulnar'])) {
+      return 'inclinação do punho para o lado do dedo mínimo, controlando uma carga pequena sem torcer o antebraço.';
+    }
+    if (_has(n, ['finger curls'])) {
+      return 'flexão dos dedos em que a carga rola para a ponta dos dedos e volta para a palma.';
+    }
+    if (_has(n, ['extensao de dedos'])) {
+      return 'abertura dos dedos contra um elástico para equilibrar o trabalho de fechar a mão.';
+    }
+    if (_has(n, ['rotacao controlada com halter'])) {
+      return 'rotação curta e deliberada do punho com halter leve para ganhar controlo, não força máxima.';
+    }
+    if (_has(n, ['curl martelo'])) {
+      return 'curl de cotovelo com pega neutra, mantendo o polegar virado para cima para desafiar braquial e braquiorradial.';
+    }
+    if (_has(n, ['curl inverso'])) {
+      return 'curl com pega pronada, palmas para baixo, que troca parte do foco do bíceps para o antebraço.';
+    }
+    if (_has(n, ['curl zottman'])) {
+      return 'curl que sobe com palma para cima e desce com palma para baixo, combinando bíceps e antebraço.';
+    }
+    if (_has(n, ['curl cruzado'])) {
+      return 'curl diagonal em que o halter sobe em direção ao ombro oposto, mantendo pega neutra.';
+    }
+    if (_has(n, ['curl alternado'])) {
+      return 'curl feito um braço de cada vez para controlar melhor cada cotovelo e evitar balanço.';
+    }
+    if (_has(n, ['curl concentrado'])) {
+      return 'curl sentado com o braço apoiado na coxa para isolar a flexão do cotovelo.';
+    }
+    if (_has(n, ['curl inclinado'])) {
+      return 'curl em banco inclinado, começando com o braço mais atrás para alongar o bíceps.';
+    }
+    if (_has(n, ['curl spider'])) {
+      return 'curl com peito apoiado, impedindo o tronco de ajudar a levantar a carga.';
+    }
+    if (_has(n, ['curl 21'])) {
+      return 'sequência de curl com parciais inferiores, parciais superiores e repetições completas.';
+    }
+    if (_has(n, ['curl arrastado'])) {
+      return 'curl em que os cotovelos recuam e a carga sobe perto do tronco, como se arrastasse.';
+    }
+    if (_has(n, ['curl isometrico'])) {
+      return 'curl mantido parado num ângulo definido para treinar tensão sem movimento repetido.';
+    }
+    if (_isCurl(name)) {
+      return 'flexão do cotovelo para aproximar a carga do ombro sem balançar tronco ou ombros.';
+    }
+    if (_has(n, ['kickback'])) {
+      return 'extensão do cotovelo com o braço junto ao tronco, levando a carga para trás até o tríceps contrair.';
+    }
+    if (_has(n, ['francesa', 'acima da cabeca'])) {
+      return 'extensão do cotovelo acima ou atrás da cabeça, alongando a cabeça longa do tríceps antes de subir.';
+    }
     if (_isTriceps(name)) {
-      return _tricepsDescription(name, equipment, secondary);
+      return 'extensão do cotovelo para empurrar ou afastar a carga, mantendo o braço estável.';
+    }
+    if (_has(n, ['flexao classica'])) {
+      return 'flexão de braços em prancha alta, aproximando o peito do chão e empurrando o corpo de volta.';
+    }
+    if (_has(n, ['flexao inclinada'])) {
+      return 'flexão com mãos elevadas num apoio, reduzindo a carga para aprender o padrão de empurrar.';
+    }
+    if (_has(n, ['flexao declinada'])) {
+      return 'flexão com pés elevados, aumentando a exigência no peito superior e nos ombros.';
+    }
+    if (_has(n, ['flexao aberta'])) {
+      return 'flexão com mãos mais afastadas para aumentar o braço de alavanca sobre o peito.';
+    }
+    if (_has(n, ['flexao arqueiro'])) {
+      return 'flexão assimétrica em que o corpo se desloca para um lado enquanto o outro braço ajuda estendido.';
+    }
+    if (_has(n, ['flexao com joelhos'])) {
+      return 'flexão com joelhos apoiados para reduzir a carga e aprender a linha do corpo.';
+    }
+    if (_has(n, ['flexao fechada'])) {
+      return 'flexão com mãos mais próximas para aumentar o trabalho de tríceps.';
+    }
+    if (_has(n, ['flexao diamante'])) {
+      return 'flexão com mãos em forma de diamante para desafiar tríceps e peito interno.';
+    }
+    if (_has(n, ['supino inclinado'])) {
+      return 'supino num banco inclinado para empurrar a carga a partir da zona superior do peito.';
+    }
+    if (_has(n, ['supino declinado'])) {
+      return 'supino num banco declinado para empurrar a carga com foco maior no peito inferior.';
+    }
+    if (_has(n, ['supino fechado'])) {
+      return 'supino com pega mais estreita para transformar o empurrar em trabalho dominante de tríceps.';
+    }
+    if (_has(n, ['supino com barra'])) {
+      return 'supino horizontal com barra, empurrando a carga do peito até quase estender os braços.';
+    }
+    if (_has(n, ['supino com halteres'])) {
+      return 'supino horizontal com halteres, permitindo que cada braço controle a sua própria trajetória.';
+    }
+    if (_has(n, ['chest press'])) {
+      return 'empurrar numa máquina guiada de peito, com costas apoiadas e pegas à frente.';
+    }
+    if (_has(n, ['squeeze press'])) {
+      return 'press com halteres juntos, apertando-os enquanto empurras para manter tensão no peito.';
+    }
+    if (_has(n, ['dips para peito'])) {
+      return 'descida e subida nas paralelas com tronco inclinado para dar foco ao peito.';
     }
     if (_isPushupOrPress(name)) {
-      return _pushDescription(name, equipment, secondary);
+      return 'movimento de empurrar em que peito, ombros e tríceps vencem a resistência à frente do corpo.';
+    }
+    if (_has(n, ['aberturas inclinadas'])) {
+      return 'abertura em banco inclinado, abrindo os braços em arco para alongar o peito superior.';
+    }
+    if (_has(n, ['aberturas com halteres'])) {
+      return 'abertura de peito com halteres em arco amplo, sem transformar o exercício em press.';
+    }
+    if (_has(n, ['crossover'])) {
+      return 'cruzamento de cabos à frente do corpo para juntar os braços pela contração do peito.';
     }
     if (_isFly(name)) {
-      return '$name é uma abertura para peito: os braços fazem um arco controlado enquanto o peito alonga e contrai. Usa $equipment, carga moderada e cotovelos ligeiramente fletidos para proteger ombros. Também envolve $secondary.';
+      return 'abertura em arco, com cotovelos ligeiramente fletidos, para aproximar os braços pela ação do peito.';
     }
-    if (_isRowOrPull(name)) return _pullDescription(name, equipment, secondary);
+    if (_has(n, ['face pull'])) {
+      return 'puxada em direção ao rosto com cotovelos altos para treinar deltoide posterior, romboides e controlo das escápulas.';
+    }
+    if (_has(n, ['puxada alta pega aberta'])) {
+      return 'puxada vertical com mãos afastadas para enfatizar a largura das costas e a descida dos cotovelos.';
+    }
+    if (_has(n, ['puxada alta pega neutra'])) {
+      return 'puxada vertical com palmas viradas uma para a outra, facilitando cotovelos próximos e dorsal ativo.';
+    }
+    if (_has(n, ['puxada alta pega fechada'])) {
+      return 'puxada vertical com pega curta para sentir dorsal e braços a trabalhar perto do tronco.';
+    }
+    if (_has(n, ['puxada'])) {
+      return 'puxada vertical em que os cotovelos descem para aproximar a pega do peito e ativar o dorsal.';
+    }
+    if (_has(n, ['remo alto'])) {
+      return 'puxada alta leve com cotovelos a subir até uma altura confortável para trabalhar trapézio e ombros sem forçar.';
+    }
+    if (_has(n, ['remo'])) {
+      return 'puxada horizontal em que os cotovelos vão para trás e as escápulas se aproximam.';
+    }
+    if (_has(n, ['pullover'])) {
+      return 'movimento em arco dos braços acima do tronco para trabalhar dorsal ou peito conforme o contexto.';
+    }
+    if (_has(n, ['pull-up'])) {
+      return 'puxada vertical do corpo na barra fixa com palmas geralmente viradas para fora.';
+    }
+    if (_has(n, ['chin-up'])) {
+      return 'puxada vertical do corpo na barra fixa com palmas viradas para ti, envolvendo mais bíceps.';
+    }
+    if (_has(n, ['scapular pull-up'])) {
+      return 'puxada curta só das escápulas na barra, sem dobrar os cotovelos.';
+    }
+    if (_has(n, ['dead hang escapular'])) {
+      return 'suspensão ativa na barra para alternar ombros longos e escápulas organizadas.';
+    }
+    if (_has(n, ['puxada com bracos esticados'])) {
+      return 'puxada de cabo com braços quase estendidos para sentir o dorsal sem dobrar muito cotovelos.';
+    }
+    if (_isRowOrPull(name)) {
+      return 'puxada controlada para costas, usando escápulas e cotovelos em vez de impulso do tronco.';
+    }
+    if (_has(n, ['elevacao lateral'])) {
+      return 'elevação dos braços para os lados até perto da linha dos ombros para focar o deltoide lateral.';
+    }
+    if (_has(n, ['elevacao frontal'])) {
+      return 'elevação dos braços à frente do corpo para focar o deltoide anterior.';
+    }
+    if (_has(n, ['elevacao posterior', 'reverse fly'])) {
+      return 'abertura para trás com tronco inclinado ou apoio, focada no deltoide posterior.';
+    }
+    if (_has(n, ['arnold press'])) {
+      return 'press de ombros que começa com halteres à frente do peito e roda as palmas durante a subida.';
+    }
+    if (_has(n, ['press militar com barra em pe'])) {
+      return 'press vertical com barra feito de pé, exigindo que pernas e core estabilizem a carga acima da cabeça.';
+    }
+    if (_has(n, ['press militar com barra'])) {
+      return 'press vertical com barra a partir da frente dos ombros, empurrando acima da cabeça em linha controlada.';
+    }
+    if (_has(n, ['press militar com halteres'])) {
+      return 'press vertical com halteres, deixando cada braço estabilizar a sua própria trajetória.';
+    }
+    if (_has(n, ['press militar'])) {
+      return 'press vertical acima da cabeça, empurrando a carga sem arquear a lombar.';
+    }
+    if (_has(n, ['rotacao externa com elastico'])) {
+      return 'rotação externa do ombro contra elástico, com cotovelo colado ao corpo.';
+    }
+    if (_has(n, ['rotacao externa'])) {
+      return 'rotação do ombro para fora com cotovelo fixo, fortalecendo o manguito rotador.';
+    }
+    if (_has(n, ['rotacao interna com elastico'])) {
+      return 'rotação interna do ombro contra elástico, puxando a mão para a linha do abdómen.';
+    }
+    if (_has(n, ['rotacao interna'])) {
+      return 'rotação do ombro para dentro contra resistência leve, controlando o cotovelo junto ao corpo.';
+    }
+    if (_has(n, ['encolhimento'])) {
+      return 'elevação curta dos ombros para cima e ligeiramente para trás, focada no trapézio.';
+    }
+    if (_has(n, ['y raise'])) {
+      return 'elevação dos braços em forma de Y para trabalhar trapézio inferior e controlo escapular.';
+    }
+    if (_has(n, ['w raise'])) {
+      return 'elevação com cotovelos dobrados em forma de W para ativar trapézio médio e rotadores externos.';
+    }
+    if (_has(n, ['wall slides'])) {
+      return 'deslizamento dos braços na parede para treinar rotação superior da escápula e mobilidade de ombro.';
+    }
+    if (_has(n, ['pull-apart'])) {
+      return 'abrir um elástico à frente do peito para aproximar escápulas e ativar deltoide posterior.';
+    }
+    if (_has(n, ['scapular push-up'])) {
+      return 'flexão escapular em prancha, arredondando e aproximando as escápulas sem dobrar cotovelos.';
+    }
+    if (_has(n, ['pike push-up'])) {
+      return 'flexão com anca elevada para transformar o empurrar em trabalho vertical de ombros.';
+    }
     if (_isShoulder(name)) {
-      return _shoulderDescription(name, equipment, secondary);
+      return 'movimento de ombro ou escápula para elevar, rodar ou estabilizar o braço com controlo.';
     }
-    if (_isSquat(name) || _isLunge(name)) {
-      return '$name é um exercício de pernas para treinar a flexão e extensão controlada de joelhos e anca. Usa $equipment, mantendo pés, joelhos e tronco organizados. Também trabalha $secondary.';
+    if (_has(n, ['wall sit'])) {
+      return 'agachamento isométrico encostado à parede, mantendo joelhos fletidos sem subir e descer.';
+    }
+    if (_has(n, ['step-up'])) {
+      return 'subida controlada para um apoio elevado, usando uma perna de cada vez.';
+    }
+    if (_has(n, ['agachamento bulgaro'])) {
+      return 'agachamento unilateral com a perna de trás apoiada, exigindo equilíbrio e força da perna da frente.';
+    }
+    if (_isSquat(name)) {
+      return 'agachamento ou variação de joelho dominante, descendo a anca como se fosses sentar e voltando a subir.';
+    }
+    if (_isLunge(name)) {
+      return 'passada ou afundo unilateral em que uma perna guia a descida e a subida.';
+    }
+    if (_has(n, ['peso morto tradicional'])) {
+      return 'levantamento do chão com flexão de anca e joelhos, mantendo a carga perto das pernas.';
+    }
+    if (_has(n, ['peso morto romeno'])) {
+      return 'dobradiça de anca com joelhos pouco fletidos para alongar posterior de coxa e glúteos.';
+    }
+    if (_has(n, ['good morning'])) {
+      return 'inclinação do tronco pela anca com carga leve ou sem carga, treinando controlo posterior.';
     }
     if (_isHinge(name)) {
-      return '$name é um padrão de dobradiça de anca: a anca vai para trás, a coluna fica neutra e a força vem dos posteriores, glúteos e lombar controlada. Usa $equipment. Também envolve $secondary.';
+      return 'dobradiça de anca, levando a anca para trás enquanto a coluna se mantém neutra.';
     }
-    if (_isCore(name, group)) {
-      return _coreDescription(name, equipment, secondary);
+    if (_has(n, ['gemeos'])) {
+      return 'elevação do calcanhar para treinar a flexão plantar dos gémeos.';
     }
-    if (_isGripOrForearm(name, group)) {
-      return '$name treina antebraço, punho, dedos ou força de pega. Usa $equipment e deve ser feito com punhos alinhados, carga controlável e sem dor articular. Também envolve $secondary.';
+    if (_has(n, ['soleo'])) {
+      return 'elevação do calcanhar com joelho fletido para dar mais foco ao sóleo.';
     }
-    return '$name é um exercício de $group feito com $equipment. O objetivo é treinar o músculo ou foco escolhido com posição estável, amplitude confortável, respiração regular e controlo total do retorno. Também envolve $secondary.';
+    if (_has(n, ['tibial'])) {
+      return 'elevação da ponta do pé para treinar a parte da frente da perna.';
+    }
+    if (_isCore(name, group)) return _coreMovementSummary(name);
+    if (group == 'Cardio') return _cardioMovementSummary(name);
+    if (group == 'Mobilidade') return _mobilityMovementSummary(name);
+    if (group == 'Karate') return _karateMovementSummary(name);
+    if (group == 'Jiu-Jitsu') return _jiuJitsuMovementSummary(name);
+    if (_has(n, ['pescoco', 'cervical', 'chin tuck'])) {
+      return _neckMovementSummary(name);
+    }
+    return 'exercício de $group com movimento específico de $name, feito para controlar a área trabalhada sem dor.';
+  }
+
+  static String _coreMovementSummary(String name) {
+    final n = _n(name);
+    if (_has(n, ['prancha lateral'])) {
+      return 'suporte lateral do corpo para resistir à queda da anca e treinar oblíquos.';
+    }
+    if (_has(n, ['prancha'])) {
+      return 'suporte em linha reta para resistir à extensão da lombar.';
+    }
+    if (_has(n, ['reverse crunch'])) {
+      return 'enrolar a bacia para aproximar joelhos do tronco sem balançar as pernas.';
+    }
+    if (_has(n, ['crunch'])) {
+      return 'flexão curta do tronco para aproximar costelas da bacia.';
+    }
+    if (_has(n, ['elevacao de pernas', 'elevacao de joelhos'])) {
+      return 'elevar pernas ou joelhos controlando a bacia e evitando puxar pela lombar.';
+    }
+    if (_has(n, ['dead bug'])) {
+      return 'alternar braço e perna enquanto a lombar se mantém estável no chão.';
+    }
+    if (_has(n, ['hollow'])) {
+      return 'posição em concha com braços e pernas afastados para treinar tensão abdominal contínua.';
+    }
+    if (_has(n, ['mountain'])) {
+      return 'levar joelhos alternados ao peito em prancha, misturando core e ritmo cardiovascular.';
+    }
+    if (_has(n, ['pallof'])) {
+      return 'resistir à rotação enquanto empurras cabo ou elástico à frente do peito.';
+    }
+    if (_has(n, ['russian', 'bicycle', 'side bend'])) {
+      return 'rotação ou inclinação lateral do tronco para desafiar os oblíquos.';
+    }
+    if (_has(n, ['bird dog'])) {
+      return 'estender braço e perna opostos em quatro apoios sem rodar a bacia.';
+    }
+    if (_has(n, ['vacuum'])) {
+      return 'contração respiratória profunda para puxar suavemente o abdómen para dentro.';
+    }
+    if (_has(n, ['superman'])) {
+      return 'elevar braços e pernas do chão para ativar lombar e cadeia posterior.';
+    }
+    return 'controlo do tronco para estabilizar, fletir ou resistir ao movimento da coluna.';
+  }
+
+  static String _cardioMovementSummary(String name) {
+    final n = _n(name);
+    if (_has(n, ['passadeira aquecimento'])) {
+      return 'caminhada fácil na passadeira para subir a temperatura corporal antes da parte principal.';
+    }
+    if (_has(n, ['passadeira cooldown'])) {
+      return 'caminhada muito leve na passadeira para baixar gradualmente respiração e ritmo cardíaco.';
+    }
+    if (_has(n, ['passadeira caminhada'])) {
+      return 'caminhada em passadeira com passada curta e ritmo sustentável.';
+    }
+    if (_has(n, ['passadeira corrida intervalada', 'passadeira sprints'])) {
+      return 'blocos curtos de corrida rápida na passadeira alternados com recuperação.';
+    }
+    if (_has(n, ['passadeira inclinacao'])) {
+      return 'caminhada ou corrida com inclinação moderada para aumentar esforço sem sprint.';
+    }
+    if (_has(n, ['passadeira'])) {
+      return 'corrida leve em passadeira com controlo de velocidade, passada e respiração.';
+    }
+    if (_has(n, ['bicicleta aquecimento'])) {
+      return 'pedalada leve para preparar joelhos, anca e respiração antes do treino.';
+    }
+    if (_has(n, ['bicicleta cooldown'])) {
+      return 'pedalada fácil para recuperar depois de esforço mais intenso.';
+    }
+    if (_has(n, ['bicicleta intervalos'])) {
+      return 'alternar pedaladas fortes e recuperações leves na bicicleta.';
+    }
+    if (_has(n, ['bicicleta'])) {
+      return 'pedalada contínua com cadência e resistência ajustadas ao objetivo.';
+    }
+    if (_has(n, ['eliptica'])) {
+      return 'movimento elíptico contínuo de pernas e braços com baixo impacto articular.';
+    }
+    if (_has(n, ['corda'])) {
+      if (_has(n, ['intervalos'])) {
+        return 'saltos de corda em blocos rápidos alternados com pausas curtas de recuperação.';
+      }
+      if (_has(n, ['pes alternados'])) {
+        return 'saltos de corda alternando pé direito e esquerdo como corrida leve no lugar.';
+      }
+      if (_has(n, ['joelhos altos'])) {
+        return 'saltos de corda elevando os joelhos mais alto para aumentar intensidade e coordenação.';
+      }
+      if (_has(n, ['double unders'])) {
+        return 'variação avançada em que a corda passa duas vezes por baixo dos pés no mesmo salto.';
+      }
+      return 'saltos baixos coordenados com a corda, usando punhos para rodar e pés para aterrar leve.';
+    }
+    if (_has(n, ['caminhada exterior em subida'])) {
+      return 'caminhada ao ar livre numa subida, usando passos curtos e esforço contínuo.';
+    }
+    if (_has(n, ['caminhada exterior rapida'])) {
+      return 'caminhada ao ar livre em ritmo vivo, sem transformar a passada em corrida.';
+    }
+    if (_has(n, ['caminhada exterior'])) {
+      return 'caminhada ao ar livre com ritmo controlado e atenção ao piso.';
+    }
+    if (_has(n, ['corrida exterior intervalada'])) {
+      return 'corrida ao ar livre alternando blocos rápidos e recuperação em caminhada ou trote.';
+    }
+    if (_has(n, ['sprints exterior'])) {
+      return 'sprints curtos no exterior com aceleração progressiva e descanso amplo.';
+    }
+    if (_has(n, ['corrida em subida'])) {
+      return 'corrida em terreno inclinado para aumentar esforço sem depender só da velocidade.';
+    }
+    if (_has(n, ['corrida exterior moderada'])) {
+      return 'corrida ao ar livre em ritmo sustentável, mais forte que corrida leve e abaixo de sprint.';
+    }
+    if (_has(n, ['corrida exterior'])) {
+      return 'corrida no exterior com passada, direção e intensidade adaptadas ao terreno.';
+    }
+    if (_has(n, ['marcha no lugar'])) {
+      return 'marcha parada elevando alternadamente os pés para aquecer sem sair do sítio.';
+    }
+    if (_has(n, ['hiit peso corporal'])) {
+      return 'circuito intervalado sem equipamento com exercícios curtos e recuperações claras.';
+    }
+    if (_has(n, ['hiit simples'])) {
+      return 'intervalos básicos de esforço e pausa, escolhendo movimentos simples e fáceis de controlar.';
+    }
+    if (_has(n, ['hiit cardio'])) {
+      return 'intervalos de cardio para subir a frequência cardíaca mantendo técnica segura.';
+    }
+    if (_has(n, ['circuito cardio peso corporal'])) {
+      return 'sequência de cardio sem equipamento alternando movimentos de corpo inteiro por tempo.';
+    }
+    if (_has(n, ['circuito cardio leve'])) {
+      return 'circuito de baixa intensidade para aquecer ou recuperar sem impacto alto.';
+    }
+    if (_has(n, ['circuito cardio'])) {
+      return 'sequência de vários movimentos de cardio feita por tempo, com transições rápidas.';
+    }
+    if (_has(n, ['burpees'])) {
+      return 'sequência de agachar, apoiar mãos, ir à prancha e voltar a levantar para elevar a frequência cardíaca.';
+    }
+    if (_has(n, ['jumping jacks'])) {
+      return 'abrir e fechar braços e pernas em saltos leves para aquecer e ganhar ritmo.';
+    }
+    if (_has(n, ['skaters'])) {
+      return 'saltos laterais alternados que treinam cardio e controlo de anca.';
+    }
+    if (_has(n, ['high knees'])) {
+      return 'corrida no lugar com joelhos altos para aumentar cadência e respiração.';
+    }
+    return 'cardio sem equipamento feito em blocos de ritmo, coordenação e respiração controlada.';
+  }
+
+  static String _mobilityMovementSummary(String name) {
+    final n = _n(name);
+    if (_has(n, ['cervical', 'pescoco', 'chin tuck'])) {
+      return _neckMovementSummary(name);
+    }
+    if (_has(n, ['mobilidade leve de ombros'])) {
+      return 'movimentos fáceis de ombros para recuperar amplitude sem carga nem dor.';
+    }
+    if (_has(n, ['mobilidade de ombro'])) {
+      return 'movimentos ativos do braço e da escápula para ganhar amplitude útil no ombro.';
+    }
+    if (_has(n, ['alongamento posterior do ombro'])) {
+      return 'cruzar o braço à frente do peito para alongar deltoide posterior e cápsula do ombro.';
+    }
+    if (_has(n, ['alongamento peitoral no canto'])) {
+      return 'usar o canto da parede para abrir os dois lados do peito ao mesmo tempo.';
+    }
+    if (_has(n, ['alongamento peitoral na parede'])) {
+      return 'apoiar um antebraço na parede e rodar o tronco para abrir o peito desse lado.';
+    }
+    if (_has(n, ['alongamento peitoral'])) {
+      return 'abrir o braço e rodar o tronco para sentir tensão suave na frente do peito.';
+    }
+    if (_has(n, ['alongamento posterior com perna elevada'])) {
+      return 'colocar uma perna num apoio e inclinar pela anca para alongar a parte de trás da coxa.';
+    }
+    if (_has(n, ['mobilidade dinamica de posterior'])) {
+      return 'movimentos ativos de alongar e voltar para preparar posterior de coxa antes do treino.';
+    }
+    if (_has(n, ['alongamento posterior sentado'])) {
+      return 'sentar com pernas estendidas e inclinar pela anca para alongar posterior de coxa.';
+    }
+    if (_has(n, ['alongamento posterior em pe'])) {
+      return 'ficar de pé e inclinar o tronco pela anca até sentir tensão atrás das coxas.';
+    }
+    if (_has(n, ['alongamento posterior de coxa'])) {
+      return 'alongamento estático focado na parte de trás da coxa, sem balanços.';
+    }
+    if (_has(n, ['figura 4'])) {
+      return 'alongamento de glúteo com uma perna cruzada em quatro para libertar rotadores da anca.';
+    }
+    if (_has(n, ['mobilidade de anca'])) {
+      return 'movimentos suaves da bacia e da anca para ganhar rotação, flexão e controlo.';
+    }
+    if (_has(n, ['mobilidade dinamica de anca'])) {
+      return 'sequência ativa de anca com mudanças de posição para preparar treino ou corrida.';
+    }
+    if (_has(n, ['tocar nos pes sentado'])) {
+      return 'inclinação sentada em direção aos pés para alongar posterior de coxa sem balanço.';
+    }
+    if (_has(n, ['tocar nos pes em pe'])) {
+      return 'inclinação em pé para aproximar mãos dos pés mantendo tensão leve na cadeia posterior.';
+    }
+    if (_has(n, ['pigeon'])) {
+      return 'posição no chão com uma perna à frente para alongar glúteo e piriforme.';
+    }
+    if (_has(n, ['90/90'])) {
+      return 'troca controlada entre rotações de anca com joelhos dobrados no chão.';
+    }
+    if (_has(n, ['posterior'])) {
+      return 'inclinação pela anca para sentir alongamento atrás da coxa sem forçar a lombar.';
+    }
+    if (_has(n, ['quadriceps'])) {
+      return 'levar o calcanhar ao glúteo para alongar a frente da coxa.';
+    }
+    if (_has(n, ['dorsal'])) {
+      return 'afastar braços e tronco para alongar dorsal e zona lateral das costas.';
+    }
+    if (_has(n, ['toracica', 'open book', 'cat-cow'])) {
+      return 'mobilizar a coluna torácica por rotação, extensão ou flexão suave.';
+    }
+    if (_has(n, ['tornozelo'])) {
+      return 'levar o joelho sobre o pé para melhorar dorsiflexão sem levantar o calcanhar.';
+    }
+    if (_has(n, ['gemeos'])) {
+      return 'alongar a barriga da perna mantendo calcanhar apoiado.';
+    }
+    if (_has(n, ['punho'])) {
+      return 'inclinar o peso sobre as mãos para mobilizar flexão ou extensão do punho.';
+    }
+    if (_has(n, ['respiracao'])) {
+      return 'respiração lenta pelo diafragma para reduzir tensão e recuperar ritmo.';
+    }
+    if (_has(n, ['caminhada leve'])) {
+      return 'caminhada fácil para circulação e recuperação ativa.';
+    }
+    if (_has(n, ['relaxamento'])) {
+      return 'posição de descanso no chão para baixar tensão e controlar respiração.';
+    }
+    return 'mobilidade suave da zona indicada, procurando tensão leve e controlo respiratório.';
+  }
+
+  static String _karateMovementSummary(String name) {
+    final n = _n(name);
+    if (_has(n, ['kihon'])) return 'repetição técnica de bases, socos, defesas ou pontapés fundamentais com controlo.';
+    if (_has(n, ['kata'])) return 'sequência formal de técnicas de Karate com direção, ritmo, postura e controlo.';
+    if (_has(n, ['kumite'])) return 'drill técnico de combate para distância, guarda e reação controlada.';
+    if (_has(n, ['sombra'])) return 'simulação individual de combate, combinando deslocamento, técnicas no ar e controlo.';
+    if (_has(n, ['deslocamento'])) return 'trabalho de pés para entrar, sair e mudar ângulo sem cruzar a base, mantendo controlo.';
+    if (_has(n, ['drills de guarda'])) {
+      return 'repetições de entrada e saída de guarda para organizar mãos, cotovelos, distância e controlo.';
+    }
+    if (_has(n, ['guarda'])) return 'organização das mãos, cotovelos e postura para proteger, responder e manter controlo.';
+    if (_has(n, ['pontapes'])) return 'pontapés técnicos com câmara, extensão, recolha da perna e controlo.';
+    if (_has(n, ['socos'])) return 'socos técnicos coordenando punho, anca, tronco, base e controlo.';
+    return 'drill de Karate para praticar base, direção, precisão e controlo antes da velocidade.';
+  }
+
+  static String _jiuJitsuMovementSummary(String name) {
+    final n = _n(name);
+    if (_has(n, ['shrimp', 'fuga de anca'])) return 'fuga de anca no solo para criar espaço e recuperar guarda.';
+    if (_has(n, ['ponte'])) return 'ponte de grappling para elevar a anca e desequilibrar pressão.';
+    if (_has(n, ['technical stand-up'])) return 'subida técnica do chão mantendo uma mão protegida e a perna livre.';
+    if (_has(n, ['passagem de guarda'])) {
+      return 'repetição de passos, pressão e controlo de anca para passar as pernas do adversário.';
+    }
+    if (_has(n, ['guarda'])) return 'drill de guarda para gerir pernas, anca, pega e distância.';
+    if (_has(n, ['passagem'])) return 'movimento de passar guarda com base, pressão e controlo de anca.';
+    if (_has(n, ['pega'])) return 'trabalho de pega aplicado a kimono, punhos ou controlo de grappling.';
+    if (_has(n, ['core'])) return 'drill de core no solo para proteger coluna e transferir força pela anca.';
+    return 'drill de Jiu-Jitsu para praticar movimentação no solo, base e controlo corporal.';
+  }
+
+  static String _neckMovementSummary(String name) {
+    final n = _n(name);
+    if (_has(n, ['frontal'])) {
+      return 'pressão isométrica leve da testa contra a mão para ativar flexores cervicais sem mover a cabeça.';
+    }
+    if (_has(n, ['lateral', 'inclinacao'])) {
+      return 'inclinação ou pressão lateral leve da cabeça para trabalhar controlo cervical de lado.';
+    }
+    if (_has(n, ['rotacao'])) {
+      return 'rotação lenta da cabeça para olhar para cada lado sem puxar o pescoço.';
+    }
+    if (_has(n, ['chin tuck'])) {
+      return 'recuar suavemente o queixo para alinhar cabeça e pescoço, como criar uma papada leve.';
+    }
+    return 'movimento cervical suave para ganhar controlo sem forçar articulações do pescoço.';
+  }
+
+  static String _primaryTarget(String name, String group) {
+    final n = _n(name);
+    if (_has(n, ['farmer', 'hold', 'dead hang', 'aperto', 'pinch', 'plate', 'towel'])) {
+      return 'força de pega, dedos e antebraço';
+    }
+    if (_has(n, ['wrist curl', 'finger'])) return 'flexores do antebraço e dedos';
+    if (_has(n, ['reverse wrist', 'extensao de dedos'])) {
+      return 'extensores do antebraço e punho';
+    }
+    if (_has(n, ['pronacao'])) return 'pronadores do antebraço';
+    if (_has(n, ['supinacao'])) return 'supinadores do antebraço';
+    if (_has(n, ['desvio', 'rotacao controlada'])) return 'punho e controlo do antebraço';
+    if (_has(n, ['martelo', 'braquiorradial'])) return 'braquial e braquiorradial';
+    if (_isCurl(name)) return 'bíceps braquial, braquial e braquiorradial';
+    if (_isTriceps(name)) return 'tríceps';
+    if (_isFly(name) || _isPushupOrPress(name)) return 'peito, ombros e tríceps';
+    if (_isRowOrPull(name)) return 'costas, escápulas e dorsal';
+    if (_isShoulder(name)) return 'ombros e estabilizadores escapulares';
+    if (_isSquat(name) || _isLunge(name)) return 'quadríceps, glúteos e estabilidade da anca';
+    if (_isHinge(name)) return 'posterior de coxa, glúteos e lombar controlada';
+    if (_has(n, ['gemeos', 'soleo'])) return 'gémeos, sóleo e tornozelo';
+    if (_has(n, ['tibial'])) return 'tibial anterior';
+    if (_isCore(name, group)) return 'core, abdominal e estabilidade do tronco';
+    if (group == 'Cardio') return 'resistência cardiovascular e respiração';
+    if (group == 'Mobilidade') return 'mobilidade da zona indicada e respiração';
+    if (group == 'Karate') return 'técnica de Karate, base e coordenação';
+    if (_has(n, ['passagem de guarda'])) {
+      return 'passagem de guarda, pressão e controlo da anca';
+    }
+    if (_has(n, ['drills de guarda'])) {
+      return 'retenção de guarda, distância e movimento de anca';
+    }
+    if (group == 'Jiu-Jitsu') return 'movimentação de Jiu-Jitsu, anca e controlo no solo';
+    if (_has(n, ['pescoco', 'cervical', 'chin tuck'])) return 'controlo cervical';
+    return group;
+  }
+
+  static String _equipmentUseCue(String name, String equipment) {
+    final n = _n(name);
+    final e = _n(equipment);
+    if (_has(e, ['halter'])) {
+      if (_has(n, ['farmer walk', 'suitcase'])) {
+        return 'Usa $equipment como carga de transporte, com pega firme.';
+      }
+      if (_has(n, ['hold', 'aperto'])) {
+        return 'Usa $equipment para segurar parado sem largar de repente.';
+      }
+      if (_has(n, ['pronacao', 'supinacao', 'desvio', 'rotacao'])) {
+        return 'Usa $equipment leve como alavanca curta.';
+      }
+      return 'Usa $equipment com pega firme e punhos neutros.';
+    }
+    if (_has(e, ['barra']) && !_has(e, ['barra fixa'])) {
+      return 'Usa $equipment com pega simétrica.';
+    }
+    if (_has(e, ['cabo', 'polia'])) {
+      return 'Usa $equipment alinhando a polia ao movimento.';
+    }
+    if (_has(e, ['maquina'])) {
+      return 'Usa $equipment ajustando assento ou apoio.';
+    }
+    if (_has(e, ['barra fixa'])) {
+      return 'Usa $equipment com mãos firmes e ombros ativos.';
+    }
+    if (_has(e, ['elastico'])) {
+      return 'Usa $equipment preso de forma segura.';
+    }
+    if (_has(e, ['passadeira', 'bicicleta', 'eliptica', 'corda'])) {
+      return 'Usa $equipment regulando intensidade e duração.';
+    }
+    return 'Usa $equipment com espaço livre e apoio seguro para a variação escolhida.';
+  }
+
+  static String _beginnerPurposeCue(String name, String group) {
+    final n = _n(name);
+    if (_has(n, ['farmer walk'])) {
+      return 'Para iniciantes, a meta é caminhar 10 a 20 metros sem os halteres balançarem.';
+    }
+    if (_has(n, ['farmer hold', 'hold estatico'])) {
+      return 'Para iniciantes, a meta é ficar parado 20 a 30 segundos sem dobrar punhos nem encolher ombros.';
+    }
+    if (_has(n, ['cervical', 'pescoco', 'chin tuck'])) {
+      return 'O movimento deve ser pequeno e suave, parando antes de tontura ou formigueiro.';
+    }
+    if (group == 'Mobilidade') {
+      return 'A sensação correta é tensão leve e respirável, mantida por segundos, não dor.';
+    }
+    if (group == 'Cardio') {
+      return 'A intensidade deve permitir controlar respiração, duração e técnica antes de acelerar.';
+    }
+    if (group == 'Karate' || group == 'Jiu-Jitsu') {
+      if (_has(n, ['passagem de guarda'])) {
+        return 'Treina devagar a sequência de grips, ângulo e pressão antes de juntar velocidade.';
+      }
+      if (_has(n, ['drills de guarda'])) {
+        return 'Começa por recuperar enquadramento e distância antes de repetir a troca de lados.';
+      }
+      return 'Começa devagar para aprender base, direção e coordenação antes de ganhar velocidade.';
+    }
+    if (_isHinge(name)) {
+      return 'Aprende primeiro a dobrar pela anca sem arredondar a lombar.';
+    }
+    if (_isSquat(name) || _isLunge(name)) {
+      return 'A prioridade é joelhos alinhados com os pés e descida que consegues controlar.';
+    }
+    if (_isCurl(name) || _isTriceps(name) || _isGripOrForearm(name, group)) {
+      return 'O peso deve permitir punhos e cotovelos estáveis do início ao fim.';
+    }
+    return 'Escolhe uma versão em que consigas repetir o movimento mantendo respiração e alinhamento.';
   }
 
   static String _stepsFor(String name, String group, String equipment) {
@@ -668,90 +1376,6 @@ class ExerciseCatalogContextService {
     if (_isCore(name, group)) return _coreSteps(name, equipment);
     return _generalSpecificSteps(name, group, equipment);
   }
-
-  static String _curlDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) {
-    final n = _n(name);
-    if (_has(n, ['inverso'])) {
-      return '$name é uma variação de curl com pega pronada, palmas viradas para baixo. O foco sai um pouco do bíceps e passa mais para braquial, braquiorradial e antebraço. Usa $equipment com carga leve a moderada. Também envolve $secondary.';
-    }
-    if (_has(n, ['martelo', 'cruzado'])) {
-      return '$name é uma variação de curl com pega neutra, parecida com segurar martelos. É muito útil para braquial e braquiorradial, além do bíceps. Usa $equipment e evita balanço do tronco. Também envolve $secondary.';
-    }
-    if (_has(n, ['zottman'])) {
-      return '$name combina subida em curl normal com descida em pega pronada. Treina bíceps na subida e braquial, braquiorradial e antebraço na descida. Usa $equipment leve até dominares a rotação. Também envolve $secondary.';
-    }
-    return '$name é uma variação de curl para flexionar o cotovelo e aproximar a carga do ombro sem balançar o corpo. Usa $equipment e mantém os cotovelos controlados. Também envolve $secondary.';
-  }
-
-  static String _tricepsDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) =>
-      '$name é um exercício para estender o cotovelo e treinar o tríceps. Usa $equipment, mantém cotovelos estáveis e evita transformar o movimento em balanço de ombros ou lombar. Também envolve $secondary.';
-
-  static String _pushDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) =>
-      '$name é um exercício de empurrar para peito, ombros e tríceps. Usa $equipment e controla a posição das escápulas, cotovelos e punhos para a carga seguir uma trajetória segura. Também envolve $secondary.';
-
-  static String _pullDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) =>
-      '$name é um exercício de puxar para costas e escápulas. Usa $equipment, começa com ombros baixos, guia os cotovelos e controla o regresso para não perder tensão. Também envolve $secondary.';
-
-  static String _shoulderDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) =>
-      '$name treina ombros, trapézio ou controlo escapular. Usa $equipment com carga que permita manter pescoço relaxado, punhos alinhados e escápulas estáveis. Também envolve $secondary.';
-
-  static String _coreDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) =>
-      '$name treina o core para criar estabilidade, flexão, rotação ou resistência do tronco. Usa $equipment e mantém respiração controlada sem deixar a lombar perder a posição. Também envolve $secondary.';
-
-  static String _cardioDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) {
-    final n = _n(name);
-    if (_has(n, ['passadeira'])) {
-      return '$name é uma sessão de passadeira para trabalhar ritmo, passada, respiração e resistência. Usa $equipment, controla velocidade e inclinação conforme o objetivo. Também envolve $secondary.';
-    }
-    if (_has(n, ['bicicleta'])) {
-      return '$name é uma sessão de bicicleta para trabalhar cadência, resistência, respiração e controlo cardiovascular. Usa $equipment, ajusta selim e resistência antes de começar. Também envolve $secondary.';
-    }
-    if (_has(n, ['corda'])) {
-      return '$name é um exercício de corda de saltar para coordenação, ritmo, pés rápidos e capacidade cardiovascular. Usa $equipment, saltos baixos e rotação pelos punhos. Também envolve $secondary.';
-    }
-    if (_has(n, ['eliptica'])) {
-      return '$name é uma sessão de elíptica para resistência cardiovascular com baixo impacto. Usa $equipment, mantém tronco alto e movimento contínuo de braços e pernas. Também envolve $secondary.';
-    }
-    if (_has(n, ['caminhada', 'corrida', 'sprints'])) {
-      return '$name é cardio em exterior para trabalhar resistência, passada e controlo respiratório. Usa $equipment, escolhe piso seguro e ajusta intensidade ao teu nível. Também envolve $secondary.';
-    }
-    return '$name é cardio de peso corporal para elevar a frequência cardíaca, coordenação e tolerância ao esforço. Usa $equipment e mantém técnica antes de aumentar velocidade. Também envolve $secondary.';
-  }
-
-  static String _mobilityDescription(
-    String name,
-    String equipment,
-    String secondary,
-  ) =>
-      '$name é um exercício de mobilidade ou alongamento para melhorar amplitude útil, aliviar tensão e treinar controlo da região trabalhada. Usa $equipment apenas se ajudar a manter uma posição confortável. Também envolve $secondary.';
 
   static String _curlSteps(String name, String equipment) =>
       '1. Fica de pé ou sentado com pés firmes, peito alto e abdómen ligeiramente ativo. '
@@ -1096,7 +1720,7 @@ class ExerciseCatalogContextService {
       '4. Mantém o olhar na direção da técnica e regressa à guarda depois de cada repetição. '
       '5. Respira no momento do esforço sem prender o ar. '
       '6. Trabalha blocos curtos de 30 a 60 segundos com técnica limpa. '
-      '7. Aumenta velocidade só se manténs equilíbrio. '
+      '7. Aumenta velocidade só se manténs equilíbrio e controlo. '
       '8. Pára se houver dor articular, tontura ou perda de orientação.';
 
   static String _jiuJitsuSteps(String name) =>
