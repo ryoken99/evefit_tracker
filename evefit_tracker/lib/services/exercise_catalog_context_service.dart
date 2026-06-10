@@ -648,11 +648,11 @@ class ExerciseCatalogContextService {
     if (_has(n, ['towel grip'])) {
       return 'suspensão ou suporte numa toalha, exigindo que os dedos agarrem tecido em vez de uma barra rígida.';
     }
-    if (_has(n, ['wrist curl'])) {
-      return 'flexão do punho com antebraços apoiados, levando a palma na direção do antebraço sem mexer o cotovelo.';
-    }
     if (_has(n, ['reverse wrist'])) {
       return 'extensão do punho com antebraços apoiados, levantando os nós dos dedos contra a resistência.';
+    }
+    if (_has(n, ['wrist curl'])) {
+      return 'flexão do punho com antebraços apoiados, levando a palma na direção do antebraço sem mexer o cotovelo.';
     }
     if (_has(n, ['pronacao'])) {
       return 'rotação do antebraço para virar a palma para baixo usando um halter leve como alavanca.';
@@ -1231,10 +1231,10 @@ class ExerciseCatalogContextService {
     if (_has(n, ['farmer', 'hold', 'dead hang', 'aperto', 'pinch', 'plate', 'towel'])) {
       return 'força de pega, dedos e antebraço';
     }
-    if (_has(n, ['wrist curl', 'finger'])) return 'flexores do antebraço e dedos';
     if (_has(n, ['reverse wrist', 'extensao de dedos'])) {
       return 'extensores do antebraço e punho';
     }
+    if (_has(n, ['wrist curl', 'finger'])) return 'flexores do antebraço e dedos';
     if (_has(n, ['pronacao'])) return 'pronadores do antebraço';
     if (_has(n, ['supinacao'])) return 'supinadores do antebraço';
     if (_has(n, ['desvio', 'rotacao controlada'])) return 'punho e controlo do antebraço';
@@ -1347,6 +1347,9 @@ class ExerciseCatalogContextService {
     if (_has(_n(name), ['curl martelo'])) return _hammerCurlSteps(equipment);
     if (_has(_n(name), ['curl zottman'])) return _zottmanSteps(equipment);
     if (_has(_n(name), ['curl no cabo'])) return _cableCurlSteps();
+    if (_has(_n(name), ['wrist curl', 'reverse wrist'])) {
+      return _forearmGripSteps(name, equipment);
+    }
     if (_isCurl(name)) return _curlSteps(name, equipment);
     if (_has(_n(name), ['dead hang escapular', 'scapular pull-up'])) {
       return _scapularHangSteps();
@@ -1446,10 +1449,10 @@ class ExerciseCatalogContextService {
       return '1. Segura os halteres ao lado do corpo com as mãos fechadas e punhos direitos. 2. Fica de pé com pés à largura da anca, peito alto e ombros afastados das orelhas. 3. Aperta as pegas como se quisesses marcar os dedos no metal. 4. Mantém os braços esticados sem bloquear agressivamente os cotovelos. 5. Aguenta 10 a 30 segundos, respirando sem prender o ar. 6. Pousa os halteres antes de a pega falhar completamente. 7. Usa carga menor se os punhos dobrarem ou se o tronco inclinar.';
     }
     if (_has(n, ['wrist curl'])) {
-      return '1. Senta-te e apoia os antebraços nas coxas ou num banco, com os punhos fora do apoio. 2. Segura $equipment com palmas viradas para cima. 3. Mantém os antebraços quietos e deixa os punhos descerem devagar. 4. Fecha os dedos na pega e dobra os punhos para cima. 5. Para no topo sem levantar os antebraços. 6. Desce lentamente até alongamento confortável. 7. Respira de forma regular. 8. Usa carga leve para não irritar o punho.';
+      return '1. Senta-te com antebraços apoiados nas coxas e palmas viradas para cima. 2. Deixa só as mãos fora do apoio, segurando $equipment com dedos fechados. 3. Baixa os nós dos dedos na direção do chão até sentires alongamento na parte interna do antebraço. 4. Fecha a pega e dobra os punhos para trazer as palmas na direção do antebraço. 5. Sobe apenas pela flexão do punho, sem levantar os antebraços. 6. Mantém cotovelos colados ao apoio. 7. Desce durante 2 segundos e inspira nessa fase. 8. Expira ao fletir os punhos. 9. Termina se aparecer dor na parte da frente do punho.';
     }
     if (_has(n, ['reverse wrist'])) {
-      return '1. Senta-te com os antebraços apoiados e punhos fora do apoio. 2. Segura $equipment com palmas viradas para baixo. 3. Mantém cotovelos e antebraços imóveis. 4. Eleva os nós dos dedos para cima estendendo os punhos. 5. Pausa um instante no topo sem compensar com os ombros. 6. Baixa lentamente até amplitude confortável. 7. Respira sem prender o ar. 8. Reduz carga se houver dor na parte de cima do punho.';
+      return '1. Senta-te com os antebraços apoiados e palmas viradas para baixo. 2. Segura $equipment com pega leve, deixando os punhos fora do banco ou das coxas. 3. Mantém cotovelos parados e ombros relaxados. 4. Sobe os nós dos dedos para cima, como se quisesses apontar as costas da mão para o teto. 5. Para antes de sentir dor na parte de cima do punho. 6. Baixa a carga devagar até os punhos voltarem a ficar alinhados ou ligeiramente fletidos. 7. Expira ao levantar os nós dos dedos e inspira ao baixar. 8. Usa carga menor se precisares de mexer cotovelos ou ombros para subir.';
     }
     if (_has(n, ['pronacao'])) {
       return '1. Senta-te com o cotovelo apoiado a 90 graus e o antebraço estável. 2. Segura um halter leve por uma ponta, como uma alavanca curta. 3. Começa com a palma virada para dentro. 4. Roda devagar até a palma apontar para baixo. 5. Mantém cotovelo parado e punho alinhado. 6. Volta à posição inicial sem deixar o peso cair. 7. Respira devagar e usa amplitude sem dor. 8. Usa carga muito leve, porque a alavanca aumenta o esforço.';
@@ -1703,6 +1706,12 @@ class ExerciseCatalogContextService {
       'open book',
     ])) {
       return '1. Coloca-te na posição indicada, com coluna confortável e respiração calma. 2. Organiza ombros afastados das orelhas antes de mexer. 3. Move braços, escápulas ou coluna torácica devagar até amplitude confortável. 4. Não forces a frente do ombro nem a lombar. 5. Mantém 15 a 40 segundos ou faz 6 a 10 repetições lentas. 6. Respira durante todo o movimento. 7. Regressa devagar à posição inicial. 8. Pára se houver dor aguda ou formigueiro.';
+    }
+    if (_has(n, ['mobilidade de tornozelo na parede'])) {
+      return '1. Fica de frente para uma parede com um pé a alguns centímetros dela. 2. Mantém o calcanhar desse pé totalmente apoiado no chão. 3. Leva o joelho devagar na direção da parede, alinhado com o segundo ou terceiro dedo do pé. 4. Para quando o calcanhar quiser levantar ou o arco do pé colapsar. 5. Volta o joelho para trás e repete 8 a 12 vezes. 6. Respira de forma calma a cada avanço. 7. Afasta ou aproxima o pé da parede para ajustar a dificuldade. 8. Pára se houver dor no tendão de Aquiles, tornozelo ou frente do pé.';
+    }
+    if (_has(n, ['circulos de tornozelo'])) {
+      return '1. Senta-te ou fica de pé com apoio e tira ligeiramente um pé do chão. 2. Mantém a perna quieta para o movimento vir do tornozelo. 3. Desenha círculos lentos com a ponta do pé, primeiro para dentro e depois para fora. 4. Faz 6 a 10 círculos por direção. 5. Mantém os dedos relaxados, sem enrolar o pé. 6. Respira normalmente durante o movimento. 7. Troca de lado e repete. 8. Reduz o tamanho do círculo se houver dor ou estalidos desconfortáveis.';
     }
     if (_has(n, ['tornozelo', 'gemeos'])) {
       return '1. Coloca o pé no chão ou contra a parede conforme a variação. 2. Mantém o calcanhar apoiado quando o objetivo for gémeos ou tornozelo. 3. Leva o joelho ou o tronco devagar até sentir tensão confortável. 4. Não deixes o arco do pé colapsar para dentro. 5. Mantém 20 a 40 segundos ou faz repetições lentas. 6. Respira calmamente. 7. Troca de lado. 8. Pára se houver dor no tendão de Aquiles ou tornozelo.';

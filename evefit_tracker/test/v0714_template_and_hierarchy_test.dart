@@ -35,14 +35,13 @@ void main() {
           if (a.catalogEntryKey == b.catalogEntryKey) continue;
           if (_normalized(a.name) == _normalized(b.name)) continue;
 
-          final similarity = _orderedWordSimilarity(
-            a.details.description,
-            b.details.description,
-          );
-          if (similarity > 0.60) {
+          final similarity = _orderedWordSimilarity(_allText(a), _allText(b));
+          final sameFamily = _movementFamily(a.name) == _movementFamily(b.name);
+          final limit = sameFamily ? 0.75 : 0.60;
+          if (similarity > limit) {
             nearDuplicates.add(
               '${a.id} ${a.name} / ${b.id} ${b.name}: '
-              '${similarity.toStringAsFixed(2)}',
+              '${similarity.toStringAsFixed(2)} > ${limit.toStringAsFixed(2)}',
             );
           }
         }
@@ -70,6 +69,52 @@ void main() {
       expect(holdText, contains('parado'));
       expect(holdText, contains('imovel'));
       expect(_orderedWordSimilarity(farmerText, holdText), lessThanOrEqualTo(0.60));
+    });
+
+    test('specific movement pairs keep distinct teaching cues', () {
+      _expectPairBelowLimit('Curl martelo', 'Curl cruzado no corpo', 0.75);
+      _expectPairBelowLimit('Curl inverso', 'Curl martelo', 0.75);
+      _expectPairBelowLimit('Bicicleta cooldown', 'Passadeira cooldown', 0.60);
+      _expectPairBelowLimit(
+        'Corda de saltar pés alternados',
+        'Corda de saltar ritmo leve',
+        0.75,
+      );
+      _expectPairBelowLimit('Dead hang', 'Dead hang escapular', 0.75);
+
+      final hammer = _normalized(_allText(_entryByName('Curl martelo')));
+      expect(hammer, contains('pega neutra'));
+      expect(hammer, contains('polegar'));
+      expect(hammer, contains('braquial'));
+      expect(hammer, contains('braquiorradial'));
+
+      final reverse = _normalized(_allText(_entryByName('Curl inverso')));
+      expect(reverse, contains('pega pronada'));
+      expect(reverse, contains('palmas viradas para baixo'));
+      expect(reverse, contains('braquiorradial'));
+
+      final crossBody = _normalized(_allText(_entryByName('Curl cruzado no corpo')));
+      expect(crossBody, contains('diagonal'));
+      expect(crossBody, contains('oposto'));
+
+      final bikeCooldown = _normalized(_allText(_entryByName('Bicicleta cooldown')));
+      expect(bikeCooldown, contains('pedal'));
+      expect(bikeCooldown, contains('resistencia'));
+      expect(bikeCooldown, contains('cadencia'));
+      expect(bikeCooldown, isNot(contains('passadas')));
+      expect(bikeCooldown, isNot(contains('saltos')));
+      expect(bikeCooldown, isNot(contains('inclinacao')));
+
+      final ropeAlternating = _normalized(
+        _allText(_entryByName('Corda de saltar pés alternados')),
+      );
+      expect(ropeAlternating, contains('corda'));
+      expect(ropeAlternating, contains('punhos'));
+      expect(ropeAlternating, contains('pes alternados'));
+      expect(ropeAlternating, contains('aterra'));
+      expect(ropeAlternating, isNot(contains('bicicleta')));
+      expect(ropeAlternating, isNot(contains('passadeira')));
+      expect(ropeAlternating, isNot(contains('selim')));
     });
   });
 
@@ -151,6 +196,35 @@ void main() {
       expect(names.any((name) => _has(name, 'aberturas')), isFalse);
       expect(names.any((name) => _has(name, 'elevacao lateral')), isFalse);
       expect(names.any((name) => _has(name, 'agachamento')), isFalse);
+      expect(names.any((name) => _has(name, 'passadeira')), isFalse);
+      expect(names.any((name) => _has(name, 'bicicleta')), isFalse);
+      expect(names.any((name) => _has(name, 'prancha')), isFalse);
+    });
+
+    test('brachialis with dumbbells excludes forearm and triceps branches', () {
+      final names = _visibleFor(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'arms',
+          subgroupKey: 'upper_arm',
+          specificMuscleKey: 'brachialis',
+          equipmentKey: 'dumbbells',
+        ),
+        equipment: {'dumbbells'},
+      ).map((exercise) => exercise.name).toSet();
+
+      expect(names, contains('Curl martelo'));
+      expect(names.any((name) => _has(name, 'curl inverso')), isTrue);
+      expect(names.any((name) => _has(name, 'zottman')), isTrue);
+      expect(names.any((name) => _has(name, 'cruzado')), isTrue);
+      expect(names.any((name) => _has(name, 'finger curls')), isFalse);
+      expect(names.any((name) => _has(name, 'wrist curl')), isFalse);
+      expect(names.any((name) => _has(name, 'reverse wrist curl')), isFalse);
+      expect(names.any((name) => _has(name, 'extensao francesa')), isFalse);
+      expect(names.any((name) => _has(name, 'kickback')), isFalse);
+      expect(names.any((name) => _has(name, 'supino')), isFalse);
+      expect(names.any((name) => _has(name, 'aberturas')), isFalse);
+      expect(names.any((name) => _has(name, 'elevacao lateral')), isFalse);
     });
 
     test('legs complete aggregates lower subtree only', () {
@@ -214,6 +288,43 @@ void main() {
       expect(coreNames.any((name) => _has(name, 'bird dog')), isTrue);
       expect(coreNames.any((name) => _has(name, 'extensao de triceps')), isFalse);
     });
+
+    test('chest complete aggregates chest subzones only', () {
+      final names = _visibleFor(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'chest',
+          subgroupKey: 'chest_primary',
+        ),
+      ).map((exercise) => exercise.name).toSet();
+
+      expect(names.any((name) => _has(name, 'supino inclinado')), isTrue);
+      expect(names.any((name) => _has(name, 'supino com halteres')), isTrue);
+      expect(names.any((name) => _has(name, 'supino declinado')), isTrue);
+      expect(names.any((name) => _has(name, 'scapular push-up')), isTrue);
+      expect(names.any((name) => _has(name, 'curl')), isFalse);
+      expect(names.any((name) => _has(name, 'remo')), isFalse);
+      expect(names.any((name) => _has(name, 'agachamento')), isFalse);
+    });
+
+    test('equipment is applied after complete hierarchy aggregation', () {
+      final dumbbellNames = _visibleFor(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'arms',
+          subgroupKey: 'arms_complete',
+          equipmentKey: 'dumbbells',
+        ),
+        equipment: {'dumbbells'},
+      ).map((exercise) => exercise.name).toSet();
+
+      expect(dumbbellNames.any((name) => _has(name, 'curl')), isTrue);
+      expect(dumbbellNames.any((name) => _has(name, 'triceps')), isTrue);
+      expect(dumbbellNames.any((name) => _has(name, 'wrist')), isTrue);
+      expect(dumbbellNames.any((name) => _has(name, 'farmer')), isTrue);
+      expect(dumbbellNames.any((name) => _has(name, 'barra fixa')), isFalse);
+      expect(dumbbellNames.any((name) => _has(name, 'cabo')), isFalse);
+    });
   });
 }
 
@@ -236,6 +347,21 @@ List<Exercise> _visibleFor(
 ExerciseCatalogEntry _entryByName(String normalizedName) {
   return ExerciseCatalogContextService.entries.firstWhere(
     (entry) => _normalized(entry.name) == _normalized(normalizedName),
+  );
+}
+
+String _allText(ExerciseCatalogEntry entry) =>
+    '${entry.details.description} ${entry.details.executionSteps} '
+    '${entry.details.commonMistakes} ${entry.details.safetyNotes}';
+
+void _expectPairBelowLimit(String leftName, String rightName, double limit) {
+  final left = _entryByName(leftName);
+  final right = _entryByName(rightName);
+  final similarity = _orderedWordSimilarity(_allText(left), _allText(right));
+  expect(
+    similarity,
+    lessThanOrEqualTo(limit),
+    reason: '$leftName / $rightName similarity ${similarity.toStringAsFixed(2)}',
   );
 }
 
@@ -272,6 +398,81 @@ List<String> _words(String value) => _normalized(value)
     .where((word) => word.length > 3)
     .toList();
 
+String _movementFamily(String name) {
+  final n = _normalized(name);
+  if (n.contains('curl')) return 'curl';
+  if (n.contains('triceps') || n.contains('extensao francesa')) return 'triceps';
+  if (n.contains('supino') || n.contains('press') || n.contains('flexao')) {
+    return 'press';
+  }
+  if (n.contains('remo') || n.contains('puxada') || n.contains('pull')) {
+    return 'pull';
+  }
+  if (n.contains('agachamento') ||
+      n.contains('wall sit') ||
+      n.contains('step-up') ||
+      n.contains('extensao de perna') ||
+      n.contains('aducao') ||
+      n.contains('abducao')) {
+    return 'lower_strength';
+  }
+  if (n.contains('peso morto') ||
+      n.contains('good morning') ||
+      n.contains('ponte de gluteo') ||
+      n.contains('hip thrust') ||
+      n.contains('kickback') ||
+      n.contains('gemeos') ||
+      n.contains('soleo') ||
+      n.contains('tibial') ||
+      n.contains('saltos leves')) {
+    return 'lower_strength';
+  }
+  if (n.contains('alongamento') ||
+      n.contains('mobilidade') ||
+      n.contains('cat-cow') ||
+      n.contains('open book') ||
+      n.contains('wall slides') ||
+      n.contains('rotacao toracica') ||
+      n.contains('circulos') ||
+      n.contains('pigeon') ||
+      n.contains('90/90') ||
+      n.contains('tornozelo') ||
+      n.contains('punhos')) {
+    return 'mobility';
+  }
+  if (n.contains('elevacao') ||
+      n.contains('face pull') ||
+      n.contains('reverse fly') ||
+      n.contains('raise') ||
+      n.contains('rotacao externa') ||
+      n.contains('rotacao interna')) {
+    return 'shoulder';
+  }
+  if (n.contains('prancha') ||
+      n.contains('crunch') ||
+      n.contains('toe touches') ||
+      n.contains('hollow') ||
+      n.contains('dead bug') ||
+      n.contains('bird dog') ||
+      n.contains('superman')) {
+    return 'core';
+  }
+  if (n.contains('passadeira')) return 'cardio_treadmill';
+  if (n.contains('bicicleta')) return 'cardio_bike';
+  if (n.contains('corda')) return 'cardio_rope';
+  if (n.contains('karate') || n.contains('jiu-jitsu')) return 'martial';
+  if (n.contains('farmer') ||
+      n.contains('hold') ||
+      n.contains('wrist') ||
+      n.contains('suitcase') ||
+      n.contains('pronacao') ||
+      n.contains('supinacao') ||
+      n.contains('desvio')) {
+    return 'forearm_grip';
+  }
+  return 'other';
+}
+
 const _prohibitedTemplatePhrases = [
   'e um exercicio ou drill para treinar',
   'serve para praticar mover a articulacao principal',
@@ -296,4 +497,7 @@ const _prohibitedTemplatePhrases = [
   'executa com boa tecnica',
   'amplitude controlada',
   'movimento lento e previsivel',
+  'no contexto',
+  'articulacao principal',
+  'equipamento indicado',
 ];

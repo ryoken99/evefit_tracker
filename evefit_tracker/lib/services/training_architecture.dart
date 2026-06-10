@@ -804,6 +804,15 @@ class TrainingArchitecture {
       sortOrder: 3,
     ),
     TrainingMuscle(
+      key: 'serratus_anterior',
+      regionKey: 'upper',
+      groupKey: 'chest',
+      subgroupKey: 'chest_primary',
+      name: 'Serrátil anterior',
+      description: 'Controlo da escápula contra a caixa torácica.',
+      sortOrder: 4,
+    ),
+    TrainingMuscle(
       key: 'lats',
       regionKey: 'upper',
       groupKey: 'back',
@@ -1333,6 +1342,14 @@ class TrainingArchitecture {
         muscles: ['upper_chest', 'mid_chest', 'lower_chest'],
       );
     }
+    if (_has(primaryHaystack, ['scapular push-up'])) {
+      add(
+        region: 'upper',
+        group: 'chest',
+        subgroup: 'chest_primary',
+        muscles: ['serratus_anterior'],
+      );
+    }
     if (_has(primaryHaystack, [
       'remo',
       'puxada',
@@ -1746,6 +1763,14 @@ class TrainingArchitecture {
             muscles: ['rhomboids'],
           );
         }
+        if (_has(name, ['scapular push-up'])) {
+          add(
+            region: 'upper',
+            group: 'chest',
+            subgroup: 'chest_primary',
+            muscles: ['serratus_anterior'],
+          );
+        }
         break;
       case 'peito':
         add(
@@ -1856,6 +1881,7 @@ class TrainingArchitecture {
   }
 
   static List<String> _chestMuscles(String name) {
+    if (_has(name, ['scapular push-up'])) return ['serratus_anterior'];
     if (_has(name, ['inclinado', 'declinada', 'pes elevados'])) {
       return ['upper_chest'];
     }
