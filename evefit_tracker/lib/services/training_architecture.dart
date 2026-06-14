@@ -2096,6 +2096,7 @@ class TrainingArchitecture {
         break;
       case 'pernas':
         _addLowerCatalogTags(name, add);
+        groupKeys.add('legs');
         break;
       case 'cardio':
         _addCardioCatalogTags(name, add);

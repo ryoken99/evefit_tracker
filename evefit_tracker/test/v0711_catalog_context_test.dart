@@ -3,12 +3,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('v0.7.11 catalog context source of truth', () {
-    test('preserves 305 catalog entries and 294 unique exercise names', () {
+    test('preserves 305 catalog entries and 299 unique exercise names', () {
       final entries = ExerciseCatalogContextService.entries;
       final uniqueNames = entries.map((entry) => entry.name).toSet();
 
       expect(entries, hasLength(305));
-      expect(uniqueNames, hasLength(294));
+      expect(uniqueNames, hasLength(299));
       expect(
         entries.map((entry) => entry.catalogEntryKey).toSet(),
         hasLength(305),

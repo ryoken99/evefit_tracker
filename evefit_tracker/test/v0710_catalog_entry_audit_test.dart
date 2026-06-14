@@ -12,7 +12,7 @@ void main() {
       final uniqueNames = entries.map((entry) => entry.name).toSet();
 
       expect(entries.length, 305);
-      expect(uniqueNames.length, 294);
+      expect(uniqueNames.length, 299);
 
       for (final entry in entries) {
         final detail = entry.detail;

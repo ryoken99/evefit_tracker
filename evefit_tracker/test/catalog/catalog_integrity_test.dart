@@ -12,7 +12,7 @@ void main() {
         reason: CatalogQualityGateService.formatFailures(failures),
       );
       expect(CatalogQualityGateService.catalogEntryCount, 305);
-      expect(CatalogQualityGateService.uniqueExerciseCount, 294);
+      expect(CatalogQualityGateService.uniqueExerciseCount, 299);
     });
   });
 }
