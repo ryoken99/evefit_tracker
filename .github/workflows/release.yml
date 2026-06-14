@@ -1,0 +1,73 @@
+name: Build & Release APK
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versão do release (ex: v0.7.16)'
+        required: true
+        default: 'v0.7.16'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        working-directory: evefit_tracker
+        run: flutter pub get
+
+      - name: Analyze
+        working-directory: evefit_tracker
+        run: flutter analyze --no-fatal-infos
+
+      - name: Test
+        working-directory: evefit_tracker
+        run: flutter test
+
+      - name: Build APK
+        working-directory: evefit_tracker
+        run: flutter build apk --release
+
+      - name: Set version name
+        id: version
+        run: echo "name=${{ github.event.inputs.version || github.ref_name }}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.name }}
+          name: ${{ steps.version.outputs.name }}
+          files: evefit_tracker/build/app/outputs/flutter-apk/app-release.apk
+          generate_release_notes: false
+          body: |
+            ## EveFit Tracker ${{ steps.version.outputs.name }}
+
+            ### Novidades v0.7.16
+            - Catálogo de exercícios reorganizado: duplicados removidos de todos os grupos
+            - Novo grupo **Lombar** com exercícios específicos de extensão e estabilização
+            - Hierarquia de treino corrigida: 20+ músculos adicionados ao sistema de filtros (trapézio sup/méd/inf, deltoides, oblíquos, eretores, isquiotibiais, adutores, tibial anterior, etc.)
+            - Subgrupos corrigidos: `traps`, `neck`, `low_back_sub`, `obliques_sub`, `tibialis_sub` agora funcionam nos filtros
+            - Descrições e passos de execução melhorados para iniciantes em todos os exercícios
+
+            ### Instalação
+            Descarrega o ficheiro `app-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -701,6 +701,54 @@ class TrainingArchitecture {
       description: 'Grappling e transições.',
       sortOrder: 1,
     ),
+    TrainingSubgroup(
+      key: 'traps',
+      regionKey: 'upper',
+      groupKey: 'traps_scapula',
+      name: 'Trapézio',
+      description: 'Trapézio superior, médio e inferior.',
+      sortOrder: 1,
+    ),
+    TrainingSubgroup(
+      key: 'neck',
+      regionKey: 'upper',
+      groupKey: 'neck',
+      name: 'Musculatura cervical',
+      description: 'Flexores e estabilizadores do pescoço.',
+      sortOrder: 1,
+    ),
+    TrainingSubgroup(
+      key: 'low_back_sub',
+      regionKey: 'core',
+      groupKey: 'low_back',
+      name: 'Lombar',
+      description: 'Eretores espinhais e quadrado lombar.',
+      sortOrder: 1,
+    ),
+    TrainingSubgroup(
+      key: 'abdominal_sub',
+      regionKey: 'core',
+      groupKey: 'abdominal',
+      name: 'Abdominal',
+      description: 'Reto abdominal.',
+      sortOrder: 1,
+    ),
+    TrainingSubgroup(
+      key: 'obliques_sub',
+      regionKey: 'core',
+      groupKey: 'obliques',
+      name: 'Oblíquos',
+      description: 'Oblíquo interno e externo.',
+      sortOrder: 1,
+    ),
+    TrainingSubgroup(
+      key: 'tibialis_sub',
+      regionKey: 'lower',
+      groupKey: 'tibialis',
+      name: 'Tibial',
+      description: 'Tibial anterior.',
+      sortOrder: 1,
+    ),
   ];
 
   static const muscles = [
@@ -945,6 +993,231 @@ class TrainingArchitecture {
       subgroupKey: 'jiu_jitsu_technical',
       name: 'Jiu-Jitsu técnico',
       description: 'Técnica de Jiu-Jitsu.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'upper_traps',
+      regionKey: 'upper',
+      groupKey: 'traps_scapula',
+      subgroupKey: 'traps',
+      name: 'Trapézio superior',
+      description: 'Elevação escapular e extensão cervical.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'mid_traps',
+      regionKey: 'upper',
+      groupKey: 'traps_scapula',
+      subgroupKey: 'traps',
+      name: 'Trapézio médio',
+      description: 'Retração escapular.',
+      sortOrder: 2,
+    ),
+    TrainingMuscle(
+      key: 'lower_traps',
+      regionKey: 'upper',
+      groupKey: 'traps_scapula',
+      subgroupKey: 'traps',
+      name: 'Trapézio inferior',
+      description: 'Depressão e rotação superior da escápula.',
+      sortOrder: 3,
+    ),
+    TrainingMuscle(
+      key: 'cervical_stabilizers',
+      regionKey: 'upper',
+      groupKey: 'neck',
+      subgroupKey: 'neck',
+      name: 'Estabilizadores cervicais',
+      description: 'Flexores profundos e estabilizadores do pescoço.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'sternocleidomastoid',
+      regionKey: 'upper',
+      groupKey: 'neck',
+      subgroupKey: 'neck',
+      name: 'Esternocleidomastoideu',
+      description: 'Flexão, rotação e inclinação da cabeça.',
+      sortOrder: 2,
+    ),
+    TrainingMuscle(
+      key: 'anterior_deltoid',
+      regionKey: 'upper',
+      groupKey: 'shoulders',
+      subgroupKey: 'deltoids',
+      name: 'Deltoide anterior',
+      description: 'Flexão e rotação interna do ombro.',
+      sortOrder: 2,
+    ),
+    TrainingMuscle(
+      key: 'posterior_deltoid',
+      regionKey: 'upper',
+      groupKey: 'shoulders',
+      subgroupKey: 'deltoids',
+      name: 'Deltoide posterior',
+      description: 'Extensão e rotação externa do ombro.',
+      sortOrder: 3,
+    ),
+    TrainingMuscle(
+      key: 'scapular_stabilizers',
+      regionKey: 'upper',
+      groupKey: 'shoulders',
+      subgroupKey: 'deltoids',
+      name: 'Estabilizadores da escápula',
+      description: 'Serrátil anterior, romboides e trapézio inferior.',
+      sortOrder: 4,
+    ),
+    TrainingMuscle(
+      key: 'external_rotators',
+      regionKey: 'upper',
+      groupKey: 'shoulders',
+      subgroupKey: 'deltoids',
+      name: 'Rotadores externos',
+      description: 'Infraespinhoso e redondo menor.',
+      sortOrder: 5,
+    ),
+    TrainingMuscle(
+      key: 'internal_rotators',
+      regionKey: 'upper',
+      groupKey: 'shoulders',
+      subgroupKey: 'deltoids',
+      name: 'Rotadores internos',
+      description: 'Subescapular e redondo maior.',
+      sortOrder: 6,
+    ),
+    TrainingMuscle(
+      key: 'transverse_abdominis',
+      regionKey: 'core',
+      groupKey: 'transverse_abs',
+      subgroupKey: 'core_general',
+      name: 'Transverso abdominal',
+      description: 'Estabilização profunda e pressão intra-abdominal.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'deep_stability',
+      regionKey: 'core',
+      groupKey: 'core_stability',
+      subgroupKey: 'core_general',
+      name: 'Estabilidade profunda',
+      description: 'Multífidos, transverso e pavimento pélvico.',
+      sortOrder: 3,
+    ),
+    TrainingMuscle(
+      key: 'anti_rotation',
+      regionKey: 'core',
+      groupKey: 'anti_rotation',
+      subgroupKey: 'core_general',
+      name: 'Anti-rotação',
+      description: 'Resistência à rotação do tronco.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'external_obliques',
+      regionKey: 'core',
+      groupKey: 'obliques',
+      subgroupKey: 'obliques_sub',
+      name: 'Oblíquo externo',
+      description: 'Rotação ipsilateral e flexão lateral do tronco.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'internal_obliques',
+      regionKey: 'core',
+      groupKey: 'obliques',
+      subgroupKey: 'obliques_sub',
+      name: 'Oblíquo interno',
+      description: 'Rotação contralateral e flexão lateral.',
+      sortOrder: 2,
+    ),
+    TrainingMuscle(
+      key: 'erectors',
+      regionKey: 'core',
+      groupKey: 'low_back',
+      subgroupKey: 'low_back_sub',
+      name: 'Eretores da espinha',
+      description: 'Extensão e estabilização da coluna vertebral.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'quadratus_lumborum',
+      regionKey: 'core',
+      groupKey: 'low_back',
+      subgroupKey: 'low_back_sub',
+      name: 'Quadrado lombar',
+      description: 'Flexão lateral e estabilização lombar.',
+      sortOrder: 2,
+    ),
+    TrainingMuscle(
+      key: 'glute_min',
+      regionKey: 'lower',
+      groupKey: 'hips_glutes',
+      subgroupKey: 'glutes',
+      name: 'Glúteo mínimo',
+      description: 'Abdução e estabilização lateral da anca.',
+      sortOrder: 3,
+    ),
+    TrainingMuscle(
+      key: 'piriformis',
+      regionKey: 'lower',
+      groupKey: 'hips_glutes',
+      subgroupKey: 'glutes',
+      name: 'Piriforme',
+      description: 'Rotação externa e estabilidade da anca.',
+      sortOrder: 4,
+    ),
+    TrainingMuscle(
+      key: 'vastus_medialis',
+      regionKey: 'lower',
+      groupKey: 'quadriceps',
+      subgroupKey: 'quadriceps',
+      name: 'Vasto medial',
+      description: 'Extensão do joelho, porção interna.',
+      sortOrder: 3,
+    ),
+    TrainingMuscle(
+      key: 'semimembranosus',
+      regionKey: 'lower',
+      groupKey: 'hamstrings',
+      subgroupKey: 'hamstrings',
+      name: 'Semimembranoso',
+      description: 'Flexão do joelho e extensão da anca, porção medial.',
+      sortOrder: 2,
+    ),
+    TrainingMuscle(
+      key: 'semitendinosus',
+      regionKey: 'lower',
+      groupKey: 'hamstrings',
+      subgroupKey: 'hamstrings',
+      name: 'Semitendíneo',
+      description: 'Flexão do joelho, porção medial superficial.',
+      sortOrder: 3,
+    ),
+    TrainingMuscle(
+      key: 'adductor_longus',
+      regionKey: 'lower',
+      groupKey: 'adductors',
+      subgroupKey: 'adductors',
+      name: 'Adutor longo',
+      description: 'Adução e flexão da anca.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'adductor_magnus',
+      regionKey: 'lower',
+      groupKey: 'adductors',
+      subgroupKey: 'adductors',
+      name: 'Adutor magno',
+      description: 'Adução, extensão e estabilidade da anca.',
+      sortOrder: 2,
+    ),
+    TrainingMuscle(
+      key: 'tibialis_anterior',
+      regionKey: 'lower',
+      groupKey: 'tibialis',
+      subgroupKey: 'tibialis_sub',
+      name: 'Tibial anterior',
+      description: 'Dorsiflexão e inversão do tornozelo.',
       sortOrder: 1,
     ),
   ];
@@ -1691,12 +1964,6 @@ class TrainingArchitecture {
       regionKeys.add('custom');
       groupKeys.add('custom_workout');
     }
-    if (regionKeys.contains('lower')) {
-      groupKeys.add('legs');
-    }
-    if (regionKeys.contains('core')) {
-      groupKeys.add('core');
-    }
 
     return ExerciseArchitectureTags(
       regionKeys: regionKeys,
@@ -1822,7 +2089,6 @@ class TrainingArchitecture {
           subgroup: 'core_general',
           muscles: _coreMuscles(name),
         );
-        groupKeys.add('core');
         if (_has(name, ['mountain climbers'])) {
           add(region: 'cardio', group: 'cardio_general', subgroup: 'hiit');
           add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
@@ -1830,7 +2096,6 @@ class TrainingArchitecture {
         break;
       case 'pernas':
         _addLowerCatalogTags(name, add);
-        groupKeys.add('legs');
         break;
       case 'cardio':
         _addCardioCatalogTags(name, add);
@@ -1849,6 +2114,14 @@ class TrainingArchitecture {
           group: 'jiu_jitsu',
           subgroup: 'jiu_jitsu_technical',
           muscles: ['jiu_jitsu_technical'],
+        );
+        break;
+      case 'lombar':
+        add(
+          region: 'core',
+          group: 'low_back',
+          subgroup: 'low_back_sub',
+          muscles: ['erectors', 'quadratus_lumborum'],
         );
         break;
       case 'mobilidade':

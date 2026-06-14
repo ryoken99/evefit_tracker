@@ -10,7 +10,7 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - Formulario Dados para registar balanca, composicao corporal, medidas, dobras cutaneas e notas.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- APK release v0.5.3 gerado localmente em `build/app/outputs/flutter-apk/app-release.apk`.
+- APK release v0.7.16 gerado localmente em `build/app/outputs/flutter-apk/app-release.apk`.
 - Aba Medidas renomeada para Dados.
 - Dados de balanca e composicao corporal expandidos.
 - IMC calculado, idade/altura no perfil e racios cintura/anca e cintura/altura preparados.
@@ -26,6 +26,11 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - Tipos de treino e templates personalizados.
 - Grupos musculares e catalogo de exercicios expandidos com descricao tecnica.
 - Medidas corporais expandidas e objetivos preparados para progresso por metrica.
+- Error handling em todos os ecrãs com FutureBuilder (mensagem de erro + botão de retry).
+- Futures cacheados em initState para evitar queries desnecessárias à base de dados.
+- Proteção contra brute-force do PIN: bloqueio de 1 minuto após 5 tentativas falhadas.
+- Catálogo reorganizado: duplicados removidos, novo grupo Lombar, hierarquia corrigida.
+- 20+ músculos adicionados ao sistema de filtros de treino.
 
 ## Stack
 
