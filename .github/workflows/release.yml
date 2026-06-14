@@ -11,6 +11,9 @@ on:
         required: true
         default: 'v0.7.16'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -61,11 +64,13 @@ jobs:
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
             ### Novidades v0.7.16
-            - Catálogo de exercícios reorganizado: duplicados removidos de todos os grupos
-            - Novo grupo **Lombar** com exercícios específicos de extensão e estabilização
-            - Hierarquia de treino corrigida: 20+ músculos adicionados ao sistema de filtros (trapézio sup/méd/inf, deltoides, oblíquos, eretores, isquiotibiais, adutores, tibial anterior, etc.)
-            - Subgrupos corrigidos: `traps`, `neck`, `low_back_sub`, `obliques_sub`, `tibialis_sub` agora funcionam nos filtros
-            - Descrições e passos de execução melhorados para iniciantes em todos os exercícios
+            - Catálogo de exercícios expandido: todos os músculos e exercícios em falta adicionados
+            - Duplicados removidos do catálogo (exercícios, músculos, equipamento)
+            - Hierarquia de treino reescrita (região → grupo → subgrupo → músculo)
+            - Filtros corrigidos para corresponder corretamente à hierarquia selecionada
+            - Novo grupo Lombar com 8 exercícios dedicados
+            - 27 novos músculos e 6 novos subgrupos na arquitetura de treino
+            - Todas as descrições de exercícios reescritas para iniciantes absolutos
 
             ### Instalação
             Descarrega o ficheiro `app-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
