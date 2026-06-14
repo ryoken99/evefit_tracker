@@ -52,6 +52,9 @@ class AppDatabase {
   Database? _database;
   Profile? _activeProfile;
 
+  final Map<int, int> _pinFailedAttempts = {};
+  final Map<int, DateTime> _pinLockedUntil = {};
+
   int? get activeProfileId => _activeProfile?.id;
   Profile? get activeProfile => _activeProfile;
 
@@ -950,8 +953,36 @@ class AppDatabase {
     _activeProfile = profile.copyWith(isActive: true);
   }
 
+  bool isPinLocked(Profile profile) {
+    final id = profile.id;
+    if (id == null) return false;
+    final locked = _pinLockedUntil[id];
+    return locked != null && DateTime.now().isBefore(locked);
+  }
+
   Future<bool> verifyProfilePin(Profile profile, String pin) async {
-    return PinService.verifyPin(pin: pin, hash: profile.pinHash);
+    final id = profile.id;
+    if (id != null) {
+      final locked = _pinLockedUntil[id];
+      if (locked != null && DateTime.now().isBefore(locked)) {
+        return false;
+      }
+    }
+    final ok = PinService.verifyPin(pin: pin, hash: profile.pinHash);
+    if (id != null) {
+      if (ok) {
+        _pinFailedAttempts.remove(id);
+        _pinLockedUntil.remove(id);
+      } else {
+        final attempts = (_pinFailedAttempts[id] ?? 0) + 1;
+        _pinFailedAttempts[id] = attempts;
+        if (attempts >= 5) {
+          _pinLockedUntil[id] = DateTime.now().add(const Duration(minutes: 1));
+          _pinFailedAttempts.remove(id);
+        }
+      }
+    }
+    return ok;
   }
 
   Future<Profile> createProfile({

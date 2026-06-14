@@ -26,6 +26,16 @@ class _PhotosScreenState extends State<PhotosScreen> {
     'Outro',
   ];
 
+  late Future<List<ProgressPhoto>> _dataFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataFuture = widget.database.photos();
+  }
+
+  void _refresh() => setState(() => _dataFuture = widget.database.photos());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +44,28 @@ class _PhotosScreenState extends State<PhotosScreen> {
         child: const Icon(Icons.add_a_photo_outlined),
       ),
       body: FutureBuilder<List<ProgressPhoto>>(
-        future: widget.database.photos(),
+        future: _dataFuture,
         builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.error_outline, size: 48),
+                    const SizedBox(height: 12),
+                    const Text('Erro ao carregar fotos. Tenta novamente.'),
+                    const SizedBox(height: 12),
+                    FilledButton(
+                      onPressed: _refresh,
+                      child: const Text('Tentar novamente'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
@@ -139,7 +169,7 @@ class _PhotosScreenState extends State<PhotosScreen> {
       ),
     );
     if (changed == true) {
-      setState(() {});
+      _refresh();
     }
   }
 
@@ -248,7 +278,7 @@ class _PhotosScreenState extends State<PhotosScreen> {
     weight.dispose();
     notes.dispose();
     if (saved == true) {
-      setState(() {});
+      _refresh();
     }
   }
 }

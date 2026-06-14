@@ -20,12 +20,42 @@ class WorkoutsScreen extends StatefulWidget {
 }
 
 class _WorkoutsScreenState extends State<WorkoutsScreen> {
+  late Future<List<WorkoutEntry>> _dataFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataFuture = widget.database.workouts();
+  }
+
+  void _refresh() => setState(() => _dataFuture = widget.database.workouts());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder<List<WorkoutEntry>>(
-        future: widget.database.workouts(),
+        future: _dataFuture,
         builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.error_outline, size: 48),
+                    const SizedBox(height: 12),
+                    const Text('Erro ao carregar treinos. Tenta novamente.'),
+                    const SizedBox(height: 12),
+                    FilledButton(
+                      onPressed: _refresh,
+                      child: const Text('Tentar novamente'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
@@ -83,7 +113,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                           ),
                         ),
                       );
-                      setState(() {});
+                      _refresh();
                     },
                     child: WorkoutCard(entry: entry),
                   ),
@@ -769,14 +799,14 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     duration.dispose();
     notes.dispose();
     if (savedEntry != null && mounted) {
-      setState(() {});
+      _refresh();
       await Navigator.of(context).push(
         MaterialPageRoute(
           builder: (_) =>
               WorkoutDetailScreen(database: widget.database, entry: savedEntry),
         ),
       );
-      setState(() {});
+      _refresh();
     }
   }
 

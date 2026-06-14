@@ -322,6 +322,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       newPin.text.isNotEmpty ||
                       confirmPin.text.isNotEmpty;
                   if (wantsPinChange) {
+                    if (widget.database.isPinLocked(profile)) {
+                      setSheetState(
+                        () => error =
+                            'Muitas tentativas. Tenta novamente dentro de 1 minuto.',
+                      );
+                      return;
+                    }
                     final currentOk = await widget.database.verifyProfilePin(
                       profile,
                       currentPin.text,

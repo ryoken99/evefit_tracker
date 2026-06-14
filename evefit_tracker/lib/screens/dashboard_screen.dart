@@ -26,16 +26,48 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  late Future<List<Object>> _dataFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataFuture = _loadData();
+  }
+
+  Future<List<Object>> _loadData() => Future.wait<Object>([
+    widget.database.profile(),
+    widget.database.measurements(),
+    widget.database.workoutsThisWeek(),
+    widget.database.dashboardWidgets(),
+  ]);
+
+  void _refresh() => setState(() => _dataFuture = _loadData());
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Object>>(
-      future: Future.wait<Object>([
-        widget.database.profile(),
-        widget.database.measurements(),
-        widget.database.workoutsThisWeek(),
-        widget.database.dashboardWidgets(),
-      ]),
+      future: _dataFuture,
       builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.error_outline, size: 48),
+                  const SizedBox(height: 12),
+                  const Text('Erro ao carregar dados. Tenta novamente.'),
+                  const SizedBox(height: 12),
+                  FilledButton(
+                    onPressed: _refresh,
+                    child: const Text('Tentar novamente'),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         }
@@ -53,7 +85,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             .toList();
 
         return RefreshIndicator(
-          onRefresh: () async => setState(() {}),
+          onRefresh: () async => _refresh(),
           child: ListView(
             padding: const EdgeInsets.all(16),
             children: [
