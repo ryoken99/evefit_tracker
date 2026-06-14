@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versão do release (ex: v0.7.15)'
+        required: true
+        default: 'v0.7.15'
 
 jobs:
   build:
@@ -41,14 +47,19 @@ jobs:
         working-directory: evefit_tracker
         run: flutter build apk --release
 
+      - name: Set version name
+        id: version
+        run: echo "name=${{ github.event.inputs.version || github.ref_name }}" >> $GITHUB_OUTPUT
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          name: ${{ github.ref_name }}
+          tag_name: ${{ steps.version.outputs.name }}
+          name: ${{ steps.version.outputs.name }}
           files: evefit_tracker/build/app/outputs/flutter-apk/app-release.apk
           generate_release_notes: false
           body: |
-            ## EveFit Tracker ${{ github.ref_name }}
+            ## EveFit Tracker ${{ steps.version.outputs.name }}
 
             ### Correções v0.7.15
             - Error handling em todos os ecrãs — mensagem de erro com botão "Tentar novamente" em vez de spinner infinito
