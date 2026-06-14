@@ -15,6 +15,17 @@ class MeasurementsScreen extends StatefulWidget {
 }
 
 class _MeasurementsScreenState extends State<MeasurementsScreen> {
+  late Future<List<BodyMeasurement>> _dataFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataFuture = widget.database.measurements();
+  }
+
+  void _refresh() =>
+      setState(() => _dataFuture = widget.database.measurements());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +34,28 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
         child: const Icon(Icons.add),
       ),
       body: FutureBuilder<List<BodyMeasurement>>(
-        future: widget.database.measurements(),
+        future: _dataFuture,
         builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.error_outline, size: 48),
+                    const SizedBox(height: 12),
+                    const Text('Erro ao carregar dados. Tenta novamente.'),
+                    const SizedBox(height: 12),
+                    FilledButton(
+                      onPressed: _refresh,
+                      child: const Text('Tentar novamente'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
@@ -147,7 +178,7 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
       ),
     );
     if (changed == true) {
-      setState(() {});
+      _refresh();
     }
   }
 
@@ -206,7 +237,7 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
     );
     fields.dispose();
     if (saved == true) {
-      setState(() {});
+      _refresh();
     }
   }
 

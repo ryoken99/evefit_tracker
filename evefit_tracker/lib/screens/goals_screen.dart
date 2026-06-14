@@ -17,6 +17,22 @@ class GoalsScreen extends StatefulWidget {
 }
 
 class _GoalsScreenState extends State<GoalsScreen> {
+  late Future<List<Object>> _dataFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataFuture = _loadData();
+  }
+
+  Future<List<Object>> _loadData() => Future.wait<Object>([
+    widget.database.goals(),
+    widget.database.measurements(),
+    widget.database.workoutsThisWeek(),
+  ]);
+
+  void _refresh() => setState(() => _dataFuture = _loadData());
+
   static const phases = ['Base', 'Fase 1', 'Fase 2', 'Fase 3', 'Livre'];
   static const categories = [
     'Composição corporal',
@@ -46,12 +62,28 @@ class _GoalsScreenState extends State<GoalsScreen> {
         label: const Text('Criar objetivo'),
       ),
       body: FutureBuilder<List<Object>>(
-        future: Future.wait<Object>([
-          widget.database.goals(),
-          widget.database.measurements(),
-          widget.database.workoutsThisWeek(),
-        ]),
+        future: _dataFuture,
         builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.error_outline, size: 48),
+                    const SizedBox(height: 12),
+                    const Text('Erro ao carregar objetivos. Tenta novamente.'),
+                    const SizedBox(height: 12),
+                    FilledButton(
+                      onPressed: _refresh,
+                      child: const Text('Tentar novamente'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
@@ -101,7 +133,7 @@ class _GoalsScreenState extends State<GoalsScreen> {
                             goal,
                             completed,
                           );
-                          setState(() {});
+                          _refresh();
                         },
                         onEdit: () => _openGoalForm(goal: goal),
                         onDelete: () => _deleteGoal(goal),
@@ -512,7 +544,7 @@ class _GoalsScreenState extends State<GoalsScreen> {
     ]) {
       controller.dispose();
     }
-    if (saved == true) setState(() {});
+    if (saved == true) _refresh();
   }
 
   List<_MilestoneDraft> _generateMilestones(
@@ -551,7 +583,7 @@ class _GoalsScreenState extends State<GoalsScreen> {
     );
     if (confirmed == true) {
       await widget.database.deleteGoal(goal.id!);
-      setState(() {});
+      _refresh();
     }
   }
 
