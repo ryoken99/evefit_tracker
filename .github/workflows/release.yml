@@ -1,0 +1,62 @@
+name: Build & Release APK
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.2'
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        working-directory: evefit_tracker
+        run: flutter pub get
+
+      - name: Analyze
+        working-directory: evefit_tracker
+        run: flutter analyze --no-fatal-infos
+
+      - name: Test
+        working-directory: evefit_tracker
+        run: flutter test
+
+      - name: Build APK
+        working-directory: evefit_tracker
+        run: flutter build apk --release
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          files: evefit_tracker/build/app/outputs/flutter-apk/app-release.apk
+          generate_release_notes: false
+          body: |
+            ## EveFit Tracker ${{ github.ref_name }}
+
+            ### Correções v0.7.15
+            - Error handling em todos os ecrãs — mensagem de erro com botão "Tentar novamente" em vez de spinner infinito
+            - Performance: futures cacheados em `initState`, evita queries desnecessárias à base de dados
+            - PIN com proteção contra brute-force: bloqueio de 1 minuto após 5 tentativas falhadas
+            - RefreshIndicator no Dashboard faz agora reload real dos dados
+
+            ### Instalação
+            Descarrega o ficheiro `app-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
