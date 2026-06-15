@@ -1731,6 +1731,12 @@ class TrainingArchitecture {
     if (_has(primaryHaystack, ['abdutor', 'abducao', 'abdução'])) {
       add(region: 'lower', group: 'abductors', subgroup: 'abductors');
     }
+    if (groupKeys.any(
+      {'quadriceps', 'hamstrings', 'hips_glutes', 'calves', 'adductors', 'abductors'}
+          .contains,
+    )) {
+      groupKeys.add('legs');
+    }
     if (_has(primaryHaystack, [
       'core',
       'abdominal',
@@ -2119,11 +2125,13 @@ class TrainingArchitecture {
         break;
       case 'lombar':
         add(
-          region: 'core',
-          group: 'low_back',
-          subgroup: 'low_back_sub',
+          region: 'upper',
+          group: 'back',
+          subgroup: 'back_thickness',
           muscles: ['erectors', 'quadratus_lumborum'],
         );
+        groupKeys.add('low_back');
+        subgroupKeys.add('low_back_sub');
         break;
       case 'mobilidade':
         _addMobilityCatalogTags(name, add);

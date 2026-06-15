@@ -487,6 +487,9 @@ class ExerciseCatalogDetailService {
     ])) {
       return '$name treina antebraço, punho ou força de pega. O foco é controlar a mão e o punho enquanto a carga tenta abrir a pega, rodar o antebraço ou desviar o alinhamento.';
     }
+    if (_has(n, ['extensao lombar quadrupede'])) {
+      return '$name fortalece os extensores da coluna e glúteos em posição de quatro apoios. A lombar e o glúteo resistem à gravidade ao elevar a perna, sem rodar a pélvis nem arquear a coluna.';
+    }
     return '$name trabalha o padrão principal de $group com foco na zona descrita pelo nome. A execução deve explicar a posição inicial, a trajetória do corpo ou da carga, a respiração e o ponto em que deves parar por perda de controlo ou dor.';
   }
 
@@ -571,6 +574,9 @@ class ExerciseCatalogDetailService {
     if (equipment.contains('maquina')) return _machineSteps(name);
     if (equipment.contains('barra fixa')) return _pullupBarSteps(name);
     if (equipment.contains('elastico')) return _bandSteps(name);
+    if (_has(n, ['extensao lombar quadrupede'])) {
+      return '1. Coloca-te em quatro apoios com mãos por baixo dos ombros e joelhos por baixo da anca. 2. Mantém a coluna neutra — nem arqueada nem arredondada. 3. Ativa levemente o abdómen para estabilizar a pélvis. 4. Inspira. Ao expirar, estende lentamente uma perna para trás até ficar paralela ao chão, sem rodar a anca. 5. Mantém 2 a 3 segundos com o glúteo contraído e a lombar firme. 6. Desce a perna devagar sem bater no chão. 7. Completa todas as repetições de um lado antes de trocar. 8. Inspira ao preparar e expira ao estender. 9. Para se sentires dor, rotação involuntária da anca ou compensação visível da lombar.';
+    }
     return _bodyweightSteps(name);
   }
 
@@ -646,6 +652,9 @@ class ExerciseCatalogDetailService {
     }
     if (equipment.contains('disco')) {
       return 'Apertar o disco só com as pontas dos dedos sem controlo, inclinar o punho, deixar o disco escorregar e escolher peso que obriga a compensar com ombros.';
+    }
+    if (_has(n, ['extensao lombar quadrupede'])) {
+      return 'Rodar a anca ao subir a perna, arquear a lombar para ganhar amplitude, levantar a perna demasiado alto, prender a respiração, subir rápido e pousar com impacto.';
     }
     return 'Executar $name depressa demais, perder alinhamento da zona trabalhada, prender a respiração, encurtar o alcance útil e continuar depois de perder controlo.';
   }
