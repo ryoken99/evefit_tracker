@@ -488,7 +488,7 @@ class ExerciseCatalogDetailService {
       return '$name treina antebraço, punho ou força de pega. O foco é controlar a mão e o punho enquanto a carga tenta abrir a pega, rodar o antebraço ou desviar o alinhamento.';
     }
     if (_has(n, ['extensao lombar quadrupede'])) {
-      return '$name fortalece os extensores da coluna e glúteos em posição de quatro apoios. A lombar e o glúteo resistem à gravidade ao elevar a perna, sem rodar a pélvis nem arquear a coluna.';
+      return '$name ensina extensão da anca em quadrupedia com coluna neutra. O foco é manter mãos, joelhos e costelas quietos enquanto uma perna desliza para trás, treinando lombar e glúteo sem transformar o gesto num balanço.';
     }
     return '$name trabalha o padrão principal de $group com foco na zona descrita pelo nome. A execução deve explicar a posição inicial, a trajetória do corpo ou da carga, a respiração e o ponto em que deves parar por perda de controlo ou dor.';
   }
@@ -575,7 +575,7 @@ class ExerciseCatalogDetailService {
     if (equipment.contains('barra fixa')) return _pullupBarSteps(name);
     if (equipment.contains('elastico')) return _bandSteps(name);
     if (_has(n, ['extensao lombar quadrupede'])) {
-      return '1. Coloca-te em quatro apoios com mãos por baixo dos ombros e joelhos por baixo da anca. 2. Mantém a coluna neutra — nem arqueada nem arredondada. 3. Ativa levemente o abdómen para estabilizar a pélvis. 4. Inspira. Ao expirar, estende lentamente uma perna para trás até ficar paralela ao chão, sem rodar a anca. 5. Mantém 2 a 3 segundos com o glúteo contraído e a lombar firme. 6. Desce a perna devagar sem bater no chão. 7. Completa todas as repetições de um lado antes de trocar. 8. Inspira ao preparar e expira ao estender. 9. Para se sentires dor, rotação involuntária da anca ou compensação visível da lombar.';
+      return '1. Apoia mãos e joelhos no tapete, formando uma base retangular estável. 2. Alinha punhos com ombros e joelhos com anca. 3. Mantém o olhar no chão e as costelas recolhidas. 4. Antes de mexer a perna, pressiona as mãos contra o tapete e contrai levemente o abdómen. 5. Inspira para preparar sem soltar a barriga. 6. Ao expirar, desliza um pé para trás até o joelho sair do chão. 7. Estende a perna apenas até conseguires manter os dois ossos da bacia apontados para baixo. 8. Faz uma pausa curta sem subir a perna acima da linha do tronco. 9. Recolhe o joelho pelo mesmo caminho, sem tocar com impacto. 10. Alterna lados ou completa uma série por lado mantendo o tronco silencioso.';
     }
     return _bodyweightSteps(name);
   }
@@ -654,7 +654,7 @@ class ExerciseCatalogDetailService {
       return 'Apertar o disco só com as pontas dos dedos sem controlo, inclinar o punho, deixar o disco escorregar e escolher peso que obriga a compensar com ombros.';
     }
     if (_has(n, ['extensao lombar quadrupede'])) {
-      return 'Rodar a anca ao subir a perna, arquear a lombar para ganhar amplitude, levantar a perna demasiado alto, prender a respiração, subir rápido e pousar com impacto.';
+      return 'Abrir a bacia para o lado, afundar entre as omoplatas, atirar o pé para cima, mexer o tronco a cada repetição, perder pressão nas mãos ou procurar altura em vez de estabilidade.';
     }
     return 'Executar $name depressa demais, perder alinhamento da zona trabalhada, prender a respiração, encurtar o alcance útil e continuar depois de perder controlo.';
   }
@@ -691,6 +691,9 @@ class ExerciseCatalogDetailService {
     }
     if (_has(n, ['puxada alta pega neutra'])) {
       return 'Escolhe carga que permita controlar a subida. Evita puxar atrás da nuca e para se houver dor no ombro, cotovelo, punho ou formigueiro no braço.';
+    }
+    if (_has(n, ['extensao lombar quadrupede'])) {
+      return 'Mantém o gesto pequeno e silencioso. Interrompe se a bacia rodar sempre, se a lombar apertar, se surgir dor irradiada ou se precisares de impulso para levantar a perna.';
     }
     if (_has(n, ['pescoco', 'cervical', 'chin tuck'])) {
       return 'Usa força muito leve. Para se houver dor aguda, tontura, formigueiro, pressão na cabeça, visão turva ou dor a irradiar para ombro e braço.';

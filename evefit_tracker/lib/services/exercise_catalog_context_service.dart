@@ -1180,32 +1180,62 @@ class ExerciseCatalogContextService {
 
   static String _karateMovementSummary(String name) {
     final n = _n(name);
-    if (_has(n, ['kihon'])) return 'repetição técnica de bases, socos, defesas ou pontapés fundamentais com controlo.';
-    if (_has(n, ['kata'])) return 'sequência formal de técnicas de Karate com direção, ritmo, postura e controlo.';
-    if (_has(n, ['kumite'])) return 'drill técnico de combate para distância, guarda e reação controlada.';
-    if (_has(n, ['sombra'])) return 'simulação individual de combate, combinando deslocamento, técnicas no ar e controlo.';
-    if (_has(n, ['deslocamento'])) return 'trabalho de pés para entrar, sair e mudar ângulo sem cruzar a base, mantendo controlo.';
+    if (_has(n, ['kihon'])) {
+      return 'repetição técnica de bases, socos, defesas ou pontapés fundamentais com controlo.';
+    }
+    if (_has(n, ['kata'])) {
+      return 'sequência formal de técnicas de Karate com direção, ritmo, postura e controlo.';
+    }
+    if (_has(n, ['kumite'])) {
+      return 'drill técnico de combate para distância, guarda e reação controlada.';
+    }
+    if (_has(n, ['sombra'])) {
+      return 'simulação individual de combate, combinando deslocamento, técnicas no ar e controlo.';
+    }
+    if (_has(n, ['deslocamento'])) {
+      return 'trabalho de pés para entrar, sair e mudar ângulo sem cruzar a base, mantendo controlo.';
+    }
     if (_has(n, ['drills de guarda'])) {
       return 'repetições de entrada e saída de guarda para organizar mãos, cotovelos, distância e controlo.';
     }
-    if (_has(n, ['guarda'])) return 'organização das mãos, cotovelos e postura para proteger, responder e manter controlo.';
-    if (_has(n, ['pontapes'])) return 'pontapés técnicos com câmara, extensão, recolha da perna e controlo.';
-    if (_has(n, ['socos'])) return 'socos técnicos coordenando punho, anca, tronco, base e controlo.';
+    if (_has(n, ['guarda'])) {
+      return 'organização das mãos, cotovelos e postura para proteger, responder e manter controlo.';
+    }
+    if (_has(n, ['pontapes'])) {
+      return 'pontapés técnicos com câmara, extensão, recolha da perna e controlo.';
+    }
+    if (_has(n, ['socos'])) {
+      return 'socos técnicos coordenando punho, anca, tronco, base e controlo.';
+    }
     return 'drill de Karate para praticar base, direção, precisão e controlo antes da velocidade.';
   }
 
   static String _jiuJitsuMovementSummary(String name) {
     final n = _n(name);
-    if (_has(n, ['shrimp', 'fuga de anca'])) return 'fuga de anca no solo para criar espaço e recuperar guarda.';
-    if (_has(n, ['ponte'])) return 'ponte de grappling para elevar a anca e desequilibrar pressão.';
-    if (_has(n, ['technical stand-up'])) return 'subida técnica do chão mantendo uma mão protegida e a perna livre.';
+    if (_has(n, ['shrimp', 'fuga de anca'])) {
+      return 'fuga de anca no solo para criar espaço e recuperar guarda.';
+    }
+    if (_has(n, ['ponte'])) {
+      return 'ponte de grappling para elevar a anca e desequilibrar pressão.';
+    }
+    if (_has(n, ['technical stand-up'])) {
+      return 'subida técnica do chão mantendo uma mão protegida e a perna livre.';
+    }
     if (_has(n, ['passagem de guarda'])) {
       return 'repetição de passos, pressão e controlo de anca para passar as pernas do adversário.';
     }
-    if (_has(n, ['guarda'])) return 'drill de guarda para gerir pernas, anca, pega e distância.';
-    if (_has(n, ['passagem'])) return 'movimento de passar guarda com base, pressão e controlo de anca.';
-    if (_has(n, ['pega'])) return 'trabalho de pega aplicado a kimono, punhos ou controlo de grappling.';
-    if (_has(n, ['core'])) return 'drill de core no solo para proteger coluna e transferir força pela anca.';
+    if (_has(n, ['guarda'])) {
+      return 'drill de guarda para gerir pernas, anca, pega e distância.';
+    }
+    if (_has(n, ['passagem'])) {
+      return 'movimento de passar guarda com base, pressão e controlo de anca.';
+    }
+    if (_has(n, ['pega'])) {
+      return 'trabalho de pega aplicado a kimono, punhos ou controlo de grappling.';
+    }
+    if (_has(n, ['core'])) {
+      return 'drill de core no solo para proteger coluna e transferir força pela anca.';
+    }
     return 'drill de Jiu-Jitsu para praticar movimentação no solo, base e controlo corporal.';
   }
 
@@ -1228,29 +1258,49 @@ class ExerciseCatalogContextService {
 
   static String _primaryTarget(String name, String group) {
     final n = _n(name);
-    if (_has(n, ['farmer', 'hold', 'dead hang', 'aperto', 'pinch', 'plate', 'towel'])) {
+    if (_has(n, [
+      'farmer',
+      'hold',
+      'dead hang',
+      'aperto',
+      'pinch',
+      'plate',
+      'towel',
+    ])) {
       return 'força de pega, dedos e antebraço';
     }
     if (_has(n, ['reverse wrist', 'extensao de dedos'])) {
       return 'extensores do antebraço e punho';
     }
-    if (_has(n, ['wrist curl', 'finger'])) return 'flexores do antebraço e dedos';
+    if (_has(n, ['wrist curl', 'finger'])) {
+      return 'flexores do antebraço e dedos';
+    }
     if (_has(n, ['pronacao'])) return 'pronadores do antebraço';
     if (_has(n, ['supinacao'])) return 'supinadores do antebraço';
-    if (_has(n, ['desvio', 'rotacao controlada'])) return 'punho e controlo do antebraço';
-    if (_has(n, ['martelo', 'braquiorradial'])) return 'braquial e braquiorradial';
+    if (_has(n, ['desvio', 'rotacao controlada'])) {
+      return 'punho e controlo do antebraço';
+    }
+    if (_has(n, ['martelo', 'braquiorradial'])) {
+      return 'braquial e braquiorradial';
+    }
     if (_isCurl(name)) return 'bíceps braquial, braquial e braquiorradial';
     if (_isTriceps(name)) return 'tríceps';
-    if (_isFly(name) || _isPushupOrPress(name)) return 'peito, ombros e tríceps';
+    if (_isFly(name) || _isPushupOrPress(name)) {
+      return 'peito, ombros e tríceps';
+    }
     if (_isRowOrPull(name)) return 'costas, escápulas e dorsal';
     if (_isShoulder(name)) return 'ombros e estabilizadores escapulares';
-    if (_isSquat(name) || _isLunge(name)) return 'quadríceps, glúteos e estabilidade da anca';
+    if (_isSquat(name) || _isLunge(name)) {
+      return 'quadríceps, glúteos e estabilidade da anca';
+    }
     if (_isHinge(name)) return 'posterior de coxa, glúteos e lombar controlada';
     if (_has(n, ['gemeos', 'soleo'])) return 'gémeos, sóleo e tornozelo';
     if (_has(n, ['tibial'])) return 'tibial anterior';
     if (_isCore(name, group)) return 'core, abdominal e estabilidade do tronco';
     if (group == 'Cardio') return 'resistência cardiovascular e respiração';
-    if (group == 'Mobilidade') return 'mobilidade da zona indicada e respiração';
+    if (group == 'Mobilidade') {
+      return 'mobilidade da zona indicada e respiração';
+    }
     if (group == 'Karate') return 'técnica de Karate, base e coordenação';
     if (_has(n, ['passagem de guarda'])) {
       return 'passagem de guarda, pressão e controlo da anca';
@@ -1258,8 +1308,12 @@ class ExerciseCatalogContextService {
     if (_has(n, ['drills de guarda'])) {
       return 'retenção de guarda, distância e movimento de anca';
     }
-    if (group == 'Jiu-Jitsu') return 'movimentação de Jiu-Jitsu, anca e controlo no solo';
-    if (_has(n, ['pescoco', 'cervical', 'chin tuck'])) return 'controlo cervical';
+    if (group == 'Jiu-Jitsu') {
+      return 'movimentação de Jiu-Jitsu, anca e controlo no solo';
+    }
+    if (_has(n, ['pescoco', 'cervical', 'chin tuck'])) {
+      return 'controlo cervical';
+    }
     return group;
   }
 
@@ -1376,6 +1430,9 @@ class ExerciseCatalogContextService {
     if (_isLunge(name)) return _lungeSteps(name, equipment);
     if (_isHinge(name)) return _hingeSteps(name, equipment);
     if (_has(_n(name), ['gemeos', 'soleo'])) return _calfSteps(name, equipment);
+    if (_has(_n(name), ['extensao lombar quadrupede'])) {
+      return _quadrupedBackExtensionSteps();
+    }
     if (_isCore(name, group)) return _coreSteps(name, equipment);
     return _generalSpecificSteps(name, group, equipment);
   }
@@ -1617,6 +1674,15 @@ class ExerciseCatalogContextService {
       '7. Expira ao subir e inspira ao descer. '
       '8. Não deixes os tornozelos cair para dentro ou para fora.';
 
+  static String _quadrupedBackExtensionSteps() =>
+      '1. Apoia mãos e joelhos no tapete, com punhos debaixo dos ombros e joelhos debaixo da anca. '
+      '2. Mantém o olhar no chão, costelas recolhidas e barriga levemente ativa. '
+      '3. Inspira parado, sentindo a base dos quatro apoios firme. '
+      '4. Ao expirar, desliza um pé para trás até a perna ficar longa sem rodar a bacia. '
+      '5. Faz uma pausa curta com o tronco quieto e o glúteo ativo. '
+      '6. Recolhe o joelho pelo mesmo caminho, sem tocar no chão com impacto. '
+      '7. Alterna lados ou completa a série mantendo a coluna neutra.';
+
   static String _coreSteps(String name, String equipment) {
     final n = _n(name);
     if (_has(n, ['prancha'])) {
@@ -1797,6 +1863,9 @@ class ExerciseCatalogContextService {
     if (_isHinge(name)) {
       return 'Arredondar a lombar, afastar a carga do corpo, dobrar demasiado os joelhos, não levar a anca para trás ou subir puxando só pelas costas.';
     }
+    if (_has(n, ['extensao lombar quadrupede'])) {
+      return 'Abrir a bacia para o lado, afundar entre as omoplatas, atirar o pé para cima, mexer o tronco a cada repetição ou procurar altura em vez de estabilidade.';
+    }
     return 'Usar carga acima do controlo, perder alinhamento, encurtar amplitude, prender a respiração ou continuar quando o músculo trabalhado já não controla o exercício.';
   }
 
@@ -1813,6 +1882,9 @@ class ExerciseCatalogContextService {
     }
     if (group == 'Karate' || group == 'Jiu-Jitsu') {
       return 'Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.';
+    }
+    if (_has(n, ['extensao lombar quadrupede'])) {
+      return 'Mantém o gesto pequeno e silencioso. Interrompe se a bacia rodar sempre, se a lombar apertar, se surgir dor irradiada ou se precisares de impulso para levantar a perna.';
     }
     if (_isHinge(name)) {
       return 'Mantém a coluna neutra e a carga perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.';
