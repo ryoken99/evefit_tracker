@@ -17,6 +17,8 @@ class Exercise {
     this.exerciseKey = '',
     this.contextKey = '',
     this.catalogEntryKey = '',
+    this.primaryMuscleNodes,
+    this.secondaryMuscleNodes,
   });
 
   final int? id;
@@ -36,6 +38,59 @@ class Exercise {
   final String exerciseKey;
   final String contextKey;
   final String catalogEntryKey;
+  final String? primaryMuscleNodes;
+  final String? secondaryMuscleNodes;
+
+  String get primaryDisplayMuscles {
+    final value = primaryMuscleNodes?.trim();
+    if (value != null && value.isNotEmpty) return value;
+    return muscleGroup;
+  }
+
+  Exercise copyWith({
+    int? id,
+    String? name,
+    String? muscleGroup,
+    bool? isDefault,
+    String? secondaryMuscleGroups,
+    String? equipment,
+    String? description,
+    String? executionSteps,
+    String? commonMistakes,
+    String? safetyNotes,
+    bool? isHidden,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    String? notes,
+    String? exerciseKey,
+    String? contextKey,
+    String? catalogEntryKey,
+    String? primaryMuscleNodes,
+    String? secondaryMuscleNodes,
+  }) {
+    return Exercise(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      muscleGroup: muscleGroup ?? this.muscleGroup,
+      isDefault: isDefault ?? this.isDefault,
+      secondaryMuscleGroups:
+          secondaryMuscleGroups ?? this.secondaryMuscleGroups,
+      equipment: equipment ?? this.equipment,
+      description: description ?? this.description,
+      executionSteps: executionSteps ?? this.executionSteps,
+      commonMistakes: commonMistakes ?? this.commonMistakes,
+      safetyNotes: safetyNotes ?? this.safetyNotes,
+      isHidden: isHidden ?? this.isHidden,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      notes: notes ?? this.notes,
+      exerciseKey: exerciseKey ?? this.exerciseKey,
+      contextKey: contextKey ?? this.contextKey,
+      catalogEntryKey: catalogEntryKey ?? this.catalogEntryKey,
+      primaryMuscleNodes: primaryMuscleNodes ?? this.primaryMuscleNodes,
+      secondaryMuscleNodes: secondaryMuscleNodes ?? this.secondaryMuscleNodes,
+    );
+  }
 
   factory Exercise.fromMap(Map<String, Object?> map) => Exercise(
     id: map['id'] as int?,
@@ -62,6 +117,12 @@ class Exercise {
     exerciseKey: map['exercise_key'] as String? ?? '',
     contextKey: map['context_key'] as String? ?? '',
     catalogEntryKey: map['catalog_entry_key'] as String? ?? '',
+    primaryMuscleNodes:
+        map['primaryMuscleNodes'] as String? ??
+        map['primary_muscle_nodes'] as String?,
+    secondaryMuscleNodes:
+        map['secondaryMuscleNodes'] as String? ??
+        map['secondary_muscle_nodes'] as String?,
   );
 
   Map<String, Object?> toMap() => {
@@ -83,5 +144,7 @@ class Exercise {
     'exercise_key': exerciseKey,
     'context_key': contextKey,
     'catalog_entry_key': catalogEntryKey,
+    'primaryMuscleNodes': primaryMuscleNodes,
+    'secondaryMuscleNodes': secondaryMuscleNodes,
   };
 }

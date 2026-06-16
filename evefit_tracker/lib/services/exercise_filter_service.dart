@@ -207,6 +207,8 @@ class ExerciseFilterService {
         workoutType.muscleGroups.trim().isNotEmpty) {
       final haystack = WorkoutTaxonomy.normalize(
         '${exercise.name} ${exercise.muscleGroup} '
+        '${exercise.primaryMuscleNodes ?? ''} '
+        '${exercise.secondaryMuscleNodes ?? ''} '
         '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
       );
       return workoutType.muscleGroups
@@ -507,13 +509,17 @@ class ExerciseFilterService {
 
   static String _normalizedPrimaryText(Exercise exercise) =>
       WorkoutTaxonomy.normalize(
-        '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
+        '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment} '
+        '${exercise.primaryMuscleNodes ?? ''} '
+        '${exercise.secondaryMuscleNodes ?? ''}',
       );
 
   static String _normalizedDetailText(
     Exercise exercise,
   ) => WorkoutTaxonomy.normalize(
-    '${exercise.name} ${exercise.muscleGroup} ${exercise.secondaryMuscleGroups} ${exercise.equipment}',
+    '${exercise.name} ${exercise.muscleGroup} '
+    '${exercise.primaryMuscleNodes ?? ''} ${exercise.secondaryMuscleNodes ?? ''} '
+    '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
   );
 
   static bool _textHas(String text, List<String> values) =>
@@ -824,6 +830,8 @@ class ExerciseFilterService {
   static bool _containsAny(Exercise exercise, List<String> values) {
     final haystack = WorkoutTaxonomy.normalize(
       '${exercise.name} ${exercise.muscleGroup} '
+      '${exercise.primaryMuscleNodes ?? ''} '
+      '${exercise.secondaryMuscleNodes ?? ''} '
       '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
     );
     return values.any(
@@ -833,7 +841,8 @@ class ExerciseFilterService {
 
   static bool _containsAnyPrimary(Exercise exercise, List<String> values) {
     final haystack = WorkoutTaxonomy.normalize(
-      '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
+      '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment} '
+      '${exercise.primaryMuscleNodes ?? ''}',
     );
     return values.any(
       (value) => haystack.contains(WorkoutTaxonomy.normalize(value)),

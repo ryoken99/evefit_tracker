@@ -18,6 +18,8 @@ import '../models/workout_template.dart';
 import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/exercise_catalog_context_service.dart';
+import '../services/exercise_muscle_node_service.dart';
+import '../services/exercise_v717_migration.dart';
 import '../services/pin_service.dart';
 import '../services/profile_preferences_service.dart';
 import '../services/training_architecture.dart';
@@ -64,7 +66,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 16,
+      version: 17,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -80,6 +82,7 @@ class AppDatabase {
         await _migrateV79(db);
         await _migrateV710(db);
         await _migrateV711(db);
+        await _migrateV717(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -126,6 +129,9 @@ class AppDatabase {
         }
         if (oldVersion < 16) {
           await _migrateV711(db);
+        }
+        if (oldVersion < 17) {
+          await _migrateV717(db);
         }
       },
     );
@@ -182,6 +188,7 @@ class AppDatabase {
         limit: 1,
       );
       final data = entry.toExercise().toMap()
+        ..addAll(_muscleNodeMapFor(entry))
         ..remove('id')
         ..['created_at'] = now
         ..['updated_at'] = now;
@@ -372,6 +379,10 @@ class AppDatabase {
     await _ensureExerciseCatalogEntryIndex(db);
   }
 
+  Future<void> _migrateV717(Database db) async {
+    await ExerciseV717Migration.migrate(db);
+  }
+
   Future<void> _createTrainingArchitectureTables(Database db) async {
     await db.execute(
       'CREATE TABLE IF NOT EXISTS body_regions(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, name TEXT NOT NULL, description TEXT, sort_order INTEGER NOT NULL, is_default INTEGER NOT NULL)',
@@ -530,6 +541,7 @@ class AppDatabase {
       await db.update(
         'exercises',
         entry.toExercise().toMap()
+          ..addAll(_muscleNodeMapFor(entry))
           ..remove('id')
           ..remove('created_at')
           ..['updated_at'] = now,
@@ -723,6 +735,8 @@ class AppDatabase {
     'exercise_key': 'TEXT',
     'context_key': 'TEXT',
     'catalog_entry_key': 'TEXT',
+    'primaryMuscleNodes': 'TEXT',
+    'secondaryMuscleNodes': 'TEXT',
     'is_hidden': 'INTEGER NOT NULL DEFAULT 0',
     'created_at': 'TEXT',
     'updated_at': 'TEXT',
@@ -896,6 +910,14 @@ class AppDatabase {
     await _addColumnIfMissing(db, 'exercises', 'exercise_key', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'context_key', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'catalog_entry_key', 'TEXT');
+  }
+
+  Map<String, Object?> _muscleNodeMapFor(ExerciseCatalogEntry entry) {
+    final nodes = ExerciseMuscleNodeService.nodesForCatalogEntry(entry);
+    return {
+      'primaryMuscleNodes': nodes.primary,
+      'secondaryMuscleNodes': nodes.secondary,
+    };
   }
 
   Future<void> _ensureExerciseCatalogEntryIndex(Database db) async {
@@ -1581,7 +1603,7 @@ class AppDatabase {
         [workout.id, profileId],
       );
       final exerciseRows = await db.rawQuery(
-        'SELECT workout_exercises.*, exercises.name AS exercise_name, exercises.primary_muscle_group AS muscle_group FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id WHERE workout_id = ? AND workout_exercises.profile_id = ? ORDER BY workout_exercises.id',
+        'SELECT workout_exercises.*, exercises.name AS exercise_name, COALESCE(NULLIF(exercises.primaryMuscleNodes, ""), exercises.primary_muscle_group) AS muscle_group FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id WHERE workout_id = ? AND workout_exercises.profile_id = ? ORDER BY workout_exercises.id',
         [workout.id, profileId],
       );
       entries.add(
