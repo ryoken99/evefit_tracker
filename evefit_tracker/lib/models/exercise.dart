@@ -1,3 +1,5 @@
+import 'exercise_taxonomy.dart';
+
 class Exercise {
   Exercise({
     this.id,
@@ -20,6 +22,17 @@ class Exercise {
     this.catalogEntryKey = '',
     this.primaryMuscleNodes,
     this.secondaryMuscleNodes,
+    this.regionKeys = const {},
+    this.groupKeys = const {},
+    this.subgroupKeys = const {},
+    this.primaryMuscleKey = '',
+    this.secondaryMuscleKeys = const {},
+    this.equipmentKeys = const {},
+    this.movementPattern = '',
+    this.difficulty = '',
+    this.forceType = '',
+    this.laterality = '',
+    this.goalTags = const {},
   });
 
   final int? id;
@@ -42,6 +55,17 @@ class Exercise {
   final String catalogEntryKey;
   final String? primaryMuscleNodes;
   final String? secondaryMuscleNodes;
+  final Set<String> regionKeys;
+  final Set<String> groupKeys;
+  final Set<String> subgroupKeys;
+  final String primaryMuscleKey;
+  final Set<String> secondaryMuscleKeys;
+  final Set<String> equipmentKeys;
+  final String movementPattern;
+  final String difficulty;
+  final String forceType;
+  final String laterality;
+  final Set<String> goalTags;
 
   String get primaryDisplayMuscles {
     final value = primaryMuscleNodes?.trim();
@@ -70,6 +94,17 @@ class Exercise {
     String? catalogEntryKey,
     String? primaryMuscleNodes,
     String? secondaryMuscleNodes,
+    Set<String>? regionKeys,
+    Set<String>? groupKeys,
+    Set<String>? subgroupKeys,
+    String? primaryMuscleKey,
+    Set<String>? secondaryMuscleKeys,
+    Set<String>? equipmentKeys,
+    String? movementPattern,
+    String? difficulty,
+    String? forceType,
+    String? laterality,
+    Set<String>? goalTags,
   }) {
     return Exercise(
       id: id ?? this.id,
@@ -93,6 +128,17 @@ class Exercise {
       catalogEntryKey: catalogEntryKey ?? this.catalogEntryKey,
       primaryMuscleNodes: primaryMuscleNodes ?? this.primaryMuscleNodes,
       secondaryMuscleNodes: secondaryMuscleNodes ?? this.secondaryMuscleNodes,
+      regionKeys: regionKeys ?? this.regionKeys,
+      groupKeys: groupKeys ?? this.groupKeys,
+      subgroupKeys: subgroupKeys ?? this.subgroupKeys,
+      primaryMuscleKey: primaryMuscleKey ?? this.primaryMuscleKey,
+      secondaryMuscleKeys: secondaryMuscleKeys ?? this.secondaryMuscleKeys,
+      equipmentKeys: equipmentKeys ?? this.equipmentKeys,
+      movementPattern: movementPattern ?? this.movementPattern,
+      difficulty: difficulty ?? this.difficulty,
+      forceType: forceType ?? this.forceType,
+      laterality: laterality ?? this.laterality,
+      goalTags: goalTags ?? this.goalTags,
     );
   }
 
@@ -128,6 +174,19 @@ class Exercise {
     secondaryMuscleNodes:
         map['secondaryMuscleNodes'] as String? ??
         map['secondary_muscle_nodes'] as String?,
+    regionKeys: ExerciseTaxonomy.parseKeys(map['region_keys']),
+    groupKeys: ExerciseTaxonomy.parseKeys(map['group_keys']),
+    subgroupKeys: ExerciseTaxonomy.parseKeys(map['subgroup_keys']),
+    primaryMuscleKey: map['primary_muscle_key'] as String? ?? '',
+    secondaryMuscleKeys: ExerciseTaxonomy.parseKeys(
+      map['secondary_muscle_keys'],
+    ),
+    equipmentKeys: ExerciseTaxonomy.parseKeys(map['equipment_keys']),
+    movementPattern: map['movement_pattern'] as String? ?? '',
+    difficulty: map['difficulty'] as String? ?? '',
+    forceType: map['force_type'] as String? ?? '',
+    laterality: map['laterality'] as String? ?? '',
+    goalTags: ExerciseTaxonomy.parseKeys(map['goal_tags']),
   );
 
   Map<String, Object?> toMap() => {
@@ -152,5 +211,24 @@ class Exercise {
     'catalog_entry_key': catalogEntryKey,
     'primaryMuscleNodes': primaryMuscleNodes,
     'secondaryMuscleNodes': secondaryMuscleNodes,
+    if (regionKeys.isNotEmpty)
+      'region_keys': ExerciseTaxonomy.serializeKeys(regionKeys),
+    if (groupKeys.isNotEmpty)
+      'group_keys': ExerciseTaxonomy.serializeKeys(groupKeys),
+    if (subgroupKeys.isNotEmpty)
+      'subgroup_keys': ExerciseTaxonomy.serializeKeys(subgroupKeys),
+    if (primaryMuscleKey.isNotEmpty) 'primary_muscle_key': primaryMuscleKey,
+    if (secondaryMuscleKeys.isNotEmpty)
+      'secondary_muscle_keys': ExerciseTaxonomy.serializeKeys(
+        secondaryMuscleKeys,
+      ),
+    if (equipmentKeys.isNotEmpty)
+      'equipment_keys': ExerciseTaxonomy.serializeKeys(equipmentKeys),
+    if (movementPattern.isNotEmpty) 'movement_pattern': movementPattern,
+    if (difficulty.isNotEmpty) 'difficulty': difficulty,
+    if (forceType.isNotEmpty) 'force_type': forceType,
+    if (laterality.isNotEmpty) 'laterality': laterality,
+    if (goalTags.isNotEmpty)
+      'goal_tags': ExerciseTaxonomy.serializeKeys(goalTags),
   };
 }

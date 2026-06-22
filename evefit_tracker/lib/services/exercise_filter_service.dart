@@ -134,8 +134,7 @@ class ExerciseFilterService {
       return _orderedContextualPredicateFilters(visible, {
         'Bíceps': (exercise) => _isBicepsDominantExercise(exercise),
         'Braquial': (exercise) => _isBrachialisExercise(exercise),
-        'Braquiorradial': (exercise) =>
-            _isBrachioradialisExercise(exercise),
+        'Braquiorradial': (exercise) => _isBrachioradialisExercise(exercise),
         'Tríceps': (exercise) => _isTricepsExercise(exercise),
         'Flexores do antebraço': (exercise) =>
             _isForearmHandExercise(exercise, 'forearm_flexors'),
@@ -339,6 +338,26 @@ class ExerciseFilterService {
     if (focus == 'forearm_hand' || focus == 'forearm_complete') {
       return tags.groupKeys.contains('forearm_hand') ||
           tags.subgroupKeys.contains('grip_strength');
+    }
+
+    if (exercise.primaryMuscleKey.isNotEmpty) {
+      final canonicalMuscles = {
+        exercise.primaryMuscleKey,
+        ...exercise.secondaryMuscleKeys,
+      };
+      if (canonicalMuscles.contains(focus) ||
+          tags.subgroupKeys.contains(focus) ||
+          tags.groupKeys.contains(focus)) {
+        return true;
+      }
+      if ((focus == 'biceps_brachii' && canonicalMuscles.contains('biceps')) ||
+          (focus == 'triceps' &&
+              canonicalMuscles.any((key) => key.startsWith('triceps_'))) ||
+          (focus == 'support_grip' &&
+              canonicalMuscles.contains('grip_support'))) {
+        return true;
+      }
+      return false;
     }
 
     // Specific muscles must not inherit siblings from the same broad group.

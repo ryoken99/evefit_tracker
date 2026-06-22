@@ -1446,6 +1446,21 @@ class TrainingArchitecture {
   }
 
   static ExerciseArchitectureTags tagsForExercise(Exercise exercise) {
+    if (exercise.regionKeys.isNotEmpty &&
+        exercise.groupKeys.isNotEmpty &&
+        exercise.primaryMuscleKey.isNotEmpty &&
+        exercise.equipmentKeys.isNotEmpty) {
+      return ExerciseArchitectureTags(
+        regionKeys: exercise.regionKeys,
+        groupKeys: exercise.groupKeys,
+        subgroupKeys: exercise.subgroupKeys,
+        muscleKeys: {
+          exercise.primaryMuscleKey,
+          ...exercise.secondaryMuscleKeys,
+        },
+        equipmentKeys: exercise.equipmentKeys,
+      );
+    }
     final catalogEntry = ExerciseCatalogContextService.entryForExercise(
       exercise,
     );
@@ -1732,8 +1747,14 @@ class TrainingArchitecture {
       add(region: 'lower', group: 'abductors', subgroup: 'abductors');
     }
     if (groupKeys.any(
-      {'quadriceps', 'hamstrings', 'hips_glutes', 'calves', 'adductors', 'abductors'}
-          .contains,
+      {
+        'quadriceps',
+        'hamstrings',
+        'hips_glutes',
+        'calves',
+        'adductors',
+        'abductors',
+      }.contains,
     )) {
       groupKeys.add('legs');
     }

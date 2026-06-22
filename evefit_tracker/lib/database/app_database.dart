@@ -19,6 +19,7 @@ import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/exercise_catalog_context_service.dart';
 import '../services/exercise_muscle_node_service.dart';
+import '../services/exercise_taxonomy_service.dart';
 import '../services/exercise_v717_migration.dart';
 import '../services/equipment_catalog_service.dart';
 import '../services/pin_service.dart';
@@ -189,6 +190,11 @@ class AppDatabase {
 
   Future<void> _seedExercises(Database db) async {
     await _ensureExerciseCatalogIdentityColumns(db);
+    final storesTaxonomy = await _tableHasColumn(
+      db,
+      'exercises',
+      'region_keys',
+    );
     final now = DateTime.now().toIso8601String();
     for (final entry in ExerciseCatalogContextService.entries) {
       final existing = await db.query(
@@ -199,7 +205,10 @@ class AppDatabase {
         whereArgs: [entry.catalogEntryKey, entry.name, entry.group],
         limit: 1,
       );
-      final data = entry.toExercise().toMap()
+      final exercise = storesTaxonomy
+          ? ExerciseTaxonomyService.enrichCatalogExercise(entry)
+          : entry.toExercise();
+      final data = exercise.toMap()
         ..addAll(_muscleNodeMapFor(entry))
         ..remove('id')
         ..['created_at'] = now
@@ -397,6 +406,9 @@ class AppDatabase {
 
   Future<void> _migrateV080(Database db) async {
     await V080IntegrityMigration.migrate(db);
+    await _seedExercises(db);
+    await _refreshDefaultExerciseDetails(db);
+    await V080IntegrityMigration.migrate(db);
   }
 
   Future<void> _createTrainingArchitectureTables(Database db) async {
@@ -552,11 +564,19 @@ class AppDatabase {
 
   Future<void> _refreshDefaultExerciseDetails(Database db) async {
     await _ensureExerciseCatalogIdentityColumns(db);
+    final storesTaxonomy = await _tableHasColumn(
+      db,
+      'exercises',
+      'region_keys',
+    );
     final now = DateTime.now().toIso8601String();
     for (final entry in ExerciseCatalogContextService.entries) {
+      final exercise = storesTaxonomy
+          ? ExerciseTaxonomyService.enrichCatalogExercise(entry)
+          : entry.toExercise();
       await db.update(
         'exercises',
-        entry.toExercise().toMap()
+        exercise.toMap()
           ..addAll(_muscleNodeMapFor(entry))
           ..remove('id')
           ..remove('created_at')
@@ -959,6 +979,11 @@ class AppDatabase {
         // enough; the migration must never drop user data.
       }
     }
+  }
+
+  Future<bool> _tableHasColumn(Database db, String table, String column) async {
+    final info = await db.rawQuery('PRAGMA table_info($table)');
+    return info.any((row) => row['name'] == column);
   }
 
   Future<List<Profile>> profiles() async {
