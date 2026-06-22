@@ -51,6 +51,13 @@ class WorkoutEntry {
 
 class AppDatabase {
   AppDatabase._();
+  factory AppDatabase.forTesting(
+    Database database, {
+    Profile? activeProfile,
+  }) => AppDatabase._forTesting(database, activeProfile);
+
+  AppDatabase._forTesting(this._database, this._activeProfile);
+
   static final instance = AppDatabase._();
   Database? _database;
   Profile? _activeProfile;
@@ -1689,7 +1696,7 @@ class AppDatabase {
     return (await database).insert(
       'goals',
       (goal.toMap()..remove('id'))
-        ..['profile_id'] = goal.profileId ?? _requireProfileId(),
+        ..['profile_id'] = _requireProfileId(),
     );
   }
 
@@ -1711,29 +1718,65 @@ class AppDatabase {
   }
 
   Future<List<GoalMilestone>> goalMilestones(int goalId) async {
-    final rows = await (await database).query(
-      'goal_milestones',
-      where: 'goal_id = ?',
-      whereArgs: [goalId],
-      orderBy: 'sort_order',
+    final rows = await (await database).rawQuery(
+      'SELECT goal_milestones.* FROM goal_milestones '
+      'JOIN goals ON goals.id = goal_milestones.goal_id '
+      'WHERE goal_milestones.goal_id = ? AND goals.profile_id = ? '
+      'ORDER BY goal_milestones.sort_order',
+      [goalId, _requireProfileId()],
     );
     return rows.map(GoalMilestone.fromMap).toList();
   }
 
   Future<void> insertGoalMilestone(GoalMilestone milestone) async {
-    await (await database).insert(
+    final db = await database;
+    if (!await _activeProfileOwnsGoal(db, milestone.goalId)) {
+      throw StateError('O objetivo não pertence ao perfil ativo.');
+    }
+    await db.insert(
       'goal_milestones',
       milestone.toMap()..remove('id'),
     );
   }
 
   Future<void> updateGoalMilestone(GoalMilestone milestone) async {
-    await (await database).update(
+    final db = await database;
+    final profileId = _requireProfileId();
+    if (!await _activeProfileOwnsGoal(db, milestone.goalId)) return;
+    await db.update(
       'goal_milestones',
       milestone.toMap()..remove('id'),
-      where: 'id = ?',
-      whereArgs: [milestone.id],
+      where:
+          'id = ? AND EXISTS ('
+          'SELECT 1 FROM goals '
+          'WHERE goals.id = goal_milestones.goal_id '
+          'AND goals.profile_id = ?)',
+      whereArgs: [milestone.id, profileId],
     );
+  }
+
+  Future<void> deleteGoalMilestone(int id) async {
+    final profileId = _requireProfileId();
+    await (await database).delete(
+      'goal_milestones',
+      where:
+          'id = ? AND EXISTS ('
+          'SELECT 1 FROM goals '
+          'WHERE goals.id = goal_milestones.goal_id '
+          'AND goals.profile_id = ?)',
+      whereArgs: [id, profileId],
+    );
+  }
+
+  Future<bool> _activeProfileOwnsGoal(DatabaseExecutor db, int goalId) async {
+    final rows = await db.query(
+      'goals',
+      columns: ['id'],
+      where: 'id = ? AND profile_id = ?',
+      whereArgs: [goalId, _requireProfileId()],
+      limit: 1,
+    );
+    return rows.isNotEmpty;
   }
 
   Future<void> setGoalCompleted(Goal goal, bool completed) async {
@@ -1779,6 +1822,13 @@ class AppDatabase {
         where: 'profile_id = ?',
         whereArgs: [profileId],
         orderBy: 'phase, id',
+      ),
+      'milestones': await db.rawQuery(
+        'SELECT goal_milestones.* FROM goal_milestones '
+        'JOIN goals ON goals.id = goal_milestones.goal_id '
+        'WHERE goals.profile_id = ? '
+        'ORDER BY goal_milestones.goal_id, goal_milestones.sort_order',
+        [profileId],
       ),
     };
   }
