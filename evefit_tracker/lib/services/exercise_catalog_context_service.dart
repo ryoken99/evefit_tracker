@@ -1418,19 +1418,27 @@ class ExerciseCatalogContextService {
     if (_has(n, ['short foot', 'doming', 'dedos do pe'])) {
       return 'músculos intrínsecos do pé, arco plantar e controlo dos dedos';
     }
-    if (_has(n, ['dorsiflexao']))
+    if (_has(n, ['dorsiflexao'])) {
       return 'tibial anterior e dorsiflexores do tornozelo';
-    if (_has(n, ['inversao do tornozelo']))
+    }
+    if (_has(n, ['inversao do tornozelo'])) {
       return 'tibial posterior e controlo medial do tornozelo';
-    if (_has(n, ['eversao do tornozelo']))
+    }
+    if (_has(n, ['eversao do tornozelo'])) {
       return 'músculos fibulares e controlo lateral do tornozelo';
-    if (_has(n, ['flexao da anca'])) return 'flexores da anca e reto femoral';
-    if (_has(n, ['copenhagen']))
+    }
+    if (_has(n, ['flexao da anca'])) {
+      return 'flexores da anca e reto femoral';
+    }
+    if (_has(n, ['copenhagen'])) {
       return 'adutores da anca e core anti-flexão lateral';
-    if (_has(n, ['extensao terminal do joelho']))
+    }
+    if (_has(n, ['extensao terminal do joelho'])) {
       return 'quadríceps, com ênfase no vasto medial';
-    if (_has(n, ['abducao de anca deitada']))
+    }
+    if (_has(n, ['abducao de anca deitada'])) {
       return 'glúteo médio, glúteo mínimo e abdutores';
+    }
     if (_has(n, [
       'farmer',
       'hold',

@@ -91,10 +91,9 @@ void main() {
 
   test('profile A cannot read milestones through profile B goal', () async {
     expect(await profileADatabase.goalMilestones(20), isEmpty);
-    expect(
-      (await profileBDatabase.goalMilestones(20)).map((item) => item.id),
-      [201],
-    );
+    expect((await profileBDatabase.goalMilestones(20)).map((item) => item.id), [
+      201,
+    ]);
   });
 
   test('profile A cannot update complete or delete profile B goal', () async {
@@ -124,39 +123,42 @@ void main() {
     expect(row['completed_at'], isNull);
   });
 
-  test('profile A cannot insert update or delete profile B milestone', () async {
-    final foreign = (await profileBDatabase.goalMilestones(20)).single;
+  test(
+    'profile A cannot insert update or delete profile B milestone',
+    () async {
+      final foreign = (await profileBDatabase.goalMilestones(20)).single;
 
-    await expectLater(
-      profileADatabase.insertGoalMilestone(
-        GoalMilestone(
-          goalId: 20,
-          title: 'Intrusão A',
-          sortOrder: 1,
-          createdAt: DateTime(2026, 6, 22),
+      await expectLater(
+        profileADatabase.insertGoalMilestone(
+          GoalMilestone(
+            goalId: 20,
+            title: 'Intrusão A',
+            sortOrder: 1,
+            createdAt: DateTime(2026, 6, 22),
+          ),
         ),
-      ),
-      throwsStateError,
-    );
-    await profileADatabase.updateGoalMilestone(
-      GoalMilestone(
-        id: foreign.id,
-        goalId: foreign.goalId,
-        title: 'Alterado por A',
-        sortOrder: foreign.sortOrder,
-        createdAt: foreign.createdAt,
-      ),
-    );
-    await profileADatabase.deleteGoalMilestone(foreign.id!);
+        throwsStateError,
+      );
+      await profileADatabase.updateGoalMilestone(
+        GoalMilestone(
+          id: foreign.id,
+          goalId: foreign.goalId,
+          title: 'Alterado por A',
+          sortOrder: foreign.sortOrder,
+          createdAt: foreign.createdAt,
+        ),
+      );
+      await profileADatabase.deleteGoalMilestone(foreign.id!);
 
-    final rows = await db.query(
-      'goal_milestones',
-      where: 'goal_id = ?',
-      whereArgs: [20],
-    );
-    expect(rows, hasLength(1));
-    expect(rows.single['title'], 'Milestone B');
-  });
+      final rows = await db.query(
+        'goal_milestones',
+        where: 'goal_id = ?',
+        whereArgs: [20],
+      );
+      expect(rows, hasLength(1));
+      expect(rows.single['title'], 'Milestone B');
+    },
+  );
 
   test('profile export contains only its goals and milestones', () async {
     final exportA = await profileADatabase.exportData();

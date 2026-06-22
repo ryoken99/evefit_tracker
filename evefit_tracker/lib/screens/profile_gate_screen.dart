@@ -135,7 +135,9 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
       await widget.database.setActiveProfile(profile);
       widget.onUnlocked(profile);
     } else if (ok == false && mounted) {
-      final message = widget.database.isPinLocked(profile)
+      final locked = await widget.database.isPinLocked(profile);
+      if (!mounted) return;
+      final message = locked
           ? 'Muitas tentativas. Tenta novamente dentro de 1 minuto.'
           : 'Código incorreto.';
       ScaffoldMessenger.of(

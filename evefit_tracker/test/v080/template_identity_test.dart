@@ -86,21 +86,24 @@ void main() {
     expect(rows, isEmpty);
   });
 
-  test('every built-in template points to an existing stable catalog entry', () {
-    final catalogKeys = ExerciseCatalogContextService.entries
-        .map((entry) => entry.catalogEntryKey)
-        .toSet();
+  test(
+    'every built-in template points to an existing stable catalog entry',
+    () {
+      final catalogKeys = ExerciseCatalogContextService.entries
+          .map((entry) => entry.catalogEntryKey)
+          .toSet();
 
-    for (final template in WorkoutTemplateService.templates) {
-      for (final reference in template.exercises) {
-        expect(
-          catalogKeys,
-          contains(reference.catalogEntryKey),
-          reason: '${template.name}: ${reference.legacyName}',
-        );
+      for (final template in WorkoutTemplateService.templates) {
+        for (final reference in template.exercises) {
+          expect(
+            catalogKeys,
+            contains(reference.catalogEntryKey),
+            reason: '${template.name}: ${reference.legacyName}',
+          );
+        }
       }
-    }
-  });
+    },
+  );
 }
 
 Workout _workout() =>
