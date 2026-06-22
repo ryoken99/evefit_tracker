@@ -233,6 +233,7 @@ class ExerciseCatalogContextService {
     final normalized = _n(text);
     final nameKey = _n(name);
     final equipmentKey = _n(equipment);
+    final variantCue = _executionVariantCue(name);
     var next = RegExp(r'\d+\.').allMatches(text).length + 1;
 
     void addIfMissing(String cue, String sentence) {
@@ -457,23 +458,52 @@ class ExerciseCatalogContextService {
     }
     addIfMissing(
       'ritmo recomendado',
-      'Ritmo recomendado: usa cerca de dois segundos no esforço, faz uma pausa curta e regressa em dois a três segundos.',
+      'Ritmo recomendado em $name para $variantCue: usa cerca de dois segundos no esforço, faz uma pausa curta e regressa em dois a três segundos.',
     );
     addIfMissing(
       'como perceber se esta mal feito',
-      'Como perceber se está mal feito: termina a série se já não conseguires repetir a mesma trajetória, alinhamento e amplitude sem dor.',
+      'Como perceber se $name está mal feito durante $variantCue: termina a série se já não conseguires repetir a mesma trajetória, alinhamento e amplitude sem dor.',
     );
     addIfMissing(
       'erro mais comum',
-      'Erro mais comum: acelerar para compensar fadiga e deixar outra zona do corpo assumir o trabalho de $name no foco $group.',
+      'Erro mais comum em $name durante $variantCue: acelerar para compensar fadiga e deixar outra zona do corpo assumir o trabalho no foco $group.',
     );
     addIfMissing('versao mais facil', regression);
     addIfMissing('versao mais dificil', progression);
     return additions.isEmpty ? text : '$text ${additions.join(' ')}';
   }
 
+  static String _executionVariantCue(String name) {
+    final n = _n(name);
+    if (_has(n, ['press militar com barra em pe'])) {
+      return 'a estabilização vertical em posição de pé';
+    }
+    if (n == _n('Press militar com barra')) {
+      return 'a trajetória bilateral da barra à frente da cabeça';
+    }
+    if (_has(n, ['y raise'])) return 'o desenho diagonal dos braços em Y';
+    if (_has(n, ['w raise'])) return 'a retração escapular com cotovelos em W';
+    if (_has(n, ['curl 21'])) return 'a sequência de três amplitudes do curl';
+    if (n == _n('Curl com halteres')) {
+      return 'a flexão bilateral completa dos cotovelos';
+    }
+    return 'a trajetória específica desta variação';
+  }
+
   static String _regressionFor(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['press militar com barra em pe'])) {
+      return 'Versão mais fácil: pratica o press vertical sentado com encosto e barra leve antes de estabilizar a carga em pé.';
+    }
+    if (_has(n, ['y raise'])) {
+      return 'Versão mais fácil: desenha o Y deitado num banco inclinado, sem carga, parando antes de encolher o pescoço.';
+    }
+    if (_has(n, ['w raise'])) {
+      return 'Versão mais fácil: mantém a forma de W sem carga e faz apenas a retração curta das escápulas.';
+    }
+    if (_has(n, ['curl 21'])) {
+      return 'Versão mais fácil: substitui a sequência 21 por curls completos com halteres leves e descanso normal entre séries.';
+    }
     if (group == 'Cardio') {
       return 'Versão mais fácil: pratica $name durante menos tempo, a ritmo em que consigas falar, e aumenta a duração antes da intensidade.';
     }
@@ -500,8 +530,32 @@ class ExerciseCatalogContextService {
 
   static String _progressionFor(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['press militar com barra em pe'])) {
+      return 'Versão mais difícil: aumenta gradualmente a barra mantendo glúteos, costelas e trajetória vertical estáveis em pé.';
+    }
+    if (_has(n, ['y raise'])) {
+      return 'Versão mais difícil: acrescenta halteres leves ao desenho em Y e pausa com polegares apontados para cima.';
+    }
+    if (_has(n, ['w raise'])) {
+      return 'Versão mais difícil: acrescenta elástico leve ao W sem perder retração e rotação externa das escápulas.';
+    }
+    if (_has(n, ['curl 21'])) {
+      return 'Versão mais difícil: aumenta ligeiramente os halteres mantendo sete parciais inferiores, sete superiores e sete completas limpas.';
+    }
     if (group == 'Cardio') {
-      return 'Versão mais difícil: aumenta em $name apenas a duração, a inclinação, a resistência ou a velocidade de cada vez.';
+      if (_has(n, ['passadeira'])) {
+        return 'Versão mais difícil: aumenta em $name apenas a duração, a inclinação ou a velocidade de cada vez.';
+      }
+      if (_has(n, ['bicicleta'])) {
+        return 'Versão mais difícil: aumenta em $name apenas a duração, a resistência ou a cadência de cada vez.';
+      }
+      if (_has(n, ['corda'])) {
+        return 'Versão mais difícil: aumenta em $name apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.';
+      }
+      if (_has(n, ['eliptica', 'elíptica'])) {
+        return 'Versão mais difícil: aumenta em $name apenas a duração, a resistência ou a cadência de cada vez.';
+      }
+      return 'Versão mais difícil: aumenta em $name apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.';
     }
     if (group == 'Mobilidade') {
       return 'Versão mais difícil: amplia gradualmente $name ou acrescenta controlo ativo no fim da amplitude, sempre sem dor articular.';
@@ -1575,6 +1629,8 @@ class ExerciseCatalogContextService {
   static String _stepsFor(String name, String group, String equipment) {
     final lowerBodyGapSteps = _lowerBodyGapSteps(name);
     if (lowerBodyGapSteps != null) return lowerBodyGapSteps;
+    final variantSteps = _distinctVariantSteps(name, equipment);
+    if (variantSteps != null) return variantSteps;
     if (group == 'Cardio') return _cardioSteps(name, equipment);
     if (group == 'Mobilidade') return _mobilitySteps(name, equipment);
     if (group == 'Karate') return _karateSteps(name);
@@ -1618,6 +1674,23 @@ class ExerciseCatalogContextService {
     }
     if (_isCore(name, group)) return _coreSteps(name, equipment);
     return _generalSpecificSteps(name, group, equipment);
+  }
+
+  static String? _distinctVariantSteps(String name, String equipment) {
+    final n = _n(name);
+    if (_has(n, ['press militar com barra em pe'])) {
+      return '1. Coloca a barra num suporte à altura da parte alta do peito e usa pega simétrica um pouco além dos ombros. 2. Retira a barra, dá um passo curto e fica com pés paralelos, glúteos firmes e costelas sobre a bacia. 3. Começa com a barra à frente dos ombros e antebraços quase verticais. 4. Afasta ligeiramente a cabeça, empurra a barra para cima e volta a colocar a cabeça entre os braços. 5. Termina com a barra sobre o meio do pé sem arquear a lombar. 6. Baixa pelo mesmo caminho até à frente dos ombros. 7. Inspira antes da subida e expira depois de passar a zona mais difícil. 8. Usa menos carga se inclinares o tronco, dobrares punhos ou perderes equilíbrio.';
+    }
+    if (_has(n, ['y raise'])) {
+      return '1. Inclina o tronco ou apoia o peito num banco, deixando braços pendurados e polegares para cima. 2. Mantém pescoço longo, costelas controladas e cotovelos quase estendidos. 3. Eleva os braços na diagonal para formar um Y largo acima da cabeça. 4. Inicia pelas escápulas sem encolher os ombros. 5. Pára quando braços e tronco ficam alinhados ou antes de perder a posição. 6. Baixa durante dois a três segundos até os braços ficarem pendurados. 7. Expira ao desenhar o Y e inspira ao baixar. 8. Faz sem carga se sentires o trapézio superior dominar.';
+    }
+    if (_has(n, ['w raise'])) {
+      return '1. Inclina o tronco ou apoia o peito e começa com cotovelos dobrados junto ao corpo. 2. Vira polegares para cima e mantém punhos sobre a linha dos cotovelos. 3. Aproxima as escápulas e eleva os braços até formarem a letra W. 4. Mantém cotovelos dobrados enquanto rodas os ombros para fora. 5. Pausa sem projetar o queixo nem levantar os ombros. 6. Regressa devagar até aliviar a retração escapular. 7. Expira ao formar o W e inspira no retorno. 8. Reduz carga ou amplitude se sentires pinçamento na frente do ombro.';
+    }
+    if (_has(n, ['curl 21'])) {
+      return '1. Fica alto com halteres leves, palmas para a frente e cotovelos junto às costelas. 2. Sobe sete vezes apenas da extensão quase completa até os cotovelos chegarem a cerca de 90 graus. 3. Sem descanso, faz sete repetições de 90 graus até perto dos ombros. 4. Mantém punhos direitos e não avances os cotovelos durante as parciais superiores. 5. Termina com sete curls completos do fundo ao topo. 6. Desce cada repetição com controlo e pára se precisares de balançar. 7. Expira em cada subida e inspira em cada descida. 8. Escolhe carga bem menor que no curl normal porque a série soma 21 repetições.';
+    }
+    return null;
   }
 
   static String? _lowerBodyGapSteps(String name) {

@@ -541,7 +541,7 @@ class AppDatabase {
       await db.update(
         'workout_types',
         {
-          'description': 'Tipo de treino predefinido v0.6.0.',
+          'description': 'Tipo de treino predefinido.',
           'muscle_groups': _defaultGroupsForWorkoutType(name),
           'is_hidden': 0,
           'updated_at': now,

@@ -31,13 +31,14 @@ void main() {
         for (final cue in [
           'respira',
           'ritmo recomendado',
-          'como perceber se esta mal feito',
           'erro mais comum',
           'versao mais facil',
           'versao mais dificil',
         ]) {
           expect(normalized, contains(cue), reason: '${entry.id}: $cue');
         }
+        expect(normalized, contains('como perceber'), reason: entry.id);
+        expect(normalized, contains('mal feito'), reason: entry.id);
       }
     });
 
