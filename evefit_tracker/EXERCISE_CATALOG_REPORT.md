@@ -6,11 +6,11 @@ Data: 2026-06-22
 
 | Métrica | Resultado |
 |---|---:|
-| Entradas totais | 314 |
-| Nomes únicos | 308 |
-| Exercícios novos | 9 |
-| Entradas revistas/enriquecidas | 314 |
-| Entradas com todos os campos pedagógicos | 314 |
+| Entradas totais | 315 |
+| Nomes únicos | 309 |
+| Exercícios novos | 10 |
+| Entradas revistas/enriquecidas | 315 |
+| Entradas com todos os campos pedagógicos | 315 |
 | Descrições duplicadas | 0 |
 | Execuções duplicadas | 0 |
 | Execuções genéricas/placeholder | 0 |
@@ -32,6 +32,7 @@ Cada entrada tem descrição objetiva, passos numerados, erros comuns, seguranç
 - Copenhagen plank com apoio.
 - Extensão terminal do joelho com elástico.
 - Abdução de anca deitada.
+- Sprawl.
 
 Estas adições fecham lacunas reais de pé intrínseco, dedos, tibial anterior, controlo multidirecional do tornozelo, flexores da anca, adutores, vasto medial e glúteos médio/mínimo. Não foram criados sinónimos artificiais nem variações apenas para aumentar a contagem.
 

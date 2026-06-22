@@ -63,7 +63,7 @@ void main() {
         'Elíptica cooldown',
       ]);
 
-      expect(_namesFor('Corda de saltar'), [
+      expect(_namesFor('Corda de saltar', equipment: {'jump_rope'}), [
         'Corda de saltar ritmo leve',
         'Corda de saltar intervalos',
         'Corda de saltar pés alternados',
@@ -81,13 +81,13 @@ void main() {
           'Passadeira caminhada',
           'Bicicleta ritmo leve',
           'Elíptica ritmo leve',
-          'Corda de saltar ritmo leve',
           'Caminhada exterior leve',
           'Corrida exterior leve',
           'HIIT simples',
           'Circuito cardio leve',
         ]),
       );
+      expect(names, isNot(contains('Corda de saltar ritmo leve')));
     });
 
     test('muscle-specific types exclude unrelated muscle groups', () {
@@ -107,11 +107,23 @@ void main() {
     });
 
     test('martial arts types do not leak exclusive drills', () {
-      expect(_namesFor('Karate'), contains('Kihon'));
-      expect(_namesFor('Karate'), isNot(contains('Shrimp / fuga de anca')));
+      expect(
+        _namesFor('Karate', location: 'Dojo / Artes marciais'),
+        contains('Kihon'),
+      );
+      expect(
+        _namesFor('Karate', location: 'Dojo / Artes marciais'),
+        isNot(contains('Shrimp / fuga de anca')),
+      );
 
-      expect(_namesFor('Jiu-Jitsu'), contains('Shrimp / fuga de anca'));
-      expect(_namesFor('Jiu-Jitsu'), isNot(contains('Kihon')));
+      expect(
+        _namesFor('Jiu-Jitsu', location: 'Dojo / Artes marciais'),
+        contains('Shrimp / fuga de anca'),
+      );
+      expect(
+        _namesFor('Jiu-Jitsu', location: 'Dojo / Artes marciais'),
+        isNot(contains('Kihon')),
+      );
     });
 
     test('home equipment filters after workout type', () {
@@ -191,11 +203,15 @@ void main() {
   });
 }
 
-List<String> _namesFor(String type, {String location = 'Ginásio'}) {
+List<String> _namesFor(
+  String type, {
+  String location = 'Ginásio',
+  Set<String> equipment = const {},
+}) {
   return ExerciseFilterService.filter(
     exercises: _fixtureExercises,
     trainingLocation: location,
-    availableEquipmentKeys: {},
+    availableEquipmentKeys: equipment,
     workoutType: _type(type),
   ).map((item) => item.name).toList();
 }

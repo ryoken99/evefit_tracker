@@ -11,8 +11,8 @@ void main() {
         isEmpty,
         reason: CatalogQualityGateService.formatFailures(failures),
       );
-      expect(CatalogQualityGateService.catalogEntryCount, 314);
-      expect(CatalogQualityGateService.uniqueExerciseCount, 308);
+      expect(CatalogQualityGateService.catalogEntryCount, 315);
+      expect(CatalogQualityGateService.uniqueExerciseCount, 309);
     });
   });
 }

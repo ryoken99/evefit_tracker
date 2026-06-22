@@ -122,7 +122,9 @@ class ExerciseCatalogDetailService {
     if (_has(n, ['face pull no cabo'])) return 'Cabo alto / polia';
     if (_has(n, ['face pull com elastico'])) return 'Elásticos';
     if (_has(n, ['dips para triceps'])) return 'Paralelas';
-    if (_has(n, ['hiperextensao lombar'])) return 'Banco romano / máquina';
+    if (_has(n, ['hiperextensao lombar', 'hiperextensao no banco romano'])) {
+      return 'Banco romano / máquina';
+    }
     if (_has(n, [
       'agachamento bulgaro',
       'step-up',

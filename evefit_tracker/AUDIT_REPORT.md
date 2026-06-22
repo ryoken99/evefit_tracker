@@ -2,7 +2,7 @@
 
 Data: 2026-06-22
 Repositório: `ryoken99/evefit_tracker`  
-Branch: `feature/v0.8.0-profile-equipment-catalog-integrity`  
+Branch de revisão final: `hotfix/v0.8.0-manual-filter-review`
 Estado: implementação concluída; verificação final registada no fim deste relatório.
 
 ## Linha de base
@@ -33,7 +33,12 @@ Estado: implementação concluída; verificação final registada no fim deste r
 | V080-14 | FIXED | `updateDashboardWidgets` grava todo o dashboard numa única transação e faz rollback em ID inválido. |
 | V080-15 | FIXED | Chaves antigas mostram `Foco antigo`, `Equipamento removido` ou `Métrica removida`, nunca o primeiro item. |
 | V080-16 | FIXED | Versão pública, Settings, README, workflow, changelog e release notes apontam para v0.8.0. |
-| V080-17 | FIXED | Catálogo expandido para 314 entradas e contrato pedagógico completo aplicado a todas. |
+| V080-17 | FIXED | Catálogo expandido para 315 entradas e contrato pedagógico completo aplicado a todas. |
+| V080-18 | FIXED | Filtros agregados `*_complete` combinam a taxonomia canónica em vez de serem tratados como músculos inexistentes. |
+| V080-19 | FIXED | Requisitos de apoio/equipamento são avaliados por grupos obrigatórios; uma capacidade não desbloqueia indevidamente todo o exercício. |
+| V080-20 | FIXED | Refresh de ecrãs deixou de devolver `Future` dentro de `setState`, eliminando a falha ao guardar treinos. |
+| V080-21 | FIXED | O diálogo de PIN já não descarta um `TextEditingController` enquanto a rota ainda o utiliza. |
+| V080-22 | FIXED | Labels de filtros completos persistidos são reconstruídos pelas chaves canónicas, sem `Foco antigo` indevido. |
 
 ## Testes adicionados na v0.8.0
 
@@ -42,10 +47,11 @@ Estado: implementação concluída; verificação final registada no fim deste r
 - Taxonomia anatómica completa e falsos positivos com nomes deliberadamente enganadores.
 - Identidade estável de templates e propriedade de exercícios custom/default.
 - Migração aditiva, normalização de encoding e preservação de IDs/relações.
-- Integridade pedagógica das 314 entradas, 11 passos mínimos e ausência de descrições/execuções duplicadas.
+- Integridade pedagógica das 315 entradas, 11 passos mínimos e ausência de descrições/execuções duplicadas.
 - Expansão de pé, tornozelo, flexores da anca, adutores, abdutores e quadríceps.
 - Dashboard transacional, altura desconhecida, chaves desconhecidas e PIN persistente.
 - Metadados públicos da versão v0.8.0.
+- Matriz manual convertida em 93 testes explícitos e regressões do fluxo visual Android.
 
 ## Bugs adiados
 
@@ -77,6 +83,6 @@ Nenhum bug funcional identificado nesta auditoria ficou aberto. O refactor estru
 
 ## Verificação final
 
-- `C:\tools\flutter\bin\flutter.bat analyze`: `No issues found! (ran in 2.8s)`.
-- `C:\tools\flutter\bin\flutter.bat test`: 250 testes, `All tests passed!`, zero falhas.
+- `C:\tools\flutter\bin\flutter.bat analyze --no-pub`: `No issues found! (ran in 2.0s)`.
+- `C:\tools\flutter\bin\flutter.bat test --no-pub`: 348 testes, `All tests passed!`, zero falhas.
 - A suite completa detetou durante a implementação duas regressões de especificidade cardio, três pares com texto demasiado semelhante e dois cues ausentes no Curl 21; as causas foram corrigidas no gerador e a suite completa foi repetida com sucesso.

@@ -7,6 +7,10 @@ import 'workout_taxonomy.dart';
 class ExerciseFilterService {
   const ExerciseFilterService._();
 
+  static const emptyStateMessage =
+      'Não há exercícios disponíveis para este foco com as capacidades atuais. '
+      'Ativa Mostrar todos para ver o equipamento/local em falta.';
+
   static List<Exercise> filter({
     required List<Exercise> exercises,
     required String trainingLocation,
@@ -160,6 +164,13 @@ class ExerciseFilterService {
         selectedEquipmentKey: selection.equipmentKey,
       );
       final isAvailable = matchesSelection && matchesEquipment;
+      final equipmentReason = matchesSelection && !matchesEquipment
+          ? _equipmentUnavailableReason(
+              exercise: exercise,
+              trainingLocation: trainingLocation,
+              availableEquipmentKeys: availableEquipmentKeys,
+            )
+          : '';
       return ExerciseAvailability(
         exercise: exercise,
         isAvailable: isAvailable,
@@ -167,11 +178,27 @@ class ExerciseFilterService {
             ? ''
             : !matchesSelection
             ? 'Indisponível pelo filtro anatómico selecionado.'
-            : 'Indisponível com o teu equipamento/local atual.',
+            : equipmentReason,
       );
     }).toList();
     if (showAllExercises) return availability;
     return availability.where((item) => item.isAvailable).toList();
+  }
+
+  static String _equipmentUnavailableReason({
+    required Exercise exercise,
+    required String trainingLocation,
+    required Set<String> availableEquipmentKeys,
+  }) {
+    final missing = ExerciseCapabilityService.missingCapabilityNames(
+      exercise: exercise,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+    );
+    if (missing.isEmpty) {
+      return 'Indisponível com o teu equipamento/local atual.';
+    }
+    return 'Indisponível: requer ${missing.join(' e ')}.';
   }
 
   static bool _matchesWorkoutType(Exercise exercise, WorkoutType? workoutType) {

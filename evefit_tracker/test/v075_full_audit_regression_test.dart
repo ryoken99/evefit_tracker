@@ -12,7 +12,7 @@ void main() {
           'lower',
         ).map((item) => item.value),
         [
-          'Pernas completo',
+          'Pernas completas',
           'Acima do joelho / coxa e anca',
           'Abaixo do joelho / perna inferior e pé',
         ],

@@ -297,6 +297,7 @@ class SeedData {
       'Shrimp / fuga de anca',
       'Ponte de grappling',
       'Technical stand-up',
+      'Sprawl',
       'Drills de guarda',
       'Drills de passagem de guarda',
       'Mobilidade de anca para Jiu-Jitsu',

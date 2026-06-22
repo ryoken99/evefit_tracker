@@ -18,10 +18,10 @@ const _forbiddenPhrases = [
 ];
 
 void main() {
-  group('v0.8.0 beginner-readable descriptions for 314 entries', () {
-    test('all 314 entries have complete individual explanation fields', () {
+  group('v0.8.0 beginner-readable descriptions for 315 entries', () {
+    test('all 315 entries have complete individual explanation fields', () {
       final entries = ExerciseCatalogContextService.entries;
-      expect(entries, hasLength(314));
+      expect(entries, hasLength(315));
 
       for (final entry in entries) {
         final details = entry.details;

@@ -38,7 +38,11 @@ class ExerciseCapabilityService {
       ..._benchAlternatives,
     },
     'agachamento_para_cadeira': {'chair_support'},
+    'step_up': {'chair_support', 'stable_step', ..._benchAlternatives},
+    'agachamento_bulgaro': {'chair_support', ..._benchAlternatives},
     'agachamento_bulgaro_com_apoio': {'chair_support', ..._benchAlternatives},
+    'gemeos_sentado': {'chair_support', ..._benchAlternatives},
+    'soleo_sentado': {'chair_support', ..._benchAlternatives},
     'hip_thrust_com_apoio': {
       'chair_support',
       'stable_step',

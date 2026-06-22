@@ -28,7 +28,11 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     _dataFuture = widget.database.workouts();
   }
 
-  void _refresh() => setState(() => _dataFuture = widget.database.workouts());
+  void _refresh() {
+    setState(() {
+      _dataFuture = widget.database.workouts();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

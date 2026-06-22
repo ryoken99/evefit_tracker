@@ -34,7 +34,11 @@ class _PhotosScreenState extends State<PhotosScreen> {
     _dataFuture = widget.database.photos();
   }
 
-  void _refresh() => setState(() => _dataFuture = widget.database.photos());
+  void _refresh() {
+    setState(() {
+      _dataFuture = widget.database.photos();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

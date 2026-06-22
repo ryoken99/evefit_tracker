@@ -7,12 +7,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('v0.7.10 catalog entry audit', () {
-    test('audits all 314 seed entries instead of unique names only', () {
+    test('audits all 315 seed entries instead of unique names only', () {
       final entries = _catalogEntries();
       final uniqueNames = entries.map((entry) => entry.name).toSet();
 
-      expect(entries.length, 314);
-      expect(uniqueNames.length, 308);
+      expect(entries.length, 315);
+      expect(uniqueNames.length, 309);
 
       for (final entry in entries) {
         final detail = entry.detail;

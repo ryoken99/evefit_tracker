@@ -31,7 +31,11 @@ class _GoalsScreenState extends State<GoalsScreen> {
     widget.database.workoutsThisWeek(),
   ]);
 
-  void _refresh() => setState(() => _dataFuture = _loadData());
+  void _refresh() {
+    setState(() {
+      _dataFuture = _loadData();
+    });
+  }
 
   static const phases = ['Base', 'Fase 1', 'Fase 2', 'Fase 3', 'Livre'];
   static const categories = [

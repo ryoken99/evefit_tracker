@@ -33,15 +33,21 @@ class ExerciseTaxonomyService {
     final movement = _movementPattern(name, context);
     final regions = architecture.regionKeys.isEmpty
         ? <String>{'custom'}
-        : architecture.regionKeys;
+        : <String>{...architecture.regionKeys};
     final groups = architecture.groupKeys.isEmpty
         ? <String>{'custom_workout'}
-        : architecture.groupKeys;
+        : <String>{...architecture.groupKeys};
+    final subgroups = <String>{...architecture.subgroupKeys};
+    _addCanonicalHierarchy(
+      muscles: muscles,
+      groups: groups,
+      subgroups: subgroups,
+    );
 
     return ExerciseTaxonomy(
       regionKeys: regions,
       groupKeys: groups,
-      subgroupKeys: architecture.subgroupKeys,
+      subgroupKeys: subgroups,
       primaryMuscleKey: primary,
       secondaryMuscleKeys: {...muscles}..remove(primary),
       equipmentKeys: equipment,
@@ -92,6 +98,7 @@ class ExerciseTaxonomyService {
         muscles.addAll({'forearm_flexors', 'wrist'});
       }
       if (hasAny(['reverse_wrist', 'extensao_de_dedos'])) {
+        muscles.remove('forearm_flexors');
         muscles.addAll({'forearm_extensors', 'wrist'});
       }
       if (name.contains('pronacao')) muscles.add('pronators');
@@ -109,9 +116,14 @@ class ExerciseTaxonomyService {
       if (hasAny(['reverse_crunch', 'elevacao_de_pernas', 'flutter_kicks'])) {
         muscles.add('lower_abs');
       }
-      if (hasAny(['prancha_lateral', 'side_bend'])) {
-        muscles.add('anti_lateral_flexion');
+      if (name.contains('prancha_lateral')) {
+        muscles.addAll({
+          'anti_lateral_flexion',
+          'external_obliques',
+          'internal_obliques',
+        });
       }
+      if (name.contains('bird_dog')) muscles.add('deep_stability');
       if (hasAny(['elevacao_de_pernas', 'elevacao_de_joelhos', 'mountain'])) {
         muscles.add('hip_flexors');
       }
@@ -184,11 +196,50 @@ class ExerciseTaxonomyService {
     if (context == 'jiu_jitsu') muscles.add('jiu_jitsu_technical');
   }
 
+  static void _addCanonicalHierarchy({
+    required Set<String> muscles,
+    required Set<String> groups,
+    required Set<String> subgroups,
+  }) {
+    if (muscles.any({'glute_med', 'glute_min'}.contains)) {
+      groups.add('hips_glutes');
+      subgroups.add('glutes');
+    }
+    if (muscles.contains('hip_flexors')) {
+      groups.add('hips_glutes');
+      subgroups.add('hip_flexors_sub');
+    }
+    if (muscles.contains('tibialis_anterior')) {
+      groups.add('tibialis');
+      subgroups.add('tibialis_sub');
+    }
+    if (muscles.contains('feet')) {
+      groups.add('feet_ankle');
+      subgroups.add('foot_intrinsics');
+    }
+    if (muscles.contains('ankle')) {
+      groups.add('feet_ankle');
+      subgroups.add('ankle_control');
+    }
+  }
+
   static String _primaryMuscle({
     required String name,
     required String context,
     required Set<String> muscles,
   }) {
+    if (name.contains('reverse_wrist')) return 'forearm_extensors';
+    if (name.contains('short_foot') || name.contains('dedos_do_pe')) {
+      return 'feet';
+    }
+    if (name.contains('dorsiflexao') || name.contains('elevacao_tibial')) {
+      return 'tibialis_anterior';
+    }
+    if (name.contains('inversao_do_tornozelo') ||
+        name.contains('eversao_do_tornozelo')) {
+      return 'ankle';
+    }
+    if (name.contains('flexao_da_anca')) return 'hip_flexors';
     const priorityByContext = <String, List<String>>{
       'pescoco': ['cervical_stabilizers'],
       'trapezio': ['upper_traps', 'mid_traps', 'lower_traps'],

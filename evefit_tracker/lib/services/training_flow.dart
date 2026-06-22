@@ -72,13 +72,13 @@ class TrainingFlow {
     'lower_chest': 'Peito inferior',
     'pectoralis_minor': 'Peitoral menor',
     'serratus_anterior': 'Serrátil anterior',
-    'back_complete': 'Costas completo',
+    'back_complete': 'Costas completas',
     'back_upper': 'Costas superior',
     'back_mid': 'Costas média',
     'back_lower': 'Costas inferior / lombar',
     'back_width': 'Costas largura',
     'back_thickness': 'Costas espessura',
-    'shoulders_complete': 'Ombros completo',
+    'shoulders_complete': 'Ombros completos',
     'anterior_deltoid': 'Deltoide anterior',
     'lateral_deltoid': 'Deltoide lateral',
     'posterior_deltoid': 'Deltoide posterior',
@@ -86,7 +86,7 @@ class TrainingFlow {
     'external_rotators': 'Rotadores externos',
     'internal_rotators': 'Rotadores internos',
     'scapular_stability': 'Estabilidade escapular',
-    'arms_complete': 'Braços completo',
+    'arms_complete': 'Braços completos',
     'upper_arm': 'Braço',
     'forearm_hand': 'Antebraço / punho / mão',
     'biceps_brachii': 'Bíceps braquial',
@@ -136,7 +136,7 @@ class TrainingFlow {
     'anti_extension': 'Anti-extensão',
     'anti_lateral_flexion': 'Anti-flexão lateral',
     'deep_stability': 'Estabilidade profunda',
-    'legs_complete': 'Pernas completo',
+    'legs_complete': 'Pernas completas',
     'upper_leg_hip': 'Acima do joelho / coxa e anca',
     'lower_leg_foot': 'Abaixo do joelho / perna inferior e pé',
     'thigh_complete': 'Coxa completa',
@@ -618,10 +618,12 @@ class TrainingFlow {
       return TrainingSelection(
         regionKey: 'upper',
         groupKey: 'chest',
-        subgroupKey: focus == 'chest_complete' || focus.isEmpty
+        subgroupKey: focus == 'chest_complete'
+            ? focus
+            : focus.isEmpty
             ? ''
             : 'chest_primary',
-        specificMuscleKey: focus,
+        specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
         equipmentKey: flow.equipmentKey,
       );
     }
@@ -630,7 +632,7 @@ class TrainingFlow {
         regionKey: 'core',
         groupKey: 'abdominal',
         subgroupKey: focus,
-        specificMuscleKey: focus,
+        specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
         equipmentKey: flow.equipmentKey,
       );
     }
@@ -656,7 +658,7 @@ class TrainingFlow {
         regionKey: 'upper',
         groupKey: 'arms',
         subgroupKey: flow.subzoneKey,
-        specificMuscleKey: focus,
+        specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
         equipmentKey: flow.equipmentKey,
       );
     }
@@ -665,7 +667,7 @@ class TrainingFlow {
         regionKey: 'upper',
         groupKey: 'forearm_hand',
         subgroupKey: flow.subzoneKey,
-        specificMuscleKey: focus,
+        specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
         equipmentKey: flow.equipmentKey,
       );
     }
@@ -674,7 +676,7 @@ class TrainingFlow {
         regionKey: 'upper',
         groupKey: 'back',
         subgroupKey: focus,
-        specificMuscleKey: focus,
+        specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
         equipmentKey: flow.equipmentKey,
       );
     }
@@ -685,7 +687,7 @@ class TrainingFlow {
         regionKey: 'upper',
         groupKey: flow.groupKey,
         subgroupKey: focus,
-        specificMuscleKey: focus,
+        specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
         equipmentKey: flow.equipmentKey,
       );
     }
@@ -694,7 +696,7 @@ class TrainingFlow {
         regionKey: 'lower',
         groupKey: flow.groupKey.isEmpty ? 'legs' : flow.groupKey,
         subgroupKey: focus,
-        specificMuscleKey: focus,
+        specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
         equipmentKey: flow.equipmentKey,
       );
     }
@@ -702,10 +704,12 @@ class TrainingFlow {
       regionKey: flow.regionKey,
       groupKey: flow.groupKey,
       subgroupKey: flow.subzoneKey,
-      specificMuscleKey: focus,
+      specificMuscleKey: _isAggregateFocus(focus) ? '' : focus,
       equipmentKey: flow.equipmentKey,
     );
   }
+
+  static bool _isAggregateFocus(String key) => key.endsWith('_complete');
 
   static TrainingSelection _cardioSelection(TrainingFlowSelection flow) {
     final modeKey = flow.equipmentKey.isNotEmpty
