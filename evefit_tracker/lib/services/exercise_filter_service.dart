@@ -134,8 +134,7 @@ class ExerciseFilterService {
       return _orderedContextualPredicateFilters(visible, {
         'Bíceps': (exercise) => _isBicepsDominantExercise(exercise),
         'Braquial': (exercise) => _isBrachialisExercise(exercise),
-        'Braquiorradial': (exercise) =>
-            _isBrachioradialisExercise(exercise),
+        'Braquiorradial': (exercise) => _isBrachioradialisExercise(exercise),
         'Tríceps': (exercise) => _isTricepsExercise(exercise),
         'Flexores do antebraço': (exercise) =>
             _isForearmHandExercise(exercise, 'forearm_flexors'),
@@ -207,6 +206,8 @@ class ExerciseFilterService {
         workoutType.muscleGroups.trim().isNotEmpty) {
       final haystack = WorkoutTaxonomy.normalize(
         '${exercise.name} ${exercise.muscleGroup} '
+        '${exercise.primaryMuscleNodes ?? ''} '
+        '${exercise.secondaryMuscleNodes ?? ''} '
         '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
       );
       return workoutType.muscleGroups
@@ -337,6 +338,26 @@ class ExerciseFilterService {
     if (focus == 'forearm_hand' || focus == 'forearm_complete') {
       return tags.groupKeys.contains('forearm_hand') ||
           tags.subgroupKeys.contains('grip_strength');
+    }
+
+    if (exercise.primaryMuscleKey.isNotEmpty) {
+      final canonicalMuscles = {
+        exercise.primaryMuscleKey,
+        ...exercise.secondaryMuscleKeys,
+      };
+      if (canonicalMuscles.contains(focus) ||
+          tags.subgroupKeys.contains(focus) ||
+          tags.groupKeys.contains(focus)) {
+        return true;
+      }
+      if ((focus == 'biceps_brachii' && canonicalMuscles.contains('biceps')) ||
+          (focus == 'triceps' &&
+              canonicalMuscles.any((key) => key.startsWith('triceps_'))) ||
+          (focus == 'support_grip' &&
+              canonicalMuscles.contains('grip_support'))) {
+        return true;
+      }
+      return false;
     }
 
     // Specific muscles must not inherit siblings from the same broad group.
@@ -507,13 +528,17 @@ class ExerciseFilterService {
 
   static String _normalizedPrimaryText(Exercise exercise) =>
       WorkoutTaxonomy.normalize(
-        '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
+        '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment} '
+        '${exercise.primaryMuscleNodes ?? ''} '
+        '${exercise.secondaryMuscleNodes ?? ''}',
       );
 
   static String _normalizedDetailText(
     Exercise exercise,
   ) => WorkoutTaxonomy.normalize(
-    '${exercise.name} ${exercise.muscleGroup} ${exercise.secondaryMuscleGroups} ${exercise.equipment}',
+    '${exercise.name} ${exercise.muscleGroup} '
+    '${exercise.primaryMuscleNodes ?? ''} ${exercise.secondaryMuscleNodes ?? ''} '
+    '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
   );
 
   static bool _textHas(String text, List<String> values) =>
@@ -591,7 +616,6 @@ class ExerciseFilterService {
     'forearm_hand': <String>[],
     'forearm_complete': [
       'antebraco',
-      'antebraÃ§o',
       'wrist',
       'farmer',
       'suitcase',
@@ -600,9 +624,7 @@ class ExerciseFilterService {
       'dead hang',
       'aperto',
       'pronacao',
-      'pronaÃ§Ã£o',
       'supinacao',
-      'supinaÃ§Ã£o',
       'desvio radial',
       'desvio ulnar',
       'rotacao controlada',
@@ -621,7 +643,6 @@ class ExerciseFilterService {
       'russian twist',
       'bicycle crunch',
       'reverse crunch',
-      'elevaÃ§Ã£o de pernas',
       'elevacao de pernas',
       'vacuum',
       'flutter',
@@ -781,7 +802,6 @@ class ExerciseFilterService {
     ],
     'glutes_complete': ['glúteo', 'gluteo', 'hip thrust', 'ponte'],
     'thigh_complete': [
-      'quadrÃ­ceps',
       'quadriceps',
       'agachamento',
       'leg press',
@@ -794,7 +814,6 @@ class ExerciseFilterService {
       'posterior',
       'romeno',
       'curl de perna',
-      'glÃºteo',
       'gluteo',
       'hip thrust',
       'ponte',
@@ -809,9 +828,7 @@ class ExerciseFilterService {
     'soleus': ['sóleo', 'soleo'],
     'tibialis_anterior': ['tibial anterior'],
     'lower_leg_complete': [
-      'gÃ©meos',
       'gemeos',
-      'sÃ³leo',
       'soleo',
       'tibial anterior',
       'tornozelo',
@@ -824,6 +841,8 @@ class ExerciseFilterService {
   static bool _containsAny(Exercise exercise, List<String> values) {
     final haystack = WorkoutTaxonomy.normalize(
       '${exercise.name} ${exercise.muscleGroup} '
+      '${exercise.primaryMuscleNodes ?? ''} '
+      '${exercise.secondaryMuscleNodes ?? ''} '
       '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
     );
     return values.any(
@@ -833,7 +852,8 @@ class ExerciseFilterService {
 
   static bool _containsAnyPrimary(Exercise exercise, List<String> values) {
     final haystack = WorkoutTaxonomy.normalize(
-      '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment}',
+      '${exercise.name} ${exercise.muscleGroup} ${exercise.equipment} '
+      '${exercise.primaryMuscleNodes ?? ''}',
     );
     return values.any(
       (value) => haystack.contains(WorkoutTaxonomy.normalize(value)),

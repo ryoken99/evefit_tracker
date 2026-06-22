@@ -1,4 +1,5 @@
 import '../models/profile.dart';
+import 'equipment_catalog_service.dart';
 
 class ProfileSetupSection<T> {
   const ProfileSetupSection({required this.title, required this.options});
@@ -266,8 +267,8 @@ class ProfilePreferencesService {
   ];
 
   static Map<String, String> get equipmentMap => {
-    for (final section in equipmentSections)
-      for (final option in section.options) option.key: option.name,
+    for (final entry in EquipmentCatalogService.definitions.entries)
+      entry.key: entry.value.name,
   };
 
   static Set<String> toggleLocation(

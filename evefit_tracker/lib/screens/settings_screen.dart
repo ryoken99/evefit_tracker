@@ -9,7 +9,7 @@ import '../services/profile_preferences_service.dart';
 import '../services/training_location_service.dart';
 import 'profile_gate_screen.dart';
 
-const appVersionLabel = 'v0.7.16';
+const appVersionLabel = 'v0.8.0';
 const githubRepoUrl = 'https://github.com/ryoken99/evefit_tracker';
 const githubLatestReleaseUrl = '$githubRepoUrl/releases/latest';
 
@@ -45,7 +45,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           FilledButton.icon(
             onPressed: () => _openUrl(githubLatestReleaseUrl),
             icon: const Icon(Icons.system_update_alt),
-            label: const Text('Ver atualizações v0.7.16'),
+            label: const Text('Ver atualizações v0.8.0'),
           ),
           TextButton.icon(
             onPressed: () => _openUrl(githubRepoUrl),
@@ -322,7 +322,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       newPin.text.isNotEmpty ||
                       confirmPin.text.isNotEmpty;
                   if (wantsPinChange) {
-                    if (widget.database.isPinLocked(profile)) {
+                    if (await widget.database.isPinLocked(profile)) {
                       setSheetState(
                         () => error =
                             'Muitas tentativas. Tenta novamente dentro de 1 minuto.',

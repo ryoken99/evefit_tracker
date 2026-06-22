@@ -8,6 +8,11 @@ class ExerciseCatalogDetails {
     required this.executionSteps,
     required this.commonMistakes,
     required this.safetyNotes,
+    this.regression = '',
+    this.progression = '',
+    this.breathingTips = '',
+    this.postureTips = '',
+    this.adaptationNotes = '',
   });
 
   final String equipment;
@@ -16,6 +21,11 @@ class ExerciseCatalogDetails {
   final String executionSteps;
   final String commonMistakes;
   final String safetyNotes;
+  final String regression;
+  final String progression;
+  final String breathingTips;
+  final String postureTips;
+  final String adaptationNotes;
 }
 
 class ExerciseCatalogDetailService {
@@ -32,6 +42,16 @@ class ExerciseCatalogDetailService {
       executionSteps: stepsFor(name, group),
       commonMistakes: commonMistakesFor(name, group),
       safetyNotes: safetyNotesFor(name, group),
+      regression:
+          'Versão mais fácil de $name: reduz a carga, a amplitude ou usa um apoio estável até repetires o movimento sem compensações.',
+      progression:
+          'Versão mais difícil de $name: aumenta apenas uma variável de cada vez — carga, amplitude, tempo sob tensão ou complexidade.',
+      breathingTips:
+          'Respiração em $name: inspira na preparação ou retorno e expira durante a fase de maior esforço, sem prender o ar.',
+      postureTips:
+          'Postura em $name: organiza os apoios, mantém as articulações alinhadas e interrompe a série antes de perder a posição descrita.',
+      adaptationNotes:
+          'Adaptar ou evitar $name quando existir dor aguda, instabilidade, tontura ou uma limitação clínica que impeça a amplitude sem dor.',
     );
   }
 

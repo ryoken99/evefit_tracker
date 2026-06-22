@@ -18,11 +18,17 @@ import '../models/workout_template.dart';
 import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/exercise_catalog_context_service.dart';
+import '../services/exercise_muscle_node_service.dart';
+import '../services/exercise_taxonomy_service.dart';
+import '../services/exercise_v717_migration.dart';
+import '../services/equipment_catalog_service.dart';
 import '../services/pin_service.dart';
 import '../services/profile_preferences_service.dart';
 import '../services/training_architecture.dart';
 import '../services/training_location_service.dart';
 import '../services/workout_taxonomy.dart';
+import '../services/workout_template_service.dart';
+import 'migrations/v080_integrity_migration.dart';
 import 'seed_data.dart';
 
 class WorkoutEntry {
@@ -48,12 +54,14 @@ class WorkoutEntry {
 
 class AppDatabase {
   AppDatabase._();
+  factory AppDatabase.forTesting(Database database, {Profile? activeProfile}) =>
+      AppDatabase._forTesting(database, activeProfile);
+
+  AppDatabase._forTesting(this._database, this._activeProfile);
+
   static final instance = AppDatabase._();
   Database? _database;
   Profile? _activeProfile;
-
-  final Map<int, int> _pinFailedAttempts = {};
-  final Map<int, DateTime> _pinLockedUntil = {};
 
   int? get activeProfileId => _activeProfile?.id;
   Profile? get activeProfile => _activeProfile;
@@ -64,7 +72,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 16,
+      version: 18,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -80,6 +88,8 @@ class AppDatabase {
         await _migrateV79(db);
         await _migrateV710(db);
         await _migrateV711(db);
+        await _migrateV717(db);
+        await _migrateV080(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -127,6 +137,12 @@ class AppDatabase {
         if (oldVersion < 16) {
           await _migrateV711(db);
         }
+        if (oldVersion < 17) {
+          await _migrateV717(db);
+        }
+        if (oldVersion < 18) {
+          await _migrateV080(db);
+        }
       },
     );
   }
@@ -171,6 +187,11 @@ class AppDatabase {
 
   Future<void> _seedExercises(Database db) async {
     await _ensureExerciseCatalogIdentityColumns(db);
+    final storesTaxonomy = await _tableHasColumn(
+      db,
+      'exercises',
+      'region_keys',
+    );
     final now = DateTime.now().toIso8601String();
     for (final entry in ExerciseCatalogContextService.entries) {
       final existing = await db.query(
@@ -181,7 +202,11 @@ class AppDatabase {
         whereArgs: [entry.catalogEntryKey, entry.name, entry.group],
         limit: 1,
       );
-      final data = entry.toExercise().toMap()
+      final exercise = storesTaxonomy
+          ? ExerciseTaxonomyService.enrichCatalogExercise(entry)
+          : entry.toExercise();
+      final data = exercise.toMap()
+        ..addAll(_muscleNodeMapFor(entry))
         ..remove('id')
         ..['created_at'] = now
         ..['updated_at'] = now;
@@ -345,7 +370,7 @@ class AppDatabase {
         'Aberturas inclinadas',
         'Supino declinado',
         'Dips para peito',
-        'ExtensÃ£o francesa',
+        'Extensão francesa',
       ],
     );
   }
@@ -370,6 +395,17 @@ class AppDatabase {
     await _seedExercises(db);
     await _refreshDefaultExerciseDetails(db);
     await _ensureExerciseCatalogEntryIndex(db);
+  }
+
+  Future<void> _migrateV717(Database db) async {
+    await ExerciseV717Migration.migrate(db);
+  }
+
+  Future<void> _migrateV080(Database db) async {
+    await V080IntegrityMigration.migrate(db);
+    await _seedExercises(db);
+    await _refreshDefaultExerciseDetails(db);
+    await V080IntegrityMigration.migrate(db);
   }
 
   Future<void> _createTrainingArchitectureTables(Database db) async {
@@ -505,7 +541,7 @@ class AppDatabase {
       await db.update(
         'workout_types',
         {
-          'description': 'Tipo de treino predefinido v0.6.0.',
+          'description': 'Tipo de treino predefinido.',
           'muscle_groups': _defaultGroupsForWorkoutType(name),
           'is_hidden': 0,
           'updated_at': now,
@@ -525,11 +561,20 @@ class AppDatabase {
 
   Future<void> _refreshDefaultExerciseDetails(Database db) async {
     await _ensureExerciseCatalogIdentityColumns(db);
+    final storesTaxonomy = await _tableHasColumn(
+      db,
+      'exercises',
+      'region_keys',
+    );
     final now = DateTime.now().toIso8601String();
     for (final entry in ExerciseCatalogContextService.entries) {
+      final exercise = storesTaxonomy
+          ? ExerciseTaxonomyService.enrichCatalogExercise(entry)
+          : entry.toExercise();
       await db.update(
         'exercises',
-        entry.toExercise().toMap()
+        exercise.toMap()
+          ..addAll(_muscleNodeMapFor(entry))
           ..remove('id')
           ..remove('created_at')
           ..['updated_at'] = now,
@@ -595,7 +640,7 @@ class AppDatabase {
           'created_at': now,
           'updated_at': now,
           'is_active': 1,
-          'notes': 'Perfil migrado de uma versÃ£o antiga. Altera o PIN.',
+          'notes': 'Perfil migrado de uma versão antiga. Altera o PIN.',
         });
       }
     }
@@ -720,9 +765,16 @@ class AppDatabase {
     'execution_steps': 'TEXT',
     'common_mistakes': 'TEXT',
     'safety_notes': 'TEXT',
+    'regression': 'TEXT',
+    'progression': 'TEXT',
+    'breathing_tips': 'TEXT',
+    'posture_tips': 'TEXT',
+    'adaptation_notes': 'TEXT',
     'exercise_key': 'TEXT',
     'context_key': 'TEXT',
     'catalog_entry_key': 'TEXT',
+    'primaryMuscleNodes': 'TEXT',
+    'secondaryMuscleNodes': 'TEXT',
     'is_hidden': 'INTEGER NOT NULL DEFAULT 0',
     'created_at': 'TEXT',
     'updated_at': 'TEXT',
@@ -741,17 +793,17 @@ class AppDatabase {
 
   Future<void> _seedMuscleGroups(Database db) async {
     const groups = {
-      'Costas': 'Dorsal, romboides, trapÃ©zio e lombar.',
+      'Costas': 'Dorsal, romboides, trapézio e lombar.',
       'Ombros':
           'Deltoide anterior, lateral, posterior e estabilidade escapular.',
-      'Peito': 'Peitoral superior, mÃ©dio e inferior.',
-      'BÃ­ceps e braquial': 'BÃ­ceps, braquial e braquiorradial.',
-      'TrÃ­ceps': 'CabeÃ§a longa, lateral e medial do trÃ­ceps.',
-      'AntebraÃ§o, punho, mÃ£o e pega':
-          'Flexores/extensores do punho e forÃ§a de pega.',
-      'Core e abdominal': 'AbdÃ³men, oblÃ­quos, transverso e lombar.',
-      'Pernas': 'QuadricÃ­pite, posterior, glÃºteos, adutores e gÃ©meos.',
-      'Cardio': 'Condicionamento e resistÃªncia.',
+      'Peito': 'Peitoral superior, médio e inferior.',
+      'Bíceps e braquial': 'Bíceps, braquial e braquiorradial.',
+      'Tríceps': 'Cabeça longa, lateral e medial do tríceps.',
+      'Antebraço, punho, mão e pega':
+          'Flexores/extensores do punho e força de pega.',
+      'Core e abdominal': 'Abdómen, oblíquos, transverso e lombar.',
+      'Pernas': 'Quadricípite, posterior, glúteos, adutores e gémeos.',
+      'Cardio': 'Condicionamento e resistência.',
     };
     for (final entry in groups.entries) {
       await db.insert(
@@ -795,65 +847,65 @@ class AppDatabase {
 
   Future<void> _seedExpandedMuscleGroups(Database db) async {
     const groups = {
-      'PescoÃ§o': 'Musculatura cervical. Usar cargas leves e controlo.',
-      'TrapÃ©zio superior': 'ElevaÃ§Ã£o e estabilizaÃ§Ã£o escapular.',
-      'TrapÃ©zio mÃ©dio': 'RetraÃ§Ã£o escapular.',
-      'TrapÃ©zio inferior': 'DepressÃ£o e rotaÃ§Ã£o escapular.',
-      'Deltoide anterior': 'ElevaÃ§Ã£o e press Ã  frente.',
+      'Pescoço': 'Musculatura cervical. Usar cargas leves e controlo.',
+      'Trapézio superior': 'Elevação e estabilização escapular.',
+      'Trapézio médio': 'Retração escapular.',
+      'Trapézio inferior': 'Depressão e rotação escapular.',
+      'Deltoide anterior': 'Elevação e press à frente.',
       'Deltoide lateral': 'Largura visual dos ombros.',
       'Deltoide posterior': 'Parte posterior do ombro.',
-      'Manguito rotador': 'Estabilidade e rotaÃ§Ã£o do ombro.',
-      'Peito superior': 'PorÃ§Ã£o clavicular do peitoral.',
-      'Peito mÃ©dio': 'PorÃ§Ã£o mÃ©dia do peitoral.',
-      'Peito inferior': 'PorÃ§Ã£o inferior do peitoral.',
-      'SerrÃ¡til anterior': 'Estabilidade escapular e caixa torÃ¡cica.',
-      'Dorsal / latÃ­ssimo do dorso': 'Largura das costas.',
-      'Romboides': 'RetraÃ§Ã£o escapular.',
+      'Manguito rotador': 'Estabilidade e rotação do ombro.',
+      'Peito superior': 'Porção clavicular do peitoral.',
+      'Peito médio': 'Porção média do peitoral.',
+      'Peito inferior': 'Porção inferior do peitoral.',
+      'Serrátil anterior': 'Estabilidade escapular e caixa torácica.',
+      'Dorsal / latíssimo do dorso': 'Largura das costas.',
+      'Romboides': 'Retração escapular.',
       'Redondo maior': 'Auxiliar da puxada.',
       'Redondo menor': 'Estabilidade posterior do ombro.',
-      'Eretores da espinha / lombar': 'ExtensÃ£o e estabilidade lombar.',
-      'BraÃ§os': 'BraÃ§o completo.',
-      'BÃ­ceps': 'FlexÃ£o do cotovelo e supinaÃ§Ã£o.',
+      'Eretores da espinha / lombar': 'Extensão e estabilidade lombar.',
+      'Braços': 'Braço completo.',
+      'Bíceps': 'Flexão do cotovelo e supinação.',
       'Braquial': 'Flexor profundo do cotovelo.',
-      'Braquiorradial': 'Flexor do cotovelo no antebraÃ§o.',
-      'TrÃ­ceps cabeÃ§a longa': 'ExtensÃ£o do cotovelo e ombro.',
-      'TrÃ­ceps cabeÃ§a lateral': 'ExtensÃ£o do cotovelo.',
-      'TrÃ­ceps cabeÃ§a medial': 'ExtensÃ£o controlada do cotovelo.',
-      'AntebraÃ§o e mÃ£o': 'Punho, mÃ£os, dedos e pega.',
-      'Flexores do antebraÃ§o': 'FlexÃ£o do punho e dedos.',
-      'Extensores do antebraÃ§o': 'ExtensÃ£o do punho e dedos.',
-      'PronaÃ§Ã£o': 'RotaÃ§Ã£o interna do antebraÃ§o.',
-      'SupinaÃ§Ã£o': 'RotaÃ§Ã£o externa do antebraÃ§o.',
+      'Braquiorradial': 'Flexor do cotovelo no antebraço.',
+      'Tríceps cabeça longa': 'Extensão do cotovelo e ombro.',
+      'Tríceps cabeça lateral': 'Extensão do cotovelo.',
+      'Tríceps cabeça medial': 'Extensão controlada do cotovelo.',
+      'Antebraço e mão': 'Punho, mãos, dedos e pega.',
+      'Flexores do antebraço': 'Flexão do punho e dedos.',
+      'Extensores do antebraço': 'Extensão do punho e dedos.',
+      'Pronação': 'Rotação interna do antebraço.',
+      'Supinação': 'Rotação externa do antebraço.',
       'Punho': 'Estabilidade do punho.',
-      'MÃ£os': 'ForÃ§a geral da mÃ£o.',
-      'Dedos': 'Pega fina e pinÃ§a.',
-      'ForÃ§a de pega': 'Capacidade de agarrar e sustentar carga.',
-      'Reto abdominal': 'FlexÃ£o do tronco.',
-      'OblÃ­quos': 'RotaÃ§Ã£o e inclinaÃ§Ã£o lateral.',
+      'Mãos': 'Força geral da mão.',
+      'Dedos': 'Pega fina e pinça.',
+      'Força de pega': 'Capacidade de agarrar e sustentar carga.',
+      'Reto abdominal': 'Flexão do tronco.',
+      'Oblíquos': 'Rotação e inclinação lateral.',
       'Transverso abdominal': 'Estabilidade profunda.',
       'Lombar': 'Estabilidade posterior do tronco.',
       'Estabilidade do core': 'Controlo global do tronco.',
-      'GlÃºteo mÃ¡ximo': 'ExtensÃ£o da anca.',
-      'GlÃºteo mÃ©dio': 'Estabilidade lateral da anca.',
-      'GlÃºteo mÃ­nimo': 'EstabilizaÃ§Ã£o profunda da anca.',
-      'QuadrÃ­ceps': 'ExtensÃ£o do joelho.',
-      'Reto femoral': 'QuadrÃ­ceps e flexÃ£o da anca.',
-      'Vasto lateral': 'PorÃ§Ã£o externa do quadrÃ­ceps.',
-      'Vasto medial': 'PorÃ§Ã£o interna do quadrÃ­ceps.',
-      'Vasto intermÃ©dio': 'PorÃ§Ã£o profunda do quadrÃ­ceps.',
-      'Posterior de coxa': 'FlexÃ£o do joelho e extensÃ£o da anca.',
-      'BÃ­ceps femoral': 'Posterior lateral da coxa.',
+      'Glúteo máximo': 'Extensão da anca.',
+      'Glúteo médio': 'Estabilidade lateral da anca.',
+      'Glúteo mínimo': 'Estabilização profunda da anca.',
+      'Quadríceps': 'Extensão do joelho.',
+      'Reto femoral': 'Quadríceps e flexão da anca.',
+      'Vasto lateral': 'Porção externa do quadríceps.',
+      'Vasto medial': 'Porção interna do quadríceps.',
+      'Vasto intermédio': 'Porção profunda do quadríceps.',
+      'Posterior de coxa': 'Flexão do joelho e extensão da anca.',
+      'Bíceps femoral': 'Posterior lateral da coxa.',
       'Semitendinoso': 'Posterior medial da coxa.',
       'Semimembranoso': 'Posterior medial profundo.',
-      'Adutores': 'AduÃ§Ã£o da anca.',
-      'Abdutores': 'AbduÃ§Ã£o da anca.',
-      'GÃ©meos': 'FlexÃ£o plantar.',
-      'SÃ³leo': 'FlexÃ£o plantar com joelho fletido.',
-      'Tibial anterior': 'DorsiflexÃ£o.',
-      'Karate': 'Condicionamento e drills tÃ©cnicos genÃ©ricos.',
-      'Jiu-Jitsu': 'Mobilidade, base e condicionamento genÃ©rico.',
+      'Adutores': 'Adução da anca.',
+      'Abdutores': 'Abdução da anca.',
+      'Gémeos': 'Flexão plantar.',
+      'Sóleo': 'Flexão plantar com joelho fletido.',
+      'Tibial anterior': 'Dorsiflexão.',
+      'Karate': 'Condicionamento e drills técnicos genéricos.',
+      'Jiu-Jitsu': 'Mobilidade, base e condicionamento genérico.',
       'Mobilidade': 'Amplitude e controlo articular.',
-      'Alongamento': 'Flexibilidade e recuperaÃ§Ã£o.',
+      'Alongamento': 'Flexibilidade e recuperação.',
       'Outro': 'Grupo livre.',
     };
     for (final entry in groups.entries) {
@@ -879,13 +931,13 @@ class AppDatabase {
       'UPDATE exercises SET primary_muscle_group = muscle_group WHERE primary_muscle_group IS NULL OR primary_muscle_group = ""',
     );
     await db.rawUpdate(
-      'UPDATE exercises SET description = "ExercÃ­cio de forÃ§a para desenvolver o grupo muscular principal com tÃ©cnica controlada." WHERE description IS NULL OR description = ""',
+      'UPDATE exercises SET description = "Exercício de força para desenvolver o grupo muscular principal com técnica controlada." WHERE description IS NULL OR description = ""',
     );
     await db.rawUpdate(
-      'UPDATE exercises SET execution_steps = "1. Ajusta a posiÃ§Ã£o inicial. 2. MantÃ©m o tronco estÃ¡vel. 3. Executa a repetiÃ§Ã£o com controlo. 4. Regressa sem perder tensÃ£o." WHERE execution_steps IS NULL OR execution_steps = ""',
+      'UPDATE exercises SET execution_steps = "1. Ajusta a posição inicial. 2. Mantém o tronco estável. 3. Executa a repetição com controlo. 4. Regressa sem perder tensão." WHERE execution_steps IS NULL OR execution_steps = ""',
     );
     await db.rawUpdate(
-      'UPDATE exercises SET common_mistakes = "Carga excessiva, balanÃ§o do corpo e amplitude incompleta." WHERE common_mistakes IS NULL OR common_mistakes = ""',
+      'UPDATE exercises SET common_mistakes = "Carga excessiva, balanço do corpo e amplitude incompleta." WHERE common_mistakes IS NULL OR common_mistakes = ""',
     );
     await db.rawUpdate(
       'UPDATE exercises SET safety_notes = "Usa carga progressiva e interrompe se surgir dor articular." WHERE safety_notes IS NULL OR safety_notes = ""',
@@ -896,6 +948,14 @@ class AppDatabase {
     await _addColumnIfMissing(db, 'exercises', 'exercise_key', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'context_key', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'catalog_entry_key', 'TEXT');
+  }
+
+  Map<String, Object?> _muscleNodeMapFor(ExerciseCatalogEntry entry) {
+    final nodes = ExerciseMuscleNodeService.nodesForCatalogEntry(entry);
+    return {
+      'primaryMuscleNodes': nodes.primary,
+      'secondaryMuscleNodes': nodes.secondary,
+    };
   }
 
   Future<void> _ensureExerciseCatalogEntryIndex(Database db) async {
@@ -921,6 +981,11 @@ class AppDatabase {
         // enough; the migration must never drop user data.
       }
     }
+  }
+
+  Future<bool> _tableHasColumn(Database db, String table, String column) async {
+    final info = await db.rawQuery('PRAGMA table_info($table)');
+    return info.any((row) => row['name'] == column);
   }
 
   Future<List<Profile>> profiles() async {
@@ -953,33 +1018,58 @@ class AppDatabase {
     _activeProfile = profile.copyWith(isActive: true);
   }
 
-  bool isPinLocked(Profile profile) {
+  Future<bool> isPinLocked(Profile profile) async {
     final id = profile.id;
     if (id == null) return false;
-    final locked = _pinLockedUntil[id];
-    return locked != null && DateTime.now().isBefore(locked);
+    final rows = await (await database).query(
+      'profile_security',
+      where: 'profile_id = ?',
+      whereArgs: [id],
+      limit: 1,
+    );
+    if (rows.isEmpty || rows.first['locked_until'] == null) return false;
+    final lockedUntil = DateTime.tryParse(rows.first['locked_until'] as String);
+    if (lockedUntil != null && DateTime.now().isBefore(lockedUntil)) {
+      return true;
+    }
+    await (await database).update(
+      'profile_security',
+      {'failed_attempts': 0, 'locked_until': null},
+      where: 'profile_id = ?',
+      whereArgs: [id],
+    );
+    return false;
   }
 
   Future<bool> verifyProfilePin(Profile profile, String pin) async {
     final id = profile.id;
-    if (id != null) {
-      final locked = _pinLockedUntil[id];
-      if (locked != null && DateTime.now().isBefore(locked)) {
-        return false;
-      }
-    }
+    if (id != null && await isPinLocked(profile)) return false;
     final ok = PinService.verifyPin(pin: pin, hash: profile.pinHash);
     if (id != null) {
+      final db = await database;
       if (ok) {
-        _pinFailedAttempts.remove(id);
-        _pinLockedUntil.remove(id);
+        await db.insert('profile_security', {
+          'profile_id': id,
+          'failed_attempts': 0,
+          'locked_until': null,
+        }, conflictAlgorithm: ConflictAlgorithm.replace);
       } else {
-        final attempts = (_pinFailedAttempts[id] ?? 0) + 1;
-        _pinFailedAttempts[id] = attempts;
-        if (attempts >= 5) {
-          _pinLockedUntil[id] = DateTime.now().add(const Duration(minutes: 1));
-          _pinFailedAttempts.remove(id);
-        }
+        final rows = await db.query(
+          'profile_security',
+          columns: ['failed_attempts'],
+          where: 'profile_id = ?',
+          whereArgs: [id],
+          limit: 1,
+        );
+        final attempts =
+            (rows.isEmpty ? 0 : rows.first['failed_attempts'] as int) + 1;
+        await db.insert('profile_security', {
+          'profile_id': id,
+          'failed_attempts': attempts >= 5 ? 0 : attempts,
+          'locked_until': attempts >= 5
+              ? DateTime.now().add(const Duration(minutes: 1)).toIso8601String()
+              : null,
+        }, conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
     return ok;
@@ -1101,8 +1191,10 @@ class AppDatabase {
     required Map<String, String> availableEquipment,
   }) async {
     final now = DateTime.now();
-    final isGym = trainingLocation.toLowerCase().contains('gin');
-    final equipment = isGym ? defaultEquipment : availableEquipment;
+    final equipment = EquipmentCatalogService.availableKeys(
+      trainingLocations: TrainingLocationService.parse(trainingLocation),
+      selectedEquipmentKeys: availableEquipment.keys.toSet(),
+    );
     for (final entry in defaultEquipment.entries) {
       await db.insert(
         'profile_equipment',
@@ -1110,7 +1202,7 @@ class AppDatabase {
           profileId: profileId,
           equipmentKey: entry.key,
           equipmentName: entry.value,
-          isAvailable: isGym || equipment.containsKey(entry.key),
+          isAvailable: equipment.contains(entry.key),
           createdAt: now,
           updatedAt: now,
         ).toMap()..remove('id'),
@@ -1241,10 +1333,12 @@ class AppDatabase {
 
   Future<Set<String>> availableEquipmentKeys() async {
     final items = await profileEquipment();
-    return items
-        .where((item) => item.isAvailable)
-        .map((item) => item.equipmentKey)
-        .toSet();
+    return {
+      'bodyweight',
+      ...items
+          .where((item) => item.isAvailable)
+          .map((item) => item.equipmentKey),
+    };
   }
 
   Future<void> updateProfileEquipment(
@@ -1253,7 +1347,7 @@ class AppDatabase {
     await _insertProfileEquipment(
       await database,
       profileId: _requireProfileId(),
-      trainingLocation: '',
+      trainingLocation: _activeProfile?.trainingLocation ?? '',
       availableEquipment: availableEquipment,
     );
   }
@@ -1328,6 +1422,30 @@ class AppDatabase {
     );
   }
 
+  Future<void> updateDashboardWidgets(
+    List<DashboardWidgetConfig> widgets,
+  ) async {
+    final db = await database;
+    final profileId = _requireProfileId();
+    await db.transaction((txn) async {
+      final now = DateTime.now().toIso8601String();
+      for (final widget in widgets) {
+        final updated = await txn.update(
+          'dashboard_widgets',
+          widget.toMap()
+            ..remove('id')
+            ..['profile_id'] = profileId
+            ..['updated_at'] = now,
+          where: 'id = ? AND profile_id = ?',
+          whereArgs: [widget.id, profileId],
+        );
+        if (updated != 1) {
+          throw StateError('Dashboard widget inválido: ${widget.id}');
+        }
+      }
+    });
+  }
+
   Future<void> resetDashboardWidgets() async {
     final db = await database;
     final profileId = _requireProfileId();
@@ -1340,10 +1458,16 @@ class AppDatabase {
   }
 
   Future<List<Exercise>> exercises() async {
-    final rows = await (await database).query(
-      'exercises',
-      where: 'is_hidden = 0 OR is_hidden IS NULL',
-      orderBy: 'muscle_group, name',
+    final profileId = _requireProfileId();
+    final rows = await (await database).rawQuery(
+      'SELECT exercises.* FROM exercises '
+      'WHERE (exercises.is_hidden = 0 OR exercises.is_hidden IS NULL) '
+      'AND ((exercises.is_default = 1 AND NOT EXISTS ('
+      'SELECT 1 FROM profile_hidden_exercises hidden '
+      'WHERE hidden.exercise_id = exercises.id AND hidden.profile_id = ?)) '
+      'OR (exercises.is_default = 0 AND exercises.profile_id = ?)) '
+      'ORDER BY exercises.muscle_group, exercises.name',
+      [profileId, profileId],
     );
     return rows.map(Exercise.fromMap).toList();
   }
@@ -1354,6 +1478,7 @@ class AppDatabase {
       'exercises',
       (exercise.toMap()
         ..remove('id')
+        ..['profile_id'] = exercise.isDefault ? null : _requireProfileId()
         ..['created_at'] = (exercise.createdAt ?? now).toIso8601String()
         ..['updated_at'] = (exercise.updatedAt ?? now).toIso8601String()),
     );
@@ -1363,18 +1488,40 @@ class AppDatabase {
     await (await database).update(
       'exercises',
       (exercise.toMap()..remove('id'))
+        ..['profile_id'] = _requireProfileId()
+        ..['is_default'] = 0
         ..['updated_at'] = DateTime.now().toIso8601String(),
-      where: 'id = ?',
-      whereArgs: [exercise.id],
+      where: 'id = ? AND is_default = 0 AND profile_id = ?',
+      whereArgs: [exercise.id, _requireProfileId()],
     );
   }
 
   Future<void> deleteExercise(int id) async {
-    await (await database).update(
+    final db = await database;
+    final profileId = _requireProfileId();
+    final rows = await db.query(
       'exercises',
-      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
+      columns: ['id', 'is_default', 'profile_id'],
       where: 'id = ?',
       whereArgs: [id],
+      limit: 1,
+    );
+    if (rows.isEmpty) return;
+    final row = rows.single;
+    if (row['is_default'] == 1) {
+      await db.insert('profile_hidden_exercises', {
+        'profile_id': profileId,
+        'exercise_id': id,
+        'created_at': DateTime.now().toIso8601String(),
+      }, conflictAlgorithm: ConflictAlgorithm.ignore);
+      return;
+    }
+    if (row['profile_id'] != profileId) return;
+    await db.update(
+      'exercises',
+      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
+      where: 'id = ? AND profile_id = ?',
+      whereArgs: [id, profileId],
     );
   }
 
@@ -1475,34 +1622,69 @@ class AppDatabase {
 
   Future<int> insertWorkoutFromTemplate({
     required Workout workout,
-    required List<String> exerciseNames,
+    List<WorkoutTemplateExerciseRef> exerciseReferences = const [],
+    List<String> exerciseNames = const [],
   }) async {
     final db = await database;
     final profileId = _requireProfileId();
+    final references = [
+      ...exerciseReferences,
+      for (final name in exerciseNames)
+        WorkoutTemplateExerciseRef(legacyName: name),
+    ];
     return db.transaction((txn) async {
       final workoutId = await txn.insert(
         'workouts',
         (workout.toMap()..remove('id'))..['profile_id'] = profileId,
       );
-      for (final name in exerciseNames) {
-        final rows = await txn.query(
-          'exercises',
-          columns: ['id'],
-          where: 'name = ?',
-          whereArgs: [name],
-          limit: 1,
-        );
-        if (rows.isNotEmpty) {
+      for (final reference in references) {
+        final exerciseId = await _resolveTemplateExerciseId(txn, reference);
+        if (exerciseId != null) {
           await txn.insert('workout_exercises', {
             'profile_id': profileId,
             'workout_id': workoutId,
-            'exercise_id': rows.first['id'],
+            'exercise_id': exerciseId,
             'notes': '',
           }, conflictAlgorithm: ConflictAlgorithm.ignore);
         }
       }
       return workoutId;
     });
+  }
+
+  Future<int?> _resolveTemplateExerciseId(
+    DatabaseExecutor db,
+    WorkoutTemplateExerciseRef reference,
+  ) async {
+    if (reference.catalogEntryKey.isNotEmpty) {
+      final rows = await db.query(
+        'exercises',
+        columns: ['id'],
+        where: 'catalog_entry_key = ?',
+        whereArgs: [reference.catalogEntryKey],
+        limit: 1,
+      );
+      if (rows.isNotEmpty) return rows.single['id'] as int;
+    }
+    if (reference.exerciseKey.isNotEmpty && reference.contextKey.isNotEmpty) {
+      final rows = await db.query(
+        'exercises',
+        columns: ['id'],
+        where: 'exercise_key = ? AND context_key = ?',
+        whereArgs: [reference.exerciseKey, reference.contextKey],
+        limit: 1,
+      );
+      if (rows.isNotEmpty) return rows.single['id'] as int;
+    }
+    if (reference.legacyName.isEmpty) return null;
+    final legacyRows = await db.query(
+      'exercises',
+      columns: ['id'],
+      where: 'name = ?',
+      whereArgs: [reference.legacyName],
+      limit: 2,
+    );
+    return legacyRows.length == 1 ? legacyRows.single['id'] as int : null;
   }
 
   Future<List<CustomWorkoutTemplate>> workoutTemplates() async {
@@ -1573,26 +1755,47 @@ class AppDatabase {
       whereArgs: [profileId],
       orderBy: 'date DESC',
     );
-    final entries = <WorkoutEntry>[];
-    for (final row in workoutRows) {
-      final workout = Workout.fromMap(row);
-      final setRows = await db.rawQuery(
-        'SELECT workout_sets.*, exercises.name AS exercise_name FROM workout_sets JOIN exercises ON exercises.id = workout_sets.exercise_id WHERE workout_id = ? AND workout_sets.profile_id = ? ORDER BY set_number',
-        [workout.id, profileId],
-      );
-      final exerciseRows = await db.rawQuery(
-        'SELECT workout_exercises.*, exercises.name AS exercise_name, exercises.primary_muscle_group AS muscle_group FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id WHERE workout_id = ? AND workout_exercises.profile_id = ? ORDER BY workout_exercises.id',
-        [workout.id, profileId],
-      );
-      entries.add(
-        WorkoutEntry(
-          workout: workout,
-          sets: setRows.map(WorkoutSet.fromMap).toList(),
-          exercises: exerciseRows.map(WorkoutExercise.fromMap).toList(),
-        ),
-      );
+    if (workoutRows.isEmpty) return [];
+
+    final workouts = workoutRows.map(Workout.fromMap).toList();
+    final workoutIds = workouts.map((workout) => workout.id!).toList();
+    final placeholders = List.filled(workoutIds.length, '?').join(',');
+    final setRows = await db.rawQuery(
+      'SELECT workout_sets.*, exercises.name AS exercise_name '
+      'FROM workout_sets JOIN exercises ON exercises.id = workout_sets.exercise_id '
+      'WHERE workout_id IN ($placeholders) AND workout_sets.profile_id = ? '
+      'ORDER BY workout_id, set_number',
+      [...workoutIds, profileId],
+    );
+    final exerciseRows = await db.rawQuery(
+      'SELECT workout_exercises.*, exercises.name AS exercise_name, '
+      'COALESCE(NULLIF(exercises.primaryMuscleNodes, ""), exercises.primary_muscle_group) AS muscle_group '
+      'FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id '
+      'WHERE workout_id IN ($placeholders) AND workout_exercises.profile_id = ? '
+      'ORDER BY workout_id, workout_exercises.id',
+      [...workoutIds, profileId],
+    );
+    final setsByWorkout = <int, List<WorkoutSet>>{};
+    for (final row in setRows) {
+      final set = WorkoutSet.fromMap(row);
+      setsByWorkout.putIfAbsent(set.workoutId!, () => []).add(set);
     }
-    return entries;
+    final exercisesByWorkout = <int, List<WorkoutExercise>>{};
+    for (final row in exerciseRows) {
+      final exercise = WorkoutExercise.fromMap(row);
+      exercisesByWorkout
+          .putIfAbsent(exercise.workoutId, () => [])
+          .add(exercise);
+    }
+    return workouts
+        .map(
+          (workout) => WorkoutEntry(
+            workout: workout,
+            sets: setsByWorkout[workout.id] ?? const [],
+            exercises: exercisesByWorkout[workout.id] ?? const [],
+          ),
+        )
+        .toList();
   }
 
   Future<int> workoutsThisWeek() async {
@@ -1657,8 +1860,7 @@ class AppDatabase {
   Future<int> insertGoal(Goal goal) async {
     return (await database).insert(
       'goals',
-      (goal.toMap()..remove('id'))
-        ..['profile_id'] = goal.profileId ?? _requireProfileId(),
+      (goal.toMap()..remove('id'))..['profile_id'] = _requireProfileId(),
     );
   }
 
@@ -1680,29 +1882,62 @@ class AppDatabase {
   }
 
   Future<List<GoalMilestone>> goalMilestones(int goalId) async {
-    final rows = await (await database).query(
-      'goal_milestones',
-      where: 'goal_id = ?',
-      whereArgs: [goalId],
-      orderBy: 'sort_order',
+    final rows = await (await database).rawQuery(
+      'SELECT goal_milestones.* FROM goal_milestones '
+      'JOIN goals ON goals.id = goal_milestones.goal_id '
+      'WHERE goal_milestones.goal_id = ? AND goals.profile_id = ? '
+      'ORDER BY goal_milestones.sort_order',
+      [goalId, _requireProfileId()],
     );
     return rows.map(GoalMilestone.fromMap).toList();
   }
 
   Future<void> insertGoalMilestone(GoalMilestone milestone) async {
-    await (await database).insert(
-      'goal_milestones',
-      milestone.toMap()..remove('id'),
-    );
+    final db = await database;
+    if (!await _activeProfileOwnsGoal(db, milestone.goalId)) {
+      throw StateError('O objetivo não pertence ao perfil ativo.');
+    }
+    await db.insert('goal_milestones', milestone.toMap()..remove('id'));
   }
 
   Future<void> updateGoalMilestone(GoalMilestone milestone) async {
-    await (await database).update(
+    final db = await database;
+    final profileId = _requireProfileId();
+    if (!await _activeProfileOwnsGoal(db, milestone.goalId)) return;
+    await db.update(
       'goal_milestones',
       milestone.toMap()..remove('id'),
-      where: 'id = ?',
-      whereArgs: [milestone.id],
+      where:
+          'id = ? AND EXISTS ('
+          'SELECT 1 FROM goals '
+          'WHERE goals.id = goal_milestones.goal_id '
+          'AND goals.profile_id = ?)',
+      whereArgs: [milestone.id, profileId],
     );
+  }
+
+  Future<void> deleteGoalMilestone(int id) async {
+    final profileId = _requireProfileId();
+    await (await database).delete(
+      'goal_milestones',
+      where:
+          'id = ? AND EXISTS ('
+          'SELECT 1 FROM goals '
+          'WHERE goals.id = goal_milestones.goal_id '
+          'AND goals.profile_id = ?)',
+      whereArgs: [id, profileId],
+    );
+  }
+
+  Future<bool> _activeProfileOwnsGoal(DatabaseExecutor db, int goalId) async {
+    final rows = await db.query(
+      'goals',
+      columns: ['id'],
+      where: 'id = ? AND profile_id = ?',
+      whereArgs: [goalId, _requireProfileId()],
+      limit: 1,
+    );
+    return rows.isNotEmpty;
   }
 
   Future<void> setGoalCompleted(Goal goal, bool completed) async {
@@ -1748,6 +1983,13 @@ class AppDatabase {
         where: 'profile_id = ?',
         whereArgs: [profileId],
         orderBy: 'phase, id',
+      ),
+      'milestones': await db.rawQuery(
+        'SELECT goal_milestones.* FROM goal_milestones '
+        'JOIN goals ON goals.id = goal_milestones.goal_id '
+        'WHERE goals.profile_id = ? '
+        'ORDER BY goal_milestones.goal_id, goal_milestones.sort_order',
+        [profileId],
       ),
     };
   }

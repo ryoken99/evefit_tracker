@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão do release (ex: v0.7.16)'
+        description: 'Versão do release (v0.8.0)'
         required: true
-        default: 'v0.7.16'
+        default: 'v0.8.0'
 
 permissions:
   contents: write
@@ -63,14 +63,16 @@ jobs:
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v0.7.16
-            - Catálogo de exercícios expandido: todos os músculos e exercícios em falta adicionados
-            - Duplicados removidos do catálogo (exercícios, músculos, equipamento)
-            - Hierarquia de treino reescrita (região → grupo → subgrupo → músculo)
-            - Filtros corrigidos para corresponder corretamente à hierarquia selecionada
-            - Novo grupo Lombar com 8 exercícios dedicados
-            - 27 novos músculos e 6 novos subgrupos na arquitetura de treino
-            - Todas as descrições de exercícios reescritas para iniciantes absolutos
+            ### Novidades v0.8.0
+            - Corrigido isolamento de objetivos e milestones por perfil.
+            - Corrigido isolamento de equipamentos e locais por perfil.
+            - Corrigidos filtros anatómicos dos exercícios.
+            - Revistas descrições e execuções individuais dos exercícios.
+            - Expandido catálogo de exercícios por músculo, equipamento e local.
+            - Corrigido encoding corrompido.
+            - Corrigida associação de templates a exercícios.
+            - Melhoradas validações e testes.
+            - Atualizada versão da app para v0.8.0.
 
             ### Instalação
             Descarrega o ficheiro `app-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).

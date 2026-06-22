@@ -7,6 +7,7 @@ import '../models/exercise.dart';
 import '../models/workout.dart';
 import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
+import '../services/exercise_display_service.dart';
 import '../services/exercise_filter_service.dart';
 import '../services/training_architecture.dart';
 import '../services/workout_taxonomy.dart';
@@ -451,10 +452,10 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                                 title: Text(exercise.name),
                                 subtitle: Text(
                                   !item.isAvailable && showAll
-                                      ? '${exercise.muscleGroup} · ${exercise.equipment}\n${item.unavailableReason}'
-                                      : exercise.description.isEmpty
-                                      ? exercise.muscleGroup
-                                      : '${exercise.muscleGroup} · ${exercise.equipment}',
+                                      ? '${ExerciseDisplayService.subtitleForList(exercise)}\n${item.unavailableReason}'
+                                      : ExerciseDisplayService.subtitleForList(
+                                          exercise,
+                                        ),
                                 ),
                                 trailing: IconButton(
                                   tooltip: 'Explicação',
@@ -546,11 +547,24 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
             children: [
               _InfoLine('Grupo principal', exercise.muscleGroup),
               _InfoLine('Grupos secundários', exercise.secondaryMuscleGroups),
+              _InfoLine(
+                'Trabalha principalmente',
+                ExerciseDisplayService.primaryMuscles(exercise).join(', '),
+              ),
+              _InfoLine(
+                'Também ajuda',
+                ExerciseDisplayService.secondaryMuscles(exercise).join(', '),
+              ),
               _InfoLine('Equipamento', exercise.equipment),
               _InfoLine('Descrição', exercise.description),
               _InfoLine('Execução', exercise.executionSteps),
               _InfoLine('Erros comuns', exercise.commonMistakes),
               _InfoLine('Segurança', exercise.safetyNotes),
+              _InfoLine('Versão mais fácil', exercise.regression),
+              _InfoLine('Versão mais difícil', exercise.progression),
+              _InfoLine('Respiração', exercise.breathingTips),
+              _InfoLine('Postura', exercise.postureTips),
+              _InfoLine('Quando adaptar ou evitar', exercise.adaptationNotes),
             ],
           ),
         ),

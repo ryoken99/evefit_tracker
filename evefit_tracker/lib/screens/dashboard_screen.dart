@@ -6,6 +6,7 @@ import '../models/dashboard_widget_config.dart';
 import '../models/user_profile.dart';
 import '../services/csv_export_service.dart';
 import '../services/dashboard_metric_service.dart';
+import '../services/profile_display_service.dart';
 import '../services/dashboard_widget_draft_service.dart';
 import '../widgets/progress_chart.dart';
 import '../widgets/stat_card.dart';
@@ -122,7 +123,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               const SizedBox(height: 4),
               Text(
-                '${profile.name} · ${profile.heightCm.toStringAsFixed(0)} cm · objetivo ${profile.mainGoal}',
+                '${profile.name} · ${ProfileDisplayService.heightLabel(profile.heightCm)} · objetivo ${profile.mainGoal}',
                 style: Theme.of(
                   context,
                 ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
@@ -332,9 +333,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       Expanded(
                         child: FilledButton.icon(
                           onPressed: () async {
-                            for (final item in draft) {
-                              await widget.database.updateDashboardWidget(item);
-                            }
+                            await widget.database.updateDashboardWidgets(draft);
                             if (context.mounted) Navigator.pop(context, true);
                           },
                           icon: const Icon(Icons.save_outlined),

@@ -764,7 +764,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       ? await widget.database.insertWorkout(workout)
                       : await widget.database.insertWorkoutFromTemplate(
                           workout: workout,
-                          exerciseNames: template.exerciseNames,
+                          exerciseReferences: template.exercises,
                         );
                   final entries = await widget.database.workouts();
                   final entry = entries.firstWhere(
@@ -1086,50 +1086,25 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   }
 
   String _regionName(String key) {
-    return TrainingArchitecture.regions
-        .firstWhere(
-          (item) => item.key == key,
-          orElse: () => TrainingArchitecture.regions.first,
-        )
-        .name;
+    return TrainingArchitecture.regionNameFor(key);
   }
 
   String _groupName(String key) {
     if (key == 'legs') return 'Pernas';
     if (key == 'core') return 'Core';
-    return TrainingArchitecture.groups
-        .firstWhere(
-          (item) => item.key == key,
-          orElse: () => TrainingArchitecture.groups.first,
-        )
-        .name;
+    return TrainingArchitecture.groupNameFor(key);
   }
 
   String _subgroupName(String key) {
-    return TrainingArchitecture.subgroups
-        .firstWhere(
-          (item) => item.key == key,
-          orElse: () => TrainingArchitecture.subgroups.first,
-        )
-        .name;
+    return TrainingArchitecture.subgroupNameFor(key);
   }
 
   String _muscleName(String key) {
-    return TrainingArchitecture.muscles
-        .firstWhere(
-          (item) => item.key == key,
-          orElse: () => TrainingArchitecture.muscles.first,
-        )
-        .name;
+    return TrainingArchitecture.muscleNameFor(key);
   }
 
   String _equipmentName(String key) {
-    return TrainingArchitecture.equipment
-        .firstWhere(
-          (item) => item.key == key,
-          orElse: () => TrainingArchitecture.equipment.first,
-        )
-        .name;
+    return TrainingArchitecture.equipmentNameFor(key);
   }
 
   Future<String?> _askTemplateName() async {

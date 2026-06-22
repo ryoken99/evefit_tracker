@@ -1420,6 +1420,41 @@ class TrainingArchitecture {
   static List<TrainingMuscle> musclesForSubgroup(String subgroupKey) =>
       muscles.where((item) => item.subgroupKey == subgroupKey).toList();
 
+  static String regionNameFor(String key) {
+    for (final item in regions) {
+      if (item.key == key) return item.name;
+    }
+    return 'Foco antigo';
+  }
+
+  static String groupNameFor(String key) {
+    for (final item in groups) {
+      if (item.key == key) return item.name;
+    }
+    return 'Foco antigo';
+  }
+
+  static String subgroupNameFor(String key) {
+    for (final item in subgroups) {
+      if (item.key == key) return item.name;
+    }
+    return 'Foco antigo';
+  }
+
+  static String muscleNameFor(String key) {
+    for (final item in muscles) {
+      if (item.key == key) return item.name;
+    }
+    return 'Foco antigo';
+  }
+
+  static String equipmentNameFor(String key) {
+    for (final item in equipment) {
+      if (item.key == key) return item.name;
+    }
+    return 'Equipamento removido';
+  }
+
   static String labelForSelection(TrainingSelection selection) {
     if (selection.specificMuscleKey.isNotEmpty) {
       return _nameByKey(muscles, selection.specificMuscleKey);
@@ -1446,6 +1481,21 @@ class TrainingArchitecture {
   }
 
   static ExerciseArchitectureTags tagsForExercise(Exercise exercise) {
+    if (exercise.regionKeys.isNotEmpty &&
+        exercise.groupKeys.isNotEmpty &&
+        exercise.primaryMuscleKey.isNotEmpty &&
+        exercise.equipmentKeys.isNotEmpty) {
+      return ExerciseArchitectureTags(
+        regionKeys: exercise.regionKeys,
+        groupKeys: exercise.groupKeys,
+        subgroupKeys: exercise.subgroupKeys,
+        muscleKeys: {
+          exercise.primaryMuscleKey,
+          ...exercise.secondaryMuscleKeys,
+        },
+        equipmentKeys: exercise.equipmentKeys,
+      );
+    }
     final catalogEntry = ExerciseCatalogContextService.entryForExercise(
       exercise,
     );
@@ -1563,12 +1613,7 @@ class TrainingArchitecture {
         muscles: ['grip_support'],
       );
     }
-    if (_has(primaryHaystack, [
-      'trapezio',
-      'trapÃ©zio',
-      'encolhimento',
-      'remo alto',
-    ])) {
+    if (_has(primaryHaystack, ['trapezio', 'encolhimento', 'remo alto'])) {
       add(
         region: 'upper',
         group: 'traps_scapula',
@@ -1576,12 +1621,7 @@ class TrainingArchitecture {
         muscles: ['upper_traps', 'mid_traps', 'lower_traps'],
       );
     }
-    if (_has(primaryHaystack, [
-      'pescoco',
-      'pescoÃ§o',
-      'cervical',
-      'chin tuck',
-    ])) {
+    if (_has(primaryHaystack, ['pescoco', 'cervical', 'chin tuck'])) {
       add(
         region: 'upper',
         group: 'neck',
@@ -1643,7 +1683,6 @@ class TrainingArchitecture {
       'elevacao lateral',
       'elevação lateral',
       'elevacao posterior',
-      'elevaÃ§Ã£o posterior',
       'press militar',
       'arnold',
       'reverse fly',
@@ -1732,8 +1771,14 @@ class TrainingArchitecture {
       add(region: 'lower', group: 'abductors', subgroup: 'abductors');
     }
     if (groupKeys.any(
-      {'quadriceps', 'hamstrings', 'hips_glutes', 'calves', 'adductors', 'abductors'}
-          .contains,
+      {
+        'quadriceps',
+        'hamstrings',
+        'hips_glutes',
+        'calves',
+        'adductors',
+        'abductors',
+      }.contains,
     )) {
       groupKeys.add('legs');
     }
@@ -2354,9 +2399,9 @@ class TrainingArchitecture {
     addIf('bench', ['banco']);
     addIf('chair_support', ['cadeira', 'apoio']);
     addIf('weighted_backpack', ['mochila']);
-    addIf('water_bottles', ['garrafas de agua', 'garrafas de Ã¡gua']);
-    addIf('water_jug', ['garrafao', 'garrafÃ£o']);
-    addIf('stable_step', ['degrau', 'escada estavel', 'escada estÃ¡vel']);
+    addIf('water_bottles', ['garrafas de agua']);
+    addIf('water_jug', ['garrafao']);
+    addIf('stable_step', ['degrau', 'escada estavel']);
     addIf('sturdy_table', ['mesa resistente']);
     addIf('broomstick', ['cabo de vassoura']);
     addIf('incline_bench', ['banco inclinado']);
