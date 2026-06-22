@@ -300,6 +300,8 @@ class ExerciseFilterService {
     }
     if (!_hierarchyFocusKeywords.containsKey(selection.subgroupKey) &&
         !_hierarchyFocusKeywords.containsKey(selection.specificMuscleKey) &&
+        !_completeFocusTagAliases.containsKey(selection.subgroupKey) &&
+        !_completeFocusTagAliases.containsKey(selection.specificMuscleKey) &&
         !_focusTagAliases.containsKey(selection.subgroupKey) &&
         !_focusTagAliases.containsKey(selection.specificMuscleKey)) {
       return selection;
@@ -324,13 +326,8 @@ class ExerciseFilterService {
 
     // Complete options must aggregate their explicit children instead of
     // depending on broad text matching.
-    if (focus == 'arms_complete') {
-      return tags.groupKeys.contains('arms') ||
-          tags.groupKeys.contains('forearm_hand') ||
-          tags.subgroupKeys.contains('anterior_arm') ||
-          tags.subgroupKeys.contains('posterior_arm') ||
-          tags.subgroupKeys.contains('grip_strength');
-    }
+    final completeMatch = _matchesCompleteFocus(tags, focus);
+    if (completeMatch != null) return completeMatch;
     if (focus == 'upper_arm') {
       return tags.subgroupKeys.contains('anterior_arm') ||
           tags.subgroupKeys.contains('posterior_arm');
@@ -571,23 +568,54 @@ class ExerciseFilterService {
     );
   }
 
+  static bool? _matchesCompleteFocus(
+    ExerciseArchitectureTags tags,
+    String focus,
+  ) {
+    final aliases = _completeFocusTagAliases[focus];
+    if (aliases == null) return null;
+    return aliases.any(
+      (alias) =>
+          tags.groupKeys.contains(alias) ||
+          tags.subgroupKeys.contains(alias) ||
+          tags.muscleKeys.contains(alias),
+    );
+  }
+
+  static const _completeFocusTagAliases = {
+    'arms_complete': {
+      'arms',
+      'forearm_hand',
+      'anterior_arm',
+      'posterior_arm',
+      'grip_strength',
+    },
+    'forearm_complete': {'forearm_hand', 'grip_strength'},
+    'chest_complete': {'chest', 'chest_primary'},
+    'back_complete': {'back', 'back_width', 'back_thickness', 'low_back'},
+    'shoulders_complete': {'shoulders', 'deltoids'},
+    'traps_complete': {'traps_scapula', 'traps'},
+    'neck_complete': {'neck'},
+    'core_complete': {'core', 'core_stability', 'core_general'},
+    'abs_complete': {'core', 'core_stability', 'core_general'},
+    'legs_complete': {
+      'legs',
+      'quadriceps',
+      'hamstrings',
+      'hips_glutes',
+      'adductors',
+      'abductors',
+      'calves',
+    },
+    'quadriceps_complete': {'quadriceps'},
+    'hamstrings_complete': {'hamstrings'},
+    'glutes_complete': {'hips_glutes', 'glutes'},
+    'lower_leg_complete': {'calves'},
+  };
+
   static const _focusTagAliases = {
-    'arms_complete': ['arms', 'forearm_hand'],
     'upper_arm': ['anterior_arm', 'posterior_arm'],
     'forearm_hand': ['forearm_hand', 'grip_strength'],
-    'forearm_complete': ['forearm_hand', 'grip_strength'],
-    'chest_complete': ['chest', 'chest_primary'],
-    'back_complete': ['back', 'back_width', 'back_thickness'],
-    'shoulders_complete': ['shoulders', 'deltoids'],
-    'traps_complete': ['traps_scapula', 'traps'],
-    'neck_complete': ['neck'],
-    'core_complete': ['core', 'core_stability', 'core_general'],
-    'abs_complete': ['core', 'core_stability', 'core_general'],
-    'legs_complete': ['legs', 'quadriceps', 'hamstrings', 'hips_glutes'],
-    'quadriceps_complete': ['quadriceps'],
-    'hamstrings_complete': ['hamstrings'],
-    'glutes_complete': ['hips_glutes', 'glutes'],
-    'lower_leg_complete': ['calves'],
     'biceps': ['biceps'],
     'biceps_brachii': ['biceps'],
     'brachialis': ['brachialis'],
