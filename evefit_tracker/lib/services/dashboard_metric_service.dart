@@ -276,8 +276,16 @@ class DashboardMetricService {
     'days_since_start',
   ];
 
-  static DashboardMetricDefinition definitionFor(String key) => definitions
-      .firstWhere((item) => item.key == key, orElse: () => definitions.first);
+  static DashboardMetricDefinition definitionFor(String key) {
+    for (final definition in definitions) {
+      if (definition.key == key) return definition;
+    }
+    return DashboardMetricDefinition(
+      key: key,
+      title: 'Métrica removida',
+      unit: '',
+    );
+  }
 
   static String valueFor(
     String key,

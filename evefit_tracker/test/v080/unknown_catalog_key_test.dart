@@ -1,4 +1,5 @@
 import 'package:evefit_tracker/services/training_architecture.dart';
+import 'package:evefit_tracker/services/dashboard_metric_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -14,5 +15,11 @@ void main() {
       TrainingArchitecture.equipmentNameFor('legacy-equipment'),
       'Equipamento removido',
     );
+  });
+
+  test('unknown dashboard metric is labelled as removed', () {
+    final definition = DashboardMetricService.definitionFor('legacy-metric');
+    expect(definition.key, 'legacy-metric');
+    expect(definition.title, 'Métrica removida');
   });
 }
