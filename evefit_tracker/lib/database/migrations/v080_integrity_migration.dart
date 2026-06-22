@@ -18,6 +18,11 @@ class V080IntegrityMigration {
     'force_type': 'TEXT',
     'laterality': 'TEXT',
     'goal_tags': 'TEXT',
+    'regression': 'TEXT',
+    'progression': 'TEXT',
+    'breathing_tips': 'TEXT',
+    'posture_tips': 'TEXT',
+    'adaptation_notes': 'TEXT',
   };
 
   static const _textColumns = <String, List<String>>{
@@ -39,6 +44,11 @@ class V080IntegrityMigration {
       'execution_steps',
       'common_mistakes',
       'safety_notes',
+      'regression',
+      'progression',
+      'breathing_tips',
+      'posture_tips',
+      'adaptation_notes',
       'notes',
     ],
   };

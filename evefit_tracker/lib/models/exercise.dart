@@ -13,6 +13,11 @@ class Exercise {
     this.executionSteps = '',
     this.commonMistakes = '',
     this.safetyNotes = '',
+    this.regression = '',
+    this.progression = '',
+    this.breathingTips = '',
+    this.postureTips = '',
+    this.adaptationNotes = '',
     this.isHidden = false,
     this.createdAt,
     this.updatedAt,
@@ -46,6 +51,11 @@ class Exercise {
   final String executionSteps;
   final String commonMistakes;
   final String safetyNotes;
+  final String regression;
+  final String progression;
+  final String breathingTips;
+  final String postureTips;
+  final String adaptationNotes;
   final bool isHidden;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -85,6 +95,11 @@ class Exercise {
     String? executionSteps,
     String? commonMistakes,
     String? safetyNotes,
+    String? regression,
+    String? progression,
+    String? breathingTips,
+    String? postureTips,
+    String? adaptationNotes,
     bool? isHidden,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -119,6 +134,11 @@ class Exercise {
       executionSteps: executionSteps ?? this.executionSteps,
       commonMistakes: commonMistakes ?? this.commonMistakes,
       safetyNotes: safetyNotes ?? this.safetyNotes,
+      regression: regression ?? this.regression,
+      progression: progression ?? this.progression,
+      breathingTips: breathingTips ?? this.breathingTips,
+      postureTips: postureTips ?? this.postureTips,
+      adaptationNotes: adaptationNotes ?? this.adaptationNotes,
       isHidden: isHidden ?? this.isHidden,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
@@ -157,6 +177,11 @@ class Exercise {
     executionSteps: map['execution_steps'] as String? ?? '',
     commonMistakes: map['common_mistakes'] as String? ?? '',
     safetyNotes: map['safety_notes'] as String? ?? '',
+    regression: map['regression'] as String? ?? '',
+    progression: map['progression'] as String? ?? '',
+    breathingTips: map['breathing_tips'] as String? ?? '',
+    postureTips: map['posture_tips'] as String? ?? '',
+    adaptationNotes: map['adaptation_notes'] as String? ?? '',
     isHidden: (map['is_hidden'] as int? ?? 0) == 1,
     createdAt: map['created_at'] == null
         ? null
@@ -201,6 +226,11 @@ class Exercise {
     'execution_steps': executionSteps,
     'common_mistakes': commonMistakes,
     'safety_notes': safetyNotes,
+    if (regression.isNotEmpty) 'regression': regression,
+    if (progression.isNotEmpty) 'progression': progression,
+    if (breathingTips.isNotEmpty) 'breathing_tips': breathingTips,
+    if (postureTips.isNotEmpty) 'posture_tips': postureTips,
+    if (adaptationNotes.isNotEmpty) 'adaptation_notes': adaptationNotes,
     'is_default': isDefault ? 1 : 0,
     'is_hidden': isHidden ? 1 : 0,
     'created_at': createdAt?.toIso8601String(),

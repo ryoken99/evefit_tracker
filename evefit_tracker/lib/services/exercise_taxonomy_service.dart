@@ -117,6 +117,22 @@ class ExerciseTaxonomyService {
       }
     }
     if (context == 'pernas') {
+      if (hasAny(['short_foot', 'doming', 'dedos_do_pe'])) {
+        muscles.addAll({'feet', 'ankle'});
+      }
+      if (name.contains('dorsiflexao')) {
+        muscles.addAll({'tibialis_anterior', 'ankle', 'feet'});
+      }
+      if (hasAny(['inversao_do_tornozelo', 'eversao_do_tornozelo'])) {
+        muscles.addAll({'ankle', 'feet'});
+      }
+      if (name.contains('flexao_da_anca')) muscles.add('hip_flexors');
+      if (name.contains('copenhagen')) {
+        muscles.addAll({'adductors', 'obliques', 'anti_lateral_flexion'});
+      }
+      if (name.contains('extensao_terminal_do_joelho')) {
+        muscles.addAll({'quadriceps', 'vastus_medialis'});
+      }
       if (hasAny([
         'agachamento',
         'leg_press',

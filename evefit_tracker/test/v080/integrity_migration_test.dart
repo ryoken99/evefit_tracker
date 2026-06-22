@@ -74,6 +74,11 @@ void main() {
         'force_type',
         'laterality',
         'goal_tags',
+        'regression',
+        'progression',
+        'breathing_tips',
+        'posture_tips',
+        'adaptation_notes',
       }),
     );
 
