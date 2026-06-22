@@ -20,6 +20,7 @@ import '../services/dashboard_metric_service.dart';
 import '../services/exercise_catalog_context_service.dart';
 import '../services/exercise_muscle_node_service.dart';
 import '../services/exercise_v717_migration.dart';
+import '../services/equipment_catalog_service.dart';
 import '../services/pin_service.dart';
 import '../services/profile_preferences_service.dart';
 import '../services/training_architecture.dart';
@@ -51,10 +52,8 @@ class WorkoutEntry {
 
 class AppDatabase {
   AppDatabase._();
-  factory AppDatabase.forTesting(
-    Database database, {
-    Profile? activeProfile,
-  }) => AppDatabase._forTesting(database, activeProfile);
+  factory AppDatabase.forTesting(Database database, {Profile? activeProfile}) =>
+      AppDatabase._forTesting(database, activeProfile);
 
   AppDatabase._forTesting(this._database, this._activeProfile);
 
@@ -1139,8 +1138,10 @@ class AppDatabase {
     required Map<String, String> availableEquipment,
   }) async {
     final now = DateTime.now();
-    final isGym = trainingLocation.toLowerCase().contains('gin');
-    final equipment = isGym ? defaultEquipment : availableEquipment;
+    final equipment = EquipmentCatalogService.availableKeys(
+      trainingLocations: TrainingLocationService.parse(trainingLocation),
+      selectedEquipmentKeys: availableEquipment.keys.toSet(),
+    );
     for (final entry in defaultEquipment.entries) {
       await db.insert(
         'profile_equipment',
@@ -1148,7 +1149,7 @@ class AppDatabase {
           profileId: profileId,
           equipmentKey: entry.key,
           equipmentName: entry.value,
-          isAvailable: isGym || equipment.containsKey(entry.key),
+          isAvailable: equipment.contains(entry.key),
           createdAt: now,
           updatedAt: now,
         ).toMap()..remove('id'),
@@ -1279,10 +1280,12 @@ class AppDatabase {
 
   Future<Set<String>> availableEquipmentKeys() async {
     final items = await profileEquipment();
-    return items
-        .where((item) => item.isAvailable)
-        .map((item) => item.equipmentKey)
-        .toSet();
+    return {
+      'bodyweight',
+      ...items
+          .where((item) => item.isAvailable)
+          .map((item) => item.equipmentKey),
+    };
   }
 
   Future<void> updateProfileEquipment(
@@ -1291,7 +1294,7 @@ class AppDatabase {
     await _insertProfileEquipment(
       await database,
       profileId: _requireProfileId(),
-      trainingLocation: '',
+      trainingLocation: _activeProfile?.trainingLocation ?? '',
       availableEquipment: availableEquipment,
     );
   }
@@ -1695,8 +1698,7 @@ class AppDatabase {
   Future<int> insertGoal(Goal goal) async {
     return (await database).insert(
       'goals',
-      (goal.toMap()..remove('id'))
-        ..['profile_id'] = _requireProfileId(),
+      (goal.toMap()..remove('id'))..['profile_id'] = _requireProfileId(),
     );
   }
 
@@ -1733,10 +1735,7 @@ class AppDatabase {
     if (!await _activeProfileOwnsGoal(db, milestone.goalId)) {
       throw StateError('O objetivo não pertence ao perfil ativo.');
     }
-    await db.insert(
-      'goal_milestones',
-      milestone.toMap()..remove('id'),
-    );
+    await db.insert('goal_milestones', milestone.toMap()..remove('id'));
   }
 
   Future<void> updateGoalMilestone(GoalMilestone milestone) async {
