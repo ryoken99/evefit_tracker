@@ -1,98 +1,82 @@
 # AUDIT_REPORT — v0.8.0
 
-Data inicial: 2026-06-22  
+Data: 2026-06-22
 Repositório: `ryoken99/evefit_tracker`  
-Remote: `https://github.com/ryoken99/evefit_tracker.git`  
 Branch: `feature/v0.8.0-profile-equipment-catalog-integrity`  
-Base funcional: `444ec98` — v0.7.17 anatomical muscle nodes  
-Estado: auditoria inicial, antes das correções funcionais
+Estado: implementação concluída; verificação final registada no fim deste relatório.
 
 ## Linha de base
 
-### Verificação do repositório
+- Repositório confirmado por `git remote get-url origin`: `https://github.com/ryoken99/evefit_tracker.git`.
+- Branch confirmada por `git branch --show-current`; a `main` não foi alterada.
+- Primeira tentativa de `flutter analyze`: falhou porque `flutter` não estava no `PATH`. Erro: `flutter : The term 'flutter' is not recognized...`. Classificação: ambiente.
+- Repetição com `C:\tools\flutter\bin\flutter.bat analyze`: `No issues found!`.
+- Teste inicial com `C:\tools\flutter\bin\flutter.bat test`: 208 testes, `All tests passed!`.
 
-- `git remote get-url origin`: `https://github.com/ryoken99/evefit_tracker.git`.
-- `git branch --show-current`: `feature/v0.8.0-profile-equipment-catalog-integrity`.
-- A branch não é `main` e parte da v0.7.17, preservando a migração e os testes de nós musculares.
+## Bugs encontrados e corrigidos
 
-### flutter analyze
+| ID | Estado | Correção |
+|---|---|---|
+| V080-01 | FIXED | Goals e milestones protegidos pelo `profile_id` ativo, incluindo leitura, criação, alteração, conclusão e eliminação. |
+| V080-02 | FIXED | Exportação inclui apenas goals e milestones do perfil ativo. |
+| V080-03 | FIXED | `updateProfileEquipment` usa as localizações reais do perfil ativo. |
+| V080-04 | FIXED | `bodyweight` é sempre uma capacidade disponível. |
+| V080-05 | FIXED | Equipamento canónico centralizado; `jump_rope` tem uma identidade única. |
+| V080-06 | FIXED | Filtros anatómicos usam taxonomia persistida antes de qualquer fallback legado. |
+| V080-07 | FIXED | Exercícios têm regiões, grupos, subgrupos, músculo principal/secundários, equipamento, padrão, dificuldade, força, lateralidade e objetivos. |
+| V080-08 | FIXED | Templates usam `catalogEntryKey`/chaves estáveis; nome só é fallback legado quando não é ambíguo. |
+| V080-09 | FIXED | Customs pertencem ao perfil; defaults globais são ocultados por perfil sem delete destrutivo. |
+| V080-10 | FIXED | Migração idempotente normaliza mojibake conhecido sem apagar ou reidentificar dados; seed legado de produção também foi normalizado. |
+| V080-11 | FIXED | Tentativas de PIN e `locked_until` persistem em `profile_security` por perfil. |
+| V080-12 | FIXED | `workouts()` carrega sets e exercícios em duas queries batch e agrupa por `workout_id`. |
+| V080-13 | FIXED | Altura ausente/zero apresenta `altura por definir`, nunca `0 cm`. |
+| V080-14 | FIXED | `updateDashboardWidgets` grava todo o dashboard numa única transação e faz rollback em ID inválido. |
+| V080-15 | FIXED | Chaves antigas mostram `Foco antigo`, `Equipamento removido` ou `Métrica removida`, nunca o primeiro item. |
+| V080-16 | FIXED | Versão pública, Settings, README, workflow, changelog e release notes apontam para v0.8.0. |
+| V080-17 | FIXED | Catálogo expandido para 314 entradas e contrato pedagógico completo aplicado a todas. |
 
-Primeira tentativa:
+## Testes adicionados na v0.8.0
 
-- Comando: `flutter analyze`.
-- Resultado: falhou antes de executar o analisador.
-- Erro: `flutter : The term 'flutter' is not recognized as the name of a cmdlet, function, script file, or operable program.`
-- Motivo provável: `C:\tools\flutter\bin` não está no `PATH` do processo Codex.
-- Classificação: ambiente, não código.
-
-Repetição com a instalação local descoberta:
-
-- Comando: `C:\tools\flutter\bin\flutter.bat analyze`.
-- Resultado: `No issues found! (ran in 40.9s)`.
-- Classificação: linha de base de código aprovada.
-
-### flutter test
-
-- Comando: `C:\tools\flutter\bin\flutter.bat test`.
-- Resultado: `All tests passed!`.
-- Total: 208 testes aprovados, zero falhas.
-- Duração observada: 37,4 segundos.
-- Classificação: linha de base de código aprovada.
-
-## Bugs encontrados
-
-| ID | Estado inicial | Problema | Evidência inicial | Risco |
-|---|---|---|---|---|
-| V080-01 | OPEN | `goal_milestones` é lida e alterada apenas por `goal_id`/`id`, sem validar `goals.profile_id`. | `AppDatabase.goalMilestones`, `insertGoalMilestone`, `updateGoalMilestone`. | Exposição e alteração entre perfis. |
-| V080-02 | OPEN | A exportação não inclui milestones. | `AppDatabase.exportData`. | Backup incompleto e impossível de validar por perfil. |
-| V080-03 | OPEN | `updateProfileEquipment` passa `trainingLocation: ''`. | `AppDatabase.updateProfileEquipment`. | Equipamento de ginásio/local deixa de refletir o perfil. |
-| V080-04 | OPEN | `bodyweight` não é garantido no conjunto devolvido. | `availableEquipmentKeys`. | Exercícios sem equipamento podem desaparecer. |
-| V080-05 | OPEN | `jump_rope` aparece em duas secções que também funcionam como fonte de identidade. | `ProfilePreferencesService.equipmentSections`. | Identidade interna duplicada. |
-| V080-06 | OPEN | Parte do filtro anatómico ainda usa texto livre e `contains`. | `ExerciseFilterService`, `TrainingArchitecture`. | Falsos positivos/negativos por tradução e nomes. |
-| V080-07 | OPEN | O modelo persistido não contém toda a taxonomia canónica pedida. | `Exercise`, schema `exercises`. | Filtros dependem de inferência em tempo de execução. |
-| V080-08 | OPEN | Templates resolvem exercícios por `name = ? LIMIT 1`. | `insertWorkoutFromTemplate`. | Exercício errado quando o nome é ambíguo. |
-| V080-09 | OPEN | Exercícios personalizados não têm `profile_id`; ocultação é global. | `exercises`, `deleteExercise`. | Um perfil pode ver/ocultar dados de outro. |
-| V080-10 | OPEN | Existem textos mojibake em serviços, UI e catálogo. | Exemplos `ExtensÃ£o`, `BÃ­ceps`, `mÃ£o`, `glÃºteos`. | Texto ilegível e chaves derivadas instáveis. |
-| V080-11 | OPEN | Tentativas de PIN e `locked_until` vivem apenas em mapas de memória. | `_pinFailedAttempts`, `_pinLockedUntil`. | Reiniciar a app remove o bloqueio. |
-| V080-12 | OPEN | `workouts()` executa duas queries por treino. | Ciclo em `AppDatabase.workouts`. | N+1 e degradação com histórico grande. |
-| V080-13 | OPEN | Dashboard apresenta altura com `toStringAsFixed` mesmo quando o fallback do perfil é 0. | `dashboard_screen.dart`, `profile()`. | `0 cm` apresentado como dado real. |
-| V080-14 | OPEN | Widgets do dashboard são guardados individualmente. | `_editDashboard` chama `updateDashboardWidget` num ciclo. | Estado parcial se uma atualização falhar. |
-| V080-15 | OPEN | Chaves desconhecidas devolvem o primeiro item de várias listas. | lookups em `workouts_screen.dart` e `DashboardMetricService`. | Informação antiga é apresentada como opção válida diferente. |
-| V080-16 | OPEN | Versão pública atual é v0.7.16/v0.7.17 e `pubspec` usa `0.7.17+25`. | `pubspec.yaml`, Settings, README, workflow. | Release inconsistente. |
-| V080-17 | OPEN | Qualidade do catálogo precisa de validação v0.8.0 para os 15 campos pedagógicos e cobertura completa requerida. | Serviços atuais têm quatro campos principais e fallbacks de família. | Instruções insuficientes para iniciantes e lacunas anatómicas. |
-
-## Bugs corrigidos
-
-Nenhum nesta fase. Esta secção será atualizada apenas após teste RED, implementação e teste GREEN.
+- Isolamento de goals/milestones e exportação entre dois perfis.
+- Isolamento de equipamento/local e matrizes casa, ginásio, exterior e dojo.
+- Taxonomia anatómica completa e falsos positivos com nomes deliberadamente enganadores.
+- Identidade estável de templates e propriedade de exercícios custom/default.
+- Migração aditiva, normalização de encoding e preservação de IDs/relações.
+- Integridade pedagógica das 314 entradas, 11 passos mínimos e ausência de descrições/execuções duplicadas.
+- Expansão de pé, tornozelo, flexores da anca, adutores, abdutores e quadríceps.
+- Dashboard transacional, altura desconhecida, chaves desconhecidas e PIN persistente.
+- Metadados públicos da versão v0.8.0.
 
 ## Bugs adiados
 
-Nenhum nesta fase. Persistência do PIN e batching de `workouts()` serão implementados se a migração aditiva e os testes SQLite confirmarem segurança. Qualquer adiamento final terá comando, risco e justificação concreta.
+Nenhum bug funcional identificado nesta auditoria ficou aberto. O refactor estrutural completo do `AppDatabase` foi deliberadamente adiado por ser dívida técnica e não uma correção segura para esta release.
 
-## Riscos de regressão
+## Riscos de regressão restantes
 
-- Migração de exercícios pode quebrar IDs usados por treinos/templates; os IDs existentes não serão recriados.
-- Normalização indiscriminada pode alterar texto livre do utilizador; apenas sequências conhecidas e conteúdo de catálogo serão alterados.
-- Tornar equipamento estrito pode esconder resultados anteriormente mostrados incorretamente; “Mostrar todos” manterá acesso com razão explícita de indisponibilidade.
-- A separação entre exercícios globais e personalizados precisa preservar customs antigos cuja propriedade não possa ser inferida com segurança.
-- Alterar taxonomia pode afetar os 208 testes históricos; cada bloco executará os testes antigos relevantes.
+- A taxonomia de exercícios custom antigos continua a usar fallback legado quando não possui metadados explícitos.
+- Recomendações de exercício não substituem avaliação clínica; dor, lesão e limitações individuais exigem adaptação profissional.
+- Os relatórios históricos de releases anteriores foram preservados como evidência; não são superfícies públicas nem identificação da release atual.
+- O catálogo representa opções reais e úteis para cada grupo pedido, não todas as variações possíveis ou nomes comerciais existentes.
 
-## Dívida técnica
+## Dívida técnica e plano futuro
 
-`AppDatabase` acumula schema, migrações, seed, perfis, segurança, catálogo, treinos, objetivos, dashboard e exportação. A v0.8.0 não fará refactor total. Serão extraídos apenas a migração v0.8.0 e serviços canónicos necessários para equipamento, taxonomia e normalização.
+`AppDatabase` ainda concentra schema, migrações, seed e repositórios. Próxima extração recomendada:
 
-## Plano futuro de extração
+1. migradores versionados separados;
+2. `ProfileRepository`, `GoalRepository`, `WorkoutRepository` e `ExerciseRepository`;
+3. contexto explícito e imutável do perfil ativo;
+4. métricas de queries/tempo com bases grandes;
+5. revisão editorial clínica periódica do catálogo.
 
-1. Extrair migrações antigas para classes versionadas e testadas isoladamente.
-2. Extrair repositórios `ProfileRepository`, `GoalRepository`, `WorkoutRepository` e `ExerciseRepository` mantendo uma transação/facade comum.
-3. Introduzir um contexto explícito de perfil ativo em vez de estado mutável dentro da base de dados.
-4. Separar seed global de migração de dados do utilizador.
-5. Medir queries e tempos com bases grandes antes de novas otimizações.
+## Preservação de dados
 
-## Regras de preservação
+- Nenhuma tabela ou dado do utilizador é apagado pela migração.
+- IDs de exercícios existentes e relações de treinos/templates são preservados.
+- Defaults novos são inseridos/atualizados por identidade estável.
+- Ocultação de exercício default é local ao perfil.
 
-- Nenhuma tabela de utilizador será apagada.
-- Nenhum exercício antigo será removido sem migração/compatibilidade.
-- Migrações serão aditivas e idempotentes quando possível.
-- Exercícios e templates usarão identidades estáveis.
-- Alterações funcionais serão precedidas por teste que falha pelo motivo esperado.
+## Verificação final
+
+- `C:\tools\flutter\bin\flutter.bat analyze`: `No issues found! (ran in 2.8s)`.
+- `C:\tools\flutter\bin\flutter.bat test`: 250 testes, `All tests passed!`, zero falhas.
+- A suite completa detetou durante a implementação duas regressões de especificidade cardio, três pares com texto demasiado semelhante e dois cues ausentes no Curl 21; as causas foram corrigidas no gerador e a suite completa foi repetida com sucesso.
