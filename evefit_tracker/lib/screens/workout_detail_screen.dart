@@ -438,7 +438,7 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                     child: visible.isEmpty
                         ? const Center(
                             child: Text(
-                              'Com o equipamento atual há poucos exercícios diretos para este foco. Ajusta o perfil/equipamento ou ativa Mostrar todos os exercícios.',
+                              ExerciseFilterService.emptyStateMessage,
                             ),
                           )
                         : ListView.builder(

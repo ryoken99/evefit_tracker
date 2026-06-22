@@ -201,9 +201,11 @@ void main() {
           'Passadeira caminhada',
           'Bicicleta ritmo leve',
           'Elíptica ritmo leve',
-          'Corda de saltar ritmo leve',
-          'Corrida exterior leve',
         ]),
+      );
+      expect(
+        _names(TrainingArchitecture.legacySelectionFor('Cardio geral')),
+        isNot(contains('Corrida exterior leve')),
       );
     });
 
@@ -217,6 +219,7 @@ void main() {
     test('jiu-jitsu does not show exclusive karate', () {
       final names = _names(
         TrainingArchitecture.legacySelectionFor('Jiu-Jitsu'),
+        location: 'Dojo / Artes marciais',
       );
 
       expect(names, contains('Shrimp / fuga de anca'));

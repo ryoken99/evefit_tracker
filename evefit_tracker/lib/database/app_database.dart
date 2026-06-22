@@ -1333,12 +1333,15 @@ class AppDatabase {
 
   Future<Set<String>> availableEquipmentKeys() async {
     final items = await profileEquipment();
-    return {
-      'bodyweight',
-      ...items
+    return EquipmentCatalogService.availableKeys(
+      trainingLocations: TrainingLocationService.parse(
+        _activeProfile?.trainingLocation ?? '',
+      ),
+      selectedEquipmentKeys: items
           .where((item) => item.isAvailable)
-          .map((item) => item.equipmentKey),
-    };
+          .map((item) => item.equipmentKey)
+          .toSet(),
+    );
   }
 
   Future<void> updateProfileEquipment(

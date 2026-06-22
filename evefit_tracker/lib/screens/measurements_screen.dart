@@ -23,8 +23,11 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
     _dataFuture = widget.database.measurements();
   }
 
-  void _refresh() =>
-      setState(() => _dataFuture = widget.database.measurements());
+  void _refresh() {
+    setState(() {
+      _dataFuture = widget.database.measurements();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

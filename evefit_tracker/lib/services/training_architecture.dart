@@ -441,6 +441,13 @@ class TrainingArchitecture {
       key: 'martial_core',
       regionKey: 'martial_arts',
       name: 'Core para artes marciais',
+      description: 'Estabilidade do tronco aplicada às artes marciais.',
+      sortOrder: 6,
+    ),
+    TrainingGroup(
+      key: 'martial_core',
+      regionKey: 'martial_arts',
+      name: 'Core para artes marciais',
       description: 'Core aplicado a combate.',
       sortOrder: 6,
     ),
@@ -678,6 +685,14 @@ class TrainingArchitecture {
       sortOrder: 2,
     ),
     TrainingSubgroup(
+      key: 'outdoor_sprints',
+      regionKey: 'cardio',
+      groupKey: 'outdoor_cardio',
+      name: 'Sprints exterior',
+      description: 'Acelerações curtas e intensas no exterior.',
+      sortOrder: 3,
+    ),
+    TrainingSubgroup(
       key: 'hiit',
       regionKey: 'cardio',
       groupKey: 'hiit_group',
@@ -748,6 +763,30 @@ class TrainingArchitecture {
       name: 'Tibial',
       description: 'Tibial anterior.',
       sortOrder: 1,
+    ),
+    TrainingSubgroup(
+      key: 'hip_flexors_sub',
+      regionKey: 'lower',
+      groupKey: 'hips_glutes',
+      name: 'Flexores da anca',
+      description: 'Flexão ativa e controlo da anca.',
+      sortOrder: 2,
+    ),
+    TrainingSubgroup(
+      key: 'foot_intrinsics',
+      regionKey: 'lower',
+      groupKey: 'feet_ankle',
+      name: 'Pés e dedos',
+      description: 'Controlo dos músculos intrínsecos do pé e dos dedos.',
+      sortOrder: 1,
+    ),
+    TrainingSubgroup(
+      key: 'ankle_control',
+      regionKey: 'lower',
+      groupKey: 'feet_ankle',
+      name: 'Tornozelo',
+      description: 'Dorsiflexão, inversão, eversão e estabilidade.',
+      sortOrder: 2,
     ),
   ];
 
@@ -1220,6 +1259,34 @@ class TrainingArchitecture {
       description: 'Dorsiflexão e inversão do tornozelo.',
       sortOrder: 1,
     ),
+    TrainingMuscle(
+      key: 'hip_flexors',
+      regionKey: 'lower',
+      groupKey: 'hips_glutes',
+      subgroupKey: 'hip_flexors_sub',
+      name: 'Flexores da anca',
+      description: 'Iliopsoas e músculos que elevam a coxa.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'feet',
+      regionKey: 'lower',
+      groupKey: 'feet_ankle',
+      subgroupKey: 'foot_intrinsics',
+      name: 'Pés e dedos',
+      description:
+          'Músculos intrínsecos que sustentam o arco e movem os dedos.',
+      sortOrder: 1,
+    ),
+    TrainingMuscle(
+      key: 'ankle',
+      regionKey: 'lower',
+      groupKey: 'feet_ankle',
+      subgroupKey: 'ankle_control',
+      name: 'Tornozelo',
+      description: 'Controlo ativo da articulação do tornozelo.',
+      sortOrder: 1,
+    ),
   ];
 
   static const equipment = [
@@ -1428,6 +1495,8 @@ class TrainingArchitecture {
   }
 
   static String groupNameFor(String key) {
+    final virtualName = _virtualGroupNames[key];
+    if (virtualName != null) return virtualName;
     for (final item in groups) {
       if (item.key == key) return item.name;
     }
@@ -1435,6 +1504,8 @@ class TrainingArchitecture {
   }
 
   static String subgroupNameFor(String key) {
+    final virtualName = _virtualSubgroupNames[key];
+    if (virtualName != null) return virtualName;
     for (final item in subgroups) {
       if (item.key == key) return item.name;
     }
@@ -1455,12 +1526,27 @@ class TrainingArchitecture {
     return 'Equipamento removido';
   }
 
+  static String summaryForSelection(TrainingSelection selection) {
+    final values = <String>{
+      if (selection.regionKey.isNotEmpty) regionNameFor(selection.regionKey),
+      if (selection.groupKey.isNotEmpty) groupNameFor(selection.groupKey),
+      if (selection.subgroupKey.isNotEmpty)
+        subgroupNameFor(selection.subgroupKey),
+      if (selection.specificMuscleKey.isNotEmpty)
+        _virtualSubgroupNames[selection.specificMuscleKey] ??
+            muscleNameFor(selection.specificMuscleKey),
+      if (selection.equipmentKey.isNotEmpty)
+        equipmentNameFor(selection.equipmentKey),
+    };
+    return values.join(', ');
+  }
+
   static String labelForSelection(TrainingSelection selection) {
     if (selection.specificMuscleKey.isNotEmpty) {
       return _nameByKey(muscles, selection.specificMuscleKey);
     }
     if (selection.subgroupKey.isNotEmpty) {
-      return _nameByKey(subgroups, selection.subgroupKey);
+      return subgroupNameFor(selection.subgroupKey);
     }
     if (selection.groupKey.isNotEmpty) {
       return _nameByKey(groups, selection.groupKey);
@@ -2159,6 +2245,12 @@ class TrainingArchitecture {
           subgroup: 'karate_technical',
           muscles: ['karate_technical'],
         );
+        if (_has(name, ['mobilidade'])) {
+          add(region: 'martial_arts', group: 'martial_mobility');
+        }
+        if (_has(name, ['condicionamento'])) {
+          add(region: 'martial_arts', group: 'martial_conditioning');
+        }
         break;
       case 'jiu_jitsu':
         add(
@@ -2167,6 +2259,18 @@ class TrainingArchitecture {
           subgroup: 'jiu_jitsu_technical',
           muscles: ['jiu_jitsu_technical'],
         );
+        if (_has(name, ['mobilidade'])) {
+          add(region: 'martial_arts', group: 'martial_mobility');
+        }
+        if (_has(name, ['condicionamento', 'sprawl'])) {
+          add(region: 'martial_arts', group: 'martial_conditioning');
+        }
+        if (_has(name, ['forca de pega'])) {
+          add(region: 'martial_arts', group: 'grappling_grip');
+        }
+        if (_has(name, ['core para'])) {
+          add(region: 'martial_arts', group: 'martial_core');
+        }
         break;
       case 'lombar':
         add(
@@ -2175,6 +2279,7 @@ class TrainingArchitecture {
           subgroup: 'back_thickness',
           muscles: ['erectors', 'quadratus_lumborum'],
         );
+        regionKeys.add('core');
         groupKeys.add('low_back');
         subgroupKeys.add('low_back_sub');
         break;
@@ -2218,13 +2323,17 @@ class TrainingArchitecture {
 
   static List<String> _coreMuscles(String name) {
     if (_has(name, ['pallof'])) return ['anti_rotation'];
+    if (_has(name, ['prancha lateral'])) {
+      return ['external_obliques', 'internal_obliques', 'deep_stability'];
+    }
+    if (_has(name, ['russian', 'bicycle', 'side bend'])) {
+      return ['external_obliques', 'internal_obliques'];
+    }
     if (_has(name, ['prancha', 'hollow', 'dead bug'])) {
       return ['anti_extension', 'deep_stability'];
     }
-    if (_has(name, ['lateral', 'russian', 'bicycle', 'side bend'])) {
-      return ['external_obliques', 'internal_obliques'];
-    }
-    if (_has(name, ['superman', 'bird dog'])) return ['erectors'];
+    if (_has(name, ['bird dog'])) return ['erectors', 'deep_stability'];
+    if (_has(name, ['superman'])) return ['erectors'];
     return ['rectus_abdominis', 'transverse_abdominis'];
   }
 
@@ -2238,6 +2347,42 @@ class TrainingArchitecture {
     })
     add,
   ) {
+    if (_has(name, ['short foot', 'doming', 'dedos do pe'])) {
+      add(
+        region: 'lower',
+        group: 'feet_ankle',
+        subgroup: 'foot_intrinsics',
+        muscles: ['feet', 'ankle'],
+      );
+      return;
+    }
+    if (_has(name, ['dorsiflexao', 'elevacao tibial'])) {
+      add(
+        region: 'lower',
+        group: 'tibialis',
+        subgroup: 'tibialis_sub',
+        muscles: ['tibialis_anterior', 'ankle', 'feet'],
+      );
+      return;
+    }
+    if (_has(name, ['inversao do tornozelo', 'eversao do tornozelo'])) {
+      add(
+        region: 'lower',
+        group: 'feet_ankle',
+        subgroup: 'ankle_control',
+        muscles: ['ankle', 'feet'],
+      );
+      return;
+    }
+    if (_has(name, ['flexao da anca'])) {
+      add(
+        region: 'lower',
+        group: 'hips_glutes',
+        subgroup: 'hip_flexors_sub',
+        muscles: ['hip_flexors'],
+      );
+      return;
+    }
     if (_has(name, ['gluteo', 'ponte', 'hip thrust', 'kickback'])) {
       add(
         region: 'lower',
@@ -2311,11 +2456,21 @@ class TrainingArchitecture {
     } else if (_has(name, ['corda'])) {
       add(region: 'cardio', group: 'cardio_general', subgroup: 'jump_rope');
       add(region: 'cardio', group: 'jump_rope_group', subgroup: 'jump_rope');
-    } else if (_has(name, [
-      'caminhada exterior',
-      'corrida exterior',
-      'sprints exterior',
-    ])) {
+    } else if (_has(name, ['caminhada exterior'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'outdoor_walk');
+      add(region: 'cardio', group: 'outdoor_cardio', subgroup: 'outdoor_walk');
+    } else if (_has(name, ['sprints exterior'])) {
+      add(
+        region: 'cardio',
+        group: 'cardio_general',
+        subgroup: 'outdoor_sprints',
+      );
+      add(
+        region: 'cardio',
+        group: 'outdoor_cardio',
+        subgroup: 'outdoor_sprints',
+      );
+    } else if (_has(name, ['corrida exterior'])) {
       add(region: 'cardio', group: 'cardio_general', subgroup: 'outdoor_run');
       add(region: 'cardio', group: 'outdoor_cardio', subgroup: 'outdoor_run');
     } else {
@@ -2394,7 +2549,10 @@ class TrainingArchitecture {
 
     addIf('bodyweight', ['peso corporal']);
     addIf('dumbbells', ['halter', 'halteres']);
-    addIf('barbell', ['barra', 'barbell']);
+    if ((text.contains('barra') || text.contains('barbell')) &&
+        !text.contains('barra fixa')) {
+      keys.add('barbell');
+    }
     addIf('plates', ['disco', 'plate']);
     addIf('bench', ['banco']);
     addIf('chair_support', ['cadeira', 'apoio']);
@@ -2478,6 +2636,17 @@ class TrainingArchitecture {
     }
     return key;
   }
+
+  static const _virtualSubgroupNames = <String, String>{
+    'chest_complete': 'Peito completo',
+    'arms_complete': 'Braços completos',
+    'back_complete': 'Costas completas',
+    'shoulders_complete': 'Ombros completos',
+    'core_complete': 'Core completo',
+    'legs_complete': 'Pernas completas',
+  };
+
+  static const _virtualGroupNames = <String, String>{'legs': 'Pernas'};
 
   static const _legacyMap = {
     'full body': TrainingSelection(regionKey: 'full_body'),

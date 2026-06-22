@@ -41,7 +41,7 @@ void main() {
           'arms',
         ).map((item) => '${item.key}:${item.value}'),
         [
-          'arms_complete:Braços completo',
+          'arms_complete:Braços completos',
           'upper_arm:Braço',
           'forearm_hand:Antebraço / punho / mão',
         ],
@@ -118,7 +118,7 @@ void main() {
             'back',
           ).map((item) => item.value),
           [
-            'Costas completo',
+            'Costas completas',
             'Costas superior',
             'Costas média',
             'Costas inferior / lombar',
@@ -173,7 +173,7 @@ void main() {
             'legs',
           ).map((item) => item.value),
           [
-            'Pernas completo',
+            'Pernas completas',
             'Acima do joelho / coxa e anca',
             'Abaixo do joelho / perna inferior e pé',
           ],

@@ -70,8 +70,8 @@ void main() {
         ),
         containsAll([
           'Flexão clássica',
-          'Flexão inclinada',
-          'Flexão declinada',
+          'Flexão com joelhos apoiados',
+          'Flexão aberta',
         ]),
       );
 

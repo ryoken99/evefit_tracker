@@ -16,18 +16,30 @@ void main() {
   });
 
   group('v0.8.0 location and equipment capabilities', () {
-    test('home without equipment exposes bodyweight only', () {
-      expect(_available({'Casa'}, {}), {'bodyweight'});
+    test('home without equipment exposes only base movement capabilities', () {
+      expect(_available({'Casa'}, {}), {'bodyweight', 'floor', 'wall'});
     });
 
     test('home exposes only each selected portable equipment family', () {
-      expect(_available({'Casa'}, {'dumbbells'}), {'bodyweight', 'dumbbells'});
+      expect(_available({'Casa'}, {'dumbbells'}), {
+        'bodyweight',
+        'floor',
+        'wall',
+        'dumbbells',
+      });
       expect(_available({'Casa'}, {'barbell', 'plates'}), {
         'bodyweight',
+        'floor',
+        'wall',
         'barbell',
         'plates',
       });
-      expect(_available({'Casa'}, {'bands'}), {'bodyweight', 'bands'});
+      expect(_available({'Casa'}, {'bands'}), {
+        'bodyweight',
+        'floor',
+        'wall',
+        'bands',
+      });
     });
 
     test('gym exposes machines cables free weights racks and benches', () {
@@ -52,9 +64,15 @@ void main() {
     });
 
     test('outdoor and dojo add only their location capabilities', () {
-      expect(_available({'Exterior'}, {}), {'bodyweight', 'outdoor_space'});
+      expect(_available({'Exterior'}, {}), {
+        'bodyweight',
+        'floor',
+        'outdoor_space',
+      });
       expect(_available({'Dojo / Artes marciais'}, {}), {
         'bodyweight',
+        'floor',
+        'wall',
         'tatami',
       });
     });

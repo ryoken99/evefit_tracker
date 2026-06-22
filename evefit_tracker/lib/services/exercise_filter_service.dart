@@ -1,38 +1,15 @@
 import '../models/exercise.dart';
 import '../models/workout_type.dart';
 import 'training_architecture.dart';
+import 'exercise_capability_service.dart';
 import 'workout_taxonomy.dart';
 
 class ExerciseFilterService {
   const ExerciseFilterService._();
 
-  static const _equipmentAliases = {
-    'bodyweight': ['peso corporal', 'nenhum equipamento'],
-    'barbell': ['barra'],
-    'plates': ['discos'],
-    'dumbbells': ['halteres', 'halter'],
-    'bench': ['banco'],
-    'chair_support': ['banco', 'cadeira', 'apoio'],
-    'weighted_backpack': ['mochila'],
-    'water_bottles': ['garrafas de água', 'garrafas de agua'],
-    'water_jug': ['garrafão', 'garrafao'],
-    'stable_step': ['degrau', 'escada estável', 'escada estavel'],
-    'sturdy_table': ['mesa resistente'],
-    'broomstick': ['cabo de vassoura'],
-    'machine': ['máquina', 'maquina', 'multifunções'],
-    'high_cable': ['cabo alto', 'cabo', 'corda no cabo'],
-    'low_cable': ['cabo baixo', 'gancho de baixo', 'cabo'],
-    'pullup_bar': ['barra fixa', 'chin-up'],
-    'bands': ['elásticos', 'elasticos'],
-    'kettlebell': ['kettlebell'],
-    'treadmill': ['passadeira'],
-    'bike': ['bicicleta'],
-    'elliptical': ['elíptica', 'eliptica'],
-    'jump_rope': ['corda de saltar', 'corda'],
-    'heavy_bag': ['saco de pancada'],
-    'tatami': ['tatami', 'dojo', 'jiu-jitsu', 'karate'],
-    'none': ['nenhum equipamento'],
-  };
+  static const emptyStateMessage =
+      'Não há exercícios disponíveis para este foco com as capacidades atuais. '
+      'Ativa Mostrar todos para ver o equipamento/local em falta.';
 
   static List<Exercise> filter({
     required List<Exercise> exercises,
@@ -177,15 +154,23 @@ class ExerciseFilterService {
       final matchesSelection =
           TrainingArchitecture.matchesSelection(
             exercise,
-            _baseSelectionForHierarchy(selection),
+            _baseSelectionForHierarchy(selection).copyWith(equipmentKey: ''),
           ) &&
           _matchesHierarchyFocus(exercise, selection);
       final matchesEquipment = _matchesEquipment(
         exercise,
         trainingLocation,
         availableEquipmentKeys,
+        selectedEquipmentKey: selection.equipmentKey,
       );
       final isAvailable = matchesSelection && matchesEquipment;
+      final equipmentReason = matchesSelection && !matchesEquipment
+          ? _equipmentUnavailableReason(
+              exercise: exercise,
+              trainingLocation: trainingLocation,
+              availableEquipmentKeys: availableEquipmentKeys,
+            )
+          : '';
       return ExerciseAvailability(
         exercise: exercise,
         isAvailable: isAvailable,
@@ -193,11 +178,27 @@ class ExerciseFilterService {
             ? ''
             : !matchesSelection
             ? 'Indisponível pelo filtro anatómico selecionado.'
-            : 'Indisponível com o teu equipamento/local atual.',
+            : equipmentReason,
       );
     }).toList();
     if (showAllExercises) return availability;
     return availability.where((item) => item.isAvailable).toList();
+  }
+
+  static String _equipmentUnavailableReason({
+    required Exercise exercise,
+    required String trainingLocation,
+    required Set<String> availableEquipmentKeys,
+  }) {
+    final missing = ExerciseCapabilityService.missingCapabilityNames(
+      exercise: exercise,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+    );
+    if (missing.isEmpty) {
+      return 'Indisponível com o teu equipamento/local atual.';
+    }
+    return 'Indisponível: requer ${missing.join(' e ')}.';
   }
 
   static bool _matchesWorkoutType(Exercise exercise, WorkoutType? workoutType) {
@@ -237,56 +238,15 @@ class ExerciseFilterService {
   static bool _matchesEquipment(
     Exercise exercise,
     String trainingLocation,
-    Set<String> availableEquipmentKeys,
-  ) {
-    final location = WorkoutTaxonomy.normalize(trainingLocation);
-    if (location.contains('ginasio')) return true;
-
-    if (location.contains('exterior') &&
-        _containsAny(exercise, [
-          'peso corporal',
-          'caminhada exterior',
-          'corrida exterior',
-          'sprints exterior',
-          'hiit',
-          'mobilidade',
-          'alongamento',
-        ])) {
-      return true;
-    }
-
-    if ((location.contains('dojo') || location.contains('marciais')) &&
-        _containsAny(exercise, [
-          'peso corporal',
-          'tatami',
-          'karate',
-          'jiu-jitsu',
-          'jiu jitsu',
-          'grappling',
-          'mobilidade',
-          'core',
-          'abdominal',
-        ])) {
-      return true;
-    }
-
-    if (availableEquipmentKeys.isEmpty) {
-      return _containsAny(exercise, ['peso corporal', 'nenhum equipamento']);
-    }
-    final effectiveEquipmentKeys = {
-      'bodyweight',
-      'none',
-      ...availableEquipmentKeys,
-    };
-    final exerciseEquipment = TrainingArchitecture.tagsForExercise(
-      exercise,
-    ).equipmentKeys;
-    if (exerciseEquipment.any(effectiveEquipmentKeys.contains)) return true;
-    for (final key in effectiveEquipmentKeys) {
-      final aliases = _equipmentAliases[key] ?? [key];
-      if (_containsAny(exercise, aliases)) return true;
-    }
-    return false;
+    Set<String> availableEquipmentKeys, {
+    String selectedEquipmentKey = '',
+  }) {
+    return ExerciseCapabilityService.isAvailable(
+      exercise: exercise,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+      selectedEquipmentKey: selectedEquipmentKey,
+    );
   }
 
   static TrainingSelection _baseSelectionForHierarchy(
@@ -300,6 +260,8 @@ class ExerciseFilterService {
     }
     if (!_hierarchyFocusKeywords.containsKey(selection.subgroupKey) &&
         !_hierarchyFocusKeywords.containsKey(selection.specificMuscleKey) &&
+        !_completeFocusTagAliases.containsKey(selection.subgroupKey) &&
+        !_completeFocusTagAliases.containsKey(selection.specificMuscleKey) &&
         !_focusTagAliases.containsKey(selection.subgroupKey) &&
         !_focusTagAliases.containsKey(selection.specificMuscleKey)) {
       return selection;
@@ -324,13 +286,8 @@ class ExerciseFilterService {
 
     // Complete options must aggregate their explicit children instead of
     // depending on broad text matching.
-    if (focus == 'arms_complete') {
-      return tags.groupKeys.contains('arms') ||
-          tags.groupKeys.contains('forearm_hand') ||
-          tags.subgroupKeys.contains('anterior_arm') ||
-          tags.subgroupKeys.contains('posterior_arm') ||
-          tags.subgroupKeys.contains('grip_strength');
-    }
+    final completeMatch = _matchesCompleteFocus(tags, focus);
+    if (completeMatch != null) return completeMatch;
     if (focus == 'upper_arm') {
       return tags.subgroupKeys.contains('anterior_arm') ||
           tags.subgroupKeys.contains('posterior_arm');
@@ -571,23 +528,54 @@ class ExerciseFilterService {
     );
   }
 
+  static bool? _matchesCompleteFocus(
+    ExerciseArchitectureTags tags,
+    String focus,
+  ) {
+    final aliases = _completeFocusTagAliases[focus];
+    if (aliases == null) return null;
+    return aliases.any(
+      (alias) =>
+          tags.groupKeys.contains(alias) ||
+          tags.subgroupKeys.contains(alias) ||
+          tags.muscleKeys.contains(alias),
+    );
+  }
+
+  static const _completeFocusTagAliases = {
+    'arms_complete': {
+      'arms',
+      'forearm_hand',
+      'anterior_arm',
+      'posterior_arm',
+      'grip_strength',
+    },
+    'forearm_complete': {'forearm_hand', 'grip_strength'},
+    'chest_complete': {'chest', 'chest_primary'},
+    'back_complete': {'back', 'back_width', 'back_thickness', 'low_back'},
+    'shoulders_complete': {'shoulders', 'deltoids'},
+    'traps_complete': {'traps_scapula', 'traps'},
+    'neck_complete': {'neck'},
+    'core_complete': {'core', 'core_stability', 'core_general'},
+    'abs_complete': {'core', 'core_stability', 'core_general'},
+    'legs_complete': {
+      'legs',
+      'quadriceps',
+      'hamstrings',
+      'hips_glutes',
+      'adductors',
+      'abductors',
+      'calves',
+    },
+    'quadriceps_complete': {'quadriceps'},
+    'hamstrings_complete': {'hamstrings'},
+    'glutes_complete': {'hips_glutes', 'glutes'},
+    'lower_leg_complete': {'calves'},
+  };
+
   static const _focusTagAliases = {
-    'arms_complete': ['arms', 'forearm_hand'],
     'upper_arm': ['anterior_arm', 'posterior_arm'],
     'forearm_hand': ['forearm_hand', 'grip_strength'],
-    'forearm_complete': ['forearm_hand', 'grip_strength'],
-    'chest_complete': ['chest', 'chest_primary'],
-    'back_complete': ['back', 'back_width', 'back_thickness'],
-    'shoulders_complete': ['shoulders', 'deltoids'],
-    'traps_complete': ['traps_scapula', 'traps'],
-    'neck_complete': ['neck'],
-    'core_complete': ['core', 'core_stability', 'core_general'],
-    'abs_complete': ['core', 'core_stability', 'core_general'],
-    'legs_complete': ['legs', 'quadriceps', 'hamstrings', 'hips_glutes'],
-    'quadriceps_complete': ['quadriceps'],
-    'hamstrings_complete': ['hamstrings'],
-    'glutes_complete': ['hips_glutes', 'glutes'],
-    'lower_leg_complete': ['calves'],
     'biceps': ['biceps'],
     'biceps_brachii': ['biceps'],
     'brachialis': ['brachialis'],

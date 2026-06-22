@@ -95,13 +95,13 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
   }
 
   Future<void> _unlock(Profile profile) async {
-    final pin = TextEditingController();
+    var enteredPin = '';
     final ok = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(profile.name),
         content: TextField(
-          controller: pin,
+          onChanged: (value) => enteredPin = value,
           autofocus: true,
           obscureText: true,
           keyboardType: TextInputType.number,
@@ -121,7 +121,7 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
             onPressed: () async {
               final valid = await widget.database.verifyProfilePin(
                 profile,
-                pin.text,
+                enteredPin,
               );
               if (context.mounted) Navigator.pop(context, valid);
             },
@@ -130,7 +130,6 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
         ],
       ),
     );
-    pin.dispose();
     if (ok == true) {
       await widget.database.setActiveProfile(profile);
       widget.onUnlocked(profile);

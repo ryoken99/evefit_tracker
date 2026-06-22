@@ -87,12 +87,11 @@ void main() {
 
     expect(
       visible.map((item) => item.name),
-      containsAll([
-        'Passadeira caminhada',
-        'Bicicleta',
-        'Elíptica',
-        'Corda de saltar',
-      ]),
+      containsAll(['Passadeira caminhada', 'Bicicleta', 'Elíptica']),
+    );
+    expect(
+      visible.map((item) => item.name),
+      isNot(contains('Corda de saltar')),
     );
   });
 

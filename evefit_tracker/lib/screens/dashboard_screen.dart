@@ -42,7 +42,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
     widget.database.dashboardWidgets(),
   ]);
 
-  void _refresh() => setState(() => _dataFuture = _loadData());
+  void _refresh() {
+    setState(() {
+      _dataFuture = _loadData();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
