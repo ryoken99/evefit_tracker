@@ -764,7 +764,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       ? await widget.database.insertWorkout(workout)
                       : await widget.database.insertWorkoutFromTemplate(
                           workout: workout,
-                          exerciseNames: template.exerciseNames,
+                          exerciseReferences: template.exercises,
                         );
                   final entries = await widget.database.workouts();
                   final entry = entries.firstWhere(

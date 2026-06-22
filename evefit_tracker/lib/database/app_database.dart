@@ -26,6 +26,7 @@ import '../services/profile_preferences_service.dart';
 import '../services/training_architecture.dart';
 import '../services/training_location_service.dart';
 import '../services/workout_taxonomy.dart';
+import '../services/workout_template_service.dart';
 import 'migrations/v080_integrity_migration.dart';
 import 'seed_data.dart';
 
@@ -1381,10 +1382,16 @@ class AppDatabase {
   }
 
   Future<List<Exercise>> exercises() async {
-    final rows = await (await database).query(
-      'exercises',
-      where: 'is_hidden = 0 OR is_hidden IS NULL',
-      orderBy: 'muscle_group, name',
+    final profileId = _requireProfileId();
+    final rows = await (await database).rawQuery(
+      'SELECT exercises.* FROM exercises '
+      'WHERE (exercises.is_hidden = 0 OR exercises.is_hidden IS NULL) '
+      'AND ((exercises.is_default = 1 AND NOT EXISTS ('
+      'SELECT 1 FROM profile_hidden_exercises hidden '
+      'WHERE hidden.exercise_id = exercises.id AND hidden.profile_id = ?)) '
+      'OR (exercises.is_default = 0 AND exercises.profile_id = ?)) '
+      'ORDER BY exercises.muscle_group, exercises.name',
+      [profileId, profileId],
     );
     return rows.map(Exercise.fromMap).toList();
   }
@@ -1395,6 +1402,7 @@ class AppDatabase {
       'exercises',
       (exercise.toMap()
         ..remove('id')
+        ..['profile_id'] = exercise.isDefault ? null : _requireProfileId()
         ..['created_at'] = (exercise.createdAt ?? now).toIso8601String()
         ..['updated_at'] = (exercise.updatedAt ?? now).toIso8601String()),
     );
@@ -1404,18 +1412,40 @@ class AppDatabase {
     await (await database).update(
       'exercises',
       (exercise.toMap()..remove('id'))
+        ..['profile_id'] = _requireProfileId()
+        ..['is_default'] = 0
         ..['updated_at'] = DateTime.now().toIso8601String(),
-      where: 'id = ?',
-      whereArgs: [exercise.id],
+      where: 'id = ? AND is_default = 0 AND profile_id = ?',
+      whereArgs: [exercise.id, _requireProfileId()],
     );
   }
 
   Future<void> deleteExercise(int id) async {
-    await (await database).update(
+    final db = await database;
+    final profileId = _requireProfileId();
+    final rows = await db.query(
       'exercises',
-      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
+      columns: ['id', 'is_default', 'profile_id'],
       where: 'id = ?',
       whereArgs: [id],
+      limit: 1,
+    );
+    if (rows.isEmpty) return;
+    final row = rows.single;
+    if (row['is_default'] == 1) {
+      await db.insert('profile_hidden_exercises', {
+        'profile_id': profileId,
+        'exercise_id': id,
+        'created_at': DateTime.now().toIso8601String(),
+      }, conflictAlgorithm: ConflictAlgorithm.ignore);
+      return;
+    }
+    if (row['profile_id'] != profileId) return;
+    await db.update(
+      'exercises',
+      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
+      where: 'id = ? AND profile_id = ?',
+      whereArgs: [id, profileId],
     );
   }
 
@@ -1516,34 +1546,69 @@ class AppDatabase {
 
   Future<int> insertWorkoutFromTemplate({
     required Workout workout,
-    required List<String> exerciseNames,
+    List<WorkoutTemplateExerciseRef> exerciseReferences = const [],
+    List<String> exerciseNames = const [],
   }) async {
     final db = await database;
     final profileId = _requireProfileId();
+    final references = [
+      ...exerciseReferences,
+      for (final name in exerciseNames)
+        WorkoutTemplateExerciseRef(legacyName: name),
+    ];
     return db.transaction((txn) async {
       final workoutId = await txn.insert(
         'workouts',
         (workout.toMap()..remove('id'))..['profile_id'] = profileId,
       );
-      for (final name in exerciseNames) {
-        final rows = await txn.query(
-          'exercises',
-          columns: ['id'],
-          where: 'name = ?',
-          whereArgs: [name],
-          limit: 1,
-        );
-        if (rows.isNotEmpty) {
+      for (final reference in references) {
+        final exerciseId = await _resolveTemplateExerciseId(txn, reference);
+        if (exerciseId != null) {
           await txn.insert('workout_exercises', {
             'profile_id': profileId,
             'workout_id': workoutId,
-            'exercise_id': rows.first['id'],
+            'exercise_id': exerciseId,
             'notes': '',
           }, conflictAlgorithm: ConflictAlgorithm.ignore);
         }
       }
       return workoutId;
     });
+  }
+
+  Future<int?> _resolveTemplateExerciseId(
+    DatabaseExecutor db,
+    WorkoutTemplateExerciseRef reference,
+  ) async {
+    if (reference.catalogEntryKey.isNotEmpty) {
+      final rows = await db.query(
+        'exercises',
+        columns: ['id'],
+        where: 'catalog_entry_key = ?',
+        whereArgs: [reference.catalogEntryKey],
+        limit: 1,
+      );
+      if (rows.isNotEmpty) return rows.single['id'] as int;
+    }
+    if (reference.exerciseKey.isNotEmpty && reference.contextKey.isNotEmpty) {
+      final rows = await db.query(
+        'exercises',
+        columns: ['id'],
+        where: 'exercise_key = ? AND context_key = ?',
+        whereArgs: [reference.exerciseKey, reference.contextKey],
+        limit: 1,
+      );
+      if (rows.isNotEmpty) return rows.single['id'] as int;
+    }
+    if (reference.legacyName.isEmpty) return null;
+    final legacyRows = await db.query(
+      'exercises',
+      columns: ['id'],
+      where: 'name = ?',
+      whereArgs: [reference.legacyName],
+      limit: 2,
+    );
+    return legacyRows.length == 1 ? legacyRows.single['id'] as int : null;
   }
 
   Future<List<CustomWorkoutTemplate>> workoutTemplates() async {

@@ -1,6 +1,7 @@
 class Exercise {
   Exercise({
     this.id,
+    this.profileId,
     required this.name,
     required this.muscleGroup,
     required this.isDefault,
@@ -22,6 +23,7 @@ class Exercise {
   });
 
   final int? id;
+  final int? profileId;
   final String name;
   final String muscleGroup;
   final bool isDefault;
@@ -49,6 +51,7 @@ class Exercise {
 
   Exercise copyWith({
     int? id,
+    int? profileId,
     String? name,
     String? muscleGroup,
     bool? isDefault,
@@ -70,6 +73,7 @@ class Exercise {
   }) {
     return Exercise(
       id: id ?? this.id,
+      profileId: profileId ?? this.profileId,
       name: name ?? this.name,
       muscleGroup: muscleGroup ?? this.muscleGroup,
       isDefault: isDefault ?? this.isDefault,
@@ -94,6 +98,7 @@ class Exercise {
 
   factory Exercise.fromMap(Map<String, Object?> map) => Exercise(
     id: map['id'] as int?,
+    profileId: map['profile_id'] as int?,
     name: map['name'] as String,
     muscleGroup:
         map['primary_muscle_group'] as String? ??
@@ -127,6 +132,7 @@ class Exercise {
 
   Map<String, Object?> toMap() => {
     'id': id,
+    if (profileId != null) 'profile_id': profileId,
     'name': name,
     'muscle_group': muscleGroup,
     'primary_muscle_group': muscleGroup,
