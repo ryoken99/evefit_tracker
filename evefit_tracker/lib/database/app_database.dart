@@ -25,6 +25,7 @@ import '../services/profile_preferences_service.dart';
 import '../services/training_architecture.dart';
 import '../services/training_location_service.dart';
 import '../services/workout_taxonomy.dart';
+import 'migrations/v080_integrity_migration.dart';
 import 'seed_data.dart';
 
 class WorkoutEntry {
@@ -66,7 +67,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 17,
+      version: 18,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -83,6 +84,7 @@ class AppDatabase {
         await _migrateV710(db);
         await _migrateV711(db);
         await _migrateV717(db);
+        await _migrateV080(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -132,6 +134,9 @@ class AppDatabase {
         }
         if (oldVersion < 17) {
           await _migrateV717(db);
+        }
+        if (oldVersion < 18) {
+          await _migrateV080(db);
         }
       },
     );
@@ -381,6 +386,10 @@ class AppDatabase {
 
   Future<void> _migrateV717(Database db) async {
     await ExerciseV717Migration.migrate(db);
+  }
+
+  Future<void> _migrateV080(Database db) async {
+    await V080IntegrityMigration.migrate(db);
   }
 
   Future<void> _createTrainingArchitectureTables(Database db) async {
