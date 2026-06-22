@@ -1,38 +1,11 @@
 import '../models/exercise.dart';
 import '../models/workout_type.dart';
 import 'training_architecture.dart';
+import 'exercise_capability_service.dart';
 import 'workout_taxonomy.dart';
 
 class ExerciseFilterService {
   const ExerciseFilterService._();
-
-  static const _equipmentAliases = {
-    'bodyweight': ['peso corporal', 'nenhum equipamento'],
-    'barbell': ['barra'],
-    'plates': ['discos'],
-    'dumbbells': ['halteres', 'halter'],
-    'bench': ['banco'],
-    'chair_support': ['banco', 'cadeira', 'apoio'],
-    'weighted_backpack': ['mochila'],
-    'water_bottles': ['garrafas de água', 'garrafas de agua'],
-    'water_jug': ['garrafão', 'garrafao'],
-    'stable_step': ['degrau', 'escada estável', 'escada estavel'],
-    'sturdy_table': ['mesa resistente'],
-    'broomstick': ['cabo de vassoura'],
-    'machine': ['máquina', 'maquina', 'multifunções'],
-    'high_cable': ['cabo alto', 'cabo', 'corda no cabo'],
-    'low_cable': ['cabo baixo', 'gancho de baixo', 'cabo'],
-    'pullup_bar': ['barra fixa', 'chin-up'],
-    'bands': ['elásticos', 'elasticos'],
-    'kettlebell': ['kettlebell'],
-    'treadmill': ['passadeira'],
-    'bike': ['bicicleta'],
-    'elliptical': ['elíptica', 'eliptica'],
-    'jump_rope': ['corda de saltar', 'corda'],
-    'heavy_bag': ['saco de pancada'],
-    'tatami': ['tatami', 'dojo', 'jiu-jitsu', 'karate'],
-    'none': ['nenhum equipamento'],
-  };
 
   static List<Exercise> filter({
     required List<Exercise> exercises,
@@ -177,13 +150,14 @@ class ExerciseFilterService {
       final matchesSelection =
           TrainingArchitecture.matchesSelection(
             exercise,
-            _baseSelectionForHierarchy(selection),
+            _baseSelectionForHierarchy(selection).copyWith(equipmentKey: ''),
           ) &&
           _matchesHierarchyFocus(exercise, selection);
       final matchesEquipment = _matchesEquipment(
         exercise,
         trainingLocation,
         availableEquipmentKeys,
+        selectedEquipmentKey: selection.equipmentKey,
       );
       final isAvailable = matchesSelection && matchesEquipment;
       return ExerciseAvailability(
@@ -237,56 +211,15 @@ class ExerciseFilterService {
   static bool _matchesEquipment(
     Exercise exercise,
     String trainingLocation,
-    Set<String> availableEquipmentKeys,
-  ) {
-    final location = WorkoutTaxonomy.normalize(trainingLocation);
-    if (location.contains('ginasio')) return true;
-
-    if (location.contains('exterior') &&
-        _containsAny(exercise, [
-          'peso corporal',
-          'caminhada exterior',
-          'corrida exterior',
-          'sprints exterior',
-          'hiit',
-          'mobilidade',
-          'alongamento',
-        ])) {
-      return true;
-    }
-
-    if ((location.contains('dojo') || location.contains('marciais')) &&
-        _containsAny(exercise, [
-          'peso corporal',
-          'tatami',
-          'karate',
-          'jiu-jitsu',
-          'jiu jitsu',
-          'grappling',
-          'mobilidade',
-          'core',
-          'abdominal',
-        ])) {
-      return true;
-    }
-
-    if (availableEquipmentKeys.isEmpty) {
-      return _containsAny(exercise, ['peso corporal', 'nenhum equipamento']);
-    }
-    final effectiveEquipmentKeys = {
-      'bodyweight',
-      'none',
-      ...availableEquipmentKeys,
-    };
-    final exerciseEquipment = TrainingArchitecture.tagsForExercise(
-      exercise,
-    ).equipmentKeys;
-    if (exerciseEquipment.any(effectiveEquipmentKeys.contains)) return true;
-    for (final key in effectiveEquipmentKeys) {
-      final aliases = _equipmentAliases[key] ?? [key];
-      if (_containsAny(exercise, aliases)) return true;
-    }
-    return false;
+    Set<String> availableEquipmentKeys, {
+    String selectedEquipmentKey = '',
+  }) {
+    return ExerciseCapabilityService.isAvailable(
+      exercise: exercise,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+      selectedEquipmentKey: selectedEquipmentKey,
+    );
   }
 
   static TrainingSelection _baseSelectionForHierarchy(

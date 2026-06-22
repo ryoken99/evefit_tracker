@@ -2394,7 +2394,10 @@ class TrainingArchitecture {
 
     addIf('bodyweight', ['peso corporal']);
     addIf('dumbbells', ['halter', 'halteres']);
-    addIf('barbell', ['barra', 'barbell']);
+    if ((text.contains('barra') || text.contains('barbell')) &&
+        !text.contains('barra fixa')) {
+      keys.add('barbell');
+    }
     addIf('plates', ['disco', 'plate']);
     addIf('bench', ['banco']);
     addIf('chair_support', ['cadeira', 'apoio']);

@@ -19,6 +19,16 @@ class EquipmentCatalogService {
       name: 'Peso corporal',
       category: 'basic',
     ),
+    'floor': EquipmentDefinition(
+      key: 'floor',
+      name: 'Chão livre',
+      category: 'basic',
+    ),
+    'wall': EquipmentDefinition(
+      key: 'wall',
+      name: 'Parede estável',
+      category: 'basic',
+    ),
     'free_space': EquipmentDefinition(
       key: 'free_space',
       name: 'Espaço livre',
@@ -32,6 +42,11 @@ class EquipmentCatalogService {
     'chair_support': EquipmentDefinition(
       key: 'chair_support',
       name: 'Banco / cadeira / apoio',
+      category: 'basic',
+    ),
+    'bench': EquipmentDefinition(
+      key: 'bench',
+      name: 'Banco estável',
       category: 'basic',
     ),
     'weighted_backpack': EquipmentDefinition(
@@ -414,13 +429,25 @@ class EquipmentCatalogService {
         .toSet();
     final result = <String>{
       'bodyweight',
+      'floor',
       ...selectedEquipmentKeys.where(definitions.containsKey),
     };
+    if (normalizedLocations.any(
+      (location) =>
+          location.contains('casa') ||
+          location.contains('ginásio') ||
+          location.contains('ginasio') ||
+          location.contains('dojo') ||
+          location.contains('marciais'),
+    )) {
+      result.add('wall');
+    }
     if (normalizedLocations.any(
       (location) =>
           location.contains('ginásio') || location.contains('ginasio'),
     )) {
       result.addAll(gymEquipmentKeys);
+      result.addAll({'bench', 'chair_support', 'stable_step'});
     }
     if (normalizedLocations.any(
       (location) =>

@@ -28,7 +28,11 @@ void main() {
         activeProfile: _profile(1, 'Casa'),
       );
 
-      expect(await database.availableEquipmentKeys(), {'bodyweight'});
+      expect(await database.availableEquipmentKeys(), {
+        'bodyweight',
+        'floor',
+        'wall',
+      });
     },
   );
 
@@ -62,9 +66,16 @@ void main() {
 
     expect(await profileA.availableEquipmentKeys(), {
       'bodyweight',
+      'floor',
+      'wall',
       'dumbbells',
     });
-    expect(await profileB.availableEquipmentKeys(), {'bodyweight', 'barbell'});
+    expect(await profileB.availableEquipmentKeys(), {
+      'bodyweight',
+      'floor',
+      'wall',
+      'barbell',
+    });
   });
 
   test('equipment update uses the active profile real gym location', () async {
@@ -111,8 +122,18 @@ void main() {
 
     await profileA.updateProfileEquipment({'bands': 'Elásticos'});
 
-    expect(await profileA.availableEquipmentKeys(), {'bodyweight', 'bands'});
-    expect(await profileB.availableEquipmentKeys(), {'bodyweight', 'barbell'});
+    expect(await profileA.availableEquipmentKeys(), {
+      'bodyweight',
+      'floor',
+      'wall',
+      'bands',
+    });
+    expect(await profileB.availableEquipmentKeys(), {
+      'bodyweight',
+      'floor',
+      'wall',
+      'barbell',
+    });
   });
 }
 

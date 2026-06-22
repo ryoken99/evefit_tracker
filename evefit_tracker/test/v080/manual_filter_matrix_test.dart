@@ -164,6 +164,115 @@ void main() {
       );
       expect(names, isNot(contains('Remo com barra')));
     });
+
+    test(
+      'BW-CHEST-002 bodyweight without support excludes raised push-ups',
+      () {
+        final names = _visibleNames(
+          const TrainingSelection(
+            regionKey: 'upper',
+            groupKey: 'chest',
+            specificMuscleKey: 'chest_complete',
+            equipmentKey: 'bodyweight',
+          ),
+        );
+
+        expect(names, isNot(contains('Flexão inclinada')));
+        expect(names, isNot(contains('Flexão declinada')));
+        expect(names, isNot(contains('Dips para peito em paralelas')));
+      },
+    );
+
+    test('SUPPORT-CHEST-001 home support enables inclined push-up only', () {
+      final names = _visibleNames(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'chest',
+          specificMuscleKey: 'chest_complete',
+          equipmentKey: 'bodyweight',
+        ),
+        equipment: const {'bodyweight', 'floor', 'wall', 'chair_support'},
+      );
+
+      expect(names, contains('Flexão inclinada'));
+      expect(names, isNot(contains('Dips para peito em paralelas')));
+    });
+
+    test('BW-ARMS-002 bodyweight without support excludes bench dips', () {
+      final names = _visibleNames(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'arms',
+          subgroupKey: 'arms_complete',
+          specificMuscleKey: 'arms_complete',
+          equipmentKey: 'bodyweight',
+        ),
+      );
+
+      expect(names, isNot(contains('Fundos entre apoios')));
+      expect(names, isNot(contains('Dips para tríceps')));
+    });
+
+    test('SUPPORT-ARMS-001 chair support enables fundos entre apoios', () {
+      final names = _visibleNames(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'arms',
+          subgroupKey: 'arms_complete',
+          specificMuscleKey: 'arms_complete',
+          equipmentKey: 'bodyweight',
+        ),
+        equipment: const {'bodyweight', 'floor', 'wall', 'chair_support'},
+      );
+
+      expect(names, contains('Fundos entre apoios'));
+      expect(names, isNot(contains('Dips para tríceps')));
+    });
+
+    test('BW-LEGS-002 bodyweight without chair excludes chair squat', () {
+      final names = _visibleNames(
+        const TrainingSelection(
+          regionKey: 'lower',
+          groupKey: 'legs',
+          subgroupKey: 'legs_complete',
+          specificMuscleKey: 'legs_complete',
+          equipmentKey: 'bodyweight',
+        ),
+      );
+
+      expect(names, isNot(contains('Agachamento para cadeira')));
+      expect(names, isNot(contains('Agachamento búlgaro com apoio')));
+    });
+
+    test('BW-BACK-002 bodyweight without bar excludes vertical bar work', () {
+      final names = _visibleNames(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'back',
+          subgroupKey: 'back_width',
+          specificMuscleKey: 'back_width',
+        ),
+      );
+
+      expect(names, isNot(contains('Pull-up')));
+      expect(names, isNot(contains('Scapular pull-up')));
+    });
+
+    test('PULLUP-BACK-001 home pull-up bar enables vertical bar work', () {
+      final names = _visibleNames(
+        const TrainingSelection(
+          regionKey: 'upper',
+          groupKey: 'back',
+          subgroupKey: 'back_width',
+          specificMuscleKey: 'back_width',
+          equipmentKey: 'pullup_bar',
+        ),
+        equipment: const {'bodyweight', 'floor', 'wall', 'pullup_bar'},
+      );
+
+      expect(names, containsAll({'Pull-up', 'Scapular pull-up'}));
+      expect(names, isNot(contains('Puxada alta')));
+    });
   });
 }
 
