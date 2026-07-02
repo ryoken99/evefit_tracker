@@ -87,11 +87,13 @@ void main() {
 
     expect(
       visible.map((item) => item.name),
-      containsAll(['Passadeira caminhada', 'Bicicleta', 'Elíptica']),
-    );
-    expect(
-      visible.map((item) => item.name),
-      isNot(contains('Corda de saltar')),
+      containsAll([
+        'Passadeira caminhada',
+        'Bicicleta',
+        'Elíptica',
+        // O ginásio disponibiliza corda de saltar como equipamento comum.
+        'Corda de saltar',
+      ]),
     );
   });
 

@@ -257,7 +257,6 @@ class TrainingFlow {
       'biceps_brachii',
       'brachialis',
       'brachioradialis',
-      'coracobrachialis',
       'triceps',
       'triceps_long',
       'triceps_lateral',
@@ -339,7 +338,6 @@ class TrainingFlow {
       'adductors',
       'abductors',
       'hip_flexors',
-      'hip_external_rotators',
     ],
     'lower_leg_foot': [
       'lower_leg_complete',

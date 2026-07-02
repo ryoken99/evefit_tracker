@@ -249,6 +249,12 @@ class ExerciseFilterService {
     );
   }
 
+  static bool _isKnownFocusKey(String key) =>
+      key.isNotEmpty &&
+      (_hierarchyFocusKeywords.containsKey(key) ||
+          _completeFocusTagAliases.containsKey(key) ||
+          _focusTagAliases.containsKey(key));
+
   static TrainingSelection _baseSelectionForHierarchy(
     TrainingSelection selection,
   ) {
@@ -258,17 +264,19 @@ class ExerciseFilterService {
         equipmentKey: selection.equipmentKey,
       );
     }
-    if (!_hierarchyFocusKeywords.containsKey(selection.subgroupKey) &&
-        !_hierarchyFocusKeywords.containsKey(selection.specificMuscleKey) &&
-        !_completeFocusTagAliases.containsKey(selection.subgroupKey) &&
-        !_completeFocusTagAliases.containsKey(selection.specificMuscleKey) &&
-        !_focusTagAliases.containsKey(selection.subgroupKey) &&
-        !_focusTagAliases.containsKey(selection.specificMuscleKey)) {
+    if (!_isKnownFocusKey(selection.subgroupKey) &&
+        !_isKnownFocusKey(selection.specificMuscleKey)) {
       return selection;
     }
+    // A focus key stored in the subgroup slot is not a real anatomical
+    // subgroup tag, so subgroup matching must be delegated to the focus
+    // matcher instead of the raw tag comparison.
     return TrainingSelection(
       regionKey: selection.regionKey,
       groupKey: selection.groupKey,
+      subgroupKey: _isKnownFocusKey(selection.subgroupKey)
+          ? ''
+          : selection.subgroupKey,
       equipmentKey: selection.equipmentKey,
     );
   }
@@ -296,6 +304,10 @@ class ExerciseFilterService {
       return tags.groupKeys.contains('forearm_hand') ||
           tags.subgroupKeys.contains('grip_strength');
     }
+
+    // Canonical architecture tags are the source of truth; text predicates
+    // and keywords below only rescue exercises without curated tags.
+    if (_matchesExplicitFocusTags(exercise, focus)) return true;
 
     if (exercise.primaryMuscleKey.isNotEmpty) {
       final canonicalMuscles = {
@@ -341,9 +353,10 @@ class ExerciseFilterService {
       return _isForearmHandExercise(exercise, focus);
     }
 
-    if (_matchesExplicitFocusTags(exercise, focus)) return true;
     final keywords = _hierarchyFocusKeywords[focus];
-    if (keywords == null || keywords.isEmpty) return true;
+    // An unknown or tag-only focus must not silently accept every exercise:
+    // that showed whole regions under muscles the exercise never trains.
+    if (keywords == null || keywords.isEmpty) return false;
     if (_primaryOnlyHierarchyFocuses.contains(focus)) {
       return _containsAnyPrimary(exercise, keywords);
     }
@@ -408,7 +421,7 @@ class ExerciseFilterService {
   }
 
   static bool _isBrachioradialisExercise(Exercise exercise) {
-    final text = _normalizedDetailText(exercise);
+    final text = _normalizedPrimaryText(exercise);
     return _textHas(text, [
       'curl martelo',
       'curl cruzado',
@@ -437,7 +450,7 @@ class ExerciseFilterService {
   }
 
   static bool _isForearmHandExercise(Exercise exercise, String focus) {
-    final text = _normalizedDetailText(exercise);
+    final text = _normalizedPrimaryText(exercise);
     final isForearm = _textHas(text, [
       'antebraco',
       'antebraço',
@@ -473,6 +486,7 @@ class ExerciseFilterService {
         'punho',
         'desvio radial',
         'desvio ulnar',
+        'rotacao controlada',
       ]);
     }
     if (focus == 'fingers') return _textHas(text, ['finger', 'dedos']);
@@ -489,14 +503,6 @@ class ExerciseFilterService {
         '${exercise.primaryMuscleNodes ?? ''} '
         '${exercise.secondaryMuscleNodes ?? ''}',
       );
-
-  static String _normalizedDetailText(
-    Exercise exercise,
-  ) => WorkoutTaxonomy.normalize(
-    '${exercise.name} ${exercise.muscleGroup} '
-    '${exercise.primaryMuscleNodes ?? ''} ${exercise.secondaryMuscleNodes ?? ''} '
-    '${exercise.secondaryMuscleGroups} ${exercise.equipment}',
-  );
 
   static bool _textHas(String text, List<String> values) =>
       values.any((value) => text.contains(WorkoutTaxonomy.normalize(value)));
@@ -556,8 +562,11 @@ class ExerciseFilterService {
     'shoulders_complete': {'shoulders', 'deltoids'},
     'traps_complete': {'traps_scapula', 'traps'},
     'neck_complete': {'neck'},
-    'core_complete': {'core', 'core_stability', 'core_general'},
+    'core_complete': {'core', 'core_stability', 'core_general', 'low_back'},
     'abs_complete': {'core', 'core_stability', 'core_general'},
+    'abdominal_zone': {'core', 'core_stability', 'core_general'},
+    'lumbar_zone': {'low_back'},
+    'core_stability_zone': {'core', 'core_stability', 'core_general'},
     'legs_complete': {
       'legs',
       'quadriceps',
@@ -566,11 +575,30 @@ class ExerciseFilterService {
       'adductors',
       'abductors',
       'calves',
+      'tibialis',
+      'feet_ankle',
+    },
+    'upper_leg_hip': {
+      'quadriceps',
+      'hamstrings',
+      'hips_glutes',
+      'adductors',
+      'abductors',
+    },
+    'lower_leg_foot': {'calves', 'tibialis', 'feet_ankle'},
+    'thigh_complete': {
+      'quadriceps',
+      'hamstrings',
+      'hips_glutes',
+      'adductors',
+      'abductors',
     },
     'quadriceps_complete': {'quadriceps'},
     'hamstrings_complete': {'hamstrings'},
     'glutes_complete': {'hips_glutes', 'glutes'},
-    'lower_leg_complete': {'calves'},
+    'lower_leg_complete': {'calves', 'tibialis', 'feet_ankle'},
+    'karate_complete': {'karate'},
+    'jiu_jitsu_complete': {'jiu_jitsu'},
   };
 
   static const _focusTagAliases = {
@@ -584,11 +612,87 @@ class ExerciseFilterService {
     'triceps_long': ['triceps_long'],
     'triceps_lateral': ['triceps_lateral'],
     'triceps_medial': ['triceps_medial'],
+    'forearm_flexors': ['forearm_flexors'],
+    'forearm_extensors': ['forearm_extensors'],
+    'pronators': ['pronators'],
+    'supinators': ['supinators'],
+    'wrist': ['wrist'],
+    'fingers': ['fingers'],
+    'support_grip': ['grip_support'],
+    'pinch_grip': ['pinch_grip'],
+    'general_grip': ['grip_support', 'pinch_grip', 'general_grip'],
     'anti_rotation': ['anti_rotation'],
     'anti_extension': ['anti_extension'],
+    'anti_lateral_flexion': ['anti_lateral_flexion'],
+    'deep_stability': ['deep_stability'],
+    'rectus_abdominis': ['rectus_abdominis'],
+    'external_obliques': ['external_obliques'],
+    'internal_obliques': ['internal_obliques'],
+    'transverse_abdominis': ['transverse_abdominis'],
+    'back_upper': [
+      'upper_traps',
+      'mid_traps',
+      'lower_traps',
+      'rhomboids',
+      'posterior_deltoid',
+      'scapular_stabilizers',
+    ],
+    'back_mid': [
+      'rhomboids',
+      'mid_traps',
+      'lats',
+      'teres_major',
+      'horizontal_rows',
+    ],
+    'anterior_deltoid': ['anterior_deltoid'],
+    'lateral_deltoid': ['lateral_deltoid', 'deltoid_lateral'],
     'posterior_deltoid': ['posterior_deltoid'],
+    'rotator_cuff': ['external_rotators', 'internal_rotators'],
     'external_rotators': ['external_rotators'],
     'internal_rotators': ['internal_rotators'],
+    'scapular_stability': ['scapular_stabilizers'],
+    'scapular_stabilizers': ['scapular_stabilizers'],
+    'upper_traps': ['upper_traps'],
+    'mid_traps': ['mid_traps'],
+    'lower_traps': ['lower_traps'],
+    'rhomboids': ['rhomboids'],
+    'teres_major': ['teres_major'],
+    'teres_minor': ['teres_minor'],
+    'latissimus_dorsi': ['lats'],
+    'vertical_pulls': ['vertical_pulls'],
+    'horizontal_rows': ['horizontal_rows'],
+    'erectors': ['erectors'],
+    'lumbar': ['erectors', 'quadratus_lumborum', 'low_back'],
+    'quadratus_lumborum': ['quadratus_lumborum'],
+    'lumbar_stability': ['erectors', 'quadratus_lumborum', 'low_back'],
+    'anterior_neck': ['anterior_neck'],
+    'posterior_neck': ['posterior_neck'],
+    'lateral_neck': ['lateral_neck'],
+    'cervical_stabilizers': ['cervical_stabilizers'],
+    'pectoralis_minor': ['pectoralis_minor'],
+    'serratus_anterior': ['serratus_anterior'],
+    'upper_chest': ['upper_chest'],
+    'mid_chest': ['mid_chest'],
+    'lower_chest': ['lower_chest'],
+    'rectus_femoris': ['rectus_femoris'],
+    'vastus_lateralis': ['vastus_lateralis'],
+    'vastus_medialis': ['vastus_medialis'],
+    'vastus_intermedius': ['vastus_intermedius'],
+    'biceps_femoris': ['biceps_femoris'],
+    'semitendinosus': ['semitendinosus'],
+    'semimembranosus': ['semimembranosus'],
+    'glute_max': ['glute_max'],
+    'glute_med': ['glute_med'],
+    'glute_min': ['glute_min'],
+    'hip_flexors': ['hip_flexors'],
+    'adductors': ['adductors'],
+    'abductors': ['abductors'],
+    'calves': ['calves'],
+    'soleus': ['soleus'],
+    'tibialis_anterior': ['tibialis_anterior'],
+    'ankle': ['ankle'],
+    'feet': ['feet'],
+    'ankle_stability': ['ankle_stability', 'ankle'],
   };
 
   static const _hierarchyFocusKeywords = {
@@ -710,33 +814,6 @@ class ExerciseFilterService {
       'respiração diafragmática',
       'respiracao diafragmatica',
     ],
-    'upper_chest': ['inclinado', 'declinadas', 'declinada', 'superior'],
-    'mid_chest': [
-      'supino',
-      'flexões',
-      'flexao',
-      'flexão',
-      'aberturas',
-      'chest press',
-    ],
-    'lower_chest': [
-      'declinado',
-      'declinada',
-      'dips',
-      'inferior',
-      'flexões inclinadas',
-      'flexao inclinada',
-      'flexão inclinada',
-    ],
-    'serratus_anterior': ['serrátil', 'serratil', 'scapular', 'wall slide'],
-    'back_upper': [
-      'trapézio',
-      'trapezio',
-      'romboides',
-      'face pull',
-      'escapular',
-    ],
-    'back_mid': ['romboides', 'remo', 'redondo', 'dorsal'],
     'back_lower': ['lombar', 'eretores', 'hiperextensão', 'hiperextensao'],
     'back_width': ['puxada', 'dorsal', 'latíssimo', 'latissimo'],
     'back_thickness': ['remo', 'romboides', 'trapézio médio', 'trapezio medio'],
@@ -744,6 +821,9 @@ class ExerciseFilterService {
       'reverse crunch',
       'elevação de pernas',
       'elevacao de pernas',
+      'elevação de joelhos',
+      'elevacao de joelhos',
+      'flutter',
       'inferior',
     ],
     'lateral_abs': [
@@ -753,77 +833,8 @@ class ExerciseFilterService {
       'oblíquos',
       'obliquos',
     ],
-    'upper_abs': ['crunch', 'superior'],
+    'upper_abs': ['crunch', 'toe touches', 'superior'],
     'mid_abs': ['crunch', 'abdominal médio', 'abdominal medio'],
-    'rectus_abdominis': ['reto abdominal', 'crunch'],
-    'external_obliques': ['oblíquos', 'obliquos', 'russian twist'],
-    'internal_obliques': ['oblíquos', 'obliquos', 'bicycle crunch'],
-    'transverse_abdominis': ['transverso', 'vacuum'],
-    'anti_rotation': ['anti-rotação', 'anti-rotacao', 'pallof'],
-    'anti_extension': ['anti-extensão', 'anti-extensao', 'prancha', 'hollow'],
-    'anti_lateral_flexion': [
-      'anti-flexão lateral',
-      'anti-flexao lateral',
-      'side bend',
-    ],
-    'deep_stability': ['estabilidade', 'dead bug', 'bird dog'],
-    'quadriceps_complete': [
-      'quadríceps',
-      'quadriceps',
-      'agachamento',
-      'leg press',
-      'wall sit',
-      'step-up',
-      'lunges',
-      'cadeira',
-      'mochila',
-      'garrafao',
-      'garrafão',
-      'sumo',
-      'smith',
-    ],
-    'hamstrings_complete': [
-      'posterior',
-      'romeno',
-      'curl de perna',
-      'good morning',
-    ],
-    'glutes_complete': ['glúteo', 'gluteo', 'hip thrust', 'ponte'],
-    'thigh_complete': [
-      'quadriceps',
-      'agachamento',
-      'leg press',
-      'cadeira',
-      'mochila',
-      'garrafao',
-      'garrafão',
-      'sumo',
-      'smith',
-      'posterior',
-      'romeno',
-      'curl de perna',
-      'gluteo',
-      'hip thrust',
-      'ponte',
-      'adutor',
-      'abdutor',
-      'lunges',
-      'step-up',
-    ],
-    'adductors': ['adutor', 'adutores'],
-    'abductors': ['abdutor', 'abdutores', 'abdução', 'abducao'],
-    'calves': ['gémeos', 'gemeos', 'calf'],
-    'soleus': ['sóleo', 'soleo'],
-    'tibialis_anterior': ['tibial anterior'],
-    'lower_leg_complete': [
-      'gemeos',
-      'soleo',
-      'tibial anterior',
-      'tornozelo',
-      'saltos',
-    ],
-    'ankle': ['tornozelo'],
-    'ankle_stability': ['tornozelo', 'estabilidade'],
   };
 
   static bool _containsAny(Exercise exercise, List<String> values) {

@@ -418,6 +418,8 @@ class EquipmentCatalogService {
     'rower',
     'stepper',
     'air_bike',
+    'jump_rope',
+    'broomstick',
   };
 
   static Set<String> availableKeys({

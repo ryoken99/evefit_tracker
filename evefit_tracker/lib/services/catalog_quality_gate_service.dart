@@ -306,7 +306,18 @@ class CatalogQualityGateService {
     for (final entry in entries) {
       final name = _norm(entry.name);
       final text = _text(entry);
-      if (name.contains('curl')) {
+      if (name.contains('curl de perna')) {
+        // Curl de perna é máquina de posterior de coxa, não flexão de
+        // cotovelo: exige instruções de joelho e calcanhar.
+        _requireAll(failures, entry, 'movement_family', text, [
+          'joelh',
+          'calcanhar',
+          'maquina',
+          'respira',
+        ]);
+      } else if (name.contains('curl') &&
+          !name.contains('wrist') &&
+          !name.contains('finger')) {
         _requireAll(failures, entry, 'movement_family', text, [
           'pega',
           'cotovel',

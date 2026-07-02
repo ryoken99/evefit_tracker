@@ -85,9 +85,10 @@ void main() {
           'Corrida exterior leve',
           'HIIT simples',
           'Circuito cardio leve',
+          // O ginásio disponibiliza corda de saltar como equipamento comum.
+          'Corda de saltar ritmo leve',
         ]),
       );
-      expect(names, isNot(contains('Corda de saltar ritmo leve')));
     });
 
     test('muscle-specific types exclude unrelated muscle groups', () {

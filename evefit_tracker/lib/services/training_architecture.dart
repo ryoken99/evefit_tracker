@@ -2141,7 +2141,7 @@ class TrainingArchitecture {
           region: 'upper',
           group: 'neck',
           subgroup: 'neck',
-          muscles: ['cervical_stabilizers'],
+          muscles: _neckMuscles(name),
         );
         break;
       case 'trapezio':
@@ -2149,8 +2149,11 @@ class TrainingArchitecture {
           region: 'upper',
           group: 'traps_scapula',
           subgroup: 'traps',
-          muscles: ['upper_traps', 'mid_traps', 'lower_traps'],
+          muscles: _trapsMuscles(name),
         );
+        // O trapézio faz parte das costas superiores, por isso estas
+        // entradas também respondem às seleções de costas.
+        groupKeys.add('back');
         break;
       case 'ombros':
         add(
@@ -2166,6 +2169,9 @@ class TrainingArchitecture {
             subgroup: 'back_thickness',
             muscles: ['rhomboids'],
           );
+        }
+        if (_has(name, ['y raise', 'w raise', 'pull-apart', 'face pull'])) {
+          add(region: 'upper', group: 'traps_scapula', subgroup: 'traps');
         }
         if (_has(name, ['scapular push-up'])) {
           add(
@@ -2185,13 +2191,25 @@ class TrainingArchitecture {
         );
         break;
       case 'costas':
+        if (_has(name, ['good morning'])) {
+          add(
+            region: 'upper',
+            group: 'back',
+            subgroup: 'back_thickness',
+            muscles: ['erectors'],
+          );
+          regionKeys.add('core');
+          groupKeys.add('low_back');
+          subgroupKeys.add('low_back_sub');
+          break;
+        }
         add(
           region: 'upper',
           group: 'back',
           subgroup: _has(name, ['puxada', 'pull-up', 'pullover'])
               ? 'back_width'
               : 'back_thickness',
-          muscles: ['lats', 'rhomboids'],
+          muscles: _backMuscles(name),
         );
         break;
       case 'biceps':
@@ -2199,15 +2217,23 @@ class TrainingArchitecture {
           region: 'upper',
           group: 'arms',
           subgroup: 'anterior_arm',
-          muscles: ['biceps', 'brachialis', 'brachioradialis'],
+          muscles: _bicepsMuscles(name),
         );
+        if (_has(name, ['chin-up'])) {
+          add(
+            region: 'upper',
+            group: 'back',
+            subgroup: 'back_width',
+            muscles: ['lats', 'vertical_pulls'],
+          );
+        }
         break;
       case 'triceps':
         add(
           region: 'upper',
           group: 'arms',
           subgroup: 'posterior_arm',
-          muscles: ['triceps_long', 'triceps_lateral', 'triceps_medial'],
+          muscles: _tricepsMuscles(name),
         );
         break;
       case 'antebraco_pega':
@@ -2215,9 +2241,17 @@ class TrainingArchitecture {
           region: 'upper',
           group: 'forearm_hand',
           subgroup: 'grip_strength',
-          muscles: ['grip_support', 'pinch_grip'],
+          muscles: _forearmMuscles(name),
         );
         groupKeys.add('arms');
+        if (_has(name, ['suitcase carry'])) {
+          add(
+            region: 'core',
+            group: 'core_stability',
+            subgroup: 'core_general',
+            muscles: ['anti_lateral_flexion', 'deep_stability'],
+          );
+        }
         break;
       case 'core':
         add(
@@ -2300,40 +2334,204 @@ class TrainingArchitecture {
   }
 
   static List<String> _shoulderMuscles(String name) {
-    if (_has(name, ['posterior', 'reverse fly', 'face pull'])) {
-      return ['posterior_deltoid', 'scapular_stabilizers'];
+    if (_has(name, ['posterior', 'reverse fly', 'face pull', 'pull-apart'])) {
+      return ['posterior_deltoid', 'scapular_stabilizers', 'mid_traps'];
     }
-    if (_has(name, ['rotacao externa'])) return ['external_rotators'];
-    if (_has(name, ['rotacao interna'])) return ['internal_rotators'];
-    if (_has(name, ['lateral'])) return ['deltoid_lateral'];
-    if (_has(name, ['frontal', 'press', 'arnold', 'pike'])) {
-      return ['anterior_deltoid', 'deltoid_lateral'];
+    if (_has(name, ['rotacao externa'])) {
+      return ['external_rotators', 'teres_minor', 'scapular_stabilizers'];
     }
-    return ['deltoid_lateral', 'scapular_stabilizers'];
+    if (_has(name, ['rotacao interna'])) {
+      return ['internal_rotators', 'scapular_stabilizers'];
+    }
+    if (_has(name, ['y raise'])) {
+      return ['lower_traps', 'scapular_stabilizers'];
+    }
+    if (_has(name, ['w raise'])) {
+      return ['mid_traps', 'external_rotators', 'scapular_stabilizers'];
+    }
+    if (_has(name, ['wall slides'])) {
+      return ['scapular_stabilizers', 'serratus_anterior', 'lower_traps'];
+    }
+    if (_has(name, ['scapular push-up'])) {
+      return ['serratus_anterior', 'scapular_stabilizers'];
+    }
+    if (_has(name, ['mobilidade de ombro'])) {
+      return ['scapular_stabilizers', 'external_rotators'];
+    }
+    if (_has(name, ['elevacao lateral'])) {
+      return ['lateral_deltoid', 'deltoid_lateral'];
+    }
+    if (_has(name, ['frontal'])) {
+      return ['anterior_deltoid'];
+    }
+    if (_has(name, ['pike'])) {
+      return ['anterior_deltoid', 'lateral_deltoid', 'serratus_anterior'];
+    }
+    if (_has(name, ['press', 'arnold'])) {
+      return ['anterior_deltoid', 'lateral_deltoid', 'deltoid_lateral'];
+    }
+    return ['lateral_deltoid', 'deltoid_lateral', 'scapular_stabilizers'];
+  }
+
+  static List<String> _trapsMuscles(String name) {
+    if (_has(name, ['encolhimento'])) {
+      return ['upper_traps'];
+    }
+    if (_has(name, ['remo alto'])) {
+      return ['upper_traps', 'mid_traps', 'lateral_deltoid'];
+    }
+    if (_has(name, ['face pull'])) {
+      return ['mid_traps', 'lower_traps', 'rhomboids', 'posterior_deltoid'];
+    }
+    return ['upper_traps', 'mid_traps', 'lower_traps'];
+  }
+
+  static List<String> _neckMuscles(String name) {
+    if (_has(name, ['frontal'])) {
+      return ['anterior_neck', 'cervical_stabilizers'];
+    }
+    if (_has(name, ['lateral'])) {
+      return ['lateral_neck', 'cervical_stabilizers'];
+    }
+    if (_has(name, ['chin tuck'])) {
+      return ['anterior_neck', 'posterior_neck', 'cervical_stabilizers'];
+    }
+    if (_has(name, ['rotacao'])) {
+      return ['posterior_neck', 'lateral_neck', 'cervical_stabilizers'];
+    }
+    return ['cervical_stabilizers'];
+  }
+
+  static List<String> _backMuscles(String name) {
+    if (_has(name, ['scapular pull-up', 'dead hang escapular'])) {
+      return ['scapular_stabilizers', 'lower_traps', 'lats'];
+    }
+    if (_has(name, ['face pull'])) {
+      return ['rhomboids', 'mid_traps', 'posterior_deltoid', 'teres_minor'];
+    }
+    if (_has(name, ['pullover', 'puxada com bracos esticados'])) {
+      return ['lats', 'teres_major'];
+    }
+    if (_has(name, ['puxada', 'pull-up'])) {
+      return ['lats', 'teres_major', 'vertical_pulls', 'rhomboids'];
+    }
+    if (_has(name, ['remo'])) {
+      return ['rhomboids', 'mid_traps', 'lats', 'horizontal_rows'];
+    }
+    return ['lats', 'rhomboids'];
+  }
+
+  static List<String> _bicepsMuscles(String name) {
+    if (_has(name, ['curl inverso'])) {
+      return ['brachialis', 'brachioradialis'];
+    }
+    if (_has(name, ['martelo', 'cruzado', 'zottman'])) {
+      return ['biceps', 'brachialis', 'brachioradialis'];
+    }
+    return ['biceps', 'brachialis'];
+  }
+
+  static List<String> _tricepsMuscles(String name) {
+    if (_has(name, ['francesa', 'acima da cabeca', 'testa', 'deitado'])) {
+      return ['triceps_long', 'triceps_medial'];
+    }
+    if (_has(name, ['cabo', 'corda', 'kickback', 'elastico'])) {
+      return ['triceps_lateral', 'triceps_medial'];
+    }
+    return ['triceps_long', 'triceps_lateral', 'triceps_medial'];
+  }
+
+  static List<String> _forearmMuscles(String name) {
+    if (_has(name, ['reverse wrist'])) {
+      return ['forearm_extensors', 'wrist'];
+    }
+    if (_has(name, ['wrist curl'])) {
+      return ['forearm_flexors', 'wrist'];
+    }
+    if (_has(name, ['finger curls'])) {
+      return ['fingers', 'forearm_flexors'];
+    }
+    if (_has(name, ['extensao de dedos'])) {
+      return ['fingers', 'forearm_extensors'];
+    }
+    if (_has(name, ['pronacao'])) return ['pronators', 'wrist'];
+    if (_has(name, ['supinacao'])) return ['supinators', 'wrist'];
+    if (_has(name, ['desvio radial', 'desvio ulnar', 'rotacao controlada'])) {
+      return ['wrist'];
+    }
+    if (_has(name, ['pinch', 'plate hold'])) {
+      return ['pinch_grip', 'fingers'];
+    }
+    if (_has(name, ['curl inverso'])) {
+      return ['brachioradialis', 'forearm_extensors', 'wrist'];
+    }
+    if (_has(name, ['aperto isometrico'])) {
+      return ['grip_support', 'fingers', 'forearm_flexors'];
+    }
+    if (_has(name, ['towel'])) {
+      return ['grip_support', 'fingers', 'forearm_flexors'];
+    }
+    return ['grip_support', 'forearm_flexors'];
   }
 
   static List<String> _chestMuscles(String name) {
     if (_has(name, ['scapular push-up'])) return ['serratus_anterior'];
-    if (_has(name, ['inclinado', 'declinada', 'pes elevados'])) {
-      return ['upper_chest'];
+    if (_has(name, ['flexao inclinada'])) {
+      // Flexão com mãos elevadas desloca o esforço para o peito inferior.
+      return ['lower_chest', 'mid_chest', 'serratus_anterior'];
     }
-    if (_has(name, ['declinado', 'dips'])) return ['lower_chest'];
+    if (_has(name, ['inclinado', 'declinada', 'pes elevados'])) {
+      return ['upper_chest', 'serratus_anterior'];
+    }
+    if (_has(name, ['dips'])) {
+      return ['lower_chest', 'pectoralis_minor'];
+    }
+    if (_has(name, ['declinado'])) return ['lower_chest'];
+    if (_has(name, ['crossover'])) {
+      return ['mid_chest', 'lower_chest', 'pectoralis_minor'];
+    }
+    if (_has(name, ['pullover'])) {
+      return ['mid_chest', 'serratus_anterior'];
+    }
+    if (_has(name, ['flexao'])) {
+      return ['mid_chest', 'upper_chest', 'lower_chest', 'serratus_anterior'];
+    }
     return ['mid_chest', 'upper_chest', 'lower_chest'];
   }
 
   static List<String> _coreMuscles(String name) {
-    if (_has(name, ['pallof'])) return ['anti_rotation'];
+    if (_has(name, ['pallof'])) return ['anti_rotation', 'deep_stability'];
     if (_has(name, ['prancha lateral'])) {
-      return ['external_obliques', 'internal_obliques', 'deep_stability'];
+      return [
+        'external_obliques',
+        'internal_obliques',
+        'anti_lateral_flexion',
+        'deep_stability',
+      ];
     }
-    if (_has(name, ['russian', 'bicycle', 'side bend'])) {
+    if (_has(name, ['side bend'])) {
+      // Side bend é flexão lateral ativa, não trabalho anti-flexão lateral.
       return ['external_obliques', 'internal_obliques'];
     }
+    if (_has(name, ['russian', 'bicycle'])) {
+      return ['external_obliques', 'internal_obliques', 'rectus_abdominis'];
+    }
     if (_has(name, ['prancha', 'hollow', 'dead bug'])) {
-      return ['anti_extension', 'deep_stability'];
+      return ['anti_extension', 'deep_stability', 'transverse_abdominis'];
+    }
+    if (_has(name, ['vacuum'])) {
+      return ['transverse_abdominis', 'deep_stability'];
     }
     if (_has(name, ['bird dog'])) return ['erectors', 'deep_stability'];
     if (_has(name, ['superman'])) return ['erectors'];
+    if (_has(name, [
+      'elevacao de pernas',
+      'elevacao de joelhos',
+      'reverse crunch',
+      'flutter',
+    ])) {
+      return ['rectus_abdominis', 'transverse_abdominis'];
+    }
     return ['rectus_abdominis', 'transverse_abdominis'];
   }
 
@@ -2370,7 +2568,7 @@ class TrainingArchitecture {
         region: 'lower',
         group: 'feet_ankle',
         subgroup: 'ankle_control',
-        muscles: ['ankle', 'feet'],
+        muscles: ['ankle', 'feet', 'ankle_stability'],
       );
       return;
     }
@@ -2379,7 +2577,31 @@ class TrainingArchitecture {
         region: 'lower',
         group: 'hips_glutes',
         subgroup: 'hip_flexors_sub',
-        muscles: ['hip_flexors'],
+        muscles: ['hip_flexors', 'rectus_femoris'],
+      );
+      return;
+    }
+    if (_has(name, ['copenhagen'])) {
+      add(
+        region: 'lower',
+        group: 'adductors',
+        subgroup: 'adductors',
+        muscles: ['adductors'],
+      );
+      add(
+        region: 'core',
+        group: 'core_stability',
+        subgroup: 'core_general',
+        muscles: ['anti_lateral_flexion', 'deep_stability'],
+      );
+      return;
+    }
+    if (_has(name, ['extensao terminal do joelho'])) {
+      add(
+        region: 'lower',
+        group: 'quadriceps',
+        subgroup: 'quadriceps',
+        muscles: ['vastus_medialis', 'rectus_femoris'],
       );
       return;
     }
@@ -2388,7 +2610,7 @@ class TrainingArchitecture {
         region: 'lower',
         group: 'hips_glutes',
         subgroup: 'glutes',
-        muscles: ['glute_max', 'glute_med'],
+        muscles: ['glute_max', 'glute_med', 'biceps_femoris'],
       );
       return;
     }
@@ -2402,32 +2624,103 @@ class TrainingArchitecture {
         region: 'lower',
         group: 'hamstrings',
         subgroup: 'hamstrings',
-        muscles: ['biceps_femoris'],
+        muscles: [
+          'biceps_femoris',
+          'semitendinosus',
+          'semimembranosus',
+          'glute_max',
+        ],
       );
       return;
     }
-    if (_has(name, ['gemeos', 'soleo', 'tibial', 'saltos'])) {
+    if (_has(name, ['soleo'])) {
       add(
         region: 'lower',
         group: 'calves',
         subgroup: 'calves',
-        muscles: ['calves', 'soleus', 'tibialis_anterior'],
+        muscles: ['soleus', 'calves', 'ankle'],
+      );
+      return;
+    }
+    if (_has(name, ['tibial'])) {
+      add(
+        region: 'lower',
+        group: 'tibialis',
+        subgroup: 'tibialis_sub',
+        muscles: ['tibialis_anterior', 'ankle', 'ankle_stability'],
+      );
+      return;
+    }
+    if (_has(name, ['gemeos'])) {
+      add(
+        region: 'lower',
+        group: 'calves',
+        subgroup: 'calves',
+        muscles: [
+          'calves',
+          if (_has(name, ['sentado'])) 'soleus',
+          'ankle',
+        ],
+      );
+      return;
+    }
+    if (_has(name, ['saltos'])) {
+      add(
+        region: 'lower',
+        group: 'calves',
+        subgroup: 'calves',
+        muscles: ['calves', 'soleus', 'ankle', 'ankle_stability'],
       );
       return;
     }
     if (_has(name, ['aducao', 'adutor'])) {
-      add(region: 'lower', group: 'adductors', subgroup: 'adductors');
+      add(
+        region: 'lower',
+        group: 'adductors',
+        subgroup: 'adductors',
+        muscles: ['adductors'],
+      );
       return;
     }
     if (_has(name, ['abducao', 'abdutor'])) {
-      add(region: 'lower', group: 'abductors', subgroup: 'abductors');
+      add(
+        region: 'lower',
+        group: 'abductors',
+        subgroup: 'abductors',
+        muscles: ['abductors', 'glute_med', 'glute_min'],
+      );
       return;
     }
+    if (_has(name, ['sumo'])) {
+      add(
+        region: 'lower',
+        group: 'quadriceps',
+        subgroup: 'quadriceps',
+        muscles: [
+          'rectus_femoris',
+          'vastus_lateralis',
+          'vastus_medialis',
+          'vastus_intermedius',
+          'glute_max',
+          'adductors',
+        ],
+      );
+      add(region: 'lower', group: 'adductors', subgroup: 'adductors');
+      return;
+    }
+    final unilateralKnee = _has(name, ['bulgaro', 'lunges', 'step-up']);
     add(
       region: 'lower',
       group: 'quadriceps',
       subgroup: 'quadriceps',
-      muscles: ['rectus_femoris', 'vastus_lateralis'],
+      muscles: [
+        'rectus_femoris',
+        'vastus_lateralis',
+        'vastus_medialis',
+        'vastus_intermedius',
+        'glute_max',
+        if (unilateralKnee) 'glute_med',
+      ],
     );
   }
 
@@ -2584,6 +2877,7 @@ class TrainingArchitecture {
     addIf('jump_rope', ['corda']);
     addIf('heavy_bag', ['saco']);
     addIf('tatami', ['tatami']);
+    addIf('mat', ['tapete', 'colchonete']);
     addIf('outdoor_space', ['exterior', 'espaco exterior', 'espaço exterior']);
     addIf('none', ['nenhum equipamento']);
     if (keys.isEmpty) keys.add('bodyweight');

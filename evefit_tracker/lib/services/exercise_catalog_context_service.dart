@@ -218,7 +218,11 @@ class ExerciseCatalogContextService {
     if (_has(normalized, ['serve', 'treinar', 'praticar', 'melhorar'])) {
       return '$group — $text';
     }
-    return '$group — $text O objetivo de $name é melhorar ${_primaryTarget(name, group)} através de ${_movementSummary(name, group).toLowerCase()}.';
+    final movement = _movementSummary(name, group).toLowerCase().replaceAll(
+      RegExp(r'\.\s*$'),
+      '',
+    );
+    return '$group — $text O objetivo de $name é melhorar ${_primaryTarget(name, group)} através de $movement.';
   }
 
   static String _ensureStepContract(
@@ -233,7 +237,6 @@ class ExerciseCatalogContextService {
     final normalized = _n(text);
     final nameKey = _n(name);
     final equipmentKey = _n(equipment);
-    final variantCue = _executionVariantCue(name);
     var next = RegExp(r'\d+\.').allMatches(text).length + 1;
 
     void addIfMissing(String cue, String sentence) {
@@ -458,36 +461,19 @@ class ExerciseCatalogContextService {
     }
     addIfMissing(
       'ritmo recomendado',
-      'Ritmo recomendado em $name para $variantCue: usa cerca de dois segundos no esforço, faz uma pausa curta e regressa em dois a três segundos.',
+      'Ritmo recomendado em $name: usa cerca de dois segundos na fase de esforço, faz uma pausa curta e regressa em dois a três segundos.',
     );
     addIfMissing(
       'como perceber se esta mal feito',
-      'Como perceber se $name está mal feito durante $variantCue: termina a série se já não conseguires repetir a mesma trajetória, alinhamento e amplitude sem dor.',
+      'Como perceber se $name está mal feito: termina a série se já não conseguires repetir a mesma trajetória, alinhamento e amplitude sem dor.',
     );
     addIfMissing(
       'erro mais comum',
-      'Erro mais comum em $name durante $variantCue: acelerar para compensar fadiga e deixar outra zona do corpo assumir o trabalho no foco $group.',
+      'Erro mais comum em $name no treino de $group: acelerar para compensar a fadiga e deixar outra zona do corpo assumir o trabalho.',
     );
     addIfMissing('versao mais facil', regression);
     addIfMissing('versao mais dificil', progression);
     return additions.isEmpty ? text : '$text ${additions.join(' ')}';
-  }
-
-  static String _executionVariantCue(String name) {
-    final n = _n(name);
-    if (_has(n, ['press militar com barra em pe'])) {
-      return 'a estabilização vertical em posição de pé';
-    }
-    if (n == _n('Press militar com barra')) {
-      return 'a trajetória bilateral da barra à frente da cabeça';
-    }
-    if (_has(n, ['y raise'])) return 'o desenho diagonal dos braços em Y';
-    if (_has(n, ['w raise'])) return 'a retração escapular com cotovelos em W';
-    if (_has(n, ['curl 21'])) return 'a sequência de três amplitudes do curl';
-    if (n == _n('Curl com halteres')) {
-      return 'a flexão bilateral completa dos cotovelos';
-    }
-    return 'a trajetória específica desta variação';
   }
 
   static String _regressionFor(String name, String group, String equipment) {
@@ -643,6 +629,24 @@ class ExerciseCatalogContextService {
   ) {
     final n = _n(name);
     final context = _n(group);
+    if (context == 'karate') {
+      // Os drills de Karate treinam-se de pé; nenhum exige tatami.
+      return 'Peso corporal';
+    }
+    if (context == 'jiu_jitsu') {
+      // Só os drills de solo pedem tatami/tapete; mobilidade, pega, core e
+      // condicionamento fazem-se em qualquer piso seguro.
+      if (_has(n, [
+        'shrimp',
+        'ponte de grappling',
+        'technical stand-up',
+        'guarda',
+        'sprawl',
+      ])) {
+        return 'Tatami ou tapete / colchonete';
+      }
+      return 'Peso corporal';
+    }
     if (_has(n, ['copenhagen plank'])) {
       return 'Banco / cadeira / apoio estável';
     }
@@ -700,6 +704,15 @@ class ExerciseCatalogContextService {
     }
     if (_has(n, ['abducao de anca deitada'])) {
       return 'Glúteo médio, glúteo mínimo, abdutores da anca e core lateral';
+    }
+    if (_has(n, ['curl de perna'])) {
+      return 'Glúteos, gémeos e estabilizadores do joelho';
+    }
+    if (_has(n, ['extensao de perna'])) {
+      return 'Estabilizadores do joelho e controlo da anca';
+    }
+    if (_has(n, ['leg press'])) {
+      return 'Glúteos, posterior de coxa, adutores e gémeos';
     }
     if (_isCurl(name)) {
       if (_has(n, ['inverso'])) {
@@ -1095,6 +1108,30 @@ class ExerciseCatalogContextService {
     }
     if (_isShoulder(name)) {
       return 'movimento de ombro ou escápula para elevar, rodar ou estabilizar o braço com controlo.';
+    }
+    if (_has(n, ['curl de perna'])) {
+      return 'flexão dos joelhos na máquina, puxando os calcanhares na direção dos glúteos para trabalhar o posterior de coxa.';
+    }
+    if (_has(n, ['extensao de perna'])) {
+      return 'extensão dos joelhos sentado na máquina, empurrando o rolo com a frente das pernas até quase esticar.';
+    }
+    if (_has(n, ['leg press'])) {
+      return 'empurrar a plataforma da máquina com os pés, dobrando e estendendo joelhos e anca com as costas apoiadas.';
+    }
+    if (_has(n, ['aducao de anca'])) {
+      return 'aproximar as pernas contra a resistência da máquina, apertando a parte interna das coxas.';
+    }
+    if (n == 'abducao de anca') {
+      return 'afastar as pernas contra a resistência da máquina, usando a parte lateral da anca e os glúteos.';
+    }
+    if (_has(n, ['agachamento sumo'])) {
+      return 'agachamento com os pés bem mais afastados que os ombros e as pontas dos pés viradas para fora, dando mais trabalho a adutores e glúteos.';
+    }
+    if (_has(n, ['agachamento goblet'])) {
+      return 'agachamento a segurar um halter na vertical junto ao peito, o que ajuda a manter o tronco direito.';
+    }
+    if (_has(n, ['smith'])) {
+      return 'agachamento na barra guiada da máquina Smith, que fixa a trajetória vertical da carga.';
     }
     if (_has(n, ['wall sit'])) {
       return 'agachamento isométrico encostado à parede, mantendo joelhos fletidos sem subir e descer.';
@@ -1518,6 +1555,12 @@ class ExerciseCatalogContextService {
     if (_has(n, ['martelo', 'braquiorradial'])) {
       return 'braquial e braquiorradial';
     }
+    if (_has(n, ['curl de perna'])) return 'posterior de coxa';
+    if (_has(n, ['extensao de perna'])) return 'quadríceps';
+    if (_has(n, ['aducao de anca'])) return 'adutores da coxa';
+    if (_has(n, ['abducao de anca'])) {
+      return 'glúteo médio, glúteo mínimo e abdutores';
+    }
     if (_isCurl(name)) return 'bíceps braquial, braquial e braquiorradial';
     if (_isTriceps(name)) return 'tríceps';
     if (_isFly(name) || _isPushupOrPress(name)) {
@@ -1631,6 +1674,8 @@ class ExerciseCatalogContextService {
     if (lowerBodyGapSteps != null) return lowerBodyGapSteps;
     final variantSteps = _distinctVariantSteps(name, equipment);
     if (variantSteps != null) return variantSteps;
+    final specific = _specificSteps(name, group, equipment);
+    if (specific != null) return specific;
     if (group == 'Cardio') return _cardioSteps(name, equipment);
     if (group == 'Mobilidade') return _mobilitySteps(name, equipment);
     if (group == 'Karate') return _karateSteps(name);
@@ -1689,6 +1734,960 @@ class ExerciseCatalogContextService {
     }
     if (_has(n, ['curl 21'])) {
       return '1. Fica alto com halteres leves, palmas para a frente e cotovelos junto às costelas. 2. Sobe sete vezes apenas da extensão quase completa até os cotovelos chegarem a cerca de 90 graus. 3. Sem descanso, faz sete repetições de 90 graus até perto dos ombros. 4. Mantém punhos direitos e não avances os cotovelos durante as parciais superiores. 5. Termina com sete curls completos do fundo ao topo. 6. Desce cada repetição com controlo e pára se precisares de balançar. 7. Expira em cada subida e inspira em cada descida. 8. Escolhe carga bem menor que no curl normal porque a série soma 21 repetições.';
+    }
+    return null;
+  }
+
+  /// Passos escritos individualmente para exercícios cuja variação não fica
+  /// bem explicada pelos moldes de família (ex.: agachamento búlgaro precisa
+  /// do pé de trás no banco; curl de perna é máquina de posterior de coxa).
+  static String? _specificSteps(String name, String group, String equipment) {
+    final n = _n(name);
+    // Pernas — agachamentos e variações.
+    if (_has(n, ['agachamento bulgaro'])) {
+      final support = _has(n, ['com apoio'])
+          ? '3. Fica ao lado de uma parede ou apoio estável e pousa lá uma mão para equilibrar. '
+          : '3. Cruza os braços à frente do peito ou deixa-os ao lado do corpo para equilibrar. ';
+      return '1. Coloca um banco ou cadeira estável atrás de ti e fica de costas para ele, a cerca de um passo grande de distância. '
+          '2. Apoia o peito do pé de trás em cima do banco, com o pé da frente inteiro no chão. '
+          '$support'
+          '4. Mantém o tronco direito, o abdómen ativo e a anca virada para a frente. '
+          '5. Desce dobrando o joelho da perna da frente, como um agachamento só com essa perna. '
+          '6. Mantém o joelho da frente alinhado com o pé, sem cair para dentro. '
+          '7. Desce até onde controlas o equilíbrio, sem bater com o joelho de trás no chão. '
+          '8. Empurra o chão com o pé da frente para subir. '
+          '9. Inspira ao descer e expira ao subir. '
+          '10. Completa as repetições de um lado antes de trocar de perna.';
+    }
+    if (_has(n, ['agachamento sumo'])) {
+      return '1. Fica de pé com os pés bem mais afastados que a largura dos ombros. '
+          '2. Aponta as pontas dos pés para fora, num ângulo confortável de 30 a 45 graus. '
+          '3. Mantém o tronco direito, o peito aberto e o abdómen ligeiramente ativo. '
+          '4. Desce dobrando os joelhos e levando a anca para baixo e para trás. '
+          '5. Empurra os joelhos para fora, na direção das pontas dos pés, durante toda a descida. '
+          '6. Desce até onde consegues manter os calcanhares no chão e as costas direitas. '
+          '7. Sente a parte interna das coxas e os glúteos a alongar na descida. '
+          '8. Sobe empurrando o chão com os pés inteiros e apertando os glúteos. '
+          '9. Inspira ao descer e expira ao subir.';
+    }
+    if (_has(n, ['agachamento goblet'])) {
+      return '1. Segura um halter na vertical junto ao peito, com as duas mãos por baixo da cabeça de cima, como se fosse uma taça. '
+          '2. Fica de pé com os pés à largura dos ombros e as pontas ligeiramente para fora. '
+          '3. Mantém os cotovelos apontados para baixo e o halter sempre colado ao peito. '
+          '4. Desce dobrando joelhos e anca, como se fosses sentar. '
+          '5. Deixa os cotovelos passar por dentro dos joelhos na parte baixa. '
+          '6. Mantém o tronco direito e os calcanhares no chão. '
+          '7. Sobe empurrando o chão e estendendo anca e joelhos. '
+          '8. Inspira ao descer e expira ao subir. '
+          '9. Escolhe uma pega firme para o halter não escorregar do peito.';
+    }
+    if (_has(n, ['agachamento na maquina smith'])) {
+      return '1. Ajusta a barra da máquina Smith à altura dos ombros e coloca as travas de segurança um pouco abaixo da posição final da descida. '
+          '2. Entra por baixo da barra e apoia-a na parte de cima das costas, nunca no pescoço. '
+          '3. Segura a barra com pega simétrica e roda-a para destravar. '
+          '4. Coloca os pés à largura dos ombros, ligeiramente à frente da linha da barra. '
+          '5. Mantém o tronco firme e o abdómen ativo, deixando a máquina guiar a trajetória vertical. '
+          '6. Desce dobrando joelhos e anca até onde manténs os calcanhares apoiados e a lombar neutra. '
+          '7. Sobe empurrando o chão com os pés inteiros. '
+          '8. Inspira ao descer e expira ao subir. '
+          '9. No fim, roda a barra para a travar de novo no suporte antes de sair.';
+    }
+    if (_has(n, ['agachamento para cadeira'])) {
+      return '1. Coloca uma cadeira estável atrás de ti, com o assento virado para as tuas pernas. '
+          '2. Fica de pé com os pés à largura dos ombros e os dedos ligeiramente para fora. '
+          '3. Mantém o peito aberto, o tronco direito e o abdómen ativo. '
+          '4. Desce levando a anca para trás e dobrando os joelhos, como se fosses sentar-te. '
+          '5. Toca levemente com os glúteos no assento sem descarregar todo o peso. '
+          '6. Mantém os joelhos alinhados com os pés e os calcanhares no chão. '
+          '7. Sobe empurrando o chão com os pés, sem impulso do tronco. '
+          '8. Inspira ao descer e expira ao subir. '
+          '9. Se precisares de mais confiança, senta-te por completo e levanta-te sem usar as mãos.';
+    }
+    if (_has(n, ['wall sit'])) {
+      return '1. Encosta as costas inteiras a uma parede lisa e dá um ou dois passos com os pés para a frente. '
+          '2. Desliza o tronco pela parede até os joelhos ficarem dobrados perto de 90 graus. '
+          '3. Mantém os pés à largura da anca, apontados para a frente, e os joelhos alinhados com os pés. '
+          '4. Mantém a lombar e as omoplatas em contacto com a parede. '
+          '5. Apoia as mãos nas coxas ou deixa os braços ao lado, sem empurrar os joelhos. '
+          '6. Aguenta a posição parado, sem subir nem descer, durante 15 a 45 segundos. '
+          '7. Respira de forma contínua, sem prender o ar. '
+          '8. Para subir, empurra o chão com os pés e desliza o tronco pela parede para cima. '
+          '9. Termina se os joelhos começarem a tremer para dentro ou se perderes o apoio das costas.';
+    }
+    if (_has(n, ['step-up'])) {
+      return '1. Coloca-te de frente para um degrau, caixa ou banco estável, à altura do joelho ou abaixo. '
+          '2. Apoia o pé inteiro de uma perna em cima do apoio. '
+          '3. Mantém o tronco direito e o abdómen ativo. '
+          '4. Empurra o apoio com o pé de cima e sobe até estender a perna, sem dar impulso com a perna de baixo. '
+          '5. Mantém o joelho da perna que trabalha alinhado com o pé. '
+          '6. Toca com o pé livre em cima ou mantém-no no ar por um instante. '
+          '7. Desce devagar pelo mesmo caminho, controlando a perna de apoio. '
+          '8. Expira ao subir e inspira ao descer. '
+          '9. Completa as repetições de uma perna antes de trocar, ou alterna com controlo. '
+          '10. Usa a anca e o glúteo para travar a descida, sem deixar o corpo cair.';
+    }
+    if (_has(n, ['extensao de perna'])) {
+      return '1. Senta-te na máquina de extensão de perna e encosta bem as costas no apoio. '
+          '2. Ajusta o encosto para os joelhos ficarem alinhados com o eixo de rotação da máquina. '
+          '3. Coloca o rolo acolchoado sobre a parte da frente dos tornozelos. '
+          '4. Segura as pegas laterais para estabilizar o tronco. '
+          '5. Estende os joelhos devagar, levantando o rolo até as pernas ficarem quase direitas. '
+          '6. Faz uma pausa curta no topo, contraindo a frente das coxas. '
+          '7. Desce o rolo em dois a três segundos, sem deixar as placas bater. '
+          '8. Expira ao estender e inspira ao descer. '
+          '9. Não arranques com impulso da anca nem levantes os glúteos do assento.';
+    }
+    if (_has(n, ['leg press'])) {
+      return '1. Senta-te na máquina de leg press com as costas e a cabeça bem apoiadas no encosto. '
+          '2. Coloca os pés na plataforma à largura dos ombros, com os pés inteiros apoiados. '
+          '3. Ajusta o assento para os joelhos começarem dobrados perto de 90 graus. '
+          '4. Segura as pegas laterais para manter o tronco estável. '
+          '5. Empurra a plataforma estendendo joelhos e anca, sem bloquear os joelhos com força no fim. '
+          '6. Solta as travas de segurança apenas quando já estiveres a suster a carga. '
+          '7. Desce a plataforma devagar, dobrando os joelhos na direção do peito até onde a lombar se mantém apoiada. '
+          '8. Não deixes a anca ou a lombar descolar do assento na parte baixa. '
+          '9. Inspira ao descer e expira ao empurrar. '
+          '10. No fim, trava a plataforma antes de tirar os pés.';
+    }
+    if (_has(n, ['curl de perna'])) {
+      return '1. Ajusta a máquina de curl de perna para os joelhos ficarem alinhados com o eixo de rotação. '
+          '2. Deita-te ou senta-te conforme a máquina, com o rolo acolchoado atrás dos tornozelos. '
+          '3. Segura as pegas e mantém a anca colada ao apoio. '
+          '4. Dobra os joelhos puxando os calcanhares na direção dos glúteos. '
+          '5. Faz uma pausa curta no ponto de maior flexão, sentindo a parte de trás das coxas. '
+          '6. Regressa em dois a três segundos até as pernas ficarem quase estendidas. '
+          '7. Não deixes a anca levantar nem a lombar arquear para completar a repetição. '
+          '8. Expira ao dobrar os joelhos e inspira ao regressar. '
+          '9. Reduz a carga se precisares de impulso ou se a bacia saltar do apoio.';
+    }
+    if (_has(n, ['ponte de gluteo'])) {
+      return '1. Deita-te de costas no chão ou tapete, com os joelhos dobrados e os pés apoiados à largura da anca. '
+          '2. Deixa os calcanhares a um palmo dos glúteos e os braços ao lado do corpo. '
+          '3. Ativa o abdómen para a lombar ficar neutra. '
+          '4. Empurra o chão com os calcanhares e eleva a anca até formar uma linha dos ombros aos joelhos. '
+          '5. Aperta os glúteos no topo durante um a dois segundos, sem arquear a lombar. '
+          '6. Desce a anca devagar sem tocar com força no chão. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Mantém os joelhos alinhados com os pés durante todo o movimento. '
+          '9. Para tornar mais difícil, faz uma pausa mais longa no topo.';
+    }
+    if (_has(n, ['hip thrust'])) {
+      final support = _has(n, ['com apoio'])
+          ? 'um banco, sofá ou apoio estável da altura dos joelhos'
+          : 'um banco estável';
+      return '1. Senta-te no chão com a parte de cima das costas encostada a $support. '
+          '2. Apoia a zona abaixo das omoplatas na borda e dobra os joelhos com os pés à largura da anca. '
+          '3. Coloca a carga sobre a anca se usares peso, ou mantém as mãos na borda do apoio. '
+          '4. Recolhe ligeiramente o queixo e ativa o abdómen. '
+          '5. Empurra o chão com os calcanhares e eleva a anca até o tronco e as coxas ficarem alinhados. '
+          '6. Aperta os glúteos no topo sem arquear a lombar nem empurrar com a cabeça. '
+          '7. Desce a anca devagar até quase tocar no chão. '
+          '8. Expira ao subir e inspira ao descer. '
+          '9. Mantém os joelhos alinhados com os pés e o apoio firme para não deslizar.';
+    }
+    if (_has(n, ['kickback de gluteo'])) {
+      return '1. Apoia mãos e joelhos no chão ou tapete, com os punhos por baixo dos ombros e os joelhos por baixo da anca. '
+          '2. Ativa o abdómen e mantém a lombar neutra e o olhar no chão. '
+          '3. Leva uma perna para trás e para cima, empurrando com o calcanhar, com o joelho dobrado a 90 graus. '
+          '4. Sobe apenas até a coxa ficar alinhada com o tronco, sem rodar a bacia nem arquear a lombar. '
+          '5. Aperta o glúteo no topo durante um segundo. '
+          '6. Recolhe o joelho devagar pelo mesmo caminho, sem tocar com impacto no chão. '
+          '7. Expira ao levar a perna atrás e inspira ao recolher. '
+          '8. Completa as repetições de um lado antes de trocar. '
+          '9. Usa amplitude menor se sentires a lombar a trabalhar em vez do glúteo.';
+    }
+    if (n == 'aducao de anca') {
+      return '1. Senta-te na máquina adutora com as costas apoiadas no encosto. '
+          '2. Coloca as pernas por fora dos apoios acolchoados, com os pés nos descansos. '
+          '3. Ajusta a abertura inicial para sentir alongamento leve na parte interna das coxas, sem dor. '
+          '4. Segura as pegas laterais e mantém o tronco quieto. '
+          '5. Aproxima as pernas uma da outra apertando a parte interna das coxas. '
+          '6. Faz uma pausa curta com as pernas juntas. '
+          '7. Deixa as pernas abrir devagar, em dois a três segundos, sem soltar o controlo. '
+          '8. Expira ao fechar e inspira ao abrir. '
+          '9. Reduz a abertura ou a carga se sentires repuxar na virilha.';
+    }
+    if (n == 'abducao de anca') {
+      return '1. Senta-te na máquina abdutora com as costas apoiadas no encosto. '
+          '2. Coloca as pernas por dentro dos apoios acolchoados, com os pés nos descansos. '
+          '3. Começa com as pernas juntas e segura as pegas laterais. '
+          '4. Afasta as pernas empurrando os apoios para fora com a parte lateral da anca e os glúteos. '
+          '5. Abre até uma amplitude confortável, sem inclinar o tronco para trás. '
+          '6. Faz uma pausa curta na posição aberta. '
+          '7. Deixa as pernas voltar devagar ao centro, sem as placas baterem. '
+          '8. Expira ao abrir e inspira ao fechar. '
+          '9. Mantém a bacia quieta no assento durante toda a série.';
+    }
+    if (_has(n, ['gemeos em pe'])) {
+      return '1. Fica de pé com a parte da frente dos pés num degrau estável ou no chão, com os calcanhares livres. '
+          '2. Apoia uma mão numa parede ou corrimão apenas para equilíbrio. '
+          '3. Mantém os joelhos esticados sem bloquear com força e o tronco direito. '
+          '4. Sobe os calcanhares o mais alto que conseguires, ficando na ponta dos pés. '
+          '5. Faz uma pausa de um segundo no topo, sentindo a barriga das pernas. '
+          '6. Desce os calcanhares devagar, em dois a três segundos, até sentir alongamento leve. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Não deixes os tornozelos cair para dentro nem para fora. '
+          '9. Sobe sempre pela mesma linha, empurrando com o dedo grande do pé.';
+    }
+    if (_has(n, ['gemeos sentado'])) {
+      return '1. Senta-te num banco ou cadeira estável com os pés apoiados no chão ou num degrau baixo. '
+          '2. Coloca uma carga (halteres ou discos) em cima das coxas, perto dos joelhos, ou usa a máquina própria. '
+          '3. Mantém os joelhos dobrados a 90 graus e o tronco direito. '
+          '4. Sobe os calcanhares empurrando com a ponta dos pés, levantando a carga com a perna inferior. '
+          '5. Faz uma pausa curta no topo. '
+          '6. Desce os calcanhares devagar até um alongamento confortável. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Com o joelho dobrado, o esforço concentra-se mais no sóleo, o músculo profundo do gémeo. '
+          '9. Segura a carga com as mãos para ela não deslizar das coxas.';
+    }
+    if (_has(n, ['elevacao de gemeos unilateral'])) {
+      return '1. Fica de pé sobre uma perna, com a outra dobrada atrás ou apoiada levemente. '
+          '2. Apoia uma mão numa parede ou apoio estável para equilibrar. '
+          '3. Mantém o joelho da perna de apoio esticado sem bloquear e o tronco direito. '
+          '4. Sobe o calcanhar dessa perna o mais alto possível, ficando na ponta do pé. '
+          '5. Faz uma pausa de um segundo no topo. '
+          '6. Desce devagar, em dois a três segundos, até alongamento leve. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Completa as repetições de uma perna antes de trocar. '
+          '9. Reduz a amplitude se o tornozelo balançar para os lados.';
+    }
+    if (_has(n, ['soleo sentado'])) {
+      return '1. Senta-te num banco ou cadeira com os joelhos dobrados a 90 graus e os pés no chão. '
+          '2. Coloca uma carga leve sobre as coxas, perto dos joelhos, segurando-a com as mãos. '
+          '3. Mantém o tronco direito e os pés à largura da anca. '
+          '4. Sobe os calcanhares devagar, empurrando com a ponta dos pés. '
+          '5. Faz uma pausa curta no topo, sentindo a parte profunda da barriga da perna. '
+          '6. Desce os calcanhares em dois a três segundos até tocar no chão. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. O joelho dobrado tira trabalho ao gémeo grande e concentra-o no sóleo. '
+          '9. Aumenta a carga apenas quando controlares a subida e a descida.';
+    }
+    if (_has(n, ['elevacao tibial'])) {
+      return '1. Encosta as costas a uma parede e afasta os pés meio passo para a frente. '
+          '2. Mantém os calcanhares no chão e o corpo ligeiramente inclinado na parede. '
+          '3. Levanta as pontas dos dois pés na direção das canelas, o mais alto que conseguires. '
+          '4. Sente a parte da frente das canelas a trabalhar. '
+          '5. Faz uma pausa curta no topo. '
+          '6. Desce as pontas dos pés devagar, sem bater no chão. '
+          '7. Expira ao levantar e inspira ao descer. '
+          '8. Mantém os joelhos esticados sem bloquear. '
+          '9. Afasta mais os pés da parede para aumentar a dificuldade.';
+    }
+    if (_has(n, ['saltos leves'])) {
+      return '1. Fica de pé com os pés à largura da anca e os joelhos ligeiramente dobrados. '
+          '2. Mantém o tronco direito e os braços soltos ao lado do corpo. '
+          '3. Salta baixo, apenas alguns centímetros do chão, usando os tornozelos como mola. '
+          '4. Aterra na parte da frente dos pés e deixa os calcanhares tocar levemente no chão. '
+          '5. Aterra em silêncio, com os joelhos suaves, sem os deixar cair para dentro. '
+          '6. Mantém um ritmo constante e confortável, como saltitar no lugar. '
+          '7. Respira de forma contínua durante os saltos. '
+          '8. Faz blocos curtos de 15 a 30 segundos com pausas. '
+          '9. Para se sentires dor no tendão de Aquiles, tornozelos ou canelas.';
+    }
+    if (_has(n, ['peso morto tradicional'])) {
+      return '1. Coloca a barra no chão sobre o meio dos pés, com os pés à largura da anca. '
+          '2. Dobra a anca e os joelhos para descer e agarra a barra com pega simétrica, um pouco mais aberta que as pernas. '
+          '3. Baixa a anca até as canelas quase tocarem na barra, com o peito aberto e a coluna neutra. '
+          '4. Aperta a barra, ativa o abdómen e tira a folga dos braços antes de puxar. '
+          '5. Empurra o chão com os pés e sobe, mantendo a barra colada às pernas. '
+          '6. Estende joelhos e anca ao mesmo tempo até ficares de pé, sem inclinar para trás. '
+          '7. Desce pelo mesmo caminho, levando a anca para trás e dobrando os joelhos, com a lombar neutra. '
+          '8. Pousa a barra com controlo no chão entre repetições. '
+          '9. Inspira antes de puxar e expira perto do topo. '
+          '10. Usa carga leve até dominares a posição inicial e a descida.';
+    }
+    // Trapézio e ombros.
+    if (_has(n, ['encolhimento de ombros'])) {
+      final hold = _has(n, ['na maquina'])
+          ? '1. Ajusta a máquina de encolhimentos e segura as pegas com os braços estendidos ao lado do corpo. '
+          : _has(n, ['com barra'])
+          ? '1. Segura uma barra à frente das coxas com pega simétrica, à largura dos ombros. '
+          : '1. Segura um halter em cada mão ao lado do corpo, com os braços estendidos. ';
+      return '$hold'
+          '2. Fica de pé com os pés à largura da anca, tronco direito e abdómen ligeiramente ativo. '
+          '3. Mantém os punhos direitos e os cotovelos quase esticados durante todo o movimento. '
+          '4. Sobe os ombros na direção das orelhas, o mais alto que conseguires sem dobrar os braços. '
+          '5. Faz uma pausa de um segundo no topo, apertando o trapézio. '
+          '6. Desce os ombros devagar até ao ponto inicial, deixando-os alongar. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Não rodes os ombros em círculo nem uses impulso das pernas. '
+          '9. Mantém o pescoço relaxado e o olhar em frente.';
+    }
+    if (_has(n, ['remo alto leve'])) {
+      return '1. Segura os halteres ou a barra à frente das coxas, com pega à largura dos ombros e punhos direitos. '
+          '2. Fica de pé com o tronco direito e o abdómen ativo. '
+          '3. Puxa a carga para cima, junto ao corpo, levando os cotovelos para fora e para cima. '
+          '4. Sobe apenas até os cotovelos ficarem à altura dos ombros ou abaixo, nunca mais alto. '
+          '5. Mantém os ombros afastados das orelhas e as escápulas controladas. '
+          '6. Desce a carga devagar pelo mesmo caminho, junto ao tronco. '
+          '7. Expira ao puxar e inspira ao descer. '
+          '8. Usa carga leve: este movimento é para trapézio e ombros, não para força máxima. '
+          '9. Para se sentires beliscar ou dor na frente do ombro, ou se a lombar arquear.';
+    }
+    if (n == 'press militar com barra') {
+      return '1. Coloca a barra num suporte à altura da parte alta do peito, ou limpa-a até aos ombros com ajuda. '
+          '2. Segura a barra com pega simétrica, um pouco mais aberta que os ombros, e punhos direitos. '
+          '3. Fica de pé (ou sentado num banco com encosto) com os pés firmes e o abdómen ativo. '
+          '4. Começa com a barra apoiada na frente dos ombros e os cotovelos ligeiramente à frente da barra. '
+          '5. Empurra a barra a direito para cima, afastando ligeiramente a cabeça para a deixar passar. '
+          '6. Termina com os braços quase estendidos e a barra por cima do meio da cabeça. '
+          '7. Desce a barra devagar pelo mesmo caminho até à frente dos ombros. '
+          '8. Inspira antes de empurrar e expira quando a barra passa a zona mais difícil. '
+          '9. Não arquees a lombar nem empurres com as pernas para completar a repetição.';
+    }
+    if (_has(n, ['press militar com halteres'])) {
+      return '1. Segura um halter em cada mão e leva-os à altura dos ombros, com as palmas para a frente ou ligeiramente viradas uma para a outra. '
+          '2. Fica de pé com os pés à largura da anca, ou sentado num banco com encosto, com o abdómen ativo. '
+          '3. Mantém os punhos direitos por cima dos cotovelos. '
+          '4. Empurra os halteres para cima até os braços ficarem quase estendidos por cima da cabeça. '
+          '5. Aproxima ligeiramente os halteres no topo, sem os bater. '
+          '6. Desce os halteres devagar até à altura dos ombros. '
+          '7. Inspira ao descer e expira ao empurrar. '
+          '8. Mantém as costelas baixas e a lombar neutra durante toda a série. '
+          '9. Usa um banco com encosto se sentires a lombar a arquear de pé.';
+    }
+    if (_has(n, ['arnold press'])) {
+      return '1. Senta-te num banco com encosto ou fica de pé com o abdómen ativo e os pés firmes. '
+          '2. Começa com os halteres à frente dos ombros, com as palmas viradas para ti, como no fim de um curl. '
+          '3. Mantém os punhos direitos e os cotovelos à frente do corpo. '
+          '4. Empurra os halteres para cima e, ao mesmo tempo, roda as palmas para a frente. '
+          '5. Termina com os braços quase estendidos por cima da cabeça e as palmas viradas para a frente. '
+          '6. Desce devagar invertendo a rotação, até as palmas voltarem a ficar viradas para ti. '
+          '7. Inspira ao descer e expira ao empurrar. '
+          '8. Mantém os ombros afastados das orelhas durante a rotação. '
+          '9. Usa carga mais leve do que num press normal, porque a rotação exige mais controlo.';
+    }
+    if (_has(n, ['wall slides'])) {
+      return '1. Encosta as costas a uma parede, com os pés meio passo à frente e os joelhos suaves. '
+          '2. Encosta a lombar, as omoplatas e, se conseguires, a parte de trás da cabeça à parede. '
+          '3. Dobra os cotovelos a 90 graus e encosta os antebraços e as costas das mãos à parede, como um guarda-redes. '
+          '4. Desliza os braços lentamente pela parede para cima, mantendo antebraços e mãos em contacto. '
+          '5. Sobe apenas até onde consegues manter o contacto sem arquear a lombar. '
+          '6. Desliza de volta para baixo, levando os cotovelos na direção das costelas. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Mantém os ombros afastados das orelhas e o pescoço relaxado. '
+          '9. Faz 6 a 10 repetições lentas, com atenção à zona das omoplatas.';
+    }
+    if (_has(n, ['scapular push-up'])) {
+      return '1. Coloca-te em prancha alta, com as mãos por baixo dos ombros e o corpo em linha reta. '
+          '2. Mantém os cotovelos esticados durante todo o exercício: o movimento vem só das omoplatas. '
+          '3. Ativa o abdómen e os glúteos para a anca não descair. '
+          '4. Deixa o peito descer alguns centímetros aproximando as omoplatas uma da outra. '
+          '5. Depois empurra o chão afastando as omoplatas, arredondando ligeiramente a parte alta das costas. '
+          '6. Mantém o pescoço comprido e o olhar no chão. '
+          '7. Inspira ao juntar as omoplatas e expira ao empurrar. '
+          '8. Faz o movimento devagar, sentindo as omoplatas a deslizar. '
+          '9. Apoia os joelhos no chão para facilitar se a prancha for exigente.';
+    }
+    if (_has(n, ['pike push-up'])) {
+      return '1. Começa em prancha alta e caminha com os pés na direção das mãos até a anca subir bem alto, formando um V invertido. '
+          '2. Mantém as mãos à largura dos ombros, os braços esticados e o olhar entre os pés. '
+          '3. Distribui o peso sobre os ombros e mantém o abdómen ativo. '
+          '4. Dobra os cotovelos e leva o topo da cabeça na direção do chão, entre as mãos. '
+          '5. Desce devagar até perto do chão, guiando os cotovelos numa diagonal natural. '
+          '6. Empurra o chão com as mãos e volta a estender os braços. '
+          '7. Inspira ao descer e expira ao empurrar. '
+          '8. Mantém a anca alta durante toda a repetição: o esforço deve ficar nos ombros. '
+          '9. Aproxima menos os pés das mãos para facilitar, ou eleva os pés para dificultar.';
+    }
+    if (_has(n, ['mobilidade de ombro com elastico'])) {
+      return '1. Segura um elástico à frente do corpo com as duas mãos, bem mais afastadas que os ombros. '
+          '2. Fica de pé com o tronco direito, costelas baixas e pescoço relaxado. '
+          '3. Mantém uma tensão leve no elástico durante todo o movimento. '
+          '4. Leva o elástico devagar à frente e acima da cabeça, com os braços quase esticados. '
+          '5. Se a mobilidade permitir sem dor, continua o arco até atrás da cabeça. '
+          '6. Regressa pelo mesmo caminho com controlo. '
+          '7. Respira devagar em cada passagem, sem prender o ar. '
+          '8. Alarga a pega para facilitar; encurta apenas quando o movimento ficar confortável. '
+          '9. Para se sentires beliscar no ombro, formigueiro ou necessidade de arquear a lombar.';
+    }
+    // Peito.
+    if (_has(n, ['crossover no cabo'])) {
+      return '1. Ajusta as duas polias do cabo acima da altura dos ombros e escolhe carga leve. '
+          '2. Segura uma pega em cada mão e dá um passo em frente para o meio, com um pé à frente do outro. '
+          '3. Começa com os braços abertos ao lado, cotovelos ligeiramente dobrados e tronco firme. '
+          '4. Puxa as pegas para a frente e para baixo, cruzando ligeiramente as mãos à frente da anca ou do peito. '
+          '5. Mantém a mesma dobra dos cotovelos: o movimento é um arco, não um press. '
+          '6. Aperta o peito por um segundo no ponto em que as mãos se cruzam. '
+          '7. Deixa os braços abrir devagar até sentir alongamento confortável no peito. '
+          '8. Expira ao cruzar e inspira ao abrir. '
+          '9. Não deixes o cabo puxar os ombros para trás de repente no retorno.';
+    }
+    if (_has(n, ['pullover'])) {
+      final backFocus = _n(group) == 'costas';
+      final cableVariant = _has(n, ['no cabo']);
+      if (cableVariant) {
+        return '1. Coloca a polia na posição alta e prende uma barra reta ou corda. '
+            '2. Segura a pega com as duas mãos, dá um ou dois passos atrás e inclina o tronco ligeiramente à frente. '
+            '3. Começa com os braços esticados acima da cabeça, na linha do cabo, com os cotovelos quase estendidos. '
+            '4. Puxa a pega para baixo num arco largo, com os braços esticados, até às coxas. '
+            '5. Sente as costas e os dorsais a puxar, não os braços a dobrar. '
+            '6. Mantém o tronco quieto e a lombar neutra durante todo o arco. '
+            '7. Deixa a pega subir devagar pelo mesmo arco, mantendo tensão no cabo. '
+            '8. Expira ao puxar para baixo e inspira ao subir. '
+            '9. Reduz a carga se os cotovelos dobrarem para completar a repetição.';
+      }
+      if (backFocus) {
+        return '1. Deita-te num banco (ou no chão) com os pés firmes e a lombar neutra. '
+            '2. Segura um halter com as duas mãos por baixo da cabeça de cima, com os braços quase esticados sobre o peito. '
+            '3. Ativa o abdómen para as costelas não abrirem. '
+            '4. Leva o halter devagar em arco para trás da cabeça, mantendo a mesma dobra leve dos cotovelos. '
+            '5. Desce até sentir alongamento nas costas e nos dorsais, sem dor no ombro. '
+            '6. Puxa o halter de volta pelo mesmo arco até por cima do peito, sentindo os dorsais a trabalhar. '
+            '7. Inspira ao levar atrás e expira ao puxar de volta. '
+            '8. Mantém a lombar apoiada: se ela arquear, encurta o arco. '
+            '9. Usa carga leve e pega firme para o halter não escapar por cima do rosto.';
+      }
+      return '1. Deita-te num banco (ou no chão) com os pés firmes e a lombar neutra. '
+          '2. Segura um halter com as duas mãos por baixo da cabeça de cima, com os braços quase esticados sobre o peito. '
+          '3. Mantém os cotovelos ligeiramente dobrados e apontados para a frente, mais próximos que na versão para costas. '
+          '4. Desce o halter em arco para trás da cabeça até sentir alongamento no peito e nas costelas. '
+          '5. Não deixes a lombar arquear nem as costelas abrir. '
+          '6. Puxa o halter de volta pelo mesmo arco, apertando o peito ao passar por cima do rosto. '
+          '7. Inspira ao descer e expira ao puxar de volta. '
+          '8. Faz o movimento devagar, sem balanço. '
+          '9. Usa carga leve e pega firme para o halter não escapar.';
+    }
+    // Costas.
+    if (_has(n, ['remo unilateral com halter'])) {
+      return '1. Coloca um joelho e a mão do mesmo lado em cima de um banco estável; o outro pé fica no chão. '
+          '2. Segura o halter com a mão livre, com o braço pendurado e o punho direito. '
+          '3. Mantém as costas planas, paralelas ao chão, e o pescoço alinhado com a coluna. '
+          '4. Antes de puxar, baixa o ombro do lado que trabalha, ativando a escápula. '
+          '5. Puxa o halter para cima, levando o cotovelo para trás junto ao tronco, na direção da anca. '
+          '6. Aperta as costas no topo sem rodar o tronco para cima. '
+          '7. Desce o halter devagar até o braço alongar por completo. '
+          '8. Expira ao puxar e inspira ao descer. '
+          '9. Completa as repetições de um lado antes de trocar. '
+          '10. Mantém a lombar neutra: se as costas arredondarem, reduz a carga.';
+    }
+    if (n == 'remo invertido') {
+      return '1. Coloca uma barra fixa baixa, argolas ou TRX à altura da cintura, num suporte firme. '
+          '2. Deita-te por baixo e segura a barra com pega um pouco mais larga que os ombros e punhos direitos. '
+          '3. Estica o corpo em linha reta, com os calcanhares no chão e os braços esticados. '
+          '4. Ativa o abdómen e os glúteos para a anca não descair. '
+          '5. Antes de puxar, junta ligeiramente as omoplatas. '
+          '6. Puxa o peito na direção da barra, levando os cotovelos para trás junto ao corpo. '
+          '7. Desce devagar até os braços esticarem, sem perder a linha do corpo. '
+          '8. Expira ao puxar e inspira ao descer. '
+          '9. Mantém a lombar neutra e o pescoço comprido. '
+          '10. Para facilitar, sobe a barra ou dobra os joelhos; para dificultar, baixa a barra.';
+    }
+    if (_has(n, ['puxada com bracos esticados'])) {
+      return '1. Coloca a polia na posição alta e prende uma barra reta ou corda. '
+          '2. Segura a pega com as duas mãos à largura dos ombros e dá um passo atrás. '
+          '3. Inclina o tronco ligeiramente à frente, com a lombar neutra e o abdómen ativo. '
+          '4. Começa com os braços esticados à frente, à altura dos ombros, com os cotovelos quase estendidos. '
+          '5. Puxa a barra para baixo num arco, com os braços sempre esticados, até às coxas. '
+          '6. Sente os dorsais, dos lados das costas, a fazer o trabalho, e as escápulas a descer. '
+          '7. Deixa a barra subir devagar pelo mesmo arco, mantendo tensão. '
+          '8. Expira ao puxar para baixo e inspira ao subir. '
+          '9. Se os cotovelos dobrarem muito, o exercício vira um tríceps: reduz a carga.';
+    }
+    if (_has(n, ['remo com elastico'])) {
+      return '1. Senta-te no chão com as pernas estendidas e passa o elástico à volta dos dois pés. '
+          '2. Segura uma ponta em cada mão com pega firme, braços esticados e tensão leve no elástico. '
+          '3. Mantém o tronco direito, a lombar neutra e o peito aberto. '
+          '4. Antes de puxar, baixa os ombros e junta ligeiramente as omoplatas. '
+          '5. Puxa as pontas na direção das costelas, levando os cotovelos para trás junto ao corpo. '
+          '6. Aperta as costas por um segundo com as escápulas juntas. '
+          '7. Deixa os braços voltar devagar à frente, mantendo alguma tensão. '
+          '8. Expira ao puxar e inspira ao voltar. '
+          '9. Não inclines o tronco para trás para ganhar força: o movimento é só dos braços e costas.';
+    }
+    // Lombar.
+    if (_has(n, ['hiperextensao no banco romano']) || n == 'hiperextensao lombar') {
+      return '1. Ajusta o banco romano para a almofada apoiar a parte de cima das coxas, abaixo da crista da anca. '
+          '2. Prende os pés nos apoios e cruza os braços à frente do peito. '
+          '3. Começa com o corpo em linha reta, da cabeça aos calcanhares. '
+          '4. Desce o tronco devagar, dobrando pela anca, até sentir alongamento atrás das coxas. '
+          '5. Mantém a coluna neutra: dobra pela anca, não enrolando a lombar. '
+          '6. Sobe o tronco apertando glúteos e posteriores até voltar à linha reta, sem passar dela. '
+          '7. Inspira ao descer e expira ao subir. '
+          '8. Não hiperestendas a lombar no topo nem uses impulso. '
+          '9. Usa amplitude menor se sentires pressão na lombar.';
+    }
+    if (_has(n, ['hiperextensao no chao'])) {
+      return '1. Deita-te de barriga para baixo num tapete, com as pernas estendidas e a testa perto do chão. '
+          '2. Coloca as mãos ao lado da cabeça ou estende os braços à frente. '
+          '3. Ativa levemente os glúteos e o abdómen antes de subir. '
+          '4. Eleva o peito e a cabeça alguns centímetros do chão, num movimento pequeno e controlado. '
+          '5. Mantém o olhar para o chão para o pescoço ficar alinhado. '
+          '6. Faz uma pausa de um a dois segundos no topo. '
+          '7. Desce devagar até quase tocar no chão. '
+          '8. Expira ao subir e inspira ao descer. '
+          '9. Procura altura pequena e estável: não é preciso subir muito para a lombar trabalhar.';
+    }
+    if (_has(n, ['superman isometrico'])) {
+      return '1. Deita-te de barriga para baixo num tapete, com os braços estendidos à frente e as pernas esticadas. '
+          '2. Mantém o olhar para o chão e o pescoço comprido. '
+          '3. Eleva ao mesmo tempo os braços, o peito e as pernas alguns centímetros do chão. '
+          '4. Aperta os glúteos e a zona lombar sem prender a respiração. '
+          '5. Mantém a posição parado durante 10 a 20 segundos. '
+          '6. Respira devagar e de forma contínua durante a sustentação. '
+          '7. Desce braços e pernas devagar até relaxar no chão. '
+          '8. Descansa alguns segundos antes de repetir. '
+          '9. Para se sentires apertar na lombar; eleva menos ou levanta apenas braços ou pernas.';
+    }
+    if (_has(n, ['extensao lombar com elastico'])) {
+      return '1. Senta-te no chão ou numa cadeira e passa o elástico à volta dos pés ou de um ponto baixo firme. '
+          '2. Segura as pontas junto ao peito com as duas mãos. '
+          '3. Começa com o tronco ligeiramente inclinado à frente, com a coluna neutra. '
+          '4. Endireita o tronco devagar contra a resistência do elástico, dobrando pela anca. '
+          '5. Para quando o tronco ficar direito, sem inclinar para trás. '
+          '6. Volta devagar à inclinação inicial, controlando o elástico. '
+          '7. Expira ao endireitar e inspira ao voltar. '
+          '8. Mantém o movimento pequeno e suave, sentindo a lombar e os glúteos. '
+          '9. Reduz a tensão se precisares de puxar com os braços ou encolher os ombros.';
+    }
+    if (_has(n, ['good morning leve isometrico'])) {
+      return '1. Fica de pé com os pés à largura da anca e as mãos atrás da cabeça ou uma barra muito leve nos ombros. '
+          '2. Dobra ligeiramente os joelhos e mantém a coluna neutra. '
+          '3. Inclina o tronco à frente dobrando pela anca, até cerca de 30 a 45 graus. '
+          '4. Para nessa posição e aguenta parado 5 a 15 segundos. '
+          '5. Mantém o peso nos calcanhares e a anca para trás. '
+          '6. Respira devagar durante a sustentação, sem prender o ar. '
+          '7. Sobe apertando os glúteos até ficar direito. '
+          '8. Descansa e repete. '
+          '9. Sai da posição se a lombar começar a arredondar ou a tremer.';
+    }
+    // Bíceps.
+    if (_has(n, ['curl concentrado'])) {
+      return '1. Senta-te num banco ou cadeira com as pernas afastadas e um halter numa mão. '
+          '2. Apoia a parte de trás desse braço na parte interna da coxa do mesmo lado. '
+          '3. Deixa o braço pendurado com o halter, punho direito e palma para a frente. '
+          '4. Mantém o tronco inclinado à frente e a outra mão apoiada na outra coxa. '
+          '5. Sobe o halter dobrando só o cotovelo, sem mexer o ombro nem o tronco. '
+          '6. Aperta o bíceps no topo por um segundo. '
+          '7. Desce em dois a três segundos até o braço quase esticar. '
+          '8. Expira ao subir e inspira ao descer. '
+          '9. Completa as repetições de um braço antes de trocar. '
+          '10. A coxa serve de apoio fixo: se o cotovelo sair dela, reduz a carga.';
+    }
+    if (_has(n, ['curl spider'])) {
+      return '1. Deita-te de barriga para baixo num banco inclinado, com o peito apoiado e os braços pendurados. '
+          '2. Segura um halter em cada mão com as palmas para a frente e punhos direitos. '
+          '3. Deixa os braços verticais, perpendiculares ao chão. '
+          '4. Sobe os halteres dobrando apenas os cotovelos, sem balançar os ombros. '
+          '5. O peito apoiado impede o tronco de ajudar: todo o esforço fica no bíceps. '
+          '6. Aperta no topo por um segundo. '
+          '7. Desce devagar até os braços quase esticarem. '
+          '8. Expira ao subir e inspira ao descer. '
+          '9. Usa carga leve: sem impulso, o exercício é mais difícil do que parece.';
+    }
+    if (_has(n, ['curl inclinado'])) {
+      return '1. Ajusta um banco inclinado entre 45 e 60 graus e senta-te com as costas e a cabeça apoiadas. '
+          '2. Deixa os braços pendurados ao lado, com um halter em cada mão e palmas para a frente. '
+          '3. Sente o bíceps alongado nessa posição inicial, com os punhos direitos. '
+          '4. Sobe os halteres dobrando os cotovelos, sem deixar os cotovelos vir para a frente. '
+          '5. Mantém os ombros encostados ao banco durante toda a repetição. '
+          '6. Aperta no topo e desce em dois a três segundos até alongar de novo. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Mantém o tronco quieto: o banco existe para impedir compensações. '
+          '9. Usa carga menor que no curl em pé, porque o bíceps parte de uma posição alongada.';
+    }
+    if (_has(n, ['curl isometrico'])) {
+      return '1. Fica de pé com um halter em cada mão e os cotovelos junto ao tronco. '
+          '2. Sobe os halteres até os cotovelos ficarem dobrados a cerca de 90 graus. '
+          '3. Para nessa posição, com os punhos direitos e os antebraços paralelos ao chão. '
+          '4. Aguenta parado 15 a 30 segundos, mantendo o tronco direito. '
+          '5. Respira devagar e de forma contínua durante a sustentação. '
+          '6. Não deixes os cotovelos abrir nem os ombros subir. '
+          '7. Desce os halteres devagar no fim do tempo. '
+          '8. Descansa antes de repetir. '
+          '9. Termina a série quando os braços tremerem ao ponto de perder o ângulo.';
+    }
+    // Tríceps.
+    if (_has(n, ['fundos entre apoios'])) {
+      return '1. Senta-te na borda de um banco ou cadeira estável e apoia as mãos na borda, ao lado da anca, com os dedos para a frente. '
+          '2. Desliza a anca para fora do apoio, mantendo os joelhos dobrados e os pés no chão. '
+          '3. Mantém os ombros afastados das orelhas e o peito aberto. '
+          '4. Desce o corpo dobrando os cotovelos para trás, mantendo-os próximos do tronco. '
+          '5. Desce até os cotovelos ficarem perto de 90 graus, sem dor no ombro. '
+          '6. Empurra o apoio com as mãos e sobe até os braços quase esticarem. '
+          '7. Inspira ao descer e expira ao empurrar. '
+          '8. Mantém a anca perto do banco durante todo o movimento. '
+          '9. Estica as pernas à frente para dificultar; dobra-as mais para facilitar. '
+          '10. Para se sentires beliscar na frente do ombro ou dor na lombar.';
+    }
+    if (_has(n, ['dips para triceps'])) {
+      return '1. Sobe para as paralelas com uma mão em cada pega e os braços esticados. '
+          '2. Mantém o tronco o mais vertical possível: quanto mais direito, mais tríceps e menos peito. '
+          '3. Mantém os ombros afastados das orelhas e as pernas dobradas ou cruzadas atrás. '
+          '4. Desce dobrando os cotovelos para trás, junto ao corpo. '
+          '5. Desce até os cotovelos chegarem perto de 90 graus, sem dor no ombro. '
+          '6. Empurra as barras para baixo e sobe até quase estender os braços. '
+          '7. Inspira ao descer e expira ao subir. '
+          '8. Mantém os punhos direitos e a pega firme. '
+          '9. Usa máquina assistida ou elástico nos joelhos se ainda não controlares o peso do corpo. '
+          '10. Mantém a lombar neutra, sem balançar as pernas para ganhar impulso.';
+    }
+    if (_has(n, ['extensao unilateral de triceps'])) {
+      return '1. Fica de pé ou sentado com um halter leve numa mão. '
+          '2. Sobe esse braço até ficar vertical, com o halter por cima da cabeça e a pega firme. '
+          '3. Usa a outra mão para apoiar o cotovelo do braço que trabalha, se ajudar. '
+          '4. Dobra o cotovelo e desce o halter devagar por trás da cabeça. '
+          '5. Mantém o cotovelo apontado para a frente e junto à cabeça, sem abrir para o lado. '
+          '6. Estende o cotovelo e sobe o halter até o braço ficar quase direito. '
+          '7. Inspira ao descer e expira ao estender. '
+          '8. Mantém as costelas baixas e a lombar neutra. '
+          '9. Completa as repetições de um braço antes de trocar. '
+          '10. Usa carga leve: um braço sozinho controla pior a descida.';
+    }
+    if (_has(n, ['triceps no cabo com corda'])) {
+      return '1. Coloca a polia na posição alta e prende a corda de duas pontas. '
+          '2. Segura uma ponta em cada mão com pega neutra e punhos direitos. '
+          '3. Fica de pé de frente para o cabo, com um pé ligeiramente à frente e o tronco quase direito. '
+          '4. Cola os cotovelos ao lado do tronco: eles não devem mexer durante a repetição. '
+          '5. Empurra a corda para baixo estendendo os cotovelos e afasta as pontas no fim. '
+          '6. Aperta o tríceps por um segundo com os braços quase estendidos. '
+          '7. Deixa a corda subir devagar até os antebraços passarem a horizontal, sem os cotovelos levantarem. '
+          '8. Expira ao empurrar para baixo e inspira ao subir. '
+          '9. Mantém a lombar neutra e os ombros afastados das orelhas. '
+          '10. Reduz a carga se os cotovelos abrirem ou o tronco inclinar para pressionar.';
+    }
+    if (_has(n, ['extensao de triceps no cabo'])) {
+      return '1. Coloca a polia na posição alta e prende uma barra reta ou pega curta. '
+          '2. Segura a pega com as palmas para baixo e punhos direitos. '
+          '3. Fica de pé de frente para o cabo, com o tronco quase direito e o abdómen ativo. '
+          '4. Cola os cotovelos ao lado do tronco durante toda a série. '
+          '5. Empurra a barra para baixo estendendo os cotovelos até os braços quase esticarem. '
+          '6. Faz uma pausa curta em baixo, apertando o tríceps. '
+          '7. Deixa a barra subir devagar até os antebraços ficarem paralelos ao chão. '
+          '8. Expira ao empurrar para baixo e inspira ao subir. '
+          '9. Mantém a lombar neutra e não uses o peso do tronco para empurrar.';
+    }
+    // Antebraço / pega.
+    if (n == 'dead hang') {
+      return '1. Coloca-te por baixo de uma barra fixa firme e seca; usa um apoio para chegar lá se for alta. '
+          '2. Segura a barra com as duas mãos à largura dos ombros, com a pega completa (polegar à volta da barra). '
+          '3. Tira os pés do apoio e fica pendurado com os braços esticados. '
+          '4. Mantém os ombros ativos, sem deixar o pescoço esmagar entre eles. '
+          '5. Mantém o corpo quieto, sem balançar, com o abdómen levemente ativo. '
+          '6. Aguenta 10 a 30 segundos, respirando devagar e de forma contínua. '
+          '7. Para descer, apoia os pés primeiro e só depois solta a pega. '
+          '8. Descansa as mãos entre séries. '
+          '9. Termina antes de a pega falhar por completo, para não caíres de repente.';
+    }
+    if (_has(n, ['pinch grip'])) {
+      return '1. Escolhe um ou dois discos lisos e limpos, com peso leve para começar. '
+          '2. Coloca o disco em pé no chão ou num banco, à tua frente. '
+          '3. Agarra a borda do disco em pinça: o polegar de um lado, os outros dedos do outro. '
+          '4. Levanta o disco e mantém-no ao lado do corpo, com o braço esticado e o punho direito. '
+          '5. Aperta com força constante: só a pressão dos dedos segura o disco. '
+          '6. Aguenta 10 a 30 segundos, respirando de forma contínua. '
+          '7. Pousa o disco com controlo, dobrando as pernas e não a lombar. '
+          '8. Mantém os pés fora da linha de queda do disco. '
+          '9. Troca de mão e repete; termina antes de o disco escorregar.';
+    }
+    if (_has(n, ['plate hold'])) {
+      return '1. Escolhe um disco com peso confortável e pega nele pela borda com uma ou duas mãos. '
+          '2. Fica de pé com o tronco direito, os ombros baixos e os pés à largura da anca. '
+          '3. Segura o disco ao lado do corpo ou à frente, com os dedos a agarrar a borda e o punho direito. '
+          '4. Aperta a borda com força constante durante 15 a 45 segundos. '
+          '5. Mantém o braço quieto e o abdómen ativo para o tronco não inclinar. '
+          '6. Respira de forma contínua, sem prender o ar. '
+          '7. Pousa o disco com controlo antes de a pega abrir sozinha. '
+          '8. Descansa e troca de mão se usares só uma. '
+          '9. Mantém os pés afastados da zona onde o disco cairia.';
+    }
+    if (_has(n, ['towel grip hold'])) {
+      return '1. Pendura uma toalha resistente por cima de uma barra fixa firme, com as duas pontas ao mesmo nível. '
+          '2. Agarra uma ponta da toalha com cada mão, apertando o tecido com todos os dedos. '
+          '3. Tira o peso dos pés aos poucos: começa com os pés apoiados se for a primeira vez. '
+          '4. Fica suspenso ou semi-suspenso com os braços quase esticados e mantém os ombros ativos. '
+          '5. Aperta o tecido com força constante; a toalha exige mais dos dedos do que a barra. '
+          '6. Aguenta 5 a 20 segundos, respirando devagar. '
+          '7. Apoia os pés antes de soltar as mãos. '
+          '8. Descansa bem entre séries: a pega em tecido cansa depressa. '
+          '9. Termina antes de as mãos abrirem de repente.';
+    }
+    if (_has(n, ['suitcase carry'])) {
+      return '1. Coloca um halter ou carga no chão ao lado de um dos teus pés. '
+          '2. Agacha dobrando joelhos e anca, agarra a pega com uma mão e levanta-te com a coluna neutra. '
+          '3. Fica de pé com a carga só de um lado, como quem segura uma mala. '
+          '4. Endireita o tronco: os ombros nivelados, sem inclinar para o lado da carga nem para o contrário. '
+          '5. Caminha devagar em linha reta, com passos curtos e o abdómen ativo. '
+          '6. Mantém o punho direito e a pega firme durante todo o percurso. '
+          '7. Respira de forma contínua enquanto caminhas. '
+          '8. Percorre 10 a 20 metros, pousa a carga com controlo e troca de lado. '
+          '9. Termina se o tronco começar a inclinar ou a pega a abrir.';
+    }
+    if (_has(n, ['desvio radial'])) {
+      return '1. Senta-te ou fica de pé com um halter leve numa mão, segurando-o por uma das pontas. '
+          '2. Deixa o braço ao lado do corpo com o polegar virado para a frente. '
+          '3. Mantém o cotovelo e o ombro quietos: só o punho trabalha. '
+          '4. Inclina o punho para cima, na direção do polegar, levantando a ponta do halter. '
+          '5. Usa uma amplitude pequena e sem dor. '
+          '6. Faz uma pausa curta no topo. '
+          '7. Desce devagar até à posição inicial. '
+          '8. Expira ao levantar e inspira ao descer. '
+          '9. Usa carga muito leve: a alavanca do halter multiplica o esforço no punho.';
+    }
+    if (_has(n, ['desvio ulnar'])) {
+      return '1. Senta-te ou fica de pé com um halter leve numa mão, segurando-o pela ponta com o peso atrás da mão. '
+          '2. Deixa o braço ao lado do corpo com o polegar virado para a frente. '
+          '3. Mantém o cotovelo e o ombro quietos: o movimento é só do punho. '
+          '4. Inclina o punho para trás e para baixo, na direção do dedo mínimo. '
+          '5. Usa uma amplitude pequena e controlada, sem dor. '
+          '6. Faz uma pausa curta no fim do movimento. '
+          '7. Volta devagar à posição inicial. '
+          '8. Expira ao inclinar e inspira ao voltar. '
+          '9. Usa carga muito leve e pega firme para o halter não rodar na mão.';
+    }
+    // Core.
+    if (_has(n, ['mountain climbers'])) {
+      return '1. Coloca-te em prancha alta, com as mãos por baixo dos ombros e o corpo em linha reta. '
+          '2. Ativa o abdómen e mantém a anca à altura dos ombros, sem subir em pico. '
+          '3. Leva um joelho na direção do peito, mantendo o pé de trás firme. '
+          '4. Troca as pernas num pequeno salto, levando o outro joelho ao peito. '
+          '5. Continua a alternar os joelhos num ritmo que consegues controlar. '
+          '6. Mantém as mãos a empurrar o chão e os ombros por cima dos punhos. '
+          '7. Respira de forma contínua, ao ritmo das trocas. '
+          '8. Começa devagar e aumenta o ritmo só se a anca não saltar. '
+          '9. Trabalha 20 a 40 segundos por série. '
+          '10. Para se a lombar descair ou os ombros saírem da linha das mãos.';
+    }
+    if (_has(n, ['side bend'])) {
+      return '1. Fica de pé com os pés à largura da anca e os braços ao lado do corpo. '
+          '2. Coloca uma mão atrás da cabeça e deixa a outra esticada junto à perna. '
+          '3. Mantém o tronco direito, sem inclinar para a frente nem para trás. '
+          '4. Inclina o tronco devagar para o lado do braço esticado, deslizando a mão pela perna. '
+          '5. Desce só até sentir alongamento no lado contrário da cintura. '
+          '6. Volta a subir usando os músculos do lado contrário, até ficar direito. '
+          '7. Expira ao subir e inspira ao inclinar. '
+          '8. Não rodes o tronco nem deixes a anca fugir para o lado. '
+          '9. Completa as repetições de um lado antes de trocar. '
+          '10. Para adicionar carga, segura uma garrafa de água ou outra carga pequena na mão do lado que desliza.';
+    }
+    if (_has(n, ['vacuum abdominal'])) {
+      return '1. Fica de pé, sentado ou em quatro apoios, com a coluna neutra. '
+          '2. Inspira fundo pelo nariz, enchendo a barriga de ar. '
+          '3. Expira todo o ar pela boca, devagar. '
+          '4. No fim da expiração, puxa o umbigo para dentro e para cima, como se quisesses encostá-lo à coluna. '
+          '5. Mantém essa contração 5 a 15 segundos, sem encolher os ombros. '
+          '6. Respira superficialmente durante a sustentação se precisares. '
+          '7. Relaxa a barriga devagar. '
+          '8. Descansa uma respiração completa e repete. '
+          '9. Evita este exercício se estiveres com tensão alta não controlada ou tonturas.';
+    }
+    if (_has(n, ['russian twist'])) {
+      return '1. Senta-te no chão com os joelhos dobrados e os pés apoiados ou ligeiramente elevados. '
+          '2. Inclina o tronco para trás até sentir o abdómen a trabalhar, mantendo as costas direitas. '
+          '3. Junta as mãos à frente do peito, com ou sem carga leve. '
+          '4. Roda o tronco para um lado, levando as mãos na direção do chão ao lado da anca. '
+          '5. Roda depois para o outro lado, com o movimento a vir do tronco e não dos braços. '
+          '6. Mantém o peito aberto e o queixo neutro. '
+          '7. Expira em cada rotação e inspira ao passar pelo centro. '
+          '8. Faz as rotações devagar, sem balancear as pernas. '
+          '9. Apoia os pés no chão para facilitar; eleva-os para dificultar.';
+    }
+    if (_has(n, ['pallof press'])) {
+      final anchor = _has(n, ['elastico'])
+          ? '1. Prende um elástico num ponto firme à altura do peito e afasta-te para o lado até haver tensão. '
+          : '1. Coloca a polia à altura do peito, segura a pega e afasta-te para o lado até haver tensão no cabo. ';
+      return '$anchor'
+          '2. Fica de lado para o ponto de fixação, com os pés à largura dos ombros e joelhos suaves. '
+          '3. Segura a pega ou o elástico com as duas mãos junto ao peito. '
+          '4. Ativa o abdómen e mantém a bacia e os ombros virados para a frente. '
+          '5. Empurra as mãos em linha reta à frente do peito, estendendo os braços. '
+          '6. A resistência vai tentar rodar o teu tronco: resiste sem deixar rodar. '
+          '7. Mantém os braços estendidos 2 a 3 segundos e volta com as mãos ao peito devagar. '
+          '8. Expira ao empurrar e inspira ao recolher. '
+          '9. Completa as repetições de um lado e vira-te para trabalhar o outro. '
+          '10. Reduz a tensão se a anca rodar ou os ombros subirem.';
+    }
+    if (n == 'elevacao de pernas') {
+      return '1. Deita-te de costas num tapete, com as pernas estendidas e as mãos ao lado do corpo ou debaixo da bacia. '
+          '2. Encosta a lombar ao chão ativando o abdómen antes de mexer as pernas. '
+          '3. Eleva as duas pernas juntas até perto da vertical, com os joelhos quase esticados. '
+          '4. Desce as pernas devagar, juntas, na direção do chão. '
+          '5. Para a descida no ponto em que a lombar começar a arquear. '
+          '6. Volta a subir as pernas sem impulso nem balanço. '
+          '7. Expira ao descer as pernas e inspira ao subir. '
+          '8. Dobra os joelhos para facilitar o exercício. '
+          '9. Mantém o pescoço relaxado e os ombros no chão. '
+          '10. Termina a série quando a lombar deixar de conseguir ficar encostada.';
+    }
+    if (_has(n, ['elevacao de joelhos suspenso'])) {
+      return '1. Segura uma barra fixa firme com as duas mãos à largura dos ombros e fica pendurado. '
+          '2. Ativa os ombros e o abdómen para o corpo não balançar. '
+          '3. Sobe os dois joelhos juntos na direção do peito, enrolando ligeiramente a bacia no fim. '
+          '4. Sobe até os joelhos passarem a altura da anca, ou mais alto se controlares. '
+          '5. Faz uma pausa curta no topo. '
+          '6. Desce as pernas devagar até ficarem esticadas, sem balancear. '
+          '7. Expira ao subir os joelhos e inspira ao descer. '
+          '8. Se balançares, para, estabiliza e só depois continua. '
+          '9. Termina antes de a pega falhar; desce com apoio dos pés se possível.';
+    }
+    if (_has(n, ['hollow hold'])) {
+      return '1. Deita-te de costas num tapete com as pernas estendidas e os braços ao lado do corpo. '
+          '2. Encosta a lombar ao chão ativando o abdómen: esta é a regra principal do exercício. '
+          '3. Eleva os ombros e a cabeça alguns centímetros do chão. '
+          '4. Eleva as pernas esticadas a um palmo ou dois do chão. '
+          '5. Se controlares, estende os braços atrás da cabeça para dificultar. '
+          '6. O corpo fica em forma de canoa, curvado e firme. '
+          '7. Mantém 10 a 30 segundos, respirando de forma curta e contínua, sem prender o ar. '
+          '8. Desce devagar e descansa. '
+          '9. Dobra os joelhos ou mantém os braços à frente para facilitar. '
+          '10. Termina no momento em que a lombar descolar do chão.';
+    }
+    if (_has(n, ['flutter kicks'])) {
+      return '1. Deita-te de costas com as pernas estendidas e as mãos ao lado do corpo ou debaixo da bacia. '
+          '2. Encosta a lombar ao chão ativando o abdómen. '
+          '3. Eleva as duas pernas a um palmo ou dois do chão. '
+          '4. Bate as pernas alternadamente para cima e para baixo, em movimentos pequenos e rápidos, como a nadar. '
+          '5. Mantém os joelhos quase esticados e os tornozelos relaxados. '
+          '6. Mantém os ombros e o pescoço descontraídos no chão. '
+          '7. Respira de forma contínua durante as batidas. '
+          '8. Trabalha 15 a 30 segundos por série. '
+          '9. Sobe as pernas um pouco mais alto se a lombar arquear. '
+          '10. Termina quando deixares de conseguir manter a lombar encostada.';
+    }
+    if (_has(n, ['toe touches'])) {
+      return '1. Deita-te de costas com as pernas elevadas na vertical e os joelhos quase esticados. '
+          '2. Estende os braços na direção dos pés, com as mãos apontadas ao teto. '
+          '3. Encosta a lombar ao chão e recolhe ligeiramente o queixo. '
+          '4. Sobe os ombros do chão levando as mãos na direção dos dedos dos pés. '
+          '5. O movimento é curto: sobe só até as omoplatas saírem do chão. '
+          '6. Faz uma pausa de um segundo no topo, apertando o abdómen. '
+          '7. Desce devagar até os ombros tocarem no chão. '
+          '8. Expira ao subir e inspira ao descer. '
+          '9. Não puxes o pescoço com as mãos nem balances as pernas. '
+          '10. Dobra ligeiramente os joelhos se os posteriores repuxarem.';
+    }
+    if (n == 'superman') {
+      return '1. Deita-te de barriga para baixo num tapete, com os braços estendidos à frente e as pernas esticadas. '
+          '2. Mantém o olhar para o chão e o pescoço comprido. '
+          '3. Eleva ao mesmo tempo braços, peito e pernas alguns centímetros do chão. '
+          '4. Aperta os glúteos e a lombar no topo do movimento. '
+          '5. Faz uma pausa de um a dois segundos em cima. '
+          '6. Desce devagar até relaxar no chão. '
+          '7. Expira ao subir e inspira ao descer. '
+          '8. Procura um movimento pequeno e controlado, não altura máxima. '
+          '9. Levanta só os braços ou só as pernas para facilitar. '
+          '10. Para se sentires apertar ou dor na lombar.';
+    }
+    if (_has(n, ['reverse crunch'])) {
+      return '1. Deita-te de costas com os joelhos dobrados a 90 graus e as canelas paralelas ao chão. '
+          '2. Coloca as mãos ao lado do corpo, com as palmas no chão. '
+          '3. Encosta a lombar ao chão ativando o abdómen. '
+          '4. Enrola a bacia para cima, levando os joelhos na direção do peito. '
+          '5. As ancas sobem ligeiramente do chão no fim do movimento; não uses impulso das pernas. '
+          '6. Faz uma pausa curta em cima. '
+          '7. Desce a bacia devagar até os joelhos voltarem à vertical. '
+          '8. Expira ao enrolar e inspira ao descer. '
+          '9. Mantém o pescoço e os ombros relaxados no chão. '
+          '10. Faz o movimento pequeno e lento: o objetivo é enrolar, não balançar.';
+    }
+    if (_has(n, ['bicycle crunch'])) {
+      return '1. Deita-te de costas com as mãos ao lado da cabeça e as pernas elevadas, joelhos dobrados. '
+          '2. Encosta a lombar ao chão e recolhe ligeiramente o queixo. '
+          '3. Sobe os ombros do chão e roda o tronco levando um cotovelo na direção do joelho contrário. '
+          '4. Ao mesmo tempo, estende a outra perna à frente, sem a deixar cair no chão. '
+          '5. Troca de lado num movimento contínuo, como a pedalar. '
+          '6. Roda a partir do tronco, sem puxar o pescoço com as mãos. '
+          '7. Expira em cada rotação e inspira na troca. '
+          '8. Faz o movimento devagar e com pausa curta em cada lado. '
+          '9. Estende menos a perna se a lombar arquear. '
+          '10. Termina quando o pescoço começar a fazer o trabalho do abdómen.';
+    }
+    // Cardio sem equipamento.
+    if (_has(n, ['jumping jacks'])) {
+      return '1. Fica de pé com os pés juntos e os braços ao lado do corpo. '
+          '2. Salta abrindo as pernas para os lados e, ao mesmo tempo, sobe os braços por cima da cabeça. '
+          '3. Aterra com os pés um pouco mais afastados que os ombros e os joelhos suaves. '
+          '4. Salta de novo fechando as pernas e descendo os braços ao lado do corpo. '
+          '5. Aterra sempre na parte da frente dos pés, em silêncio. '
+          '6. Mantém o tronco direito e o abdómen levemente ativo. '
+          '7. Respira de forma contínua ao ritmo dos saltos. '
+          '8. Começa devagar e aumenta o ritmo aos poucos. '
+          '9. Trabalha 20 a 60 segundos por bloco. '
+          '10. Faz o movimento a caminhar (abrir e fechar sem saltar) para reduzir o impacto.';
+    }
+    if (_has(n, ['skaters'])) {
+      return '1. Fica de pé com os pés à largura da anca e os joelhos ligeiramente dobrados. '
+          '2. Salta para o lado com uma perna, aterrando nesse pé com o joelho suave. '
+          '3. Deixa a outra perna cruzar por trás, sem apoiar ou tocando só com a ponta. '
+          '4. Balança os braços ao ritmo, como um patinador. '
+          '5. Salta de seguida para o outro lado, empurrando com a perna de apoio. '
+          '6. Aterra sempre em silêncio, com o joelho alinhado com o pé. '
+          '7. Respira de forma contínua ao ritmo dos saltos. '
+          '8. Começa com saltos curtos e aumenta a distância aos poucos. '
+          '9. Trabalha 20 a 40 segundos por bloco. '
+          '10. Reduz a distância do salto se o joelho cair para dentro na aterragem.';
+    }
+    if (_has(n, ['high knees'])) {
+      return '1. Fica de pé com o tronco direito e o olhar em frente. '
+          '2. Corre no lugar elevando um joelho de cada vez até à altura da anca. '
+          '3. Aterra na parte da frente dos pés, com passos leves e rápidos. '
+          '4. Usa os braços dobrados a 90 graus, a bombear ao ritmo da corrida. '
+          '5. Mantém o abdómen ativo para o tronco não inclinar para trás. '
+          '6. Respira de forma contínua e ritmada. '
+          '7. Começa com joelhos à altura média e sobe conforme o controlo. '
+          '8. Trabalha 15 a 30 segundos por bloco. '
+          '9. Marcha no lugar elevando os joelhos, sem correr, para reduzir o impacto. '
+          '10. Para se perderes a postura ou o ritmo respiratório.';
+    }
+    if (_has(n, ['marcha no lugar'])) {
+      return '1. Fica de pé com o tronco direito e os braços soltos ao lado do corpo. '
+          '2. Marcha no lugar elevando um joelho de cada vez, a uma altura confortável. '
+          '3. Pousa o pé inteiro com suavidade a cada passo. '
+          '4. Balança os braços de forma natural, como numa caminhada. '
+          '5. Mantém os ombros relaxados e o olhar em frente. '
+          '6. Respira de forma calma e contínua. '
+          '7. Aumenta o ritmo ou a altura dos joelhos para intensificar. '
+          '8. Marcha 1 a 3 minutos como aquecimento ou pausa ativa. '
+          '9. Baixa o ritmo gradualmente antes de parar.';
+    }
+    // Jiu-Jitsu — drills de solo.
+    if (_has(n, ['shrimp', 'fuga de anca'])) {
+      return '1. Deita-te de costas no tatami ou tapete, com os joelhos dobrados e os pés apoiados; o objetivo é criar espaço e recuperar a guarda. '
+          '2. Mantém as mãos à frente do peito, como se protegesses a guarda contra um adversário. '
+          '3. Vira-te ligeiramente para um lado e apoia bem o pé da perna de cima. '
+          '4. Empurra o chão com esse pé e com o ombro de baixo, levantando a anca. '
+          '5. Ao mesmo tempo, dispara a anca para trás, afastando-a do lado para onde olhaste. '
+          '6. Termina deitado de lado, encolhido, com espaço criado, em base controlada. '
+          '7. Volta ao centro com controlo e repete para o outro lado. '
+          '8. Expira ao empurrar a anca e inspira ao voltar. '
+          '9. Faz o movimento devagar até fixares o padrão; a velocidade vem depois. '
+          '10. Para se o pescoço ou a lombar começarem a forçar.';
+    }
+    if (_has(n, ['ponte de grappling'])) {
+      return '1. Deita-te de costas no tatami ou tapete, com os joelhos dobrados e os pés perto dos glúteos; o objetivo é desequilibrar um adversário por cima. '
+          '2. Mantém os braços dobrados junto ao peito, a proteger a guarda. '
+          '3. Apoia bem os dois pés e, se for a ponte com viragem, também um ombro. '
+          '4. Empurra o chão com os pés e dispara a anca para cima, o mais alto que conseguires. '
+          '5. Rola o peso para um ombro, olhando por cima dele, como se quisesses virar alguém. '
+          '6. Mantém o controlo do pescoço: o apoio é no ombro, não na cabeça. '
+          '7. Desce a anca com controlo e volta à base inicial. '
+          '8. Expira ao subir a ponte e inspira ao descer. '
+          '9. Alterna os lados da viragem. '
+          '10. Para se sentires pressão no pescoço ou na lombar.';
+    }
+    if (_has(n, ['technical stand-up'])) {
+      return '1. Começa sentado no tatami ou tapete, com uma mão atrás no chão e o pé do lado contrário apoiado; o objetivo é levantar-te protegido. '
+          '2. Mantém a outra mão à frente, em guarda, a proteger a cara. '
+          '3. Apoia com força a mão de trás e o pé da frente no chão. '
+          '4. Levanta a anca e passa a perna livre por baixo do corpo, para trás. '
+          '5. Pousa esse pé atrás, ficando numa base estável, com um pé à frente e outro atrás. '
+          '6. Sobe o tronco e termina de pé, com a guarda organizada e o olhar em frente. '
+          '7. Inverte o movimento para voltar a sentar com controlo. '
+          '8. Respira a cada repetição, sem prender o ar. '
+          '9. Alterna o lado do apoio a cada repetição. '
+          '10. Faz devagar até o padrão sair sem pensar; só depois acelera.';
+    }
+    if (n == 'sprawl') {
+      return '1. Começa de pé numa base de luta, com os joelhos fletidos e a guarda à frente; o objetivo é defender uma entrada às pernas. '
+          '2. Deixa cair a anca para baixo e para trás, atirando as pernas esticadas para trás. '
+          '3. Apoia as mãos ou os antebraços no chão à frente do peito. '
+          '4. Termina com a anca baixa e pesada contra o chão e as pernas afastadas atrás. '
+          '5. Mantém o peito alto e o olhar em frente, sem deixar os joelhos tocar primeiro. '
+          '6. Recolhe as pernas com um salto curto e volta à base de pé, com a guarda organizada. '
+          '7. Expira ao atirar as pernas atrás e inspira ao subir. '
+          '8. Faz devagar no início, com controlo da descida. '
+          '9. Repete em séries curtas de 20 a 40 segundos. '
+          '10. Para se a lombar ou os ombros perderem o controlo da queda.';
     }
     return null;
   }
@@ -2287,7 +3286,13 @@ class ExerciseCatalogContextService {
     return 'respiração, postura, controlo articular e consciência corporal';
   }
 
-  static bool _isCurl(String name) => _has(_n(name), ['curl']);
+  static bool _isCurl(String name) {
+    final n = _n(name);
+    // "Curl" aqui significa flexão de cotovelo; curl de perna é posterior de
+    // coxa e wrist/finger curls pertencem ao antebraço.
+    if (_has(n, ['curl de perna', 'wrist', 'finger'])) return false;
+    return n.contains('curl');
+  }
   static bool _isTriceps(String name) {
     final n = _n(name);
     if (_has(n, ['kickback de gluteo'])) return false;

@@ -1,3 +1,12 @@
+# v0.9.0
+
+- Corrigida a filtragem de exercícios por músculo específico: cada foco anatómico mostra apenas os exercícios certos, tendo em conta o local de treino e o equipamento.
+- Corrigida a disponibilidade por local: corda de saltar e cabo de vassoura no ginásio, corrida em subida exige exterior, Karate sem tatami e drills de solo de Jiu-Jitsu com tatami ou tapete.
+- Revistos um a um os textos dos exercícios: cerca de 75 exercícios receberam passos de execução específicos escritos de raiz para principiantes.
+- Corrigidos exercícios com instruções da família errada (Curl de perna, Extensão de perna, Leg press).
+- Removidas frases genéricas das instruções e reforçados os testes de qualidade do catálogo.
+- Atualizada versão da app para v0.9.0.
+
 # v0.8.0
 
 - Corrigido isolamento de objetivos e milestones por perfil.
