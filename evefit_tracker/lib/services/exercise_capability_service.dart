@@ -111,6 +111,9 @@ class ExerciseCapabilityService {
         if (!groups.any((group) => group == _benchAlternatives)) {
           groups.add(_benchAlternatives);
         }
+      } else if (key == 'tatami') {
+        // Drills de solo aceitam tatami ou um tapete/colchonete.
+        groups.add({'tatami', 'mat'});
       } else if (key == 'mat') {
         groups.add({'mat', 'floor'});
       } else if (key == 'high_cable') {

@@ -141,6 +141,7 @@ class ExerciseCatalogDetailService {
       'caminhada exterior',
       'corrida exterior',
       'sprints exterior',
+      'corrida em subida',
     ])) {
       return 'Espaço exterior';
     }
@@ -302,6 +303,9 @@ class ExerciseCatalogDetailService {
     }
     if (_has(n, ['remo', 'puxada', 'pull-up', 'chin-up'])) {
       return 'Bíceps, braquial, antebraço, trapézio e romboides';
+    }
+    if (_has(n, ['curl de perna'])) {
+      return 'Glúteos, gémeos e estabilizadores do joelho';
     }
     if (_has(n, ['curl'])) return 'Braquial, braquiorradial, antebraço e punho';
     if (_has(n, ['triceps', 'tricep', 'extensao francesa', 'fundos'])) {

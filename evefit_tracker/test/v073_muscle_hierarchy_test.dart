@@ -49,7 +49,7 @@ void main() {
     });
 
     test(
-      'upper arm opens biceps brachialis brachioradialis coracobrachialis and triceps',
+      'upper arm opens biceps brachialis brachioradialis and triceps',
       () {
         expect(
           TrainingFlow.strengthSpecificOptions(
@@ -60,7 +60,6 @@ void main() {
             'Bíceps braquial',
             'Braquial',
             'Braquiorradial',
-            'Coracobraquial',
             'Tríceps completo',
             'Tríceps cabeça longa',
             'Tríceps cabeça lateral',

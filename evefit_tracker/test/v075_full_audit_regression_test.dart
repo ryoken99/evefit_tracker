@@ -49,7 +49,6 @@ void main() {
           'Adutores',
           'Abdutores',
           'Flexores da anca',
-          'Rotadores externos da anca',
         ]),
       );
 
