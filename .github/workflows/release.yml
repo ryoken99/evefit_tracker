@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão do release (v0.9.0)'
+        description: 'Versão do release (v0.9.1)'
         required: true
-        default: 'v0.9.0'
+        default: 'v0.9.1'
 
 permissions:
   contents: write
@@ -62,6 +62,14 @@ jobs:
           generate_release_notes: false
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
+
+            ### Novidades v0.9.1
+            - Explicações de todos os 315 exercícios reescritas: objetivo curto, passos em lista, erros comuns e variações concretas.
+            - Corrigida a linguagem errada de equipamento (ex.: exercícios de peso corporal já não falam em "carga").
+            - Flexão diamante, Curl arrastado e Tate press ensinados corretamente passo a passo.
+            - Novo modal de detalhes do exercício, com secções e listas fáceis de ler no telemóvel.
+            - Atualização segura do catálogo em instalações existentes, sem tocar em exercícios personalizados nem no histórico.
+            - Atualizada versão da app para v0.9.1.
 
             ### Novidades v0.9.0
             - Corrigida a filtragem de exercícios por músculo específico: cada foco mostra apenas os exercícios certos.

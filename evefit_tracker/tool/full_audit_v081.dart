@@ -56,8 +56,12 @@ void main() {
           '\n## ${groupEntry.key} :: ${entry.key} (${visible.length})',
         );
         for (final item in visible) {
-          seenInStrength.add('${item.exercise.name}__${item.exercise.muscleGroup}');
-          buffer.writeln('- ${item.exercise.name} [${item.exercise.muscleGroup}]');
+          seenInStrength.add(
+            '${item.exercise.name}__${item.exercise.muscleGroup}',
+          );
+          buffer.writeln(
+            '- ${item.exercise.name} [${item.exercise.muscleGroup}]',
+          );
         }
       }
     }
@@ -86,8 +90,9 @@ void main() {
         selection: const TrainingSelection(),
         showAllExercises: false,
       ).isNotEmpty;
-      (ok ? available : unavailable)
-          .add('${exercise.name} [${exercise.muscleGroup}] {${exercise.equipment}}');
+      (ok ? available : unavailable).add(
+        '${exercise.name} [${exercise.muscleGroup}] {${exercise.equipment}}',
+      );
     }
     buffer.writeln(
       '\n## ${scenario.key}: ${available.length} disponíveis / ${unavailable.length} indisponíveis',
@@ -140,7 +145,9 @@ void main() {
       buffer.writeln('- ${entry.id} ${entry.name} [${entry.group}]: $hits');
     }
   }
-  buffer.writeln('\n# SHARED EXECUTION STEPS (mesmos passos, exercícios diferentes)');
+  buffer.writeln(
+    '\n# SHARED EXECUTION STEPS (mesmos passos, exercícios diferentes)',
+  );
   for (final entry in stepsByText.entries) {
     final uniqueNames = entry.value.toSet();
     if (uniqueNames.length > 1) {

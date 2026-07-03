@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('v0.9.0 public version metadata', () {
-    test('all current release surfaces identify v0.9.0', () {
+  group('v0.9.1 public version metadata', () {
+    test('all current release surfaces identify v0.9.1', () {
       final pubspec = _contents('pubspec.yaml');
       final settings = _contents('lib/screens/settings_screen.dart');
       final readme = _contents('README.md');
@@ -12,15 +12,15 @@ void main() {
       final changelog = _contents('CHANGELOG.md');
       final releaseNotes = _contents('RELEASE_NOTES.md');
 
-      expect(pubspec, contains(RegExp(r'^version: 0\.9\.0$', multiLine: true)));
-      expect(pubspec, isNot(contains('0.9.0+25')));
-      expect(settings, contains("appVersionLabel = 'v0.9.0'"));
-      expect(settings, contains('Ver atualizações v0.9.0'));
-      expect(readme, contains('v0.9.0'));
-      expect(workflow, contains("default: 'v0.9.0'"));
-      expect(workflow, contains('### Novidades v0.9.0'));
-      expect(changelog, contains('# v0.9.0'));
-      expect(releaseNotes, contains('# v0.9.0'));
+      expect(pubspec, contains(RegExp(r'^version: 0\.9\.1$', multiLine: true)));
+      expect(pubspec, isNot(contains('0.9.1+25')));
+      expect(settings, contains("appVersionLabel = 'v0.9.1'"));
+      expect(settings, contains('Ver atualizações v0.9.1'));
+      expect(readme, contains('v0.9.1'));
+      expect(workflow, contains("default: 'v0.9.1'"));
+      expect(workflow, contains('### Novidades v0.9.1'));
+      expect(changelog, contains('# v0.9.1'));
+      expect(releaseNotes, contains('# v0.9.1'));
     });
 
     test('release notes contain the required integrity summary', () {
@@ -39,6 +39,7 @@ void main() {
         'Melhoradas validações e testes.',
         'Atualizada versão da app para v0.8.0.',
         'Atualizada versão da app para v0.9.0.',
+        'Atualizada versão da app para v0.9.1.',
       ];
 
       for (final document in documents) {

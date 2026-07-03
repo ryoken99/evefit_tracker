@@ -132,9 +132,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Pescoço"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (134 chars): Pressão isométrica leve da testa contra a mão para ativar flexores cervicais sem mover a cabeça. Serve para treinar controlo cervical.
 - Execução (7 passos):
-  - Coloca-te numa posição estável para Isometria cervical frontal leve, com espaço livre e Peso corporal preparado.
-  - Organiza pés, tronco e cabeça antes de iniciar a repetição.
-  - Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
+  - Coloca-te numa posição estável, com espaço livre e Peso corporal preparado.
+  - Coloca a palma da mão na testa e empurra a cabeça contra ela, sem deixar a cabeça mexer.
+  - Organiza pés, tronco e cabeça antes de iniciar a repetição; mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
   - Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados.
   - Pausa um instante no ponto de maior esforço sem prender a respiração.
   - Regressa devagar ao início, controlando o corpo até à posição de partida.
@@ -155,9 +155,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Pescoço"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (86 chars): Inclinação ou pressão lateral leve da cabeça para trabalhar controlo cervical de lado.
 - Execução (7 passos):
-  - Coloca-te numa posição estável para Isometria cervical lateral leve, com espaço livre e Peso corporal preparado.
-  - Organiza pés, tronco e cabeça antes de iniciar a repetição.
-  - Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
+  - Coloca-te numa posição estável, com espaço livre e Peso corporal preparado.
+  - Coloca a palma da mão ao lado da cabeça e empurra contra ela, sem deixar a cabeça inclinar.
+  - Organiza pés, tronco e cabeça antes de iniciar a repetição; mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
   - Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados.
   - Pausa um instante no ponto de maior esforço sem prender a respiração.
   - Regressa devagar ao início, controlando o corpo até à posição de partida.
@@ -178,9 +178,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Pescoço"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (123 chars): Recuar suavemente o queixo para alinhar cabeça e pescoço, como criar uma papada leve. Serve para treinar controlo cervical.
 - Execução (7 passos):
-  - Coloca-te numa posição estável para Chin tuck, com espaço livre e Peso corporal preparado.
-  - Organiza pés, tronco e cabeça antes de iniciar a repetição.
-  - Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
+  - Coloca-te numa posição estável, com espaço livre e Peso corporal preparado.
+  - Recua o queixo devagar, como se quisesses criar um duplo queixo, sem inclinar a cabeça para baixo.
+  - Organiza pés, tronco e cabeça antes de iniciar a repetição; mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
   - Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados.
   - Pausa um instante no ponto de maior esforço sem prender a respiração.
   - Regressa devagar ao início, controlando o corpo até à posição de partida.
@@ -201,9 +201,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Pescoço"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (108 chars): Rotação lenta da cabeça para olhar para cada lado sem puxar o pescoço. Serve para treinar controlo cervical.
 - Execução (7 passos):
-  - Coloca-te numa posição estável para Rotação cervical controlada, com espaço livre e Peso corporal preparado.
-  - Organiza pés, tronco e cabeça antes de iniciar a repetição.
-  - Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
+  - Coloca-te numa posição estável, com espaço livre e Peso corporal preparado.
+  - Roda a cabeça devagar para um lado, como se olhasses por cima do ombro, e volta ao centro antes de trocar.
+  - Organiza pés, tronco e cabeça antes de iniciar a repetição; mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
   - Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados.
   - Pausa um instante no ponto de maior esforço sem prender a respiração.
   - Regressa devagar ao início, controlando o corpo até à posição de partida.
@@ -245,7 +245,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Barra
 - Tipo (FASE 2): barra
 - Origem: seed `SeedData.exercisesByGroup["Trapézio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (95 chars): Elevação dos ombros com uma barra segura à frente das coxas, que permite mais peso no trapézio.
+- Objetivo/descrição (130 chars): Elevação dos ombros com uma barra segura à frente das coxas, que permite mais peso no trapézio. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Segura uma barra à frente das coxas com pega simétrica, à largura dos ombros.
   - Fica de pé com os pés à largura da anca, tronco direito e abdómen ligeiramente ativo.
@@ -268,7 +268,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Máquina
 - Tipo (FASE 2): maquina
 - Origem: seed `SeedData.exercisesByGroup["Trapézio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (87 chars): Elevação dos ombros na máquina de encolhimentos, com trajetória guiada e apoio estável.
+- Objetivo/descrição (122 chars): Elevação dos ombros na máquina de encolhimentos, com trajetória guiada e apoio estável. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Ajusta a máquina de encolhimentos e segura as pegas com os braços estendidos ao lado do corpo.
   - Fica de pé com os pés à largura da anca, tronco direito e abdómen ligeiramente ativo.
@@ -316,7 +316,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Trapézio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (208 chars): Puxada em direção ao rosto com cotovelos altos para treinar deltoide posterior, romboides e controlo das escápulas. Serve para treinar costas, escápulas e dorsal. Nesta lista, conta para o treino de trapézio.
 - Execução (7 passos):
-  - Ajusta o cabo alto ou prende o elástico à altura do rosto.
+  - Coloca a polia do cabo na posição alta, à altura do rosto, ou prende lá o elástico.
   - Segura a corda ou pega com as palmas viradas uma para a outra.
   - Dá um passo atrás até haver tensão e fica com tronco alto.
   - Puxa a corda em direção ao rosto, separando ligeiramente as mãos.
@@ -341,7 +341,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Execução (7 passos):
   - Coloca a barra num suporte à altura da parte alta do peito e usa pega simétrica um pouco além dos ombros.
   - Retira a barra, dá um passo curto e fica com pés paralelos, glúteos firmes e costelas sobre a bacia.
-  - Começa com a barra à frente dos ombros e antebraços quase verticais.
+  - Começa com a barra à frente dos ombros, cotovelos ligeiramente à frente da barra e antebraços quase verticais.
   - Afasta ligeiramente a cabeça, empurra a barra para cima e volta a colocar a cabeça entre os braços.
   - Termina com a barra sobre o meio do pé sem arquear a lombar.
   - Baixa pelo mesmo caminho até à frente dos ombros.
@@ -383,7 +383,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Barra
 - Tipo (FASE 2): barra
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (103 chars): Press vertical com barra a partir da frente dos ombros, empurrando acima da cabeça em linha controlada.
+- Objetivo/descrição (138 chars): Press vertical com barra a partir da frente dos ombros, empurrando acima da cabeça em linha controlada. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Coloca a barra num suporte à altura da parte alta do peito, ou limpa-a até aos ombros com ajuda.
   - Segura a barra com pega simétrica, um pouco mais aberta que os ombros, e punhos direitos.
@@ -406,10 +406,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Halteres
 - Tipo (FASE 2): halteres
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (92 chars): Press de ombros que começa com halteres à frente do peito e roda as palmas durante a subida.
+- Objetivo/descrição (127 chars): Press de ombros que começa com halteres à frente do peito e roda as palmas durante a subida. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Senta-te num banco com encosto ou fica de pé com o abdómen ativo e os pés firmes.
-  - Começa com os halteres à frente dos ombros, com as palmas viradas para ti, como no fim de um curl.
+  - Segura os halteres à frente dos ombros, com as palmas viradas para ti, como no fim de um curl.
   - Mantém os punhos direitos e os cotovelos à frente do corpo; empurra os halteres para cima e, ao mesmo tempo, roda as palmas para a frente.
   - Termina com os braços quase estendidos por cima da cabeça e as palmas viradas para a frente.
   - Desce devagar invertendo a rotação, até as palmas voltarem a ficar viradas para ti.
@@ -431,7 +431,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (94 chars): Elevação dos braços para os lados até perto da linha dos ombros para focar o deltoide lateral.
 - Execução (6 passos):
-  - Fica de pé com halteres ao lado do corpo e cotovelos ligeiramente dobrados.
+  - Fica de pé e segura um halter em cada mão ao lado do corpo, com os cotovelos ligeiramente dobrados.
   - Mantém punhos neutros e ombros afastados das orelhas.
   - Sobe os braços para os lados até perto da altura dos ombros.
   - Mantém os cotovelos ligeiramente acima ou na linha dos punhos.
@@ -475,12 +475,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (144 chars): Abertura dos braços para trás com o tronco inclinado, para isolar o deltoide posterior. Serve para treinar ombros e estabilizadores escapulares.
 - Execução (7 passos):
-  - Inclina o tronco à frente ou apoia o peito num banco inclinado.
-  - Segura a carga leve com braços pendurados e pescoço relaxado.
+  - Fica com o tronco inclinado à frente ou apoia o peito num banco inclinado.
+  - Inclina o tronco à frente com a lombar neutra e deixa os braços pendurados.
+  - Segura halteres leves com os braços pendurados e o pescoço relaxado.
   - Abre os braços na direção indicada pela variação, focando ombros posteriores e escápulas.
   - Mantém cotovelos ligeiramente dobrados e punhos neutros.
-  - Para antes de encolher o pescoço.
-  - Desce devagar.
+  - Para antes de encolher o pescoço; desce devagar.
   - Usa carga leve para não transformar em balanço.
 - Erros comuns: Usar peso acima do que controlas. | Perder o alinhamento durante a repetição. | Encurtar a amplitude útil. | Prender a respiração. | Continuar quando o músculo alvo já não controla o movimento.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
@@ -498,9 +498,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (130 chars): Abertura invertida com halteres e peito apoiado ou tronco inclinado, que junta as omoplatas e trabalha a parte de trás dos ombros.
 - Execução (7 passos):
-  - Inclina o tronco à frente ou apoia o peito num banco inclinado.
+  - Fica com o tronco inclinado à frente ou apoia o peito num banco inclinado.
   - Se tiveres banco inclinado, apoia lá o peito para eliminar o balanço do tronco.
-  - Segura a carga leve com braços pendurados e pescoço relaxado.
+  - Segura halteres leves com os braços pendurados e o pescoço relaxado.
   - Abre os braços na direção indicada pela variação, focando ombros posteriores e escápulas.
   - Mantém cotovelos ligeiramente dobrados e punhos neutros.
   - Para antes de encolher o pescoço; desce devagar.
@@ -521,7 +521,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (206 chars): Puxada em direção ao rosto com cotovelos altos para treinar deltoide posterior, romboides e controlo das escápulas. Serve para treinar costas, escápulas e dorsal. Nesta lista, conta para o treino de ombros.
 - Execução (7 passos):
-  - Ajusta o cabo alto ou prende o elástico à altura do rosto.
+  - Coloca a polia do cabo na posição alta, à altura do rosto, ou prende lá o elástico.
   - Segura a corda ou pega com as palmas viradas uma para a outra.
   - Dá um passo atrás até haver tensão e fica com tronco alto.
   - Puxa a corda em direção ao rosto, separando ligeiramente as mãos.
@@ -544,7 +544,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (162 chars): Puxada em direção ao rosto com cotovelos altos para treinar deltoide posterior, romboides e controlo das escápulas. Serve para treinar costas, escápulas e dorsal.
 - Execução (7 passos):
-  - Ajusta o cabo alto ou prende o elástico à altura do rosto.
+  - Coloca a polia do cabo na posição alta, à altura do rosto, ou prende lá o elástico.
   - Prende o elástico num ponto firme à altura do rosto e afasta-te até criar tensão.
   - Segura a corda ou pega com as palmas viradas uma para a outra.
   - Dá um passo atrás até haver tensão e fica com tronco alto.
@@ -635,7 +635,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (135 chars): Rotação do ombro para fora com cotovelo fixo, fortalecendo o manguito rotador. Serve para treinar ombros e estabilizadores escapulares.
 - Execução (6 passos):
-  - Mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço à frente da barriga.
+  - Fica de pé ou sentado e mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço à frente da barriga.
   - Segura o elástico ou a pega com o punho direito.
   - Roda o antebraço para fora, afastando a mão da barriga sem descolar o cotovelo.
   - Usa uma amplitude pequena e sem dor, sentindo a parte de trás do ombro.
@@ -657,7 +657,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (128 chars): Rotação externa do ombro contra elástico, com cotovelo colado ao corpo. Serve para treinar ombros e estabilizadores escapulares.
 - Execução (7 passos):
-  - Mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço à frente da barriga.
+  - Fica de pé ou sentado e mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço à frente da barriga.
   - Prende o elástico à altura do cotovelo e fica de lado para o ponto de fixação.
   - Segura o elástico ou a pega com o punho direito.
   - Roda o antebraço para fora, afastando a mão da barriga sem descolar o cotovelo.
@@ -680,7 +680,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (149 chars): Rotação do ombro para dentro contra resistência leve, controlando o cotovelo junto ao corpo. Serve para treinar ombros e estabilizadores escapulares.
 - Execução (6 passos):
-  - Mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço apontado para fora.
+  - Fica de pé ou sentado e mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço apontado para fora.
   - Segura o elástico ou a pega com o punho direito.
   - Roda o antebraço para dentro, trazendo a mão em direção à barriga sem descolar o cotovelo.
   - Usa uma amplitude pequena e sem dor.
@@ -702,7 +702,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (137 chars): Rotação interna do ombro contra elástico, puxando a mão para a linha do abdómen. Serve para treinar ombros e estabilizadores escapulares.
 - Execução (7 passos):
-  - Mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço apontado para fora.
+  - Fica de pé ou sentado e mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço apontado para fora.
   - Prende o elástico à altura do cotovelo e fica com esse lado virado para o ponto de fixação.
   - Segura o elástico ou a pega com o punho direito.
   - Roda o antebraço para dentro, trazendo a mão em direção à barriga sem descolar o cotovelo.
@@ -725,7 +725,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (145 chars): Elevação dos braços em forma de Y para trabalhar trapézio inferior e controlo escapular. Serve para treinar ombros e estabilizadores escapulares.
 - Execução (7 passos):
-  - Inclina o tronco ou apoia o peito num banco, deixando braços pendurados e polegares para cima.
+  - Fica com o tronco inclinado ou apoia o peito num banco e segura halteres leves com os braços pendurados e polegares para cima.
   - Mantém pescoço longo, costelas controladas e cotovelos quase estendidos.
   - Eleva os braços na diagonal para formar um Y largo acima da cabeça.
   - Inicia pelas escápulas sem encolher os ombros.
@@ -748,7 +748,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Ombros"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (151 chars): Elevação com cotovelos dobrados em forma de W para ativar trapézio médio e rotadores externos. Serve para treinar ombros e estabilizadores escapulares.
 - Execução (7 passos):
-  - Inclina o tronco ou apoia o peito e começa com cotovelos dobrados junto ao corpo.
+  - Fica com o tronco inclinado ou apoia o peito num banco e segura halteres leves com os cotovelos dobrados junto ao corpo.
   - Vira polegares para cima e mantém punhos sobre a linha dos cotovelos.
   - Aproxima as escápulas e eleva os braços até formarem a letra W.
   - Mantém cotovelos dobrados enquanto rodas os ombros para fora.
@@ -815,7 +815,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (92 chars): Flexão de braços em prancha alta, aproximando o peito do chão e empurrando o corpo de volta.
+- Objetivo/descrição (127 chars): Flexão de braços em prancha alta, aproximando o peito do chão e empurrando o corpo de volta. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Coloca mãos ligeiramente mais largas que os ombros; coloca pés no chão e corpo em posição de prancha.
   - Mantém abdómen ativo, glúteos ligeiramente contraídos e cabeça alinhada com a coluna.
@@ -884,7 +884,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal, banco / cadeira / apoio
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (79 chars): Flexão com pés elevados, aumentando a exigência no peito superior e nos ombros.
+- Objetivo/descrição (114 chars): Flexão com pés elevados, aumentando a exigência no peito superior e nos ombros. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Coloca mãos ligeiramente mais largas que os ombros; coloca pés num apoio alto e mãos no chão.
   - Mantém abdómen ativo, glúteos ligeiramente contraídos e cabeça alinhada com a coluna.
@@ -953,10 +953,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Barra
 - Tipo (FASE 2): barra
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (86 chars): Supino horizontal com barra, empurrando a carga do peito até quase estender os braços.
+- Objetivo/descrição (121 chars): Supino horizontal com barra, empurrando a carga do peito até quase estender os braços. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
-  - Segura Barra com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Barra com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados.
@@ -979,7 +979,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (136 chars): Supino horizontal com halteres, permitindo que cada braço controle a sua própria trajetória. Serve para treinar peito, ombros e tríceps.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
-  - Segura Halteres, banco ou chão estável com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Halteres, banco ou chão estável com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados.
@@ -1002,7 +1002,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (118 chars): Supino em banco inclinado com um halter em cada mão, deixando cada braço guiar a sua trajetória para o peito superior.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
-  - Segura Halteres com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Halteres com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados.
@@ -1022,11 +1022,11 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Barra
 - Tipo (FASE 2): barra
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (98 chars): Supino em banco inclinado com barra, empurrando o peso numa linha fixa a partir do peito superior.
+- Objetivo/descrição (133 chars): Supino em banco inclinado com barra, empurrando o peso numa linha fixa a partir do peito superior. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
   - Ajusta o banco a 30 a 45 graus de inclinação antes de te deitares.
-  - Segura Barra com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Barra com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados; empurra a carga para cima até quase estender os braços.
@@ -1048,7 +1048,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (99 chars): Supino em banco declinado com halteres, com cada braço a controlar a descida para o peito inferior.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
-  - Segura Halteres, banco declinado com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Halteres, banco declinado com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados.
@@ -1071,7 +1071,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (91 chars): Supino em banco declinado com barra, para carregar o peito inferior com trajetória estável.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
-  - Segura Barra, banco declinado com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Barra, banco declinado com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados.
@@ -1091,11 +1091,11 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Máquina
 - Tipo (FASE 2): maquina
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (89 chars): Press declinado guiado pela máquina, com costas apoiadas e pegas na linha baixa do peito.
+- Objetivo/descrição (124 chars): Press declinado guiado pela máquina, com costas apoiadas e pegas na linha baixa do peito. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
   - Ajusta o assento para as pegas ficarem alinhadas com a parte baixa do peito.
-  - Segura Máquina com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Máquina com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados; empurra a carga para cima até quase estender os braços.
@@ -1114,9 +1114,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Halteres, banco ou chão estável
 - Tipo (FASE 2): halteres
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (83 chars): Abertura de peito com halteres em arco amplo, sem transformar o exercício em press.
+- Objetivo/descrição (118 chars): Abertura de peito com halteres em arco amplo, sem transformar o exercício em press. Serve para o treinar com controlo.
 - Execução (7 passos):
-  - Deita-te ou posiciona-te de forma estável com Halteres, banco ou chão estável nas mãos.
+  - Deita-te ou posiciona-te de forma estável e segura Halteres, banco ou chão estável com pega firme.
   - Começa com braços à frente do peito e cotovelos ligeiramente dobrados.
   - Mantém essa pequena dobra dos cotovelos durante toda a repetição.
   - Abre os braços em arco até sentires alongamento confortável no peito, sem dor no ombro.
@@ -1137,9 +1137,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Halteres, banco inclinado
 - Tipo (FASE 2): halteres
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (78 chars): Abertura em arco com halteres num banco inclinado, alongando o peito superior.
+- Objetivo/descrição (113 chars): Abertura em arco com halteres num banco inclinado, alongando o peito superior. Serve para o treinar com controlo.
 - Execução (7 passos):
-  - Deita-te ou posiciona-te de forma estável com Halteres, banco inclinado nas mãos.
+  - Deita-te ou posiciona-te de forma estável e segura Halteres, banco inclinado com pega firme.
   - Começa com braços à frente do peito e cotovelos ligeiramente dobrados.
   - Mantém essa pequena dobra dos cotovelos durante toda a repetição.
   - Abre os braços em arco até sentires alongamento confortável no peito, sem dor no ombro.
@@ -1160,9 +1160,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Cabo / polia
 - Tipo (FASE 2): cabo
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (85 chars): Abertura em arco nas polias, com tensão constante do cabo dirigida ao peito superior.
+- Objetivo/descrição (120 chars): Abertura em arco nas polias, com tensão constante do cabo dirigida ao peito superior. Serve para o treinar com controlo.
 - Execução (7 passos):
-  - Deita-te ou posiciona-te de forma estável com Cabo / polia nas mãos.
+  - Deita-te ou posiciona-te de forma estável e segura Cabo / polia com pega firme.
   - Começa com braços à frente do peito e cotovelos ligeiramente dobrados.
   - Mantém essa pequena dobra dos cotovelos durante toda a repetição.
   - Abre os braços em arco até sentires alongamento confortável no peito, sem dor no ombro.
@@ -1185,7 +1185,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (95 chars): Abertura em arco contra elásticos presos atrás de ti, fechando os braços para o peito superior.
 - Execução (7 passos):
-  - Deita-te ou posiciona-te de forma estável com Elásticos nas mãos.
+  - Deita-te ou posiciona-te de forma estável e segura Elásticos com pega firme.
   - Começa com braços à frente do peito e cotovelos ligeiramente dobrados.
   - Mantém essa pequena dobra dos cotovelos durante toda a repetição.
   - Abre os braços em arco até sentires alongamento confortável no peito, sem dor no ombro.
@@ -1210,7 +1210,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
   - Mantém os halteres encostados um ao outro e aperta-os durante toda a repetição.
-  - Segura Halteres com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Halteres com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados; empurra a carga para cima até quase estender os braços.
@@ -1229,11 +1229,11 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Máquina
 - Tipo (FASE 2): maquina
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (76 chars): Empurrar numa máquina guiada de peito, com costas apoiadas e pegas à frente.
+- Objetivo/descrição (111 chars): Empurrar numa máquina guiada de peito, com costas apoiadas e pegas à frente. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Posiciona-te no banco, chão ou máquina com pés bem apoiados.
   - Ajusta o assento para as pegas ficarem à frente do meio do peito.
-  - Segura Máquina com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga.
+  - Segura Máquina com pega firme, punhos alinhados e cotovelos por baixo do peso.
   - Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso.
   - Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina.
   - Mantém cotovelos guiados, sem abrir completamente para os lados; empurra a carga para cima até quase estender os braços.
@@ -1253,14 +1253,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (75 chars): Descida e subida nas paralelas com tronco inclinado para dar foco ao peito.
-- Execução (7 passos):
-  - Coloca-te numa posição estável para Dips para peito em paralelas, com espaço livre e Paralelas preparado.
-  - Organiza pés, tronco e cabeça antes de iniciar a repetição.
-  - Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
-  - Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados.
-  - Pausa um instante no ponto de maior esforço sem prender a respiração.
-  - Regressa devagar ao início, controlando o corpo até à posição de partida.
-  - Reduz a dificuldade ou a amplitude se perderes alinhamento, equilíbrio ou controlo.
+- Execução (5 passos):
+  - Sobe para as paralelas com uma mão em cada pega e os braços esticados.
+  - Inclina o tronco ligeiramente à frente e dobra os joelhos atrás do corpo.
+  - Desce dobrando os cotovelos até sentires alongamento no peito, sem dor no ombro.
+  - Empurra as barras para baixo com as mãos e sobe até quase estender os braços.
+  - Mantém os ombros afastados das orelhas durante todo o movimento.
 - Erros comuns: Abrir demasiado os cotovelos. | Deixar a anca cair ou subir em pico. | Dobrar os punhos. | Descer o corpo sem controlo. | Encurtar a amplitude.
 - Versão mais fácil: Faz com apoio dos pés, elástico ou máquina assistida, mantendo a mesma trajetória articular.
 - Versão mais difícil: Desce mais devagar, faz uma pausa curta no ponto mais difícil ou acrescenta repetições controladas.
@@ -1276,14 +1274,13 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Tipo (FASE 2): maquina
 - Origem: seed `SeedData.exercisesByGroup["Peito"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (133 chars): Exercício de Peito com movimento específico de Dips assistidos para peito na máquina, feito para controlar a área trabalhada sem dor.
-- Execução (7 passos):
-  - Coloca-te numa posição estável para Dips assistidos para peito na máquina, com espaço livre e Máquina assistida de dips preparado.
-  - Organiza pés, tronco e cabeça antes de iniciar a repetição.
-  - Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
-  - Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados.
-  - Pausa um instante no ponto de maior esforço sem prender a respiração.
-  - Regressa devagar ao início, controlando o corpo até à posição de partida.
-  - Reduz a dificuldade ou a amplitude se perderes alinhamento, equilíbrio ou controlo.
+- Execução (6 passos):
+  - Ajusta a assistência da máquina para conseguires controlar a descida e a subida.
+  - Apoia os joelhos ou os pés na plataforma e segura as pegas com punhos firmes.
+  - Inclina o tronco ligeiramente à frente e baixa os ombros.
+  - Desce dobrando os cotovelos até um alongamento confortável no peito.
+  - Empurra as pegas e sobe até quase estender os braços, sem encolher os ombros.
+  - Reduz a assistência apenas quando o movimento ficar estável.
 - Erros comuns: Usar peso acima do que controlas. | Perder o alinhamento durante a repetição. | Encurtar a amplitude útil. | Prender a respiração. | Continuar quando o músculo alvo já não controla o movimento.
 - Versão mais fácil: Faz com apoio dos pés, elástico ou máquina assistida, mantendo a mesma trajetória articular.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
@@ -1443,7 +1440,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Antes de puxar, baixa os ombros e sente as escápulas prontas a mexer.
   - Puxa a pega até à cintura, levando os cotovelos para trás junto ao corpo.
   - Junta as escápulas por um segundo, sem inclinar o tronco para trás.
-  - Deixa a pega voltar devagar à frente, alongando as costas sem arredondar a lombar.
+  - Deixa a pega voltar devagar à frente, mantendo o cabo em tensão e a lombar direita.
 - Erros comuns: Puxar com balanço do tronco. | Encolher os ombros. | Arredondar a lombar. | Puxar atrás da nuca. | Largar a fase de retorno sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
@@ -1484,7 +1481,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (133 chars): Remada com um halter e apoio no banco, puxando o peso para a anca um lado de cada vez. Serve para treinar costas, escápulas e dorsal.
 - Execução (7 passos):
   - Coloca um joelho e a mão do mesmo lado em cima de um banco estável; o outro pé fica no chão.
-  - Segura o halter com a mão livre, com o braço pendurado e o punho direito.
+  - Segura o halter com a mão livre, com pega firme, o braço pendurado e o punho direito.
   - Mantém as costas planas, paralelas ao chão, e o pescoço alinhado com a coluna.
   - Antes de puxar, baixa o ombro do lado que trabalha, ativando a escápula.
   - Puxa o halter para cima, levando o cotovelo para trás junto ao tronco, na direção da anca; aperta as costas no topo sem rodar o tronco para cima.
@@ -1631,7 +1628,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E067 — Face pull no cabo
 
@@ -1644,7 +1641,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Costas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (206 chars): Puxada em direção ao rosto com cotovelos altos para treinar deltoide posterior, romboides e controlo das escápulas. Serve para treinar costas, escápulas e dorsal. Nesta lista, conta para o treino de costas.
 - Execução (7 passos):
-  - Ajusta o cabo alto ou prende o elástico à altura do rosto.
+  - Coloca a polia do cabo na posição alta, à altura do rosto, ou prende lá o elástico.
   - Segura a corda ou pega com as palmas viradas uma para a outra.
   - Dá um passo atrás até haver tensão e fica com tronco alto.
   - Puxa a corda em direção ao rosto, separando ligeiramente as mãos.
@@ -1711,12 +1708,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Costas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (133 chars): Inclinação do tronco pela anca com carga leve ou sem carga, treinando controlo posterior. Nesta lista, conta para o treino de costas.
+- Objetivo/descrição (205 chars): Inclinação do tronco pela anca, sem qualquer peso, para aprender a dobrar com a coluna neutra. Serve para treinar posterior de coxa, glúteos e lombar controlada. Nesta lista, conta para o treino de costas.
 - Execução (7 passos):
-  - Fica com pés firmes e Peso corporal perto do corpo quando houver carga.
+  - Fica com os pés firmes à largura da anca e, se o exercício usar peso, mantém-no colado ao corpo.
   - Mantém peito aberto, coluna neutra e joelhos ligeiramente fletidos.
   - Começa levando a anca para trás, como se fosses fechar uma porta com os glúteos.
-  - Deixa a carga ou as mãos descerem junto às pernas, sem afastar demasiado do corpo.
+  - Deixa as mãos, ou o peso, descerem junto às pernas, sem afastar do corpo.
   - Para quando sentires alongamento no posterior de coxa sem arredondar a lombar.
   - Regressa apertando glúteos e estendendo a anca até ficar alto novamente.
   - Pára se a lombar perder posição, se houver dor aguda ou formigueiro.
@@ -1738,7 +1735,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Execução (7 passos):
   - Coloca a polia na posição alta e prende uma barra reta ou corda; segura a pega com as duas mãos à largura dos ombros e dá um passo atrás.
   - Inclina o tronco ligeiramente à frente, com a lombar neutra e o abdómen ativo.
-  - Começa com os braços esticados à frente, à altura dos ombros, com os cotovelos quase estendidos.
+  - Começa com os braços esticados à frente, na linha do cabo, com os cotovelos quase estendidos.
   - Puxa a barra para baixo num arco, com os braços sempre esticados, até às coxas.
   - Sente os dorsais, dos lados das costas, a fazer o trabalho, e as escápulas a descer.
   - Deixa a barra subir devagar pelo mesmo arco, mantendo tensão.
@@ -1895,10 +1892,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Lombar"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (162 chars): Dobradiça de anca com barra apoiada nas costas, inclinando o tronco à frente com coluna neutra. Serve para treinar posterior de coxa, glúteos e lombar controlada.
 - Execução (7 passos):
-  - Fica com pés firmes e Barra perto do corpo quando houver carga; apoia a barra na parte alta das costas, nunca no pescoço, com pega firme.
-  - Mantém peito aberto, coluna neutra e joelhos ligeiramente fletidos.
+  - Fica com os pés firmes à largura da anca e, se o exercício usar peso, mantém-no colado ao corpo.
+  - Apoia a barra na parte alta das costas, nunca no pescoço, com pega firme; mantém peito aberto, coluna neutra e joelhos ligeiramente fletidos.
   - Começa levando a anca para trás, como se fosses fechar uma porta com os glúteos.
-  - Deixa a carga ou as mãos descerem junto às pernas, sem afastar demasiado do corpo.
+  - Deixa as mãos, ou o peso, descerem junto às pernas, sem afastar do corpo.
   - Para quando sentires alongamento no posterior de coxa sem arredondar a lombar.
   - Regressa apertando glúteos e estendendo a anca até ficar alto novamente.
   - Pára se a lombar perder posição, se houver dor aguda ou formigueiro.
@@ -1974,7 +1971,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E082 — Curl com halteres
 
@@ -1997,7 +1994,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E083 — Curl alternado
 
@@ -2020,7 +2017,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Aumenta gradualmente o peso ou a pausa sem permitir rotação ou inclinação do tronco.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E084 — Curl martelo
 
@@ -2043,7 +2040,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E085 — Curl concentrado
 
@@ -2056,7 +2053,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Bíceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (137 chars): Curl sentado com o braço apoiado na coxa para isolar a flexão do cotovelo. Serve para treinar bíceps braquial, braquial e braquiorradial.
 - Execução (7 passos):
-  - Senta-te num banco ou cadeira com as pernas afastadas e um halter numa mão.
+  - Senta-te num banco ou cadeira com as pernas afastadas e segura um halter com pega firme.
   - Apoia a parte de trás desse braço na parte interna da coxa do mesmo lado.
   - Deixa o braço pendurado com o halter, punho direito e palma para a frente.
   - Mantém o tronco inclinado à frente e a outra mão apoiada na outra coxa.
@@ -2066,7 +2063,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E086 — Curl inclinado com halteres
 
@@ -2080,7 +2077,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (80 chars): Curl em banco inclinado, começando com o braço mais atrás para alongar o bíceps.
 - Execução (7 passos):
   - Ajusta um banco inclinado entre 45 e 60 graus e senta-te com as costas e a cabeça apoiadas.
-  - Deixa os braços pendurados ao lado, com um halter em cada mão e palmas para a frente.
+  - Deixa os braços pendurados ao lado e segura um halter em cada mão com pega firme, palmas para a frente.
   - Sente o bíceps alongado nessa posição inicial, com os punhos direitos.
   - Sobe os halteres dobrando os cotovelos, sem deixar os cotovelos vir para a frente.
   - Mantém os ombros encostados ao banco durante toda a repetição; aperta no topo e desce em dois a três segundos até alongar de novo.
@@ -2089,7 +2086,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E087 — Curl inverso
 
@@ -2104,7 +2101,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Execução (7 passos):
   - Fica de pé com pés à largura da anca, joelhos soltos e tronco alto.
   - Segura Barra ou barra EZ à frente das coxas com pega pronada: palmas viradas para baixo e nós dos dedos para a frente.
-  - Mantém punhos direitos, cotovelos junto ao tronco e ombros afastados das orelhas.
+  - Mantém os punhos alinhados, cotovelos junto ao tronco e ombros afastados das orelhas.
   - Sobe o peso dobrando os cotovelos sem rodar os punhos para cima.
   - Para quando os antebraços ficarem perto da horizontal ou quando começares a perder a pega pronada.
   - Desce devagar até quase estender os cotovelos, sem deixar os halteres cair.
@@ -2112,7 +2109,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E088 — Curl inverso com halteres
 
@@ -2127,7 +2124,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Execução (7 passos):
   - Fica de pé com pés à largura da anca, joelhos soltos e tronco alto.
   - Segura Halteres à frente das coxas com pega pronada: palmas viradas para baixo e nós dos dedos para a frente.
-  - Mantém punhos direitos, cotovelos junto ao tronco e ombros afastados das orelhas.
+  - Mantém os punhos alinhados, cotovelos junto ao tronco e ombros afastados das orelhas.
   - Sobe o peso dobrando os cotovelos sem rodar os punhos para cima.
   - Para quando os antebraços ficarem perto da horizontal ou quando começares a perder a pega pronada.
   - Desce devagar até quase estender os cotovelos, sem deixar os halteres cair.
@@ -2135,7 +2132,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E089 — Curl Zottman
 
@@ -2158,7 +2155,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E090 — Curl cruzado no corpo
 
@@ -2181,7 +2178,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E091 — Curl spider
 
@@ -2195,7 +2192,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (135 chars): Curl com peito apoiado, impedindo o tronco de ajudar a levantar a carga. Serve para treinar bíceps braquial, braquial e braquiorradial.
 - Execução (7 passos):
   - Deita-te de barriga para baixo num banco inclinado, com o peito apoiado e os braços pendurados.
-  - Segura um halter em cada mão com as palmas para a frente e punhos direitos.
+  - Segura um halter em cada mão com pega firme, palmas para a frente e punhos direitos.
   - Deixa os braços verticais, perpendiculares ao chão.
   - Sobe os halteres dobrando apenas os cotovelos, sem balançar os ombros.
   - O peito apoiado impede o tronco de ajudar: todo o esforço fica no bíceps.
@@ -2204,7 +2201,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E092 — Curl no cabo
 
@@ -2227,7 +2224,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E093 — Curl com elástico
 
@@ -2250,7 +2247,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E094 — Curl 21 com halteres
 
@@ -2263,7 +2260,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Bíceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (149 chars): Sequência de curl com parciais inferiores, parciais superiores e repetições completas. Serve para treinar bíceps braquial, braquial e braquiorradial.
 - Execução (7 passos):
-  - Fica alto com halteres leves, palmas para a frente e cotovelos junto às costelas.
+  - Fica alto e segura halteres leves com pega firme, palmas para a frente e cotovelos junto às costelas.
   - Sobe sete vezes apenas da extensão quase completa até os cotovelos chegarem a cerca de 90 graus.
   - Sem descanso, faz sete repetições de 90 graus até perto dos ombros.
   - Mantém punhos direitos e não avances os cotovelos durante as parciais superiores.
@@ -2273,7 +2270,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Substitui a sequência 21 por curls completos com halteres leves e descanso normal entre séries.
 - Versão mais difícil: Aumenta ligeiramente os halteres mantendo sete parciais inferiores, sete superiores e sete completas limpas.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E095 — Curl arrastado com halteres
 
@@ -2286,7 +2283,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Bíceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (146 chars): Curl em que os cotovelos recuam e a carga sobe perto do tronco, como se arrastasse. Serve para treinar bíceps braquial, braquial e braquiorradial.
 - Execução (6 passos):
-  - Fica de pé com um halter em cada mão à frente das coxas, palmas viradas para a frente.
+  - Fica de pé e segura um halter em cada mão à frente das coxas, com pega firme e palmas para a frente.
   - Mantém o tronco direito, os ombros relaxados e o abdómen levemente ativo.
   - Sobe os halteres colados ao tronco, deixando os cotovelos recuar, como se arrastasses o peso pelo corpo.
   - Para quando os halteres chegarem à base do peito, com os cotovelos atrás da linha do tronco.
@@ -2295,7 +2292,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Transformar o movimento num curl normal, sem recuar os cotovelos. | Balançar o tronco para subir os halteres. | Encolher os ombros durante a subida. | Afastar os halteres do tronco. | Descer depressa e sem controlo.
 - Versão mais fácil: Usa halteres mais leves ou faz curls normais até dominares o recuo dos cotovelos.
 - Versão mais difícil: Sobe ligeiramente os halteres ou faz a descida em três a quatro segundos.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E096 — Curl isométrico
 
@@ -2308,7 +2305,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Bíceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (146 chars): Curl mantido parado num ângulo definido para treinar tensão sem movimento repetido. Serve para treinar bíceps braquial, braquial e braquiorradial.
 - Execução (7 passos):
-  - Fica de pé com um halter em cada mão e os cotovelos junto ao tronco.
+  - Fica de pé, segura um halter em cada mão com pega firme e mantém os cotovelos junto ao tronco.
   - Sobe os halteres até os cotovelos ficarem dobrados a cerca de 90 graus.
   - Para nessa posição, com os punhos direitos e os antebraços paralelos ao chão.
   - Aguenta parado 15 a 30 segundos, mantendo o tronco direito.
@@ -2318,7 +2315,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 
 ### E097 — Chin-up
 
@@ -2358,36 +2355,36 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Segura a pega com as palmas para baixo e punhos direitos.
   - Fica de pé de frente para o cabo, com o tronco quase direito e o abdómen ativo.
   - Cola os cotovelos ao lado do tronco durante toda a série.
-  - Empurra a barra para baixo estendendo os cotovelos até os braços quase esticarem.
-  - Faz uma pausa curta em baixo, apertando o tríceps; deixa a barra subir devagar até os antebraços ficarem paralelos ao chão.
+  - Desce a barra estendendo os cotovelos até os braços quase esticarem; faz uma pausa curta em baixo, apertando o tríceps.
+  - Deixa a barra subir devagar até os antebraços ficarem paralelos ao chão.
   - Mantém a lombar neutra e não uses o peso do tronco para empurrar.
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E099 — Extensão acima da cabeça com halter
 
 - Chave estável: `extensao_acima_da_cabeca_com_halter__triceps`
 - Grupo principal: Tríceps
-- Grupos secundários: Estabilizadores locais, core e articulações próximas ao movimento
+- Grupos secundários: Ombros e peito como apoio, com estabilização do tronco
 - Músculos principais (tags): triceps_long, triceps_medial
 - Equipamento: Halteres
 - Tipo (FASE 2): halteres
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (114 chars): Extensão com um halter seguro pelas duas mãos acima da cabeça, descendo atrás da nuca. Serve para treinar Tríceps.
+- Objetivo/descrição (114 chars): Extensão com um halter seguro pelas duas mãos acima da cabeça, descendo atrás da nuca. Serve para treinar tríceps.
 - Execução (7 passos):
-  - Coloca-te numa posição estável para Extensão acima da cabeça com halter, com espaço livre e Halteres preparado.
-  - Organiza pés, tronco e cabeça antes de iniciar a repetição.
-  - Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem.
-  - Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados.
-  - Pausa um instante no ponto de maior esforço sem prender a respiração.
-  - Regressa devagar ao início, controlando o corpo até à posição de partida.
-  - Reduz a dificuldade ou a amplitude se perderes alinhamento, equilíbrio ou controlo.
-- Erros comuns: Usar peso acima do que controlas. | Perder o alinhamento durante a repetição. | Encurtar a amplitude útil. | Prender a respiração. | Continuar quando o músculo alvo já não controla o movimento.
+  - Senta-te ou fica de pé com pés firmes e abdómen ativo.
+  - Segura um único halter na vertical, com as duas mãos sobrepostas por baixo da cabeça de cima.
+  - Segura Halteres acima da cabeça com pega firme e punhos alinhados.
+  - Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado; desce o peso atrás da cabeça dobrando apenas os cotovelos.
+  - Para quando sentires alongamento confortável no tríceps, sem dor no ombro.
+  - Estende os cotovelos para subir, mantendo costelas baixas e lombar neutra.
+  - Reduz a carga se os cotovelos abrirem ou a lombar arquear.
+- Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E100 — Tríceps testa com barra EZ
 
@@ -2400,8 +2397,8 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (128 chars): Extensão deitada com barra EZ, descendo o peso à testa e esticando os cotovelos sem mexer os ombros. Serve para treinar tríceps.
 - Execução (7 passos):
-  - Deita-te num banco ou no chão com a carga acima do peito.
-  - Agarra a barra EZ na zona ondulada, com as palmas ligeiramente viradas uma para a outra.
+  - Deita-te num banco ou no chão e segura o peso acima do peito com pega firme.
+  - Agarra a barra EZ com pega na zona ondulada, com as palmas ligeiramente viradas uma para a outra.
   - Mantém punhos alinhados e braços ligeiramente inclinados para trás.
   - Dobra os cotovelos levando a carga em direção à testa ou ligeiramente atrás da cabeça.
   - Mantém os cotovelos apontados para cima, sem abrirem para os lados.
@@ -2410,7 +2407,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E101 — Tríceps testa com halteres
 
@@ -2423,7 +2420,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (133 chars): Extensão deitada com halteres em pega neutra, descendo o peso à testa com os cotovelos apontados ao teto. Serve para treinar tríceps.
 - Execução (7 passos):
-  - Deita-te num banco ou no chão com a carga acima do peito.
+  - Deita-te num banco ou no chão e segura o peso acima do peito com pega firme.
   - Usa pega neutra, com as palmas dos halteres viradas uma para a outra, e desce à linha da testa.
   - Mantém punhos alinhados e braços ligeiramente inclinados para trás.
   - Dobra os cotovelos levando a carga em direção à testa ou ligeiramente atrás da cabeça.
@@ -2433,7 +2430,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E102 — Extensão de tríceps deitado com halteres
 
@@ -2446,7 +2443,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (90 chars): Extensão deitada com halteres, descendo o peso atrás da cabeça para alongar bem o tríceps.
 - Execução (7 passos):
-  - Deita-te num banco ou no chão com a carga acima do peito.
+  - Deita-te num banco ou no chão e segura o peso acima do peito com pega firme.
   - Desce os halteres para trás da cabeça, e não para a testa, para alongar mais o tríceps.
   - Mantém punhos alinhados e braços ligeiramente inclinados para trás.
   - Dobra os cotovelos levando a carga em direção à testa ou ligeiramente atrás da cabeça.
@@ -2456,7 +2453,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E103 — Supino fechado
 
@@ -2467,12 +2464,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Barra
 - Tipo (FASE 2): barra
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (93 chars): Supino com barra e pega estreita, que transforma o empurrar em trabalho dominante de tríceps.
+- Objetivo/descrição (128 chars): Supino com barra e pega estreita, que transforma o empurrar em trabalho dominante de tríceps. Serve para o treinar com controlo.
 - Execução (7 passos):
-  - Deita-te num banco ou no chão com o peso acima do peito.
+  - Deita-te num banco ou no chão com a barra acima do peito.
   - Usa pega mais fechada que num supino normal e punhos alinhados.
   - Mantém cotovelos relativamente perto do tronco.
-  - Desce o peso para a zona média do peito com controlo.
+  - Desce a barra para a zona média do peito com controlo.
   - Empurra para cima focando a extensão dos cotovelos e o tríceps.
   - Não deixes os ombros subir para as orelhas.
   - Usa carga menor se os punhos dobrarem ou os cotovelos abrirem demais.
@@ -2492,10 +2489,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (122 chars): Press deitado com halteres juntos em pega neutra, empurrando com os cotovelos perto do tronco. Serve para treinar tríceps.
 - Execução (7 passos):
-  - Deita-te num banco ou no chão com o peso acima do peito.
+  - Deita-te num banco ou no chão com a barra acima do peito.
   - Mantém os halteres juntos, em pega neutra, encostados um ao outro durante toda a repetição.
   - Usa pega mais fechada que num supino normal e punhos alinhados.
-  - Mantém cotovelos relativamente perto do tronco; desce o peso para a zona média do peito com controlo.
+  - Mantém cotovelos relativamente perto do tronco; desce a barra para a zona média do peito com controlo.
   - Empurra para cima focando a extensão dos cotovelos e o tríceps.
   - Não deixes os ombros subir para as orelhas.
   - Usa carga menor se os punhos dobrarem ou os cotovelos abrirem demais.
@@ -2515,7 +2512,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (100 chars): Extensão de tríceps deitado em que os halteres descem ao peito com os cotovelos abertos para o lado.
 - Execução (6 passos):
-  - Deita-te num banco ou no chão com um halter em cada mão, braços esticados por cima do peito.
+  - Deita-te num banco ou no chão e segura um halter em cada mão, braços esticados por cima do peito.
   - Vira as palmas para a frente, na direção dos pés, e mantém os punhos firmes.
   - Dobra os cotovelos para fora, deixando-os abertos ao lado, e desce os halteres em direção ao meio do peito.
   - Para com as pontas dos halteres quase a tocar no peito, sem apoiar.
@@ -2524,7 +2521,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Transformar o movimento num supino fechado, movendo os ombros. | Deixar os cotovelos fechar junto ao tronco. | Bater com os halteres no peito. | Dobrar os punhos com a carga em cima. | Usar halteres pesados demais para controlar a descida.
 - Versão mais fácil: Usa halteres muito leves ou treina primeiro a extensão francesa com um só halter.
 - Versão mais difícil: Sobe ligeiramente os halteres ou acrescenta uma pausa de um segundo perto do peito.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E106 — Fundos entre apoios
 
@@ -2547,7 +2544,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Encurtar a descida do corpo.
 - Versão mais fácil: Reduz a amplitude, o tempo ou o número de repetições e usa um apoio estável.
 - Versão mais difícil: Desce mais devagar, faz uma pausa curta no ponto mais difícil ou acrescenta repetições controladas.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz a dificuldade ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E107 — Flexão fechada
 
@@ -2558,7 +2555,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (96 chars): Flexão com as mãos mais juntas que os ombros, que carrega mais o tríceps do que a flexão normal.
+- Objetivo/descrição (131 chars): Flexão com as mãos mais juntas que os ombros, que carrega mais o tríceps do que a flexão normal. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Coloca mãos à largura dos ombros ou ligeiramente mais juntas, por baixo do peito.
   - Coloca pés no chão e corpo em posição de prancha.
@@ -2609,12 +2606,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Segura o halter ou pega do cabo com o cotovelo dobrado a cerca de 90 graus.
   - Cola o braço ao lado do tronco, com o cotovelo apontado para trás.
   - Estende o cotovelo até o braço ficar quase direito, sem mexer o ombro.
-  - Pausa um instante contraindo o tríceps; volta devagar até 90 graus.
+  - Pausa um instante contraindo o tríceps; desce o antebraço devagar até voltar aos 90 graus.
   - Usa carga leve se o cotovelo cair ou se tiveres de balançar.
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E110 — Kickback no cabo
 
@@ -2632,12 +2629,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Segura o halter ou pega do cabo com o cotovelo dobrado a cerca de 90 graus.
   - Cola o braço ao lado do tronco, com o cotovelo apontado para trás.
   - Estende o cotovelo até o braço ficar quase direito, sem mexer o ombro.
-  - Pausa um instante contraindo o tríceps; volta devagar até 90 graus.
+  - Pausa um instante contraindo o tríceps; desce o antebraço devagar até voltar aos 90 graus.
   - Usa carga leve se o cotovelo cair ou se tiveres de balançar.
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E111 — Extensão unilateral de tríceps
 
@@ -2660,7 +2657,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Aumenta gradualmente o peso ou a pausa sem permitir rotação ou inclinação do tronco.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E112 — Extensão francesa com halter
 
@@ -2671,19 +2668,19 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Halteres
 - Tipo (FASE 2): halteres
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (88 chars): Extensão francesa com halter único, alongando a cabeça longa do tríceps atrás da cabeça.
+- Objetivo/descrição (123 chars): Extensão francesa com halter único, alongando a cabeça longa do tríceps atrás da cabeça. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Senta-te ou fica de pé com pés firmes e abdómen ativo.
-  - Segura Halteres acima da cabeça com punhos alinhados.
-  - Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado.
-  - Desce o peso atrás da cabeça dobrando apenas os cotovelos.
+  - Podes fazer o movimento sentado ou deitado; mantém os cotovelos apontados para a frente todo o tempo.
+  - Segura Halteres acima da cabeça com pega firme e punhos alinhados.
+  - Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado; desce o peso atrás da cabeça dobrando apenas os cotovelos.
   - Para quando sentires alongamento confortável no tríceps, sem dor no ombro.
   - Estende os cotovelos para subir, mantendo costelas baixas e lombar neutra.
   - Reduz a carga se os cotovelos abrirem ou a lombar arquear.
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E113 — Extensão francesa com barra EZ
 
@@ -2697,7 +2694,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (126 chars): Extensão francesa com barra EZ, com pega ondulada que alivia os punhos na descida atrás da cabeça. Serve para treinar tríceps.
 - Execução (7 passos):
   - Senta-te ou fica de pé com pés firmes e abdómen ativo.
-  - Segura Barra EZ acima da cabeça com punhos alinhados.
+  - Segura Barra EZ acima da cabeça com pega firme e punhos alinhados.
   - Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado.
   - Desce o peso atrás da cabeça dobrando apenas os cotovelos.
   - Para quando sentires alongamento confortável no tríceps, sem dor no ombro.
@@ -2706,7 +2703,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E114 — Extensão francesa no cabo
 
@@ -2720,16 +2717,16 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (116 chars): Extensão francesa na polia, de costas para o cabo, com tensão constante atrás da cabeça. Serve para treinar tríceps.
 - Execução (7 passos):
   - Senta-te ou fica de pé com pés firmes e abdómen ativo.
-  - Segura Cabo / polia acima da cabeça com punhos alinhados.
-  - Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado.
-  - Desce o peso atrás da cabeça dobrando apenas os cotovelos.
+  - Coloca a polia na posição baixa, fica de costas para o cabo e segura a corda com pega firme atrás da cabeça.
+  - Segura Cabo / polia acima da cabeça com pega firme e punhos alinhados.
+  - Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado; desce o peso atrás da cabeça dobrando apenas os cotovelos.
   - Para quando sentires alongamento confortável no tríceps, sem dor no ombro.
   - Estende os cotovelos para subir, mantendo costelas baixas e lombar neutra.
   - Reduz a carga se os cotovelos abrirem ou a lombar arquear.
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E115 — Dips para tríceps
 
@@ -2752,7 +2749,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Encurtar a descida do corpo.
 - Versão mais fácil: Faz com apoio dos pés, elástico ou máquina assistida, mantendo a mesma trajetória articular.
 - Versão mais difícil: Desce mais devagar, faz uma pausa curta no ponto mais difícil ou acrescenta repetições controladas.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz a dificuldade ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E116 — Tríceps no cabo com corda
 
@@ -2768,14 +2765,14 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Coloca a polia na posição alta e prende a corda de duas pontas; segura uma ponta em cada mão com pega neutra e punhos direitos.
   - Fica de pé de frente para o cabo, com um pé ligeiramente à frente e o tronco quase direito.
   - Cola os cotovelos ao lado do tronco: eles não devem mexer durante a repetição.
-  - Empurra a corda para baixo estendendo os cotovelos e afasta as pontas no fim.
+  - Desce a corda estendendo os cotovelos e afasta as pontas das mãos no fim.
   - Aperta o tríceps por um segundo com os braços quase estendidos.
   - Deixa a corda subir devagar até os antebraços passarem a horizontal, sem os cotovelos levantarem.
   - Mantém a lombar neutra e os ombros afastados das orelhas; 1; reduz a carga se os cotovelos abrirem ou o tronco inclinar para pressionar.
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E117 — Tríceps com elástico
 
@@ -2788,9 +2785,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Tríceps"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (117 chars): Extensão dos cotovelos contra um elástico preso em cima, empurrando as pontas para baixo. Serve para treinar tríceps.
 - Execução (7 passos):
-  - Coloca-te numa base firme e segura Elásticos com punhos alinhados.
+  - Coloca-te numa base firme e segura Elásticos com pega firme e punhos alinhados.
   - Mantém o braço estável para que o movimento venha sobretudo do cotovelo.
-  - Dobra o cotovelo até sentires alongamento controlado no tríceps.
+  - Dobra o cotovelo, descendo a mão até um alongamento controlado no tríceps.
   - Estende o cotovelo até quase endireitar o braço.
   - Mantém ombros baixos e costelas controladas.
   - Regressa devagar, controlando o retorno.
@@ -2798,7 +2795,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Abrir demasiado os cotovelos. | Mexer o ombro em vez do cotovelo. | Arquear a lombar. | Usar peso excessivo. | Encurtar a descida.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 
 ### E118 — Wrist curl
 
@@ -2821,7 +2818,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E119 — Reverse wrist curl
 
@@ -2844,7 +2841,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E120 — Farmer walk
 
@@ -2867,7 +2864,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E121 — Farmer hold
 
@@ -2890,7 +2887,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E122 — Dead hang
 
@@ -2913,7 +2910,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E123 — Aperto isométrico
 
@@ -2935,7 +2932,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E124 — Curl inverso
 
@@ -2950,7 +2947,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Execução (7 passos):
   - Fica de pé com pés à largura da anca, joelhos soltos e tronco alto.
   - Segura Barra ou barra EZ à frente das coxas com pega pronada: palmas viradas para baixo e nós dos dedos para a frente.
-  - Mantém punhos direitos, cotovelos junto ao tronco e ombros afastados das orelhas.
+  - Mantém os punhos alinhados, cotovelos junto ao tronco e ombros afastados das orelhas.
   - Sobe o peso dobrando os cotovelos sem rodar os punhos para cima.
   - Para quando os antebraços ficarem perto da horizontal ou quando começares a perder a pega pronada.
   - Desce devagar até quase estender os cotovelos, sem deixar os halteres cair.
@@ -2958,7 +2955,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Balançar o tronco para subir o peso. | Deixar os cotovelos fugir para a frente ou para trás. | Dobrar os punhos durante a repetição. | Subir só metade do caminho. | Deixar o peso descer sem controlo.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E125 — Pronação com halter
 
@@ -2981,7 +2978,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E126 — Supinação com halter
 
@@ -3004,7 +3001,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E127 — Pinch grip
 
@@ -3027,7 +3024,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E128 — Plate hold
 
@@ -3050,7 +3047,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E129 — Towel grip hold
 
@@ -3073,7 +3070,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E130 — Finger curls
 
@@ -3096,7 +3093,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E131 — Extensão de dedos com elástico
 
@@ -3119,7 +3116,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E132 — Desvio radial com halter
 
@@ -3142,7 +3139,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E133 — Desvio ulnar com halter
 
@@ -3165,7 +3162,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E134 — Suitcase carry
 
@@ -3188,7 +3185,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Aumenta gradualmente o peso ou a pausa sem permitir rotação ou inclinação do tronco.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E135 — Hold estático com halteres
 
@@ -3211,7 +3208,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E136 — Rotação controlada com halter leve
 
@@ -3234,7 +3231,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz o peso ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E137 — Prancha
 
@@ -3417,7 +3414,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Dobrar os punhos sem controlo. | Usar peso pesado demais. | Deixar a pega abrir de repente. | Encolher os ombros. | Continuar com dor no punho.
 - Versão mais fácil: Encurta a alavanca ou a duração e usa menos resistência sem perder a posição das costelas e da bacia.
 - Versão mais difícil: Desce mais devagar, faz uma pausa curta no ponto mais difícil ou acrescenta repetições controladas.
-- Segurança: Mantém punhos e cotovelos alinhados. Reduz a dificuldade ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.
+- Segurança: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 
 ### E145 — Mountain climbers
 
@@ -3428,7 +3425,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Core"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (85 chars): Levar joelhos alternados ao peito em prancha, misturando core e ritmo cardiovascular.
+- Objetivo/descrição (120 chars): Levar joelhos alternados ao peito em prancha, misturando core e ritmo cardiovascular. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Coloca-te em prancha alta, com as mãos por baixo dos ombros e o corpo em linha reta.
   - Ativa o abdómen e mantém a anca à altura dos ombros, sem subir em pico.
@@ -3503,7 +3500,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Inclina o tronco para trás até sentir o abdómen a trabalhar, mantendo as costas direitas.
   - Junta as mãos à frente do peito, com ou sem carga leve.
   - Roda o tronco para um lado, levando as mãos na direção do chão ao lado da anca.
-  - Roda depois para o outro lado, com o movimento a vir do tronco e não dos braços.
+  - Roda depois para o outro lado, voltando a passar pelo centro com controlo.
   - Mantém o peito aberto e o queixo neutro; faz as rotações devagar, sem balancear as pernas.
   - Apoia os pés no chão para facilitar; eleva-os para dificultar.
 - Erros comuns: Deixar a lombar arquear ou descolar do apoio. | Puxar o pescoço com as mãos. | Usar impulso em vez de controlo. | Prender a respiração. | Encurtar a amplitude útil.
@@ -3774,12 +3771,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (156 chars): Agachamento com barra apoiada na parte alta das costas, para treinar as pernas com mais peso. Serve para treinar quadríceps, glúteos e estabilidade da anca.
 - Execução (7 passos):
   - Fica com pés à largura dos ombros ou ligeiramente mais abertos, conforme a variação.
+  - Apoia a barra na parte de cima das costas e segura-a com pega firme e simétrica.
   - Posiciona Barra de forma segura: ao peito, aos lados, nas costas ou sem carga.
   - Mantém peito aberto, abdómen ativo e olhar em frente ou ligeiramente para baixo.
   - Inicia levando a anca para trás e dobrando joelhos ao mesmo tempo.
   - Mantém joelhos alinhados com os pés, sem caírem para dentro.
-  - Desce até onde consegues manter calcanhares apoiados e coluna neutra.
-  - Sobe empurrando o chão e estendendo anca e joelhos.
+  - Desce até onde consegues manter calcanhares apoiados e coluna neutra; sobe empurrando o chão e estendendo anca e joelhos.
 - Erros comuns: Deixar os joelhos cair para dentro. | Levantar os calcanhares do chão. | Deixar o tronco colapsar à frente. | Posicionar mal o peso antes de começar. | Descer mais do que consegues controlar.
 - Versão mais fácil: Faz sem peso adicional, com menor amplitude e apoio numa parede ou cadeira estável.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
@@ -4050,12 +4047,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (140 chars): Afundo com um halter em cada mão ao lado do corpo, mantendo o tronco direito. Serve para treinar quadríceps, glúteos e estabilidade da anca.
 - Execução (7 passos):
   - Fica de pé com tronco alto e Halteres controlado.
+  - Segura um halter em cada mão ao lado do corpo, com pega firme e punhos direitos.
   - Dá um passo à frente, atrás ou em movimento, conforme a variação.
   - Desce dobrando os dois joelhos, mantendo o joelho da frente alinhado com o pé.
   - Mantém a anca estável e o tronco sem cair para a frente.
   - Desce até amplitude confortável, sem bater o joelho de trás no chão.
-  - Empurra o chão com o pé da frente para voltar ou avançar.
-  - Reduz a passada se perderes equilíbrio ou sentires dor no joelho.
+  - Empurra o chão com o pé da frente para voltar ou avançar; reduz a passada se perderes equilíbrio ou sentires dor no joelho.
 - Erros comuns: Deixar os joelhos cair para dentro. | Levantar os calcanhares do chão. | Deixar o tronco colapsar à frente. | Posicionar mal o peso antes de começar. | Descer mais do que consegues controlar.
 - Versão mais fácil: Faz sem peso adicional, com menor amplitude e apoio numa parede ou cadeira estável.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
@@ -4141,13 +4138,13 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Pernas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (86 chars): Dobradiça de anca com joelhos pouco fletidos para alongar posterior de coxa e glúteos.
 - Execução (7 passos):
-  - Fica com pés firmes e Halteres perto do corpo quando houver carga.
+  - Fica com os pés firmes à largura da anca e, se o exercício usar peso, mantém-no colado ao corpo.
+  - Segura os halteres à frente das coxas com pega firme, palmas viradas para ti.
   - Mantém peito aberto, coluna neutra e joelhos ligeiramente fletidos.
   - Começa levando a anca para trás, como se fosses fechar uma porta com os glúteos.
-  - Deixa a carga ou as mãos descerem junto às pernas, sem afastar demasiado do corpo.
+  - Deixa as mãos, ou o peso, descerem junto às pernas, sem afastar do corpo.
   - Para quando sentires alongamento no posterior de coxa sem arredondar a lombar.
-  - Regressa apertando glúteos e estendendo a anca até ficar alto novamente.
-  - Pára se a lombar perder posição, se houver dor aguda ou formigueiro.
+  - Regressa apertando glúteos e estendendo a anca até ficar alto novamente; pára se a lombar perder posição, se houver dor aguda ou formigueiro.
 - Erros comuns: Arredondar a lombar. | Afastar o peso do corpo. | Dobrar demasiado os joelhos. | Não levar a anca para trás. | Subir puxando só pelas costas.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
@@ -4185,15 +4182,15 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Barra
 - Tipo (FASE 2): barra
 - Origem: seed `SeedData.exercisesByGroup["Pernas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (169 chars): Dobradiça de anca sem peso ou com peso simbólico, para aprender a inclinar o tronco com coluna neutra. Serve para treinar posterior de coxa, glúteos e lombar controlada.
+- Objetivo/descrição (168 chars): Dobradiça de anca com barra vazia ou muito leve, para aprender a inclinar o tronco com coluna neutra. Serve para treinar posterior de coxa, glúteos e lombar controlada.
 - Execução (7 passos):
-  - Fica com pés firmes e Barra perto do corpo quando houver carga; coloca as mãos atrás da cabeça ou cruzadas no peito, sem qualquer peso.
+  - Fica com os pés firmes à largura da anca e, se o exercício usar peso, mantém-no colado ao corpo.
+  - Usa a barra vazia ou muito leve, apoiada na parte alta das costas, nunca no pescoço.
   - Mantém peito aberto, coluna neutra e joelhos ligeiramente fletidos.
   - Começa levando a anca para trás, como se fosses fechar uma porta com os glúteos.
-  - Deixa a carga ou as mãos descerem junto às pernas, sem afastar demasiado do corpo.
+  - Deixa as mãos, ou o peso, descerem junto às pernas, sem afastar do corpo.
   - Para quando sentires alongamento no posterior de coxa sem arredondar a lombar.
-  - Regressa apertando glúteos e estendendo a anca até ficar alto novamente.
-  - Pára se a lombar perder posição, se houver dor aguda ou formigueiro.
+  - Regressa apertando glúteos e estendendo a anca até ficar alto novamente; pára se a lombar perder posição, se houver dor aguda ou formigueiro.
 - Erros comuns: Arredondar a lombar. | Afastar o peso do corpo. | Dobrar demasiado os joelhos. | Não levar a anca para trás. | Subir puxando só pelas costas.
 - Versão mais fácil: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - Versão mais difícil: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
@@ -4208,12 +4205,12 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Pernas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (133 chars): Inclinação do tronco pela anca com carga leve ou sem carga, treinando controlo posterior. Nesta lista, conta para o treino de pernas.
+- Objetivo/descrição (205 chars): Inclinação do tronco pela anca, sem qualquer peso, para aprender a dobrar com a coluna neutra. Serve para treinar posterior de coxa, glúteos e lombar controlada. Nesta lista, conta para o treino de pernas.
 - Execução (7 passos):
-  - Fica com pés firmes e Peso corporal perto do corpo quando houver carga.
+  - Fica com os pés firmes à largura da anca e, se o exercício usar peso, mantém-no colado ao corpo.
   - Mantém peito aberto, coluna neutra e joelhos ligeiramente fletidos.
   - Começa levando a anca para trás, como se fosses fechar uma porta com os glúteos.
-  - Deixa a carga ou as mãos descerem junto às pernas, sem afastar demasiado do corpo.
+  - Deixa as mãos, ou o peso, descerem junto às pernas, sem afastar do corpo.
   - Para quando sentires alongamento no posterior de coxa sem arredondar a lombar.
   - Regressa apertando glúteos e estendendo a anca até ficar alto novamente.
   - Pára se a lombar perder posição, se houver dor aguda ou formigueiro.
@@ -4300,7 +4297,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Máquina
 - Tipo (FASE 2): maquina
 - Origem: seed `SeedData.exercisesByGroup["Pernas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (95 chars): Afastar as pernas contra a resistência da máquina, usando a parte lateral da anca e os glúteos.
+- Objetivo/descrição (130 chars): Afastar as pernas contra a resistência da máquina, usando a parte lateral da anca e os glúteos. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Senta-te na máquina abdutora com as costas apoiadas no encosto.
   - Coloca as pernas por dentro dos apoios acolchoados, com os pés nos descansos.
@@ -4507,7 +4504,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Pernas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (127 chars): Contração curta dos músculos intrínsecos do pé que aproxima suavemente a base do dedo grande do calcanhar sem enrolar os dedos.
+- Objetivo/descrição (162 chars): Contração curta dos músculos intrínsecos do pé que aproxima suavemente a base do dedo grande do calcanhar sem enrolar os dedos. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Senta-te ou fica de pé descalço, com calcanhar, base do dedo grande e base do dedo pequeno no chão.
   - Mantém os dedos compridos e relaxados, sem os enrolar.
@@ -4645,7 +4642,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Banco / cadeira / apoio estável
 - Tipo (FASE 2): peso_corporal
 - Origem: seed `SeedData.exercisesByGroup["Pernas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (134 chars): Prancha lateral com a perna superior apoiada num banco e a inferior a ajudar, treinando adutores e resistência à inclinação do tronco.
+- Objetivo/descrição (169 chars): Prancha lateral com a perna superior apoiada num banco e a inferior a ajudar, treinando adutores e resistência à inclinação do tronco. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Deita-te de lado com o antebraço por baixo do ombro e um banco estável junto aos pés.
   - Apoia a parte interna do joelho da perna de cima no banco; mantém a perna de baixo no chão para ajudar.
@@ -4668,7 +4665,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Elásticos
 - Tipo (FASE 2): elastico
 - Origem: seed `SeedData.exercisesByGroup["Pernas"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (98 chars): Extensão dos últimos graus do joelho contra elástico, apertando o quadríceps sem deslocar a bacia.
+- Objetivo/descrição (133 chars): Extensão dos últimos graus do joelho contra elástico, apertando o quadríceps sem deslocar a bacia. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Prende o elástico atrás do joelho a um ponto firme e coloca-o na dobra posterior da perna.
   - Recua até haver tensão com o joelho ligeiramente fletido e o pé inteiro no chão.
@@ -4726,7 +4723,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E202 — Jumping jacks
 
@@ -4749,7 +4746,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E203 — Burpees
 
@@ -4761,17 +4758,18 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Tipo (FASE 2): cardio
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (162 chars): Sequência de agachar, apoiar mãos, ir à prancha e voltar a levantar para elevar a frequência cardíaca. Serve para treinar resistência cardiovascular e respiração.
-- Execução (6 passos):
+- Execução (7 passos):
   - Fica de pé com espaço livre.
   - Agacha e coloca as mãos no chão.
   - Leva os pés para trás até prancha.
   - Faz flexão apenas se a variação pedir e conseguires controlar.
   - Traz os pés para perto das mãos.
   - Levanta-te ou salta baixo.
+  - Trabalha em blocos de 20 a 40 segundos a ritmo calmo, respira a cada repetição e abranda se perderes a postura.
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E204 — Skaters
 
@@ -4794,7 +4792,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E205 — High knees
 
@@ -4817,7 +4815,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E206 — Circuito cardio peso corporal
 
@@ -4840,7 +4838,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 
 ### E207 — Passadeira caminhada
 
@@ -4863,7 +4861,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E208 — Passadeira caminhada rápida
 
@@ -4886,7 +4884,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E209 — Passadeira corrida leve
 
@@ -4909,7 +4907,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E210 — Passadeira corrida intervalada
 
@@ -4922,7 +4920,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (140 chars): Alternância de corrida rápida e trote leve na passadeira, em blocos programados. Serve para treinar resistência cardiovascular e respiração.
 - Execução (6 passos):
-  - Aquece 5 a 10 minutos em caminhada ou corrida leve.
+  - Aquece 5 a 10 minutos na passadeira, em caminhada ou corrida leve.
   - Escolhe uma velocidade forte mas controlável para o intervalo.
   - Corre 20 a 60 segundos mantendo tronco alto e passada estável.
   - Recupera em caminhada ou trote leve durante 60 a 120 segundos.
@@ -4931,7 +4929,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E211 — Passadeira inclinação
 
@@ -4944,7 +4942,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (144 chars): Caminhada em subida na passadeira, com inclinação leve para ativar glúteos e gémeos. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
-  - Começa em caminhada fácil com inclinação baixa.
+  - Começa na passadeira em caminhada fácil com inclinação baixa.
   - Usa inclinação leve, de 3 a 6 por cento, mantendo a velocidade de caminhada.
   - Aumenta a inclinação gradualmente sem agarrar os apoios.
   - Mantém tronco alto e passada curta, empurrando o chão com glúteos e gémeos.
@@ -4954,7 +4952,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E212 — Passadeira inclinação moderada
 
@@ -4967,7 +4965,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (141 chars): Caminhada em subida com inclinação média, mais exigente para pernas e respiração. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
-  - Começa em caminhada fácil com inclinação baixa.
+  - Começa na passadeira em caminhada fácil com inclinação baixa.
   - Sobe a inclinação para 6 a 10 por cento e reduz ligeiramente a velocidade.
   - Aumenta a inclinação gradualmente sem agarrar os apoios.
   - Mantém tronco alto e passada curta, empurrando o chão com glúteos e gémeos.
@@ -4977,7 +4975,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E213 — Passadeira sprints
 
@@ -4990,7 +4988,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (140 chars): Tiros curtos e fortes na passadeira, com recuperação completa entre cada sprint. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
-  - Aquece 5 a 10 minutos em caminhada ou corrida leve.
+  - Aquece 5 a 10 minutos na passadeira, em caminhada ou corrida leve.
   - Faz tiros de 10 a 20 segundos quase no máximo e recupera por completo entre cada um.
   - Escolhe uma velocidade forte mas controlável para o intervalo.
   - Corre 20 a 60 segundos mantendo tronco alto e passada estável.
@@ -5000,7 +4998,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E214 — Passadeira sprints intervalados
 
@@ -5013,7 +5011,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (134 chars): Série programada de sprints na passadeira com pausas ativas cronometradas. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
-  - Aquece 5 a 10 minutos em caminhada ou corrida leve.
+  - Aquece 5 a 10 minutos na passadeira, em caminhada ou corrida leve.
   - Programa blocos: 15 a 30 segundos fortes seguidos de 60 a 90 segundos a caminhar.
   - Escolhe uma velocidade forte mas controlável para o intervalo.
   - Corre 20 a 60 segundos mantendo tronco alto e passada estável.
@@ -5023,7 +5021,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E215 — Passadeira aquecimento
 
@@ -5045,7 +5043,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E216 — Passadeira cooldown
 
@@ -5068,7 +5066,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E217 — Bicicleta ritmo leve
 
@@ -5079,7 +5077,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Bicicleta
 - Tipo (FASE 2): cardio
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (74 chars): Pedalada suave e contínua, com resistência baixa e respiração confortável.
+- Objetivo/descrição (109 chars): Pedalada suave e contínua, com resistência baixa e respiração confortável. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Ajusta o selim antes de começar.
   - Mantém resistência baixa e cadência confortável, a conseguir conversar.
@@ -5091,7 +5089,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Pedalar com o selim mal ajustado. | Usar resistência alta demais para o teu nível. | Deixar os joelhos abrir para fora. | Encolher os ombros contra o guiador. | Parar de repente depois de esforço forte.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E218 — Bicicleta ritmo moderado
 
@@ -5102,7 +5100,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Bicicleta
 - Tipo (FASE 2): cardio
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (82 chars): Pedalada contínua a ritmo médio, com resistência que aquece as pernas sem esgotar.
+- Objetivo/descrição (117 chars): Pedalada contínua a ritmo médio, com resistência que aquece as pernas sem esgotar. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Ajusta o selim antes de começar.
   - Usa resistência média, com as pernas a aquecer mas sem perder o ritmo da respiração.
@@ -5114,7 +5112,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Pedalar com o selim mal ajustado. | Usar resistência alta demais para o teu nível. | Deixar os joelhos abrir para fora. | Encolher os ombros contra o guiador. | Parar de repente depois de esforço forte.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E219 — Bicicleta intervalos
 
@@ -5136,7 +5134,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Pedalar com o selim mal ajustado. | Usar resistência alta demais para o teu nível. | Deixar os joelhos abrir para fora. | Encolher os ombros contra o guiador. | Parar de repente depois de esforço forte.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E220 — Bicicleta resistência
 
@@ -5159,7 +5157,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Pedalar com o selim mal ajustado. | Usar resistência alta demais para o teu nível. | Deixar os joelhos abrir para fora. | Encolher os ombros contra o guiador. | Parar de repente depois de esforço forte.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E221 — Bicicleta aquecimento
 
@@ -5181,7 +5179,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Pedalar com o selim mal ajustado. | Usar resistência alta demais para o teu nível. | Deixar os joelhos abrir para fora. | Encolher os ombros contra o guiador. | Parar de repente depois de esforço forte.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E222 — Bicicleta cooldown
 
@@ -5194,7 +5192,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (121 chars): Pedalada fácil para recuperar depois de esforço mais intenso. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
-  - Senta-te bem na bicicleta e baixa a resistência para nível fácil.
+  - Senta-te bem no selim da bicicleta e baixa a resistência para nível fácil.
   - Pedala 3 a 8 minutos com cadência confortável.
   - Mantém tronco alto, ombros relaxados e mãos leves no guiador.
   - Deixa a respiração e a frequência cardíaca descerem gradualmente.
@@ -5204,7 +5202,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Pedalar com o selim mal ajustado. | Usar resistência alta demais para o teu nível. | Deixar os joelhos abrir para fora. | Encolher os ombros contra o guiador. | Parar de repente depois de esforço forte.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E223 — Elíptica ritmo leve
 
@@ -5227,7 +5225,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E224 — Elíptica ritmo moderado
 
@@ -5250,7 +5248,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E225 — Elíptica intervalos
 
@@ -5273,7 +5271,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E226 — Elíptica resistência
 
@@ -5296,7 +5294,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E227 — Elíptica aquecimento
 
@@ -5319,7 +5317,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E228 — Elíptica cooldown
 
@@ -5342,7 +5340,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E229 — Corda de saltar ritmo leve
 
@@ -5358,14 +5356,14 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Segura uma pega em cada mão com cotovelos próximos do corpo.
   - Mantém saltos baixos e contínuos, a um ritmo calmo que consigas sustentar.
   - Mantém a corda atrás dos pés antes da primeira volta; roda a corda principalmente pelos punhos, não pelos ombros.
-  - Salta baixo, apenas o suficiente para a corda passar.
-  - faz saltos baixos com os dois pés ou alterna de forma simples.
+  - Salta baixo, apenas o suficiente para a corda passar; faz saltos baixos com os dois pés ou alterna de forma simples.
   - Aterra na parte da frente dos pés com joelhos ligeiramente flexionados.
+  - Faz blocos de 30 a 60 segundos no início, respirando em ritmo constante.
   - Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.
 - Erros comuns: Rodar a corda pelos ombros em vez dos punhos. | Saltar demasiado alto. | Aterrar com as pernas rígidas. | Olhar para baixo e perder a postura. | Continuar depois de tropeçar repetidamente.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E230 — Corda de saltar intervalos
 
@@ -5381,14 +5379,14 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Segura uma pega em cada mão com cotovelos próximos do corpo.
   - Alterna 20 a 40 segundos a saltar com 20 a 40 segundos de pausa a caminhar.
   - Mantém a corda atrás dos pés antes da primeira volta; roda a corda principalmente pelos punhos, não pelos ombros.
-  - Salta baixo, apenas o suficiente para a corda passar.
-  - faz saltos baixos com os dois pés ou alterna de forma simples.
+  - Salta baixo, apenas o suficiente para a corda passar; faz saltos baixos com os dois pés ou alterna de forma simples.
   - Aterra na parte da frente dos pés com joelhos ligeiramente flexionados.
+  - Faz blocos de 30 a 60 segundos no início, respirando em ritmo constante.
   - Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.
 - Erros comuns: Rodar a corda pelos ombros em vez dos punhos. | Saltar demasiado alto. | Aterrar com as pernas rígidas. | Olhar para baixo e perder a postura. | Continuar depois de tropeçar repetidamente.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E231 — Corda de saltar pés alternados
 
@@ -5402,16 +5400,16 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (136 chars): Saltos de corda alternando pé direito e esquerdo como corrida leve no lugar. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
   - Segura uma pega em cada mão com cotovelos próximos do corpo.
-  - Mantém a corda atrás dos pés antes da primeira volta.
-  - Roda a corda principalmente pelos punhos, não pelos ombros.
+  - Mantém a corda atrás dos pés antes da primeira volta; roda a corda principalmente pelos punhos, não pelos ombros.
   - Salta baixo, apenas o suficiente para a corda passar.
   - alterna pé direito e pé esquerdo como uma corrida leve no sítio.
   - Aterra na parte da frente dos pés com joelhos ligeiramente flexionados.
+  - Faz blocos de 30 a 60 segundos no início, respirando em ritmo constante.
   - Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.
 - Erros comuns: Rodar a corda pelos ombros em vez dos punhos. | Saltar demasiado alto. | Aterrar com as pernas rígidas. | Olhar para baixo e perder a postura. | Continuar depois de tropeçar repetidamente.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E232 — Corda de saltar joelhos altos
 
@@ -5425,16 +5423,16 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (146 chars): Saltos de corda elevando os joelhos mais alto para aumentar intensidade e coordenação. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
   - Segura uma pega em cada mão com cotovelos próximos do corpo.
-  - Mantém a corda atrás dos pés antes da primeira volta.
-  - Roda a corda principalmente pelos punhos, não pelos ombros.
+  - Mantém a corda atrás dos pés antes da primeira volta; roda a corda principalmente pelos punhos, não pelos ombros.
   - Salta baixo, apenas o suficiente para a corda passar.
   - eleva os joelhos um pouco mais a cada salto, sem perder ritmo.
   - Aterra na parte da frente dos pés com joelhos ligeiramente flexionados.
+  - Faz blocos de 30 a 60 segundos no início, respirando em ritmo constante.
   - Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.
 - Erros comuns: Rodar a corda pelos ombros em vez dos punhos. | Saltar demasiado alto. | Aterrar com as pernas rígidas. | Olhar para baixo e perder a postura. | Continuar depois de tropeçar repetidamente.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E233 — Corda de saltar double unders
 
@@ -5448,16 +5446,16 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (143 chars): Variação avançada em que a corda passa duas vezes por baixo dos pés no mesmo salto. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
   - Segura uma pega em cada mão com cotovelos próximos do corpo.
-  - Mantém a corda atrás dos pés antes da primeira volta.
-  - Roda a corda principalmente pelos punhos, não pelos ombros.
+  - Mantém a corda atrás dos pés antes da primeira volta; roda a corda principalmente pelos punhos, não pelos ombros.
   - Salta baixo, apenas o suficiente para a corda passar.
   - faz a corda passar duas vezes por cada salto, apenas se já dominas o salto simples.
   - Aterra na parte da frente dos pés com joelhos ligeiramente flexionados.
+  - Faz blocos de 30 a 60 segundos no início, respirando em ritmo constante.
   - Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.
 - Erros comuns: Rodar a corda pelos ombros em vez dos punhos. | Saltar demasiado alto. | Aterrar com as pernas rígidas. | Olhar para baixo e perder a postura. | Continuar depois de tropeçar repetidamente.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E234 — Caminhada exterior leve
 
@@ -5480,7 +5478,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E235 — Caminhada exterior moderada
 
@@ -5503,7 +5501,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E236 — Caminhada exterior rápida
 
@@ -5526,7 +5524,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E237 — Caminhada exterior em subida
 
@@ -5549,7 +5547,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E238 — Corrida exterior leve
 
@@ -5572,7 +5570,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E239 — Corrida exterior moderada
 
@@ -5595,7 +5593,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E240 — Corrida exterior intervalada
 
@@ -5618,7 +5616,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E241 — Sprints exterior
 
@@ -5641,7 +5639,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E242 — Corrida em subida
 
@@ -5664,7 +5662,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 
 ### E243 — HIIT peso corporal
 
@@ -5687,7 +5685,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 
 ### E244 — HIIT cardio
 
@@ -5710,7 +5708,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 
 ### E245 — HIIT passadeira
 
@@ -5723,7 +5721,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Cardio"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (148 chars): Intervalos intensos na passadeira: blocos rápidos alternados com recuperação a caminhar. Serve para treinar resistência cardiovascular e respiração.
 - Execução (7 passos):
-  - Aquece 5 a 10 minutos em caminhada ou corrida leve.
+  - Aquece 5 a 10 minutos na passadeira, em caminhada ou corrida leve.
   - Alterna 20 a 40 segundos rápidos com 40 a 80 segundos de caminhada de recuperação.
   - Escolhe uma velocidade forte mas controlável para o intervalo.
   - Corre 20 a 60 segundos mantendo tronco alto e passada estável.
@@ -5733,7 +5731,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Começar rápido demais, sem aquecer. | Agarrar os apoios para compensar o ritmo. | Dar passadas longas demais. | Olhar para os pés em vez de olhar em frente. | Sair da passadeira sem abrandar primeiro.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 
 ### E246 — HIIT bicicleta
 
@@ -5756,7 +5754,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Pedalar com o selim mal ajustado. | Usar resistência alta demais para o teu nível. | Deixar os joelhos abrir para fora. | Encolher os ombros contra o guiador. | Parar de repente depois de esforço forte.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, a resistência ou a cadência de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 
 ### E247 — HIIT corda
 
@@ -5772,14 +5770,14 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Segura uma pega em cada mão com cotovelos próximos do corpo.
   - Faz blocos quase máximos de 20 a 30 segundos com pausas curtas de recuperação.
   - Mantém a corda atrás dos pés antes da primeira volta; roda a corda principalmente pelos punhos, não pelos ombros.
-  - Salta baixo, apenas o suficiente para a corda passar.
-  - faz saltos baixos com os dois pés ou alterna de forma simples.
+  - Salta baixo, apenas o suficiente para a corda passar; faz saltos baixos com os dois pés ou alterna de forma simples.
   - Aterra na parte da frente dos pés com joelhos ligeiramente flexionados.
+  - Faz blocos de 30 a 60 segundos no início, respirando em ritmo constante.
   - Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.
 - Erros comuns: Rodar a corda pelos ombros em vez dos punhos. | Saltar demasiado alto. | Aterrar com as pernas rígidas. | Olhar para baixo e perder a postura. | Continuar depois de tropeçar repetidamente.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 
 ### E248 — HIIT simples
 
@@ -5802,7 +5800,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 
 ### E249 — Circuito cardio leve
 
@@ -5825,7 +5823,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Erros comuns: Aumentar a intensidade antes de dominar a técnica. | Saltar o aquecimento. | Perder o ritmo da respiração. | Aterrar sem controlo. | Continuar com dor articular.
 - Versão mais fácil: Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.
 - Versão mais difícil: Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.
-- Segurança: Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.
+- Segurança: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 
 ### E250 — Kihon
 
@@ -5836,7 +5834,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): artes_marciais
 - Origem: seed `SeedData.exercisesByGroup["Karate"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (81 chars): Repetição técnica de bases, socos, defesas ou pontapés fundamentais com controlo.
+- Objetivo/descrição (116 chars): Repetição técnica de bases, socos, defesas ou pontapés fundamentais com controlo. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Começa em base de Karate com pés firmes, joelhos soltos e guarda organizada.
   - Define o objetivo do Kihon antes de acelerar: técnica, deslocamento, golpe ou coordenação.
@@ -5859,7 +5857,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): artes_marciais
 - Origem: seed `SeedData.exercisesByGroup["Karate"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (78 chars): Sequência formal de técnicas de Karate com direção, ritmo, postura e controlo.
+- Objetivo/descrição (113 chars): Sequência formal de técnicas de Karate com direção, ritmo, postura e controlo. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Começa em base de Karate com pés firmes, joelhos soltos e guarda organizada.
   - Define o objetivo do Kata antes de acelerar: técnica, deslocamento, golpe ou coordenação.
@@ -5905,7 +5903,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): artes_marciais
 - Origem: seed `SeedData.exercisesByGroup["Karate"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (84 chars): Simulação individual de combate, combinando deslocamento, técnicas no ar e controlo.
+- Objetivo/descrição (119 chars): Simulação individual de combate, combinando deslocamento, técnicas no ar e controlo. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Começa em base de Karate com pés firmes, joelhos soltos e guarda organizada.
   - Define o objetivo do Sombra de Karate antes de acelerar: técnica, deslocamento, golpe ou coordenação.
@@ -5954,11 +5952,11 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (195 chars): Repetições de entrada e saída de guarda para organizar mãos, cotovelos, distância e controlo. Serve para treinar técnica de Karate, base e coordenação. Nesta lista, conta para o treino de karate.
 - Execução (7 passos):
   - Começa em base de Karate com pés firmes, joelhos soltos e guarda organizada.
+  - Trabalha a retenção: enquadra com os pés, gere a distância e recupera a guarda quando a perderes.
   - Define o objetivo do Drills de guarda antes de acelerar: técnica, deslocamento, golpe ou coordenação.
   - Executa devagar, coordenando pés, anca, tronco, ombros e mãos.
   - Mantém o olhar na direção da técnica e regressa à guarda depois de cada repetição.
-  - Trabalha blocos curtos de 30 a 60 segundos com técnica limpa.
-  - Aumenta velocidade só se manténs equilíbrio e controlo.
+  - Trabalha blocos curtos de 30 a 60 segundos com técnica limpa; aumenta velocidade só se manténs equilíbrio e controlo.
   - Pára se houver dor articular, tontura ou perda de orientação.
 - Erros comuns: Acelerar antes de controlar a técnica. | Perder a base ou cruzar os pés de forma insegura. | Prender a respiração. | Torcer joelhos ou ombros sem controlo. | Repetir cansado com má coordenação.
 - Versão mais fácil: Executa devagar, sem resistência de parceiro e por partes, regressando à base entre repetições.
@@ -6184,10 +6182,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (175 chars): Drill de guarda para gerir pernas, anca, pega e distância. Serve para treinar retenção de guarda, distância e movimento de anca. Nesta lista, conta para o treino de jiu-jitsu.
 - Execução (7 passos):
   - Começa no tatami ou numa superfície segura, com espaço à volta.
-  - Define a posição inicial do Drills de guarda: guarda, ponte, fuga de anca, base técnica ou passagem.
+  - Trabalha a retenção: enquadra com os pés, gere a distância e recupera a guarda quando a perderes.
+  - Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem.
   - Move primeiro devagar, usando anca, core e apoios das mãos ou pés.
-  - Mantém queixo protegido, pescoço longo e respiração controlada.
-  - Regressa à posição inicial sem cair desorganizado.
+  - Mantém queixo protegido, pescoço longo e respiração controlada; regressa à posição inicial sem cair desorganizado.
   - Repete durante 30 a 60 segundos mantendo precisão; aumenta ritmo só se a técnica continuar limpa.
   - Pára com dor no pescoço, ombro, joelho ou tontura.
 - Erros comuns: Acelerar antes de controlar a técnica. | Perder a base ou cruzar os pés de forma insegura. | Prender a respiração. | Torcer joelhos ou ombros sem controlo. | Repetir cansado com má coordenação.
@@ -6207,10 +6205,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (151 chars): Repetição de passos, pressão e controlo de anca para passar as pernas do adversário. Serve para treinar passagem de guarda, pressão e controlo da anca.
 - Execução (7 passos):
   - Começa no tatami ou numa superfície segura, com espaço à volta.
-  - Define a posição inicial do Drills de passagem de guarda: guarda, ponte, fuga de anca, base técnica ou passagem.
+  - Trabalha a passagem: controla as pernas do adversário imaginário, pressiona e passa para o lado.
+  - Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem.
   - Move primeiro devagar, usando anca, core e apoios das mãos ou pés.
-  - Mantém queixo protegido, pescoço longo e respiração controlada.
-  - Regressa à posição inicial sem cair desorganizado.
+  - Mantém queixo protegido, pescoço longo e respiração controlada; regressa à posição inicial sem cair desorganizado.
   - Repete durante 30 a 60 segundos mantendo precisão; aumenta ritmo só se a técnica continuar limpa.
   - Pára com dor no pescoço, ombro, joelho ou tontura.
 - Erros comuns: Acelerar antes de controlar a técnica. | Perder a base ou cruzar os pés de forma insegura. | Prender a respiração. | Torcer joelhos ou ombros sem controlo. | Repetir cansado com má coordenação.
@@ -6230,10 +6228,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (141 chars): Mobilidade de anca orientada à guarda e às fugas de anca do Jiu-Jitsu. Serve para treinar movimentação de Jiu-Jitsu, anca e controlo no solo.
 - Execução (7 passos):
   - Começa no tatami ou numa superfície segura, com espaço à volta.
-  - Define a posição inicial do Mobilidade de anca para Jiu-Jitsu: guarda, ponte, fuga de anca, base técnica ou passagem.
+  - Encadeia círculos de anca, fugas de anca lentas e aberturas de guarda sentado no chão.
+  - Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem.
   - Move primeiro devagar, usando anca, core e apoios das mãos ou pés.
-  - Mantém queixo protegido, pescoço longo e respiração controlada.
-  - Regressa à posição inicial sem cair desorganizado.
+  - Mantém queixo protegido, pescoço longo e respiração controlada; regressa à posição inicial sem cair desorganizado.
   - Repete durante 30 a 60 segundos mantendo precisão; aumenta ritmo só se a técnica continuar limpa.
   - Pára com dor no pescoço, ombro, joelho ou tontura.
 - Erros comuns: Acelerar antes de controlar a técnica. | Perder a base ou cruzar os pés de forma insegura. | Prender a respiração. | Torcer joelhos ou ombros sem controlo. | Repetir cansado com má coordenação.
@@ -6253,10 +6251,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (146 chars): Mobilidade de ombros orientada às pegas e ao trabalho de solo do Jiu-Jitsu. Serve para treinar movimentação de Jiu-Jitsu, anca e controlo no solo.
 - Execução (7 passos):
   - Começa no tatami ou numa superfície segura, com espaço à volta.
-  - Define a posição inicial do Mobilidade de ombro para Jiu-Jitsu: guarda, ponte, fuga de anca, base técnica ou passagem.
+  - Encadeia círculos de braços, mãos atrás das costas como nas pegas e rotações suaves dos ombros.
+  - Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem.
   - Move primeiro devagar, usando anca, core e apoios das mãos ou pés.
-  - Mantém queixo protegido, pescoço longo e respiração controlada.
-  - Regressa à posição inicial sem cair desorganizado.
+  - Mantém queixo protegido, pescoço longo e respiração controlada; regressa à posição inicial sem cair desorganizado.
   - Repete durante 30 a 60 segundos mantendo precisão; aumenta ritmo só se a técnica continuar limpa.
   - Pára com dor no pescoço, ombro, joelho ou tontura.
 - Erros comuns: Acelerar antes de controlar a técnica. | Perder a base ou cruzar os pés de forma insegura. | Prender a respiração. | Torcer joelhos ou ombros sem controlo. | Repetir cansado com má coordenação.
@@ -6276,10 +6274,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (139 chars): Trabalho de pega aplicado a kimono, punhos ou controlo de grappling. Serve para treinar movimentação de Jiu-Jitsu, anca e controlo no solo.
 - Execução (7 passos):
   - Começa no tatami ou numa superfície segura, com espaço à volta.
-  - Define a posição inicial do Força de pega para Jiu-Jitsu: guarda, ponte, fuga de anca, base técnica ou passagem.
+  - Aperta uma toalha ou o teu próprio punho em pegas fortes de 5 a 10 segundos enquanto te moves no solo.
+  - Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem.
   - Move primeiro devagar, usando anca, core e apoios das mãos ou pés.
-  - Mantém queixo protegido, pescoço longo e respiração controlada.
-  - Regressa à posição inicial sem cair desorganizado.
+  - Mantém queixo protegido, pescoço longo e respiração controlada; regressa à posição inicial sem cair desorganizado.
   - Repete durante 30 a 60 segundos mantendo precisão; aumenta ritmo só se a técnica continuar limpa.
   - Pára com dor no pescoço, ombro, joelho ou tontura.
 - Erros comuns: Acelerar antes de controlar a técnica. | Perder a base ou cruzar os pés de forma insegura. | Prender a respiração. | Torcer joelhos ou ombros sem controlo. | Repetir cansado com má coordenação.
@@ -6299,10 +6297,10 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (143 chars): Drill de core no solo para proteger coluna e transferir força pela anca. Serve para treinar movimentação de Jiu-Jitsu, anca e controlo no solo.
 - Execução (7 passos):
   - Começa no tatami ou numa superfície segura, com espaço à volta.
-  - Define a posição inicial do Core para Jiu-Jitsu: guarda, ponte, fuga de anca, base técnica ou passagem.
+  - Liga pontes, posições de hollow e rotações de tronco no chão, mantendo o queixo protegido.
+  - Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem.
   - Move primeiro devagar, usando anca, core e apoios das mãos ou pés.
-  - Mantém queixo protegido, pescoço longo e respiração controlada.
-  - Regressa à posição inicial sem cair desorganizado.
+  - Mantém queixo protegido, pescoço longo e respiração controlada; regressa à posição inicial sem cair desorganizado.
   - Repete durante 30 a 60 segundos mantendo precisão; aumenta ritmo só se a técnica continuar limpa.
   - Pára com dor no pescoço, ombro, joelho ou tontura.
 - Erros comuns: Acelerar antes de controlar a técnica. | Perder a base ou cruzar os pés de forma insegura. | Prender a respiração. | Torcer joelhos ou ombros sem controlo. | Repetir cansado com má coordenação.
@@ -6322,7 +6320,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (154 chars): Circuito leve com movimentos de solo do Jiu-Jitsu, para ganhar fôlego sem parceiro. Serve para treinar movimentação de Jiu-Jitsu, anca e controlo no solo.
 - Execução (7 passos):
   - Começa no tatami ou numa superfície segura, com espaço à volta.
-  - Define a posição inicial do Condicionamento leve para Jiu-Jitsu: guarda, ponte, fuga de anca, base técnica ou passagem.
+  - Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem.
   - Move primeiro devagar, usando anca, core e apoios das mãos ou pés.
   - Mantém queixo protegido, pescoço longo e respiração controlada.
   - Regressa à posição inicial sem cair desorganizado.
@@ -6457,7 +6455,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): mobilidade
 - Origem: seed `SeedData.exercisesByGroup["Mobilidade"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (84 chars): Mobilidade de ombro usando uma toalha esticada entre as mãos como guia de amplitude.
+- Objetivo/descrição (119 chars): Mobilidade de ombro usando uma toalha esticada entre as mãos como guia de amplitude. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Coloca-te na posição indicada, com coluna confortável e respiração calma.
   - Segura uma toalha esticada entre as mãos, bem mais largas que os ombros, como guia.
@@ -6600,7 +6598,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Deita-te de lado com os joelhos dobrados a 90 graus e os braços esticados à frente, mãos juntas.
   - Mantém os joelhos colados um ao outro e no chão durante todo o movimento.
   - Abre o braço de cima em arco por cima do corpo, rodando o tronco para o outro lado.
-  - Segue a mão com o olhar e deixa o peito abrir para o teto.
+  - Segue a mão com o olhar, expira ao abrir e deixa o peito abrir para o teto.
   - Vai só até onde os joelhos ficam quietos e não há dor.
   - Regressa pelo mesmo arco devagar e repete 6 a 8 vezes antes de trocar de lado.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
@@ -6669,8 +6667,8 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém joelhos esticados mas não bloqueados com força.
   - Inclina o tronco pela anca, não enrolando a lombar em excesso.
   - Leva as mãos em direção aos pés apenas até tensão confortável atrás da coxa.
-  - Sai da posição lentamente.
-  - Repete sem balanços.
+  - Respira devagar durante 20 a 40 segundos.
+  - Sai da posição lentamente; repete sem balanços.
   - Dobra ligeiramente joelhos se houver dor ou puxão forte.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
 - Versão mais fácil: Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.
@@ -6693,7 +6691,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém joelhos esticados mas não bloqueados com força.
   - Inclina o tronco pela anca, não enrolando a lombar em excesso.
   - Leva as mãos em direção aos pés apenas até tensão confortável atrás da coxa.
-  - Sai da posição lentamente; repete sem balanços.
+  - Respira devagar durante 20 a 40 segundos; sai da posição lentamente; repete sem balanços.
   - Dobra ligeiramente joelhos se houver dor ou puxão forte.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
 - Versão mais fácil: Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.
@@ -6716,7 +6714,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém joelhos esticados mas não bloqueados com força.
   - Inclina o tronco pela anca, não enrolando a lombar em excesso.
   - Leva as mãos em direção aos pés apenas até tensão confortável atrás da coxa.
-  - Sai da posição lentamente; repete sem balanços.
+  - Respira devagar durante 20 a 40 segundos; sai da posição lentamente; repete sem balanços.
   - Dobra ligeiramente joelhos se houver dor ou puxão forte.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
 - Versão mais fácil: Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.
@@ -6739,7 +6737,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém joelhos esticados mas não bloqueados com força.
   - Inclina o tronco pela anca, não enrolando a lombar em excesso.
   - Leva as mãos em direção aos pés apenas até tensão confortável atrás da coxa.
-  - Sai da posição lentamente; repete sem balanços.
+  - Respira devagar durante 20 a 40 segundos; sai da posição lentamente; repete sem balanços.
   - Dobra ligeiramente joelhos se houver dor ou puxão forte.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
 - Versão mais fácil: Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.
@@ -6762,7 +6760,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém joelhos esticados mas não bloqueados com força.
   - Inclina o tronco pela anca, não enrolando a lombar em excesso.
   - Leva as mãos em direção aos pés apenas até tensão confortável atrás da coxa.
-  - Sai da posição lentamente; repete sem balanços.
+  - Respira devagar durante 20 a 40 segundos; sai da posição lentamente; repete sem balanços.
   - Dobra ligeiramente joelhos se houver dor ou puxão forte.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
 - Versão mais fácil: Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.
@@ -6785,7 +6783,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém joelhos esticados mas não bloqueados com força.
   - Inclina o tronco pela anca, não enrolando a lombar em excesso.
   - Leva as mãos em direção aos pés apenas até tensão confortável atrás da coxa.
-  - Sai da posição lentamente; repete sem balanços.
+  - Respira devagar durante 20 a 40 segundos; sai da posição lentamente; repete sem balanços.
   - Dobra ligeiramente joelhos se houver dor ou puxão forte.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
 - Versão mais fácil: Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.
@@ -6808,7 +6806,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém joelhos esticados mas não bloqueados com força.
   - Inclina o tronco pela anca, não enrolando a lombar em excesso.
   - Leva as mãos em direção aos pés apenas até tensão confortável atrás da coxa.
-  - Sai da posição lentamente; repete sem balanços.
+  - Respira devagar durante 20 a 40 segundos; sai da posição lentamente; repete sem balanços.
   - Dobra ligeiramente joelhos se houver dor ou puxão forte.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
 - Versão mais fácil: Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.
@@ -7077,7 +7075,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Equipamento: Peso corporal
 - Tipo (FASE 2): alongamento
 - Origem: seed `SeedData.exercisesByGroup["Mobilidade"]` → `ExerciseCatalogContextService._entrySpecificDetails`
-- Objetivo/descrição (80 chars): Alongamento dos gémeos com as mãos na parede e a ponta do pé apoiada contra ela.
+- Objetivo/descrição (115 chars): Alongamento dos gémeos com as mãos na parede e a ponta do pé apoiada contra ela. Serve para o treinar com controlo.
 - Execução (7 passos):
   - Coloca o pé no chão ou contra a parede conforme a variação.
   - Apoia a ponta do pé na parede com o calcanhar no chão e aproxima o corpo da parede.
@@ -7106,7 +7104,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
   - Mantém o calcanhar desse pé totalmente apoiado no chão.
   - Leva o joelho devagar na direção da parede, alinhado com o segundo ou terceiro dedo do pé.
   - Para quando o calcanhar quiser levantar ou o arco do pé colapsar.
-  - Volta o joelho para trás e repete 8 a 12 vezes.
+  - Volta o joelho para trás, mantendo a respiração calma, e repete 8 a 12 vezes.
   - Afasta ou aproxima o pé da parede para ajustar a dificuldade.
   - Pára se houver dor no tendão de Aquiles, tornozelo ou frente do pé.
 - Erros comuns: Forçar até à dor em vez de tensão leve. | Fazer balanços rápidos. | Prender a respiração. | Compensar com a lombar ou com os ombros. | Sair da posição de repente.
@@ -7126,7 +7124,7 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Objetivo/descrição (141 chars): Círculos lentos com a ponta do pé em ambas as direções, para soltar o tornozelo. Serve para treinar mobilidade da zona indicada e respiração.
 - Execução (7 passos):
   - Senta-te ou fica de pé com apoio e tira ligeiramente um pé do chão.
-  - Mantém a perna quieta para o movimento vir do tornozelo.
+  - Mantém a perna quieta e a respiração calma: o movimento vem só do tornozelo.
   - Desenha círculos lentos com a ponta do pé, primeiro para dentro e depois para fora.
   - Faz 6 a 10 círculos por direção.
   - Mantém os dedos relaxados, sem enrolar o pé.
@@ -7309,9 +7307,9 @@ Origem dos dados: os exercícios são definidos em `lib/database/seed_data.dart`
 - Origem: seed `SeedData.exercisesByGroup["Mobilidade"]` → `ExerciseCatalogContextService._entrySpecificDetails`
 - Objetivo/descrição (113 chars): Caminhada fácil para circulação e recuperação ativa. Serve para treinar mobilidade da zona indicada e respiração.
 - Execução (6 passos):
-  - Escolhe um percurso plano e seguro, dentro ou fora de casa.
+  - Escolhe um percurso plano e seguro e começa a caminhar devagar.
   - Caminha a um ritmo tranquilo, em que consegues conversar sem esforço.
-  - Mantém o tronco alto, o olhar em frente e os braços a balançar naturalmente.
+  - Mantém o tronco alto, a respiração tranquila e os braços a balançar naturalmente.
   - Pousa o pé do calcanhar para a ponta, com passos confortáveis.
   - Continua durante 10 a 30 minutos, conforme a energia do dia.
   - Termina de forma gradual, abrandando nos últimos minutos.

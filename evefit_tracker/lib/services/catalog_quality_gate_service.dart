@@ -1194,6 +1194,18 @@ class CatalogQualityGateService {
   }
 
   static const _forbiddenPhrases = [
+    // v0.9.1: linguagem proibida globalmente na revisão de conteúdo.
+    'segura peso corporal',
+    'usa peso corporal',
+    'afastar a carga',
+    'desce a carga',
+    'nao deixar a carga cair',
+    'a carga cair',
+    'o peso deve permitir punhos',
+    'como apoio e core',
+    'em flexao diamante',
+    'a trajetoria especifica desta variacao',
+    'lorem',
     'no contexto',
     'equipamento indicado',
     'move a articulacao principal',

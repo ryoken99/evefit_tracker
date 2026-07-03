@@ -43,11 +43,7 @@ void main() {
         );
         expect(
           breathing,
-          anyOf(
-            contains('respira'),
-            contains('inspira'),
-            contains('expira'),
-          ),
+          anyOf(contains('respira'), contains('inspira'), contains('expira')),
           reason: entry.id,
         );
       }

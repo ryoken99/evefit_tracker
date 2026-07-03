@@ -13,14 +13,16 @@ void main(List<String> args) {
     ..writeln()
     ..writeln('Gerado por `tool/exercise_content_inventory.dart`.')
     ..writeln()
-    ..writeln('Origem dos dados: os exercícios são definidos em '
-        '`lib/database/seed_data.dart` (`SeedData.exercisesByGroup`), '
-        'materializados por `lib/services/exercise_catalog_context_service.dart` '
-        '(`ExerciseCatalogContextService._buildEntries`, textos em '
-        '`_entrySpecificDetails`) com equipamento/músculos secundários base em '
-        '`lib/services/exercise_catalog_detail_service.dart`. As tags '
-        'anatómicas vêm de `lib/services/training_architecture.dart` '
-        '(`tagsForExercise`).')
+    ..writeln(
+      'Origem dos dados: os exercícios são definidos em '
+      '`lib/database/seed_data.dart` (`SeedData.exercisesByGroup`), '
+      'materializados por `lib/services/exercise_catalog_context_service.dart` '
+      '(`ExerciseCatalogContextService._buildEntries`, textos em '
+      '`_entrySpecificDetails`) com equipamento/músculos secundários base em '
+      '`lib/services/exercise_catalog_detail_service.dart`. As tags '
+      'anatómicas vêm de `lib/services/training_architecture.dart` '
+      '(`tagsForExercise`).',
+    )
     ..writeln();
 
   final byType = <String, int>{};
@@ -99,8 +101,8 @@ void main(List<String> args) {
     ..writeln()
     ..writeln('### Por tipo (FASE 2)')
     ..writeln();
-  for (final item in byType.entries.toList()
-    ..sort((a, b) => b.value.compareTo(a.value))) {
+  for (final item
+      in byType.entries.toList()..sort((a, b) => b.value.compareTo(a.value))) {
     buffer.writeln('- ${item.key}: ${item.value}');
   }
   buffer
@@ -114,8 +116,9 @@ void main(List<String> args) {
     ..writeln()
     ..writeln('### Por equipamento')
     ..writeln();
-  for (final item in byEquipment.entries.toList()
-    ..sort((a, b) => b.value.compareTo(a.value))) {
+  for (final item
+      in byEquipment.entries.toList()
+        ..sort((a, b) => b.value.compareTo(a.value))) {
     buffer.writeln('- ${item.key}: ${item.value}');
   }
 
@@ -160,10 +163,14 @@ void main(List<String> args) {
       ..writeln('- Músculos principais (tags): ${tags.muscleKeys.join(', ')}')
       ..writeln('- Equipamento: ${d.equipment}')
       ..writeln('- Tipo (FASE 2): ${classify(entry)}')
-      ..writeln('- Origem: seed `SeedData.exercisesByGroup["${entry.group}"]` '
-          '→ `ExerciseCatalogContextService._entrySpecificDetails`')
-      ..writeln('- Objetivo/descrição (${d.description.length} chars): '
-          '${d.description}')
+      ..writeln(
+        '- Origem: seed `SeedData.exercisesByGroup["${entry.group}"]` '
+        '→ `ExerciseCatalogContextService._entrySpecificDetails`',
+      )
+      ..writeln(
+        '- Objetivo/descrição (${d.description.length} chars): '
+        '${d.description}',
+      )
       ..writeln('- Execução (${splitSteps(d.executionSteps).length} passos):');
     for (final line in splitSteps(d.executionSteps)) {
       buffer.writeln('  - $line');
@@ -179,15 +186,19 @@ void main(List<String> args) {
   final out = File('docs/audits/exercise_content_inventory.md')
     ..createSync(recursive: true);
   out.writeAsStringSync(buffer.toString());
-  stdout.writeln('wrote docs/audits/exercise_content_inventory.md '
-      '(${entries.length} exercícios)');
+  stdout.writeln(
+    'wrote docs/audits/exercise_content_inventory.md '
+    '(${entries.length} exercícios)',
+  );
 }
 
 List<String> splitSteps(String steps) {
   if (steps.contains('\n')) {
     return steps
         .split('\n')
-        .map((line) => line.replaceFirst(RegExp(r'^\s*\d{1,2}\.\s*'), '').trim())
+        .map(
+          (line) => line.replaceFirst(RegExp(r'^\s*\d{1,2}\.\s*'), '').trim(),
+        )
         .where((line) => line.isNotEmpty)
         .toList();
   }
@@ -260,7 +271,8 @@ List<String> forbiddenHits(ExerciseCatalogEntry entry) {
               '${entry.details.regression} ${entry.details.progression}'
           .toLowerCase();
   final equipment = entry.details.equipment.toLowerCase();
-  final isBodyweight = classify(entry) == 'peso_corporal' &&
+  final isBodyweight =
+      classify(entry) == 'peso_corporal' &&
       !equipment.contains('mochila') &&
       !equipment.contains('garrafão');
   const global = [

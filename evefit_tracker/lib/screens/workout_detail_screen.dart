@@ -537,44 +537,159 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
   }
 
   void _showExerciseInfo(Exercise exercise) {
-    showDialog<void>(
+    showModalBottomSheet<void>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(exercise.name),
-        content: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _InfoLine('Grupo principal', exercise.muscleGroup),
-              _InfoLine('Grupos secundários', exercise.secondaryMuscleGroups),
-              _InfoLine(
-                'Trabalha principalmente',
-                ExerciseDisplayService.primaryMuscles(exercise).join(', '),
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (context) => DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.75,
+        minChildSize: 0.4,
+        maxChildSize: 0.95,
+        builder: (context, scrollController) => Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 8, 4),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      exercise.name,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
+                  IconButton(
+                    tooltip: 'Fechar',
+                    onPressed: () => Navigator.pop(context),
+                    icon: const Icon(Icons.close),
+                  ),
+                ],
               ),
-              _InfoLine(
-                'Também ajuda',
-                ExerciseDisplayService.secondaryMuscles(exercise).join(', '),
+            ),
+            const Divider(height: 1),
+            Expanded(
+              child: ListView(
+                controller: scrollController,
+                padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
+                children: [
+                  _InfoSection(
+                    title: 'Resumo',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _summaryRow(context, 'Grupo', exercise.muscleGroup),
+                        _summaryRow(
+                          context,
+                          'Músculos',
+                          ExerciseDisplayService.primaryMuscles(
+                            exercise,
+                          ).join(', '),
+                        ),
+                        _summaryRow(context, 'Equipamento', exercise.equipment),
+                      ],
+                    ),
+                  ),
+                  _InfoSection(
+                    title: 'Objetivo',
+                    child: Text(exercise.description),
+                  ),
+                  _InfoSection(
+                    title: 'Como fazer',
+                    child: _NumberedList(exercise.executionSteps),
+                  ),
+                  _InfoSection(
+                    title: 'Erros comuns',
+                    child: _BulletList(exercise.commonMistakes),
+                  ),
+                  _InfoSection(
+                    title: 'Variações',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _variationRow(
+                          context,
+                          'Mais fácil',
+                          exercise.regression,
+                        ),
+                        const SizedBox(height: 8),
+                        _variationRow(
+                          context,
+                          'Mais difícil',
+                          exercise.progression,
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (exercise.safetyNotes.trim().isNotEmpty)
+                    _InfoSection(
+                      title: 'Segurança',
+                      child: Text(exercise.safetyNotes),
+                    ),
+                  ExpansionTile(
+                    tilePadding: EdgeInsets.zero,
+                    title: Text(
+                      'Mais detalhes',
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                    childrenPadding: const EdgeInsets.only(bottom: 12),
+                    children: [
+                      _InfoSection(
+                        title: 'Também ajuda',
+                        child: Text(
+                          ExerciseDisplayService.secondaryMuscles(
+                            exercise,
+                          ).join(', '),
+                        ),
+                      ),
+                      _InfoSection(
+                        title: 'Respiração',
+                        child: Text(exercise.breathingTips),
+                      ),
+                      _InfoSection(
+                        title: 'Postura',
+                        child: Text(exercise.postureTips),
+                      ),
+                      _InfoSection(
+                        title: 'Quando adaptar ou evitar',
+                        child: Text(exercise.adaptationNotes),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              _InfoLine('Equipamento', exercise.equipment),
-              _InfoLine('Descrição', exercise.description),
-              _InfoLine('Execução', exercise.executionSteps),
-              _InfoLine('Erros comuns', exercise.commonMistakes),
-              _InfoLine('Segurança', exercise.safetyNotes),
-              _InfoLine('Versão mais fácil', exercise.regression),
-              _InfoLine('Versão mais difícil', exercise.progression),
-              _InfoLine('Respiração', exercise.breathingTips),
-              _InfoLine('Postura', exercise.postureTips),
-              _InfoLine('Quando adaptar ou evitar', exercise.adaptationNotes),
-            ],
-          ),
+            ),
+          ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Fechar'),
+      ),
+    );
+  }
+
+  Widget _summaryRow(BuildContext context, String label, String value) {
+    if (value.trim().isEmpty) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 108,
+            child: Text(label, style: Theme.of(context).textTheme.labelLarge),
           ),
+          Expanded(child: Text(value.trim())),
         ],
       ),
+    );
+  }
+
+  Widget _variationRow(BuildContext context, String label, String value) {
+    if (value.trim().isEmpty) return const SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: Theme.of(context).textTheme.labelLarge),
+        const SizedBox(height: 2),
+        Text(value.trim()),
+      ],
     );
   }
 
@@ -737,27 +852,102 @@ class _ExerciseBlock {
   final List<WorkoutSet> sets;
 }
 
-class _InfoLine extends StatelessWidget {
-  const _InfoLine(this.label, this.value);
+class _InfoSection extends StatelessWidget {
+  const _InfoSection({required this.title, required this.child});
 
-  final String label;
-  final String value;
+  final String title;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    final text = value.trim().isEmpty
-        ? 'Sem informação adicional.'
-        : value.trim();
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: Theme.of(context).textTheme.titleSmall),
-          const SizedBox(height: 2),
-          Text(text),
+          Text(title, style: Theme.of(context).textTheme.titleSmall),
+          const SizedBox(height: 6),
+          child,
         ],
       ),
+    );
+  }
+}
+
+/// Lista numerada vertical para os passos de execução. Aceita passos
+/// separados por linha (formato atual) ou o formato antigo em parágrafo.
+class _NumberedList extends StatelessWidget {
+  const _NumberedList(this.steps);
+
+  final String steps;
+
+  @override
+  Widget build(BuildContext context) {
+    final lines = steps.contains('\n')
+        ? steps.split('\n')
+        : steps.split(RegExp(r'\s*(?=\d{1,2}\.\s)'));
+    final items = lines
+        .map(
+          (line) => line.replaceFirst(RegExp(r'^\s*\d{1,2}\.\s*'), '').trim(),
+        )
+        .where((line) => line.isNotEmpty)
+        .toList();
+    if (items.isEmpty) return const Text('Sem informação adicional.');
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (var i = 0; i < items.length; i++)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 24,
+                  child: Text(
+                    '${i + 1}.',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                ),
+                Expanded(child: Text(items[i])),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+/// Lista com marcadores para erros comuns (um item por linha).
+class _BulletList extends StatelessWidget {
+  const _BulletList(this.items);
+
+  final String items;
+
+  @override
+  Widget build(BuildContext context) {
+    final lines = items
+        .split('\n')
+        .map((line) => line.trim())
+        .where((line) => line.isNotEmpty)
+        .toList();
+    if (lines.isEmpty) return const Text('Sem informação adicional.');
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (final line in lines)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 6),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(width: 4),
+                const Text('•  '),
+                Expanded(child: Text(line)),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }

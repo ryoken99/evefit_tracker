@@ -175,13 +175,8 @@ class ExerciseCatalogContextService {
       equipment: equipment,
       secondaryGroups: secondary,
       description: _objectiveFor(name, group),
-      executionSteps: _canonicalSteps(
-        _stepsFor(name, group, equipment),
-        name,
-      ),
-      commonMistakes: _canonicalMistakes(
-        _mistakesFor(name, group, equipment),
-      ),
+      executionSteps: _canonicalSteps(_stepsFor(name, group, equipment), name),
+      commonMistakes: _canonicalMistakes(_mistakesFor(name, group, equipment)),
       safetyNotes: _safetyFor(name, group, equipment),
       regression: regression,
       progression: progression,
@@ -191,122 +186,233 @@ class ExerciseCatalogContextService {
     );
   }
 
-
   /// Passo extra, específico da variação, injetado a seguir ao primeiro passo
   /// quando a família de movimento partilha a base da execução.
   static const Map<String, String> _variationStepByName = {
-    'extensao francesa no cabo': 'Coloca a polia na posição baixa, fica de costas para o cabo e segura a corda com pega firme atrás da cabeça.',
-    'agachamento com barra': 'Apoia a barra na parte de cima das costas e segura-a com pega firme e simétrica.',
-    'lunges com halteres': 'Segura um halter em cada mão ao lado do corpo, com pega firme e punhos direitos.',
-    'peso morto romeno com halteres': 'Segura os halteres à frente das coxas com pega firme, palmas viradas para ti.',
-    'chin tuck': 'Recua o queixo devagar, como se quisesses criar um duplo queixo, sem inclinar a cabeça para baixo.',
-    'rotacao cervical controlada': 'Roda a cabeça devagar para um lado, como se olhasses por cima do ombro, e volta ao centro antes de trocar.',
-    'extensao acima da cabeca com halter': 'Segura um único halter na vertical, com as duas mãos sobrepostas por baixo da cabeça de cima.',
-    'extensao francesa com halter': 'Podes fazer o movimento sentado ou deitado; mantém os cotovelos apontados para a frente todo o tempo.',
-    'mobilidade de anca para jiu-jitsu': 'Encadeia círculos de anca, fugas de anca lentas e aberturas de guarda sentado no chão.',
-    'mobilidade de ombro para jiu-jitsu': 'Encadeia círculos de braços, mãos atrás das costas como nas pegas e rotações suaves dos ombros.',
-    'drills de guarda': 'Trabalha a retenção: enquadra com os pés, gere a distância e recupera a guarda quando a perderes.',
-    'drills de passagem de guarda': 'Trabalha a passagem: controla as pernas do adversário imaginário, pressiona e passa para o lado.',
-    'forca de pega para jiu-jitsu': 'Aperta uma toalha ou o teu próprio punho em pegas fortes de 5 a 10 segundos enquanto te moves no solo.',
-    'core para jiu-jitsu': 'Liga pontes, posições de hollow e rotações de tronco no chão, mantendo o queixo protegido.',
-    'isometria cervical frontal leve': 'Coloca a palma da mão na testa e empurra a cabeça contra ela, sem deixar a cabeça mexer.',
-    'isometria cervical lateral leve': 'Coloca a palma da mão ao lado da cabeça e empurra contra ela, sem deixar a cabeça inclinar.',
-    'scapular pull-up': 'Faz repetições curtas: puxa as escápulas para baixo, segura um segundo e deixa-as subir de novo.',
-    'dead hang escapular': 'Alterna cinco segundos pendurado com os ombros soltos e cinco segundos com as escápulas ativas.',
-    'mobilidade de ombro com cabo de vassoura': 'Segura o cabo de vassoura com as duas mãos, bem mais afastadas que os ombros, como guia leve.',
-    'farmer hold': 'Usa halteres pesados que só consigas segurar 10 a 30 segundos com boa postura.',
-    'face pull com elastico': 'Prende o elástico num ponto firme à altura do rosto e afasta-te até criar tensão.',
-    'reverse fly': 'Se tiveres banco inclinado, apoia lá o peito para eliminar o balanço do tronco.',
-    'elevacao posterior': 'Inclina o tronco à frente com a lombar neutra e deixa os braços pendurados.',
-    'rotacao externa com elastico': 'Prende o elástico à altura do cotovelo e fica de lado para o ponto de fixação.',
-    'rotacao interna com elastico': 'Prende o elástico à altura do cotovelo e fica com esse lado virado para o ponto de fixação.',
-    'flexao arqueiro': 'Desloca o peso do corpo para um dos lados; o braço contrário fica quase esticado a ajudar.',
-    'supino inclinado com barra': 'Ajusta o banco a 30 a 45 graus de inclinação antes de te deitares.',
-    'squeeze press': 'Mantém os halteres encostados um ao outro e aperta-os durante toda a repetição.',
-    'supino declinado na maquina': 'Ajusta o assento para as pegas ficarem alinhadas com a parte baixa do peito.',
-    'chest press': 'Ajusta o assento para as pegas ficarem à frente do meio do peito.',
-    'puxada alta': 'Agarra a barra com pega um pouco mais larga que os ombros e palmas para a frente.',
-    'puxada alta pega aberta': 'Agarra a barra com as mãos bem mais afastadas que os ombros, para pedir mais à largura das costas.',
-    'puxada alta pega neutra': 'Usa a pega em que as palmas ficam viradas uma para a outra, com os cotovelos a descer junto ao tronco.',
-    'puxada alta pega fechada': 'Agarra a pega curta com as mãos próximas, para os cotovelos trabalharem colados ao corpo.',
-    'good morning com barra': 'Apoia a barra na parte alta das costas, nunca no pescoço, com pega firme.',
-    'good morning leve': 'Coloca as mãos atrás da cabeça ou cruzadas no peito, sem qualquer peso.',
-    'curl alternado': 'Sobe um braço de cada vez e alterna os lados, mantendo o outro halter em baixo.',
-    'triceps testa com barra ez': 'Agarra a barra EZ com pega na zona ondulada, com as palmas ligeiramente viradas uma para a outra.',
-    'triceps testa com halteres': 'Usa pega neutra, com as palmas dos halteres viradas uma para a outra, e desce à linha da testa.',
-    'extensao de triceps deitado com halteres': 'Desce os halteres para trás da cabeça, e não para a testa, para alongar mais o tríceps.',
-    'press fechado com halteres': 'Mantém os halteres juntos, em pega neutra, encostados um ao outro durante toda a repetição.',
-    'kickback no cabo': 'Coloca a polia na posição baixa e fica de costas ligeiramente inclinado para o cabo.',
-    'kickback de triceps': 'Apoia a mão livre num banco ou na coxa e segura o halter com pega neutra.',
-    'hold estatico com halteres': 'Escolhe halteres moderados: o objetivo é aguentar 30 a 45 segundos, mais tempo que num farmer hold pesado.',
-    'walking lunges': 'Em vez de voltares atrás, traz a perna de trás para a frente e avança para o passo seguinte.',
-    'prancha lateral': 'Vira o corpo de lado, apoia o antebraço por baixo do ombro e empilha os pés ou cruza-os.',
-    'passadeira caminhada': 'Escolhe uma velocidade em que consegues conversar em frases completas.',
-    'passadeira caminhada rapida': 'Sobe a velocidade até um passo vivo em que só consegues dizer frases curtas.',
-    'passadeira corrida leve': 'Passa para um trote suave e contínuo, sem encurtar a respiração.',
-    'passadeira sprints': 'Faz tiros de 10 a 20 segundos quase no máximo e recupera por completo entre cada um.',
-    'passadeira sprints intervalados': 'Programa blocos: 15 a 30 segundos fortes seguidos de 60 a 90 segundos a caminhar.',
-    'hiit passadeira': 'Alterna 20 a 40 segundos rápidos com 40 a 80 segundos de caminhada de recuperação.',
-    'passadeira inclinacao': 'Usa inclinação leve, de 3 a 6 por cento, mantendo a velocidade de caminhada.',
-    'passadeira inclinacao moderada': 'Sobe a inclinação para 6 a 10 por cento e reduz ligeiramente a velocidade.',
-    'bicicleta ritmo leve': 'Mantém resistência baixa e cadência confortável, a conseguir conversar.',
-    'bicicleta ritmo moderado': 'Usa resistência média, com as pernas a aquecer mas sem perder o ritmo da respiração.',
-    'bicicleta resistencia': 'Sobe a resistência até a pedalada ficar pesada e desce a cadência, sem balançar a anca.',
-    'hiit bicicleta': 'Alterna 20 a 40 segundos de pedalada forte com 60 a 90 segundos muito leves.',
-    'eliptica ritmo leve': 'Mantém resistência baixa e movimento fluido, sem pressa.',
-    'eliptica ritmo moderado': 'Usa resistência média e um ritmo constante que aqueça pernas e braços.',
-    'eliptica intervalos': 'Alterna 30 a 60 segundos rápidos com 60 a 90 segundos lentos, sem parar o movimento.',
-    'eliptica resistencia': 'Sobe a resistência e baixa a cadência, empurrando e puxando com força controlada.',
-    'eliptica aquecimento': 'Começa muito leve e aumenta o ritmo aos poucos durante 5 a 10 minutos.',
-    'eliptica cooldown': 'Reduz a resistência e o ritmo gradualmente durante 3 a 8 minutos.',
-    'corda de saltar ritmo leve': 'Mantém saltos baixos e contínuos, a um ritmo calmo que consigas sustentar.',
-    'corda de saltar intervalos': 'Alterna 20 a 40 segundos a saltar com 20 a 40 segundos de pausa a caminhar.',
-    'hiit corda': 'Faz blocos quase máximos de 20 a 30 segundos com pausas curtas de recuperação.',
-    'alongamento peitoral na parede': 'Apoia o antebraço na parede com o cotovelo à altura do ombro e roda o tronco para o lado contrário.',
-    'alongamento peitoral no canto': 'Coloca um antebraço em cada parede do canto e deixa o peito avançar devagar.',
-    'alongamento posterior sentado': 'Senta-te com as pernas estendidas e inclina o tronco pela anca em direção aos pés.',
-    'alongamento posterior em pe': 'De pé, dobra pela anca com os joelhos quase esticados e deixa as mãos descer pelas pernas.',
-    'alongamento posterior com perna elevada': 'Coloca o calcanhar num apoio à altura da anca ou abaixo e inclina o tronco pela anca.',
-    'tocar nos pes sentado': 'Sentado com as pernas esticadas, desliza as mãos pelas pernas em direção aos pés.',
-    'tocar nos pes em pe': 'De pé, deixa o tronco descer devagar em direção aos pés, dobrando pela anca.',
-    'mobilidade dinamica de posterior': 'Alterna entre alongar e voltar, em movimentos lentos e contínuos, sem manter a posição.',
-    'alongamento figura 4': 'Deitado de costas, cruza um tornozelo sobre o joelho contrário e puxa essa coxa ao peito.',
-    'pigeon stretch': 'Leva uma perna dobrada à frente no chão e estica a outra para trás, com a anca nivelada.',
-    'alongamento de gluteo sentado': 'Sentado numa cadeira, cruza o tornozelo sobre o joelho contrário e inclina o tronco à frente.',
-    'alongamento piriforme': 'Deitado de costas, cruza uma perna sobre a outra e puxa a coxa de baixo ao peito.',
-    'mobilidade 90/90': 'Senta-te com uma perna dobrada à frente e outra dobrada para trás, ambas perto de 90 graus.',
-    'alongamento gluteos': 'Deitado de costas, puxa um joelho na direção do ombro contrário até sentir o glúteo.',
-    'alongamento quadriceps em pe': 'De pé com apoio de uma mão, leva o calcanhar ao glúteo e segura o pé.',
-    'alongamento quadriceps de lado': 'Deitado de lado, segura o pé de cima atrás do corpo e empurra a anca à frente.',
-    'alongamento gemeos': 'Dá um passo atrás, mantém essa perna esticada com o calcanhar no chão e avança o corpo.',
-    'alongamento gemeos na parede': 'Apoia a ponta do pé na parede com o calcanhar no chão e aproxima o corpo da parede.',
-    'extensao de punhos no chao': 'Apoia as palmas no chão com os dedos virados para a frente e inclina o peso devagar.',
-    'flexao de punhos no chao': 'Apoia as costas das mãos no chão com os dedos virados para ti e inclina o peso devagar.',
-    'mobilidade de punhos': 'Faz círculos lentos, flexão e extensão dos punhos, alternando as direções.',
-    'mobilidade de ombro com toalha': 'Segura uma toalha esticada entre as mãos, bem mais largas que os ombros, como guia.',
-    'circulos de ombro': 'Desenha círculos lentos e amplos com os ombros, primeiro para trás e depois para a frente.',
-    'mobilidade leve de ombros': 'Usa amplitudes pequenas e confortáveis, sem procurar o limite do alcance.',
-    'mobilidade dinamica de anca': 'Encadeia movimentos lentos de anca, trocando de posição sem manter alongamentos parados.',
-    'mobilidade leve de anca': 'Usa amplitudes pequenas e confortáveis da anca, sem forçar o alcance.',
-    'rotacao externa da anca no chao': 'Sentado ou deitado, deixa o joelho abrir para o lado com a planta do pé apoiada.',
-    'mobilidade de anca': 'Explora círculos e báscula da bacia em amplitudes confortáveis, de pé ou em quatro apoios.',
-    'mobilidade toracica': 'Sentado ou em quatro apoios, roda a parte alta das costas de um lado para o outro devagar.',
-    'alongamento dorsal': 'Agarra um apoio à frente, deixa a anca recuar e o tronco descer entre os braços.',
-    'alongamento peitoral': 'Abre o braço para o lado à altura do ombro e roda o tronco para o lado contrário.',
-    'caminhada exterior leve': 'Escolhe um percurso plano e caminha a um ritmo em que consegues conversar.',
-    'caminhada exterior moderada': 'Acelera para um passo firme e decidido, com os braços a acompanhar.',
-    'caminhada exterior rapida': 'Caminha quase no limite da marcha, sem transformar o passo em corrida.',
-    'caminhada exterior em subida': 'Procura uma subida constante e usa passos mais curtos, inclinando pouco o tronco.',
-    'corrida exterior leve': 'Corre a um ritmo conversável, com passada curta e relaxada.',
-    'corrida exterior moderada': 'Sobe o ritmo até só conseguires frases curtas, mantendo a passada estável.',
-    'corrida exterior intervalada': 'Alterna 1 a 3 minutos rápidos com trote ou caminhada até recuperares.',
-    'sprints exterior': 'Faz tiros de 10 a 20 segundos quase no máximo, com recuperação completa entre eles.',
-    'corrida em subida': 'Escolhe uma subida curta, sobe a correr com passos curtos e desce a caminhar.',
-    'hiit peso corporal': 'Monta um circuito de 3 a 5 exercícios simples e trabalha 20 a 40 segundos em cada um.',
-    'hiit cardio': 'Alterna blocos fortes de 20 a 40 segundos com recuperações ativas de 40 a 80 segundos.',
-    'hiit simples': 'Escolhe um só movimento fácil de controlar e alterna esforço e pausa em blocos iguais.',
-    'circuito cardio peso corporal': 'Encadeia 4 a 6 exercícios sem equipamento, 30 a 45 segundos em cada, com pausas curtas.',
-    'circuito cardio leve': 'Encadeia movimentos suaves a baixa intensidade, sem saltos, durante 10 a 20 minutos.',
+    'extensao francesa no cabo':
+        'Coloca a polia na posição baixa, fica de costas para o cabo e segura a corda com pega firme atrás da cabeça.',
+    'agachamento com barra':
+        'Apoia a barra na parte de cima das costas e segura-a com pega firme e simétrica.',
+    'lunges com halteres':
+        'Segura um halter em cada mão ao lado do corpo, com pega firme e punhos direitos.',
+    'peso morto romeno com halteres':
+        'Segura os halteres à frente das coxas com pega firme, palmas viradas para ti.',
+    'chin tuck':
+        'Recua o queixo devagar, como se quisesses criar um duplo queixo, sem inclinar a cabeça para baixo.',
+    'rotacao cervical controlada':
+        'Roda a cabeça devagar para um lado, como se olhasses por cima do ombro, e volta ao centro antes de trocar.',
+    'extensao acima da cabeca com halter':
+        'Segura um único halter na vertical, com as duas mãos sobrepostas por baixo da cabeça de cima.',
+    'extensao francesa com halter':
+        'Podes fazer o movimento sentado ou deitado; mantém os cotovelos apontados para a frente todo o tempo.',
+    'mobilidade de anca para jiu-jitsu':
+        'Encadeia círculos de anca, fugas de anca lentas e aberturas de guarda sentado no chão.',
+    'mobilidade de ombro para jiu-jitsu':
+        'Encadeia círculos de braços, mãos atrás das costas como nas pegas e rotações suaves dos ombros.',
+    'drills de guarda':
+        'Trabalha a retenção: enquadra com os pés, gere a distância e recupera a guarda quando a perderes.',
+    'drills de passagem de guarda':
+        'Trabalha a passagem: controla as pernas do adversário imaginário, pressiona e passa para o lado.',
+    'forca de pega para jiu-jitsu':
+        'Aperta uma toalha ou o teu próprio punho em pegas fortes de 5 a 10 segundos enquanto te moves no solo.',
+    'core para jiu-jitsu':
+        'Liga pontes, posições de hollow e rotações de tronco no chão, mantendo o queixo protegido.',
+    'isometria cervical frontal leve':
+        'Coloca a palma da mão na testa e empurra a cabeça contra ela, sem deixar a cabeça mexer.',
+    'isometria cervical lateral leve':
+        'Coloca a palma da mão ao lado da cabeça e empurra contra ela, sem deixar a cabeça inclinar.',
+    'scapular pull-up':
+        'Faz repetições curtas: puxa as escápulas para baixo, segura um segundo e deixa-as subir de novo.',
+    'dead hang escapular':
+        'Alterna cinco segundos pendurado com os ombros soltos e cinco segundos com as escápulas ativas.',
+    'mobilidade de ombro com cabo de vassoura':
+        'Segura o cabo de vassoura com as duas mãos, bem mais afastadas que os ombros, como guia leve.',
+    'farmer hold':
+        'Usa halteres pesados que só consigas segurar 10 a 30 segundos com boa postura.',
+    'face pull com elastico':
+        'Prende o elástico num ponto firme à altura do rosto e afasta-te até criar tensão.',
+    'reverse fly':
+        'Se tiveres banco inclinado, apoia lá o peito para eliminar o balanço do tronco.',
+    'elevacao posterior':
+        'Inclina o tronco à frente com a lombar neutra e deixa os braços pendurados.',
+    'rotacao externa com elastico':
+        'Prende o elástico à altura do cotovelo e fica de lado para o ponto de fixação.',
+    'rotacao interna com elastico':
+        'Prende o elástico à altura do cotovelo e fica com esse lado virado para o ponto de fixação.',
+    'flexao arqueiro':
+        'Desloca o peso do corpo para um dos lados; o braço contrário fica quase esticado a ajudar.',
+    'supino inclinado com barra':
+        'Ajusta o banco a 30 a 45 graus de inclinação antes de te deitares.',
+    'squeeze press':
+        'Mantém os halteres encostados um ao outro e aperta-os durante toda a repetição.',
+    'supino declinado na maquina':
+        'Ajusta o assento para as pegas ficarem alinhadas com a parte baixa do peito.',
+    'chest press':
+        'Ajusta o assento para as pegas ficarem à frente do meio do peito.',
+    'puxada alta':
+        'Agarra a barra com pega um pouco mais larga que os ombros e palmas para a frente.',
+    'puxada alta pega aberta':
+        'Agarra a barra com as mãos bem mais afastadas que os ombros, para pedir mais à largura das costas.',
+    'puxada alta pega neutra':
+        'Usa a pega em que as palmas ficam viradas uma para a outra, com os cotovelos a descer junto ao tronco.',
+    'puxada alta pega fechada':
+        'Agarra a pega curta com as mãos próximas, para os cotovelos trabalharem colados ao corpo.',
+    'good morning com barra':
+        'Apoia a barra na parte alta das costas, nunca no pescoço, com pega firme.',
+    'good morning leve':
+        'Usa a barra vazia ou muito leve, apoiada na parte alta das costas, nunca no pescoço.',
+    'curl alternado':
+        'Sobe um braço de cada vez e alterna os lados, mantendo o outro halter em baixo.',
+    'triceps testa com barra ez':
+        'Agarra a barra EZ com pega na zona ondulada, com as palmas ligeiramente viradas uma para a outra.',
+    'triceps testa com halteres':
+        'Usa pega neutra, com as palmas dos halteres viradas uma para a outra, e desce à linha da testa.',
+    'extensao de triceps deitado com halteres':
+        'Desce os halteres para trás da cabeça, e não para a testa, para alongar mais o tríceps.',
+    'press fechado com halteres':
+        'Mantém os halteres juntos, em pega neutra, encostados um ao outro durante toda a repetição.',
+    'kickback no cabo':
+        'Coloca a polia na posição baixa e fica de costas ligeiramente inclinado para o cabo.',
+    'kickback de triceps':
+        'Apoia a mão livre num banco ou na coxa e segura o halter com pega neutra.',
+    'hold estatico com halteres':
+        'Escolhe halteres moderados: o objetivo é aguentar 30 a 45 segundos, mais tempo que num farmer hold pesado.',
+    'walking lunges':
+        'Em vez de voltares atrás, traz a perna de trás para a frente e avança para o passo seguinte.',
+    'prancha lateral':
+        'Vira o corpo de lado, apoia o antebraço por baixo do ombro e empilha os pés ou cruza-os.',
+    'passadeira caminhada':
+        'Escolhe uma velocidade em que consegues conversar em frases completas.',
+    'passadeira caminhada rapida':
+        'Sobe a velocidade até um passo vivo em que só consegues dizer frases curtas.',
+    'passadeira corrida leve':
+        'Passa para um trote suave e contínuo, sem encurtar a respiração.',
+    'passadeira sprints':
+        'Faz tiros de 10 a 20 segundos quase no máximo e recupera por completo entre cada um.',
+    'passadeira sprints intervalados':
+        'Programa blocos: 15 a 30 segundos fortes seguidos de 60 a 90 segundos a caminhar.',
+    'hiit passadeira':
+        'Alterna 20 a 40 segundos rápidos com 40 a 80 segundos de caminhada de recuperação.',
+    'passadeira inclinacao':
+        'Usa inclinação leve, de 3 a 6 por cento, mantendo a velocidade de caminhada.',
+    'passadeira inclinacao moderada':
+        'Sobe a inclinação para 6 a 10 por cento e reduz ligeiramente a velocidade.',
+    'bicicleta ritmo leve':
+        'Mantém resistência baixa e cadência confortável, a conseguir conversar.',
+    'bicicleta ritmo moderado':
+        'Usa resistência média, com as pernas a aquecer mas sem perder o ritmo da respiração.',
+    'bicicleta resistencia':
+        'Sobe a resistência até a pedalada ficar pesada e desce a cadência, sem balançar a anca.',
+    'hiit bicicleta':
+        'Alterna 20 a 40 segundos de pedalada forte com 60 a 90 segundos muito leves.',
+    'eliptica ritmo leve':
+        'Mantém resistência baixa e movimento fluido, sem pressa.',
+    'eliptica ritmo moderado':
+        'Usa resistência média e um ritmo constante que aqueça pernas e braços.',
+    'eliptica intervalos':
+        'Alterna 30 a 60 segundos rápidos com 60 a 90 segundos lentos, sem parar o movimento.',
+    'eliptica resistencia':
+        'Sobe a resistência e baixa a cadência, empurrando e puxando com força controlada.',
+    'eliptica aquecimento':
+        'Começa muito leve e aumenta o ritmo aos poucos durante 5 a 10 minutos.',
+    'eliptica cooldown':
+        'Reduz a resistência e o ritmo gradualmente durante 3 a 8 minutos.',
+    'corda de saltar ritmo leve':
+        'Mantém saltos baixos e contínuos, a um ritmo calmo que consigas sustentar.',
+    'corda de saltar intervalos':
+        'Alterna 20 a 40 segundos a saltar com 20 a 40 segundos de pausa a caminhar.',
+    'hiit corda':
+        'Faz blocos quase máximos de 20 a 30 segundos com pausas curtas de recuperação.',
+    'alongamento peitoral na parede':
+        'Apoia o antebraço na parede com o cotovelo à altura do ombro e roda o tronco para o lado contrário.',
+    'alongamento peitoral no canto':
+        'Coloca um antebraço em cada parede do canto e deixa o peito avançar devagar.',
+    'alongamento posterior sentado':
+        'Senta-te com as pernas estendidas e inclina o tronco pela anca em direção aos pés.',
+    'alongamento posterior em pe':
+        'De pé, dobra pela anca com os joelhos quase esticados e deixa as mãos descer pelas pernas.',
+    'alongamento posterior com perna elevada':
+        'Coloca o calcanhar num apoio à altura da anca ou abaixo e inclina o tronco pela anca.',
+    'tocar nos pes sentado':
+        'Sentado com as pernas esticadas, desliza as mãos pelas pernas em direção aos pés.',
+    'tocar nos pes em pe':
+        'De pé, deixa o tronco descer devagar em direção aos pés, dobrando pela anca.',
+    'mobilidade dinamica de posterior':
+        'Alterna entre alongar e voltar, em movimentos lentos e contínuos, sem manter a posição.',
+    'alongamento figura 4':
+        'Deitado de costas, cruza um tornozelo sobre o joelho contrário e puxa essa coxa ao peito.',
+    'pigeon stretch':
+        'Leva uma perna dobrada à frente no chão e estica a outra para trás, com a anca nivelada.',
+    'alongamento de gluteo sentado':
+        'Sentado numa cadeira, cruza o tornozelo sobre o joelho contrário e inclina o tronco à frente.',
+    'alongamento piriforme':
+        'Deitado de costas, cruza uma perna sobre a outra e puxa a coxa de baixo ao peito.',
+    'mobilidade 90/90':
+        'Senta-te com uma perna dobrada à frente e outra dobrada para trás, ambas perto de 90 graus.',
+    'alongamento gluteos':
+        'Deitado de costas, puxa um joelho na direção do ombro contrário até sentir o glúteo.',
+    'alongamento quadriceps em pe':
+        'De pé com apoio de uma mão, leva o calcanhar ao glúteo e segura o pé.',
+    'alongamento quadriceps de lado':
+        'Deitado de lado, segura o pé de cima atrás do corpo e empurra a anca à frente.',
+    'alongamento gemeos':
+        'Dá um passo atrás, mantém essa perna esticada com o calcanhar no chão e avança o corpo.',
+    'alongamento gemeos na parede':
+        'Apoia a ponta do pé na parede com o calcanhar no chão e aproxima o corpo da parede.',
+    'extensao de punhos no chao':
+        'Apoia as palmas no chão com os dedos virados para a frente e inclina o peso devagar.',
+    'flexao de punhos no chao':
+        'Apoia as costas das mãos no chão com os dedos virados para ti e inclina o peso devagar.',
+    'mobilidade de punhos':
+        'Faz círculos lentos, flexão e extensão dos punhos, alternando as direções.',
+    'mobilidade de ombro com toalha':
+        'Segura uma toalha esticada entre as mãos, bem mais largas que os ombros, como guia.',
+    'circulos de ombro':
+        'Desenha círculos lentos e amplos com os ombros, primeiro para trás e depois para a frente.',
+    'mobilidade leve de ombros':
+        'Usa amplitudes pequenas e confortáveis, sem procurar o limite do alcance.',
+    'mobilidade dinamica de anca':
+        'Encadeia movimentos lentos de anca, trocando de posição sem manter alongamentos parados.',
+    'mobilidade leve de anca':
+        'Usa amplitudes pequenas e confortáveis da anca, sem forçar o alcance.',
+    'rotacao externa da anca no chao':
+        'Sentado ou deitado, deixa o joelho abrir para o lado com a planta do pé apoiada.',
+    'mobilidade de anca':
+        'Explora círculos e báscula da bacia em amplitudes confortáveis, de pé ou em quatro apoios.',
+    'mobilidade toracica':
+        'Sentado ou em quatro apoios, roda a parte alta das costas de um lado para o outro devagar.',
+    'alongamento dorsal':
+        'Agarra um apoio à frente, deixa a anca recuar e o tronco descer entre os braços.',
+    'alongamento peitoral':
+        'Abre o braço para o lado à altura do ombro e roda o tronco para o lado contrário.',
+    'caminhada exterior leve':
+        'Escolhe um percurso plano e caminha a um ritmo em que consegues conversar.',
+    'caminhada exterior moderada':
+        'Acelera para um passo firme e decidido, com os braços a acompanhar.',
+    'caminhada exterior rapida':
+        'Caminha quase no limite da marcha, sem transformar o passo em corrida.',
+    'caminhada exterior em subida':
+        'Procura uma subida constante e usa passos mais curtos, inclinando pouco o tronco.',
+    'corrida exterior leve':
+        'Corre a um ritmo conversável, com passada curta e relaxada.',
+    'corrida exterior moderada':
+        'Sobe o ritmo até só conseguires frases curtas, mantendo a passada estável.',
+    'corrida exterior intervalada':
+        'Alterna 1 a 3 minutos rápidos com trote ou caminhada até recuperares.',
+    'sprints exterior':
+        'Faz tiros de 10 a 20 segundos quase no máximo, com recuperação completa entre eles.',
+    'corrida em subida':
+        'Escolhe uma subida curta, sobe a correr com passos curtos e desce a caminhar.',
+    'hiit peso corporal':
+        'Monta um circuito de 3 a 5 exercícios simples e trabalha 20 a 40 segundos em cada um.',
+    'hiit cardio':
+        'Alterna blocos fortes de 20 a 40 segundos com recuperações ativas de 40 a 80 segundos.',
+    'hiit simples':
+        'Escolhe um só movimento fácil de controlar e alterna esforço e pausa em blocos iguais.',
+    'circuito cardio peso corporal':
+        'Encadeia 4 a 6 exercícios sem equipamento, 30 a 45 segundos em cada, com pausas curtas.',
+    'circuito cardio leve':
+        'Encadeia movimentos suaves a baixa intensidade, sem saltos, durante 10 a 20 minutos.',
   };
 
   // Chaves normalizadas (os mapas usam nomes legíveis com hífenes/acentos).
@@ -315,7 +421,8 @@ class ExerciseCatalogContextService {
   };
 
   static final Map<String, String> _variationStepsNormalized = {
-    for (final entry in _variationStepByName.entries) _n(entry.key): entry.value,
+    for (final entry in _variationStepByName.entries)
+      _n(entry.key): entry.value,
   };
 
   /// Objetivo curto (1-2 frases, máximo 280 caracteres), específico ao
@@ -346,7 +453,8 @@ class ExerciseCatalogContextService {
       text = '$text Serve para o treinar com controlo.';
     }
     if (_isDuplicateName(name)) {
-      final contextClause = ' Nesta lista, conta para o treino de '
+      final contextClause =
+          ' Nesta lista, conta para o treino de '
           '${group == 'Antebraço/Pega' ? 'antebraço e pega' : group.toLowerCase()}.';
       if (text.length + contextClause.length <= 280) {
         text = '$text$contextClause';
@@ -375,13 +483,11 @@ class ExerciseCatalogContextService {
         .toSet();
   }();
 
-  static String _capitalize(String value) => value.isEmpty
-      ? value
-      : value[0].toUpperCase() + value.substring(1);
+  static String _capitalize(String value) =>
+      value.isEmpty ? value : value[0].toUpperCase() + value.substring(1);
 
-  static String _lowercaseFirst(String value) => value.isEmpty
-      ? value
-      : value[0].toLowerCase() + value.substring(1);
+  static String _lowercaseFirst(String value) =>
+      value.isEmpty ? value : value[0].toLowerCase() + value.substring(1);
 
   /// Converte a execução gerada num bloco de 4 a 7 passos numerados, um por
   /// linha, com no máximo 180 caracteres por passo. Passos puramente de
@@ -746,7 +852,6 @@ class ExerciseCatalogContextService {
         : baseSecondary.trim();
   }
 
-
   static const Map<String, _NamedSummary> _summaryByName = {
     'puxada alta': _NamedSummary(
       'puxada vertical na polia alta, descendo a barra até à parte alta do peito com os cotovelos para baixo.',
@@ -859,6 +964,9 @@ class ExerciseCatalogContextService {
       'repetições de elevação de braços e pernas deitado de barriga para baixo, para a cadeia posterior.',
       contextGroup: 'Core',
     ),
+    'good morning sem carga': _NamedSummary(
+      'inclinação do tronco pela anca, sem qualquer peso, para aprender a dobrar com a coluna neutra.',
+    ),
     'good morning com barra': _NamedSummary(
       'dobradiça de anca com barra apoiada nas costas, inclinando o tronco à frente com coluna neutra.',
     ),
@@ -866,7 +974,7 @@ class ExerciseCatalogContextService {
       'inclinação do tronco pela anca mantida parada alguns segundos, para resistência da cadeia posterior.',
     ),
     'good morning leve': _NamedSummary(
-      'dobradiça de anca sem peso ou com peso simbólico, para aprender a inclinar o tronco com coluna neutra.',
+      'dobradiça de anca com barra vazia ou muito leve, para aprender a inclinar o tronco com coluna neutra.',
       contextGroup: 'Pernas',
     ),
     'curl com barra': _NamedSummary(
@@ -1162,7 +1270,8 @@ class ExerciseCatalogContextService {
   static String _movementSummary(String name, String group) {
     final n = _n(name);
     final exact = _summaryByNameNormalized[_n(name)];
-    if (exact != null && (exact.contextGroup == null || exact.contextGroup == group)) {
+    if (exact != null &&
+        (exact.contextGroup == null || exact.contextGroup == group)) {
       return exact.text;
     }
     if (_has(n, ['short foot', 'doming'])) {
@@ -3424,10 +3533,10 @@ class ExerciseCatalogContextService {
       '8. Reduz a passada se perderes equilíbrio ou sentires dor no joelho.';
 
   static String _hingeSteps(String name, String equipment) =>
-      '1. Fica com pés firmes e $equipment perto do corpo quando houver carga. '
+      '1. Fica com os pés firmes à largura da anca e, se o exercício usar peso, mantém-no colado ao corpo. '
       '2. Mantém peito aberto, coluna neutra e joelhos ligeiramente fletidos. '
       '3. Começa levando a anca para trás, como se fosses fechar uma porta com os glúteos. '
-      '4. Deixa a carga ou as mãos descerem junto às pernas, sem afastar demasiado do corpo. '
+      '4. Deixa as mãos, ou o peso, descerem junto às pernas, sem afastar do corpo. '
       '5. Para quando sentires alongamento no posterior de coxa sem arredondar a lombar. '
       '6. Regressa apertando glúteos e estendendo a anca até ficar alto novamente. '
       '7. Inspira ao descer e expira ao subir. '
@@ -3594,7 +3703,11 @@ class ExerciseCatalogContextService {
       '7. Expira na fase de esforço e inspira no retorno. '
       '8. Reduz a dificuldade ou a amplitude se perderes alinhamento, equilíbrio ou controlo.';
 
-  static List<String> _mistakesFor(String name, String group, String equipment) {
+  static List<String> _mistakesFor(
+    String name,
+    String group,
+    String equipment,
+  ) {
     final n = _n(name);
     final bodyweight = _isBodyweightEquipment(equipment);
     if (_has(n, ['flexao diamante'])) {
@@ -3839,7 +3952,14 @@ class ExerciseCatalogContextService {
       if (_has(n, ['bicicleta', 'eliptica'])) {
         return 'Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.';
       }
-      if (_has(n, ['corda', 'saltos', 'jacks', 'burpees', 'skaters', 'knees'])) {
+      if (_has(n, [
+        'corda',
+        'saltos',
+        'jacks',
+        'burpees',
+        'skaters',
+        'knees',
+      ])) {
         return 'Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.';
       }
       if (_has(n, ['exterior', 'subida', 'marcha'])) {
@@ -3892,10 +4012,10 @@ class ExerciseCatalogContextService {
         .split('\n')
         .where((line) => line.trim().isNotEmpty)
         .length;
-    final breathingText =
-        '${details.executionSteps} ${details.breathingTips}'.toLowerCase();
-    final lower =
-        '${details.description} ${details.executionSteps}'.toLowerCase();
+    final breathingText = '${details.executionSteps} ${details.breathingTips}'
+        .toLowerCase();
+    final lower = '${details.description} ${details.executionSteps}'
+        .toLowerCase();
     return details.description.length >= 60 &&
         details.description.length <= 280 &&
         stepLines >= 4 &&
@@ -3937,6 +4057,7 @@ class ExerciseCatalogContextService {
     if (_has(n, ['curl de perna', 'wrist', 'finger'])) return false;
     return n.contains('curl');
   }
+
   static bool _isTriceps(String name) {
     final n = _n(name);
     if (_has(n, ['kickback de gluteo'])) return false;
