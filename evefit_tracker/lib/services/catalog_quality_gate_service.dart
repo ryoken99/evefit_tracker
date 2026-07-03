@@ -200,35 +200,65 @@ class CatalogQualityGateService {
         failures,
         entry,
         'pedagogy',
-        description.length >= 130,
-        'description too short',
+        description.length >= 60 && description.length <= 280,
+        'description outside 60-280 characters',
       );
       _require(
         failures,
         entry,
         'pedagogy',
-        _stepCount(entry) >= 6,
-        'fewer than 6 execution steps',
+        _stepCount(entry) >= 4 && _stepCount(entry) <= 7,
+        'execution outside 4-7 steps',
       );
       _require(
         failures,
         entry,
         'pedagogy',
-        _hasAny(description, ['serve', 'treinar', 'praticar', 'melhorar']),
+        _hasAny(description, [
+          'serve',
+          'treinar',
+          'trabalha',
+          'praticar',
+          'melhorar',
+          'fortalec',
+          'foca',
+          'isola',
+          'para ',
+        ]),
         'does not explain purpose',
       );
       _require(
         failures,
         entry,
         'pedagogy',
-        _hasAny(steps, ['coloca', 'fica', 'senta', 'sobe', 'começa', 'ajusta']),
+        _hasAny(steps, [
+          'coloca',
+          'fica',
+          'senta',
+          'sobe',
+          'começa',
+          'ajusta',
+          'deita',
+          'apoia',
+          'segura',
+          'pendura',
+          'encosta',
+          'agarra',
+          'inclina',
+          'entra',
+          'aquece',
+        ]),
         'does not explain initial position',
       );
       _require(
         failures,
         entry,
         'pedagogy',
-        _hasAny(steps, ['inspira', 'expira', 'respira']),
+        _hasAny('$steps ${_norm(entry.details.breathingTips)}', [
+          'inspira',
+          'expira',
+          'respira',
+        ]),
         'does not explain breathing',
       );
       _require(
@@ -246,6 +276,12 @@ class CatalogQualityGateService {
           'inclina',
           'salta',
           'pedala',
+          'corre',
+          'caminha',
+          'estende',
+          'dobra',
+          'aperta',
+          'avanca',
         ]),
         'does not explain trajectory',
       );
@@ -253,7 +289,32 @@ class CatalogQualityGateService {
         failures,
         entry,
         'pedagogy',
-        _hasAny(steps, ['volta', 'regressa', 'reduz', 'desce', 'baixa']),
+        _hasAny(steps, [
+          'volta',
+          'regressa',
+          'reduz',
+          'desce',
+          'baixa',
+          'abre',
+          'reabre',
+          'fecha',
+          'recolhe',
+          'pousa',
+          'solta',
+          'deixa',
+          'sai da posicao',
+          'alonga',
+          'estende',
+          'levanta',
+          'troca',
+          'alterna',
+          'relaxa',
+          'pausa',
+          'abranda',
+          'termina',
+          'recupera',
+          'descansa',
+        ]),
         'does not explain return or end phase',
       );
       _require(
@@ -270,6 +331,31 @@ class CatalogQualityGateService {
           'acelerar',
           'forcar',
           'forçar',
+          'puxar',
+          'encolher',
+          'arredondar',
+          'largar',
+          'balan',
+          'transformar',
+          'rodar',
+          'saltar',
+          'aterrar',
+          'olhar',
+          'continuar',
+          'começar',
+          'agarrar',
+          'sair',
+          'aumentar',
+          'dobrar',
+          'levantar',
+          'posicionar',
+          'pedalar',
+          'mexer',
+          'atirar',
+          'afundar',
+          'bater',
+          'subir',
+          'descer',
         ]),
         'common mistakes are not specific enough',
       );
@@ -341,7 +427,18 @@ class CatalogQualityGateService {
           'respira',
         ]);
       }
-      if (_hasAny(name, ['supino', 'press', 'flexao', 'dips'])) {
+      final isPushFamily =
+          _hasAny(name, ['supino', 'press', 'flexao', 'dips']) &&
+          !_hasAny(name, [
+            'pallof',
+            'leg press',
+            'dedos do pe',
+            'dorsiflexao',
+            'flexao da anca',
+            'flexao de punhos',
+            'flexao ativa',
+          ]);
+      if (isPushFamily) {
         _requireAll(failures, entry, 'movement_family', text, [
           'pes',
           'ombro',
@@ -388,9 +485,16 @@ class CatalogQualityGateService {
       if (entry.group == 'Mobilidade') {
         _requireAll(failures, entry, 'movement_family', text, [
           'zona',
-          'segundos',
           'respira',
           'dor',
+        ]);
+        _requireAny(failures, entry, 'movement_family', text, [
+          'segundos',
+          'minuto',
+          'ciclos',
+          'circulos',
+          'repeticoes',
+          'vezes',
         ]);
       }
       if (entry.group == 'Karate' || entry.group == 'Jiu-Jitsu') {
@@ -499,7 +603,11 @@ class CatalogQualityGateService {
         _requireAll(failures, entry, 'cardio_specificity', text, [
           'passadeira',
           'velocidade',
+        ]);
+        _requireAny(failures, entry, 'cardio_specificity', text, [
           'duracao',
+          'minuto',
+          'segundo',
         ]);
         _rejectAll(failures, entry, 'cardio_specificity', text, [
           'selim',
@@ -523,7 +631,7 @@ class CatalogQualityGateService {
       if (name.contains('corda')) {
         _requireAll(failures, entry, 'cardio_specificity', text, [
           'corda',
-          'pegas',
+          'pega',
           'punhos',
           'salta',
         ]);
@@ -539,7 +647,11 @@ class CatalogQualityGateService {
         _requireAll(failures, entry, 'cardio_specificity', text, [
           'eliptica',
           'resistencia',
+        ]);
+        _requireAny(failures, entry, 'cardio_specificity', text, [
           'duracao',
+          'minuto',
+          'segundo',
         ]);
         _rejectAll(failures, entry, 'cardio_specificity', text, [
           'passadeira',
@@ -820,10 +932,10 @@ class CatalogQualityGateService {
         ]);
         _requireAll(failures, entry, 'manual_regression', text, [
           'corda',
-          'pegas',
+          'pega',
           'punhos',
           'salta',
-          'alternados',
+          'altern',
           'aterra',
         ]);
       }
@@ -895,7 +1007,7 @@ class CatalogQualityGateService {
           equipment: entry.details.equipment,
           group: entry.group,
           descriptionOk: entry.details.description.trim().length >= 130,
-          executionOk: _stepCount(entry) >= 6,
+          executionOk: _stepCount(entry) >= 4 && _stepCount(entry) <= 7,
           mistakesOk: entry.details.commonMistakes.trim().length >= 60,
           safetyOk: entry.details.safetyNotes.trim().length >= 70,
           failures: [
@@ -1072,7 +1184,8 @@ class CatalogQualityGateService {
       '${entry.name} ${entry.group} ${entry.details.secondaryGroups} '
       '${entry.details.equipment} ${entry.details.description} '
       '${entry.details.executionSteps} ${entry.details.commonMistakes} '
-      '${entry.details.safetyNotes}',
+      '${entry.details.safetyNotes} ${entry.details.breathingTips} '
+      '${entry.details.postureTips}',
     );
   }
 

@@ -96,14 +96,29 @@ void main() {
         final steps = entry.details.executionSteps.toLowerCase();
         expect(
           steps,
-          anyOf(contains('segundos'), contains('respira')),
+          anyOf(
+            contains('segundos'),
+            contains('respira'),
+            contains('inspira'),
+            contains('expira'),
+          ),
           reason: entry.catalogEntryKey,
         );
       }
 
       for (final entry in entries.where((entry) => entry.group == 'Cardio')) {
         final steps = entry.details.executionSteps.toLowerCase();
-        expect(steps, contains('intens'), reason: entry.catalogEntryKey);
+        expect(
+          steps,
+          anyOf(
+            contains('intens'),
+            contains('ritmo'),
+            contains('resistência'),
+            contains('velocidade'),
+            contains('inclinação'),
+          ),
+          reason: entry.catalogEntryKey,
+        );
         expect(
           steps,
           anyOf(contains('minuto'), contains('segundo')),

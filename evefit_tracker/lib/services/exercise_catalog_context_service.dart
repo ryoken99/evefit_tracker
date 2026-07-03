@@ -171,455 +171,417 @@ class ExerciseCatalogContextService {
     final secondary = _secondaryFor(name, group, base.secondaryGroups);
     final regression = _regressionFor(name, group, equipment);
     final progression = _progressionFor(name, group, equipment);
-    final breathing = _breathingFor(name, group);
-    final posture = _postureFor(name, group);
-    final adaptation = _adaptationFor(name, group);
-    final details = ExerciseCatalogDetails(
+    return ExerciseCatalogDetails(
       equipment: equipment,
       secondaryGroups: secondary,
-      description: _ensureDescriptionContract(
-        _descriptionFor(name, group, equipment, secondary),
-        name,
-        group,
-      ),
-      executionSteps: _ensureStepContract(
+      description: _objectiveFor(name, group),
+      executionSteps: _canonicalSteps(
         _stepsFor(name, group, equipment),
         name,
-        group,
-        equipment,
-        regression,
-        progression,
       ),
-      commonMistakes: _ensureMistakeContract(
+      commonMistakes: _canonicalMistakes(
         _mistakesFor(name, group, equipment),
-        name,
-        group,
       ),
-      safetyNotes: _ensureSafetyContract(
-        _safetyFor(name, group, equipment),
-        name,
-        group,
-      ),
+      safetyNotes: _safetyFor(name, group, equipment),
       regression: regression,
       progression: progression,
-      breathingTips: breathing,
-      postureTips: posture,
-      adaptationNotes: adaptation,
+      breathingTips: _breathingFor(name, group),
+      postureTips: _postureFor(name, group),
+      adaptationNotes: _adaptationFor(name, group),
     );
-    return details;
   }
 
-  static String _ensureDescriptionContract(
-    String text,
-    String name,
-    String group,
-  ) {
-    final normalized = _n(text);
-    if (_has(normalized, ['serve', 'treinar', 'praticar', 'melhorar'])) {
-      return '$group — $text';
+
+  /// Passo extra, específico da variação, injetado a seguir ao primeiro passo
+  /// quando a família de movimento partilha a base da execução.
+  static const Map<String, String> _variationStepByName = {
+    'extensao francesa no cabo': 'Coloca a polia na posição baixa, fica de costas para o cabo e segura a corda com pega firme atrás da cabeça.',
+    'agachamento com barra': 'Apoia a barra na parte de cima das costas e segura-a com pega firme e simétrica.',
+    'lunges com halteres': 'Segura um halter em cada mão ao lado do corpo, com pega firme e punhos direitos.',
+    'peso morto romeno com halteres': 'Segura os halteres à frente das coxas com pega firme, palmas viradas para ti.',
+    'chin tuck': 'Recua o queixo devagar, como se quisesses criar um duplo queixo, sem inclinar a cabeça para baixo.',
+    'rotacao cervical controlada': 'Roda a cabeça devagar para um lado, como se olhasses por cima do ombro, e volta ao centro antes de trocar.',
+    'extensao acima da cabeca com halter': 'Segura um único halter na vertical, com as duas mãos sobrepostas por baixo da cabeça de cima.',
+    'extensao francesa com halter': 'Podes fazer o movimento sentado ou deitado; mantém os cotovelos apontados para a frente todo o tempo.',
+    'mobilidade de anca para jiu-jitsu': 'Encadeia círculos de anca, fugas de anca lentas e aberturas de guarda sentado no chão.',
+    'mobilidade de ombro para jiu-jitsu': 'Encadeia círculos de braços, mãos atrás das costas como nas pegas e rotações suaves dos ombros.',
+    'drills de guarda': 'Trabalha a retenção: enquadra com os pés, gere a distância e recupera a guarda quando a perderes.',
+    'drills de passagem de guarda': 'Trabalha a passagem: controla as pernas do adversário imaginário, pressiona e passa para o lado.',
+    'forca de pega para jiu-jitsu': 'Aperta uma toalha ou o teu próprio punho em pegas fortes de 5 a 10 segundos enquanto te moves no solo.',
+    'core para jiu-jitsu': 'Liga pontes, posições de hollow e rotações de tronco no chão, mantendo o queixo protegido.',
+    'isometria cervical frontal leve': 'Coloca a palma da mão na testa e empurra a cabeça contra ela, sem deixar a cabeça mexer.',
+    'isometria cervical lateral leve': 'Coloca a palma da mão ao lado da cabeça e empurra contra ela, sem deixar a cabeça inclinar.',
+    'scapular pull-up': 'Faz repetições curtas: puxa as escápulas para baixo, segura um segundo e deixa-as subir de novo.',
+    'dead hang escapular': 'Alterna cinco segundos pendurado com os ombros soltos e cinco segundos com as escápulas ativas.',
+    'mobilidade de ombro com cabo de vassoura': 'Segura o cabo de vassoura com as duas mãos, bem mais afastadas que os ombros, como guia leve.',
+    'farmer hold': 'Usa halteres pesados que só consigas segurar 10 a 30 segundos com boa postura.',
+    'face pull com elastico': 'Prende o elástico num ponto firme à altura do rosto e afasta-te até criar tensão.',
+    'reverse fly': 'Se tiveres banco inclinado, apoia lá o peito para eliminar o balanço do tronco.',
+    'elevacao posterior': 'Inclina o tronco à frente com a lombar neutra e deixa os braços pendurados.',
+    'rotacao externa com elastico': 'Prende o elástico à altura do cotovelo e fica de lado para o ponto de fixação.',
+    'rotacao interna com elastico': 'Prende o elástico à altura do cotovelo e fica com esse lado virado para o ponto de fixação.',
+    'flexao arqueiro': 'Desloca o peso do corpo para um dos lados; o braço contrário fica quase esticado a ajudar.',
+    'supino inclinado com barra': 'Ajusta o banco a 30 a 45 graus de inclinação antes de te deitares.',
+    'squeeze press': 'Mantém os halteres encostados um ao outro e aperta-os durante toda a repetição.',
+    'supino declinado na maquina': 'Ajusta o assento para as pegas ficarem alinhadas com a parte baixa do peito.',
+    'chest press': 'Ajusta o assento para as pegas ficarem à frente do meio do peito.',
+    'puxada alta': 'Agarra a barra com pega um pouco mais larga que os ombros e palmas para a frente.',
+    'puxada alta pega aberta': 'Agarra a barra com as mãos bem mais afastadas que os ombros, para pedir mais à largura das costas.',
+    'puxada alta pega neutra': 'Usa a pega em que as palmas ficam viradas uma para a outra, com os cotovelos a descer junto ao tronco.',
+    'puxada alta pega fechada': 'Agarra a pega curta com as mãos próximas, para os cotovelos trabalharem colados ao corpo.',
+    'good morning com barra': 'Apoia a barra na parte alta das costas, nunca no pescoço, com pega firme.',
+    'good morning leve': 'Coloca as mãos atrás da cabeça ou cruzadas no peito, sem qualquer peso.',
+    'curl alternado': 'Sobe um braço de cada vez e alterna os lados, mantendo o outro halter em baixo.',
+    'triceps testa com barra ez': 'Agarra a barra EZ com pega na zona ondulada, com as palmas ligeiramente viradas uma para a outra.',
+    'triceps testa com halteres': 'Usa pega neutra, com as palmas dos halteres viradas uma para a outra, e desce à linha da testa.',
+    'extensao de triceps deitado com halteres': 'Desce os halteres para trás da cabeça, e não para a testa, para alongar mais o tríceps.',
+    'press fechado com halteres': 'Mantém os halteres juntos, em pega neutra, encostados um ao outro durante toda a repetição.',
+    'kickback no cabo': 'Coloca a polia na posição baixa e fica de costas ligeiramente inclinado para o cabo.',
+    'kickback de triceps': 'Apoia a mão livre num banco ou na coxa e segura o halter com pega neutra.',
+    'hold estatico com halteres': 'Escolhe halteres moderados: o objetivo é aguentar 30 a 45 segundos, mais tempo que num farmer hold pesado.',
+    'walking lunges': 'Em vez de voltares atrás, traz a perna de trás para a frente e avança para o passo seguinte.',
+    'prancha lateral': 'Vira o corpo de lado, apoia o antebraço por baixo do ombro e empilha os pés ou cruza-os.',
+    'passadeira caminhada': 'Escolhe uma velocidade em que consegues conversar em frases completas.',
+    'passadeira caminhada rapida': 'Sobe a velocidade até um passo vivo em que só consegues dizer frases curtas.',
+    'passadeira corrida leve': 'Passa para um trote suave e contínuo, sem encurtar a respiração.',
+    'passadeira sprints': 'Faz tiros de 10 a 20 segundos quase no máximo e recupera por completo entre cada um.',
+    'passadeira sprints intervalados': 'Programa blocos: 15 a 30 segundos fortes seguidos de 60 a 90 segundos a caminhar.',
+    'hiit passadeira': 'Alterna 20 a 40 segundos rápidos com 40 a 80 segundos de caminhada de recuperação.',
+    'passadeira inclinacao': 'Usa inclinação leve, de 3 a 6 por cento, mantendo a velocidade de caminhada.',
+    'passadeira inclinacao moderada': 'Sobe a inclinação para 6 a 10 por cento e reduz ligeiramente a velocidade.',
+    'bicicleta ritmo leve': 'Mantém resistência baixa e cadência confortável, a conseguir conversar.',
+    'bicicleta ritmo moderado': 'Usa resistência média, com as pernas a aquecer mas sem perder o ritmo da respiração.',
+    'bicicleta resistencia': 'Sobe a resistência até a pedalada ficar pesada e desce a cadência, sem balançar a anca.',
+    'hiit bicicleta': 'Alterna 20 a 40 segundos de pedalada forte com 60 a 90 segundos muito leves.',
+    'eliptica ritmo leve': 'Mantém resistência baixa e movimento fluido, sem pressa.',
+    'eliptica ritmo moderado': 'Usa resistência média e um ritmo constante que aqueça pernas e braços.',
+    'eliptica intervalos': 'Alterna 30 a 60 segundos rápidos com 60 a 90 segundos lentos, sem parar o movimento.',
+    'eliptica resistencia': 'Sobe a resistência e baixa a cadência, empurrando e puxando com força controlada.',
+    'eliptica aquecimento': 'Começa muito leve e aumenta o ritmo aos poucos durante 5 a 10 minutos.',
+    'eliptica cooldown': 'Reduz a resistência e o ritmo gradualmente durante 3 a 8 minutos.',
+    'corda de saltar ritmo leve': 'Mantém saltos baixos e contínuos, a um ritmo calmo que consigas sustentar.',
+    'corda de saltar intervalos': 'Alterna 20 a 40 segundos a saltar com 20 a 40 segundos de pausa a caminhar.',
+    'hiit corda': 'Faz blocos quase máximos de 20 a 30 segundos com pausas curtas de recuperação.',
+    'alongamento peitoral na parede': 'Apoia o antebraço na parede com o cotovelo à altura do ombro e roda o tronco para o lado contrário.',
+    'alongamento peitoral no canto': 'Coloca um antebraço em cada parede do canto e deixa o peito avançar devagar.',
+    'alongamento posterior sentado': 'Senta-te com as pernas estendidas e inclina o tronco pela anca em direção aos pés.',
+    'alongamento posterior em pe': 'De pé, dobra pela anca com os joelhos quase esticados e deixa as mãos descer pelas pernas.',
+    'alongamento posterior com perna elevada': 'Coloca o calcanhar num apoio à altura da anca ou abaixo e inclina o tronco pela anca.',
+    'tocar nos pes sentado': 'Sentado com as pernas esticadas, desliza as mãos pelas pernas em direção aos pés.',
+    'tocar nos pes em pe': 'De pé, deixa o tronco descer devagar em direção aos pés, dobrando pela anca.',
+    'mobilidade dinamica de posterior': 'Alterna entre alongar e voltar, em movimentos lentos e contínuos, sem manter a posição.',
+    'alongamento figura 4': 'Deitado de costas, cruza um tornozelo sobre o joelho contrário e puxa essa coxa ao peito.',
+    'pigeon stretch': 'Leva uma perna dobrada à frente no chão e estica a outra para trás, com a anca nivelada.',
+    'alongamento de gluteo sentado': 'Sentado numa cadeira, cruza o tornozelo sobre o joelho contrário e inclina o tronco à frente.',
+    'alongamento piriforme': 'Deitado de costas, cruza uma perna sobre a outra e puxa a coxa de baixo ao peito.',
+    'mobilidade 90/90': 'Senta-te com uma perna dobrada à frente e outra dobrada para trás, ambas perto de 90 graus.',
+    'alongamento gluteos': 'Deitado de costas, puxa um joelho na direção do ombro contrário até sentir o glúteo.',
+    'alongamento quadriceps em pe': 'De pé com apoio de uma mão, leva o calcanhar ao glúteo e segura o pé.',
+    'alongamento quadriceps de lado': 'Deitado de lado, segura o pé de cima atrás do corpo e empurra a anca à frente.',
+    'alongamento gemeos': 'Dá um passo atrás, mantém essa perna esticada com o calcanhar no chão e avança o corpo.',
+    'alongamento gemeos na parede': 'Apoia a ponta do pé na parede com o calcanhar no chão e aproxima o corpo da parede.',
+    'extensao de punhos no chao': 'Apoia as palmas no chão com os dedos virados para a frente e inclina o peso devagar.',
+    'flexao de punhos no chao': 'Apoia as costas das mãos no chão com os dedos virados para ti e inclina o peso devagar.',
+    'mobilidade de punhos': 'Faz círculos lentos, flexão e extensão dos punhos, alternando as direções.',
+    'mobilidade de ombro com toalha': 'Segura uma toalha esticada entre as mãos, bem mais largas que os ombros, como guia.',
+    'circulos de ombro': 'Desenha círculos lentos e amplos com os ombros, primeiro para trás e depois para a frente.',
+    'mobilidade leve de ombros': 'Usa amplitudes pequenas e confortáveis, sem procurar o limite do alcance.',
+    'mobilidade dinamica de anca': 'Encadeia movimentos lentos de anca, trocando de posição sem manter alongamentos parados.',
+    'mobilidade leve de anca': 'Usa amplitudes pequenas e confortáveis da anca, sem forçar o alcance.',
+    'rotacao externa da anca no chao': 'Sentado ou deitado, deixa o joelho abrir para o lado com a planta do pé apoiada.',
+    'mobilidade de anca': 'Explora círculos e báscula da bacia em amplitudes confortáveis, de pé ou em quatro apoios.',
+    'mobilidade toracica': 'Sentado ou em quatro apoios, roda a parte alta das costas de um lado para o outro devagar.',
+    'alongamento dorsal': 'Agarra um apoio à frente, deixa a anca recuar e o tronco descer entre os braços.',
+    'alongamento peitoral': 'Abre o braço para o lado à altura do ombro e roda o tronco para o lado contrário.',
+    'caminhada exterior leve': 'Escolhe um percurso plano e caminha a um ritmo em que consegues conversar.',
+    'caminhada exterior moderada': 'Acelera para um passo firme e decidido, com os braços a acompanhar.',
+    'caminhada exterior rapida': 'Caminha quase no limite da marcha, sem transformar o passo em corrida.',
+    'caminhada exterior em subida': 'Procura uma subida constante e usa passos mais curtos, inclinando pouco o tronco.',
+    'corrida exterior leve': 'Corre a um ritmo conversável, com passada curta e relaxada.',
+    'corrida exterior moderada': 'Sobe o ritmo até só conseguires frases curtas, mantendo a passada estável.',
+    'corrida exterior intervalada': 'Alterna 1 a 3 minutos rápidos com trote ou caminhada até recuperares.',
+    'sprints exterior': 'Faz tiros de 10 a 20 segundos quase no máximo, com recuperação completa entre eles.',
+    'corrida em subida': 'Escolhe uma subida curta, sobe a correr com passos curtos e desce a caminhar.',
+    'hiit peso corporal': 'Monta um circuito de 3 a 5 exercícios simples e trabalha 20 a 40 segundos em cada um.',
+    'hiit cardio': 'Alterna blocos fortes de 20 a 40 segundos com recuperações ativas de 40 a 80 segundos.',
+    'hiit simples': 'Escolhe um só movimento fácil de controlar e alterna esforço e pausa em blocos iguais.',
+    'circuito cardio peso corporal': 'Encadeia 4 a 6 exercícios sem equipamento, 30 a 45 segundos em cada, com pausas curtas.',
+    'circuito cardio leve': 'Encadeia movimentos suaves a baixa intensidade, sem saltos, durante 10 a 20 minutos.',
+  };
+
+  // Chaves normalizadas (os mapas usam nomes legíveis com hífenes/acentos).
+  static final Map<String, _NamedSummary> _summaryByNameNormalized = {
+    for (final entry in _summaryByName.entries) _n(entry.key): entry.value,
+  };
+
+  static final Map<String, String> _variationStepsNormalized = {
+    for (final entry in _variationStepByName.entries) _n(entry.key): entry.value,
+  };
+
+  /// Objetivo curto (1-2 frases, máximo 280 caracteres), específico ao
+  /// exercício. O resumo anatómico (grupo, músculos, equipamento) é mostrado
+  /// à parte no modal, por isso não é repetido aqui.
+  static String _objectiveFor(String name, String group) {
+    final movement = _movementSummary(name, group).trim();
+    final target = _primaryTarget(name, group).trim();
+    var text = _capitalize(movement);
+    if (!text.endsWith('.')) text = '$text.';
+    final normalizedText = _n(text);
+    final firstTargetWord = _n(target).split(' ').first;
+    final repeatsTarget =
+        firstTargetWord.length >= 4 && normalizedText.contains(firstTargetWord);
+    final hasPurposeCue = _has(normalizedText, [
+      'serve',
+      'treinar',
+      'trabalha',
+      'fortalec',
+      'foca',
+      'isola',
+      'melhorar',
+      'para ',
+    ]);
+    if (!repeatsTarget) {
+      text = '$text Serve para treinar $target.';
+    } else if (!hasPurposeCue) {
+      text = '$text Serve para o treinar com controlo.';
     }
-    final movement = _movementSummary(name, group).toLowerCase().replaceAll(
-      RegExp(r'\.\s*$'),
-      '',
-    );
-    return '$group — $text O objetivo de $name é melhorar ${_primaryTarget(name, group)} através de $movement.';
+    if (_isDuplicateName(name)) {
+      final contextClause = ' Nesta lista, conta para o treino de '
+          '${group == 'Antebraço/Pega' ? 'antebraço e pega' : group.toLowerCase()}.';
+      if (text.length + contextClause.length <= 280) {
+        text = '$text$contextClause';
+      }
+    }
+    if (text.length > 280) {
+      final firstSentenceEnd = text.indexOf('. ');
+      if (firstSentenceEnd > 0) text = text.substring(0, firstSentenceEnd + 1);
+    }
+    return text;
   }
 
-  static String _ensureStepContract(
-    String text,
-    String name,
-    String group,
-    String equipment,
-    String regression,
-    String progression,
-  ) {
-    final additions = <String>[];
-    final normalized = _n(text);
-    final nameKey = _n(name);
-    final equipmentKey = _n(equipment);
-    var next = RegExp(r'\d+\.').allMatches(text).length + 1;
+  static bool _isDuplicateName(String name) =>
+      _duplicateNames.contains(name.toLowerCase());
 
-    void addIfMissing(String cue, String sentence) {
-      if (!normalized.contains(_n(cue)) &&
-          !additions.join(' ').contains(sentence)) {
-        additions.add('${next++}. $sentence');
+  static final Set<String> _duplicateNames = () {
+    final counts = <String, int>{};
+    for (final groupEntry in SeedData.exercisesByGroup.entries) {
+      for (final name in groupEntry.value) {
+        counts[name.toLowerCase()] = (counts[name.toLowerCase()] ?? 0) + 1;
       }
     }
+    return counts.entries
+        .where((item) => item.value > 1)
+        .map((item) => item.key)
+        .toSet();
+  }();
 
-    if (!_has(normalized, [
-      'coloca',
-      'fica',
-      'senta',
-      'sobe',
-      'começa',
-      'ajusta',
-    ])) {
-      additions.add(
-        '${next++}. Começa numa posição inicial estável antes de aumentar a carga ou a velocidade.',
-      );
+  static String _capitalize(String value) => value.isEmpty
+      ? value
+      : value[0].toUpperCase() + value.substring(1);
+
+  static String _lowercaseFirst(String value) => value.isEmpty
+      ? value
+      : value[0].toLowerCase() + value.substring(1);
+
+  /// Converte a execução gerada num bloco de 4 a 7 passos numerados, um por
+  /// linha, com no máximo 180 caracteres por passo. Passos puramente de
+  /// respiração saem da lista (a respiração tem secção própria no modal).
+  static String _canonicalSteps(String raw, String name) {
+    var steps = raw
+        .split(RegExp(r'\s*(?=\d{1,2}\.\s)'))
+        .map((line) => line.replaceFirst(RegExp(r'^\d{1,2}\.\s*'), '').trim())
+        .where((line) => line.isNotEmpty)
+        .toList();
+    final variation = _variationStepsNormalized[_n(name)];
+    if (variation != null &&
+        steps.length > 1 &&
+        !_n(steps.join(' ')).contains(_n(variation).substring(0, 24))) {
+      steps.insert(1, variation);
     }
-    if (!normalized.contains('respira')) {
-      additions.add(
-        '${next++}. Respira de forma contínua, expirando na fase de maior esforço e inspirando no retorno.',
-      );
-    }
-    if (!_has(normalized, ['volta', 'regressa', 'reduz', 'desce', 'baixa'])) {
-      additions.add(
-        '${next++}. Regressa devagar à posição inicial antes da repetição seguinte.',
-      );
-    }
-    if (group == 'Mobilidade') {
-      addIfMissing(
-        'zona',
-        'Mantém atenção na zona trabalhada e usa apenas tensão leve, nunca dor.',
-      );
-      if (!_has(normalized, ['segundos', 'respira'])) {
-        additions.add(
-          '${next++}. Mantém 15 a 30 segundos com respiração lenta e regular.',
-        );
-      }
-    }
-    if (group == 'Cardio') {
-      addIfMissing(
-        'intens',
-        'Controla a intensidade pela respiração e pela sensação de esforço.',
-      );
-      addIfMissing(
-        'duração',
-        'Mantém uma duração adequada ao foco, usando minutos para trabalho contínuo ou segundos para intervalos.',
-      );
-      if (_has(nameKey, ['hiit', 'interval', 'sprint'])) {
-        if (!_has(normalized, ['interval', 'blocos', 'recupera'])) {
-          additions.add(
-            '${next++}. Alterna blocos intensos com recuperação leve antes de repetir.',
-          );
+    steps = steps.where((step) {
+      final normalized = _n(step);
+      final isPureBreathing =
+          RegExp(r'^(inspira|expira|respira)').hasMatch(normalized) &&
+          step.length < 80 &&
+          !RegExp(r'\d').hasMatch(step);
+      return !isPureBreathing;
+    }).toList();
+    while (steps.length > 7) {
+      var bestIndex = -1;
+      var bestLength = 1 << 30;
+      for (var i = 0; i < steps.length - 1; i++) {
+        final combined = steps[i].length + steps[i + 1].length + 2;
+        if (combined < bestLength) {
+          bestLength = combined;
+          bestIndex = i;
         }
       }
-      if (_has(nameKey, ['passadeira'])) {
-        addIfMissing(
-          'passadeira',
-          'Na passadeira, ajusta velocidade antes de mexer na inclinação.',
-        );
-        addIfMissing(
-          'velocidade',
-          'Usa velocidade que permite pisada estável e controlo do tronco.',
-        );
-      }
-      if (_has(nameKey, ['bicicleta'])) {
-        addIfMissing(
-          'selim',
-          'Ajusta o selim para pedalar com joelho ligeiramente fletido.',
-        );
-        addIfMissing(
-          'resistência',
-          'Ajusta a resistência sem bloquear joelhos nem balançar a anca.',
-        );
-        addIfMissing(
-          'cadência',
-          'Mantém cadência regular e abranda se perderes coordenação.',
-        );
-      }
-      if (_has(nameKey, ['corda'])) {
-        addIfMissing(
-          'pegas',
-          'Segura as pegas da corda com punhos relaxados e cotovelos próximos do corpo.',
-        );
-        addIfMissing(
-          'punhos',
-          'Roda a corda principalmente pelos punhos, sem círculos grandes dos ombros.',
-        );
-        addIfMissing(
-          'salta',
-          'Salta baixo e aterra de forma silenciosa para proteger tornozelos e joelhos.',
-        );
-      }
-      if (_has(nameKey, ['eliptica', 'elíptica'])) {
-        addIfMissing(
-          'elíptica',
-          'Na elíptica, mantém os pés centrados nas plataformas.',
-        );
-        addIfMissing(
-          'resistência',
-          'Ajusta a resistência sem perder fluidez entre braços e pernas.',
-        );
-      }
+      if (bestIndex < 0 || bestLength > 178) break;
+      final merged =
+          '${steps[bestIndex].replaceFirst(RegExp(r'\.$'), '')}; '
+          '${_lowercaseFirst(steps[bestIndex + 1])}';
+      steps
+        ..removeAt(bestIndex + 1)
+        ..[bestIndex] = merged;
     }
-    if (group == 'Karate' || group == 'Jiu-Jitsu') {
-      addIfMissing(
-        'objetivo',
-        'Define o objetivo técnico antes de aumentar velocidade ou complexidade.',
-      );
-      addIfMissing(
-        'guarda',
-        'Mantém guarda organizada e volta sempre à base depois de cada repetição.',
-      );
-    }
-    if (_has(equipmentKey, ['halter'])) {
-      addIfMissing(
-        'halter',
-        'Segura os halteres com punhos alinhados e sem deixar a carga puxar a articulação.',
-      );
-      if (!_has(normalized, ['segura', 'pega'])) {
-        additions.add(
-          '${next++}. Usa uma pega firme nos halteres sem apertar ao ponto de criar dor no punho.',
-        );
-      }
-    }
-    if (_has(equipmentKey, ['barra']) && !_has(equipmentKey, ['barra fixa'])) {
-      addIfMissing(
-        'barra',
-        'Posiciona a barra de forma estável antes de iniciar a repetição.',
-      );
-      if (!_has(normalized, ['pega', 'posição', 'posicao'])) {
-        additions.add(
-          '${next++}. Usa pega simétrica na barra e confirma a posição da barra antes de mover a carga.',
-        );
-      }
-    }
-    if (_has(equipmentKey, ['cabo', 'polia'])) {
-      addIfMissing(
-        'polia',
-        'Ajusta a polia à altura correta para a trajetória do exercício.',
-      );
-      addIfMissing(
-        'pega',
-        'Segura a pega do cabo com punho neutro e deixa o cabo mover sem puxões.',
-      );
-      addIfMissing(
-        'cabo',
-        'Mantém o cabo alinhado com a direção do movimento.',
-      );
-    }
-    if (_has(equipmentKey, ['máquina', 'maquina'])) {
-      if (!_has(normalized, ['maquina', 'assento', 'encosto', 'ajusta'])) {
-        additions.add(
-          '${next++}. Ajusta a máquina, assento ou encosto para alinhar articulações e carga.',
-        );
-      }
-    }
-    if (_has(nameKey, ['curl inverso'])) {
-      addIfMissing(
-        'punhos alinhados',
-        'Mantém punhos alinhados e pega pronada durante toda a repetição.',
-      );
-    }
-    if (_has(nameKey, ['press', 'supino', 'flexao', 'flexão', 'dips'])) {
-      addIfMissing(
-        'pes',
-        'Mantém os pés firmes para estabilizar o corpo durante o esforço.',
-      );
-      addIfMissing(
-        'cotovel',
-        'Guia os cotovelos sem abrir agressivamente para os lados.',
-      );
-      addIfMissing(
-        'empurra',
-        'Empurra a carga ou o chão com controlo, sem bloquear as articulações com força.',
-      );
-      addIfMissing(
-        'ombro',
-        'Mantém ombros afastados das orelhas durante a fase de esforço.',
-      );
-    }
-    if (_isTriceps(name)) {
-      addIfMissing(
-        'desce',
-        'Desce a carga ou o corpo com controlo antes de estender novamente o cotovelo.',
-      );
-    }
-    if (_has(nameKey, ['remo', 'puxada', 'pull-up', 'chin-up', 'face pull'])) {
-      addIfMissing(
-        'tronco',
-        'Mantém tronco firme e lombar neutra durante a puxada.',
-      );
-      addIfMissing(
-        'escap',
-        'Inicia a puxada organizando as escápulas antes de dobrar os cotovelos.',
-      );
-      addIfMissing(
-        'cotovel',
-        'Leva os cotovelos na direção do exercício sem encolher o pescoço.',
-      );
-    }
-    if (_has(nameKey, ['agachamento', 'lunges', 'leg press', 'step-up'])) {
-      addIfMissing(
-        'pes',
-        'Mantém os pés firmes e alinhados com joelhos e anca.',
-      );
-      addIfMissing('joelh', 'Mantém os joelhos na direção dos pés.');
-      addIfMissing('anca', 'Usa a anca para iniciar e controlar a descida.');
-    }
-    if (_has(nameKey, ['peso morto', 'good morning'])) {
-      addIfMissing(
-        'anca',
-        'Dobra pela anca antes de pensar em descer a carga.',
-      );
-      addIfMissing(
-        'lombar',
-        'Mantém lombar neutra e termina se ela começar a arredondar.',
-      );
-    }
-    addIfMissing(
-      'ritmo recomendado',
-      'Ritmo recomendado em $name: usa cerca de dois segundos na fase de esforço, faz uma pausa curta e regressa em dois a três segundos.',
-    );
-    addIfMissing(
-      'como perceber se esta mal feito',
-      'Como perceber se $name está mal feito: termina a série se já não conseguires repetir a mesma trajetória, alinhamento e amplitude sem dor.',
-    );
-    addIfMissing(
-      'erro mais comum',
-      'Erro mais comum em $name no treino de $group: acelerar para compensar a fadiga e deixar outra zona do corpo assumir o trabalho.',
-    );
-    addIfMissing('versao mais facil', regression);
-    addIfMissing('versao mais dificil', progression);
-    return additions.isEmpty ? text : '$text ${additions.join(' ')}';
+    return [
+      for (var i = 0; i < steps.length; i++) '${i + 1}. ${steps[i]}',
+    ].join('\n');
+  }
+
+  /// Converte os erros comuns num bloco de 3 a 5 itens, um por linha.
+  static String _canonicalMistakes(List<String> mistakes) {
+    final items = mistakes
+        .map((item) => item.trim())
+        .where((item) => item.isNotEmpty)
+        .take(5)
+        .map((item) {
+          var text = _capitalize(item);
+          if (!text.endsWith('.')) text = '$text.';
+          return text;
+        })
+        .toList();
+    return items.join('\n');
   }
 
   static String _regressionFor(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['flexao diamante'])) {
+      return 'Faz com os joelhos no chão ou com as mãos apoiadas numa superfície elevada.';
+    }
+    if (_has(n, ['curl arrastado'])) {
+      return 'Usa halteres mais leves ou faz curls normais até dominares o recuo dos cotovelos.';
+    }
+    if (_has(n, ['tate press'])) {
+      return 'Usa halteres muito leves ou treina primeiro a extensão francesa com um só halter.';
+    }
     if (_has(n, ['press militar com barra em pe'])) {
-      return 'Versão mais fácil: pratica o press vertical sentado com encosto e barra leve antes de estabilizar a carga em pé.';
+      return 'Pratica o press vertical sentado com encosto e barra leve antes de estabilizar o peso em pé.';
     }
     if (_has(n, ['y raise'])) {
-      return 'Versão mais fácil: desenha o Y deitado num banco inclinado, sem carga, parando antes de encolher o pescoço.';
+      return 'Desenha o Y deitado num banco inclinado, sem peso, parando antes de encolher o pescoço.';
     }
     if (_has(n, ['w raise'])) {
-      return 'Versão mais fácil: mantém a forma de W sem carga e faz apenas a retração curta das escápulas.';
+      return 'Mantém a forma de W sem peso e faz apenas a retração curta das escápulas.';
     }
     if (_has(n, ['curl 21'])) {
-      return 'Versão mais fácil: substitui a sequência 21 por curls completos com halteres leves e descanso normal entre séries.';
+      return 'Substitui a sequência 21 por curls completos com halteres leves e descanso normal entre séries.';
     }
     if (group == 'Cardio') {
-      return 'Versão mais fácil: pratica $name durante menos tempo, a ritmo em que consigas falar, e aumenta a duração antes da intensidade.';
+      return 'Pratica durante menos tempo, a um ritmo em que consigas falar, e aumenta a duração antes da intensidade.';
     }
     if (group == 'Mobilidade') {
-      return 'Versão mais fácil: reduz a amplitude de $name e usa parede, banco ou chão como apoio até conseguires respirar sem dor.';
+      return 'Reduz a amplitude e usa parede, banco ou chão como apoio até conseguires respirar sem dor.';
     }
     if (group == 'Karate' || group == 'Jiu-Jitsu') {
-      return 'Versão mais fácil: executa $name devagar, sem resistência de parceiro e por partes, regressando à base entre repetições.';
+      return 'Executa devagar, sem resistência de parceiro e por partes, regressando à base entre repetições.';
     }
     if (_has(n, ['pull-up', 'chin-up', 'dips'])) {
-      return 'Versão mais fácil: faz $name com apoio dos pés, elástico ou máquina assistida, mantendo a mesma trajetória articular.';
+      return 'Faz com apoio dos pés, elástico ou máquina assistida, mantendo a mesma trajetória articular.';
     }
     if (_has(n, ['flexao', 'flexão'])) {
-      return 'Versão mais fácil: faz $name com as mãos num apoio mais alto ou com os joelhos apoiados, sem perder o alinhamento cabeça–anca.';
+      return 'Faz com as mãos num apoio mais alto ou com os joelhos apoiados, sem perder o alinhamento cabeça–anca.';
     }
     if (_has(n, ['agachamento', 'lunges', 'step-up'])) {
-      return 'Versão mais fácil: faz $name sem carga, com menor amplitude e apoio numa parede ou cadeira estável.';
+      return 'Faz sem peso adicional, com menor amplitude e apoio numa parede ou cadeira estável.';
     }
     if (_has(n, ['prancha', 'hollow', 'pallof'])) {
-      return 'Versão mais fácil: encurta a alavanca ou a duração de $name e usa menos resistência sem perder a posição das costelas e bacia.';
+      return 'Encurta a alavanca ou a duração e usa menos resistência sem perder a posição das costelas e da bacia.';
     }
-    return 'Versão mais fácil: faz $name com menos carga ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.';
+    if (_isBodyweightEquipment(equipment)) {
+      return 'Reduz a amplitude, o tempo ou o número de repetições e usa um apoio estável.';
+    }
+    return 'Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.';
   }
 
   static String _progressionFor(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['flexao diamante'])) {
+      return 'Desce mais devagar, faz uma pausa curta em baixo ou eleva os pés num apoio estável.';
+    }
+    if (_has(n, ['curl arrastado'])) {
+      return 'Sobe ligeiramente os halteres ou faz a descida em três a quatro segundos.';
+    }
+    if (_has(n, ['tate press'])) {
+      return 'Sobe ligeiramente os halteres ou acrescenta uma pausa de um segundo perto do peito.';
+    }
     if (_has(n, ['press militar com barra em pe'])) {
-      return 'Versão mais difícil: aumenta gradualmente a barra mantendo glúteos, costelas e trajetória vertical estáveis em pé.';
+      return 'Aumenta gradualmente a barra mantendo glúteos, costelas e trajetória vertical estáveis em pé.';
     }
     if (_has(n, ['y raise'])) {
-      return 'Versão mais difícil: acrescenta halteres leves ao desenho em Y e pausa com polegares apontados para cima.';
+      return 'Acrescenta halteres leves ao desenho em Y e pausa com os polegares apontados para cima.';
     }
     if (_has(n, ['w raise'])) {
-      return 'Versão mais difícil: acrescenta elástico leve ao W sem perder retração e rotação externa das escápulas.';
+      return 'Acrescenta um elástico leve ao W sem perder a retração e a rotação externa das escápulas.';
     }
     if (_has(n, ['curl 21'])) {
-      return 'Versão mais difícil: aumenta ligeiramente os halteres mantendo sete parciais inferiores, sete superiores e sete completas limpas.';
+      return 'Aumenta ligeiramente os halteres mantendo sete parciais inferiores, sete superiores e sete completas limpas.';
     }
     if (group == 'Cardio') {
       if (_has(n, ['passadeira'])) {
-        return 'Versão mais difícil: aumenta em $name apenas a duração, a inclinação ou a velocidade de cada vez.';
+        return 'Aumenta apenas a duração, a inclinação ou a velocidade de cada vez.';
       }
-      if (_has(n, ['bicicleta'])) {
-        return 'Versão mais difícil: aumenta em $name apenas a duração, a resistência ou a cadência de cada vez.';
+      if (_has(n, ['bicicleta', 'eliptica', 'elíptica'])) {
+        return 'Aumenta apenas a duração, a resistência ou a cadência de cada vez.';
       }
       if (_has(n, ['corda'])) {
-        return 'Versão mais difícil: aumenta em $name apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.';
+        return 'Aumenta apenas a duração, o ritmo ou a complexidade dos saltos de cada vez.';
       }
-      if (_has(n, ['eliptica', 'elíptica'])) {
-        return 'Versão mais difícil: aumenta em $name apenas a duração, a resistência ou a cadência de cada vez.';
-      }
-      return 'Versão mais difícil: aumenta em $name apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.';
+      return 'Aumenta apenas a duração, o ritmo ou a dificuldade do percurso de cada vez.';
     }
     if (group == 'Mobilidade') {
-      return 'Versão mais difícil: amplia gradualmente $name ou acrescenta controlo ativo no fim da amplitude, sempre sem dor articular.';
+      return 'Amplia gradualmente a amplitude ou acrescenta controlo ativo no fim do alcance, sempre sem dor articular.';
     }
     if (group == 'Karate' || group == 'Jiu-Jitsu') {
-      return 'Versão mais difícil: liga $name a uma sequência, aumenta a velocidade ou adiciona resistência progressiva de um parceiro treinado.';
+      return 'Liga o drill a uma sequência, aumenta a velocidade ou adiciona resistência progressiva de um parceiro treinado.';
     }
     if (_has(n, ['unilateral', 'alternado', 'suitcase'])) {
-      return 'Versão mais difícil: aumenta gradualmente a carga ou a pausa de $name sem permitir rotação ou inclinação do tronco.';
+      return 'Aumenta gradualmente o peso ou a pausa sem permitir rotação ou inclinação do tronco.';
     }
-    return 'Versão mais difícil: progride $name com pequena subida de carga, pausa mais longa ou descida mais lenta, alterando uma variável por vez.';
+    if (_isBodyweightEquipment(equipment)) {
+      return 'Desce mais devagar, faz uma pausa curta no ponto mais difícil ou acrescenta repetições controladas.';
+    }
+    return 'Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.';
   }
 
   static String _breathingFor(String name, String group) {
     if (group == 'Mobilidade') {
-      return 'Respira lentamente durante $name; usa a expiração para relaxar sem forçar mais amplitude.';
+      return 'Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.';
     }
     if (group == 'Cardio') {
-      return 'Mantém respiração contínua em $name e reduz o ritmo se não conseguires recuperar o padrão respiratório.';
+      return 'Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.';
     }
-    return 'Inspira na preparação ou no retorno de $name e expira durante o esforço; não prendas a respiração em repetições normais.';
+    if (_isIsometricHold(name)) {
+      return 'Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.';
+    }
+    return 'Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.';
   }
+
+  static bool _isIsometricHold(String name) => _has(_n(name), [
+    'isometr',
+    'prancha',
+    'hold',
+    'wall sit',
+    'dead hang',
+    'vacuum',
+  ]);
 
   static String _postureFor(String name, String group) {
     if (group == 'Karate' || group == 'Jiu-Jitsu') {
-      return 'Em $name, conserva uma base estável, pescoço neutro, guarda organizada e espaço seguro para cair ou deslocar.';
+      return 'Conserva uma base estável, pescoço neutro, guarda organizada e espaço seguro para cair ou deslocar.';
     }
-    return 'Em $name, mantém os apoios firmes, coluna e pescoço neutros e as articulações a seguir a trajetória indicada.';
+    return 'Mantém os apoios firmes, a coluna e o pescoço neutros e as articulações a seguir a trajetória descrita nos passos.';
   }
 
   static String _adaptationFor(String name, String group) {
     final n = _n(name);
     if (_has(n, ['pescoco', 'cervical'])) {
-      return 'Evita ou adapta $name com tontura, dor irradiada, formigueiro ou diagnóstico cervical; usa apenas força muito leve e orientação clínica quando indicada.';
+      return 'Evita ou adapta este exercício com tontura, dor irradiada, formigueiro ou diagnóstico cervical; usa apenas força muito leve.';
     }
     if (group == 'Cardio') {
-      return 'Adapta duração e intensidade de $name à condição atual; interrompe com dor no peito, tontura ou falta de ar fora do habitual.';
+      return 'Adapta a duração e a intensidade à tua condição atual; interrompe com dor no peito, tontura ou falta de ar fora do habitual.';
     }
-    return 'Evita ou adapta $name se houver dor aguda, instabilidade, perda de força ou limitação clínica que impeça a amplitude descrita sem compensação.';
-  }
-
-  static String _ensureMistakeContract(String text, String name, String group) {
-    if (_has(_n(text), [
-      'evitar',
-      'perder',
-      'deixar',
-      'usar',
-      'abrir',
-      'prender',
-      'acelerar',
-      'forcar',
-      'forçar',
-    ])) {
-      return text;
-    }
-    return '$text Evita acelerar, perder alinhamento da área principal, prender a respiração ou usar compensações para terminar $name.';
-  }
-
-  static String _ensureSafetyContract(String text, String name, String group) {
-    final normalized = _n(text);
-    final stopCue = _has(normalized, [
-      'para',
-      'interrompe',
-      'termina',
-      'abranda',
-    ]);
-    final symptomCue = _has(normalized, [
-      'dor',
-      'tontura',
-      'formigueiro',
-      'peito',
-      'instabilidade',
-      'falta de ar',
-    ]);
-    final base =
-        '${stopCue && symptomCue ? text : '$text Para se houver dor, tontura, formigueiro, falta de ar fora do normal ou instabilidade.'} '
-        'Contexto específico: $name em $group.';
-    return base;
+    return 'Evita ou adapta este exercício se houver dor aguda, instabilidade, perda de força ou limitação clínica que impeça a amplitude sem compensar.';
   }
 
   static String _equipmentOverride(
@@ -745,7 +707,9 @@ class ExerciseCatalogContextService {
     ])) {
       return 'Antebraço, punho, dedos, trapézio, core e controlo da pega';
     }
-    if (_isTriceps(name)) return 'Ombros, cotovelos, peito como apoio e core';
+    if (_isTriceps(name)) {
+      return 'Ombros e peito como apoio, com estabilização do tronco';
+    }
     if (_isPushupOrPress(name)) {
       return 'Tríceps, deltoide anterior, serrátil anterior e core';
     }
@@ -782,42 +746,425 @@ class ExerciseCatalogContextService {
         : baseSecondary.trim();
   }
 
-  static String _descriptionFor(
-    String name,
-    String group,
-    String equipment,
-    String secondary,
-  ) {
-    return _teachingDescription(
-      name: name,
-      group: group,
-      equipment: equipment,
-      secondary: secondary,
-    );
-  }
 
-  static String _teachingDescription({
-    required String name,
-    required String group,
-    required String equipment,
-    required String secondary,
-  }) {
-    final movement = _movementSummary(name, group);
-    final target = _primaryTarget(name, group);
-    final equipmentCue = _equipmentUseCue(name, equipment);
-    final beginnerCue = _beginnerPurposeCue(name, group);
-    final variant = stableKey(name).length % 3;
-    if (variant == 0) {
-      return '$name: $movement Treina principalmente $target. $equipmentCue $beginnerCue Também ajuda $secondary.';
-    }
-    if (variant == 1) {
-      return '$name: $movement $beginnerCue O trabalho principal é $target. $equipmentCue Como apoio, envolve $secondary.';
-    }
-    return '$name: $movement $equipmentCue O foco principal é $target. $beginnerCue Em segundo plano, participa $secondary.';
-  }
+  static const Map<String, _NamedSummary> _summaryByName = {
+    'puxada alta': _NamedSummary(
+      'puxada vertical na polia alta, descendo a barra até à parte alta do peito com os cotovelos para baixo.',
+    ),
+    'puxada com bracos esticados': _NamedSummary(
+      'puxada na polia alta com os braços quase estendidos, descendo a barra em arco até às coxas para isolar o dorsal.',
+    ),
+    'flexao fechada': _NamedSummary(
+      'flexão com as mãos mais juntas que os ombros, que carrega mais o tríceps do que a flexão normal.',
+    ),
+    'flexao diamante': _NamedSummary(
+      'flexão com as mãos unidas em diamante debaixo do peito, a variação de flexão mais exigente para o tríceps.',
+    ),
+    'mobilidade de ombro': _NamedSummary(
+      'movimentos ativos do braço e da escápula em várias direções, para ganhar amplitude útil no ombro.',
+      contextGroup: 'Mobilidade',
+    ),
+    'mobilidade de ombro com cabo de vassoura': _NamedSummary(
+      'mobilidade de ombro guiada por um bastão leve seguro com as duas mãos, para controlar o arco do movimento.',
+    ),
+    'encolhimento de ombros com halteres': _NamedSummary(
+      'elevação dos ombros com um halter em cada mão ao lado do corpo, focada no trapézio superior.',
+    ),
+    'encolhimento de ombros com barra': _NamedSummary(
+      'elevação dos ombros com uma barra segura à frente das coxas, que permite mais peso no trapézio.',
+    ),
+    'encolhimento de ombros na maquina': _NamedSummary(
+      'elevação dos ombros na máquina de encolhimentos, com trajetória guiada e apoio estável.',
+    ),
+    'elevacao posterior': _NamedSummary(
+      'abertura dos braços para trás com o tronco inclinado, para isolar o deltoide posterior.',
+    ),
+    'reverse fly': _NamedSummary(
+      'abertura invertida com halteres e peito apoiado ou tronco inclinado, que junta as omoplatas e trabalha a parte de trás dos ombros.',
+    ),
+    'rotacao externa da anca no chao': _NamedSummary(
+      'alongamento no chão que roda a anca para fora, abrindo o joelho para o lado para soltar os rotadores.',
+    ),
+    'supino inclinado com halteres': _NamedSummary(
+      'supino em banco inclinado com um halter em cada mão, deixando cada braço guiar a sua trajetória para o peito superior.',
+    ),
+    'supino inclinado com barra': _NamedSummary(
+      'supino em banco inclinado com barra, empurrando o peso numa linha fixa a partir do peito superior.',
+    ),
+    'supino declinado com halteres': _NamedSummary(
+      'supino em banco declinado com halteres, com cada braço a controlar a descida para o peito inferior.',
+    ),
+    'supino declinado com barra': _NamedSummary(
+      'supino em banco declinado com barra, para carregar o peito inferior com trajetória estável.',
+    ),
+    'supino declinado na maquina': _NamedSummary(
+      'press declinado guiado pela máquina, com costas apoiadas e pegas na linha baixa do peito.',
+    ),
+    'aberturas inclinadas com halteres': _NamedSummary(
+      'abertura em arco com halteres num banco inclinado, alongando o peito superior.',
+    ),
+    'aberturas inclinadas no cabo': _NamedSummary(
+      'abertura em arco nas polias, com tensão constante do cabo dirigida ao peito superior.',
+    ),
+    'aberturas inclinadas com elastico': _NamedSummary(
+      'abertura em arco contra elásticos presos atrás de ti, fechando os braços para o peito superior.',
+    ),
+    'remo baixo no cabo': _NamedSummary(
+      'puxada horizontal na polia baixa, sentado, levando a pega à cintura com os cotovelos junto ao corpo.',
+    ),
+    'remo sentado': _NamedSummary(
+      'remada na máquina de remo sentado, com peito apoiado ou tronco firme, puxando as pegas para trás.',
+    ),
+    'remo unilateral com halter': _NamedSummary(
+      'remada com um halter e apoio no banco, puxando o peso para a anca um lado de cada vez.',
+    ),
+    'remo com barra': _NamedSummary(
+      'remada com barra e tronco inclinado, puxando o peso para a zona baixa das costelas.',
+    ),
+    'remo invertido': _NamedSummary(
+      'remada com o peso do corpo por baixo de uma barra baixa, puxando o peito à barra.',
+    ),
+    'remo invertido em mesa resistente': _NamedSummary(
+      'remada de peso corporal por baixo de uma mesa muito firme, puxando o peito à borda.',
+    ),
+    'remo com elastico': _NamedSummary(
+      'remada sentado no chão com o elástico preso aos pés, puxando as pontas às costelas.',
+    ),
+    'pull-up': _NamedSummary(
+      'puxada vertical do corpo na barra fixa com palmas para a frente, subindo o queixo em direção à barra.',
+    ),
+    'scapular pull-up': _NamedSummary(
+      'puxada curta só das escápulas na barra fixa, sem dobrar os cotovelos, para ativar o controlo escapular.',
+    ),
+    'dead hang escapular': _NamedSummary(
+      'suspensão na barra alternando ombros soltos e escápulas ativas, para aprender a organizar os ombros.',
+    ),
+    'dead hang': _NamedSummary(
+      'suspensão parada na barra fixa para fortalecer a pega, os dedos e a resistência dos ombros.',
+      contextGroup: 'Antebraço/Pega',
+    ),
+    'hiperextensao lombar': _NamedSummary(
+      'extensão do tronco na máquina ou banco de hiperextensões, subindo até à linha reta do corpo.',
+    ),
+    'hiperextensao no chao': _NamedSummary(
+      'elevação curta do peito deitado de barriga para baixo, ativando a lombar sem equipamento.',
+    ),
+    'hiperextensao no banco romano': _NamedSummary(
+      'extensão do tronco no banco romano, com a almofada na anca e descida profunda controlada.',
+    ),
+    'superman isometrico': _NamedSummary(
+      'sustentação parada com braços, peito e pernas elevados do chão, para resistência da lombar.',
+    ),
+    'superman': _NamedSummary(
+      'repetições de elevação de braços e pernas deitado de barriga para baixo, para a cadeia posterior.',
+      contextGroup: 'Core',
+    ),
+    'good morning com barra': _NamedSummary(
+      'dobradiça de anca com barra apoiada nas costas, inclinando o tronco à frente com coluna neutra.',
+    ),
+    'good morning leve isometrico': _NamedSummary(
+      'inclinação do tronco pela anca mantida parada alguns segundos, para resistência da cadeia posterior.',
+    ),
+    'good morning leve': _NamedSummary(
+      'dobradiça de anca sem peso ou com peso simbólico, para aprender a inclinar o tronco com coluna neutra.',
+      contextGroup: 'Pernas',
+    ),
+    'curl com barra': _NamedSummary(
+      'flexão dos cotovelos com barra, subindo o peso à frente do corpo com pega supinada.',
+    ),
+    'curl com halteres': _NamedSummary(
+      'flexão dos cotovelos com um halter em cada mão, subindo os dois lados ao mesmo tempo.',
+    ),
+    'curl no cabo': _NamedSummary(
+      'flexão dos cotovelos na polia baixa, com tensão constante do cabo do início ao fim.',
+    ),
+    'curl com elastico': _NamedSummary(
+      'flexão dos cotovelos contra um elástico pisado ou preso em baixo, com resistência a crescer no topo.',
+    ),
+    'extensao de triceps no cabo': _NamedSummary(
+      'extensão dos cotovelos na polia alta, empurrando a barra para baixo com os cotovelos colados ao tronco.',
+    ),
+    'triceps testa com barra ez': _NamedSummary(
+      'extensão deitada com barra EZ, descendo o peso à testa e esticando os cotovelos sem mexer os ombros.',
+    ),
+    'triceps testa com halteres': _NamedSummary(
+      'extensão deitada com halteres em pega neutra, descendo o peso à testa com os cotovelos apontados ao teto.',
+    ),
+    'extensao de triceps deitado com halteres': _NamedSummary(
+      'extensão deitada com halteres, descendo o peso atrás da cabeça para alongar bem o tríceps.',
+    ),
+    'supino fechado': _NamedSummary(
+      'supino com barra e pega estreita, que transforma o empurrar em trabalho dominante de tríceps.',
+    ),
+    'press fechado com halteres': _NamedSummary(
+      'press deitado com halteres juntos em pega neutra, empurrando com os cotovelos perto do tronco.',
+    ),
+    'tate press': _NamedSummary(
+      'extensão de tríceps deitado em que os halteres descem ao peito com os cotovelos abertos para o lado.',
+    ),
+    'fundos entre apoios': _NamedSummary(
+      'descida e subida do corpo com as mãos na borda de um banco, dobrando os cotovelos para trás.',
+    ),
+    'extensao unilateral de triceps': _NamedSummary(
+      'extensão de um braço de cada vez com halter acima da cabeça, descendo o peso por trás.',
+    ),
+    'dips para triceps': _NamedSummary(
+      'descida e subida do corpo nas paralelas com o tronco vertical, para concentrar o esforço no tríceps.',
+    ),
+    'triceps no cabo com corda': _NamedSummary(
+      'extensão dos cotovelos na polia alta com corda, afastando as pontas em baixo para contrair mais.',
+    ),
+    'triceps com elastico': _NamedSummary(
+      'extensão dos cotovelos contra um elástico preso em cima, empurrando as pontas para baixo.',
+    ),
+    'extensao acima da cabeca com halter': _NamedSummary(
+      'extensão com um halter seguro pelas duas mãos acima da cabeça, descendo atrás da nuca.',
+    ),
+    'extensao francesa com halter': _NamedSummary(
+      'extensão francesa com halter único, alongando a cabeça longa do tríceps atrás da cabeça.',
+    ),
+    'extensao francesa com barra ez': _NamedSummary(
+      'extensão francesa com barra EZ, com pega ondulada que alivia os punhos na descida atrás da cabeça.',
+    ),
+    'extensao francesa no cabo': _NamedSummary(
+      'extensão francesa na polia, de costas para o cabo, com tensão constante atrás da cabeça.',
+    ),
+    'kickback de triceps': _NamedSummary(
+      'extensão do cotovelo com halter e tronco inclinado, levando o peso para trás até o tríceps contrair.',
+    ),
+    'kickback no cabo': _NamedSummary(
+      'extensão do cotovelo na polia baixa com o tronco inclinado, com tensão constante do cabo.',
+    ),
+    'crunch': _NamedSummary(
+      'flexão curta do tronco deitado, aproximando as costelas da bacia sem puxar o pescoço.',
+    ),
+    'bicycle crunch': _NamedSummary(
+      'flexão com rotação alternada, levando o cotovelo ao joelho contrário como a pedalar.',
+    ),
+    'elevacao de pernas': _NamedSummary(
+      'subida e descida das pernas deitado de costas, com a lombar sempre encostada ao chão.',
+    ),
+    'elevacao de joelhos suspenso': _NamedSummary(
+      'elevação dos joelhos ao peito suspenso na barra fixa, enrolando ligeiramente a bacia.',
+    ),
+    'pallof press no cabo': _NamedSummary(
+      'anti-rotação na polia à altura do peito: estendes os braços e resistes à torção do tronco.',
+    ),
+    'pallof press com elastico': _NamedSummary(
+      'anti-rotação com elástico preso ao lado: estendes os braços e impedes o tronco de rodar.',
+    ),
+    'russian twist': _NamedSummary(
+      'rotação alternada do tronco sentado, com o tronco inclinado atrás e os pés apoiados ou elevados.',
+    ),
+    'side bend': _NamedSummary(
+      'inclinação lateral do tronco em pé, descendo a mão pela perna para trabalhar os oblíquos.',
+    ),
+    'flutter kicks': _NamedSummary(
+      'batimentos curtos e alternados das pernas deitado de costas, com a lombar encostada.',
+    ),
+    'toe touches': _NamedSummary(
+      'subida curta dos ombros com as mãos em direção aos pés, com as pernas na vertical.',
+    ),
+    'agachamento com peso corporal': _NamedSummary(
+      'agachamento sem equipamento, descendo a anca como se fosses sentar e voltando a subir.',
+    ),
+    'agachamento para cadeira': _NamedSummary(
+      'agachamento com uma cadeira atrás como referência de profundidade, tocando levemente no assento.',
+    ),
+    'agachamento com halteres ao lado': _NamedSummary(
+      'agachamento com um halter em cada mão ao lado do corpo, para carregar sem barra.',
+    ),
+    'agachamento com barra': _NamedSummary(
+      'agachamento com barra apoiada na parte alta das costas, para treinar as pernas com mais peso.',
+    ),
+    'agachamento com mochila': _NamedSummary(
+      'agachamento caseiro com uma mochila carregada e bem ajustada às costas.',
+    ),
+    'agachamento com garrafao': _NamedSummary(
+      'agachamento caseiro segurando um garrafão de água junto ao peito, como um goblet squat.',
+    ),
+    'agachamento bulgaro': _NamedSummary(
+      'agachamento unilateral com o pé de trás apoiado num banco, exigindo equilíbrio e força da perna da frente.',
+    ),
+    'agachamento bulgaro com apoio': _NamedSummary(
+      'agachamento búlgaro com uma mão apoiada na parede para ganhar equilíbrio enquanto aprendes.',
+    ),
+    'lunges': _NamedSummary(
+      'afundo no lugar: um passo à frente, descida dos dois joelhos e regresso à posição inicial.',
+    ),
+    'lunges com halteres': _NamedSummary(
+      'afundo com um halter em cada mão ao lado do corpo, mantendo o tronco direito.',
+    ),
+    'lunges com mochila': _NamedSummary(
+      'afundo caseiro com mochila carregada às costas, sem deixar o peso puxar o tronco.',
+    ),
+    'walking lunges': _NamedSummary(
+      'afundos em deslocamento, avançando um passo a cada repetição e alternando as pernas.',
+    ),
+    'gemeos em pe': _NamedSummary(
+      'elevação dos calcanhares em pé, subindo à ponta dos pés para trabalhar os gémeos.',
+    ),
+    'gemeos sentado': _NamedSummary(
+      'elevação dos calcanhares sentado, com os joelhos dobrados para pedir mais ao sóleo.',
+    ),
+    'elevacao de gemeos unilateral': _NamedSummary(
+      'elevação do calcanhar numa perna de cada vez, para corrigir diferenças de força e equilíbrio.',
+    ),
+    'alongamento gemeos': _NamedSummary(
+      'alongamento estático da barriga da perna, com a perna de trás esticada e o calcanhar no chão.',
+    ),
+    'alongamento gemeos na parede': _NamedSummary(
+      'alongamento dos gémeos com as mãos na parede e a ponta do pé apoiada contra ela.',
+    ),
+    'passadeira caminhada': _NamedSummary(
+      'caminhada em passadeira a ritmo confortável, em que consegues falar frases completas.',
+    ),
+    'passadeira caminhada rapida': _NamedSummary(
+      'caminhada vigorosa em passadeira, com passo vivo em que só consegues frases curtas.',
+    ),
+    'passadeira corrida leve': _NamedSummary(
+      'corrida suave em passadeira, a ritmo contínuo e conversável.',
+    ),
+    'hiit passadeira': _NamedSummary(
+      'intervalos intensos na passadeira: blocos rápidos alternados com recuperação a caminhar.',
+    ),
+    'passadeira corrida intervalada': _NamedSummary(
+      'alternância de corrida rápida e trote leve na passadeira, em blocos programados.',
+    ),
+    'passadeira sprints': _NamedSummary(
+      'tiros curtos e fortes na passadeira, com recuperação completa entre cada sprint.',
+    ),
+    'passadeira sprints intervalados': _NamedSummary(
+      'série programada de sprints na passadeira com pausas ativas cronometradas.',
+    ),
+    'passadeira inclinacao': _NamedSummary(
+      'caminhada em subida na passadeira, com inclinação leve para ativar glúteos e gémeos.',
+    ),
+    'passadeira inclinacao moderada': _NamedSummary(
+      'caminhada em subida com inclinação média, mais exigente para pernas e respiração.',
+    ),
+    'bicicleta ritmo leve': _NamedSummary(
+      'pedalada suave e contínua, com resistência baixa e respiração confortável.',
+    ),
+    'bicicleta ritmo moderado': _NamedSummary(
+      'pedalada contínua a ritmo médio, com resistência que aquece as pernas sem esgotar.',
+    ),
+    'bicicleta resistencia': _NamedSummary(
+      'pedalada com resistência alta e cadência mais lenta, para força de pernas na bicicleta.',
+    ),
+    'hiit bicicleta': _NamedSummary(
+      'intervalos intensos na bicicleta: blocos fortes de pedalada alternados com recuperação leve.',
+    ),
+    'eliptica ritmo leve': _NamedSummary(
+      'movimento contínuo suave na elíptica, de baixo impacto, para aquecer ou recuperar.',
+    ),
+    'eliptica ritmo moderado': _NamedSummary(
+      'trabalho contínuo a ritmo médio na elíptica, coordenando pernas e braços.',
+    ),
+    'eliptica intervalos': _NamedSummary(
+      'alternância de blocos rápidos e lentos na elíptica, mantendo o movimento fluido.',
+    ),
+    'eliptica resistencia': _NamedSummary(
+      'elíptica com resistência alta e cadência controlada, para mais força e menos velocidade.',
+    ),
+    'eliptica aquecimento': _NamedSummary(
+      'entrada progressiva na elíptica para preparar articulações e respiração antes do treino.',
+    ),
+    'eliptica cooldown': _NamedSummary(
+      'redução gradual do ritmo na elíptica no fim do treino, até a respiração acalmar.',
+    ),
+    'corda de saltar ritmo leve': _NamedSummary(
+      'saltos baixos e contínuos à corda, a ritmo calmo e sustentável.',
+    ),
+    'hiit corda': _NamedSummary(
+      'intervalos intensos à corda: blocos rápidos de saltos alternados com pausas curtas.',
+    ),
+    'caminhada exterior leve': _NamedSummary(
+      'caminhada tranquila ao ar livre, a ritmo em que consegues conversar sem esforço.',
+    ),
+    'caminhada exterior moderada': _NamedSummary(
+      'caminhada firme ao ar livre, com passo decidido que aquece o corpo e acelera a respiração.',
+    ),
+    'mobilidade de anca para karate': _NamedSummary(
+      'sequência de mobilidade de anca orientada aos pontapés e às bases do Karate.',
+    ),
+    'mobilidade de ombro para karate': _NamedSummary(
+      'sequência de mobilidade de ombros orientada à guarda e aos socos do Karate.',
+    ),
+    'condicionamento leve para karate': _NamedSummary(
+      'circuito leve de resistência com movimentos de Karate, para aguentar treinos mais longos.',
+    ),
+    'sprawl': _NamedSummary(
+      'defesa de entrada às pernas: a anca cai para trás e as pernas disparam atrás, terminando com o peito alto.',
+    ),
+    'mobilidade de anca para jiu-jitsu': _NamedSummary(
+      'mobilidade de anca orientada à guarda e às fugas de anca do Jiu-Jitsu.',
+    ),
+    'mobilidade de ombro para jiu-jitsu': _NamedSummary(
+      'mobilidade de ombros orientada às pegas e ao trabalho de solo do Jiu-Jitsu.',
+    ),
+    'condicionamento leve para jiu-jitsu': _NamedSummary(
+      'circuito leve com movimentos de solo do Jiu-Jitsu, para ganhar fôlego sem parceiro.',
+    ),
+    'mobilidade toracica': _NamedSummary(
+      'mobilização suave da coluna torácica com rotações e extensões controladas.',
+    ),
+    'rotacao toracica no chao': _NamedSummary(
+      'rotação do tronco deitado de lado, abrindo o braço de cima em arco enquanto a anca fica quieta.',
+    ),
+    'cat-cow': _NamedSummary(
+      'alternância em quatro apoios entre arquear e arredondar a coluna, ao ritmo da respiração.',
+    ),
+    'open book': _NamedSummary(
+      'rotação torácica deitado de lado com joelhos dobrados, abrindo o braço de cima como um livro.',
+    ),
+    'mobilidade de ombro com toalha': _NamedSummary(
+      'mobilidade de ombro usando uma toalha esticada entre as mãos como guia de amplitude.',
+    ),
+    'circulos de ombro': _NamedSummary(
+      'círculos lentos e amplos com os ombros para soltar a articulação e aquecer as escápulas.',
+    ),
+    'alongamento gluteos': _NamedSummary(
+      'alongamento do glúteo deitado, puxando um joelho na direção do peito ou do ombro contrário.',
+    ),
+    'alongamento de gluteo sentado': _NamedSummary(
+      'alongamento do glúteo sentado numa cadeira, com o tornozelo cruzado sobre o joelho contrário.',
+    ),
+    'alongamento piriforme': _NamedSummary(
+      'alongamento profundo do piriforme deitado, cruzando uma perna e puxando a coxa contrária.',
+    ),
+    'mobilidade leve de anca': _NamedSummary(
+      'movimentos fáceis da anca em amplitudes pequenas, para dias leves ou recuperação.',
+    ),
+    'alongamento quadriceps em pe': _NamedSummary(
+      'alongamento da frente da coxa em pé, levando o calcanhar ao glúteo com apoio para equilibrar.',
+    ),
+    'alongamento quadriceps de lado': _NamedSummary(
+      'alongamento da frente da coxa deitado de lado, segurando o pé de cima atrás do corpo.',
+    ),
+    'mobilidade de tornozelo na parede': _NamedSummary(
+      'avanço do joelho em direção à parede com o calcanhar no chão, para ganhar dorsiflexão.',
+    ),
+    'circulos de tornozelo': _NamedSummary(
+      'círculos lentos com a ponta do pé em ambas as direções, para soltar o tornozelo.',
+    ),
+    'mobilidade de punhos': _NamedSummary(
+      'sequência suave de flexão, extensão e círculos dos punhos, útil antes de apoiar as mãos.',
+    ),
+    'extensao de punhos no chao': _NamedSummary(
+      'mobilização dos punhos em extensão, com as palmas no chão e os dedos para a frente.',
+    ),
+    'flexao de punhos no chao': _NamedSummary(
+      'mobilização dos punhos em flexão, com as costas das mãos apoiadas no chão.',
+    ),
+  };
 
   static String _movementSummary(String name, String group) {
     final n = _n(name);
+    final exact = _summaryByNameNormalized[_n(name)];
+    if (exact != null && (exact.contextGroup == null || exact.contextGroup == group)) {
+      return exact.text;
+    }
     if (_has(n, ['short foot', 'doming'])) {
       return 'contração curta dos músculos intrínsecos do pé que aproxima suavemente a base do dedo grande do calcanhar sem enrolar os dedos.';
     }
@@ -933,22 +1280,25 @@ class ExerciseCatalogContextService {
       return 'curl mantido parado num ângulo definido para treinar tensão sem movimento repetido.';
     }
     if (_isCurl(name)) {
-      return 'flexão do cotovelo para aproximar a carga do ombro sem balançar tronco ou ombros.';
+      return 'flexão do cotovelo para aproximar o peso do ombro sem balançar tronco ou ombros.';
+    }
+    if (_has(n, ['kickback de gluteo'])) {
+      return 'extensão da anca em quatro apoios, empurrando o calcanhar para trás e para cima até o glúteo contrair.';
     }
     if (_has(n, ['kickback'])) {
-      return 'extensão do cotovelo com o braço junto ao tronco, levando a carga para trás até o tríceps contrair.';
+      return 'extensão do cotovelo com o braço junto ao tronco, levando o halter ou a pega para trás até o tríceps contrair.';
     }
     if (_has(n, ['francesa', 'acima da cabeca'])) {
       return 'extensão do cotovelo acima ou atrás da cabeça, alongando a cabeça longa do tríceps antes de subir.';
     }
     if (_isTriceps(name)) {
-      return 'extensão do cotovelo para empurrar ou afastar a carga, mantendo o braço estável.';
+      return 'extensão do cotovelo para empurrar a resistência, mantendo o braço estável.';
     }
     if (_has(n, ['flexao classica'])) {
       return 'flexão de braços em prancha alta, aproximando o peito do chão e empurrando o corpo de volta.';
     }
     if (_has(n, ['flexao inclinada'])) {
-      return 'flexão com mãos elevadas num apoio, reduzindo a carga para aprender o padrão de empurrar.';
+      return 'flexão com mãos elevadas num apoio, mais leve para o tronco, ideal para aprender o padrão de empurrar.';
     }
     if (_has(n, ['flexao declinada'])) {
       return 'flexão com pés elevados, aumentando a exigência no peito superior e nos ombros.';
@@ -960,7 +1310,7 @@ class ExerciseCatalogContextService {
       return 'flexão assimétrica em que o corpo se desloca para um lado enquanto o outro braço ajuda estendido.';
     }
     if (_has(n, ['flexao com joelhos'])) {
-      return 'flexão com joelhos apoiados para reduzir a carga e aprender a linha do corpo.';
+      return 'flexão com joelhos apoiados, mais leve, para aprender a linha do corpo.';
     }
     if (_has(n, ['flexao fechada'])) {
       return 'flexão com mãos mais próximas para aumentar o trabalho de tríceps.';
@@ -1572,6 +1922,9 @@ class ExerciseCatalogContextService {
       return 'quadríceps, glúteos e estabilidade da anca';
     }
     if (_isHinge(name)) return 'posterior de coxa, glúteos e lombar controlada';
+    if (_has(n, ['ponte', 'hip thrust', 'kickback de gluteo'])) {
+      return 'glúteos, com apoio do posterior de coxa e do core';
+    }
     if (_has(n, ['gemeos', 'soleo'])) return 'gémeos, sóleo e tornozelo';
     if (_has(n, ['tibial'])) return 'tibial anterior';
     if (_isCore(name, group)) return 'core, abdominal e estabilidade do tronco';
@@ -1593,80 +1946,6 @@ class ExerciseCatalogContextService {
       return 'controlo cervical';
     }
     return group;
-  }
-
-  static String _equipmentUseCue(String name, String equipment) {
-    final n = _n(name);
-    final e = _n(equipment);
-    if (_has(e, ['halter'])) {
-      if (_has(n, ['farmer walk', 'suitcase'])) {
-        return 'Usa $equipment como carga de transporte, com pega firme.';
-      }
-      if (_has(n, ['hold', 'aperto'])) {
-        return 'Usa $equipment para segurar parado sem largar de repente.';
-      }
-      if (_has(n, ['pronacao', 'supinacao', 'desvio', 'rotacao'])) {
-        return 'Usa $equipment leve como alavanca curta.';
-      }
-      return 'Usa $equipment com pega firme e punhos neutros.';
-    }
-    if (_has(e, ['barra']) && !_has(e, ['barra fixa'])) {
-      return 'Usa $equipment com pega simétrica.';
-    }
-    if (_has(e, ['cabo', 'polia'])) {
-      return 'Usa $equipment alinhando a polia ao movimento.';
-    }
-    if (_has(e, ['maquina'])) {
-      return 'Usa $equipment ajustando assento ou apoio.';
-    }
-    if (_has(e, ['barra fixa'])) {
-      return 'Usa $equipment com mãos firmes e ombros ativos.';
-    }
-    if (_has(e, ['elastico'])) {
-      return 'Usa $equipment preso de forma segura.';
-    }
-    if (_has(e, ['passadeira', 'bicicleta', 'eliptica', 'corda'])) {
-      return 'Usa $equipment regulando intensidade e duração.';
-    }
-    return 'Usa $equipment com espaço livre e apoio seguro para a variação escolhida.';
-  }
-
-  static String _beginnerPurposeCue(String name, String group) {
-    final n = _n(name);
-    if (_has(n, ['farmer walk'])) {
-      return 'Para iniciantes, a meta é caminhar 10 a 20 metros sem os halteres balançarem.';
-    }
-    if (_has(n, ['farmer hold', 'hold estatico'])) {
-      return 'Para iniciantes, a meta é ficar parado 20 a 30 segundos sem dobrar punhos nem encolher ombros.';
-    }
-    if (_has(n, ['cervical', 'pescoco', 'chin tuck'])) {
-      return 'O movimento deve ser pequeno e suave, parando antes de tontura ou formigueiro.';
-    }
-    if (group == 'Mobilidade') {
-      return 'A sensação correta é tensão leve e respirável, mantida por segundos, não dor.';
-    }
-    if (group == 'Cardio') {
-      return 'A intensidade deve permitir controlar respiração, duração e técnica antes de acelerar.';
-    }
-    if (group == 'Karate' || group == 'Jiu-Jitsu') {
-      if (_has(n, ['passagem de guarda'])) {
-        return 'Treina devagar a sequência de grips, ângulo e pressão antes de juntar velocidade.';
-      }
-      if (_has(n, ['drills de guarda'])) {
-        return 'Começa por recuperar enquadramento e distância antes de repetir a troca de lados.';
-      }
-      return 'Começa devagar para aprender base, direção e coordenação antes de ganhar velocidade.';
-    }
-    if (_isHinge(name)) {
-      return 'Aprende primeiro a dobrar pela anca sem arredondar a lombar.';
-    }
-    if (_isSquat(name) || _isLunge(name)) {
-      return 'A prioridade é joelhos alinhados com os pés e descida que consegues controlar.';
-    }
-    if (_isCurl(name) || _isTriceps(name) || _isGripOrForearm(name, group)) {
-      return 'O peso deve permitir punhos e cotovelos estáveis do início ao fim.';
-    }
-    return 'Escolhe uma versão em que consigas repetir o movimento mantendo respiração e alinhamento.';
   }
 
   static String _stepsFor(String name, String group, String equipment) {
@@ -1696,8 +1975,10 @@ class ExerciseCatalogContextService {
     if (_isGripOrForearm(name, group)) {
       return _forearmGripSteps(name, equipment);
     }
-    if (_isTriceps(name)) return _tricepsSteps(name, equipment);
+    // Flexões são peso corporal: ficam antes do ramo de tríceps para nunca
+    // receberem instruções com linguagem de carga externa.
     if (_has(_n(name), ['flexao'])) return _pushupSteps(name);
+    if (_isTriceps(name)) return _tricepsSteps(name, equipment);
     if (_has(_n(name), [
       'supino',
       'press fechado',
@@ -1724,16 +2005,16 @@ class ExerciseCatalogContextService {
   static String? _distinctVariantSteps(String name, String equipment) {
     final n = _n(name);
     if (_has(n, ['press militar com barra em pe'])) {
-      return '1. Coloca a barra num suporte à altura da parte alta do peito e usa pega simétrica um pouco além dos ombros. 2. Retira a barra, dá um passo curto e fica com pés paralelos, glúteos firmes e costelas sobre a bacia. 3. Começa com a barra à frente dos ombros e antebraços quase verticais. 4. Afasta ligeiramente a cabeça, empurra a barra para cima e volta a colocar a cabeça entre os braços. 5. Termina com a barra sobre o meio do pé sem arquear a lombar. 6. Baixa pelo mesmo caminho até à frente dos ombros. 7. Inspira antes da subida e expira depois de passar a zona mais difícil. 8. Usa menos carga se inclinares o tronco, dobrares punhos ou perderes equilíbrio.';
+      return '1. Coloca a barra num suporte à altura da parte alta do peito e usa pega simétrica um pouco além dos ombros. 2. Retira a barra, dá um passo curto e fica com pés paralelos, glúteos firmes e costelas sobre a bacia. 3. Começa com a barra à frente dos ombros, cotovelos ligeiramente à frente da barra e antebraços quase verticais. 4. Afasta ligeiramente a cabeça, empurra a barra para cima e volta a colocar a cabeça entre os braços. 5. Termina com a barra sobre o meio do pé sem arquear a lombar. 6. Baixa pelo mesmo caminho até à frente dos ombros. 7. Inspira antes da subida e expira depois de passar a zona mais difícil. 8. Usa menos carga se inclinares o tronco, dobrares punhos ou perderes equilíbrio.';
     }
     if (_has(n, ['y raise'])) {
-      return '1. Inclina o tronco ou apoia o peito num banco, deixando braços pendurados e polegares para cima. 2. Mantém pescoço longo, costelas controladas e cotovelos quase estendidos. 3. Eleva os braços na diagonal para formar um Y largo acima da cabeça. 4. Inicia pelas escápulas sem encolher os ombros. 5. Pára quando braços e tronco ficam alinhados ou antes de perder a posição. 6. Baixa durante dois a três segundos até os braços ficarem pendurados. 7. Expira ao desenhar o Y e inspira ao baixar. 8. Faz sem carga se sentires o trapézio superior dominar.';
+      return '1. Fica com o tronco inclinado ou apoia o peito num banco e segura halteres leves com os braços pendurados e polegares para cima. 2. Mantém pescoço longo, costelas controladas e cotovelos quase estendidos. 3. Eleva os braços na diagonal para formar um Y largo acima da cabeça. 4. Inicia pelas escápulas sem encolher os ombros. 5. Pára quando braços e tronco ficam alinhados ou antes de perder a posição. 6. Baixa durante dois a três segundos até os braços ficarem pendurados. 7. Expira ao desenhar o Y e inspira ao baixar. 8. Faz sem carga se sentires o trapézio superior dominar.';
     }
     if (_has(n, ['w raise'])) {
-      return '1. Inclina o tronco ou apoia o peito e começa com cotovelos dobrados junto ao corpo. 2. Vira polegares para cima e mantém punhos sobre a linha dos cotovelos. 3. Aproxima as escápulas e eleva os braços até formarem a letra W. 4. Mantém cotovelos dobrados enquanto rodas os ombros para fora. 5. Pausa sem projetar o queixo nem levantar os ombros. 6. Regressa devagar até aliviar a retração escapular. 7. Expira ao formar o W e inspira no retorno. 8. Reduz carga ou amplitude se sentires pinçamento na frente do ombro.';
+      return '1. Fica com o tronco inclinado ou apoia o peito num banco e segura halteres leves com os cotovelos dobrados junto ao corpo. 2. Vira polegares para cima e mantém punhos sobre a linha dos cotovelos. 3. Aproxima as escápulas e eleva os braços até formarem a letra W. 4. Mantém cotovelos dobrados enquanto rodas os ombros para fora. 5. Pausa sem projetar o queixo nem levantar os ombros. 6. Regressa devagar até aliviar a retração escapular. 7. Expira ao formar o W e inspira no retorno. 8. Reduz carga ou amplitude se sentires pinçamento na frente do ombro.';
     }
     if (_has(n, ['curl 21'])) {
-      return '1. Fica alto com halteres leves, palmas para a frente e cotovelos junto às costelas. 2. Sobe sete vezes apenas da extensão quase completa até os cotovelos chegarem a cerca de 90 graus. 3. Sem descanso, faz sete repetições de 90 graus até perto dos ombros. 4. Mantém punhos direitos e não avances os cotovelos durante as parciais superiores. 5. Termina com sete curls completos do fundo ao topo. 6. Desce cada repetição com controlo e pára se precisares de balançar. 7. Expira em cada subida e inspira em cada descida. 8. Escolhe carga bem menor que no curl normal porque a série soma 21 repetições.';
+      return '1. Fica alto e segura halteres leves com pega firme, palmas para a frente e cotovelos junto às costelas. 2. Sobe sete vezes apenas da extensão quase completa até os cotovelos chegarem a cerca de 90 graus. 3. Sem descanso, faz sete repetições de 90 graus até perto dos ombros. 4. Mantém punhos direitos e não avances os cotovelos durante as parciais superiores. 5. Termina com sete curls completos do fundo ao topo. 6. Desce cada repetição com controlo e pára se precisares de balançar. 7. Expira em cada subida e inspira em cada descida. 8. Escolhe carga bem menor que no curl normal porque a série soma 21 repetições.';
     }
     return null;
   }
@@ -1743,6 +2024,130 @@ class ExerciseCatalogContextService {
   /// do pé de trás no banco; curl de perna é máquina de posterior de coxa).
   static String? _specificSteps(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['dips para peito em paralelas'])) {
+      return '1. Sobe para as paralelas com uma mão em cada pega e os braços esticados. '
+          '2. Inclina o tronco ligeiramente à frente e dobra os joelhos atrás do corpo. '
+          '3. Desce dobrando os cotovelos até sentires alongamento no peito, sem dor no ombro. '
+          '4. Empurra as barras para baixo com as mãos e sobe até quase estender os braços. '
+          '5. Mantém os ombros afastados das orelhas durante todo o movimento. '
+          '6. Inspira ao descer e expira ao empurrar.';
+    }
+    if (_has(n, ['dips assistidos para peito'])) {
+      return '1. Ajusta a assistência da máquina para conseguires controlar a descida e a subida. '
+          '2. Apoia os joelhos ou os pés na plataforma e segura as pegas com punhos firmes. '
+          '3. Inclina o tronco ligeiramente à frente e baixa os ombros. '
+          '4. Desce dobrando os cotovelos até um alongamento confortável no peito. '
+          '5. Empurra as pegas e sobe até quase estender os braços, sem encolher os ombros. '
+          '6. Inspira ao descer e expira ao empurrar. '
+          '7. Reduz a assistência apenas quando o movimento ficar estável.';
+    }
+    if (_has(n, ['remo baixo no cabo'])) {
+      return '1. Senta-te na polia baixa com os pés nos apoios e os joelhos ligeiramente dobrados. '
+          '2. Agarra a pega com as duas mãos e endireita o tronco, com o peito aberto. '
+          '3. Antes de puxar, baixa os ombros e sente as escápulas prontas a mexer. '
+          '4. Puxa a pega até à cintura, levando os cotovelos para trás junto ao corpo. '
+          '5. Junta as escápulas por um segundo, sem inclinar o tronco para trás. '
+          '6. Deixa a pega voltar devagar à frente, mantendo o cabo em tensão e a lombar direita. '
+          '7. Expira ao puxar e inspira ao voltar.';
+    }
+    if (_has(n, ['aperto isometrico'])) {
+      return '1. Segura um halter em posição vertical pela cabeça, uma bola firme ou a pega de um grip trainer. '
+          '2. Fica com o braço ao lado do corpo ou com o cotovelo dobrado a 90 graus, punho direito. '
+          '3. Aperta a mão com força quase máxima, como se quisesses deixar marca nos dedos. '
+          '4. Mantém o aperto durante 10 a 20 segundos sem dobrar o punho nem encolher o ombro. '
+          '5. Solta devagar e abre bem os dedos durante alguns segundos. '
+          '6. Troca de mão e repete. '
+          '7. Respira de forma contínua durante o aperto, sem prender o ar.';
+    }
+    if (_has(n, ['alongamento posterior do ombro'])) {
+      return '1. Fica de pé ou sentado com o tronco direito. '
+          '2. Leva um braço esticado à frente do peito, na horizontal, em direção ao ombro contrário. '
+          '3. Com a outra mão, puxa suavemente o braço contra o peito, segurando acima do cotovelo. '
+          '4. Mantém o ombro do braço alongado baixo, longe da orelha. '
+          '5. Segura 20 a 30 segundos, respirando devagar, sentindo a parte de trás do ombro. '
+          '6. Solta devagar e troca de lado. '
+          '7. Não rodes o tronco para aumentar o alcance à força.';
+    }
+    if (_has(n, ['respiracao diafragmatica'])) {
+      return '1. Deita-te de costas com os joelhos dobrados, ou senta-te com as costas apoiadas. '
+          '2. Pousa uma mão no peito e a outra na barriga. '
+          '3. Inspira devagar pelo nariz, deixando a barriga empurrar a mão para cima; o peito quase não mexe. '
+          '4. Expira lentamente pela boca, deixando a barriga descer, mais tempo a expirar do que a inspirar. '
+          '5. Mantém os ombros e o maxilar relaxados. '
+          '6. Repete durante 1 a 3 minutos, a um ritmo calmo. '
+          '7. Se sentires tontura, volta ao teu ritmo natural de respiração.';
+    }
+    if (n == 'caminhada leve') {
+      return '1. Escolhe um percurso plano e seguro e começa a caminhar devagar. '
+          '2. Caminha a um ritmo tranquilo, em que consegues conversar sem esforço. '
+          '3. Mantém o tronco alto, a respiração tranquila e os braços a balançar naturalmente. '
+          '4. Pousa o pé do calcanhar para a ponta, com passos confortáveis. '
+          '5. Continua durante 10 a 30 minutos, conforme a energia do dia. '
+          '6. Termina de forma gradual, abrandando nos últimos minutos. '
+          '7. Respira com calma e aproveita para relaxar os ombros.';
+    }
+    if (_has(n, ['relaxamento deitado'])) {
+      return '1. Deita-te de costas num tapete, com as pernas estendidas ou os joelhos apoiados numa almofada. '
+          '2. Deixa os braços descansar ao lado do corpo, com as palmas para cima. '
+          '3. Fecha os olhos e respira devagar pelo nariz. '
+          '4. Percorre o corpo mentalmente, relaxando maxilar, ombros, mãos, barriga e pernas. '
+          '5. Fica na posição 2 a 5 minutos, sem pressa. '
+          '6. Para sair, rola para o lado e levanta-te devagar. '
+          '7. Usa esta posição no fim do treino ou em dias de recuperação.';
+    }
+    if (_has(n, ['rotacao toracica no chao'])) {
+      return '1. Deita-te de lado com os joelhos dobrados a 90 graus e os braços esticados à frente, mãos juntas. '
+          '2. Mantém os joelhos colados um ao outro e no chão durante todo o movimento. '
+          '3. Abre o braço de cima em arco por cima do corpo, rodando o tronco para o outro lado. '
+          '4. Segue a mão com o olhar, expira ao abrir e deixa o peito abrir para o teto. '
+          '5. Vai só até onde os joelhos ficam quietos e não há dor. '
+          '6. Regressa pelo mesmo arco devagar e repete 6 a 8 vezes antes de trocar de lado. '
+          '7. Expira ao abrir o braço e inspira no regresso.';
+    }
+    if (_has(n, ['cat-cow'])) {
+      return '1. Coloca-te em quatro apoios, com os punhos por baixo dos ombros e os joelhos por baixo da anca. '
+          '2. Ao inspirar, deixa a barriga descer, abre o peito e olha ligeiramente para cima. '
+          '3. Ao expirar, empurra o chão, arredonda as costas para o teto e deixa a cabeça descair. '
+          '4. Alterna entre as duas posições devagar, ao ritmo da respiração. '
+          '5. Move a coluna toda, do fundo das costas ao pescoço, sem forçar nenhum ponto. '
+          '6. Faz 6 a 10 ciclos completos. '
+          '7. Para se sentires dor aguda em algum segmento da coluna.';
+    }
+    if (_has(n, ['open book'])) {
+      return '1. Deita-te de lado com os joelhos dobrados à frente da anca e os braços esticados à frente, mãos juntas. '
+          '2. Mantém os joelhos no chão, um em cima do outro, durante todo o exercício. '
+          '3. Abre o braço de cima como a capa de um livro, rodando o tronco para trás. '
+          '4. Segue a mão com o olhar até onde for confortável. '
+          '5. Segura dois a três segundos na posição aberta, respirando devagar. '
+          '6. Fecha o livro devagar, voltando a juntar as mãos. '
+          '7. Faz 6 a 8 repetições e troca de lado.';
+    }
+    if (_has(n, ['flexao diamante'])) {
+      return '1. Coloca-te em prancha, com o corpo alinhado da cabeça aos pés e os pés juntos ou pouco afastados. '
+          '2. Junta as mãos debaixo do peito, formando um diamante com os polegares e os indicadores. '
+          '3. Mantém os cotovelos próximos do tronco e o abdómen ativo. '
+          '4. Desce o corpo de forma controlada até o peito se aproximar das mãos. '
+          '5. Empurra o chão até voltares à posição inicial, sem deixar a lombar cair. '
+          '6. Inspira ao descer e expira ao empurrar o chão.';
+    }
+    if (_has(n, ['curl arrastado'])) {
+      return '1. Fica de pé e segura um halter em cada mão à frente das coxas, com pega firme e palmas para a frente. '
+          '2. Mantém o tronco direito, os ombros relaxados e o abdómen levemente ativo. '
+          '3. Sobe os halteres colados ao tronco, deixando os cotovelos recuar, como se arrastasses o peso pelo corpo. '
+          '4. Para quando os halteres chegarem à base do peito, com os cotovelos atrás da linha do tronco. '
+          '5. Sente o bíceps a contrair no topo, sem encolher os ombros nem balançar o corpo. '
+          '6. Desce os halteres devagar pelo mesmo caminho, junto ao tronco. '
+          '7. Expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['tate press'])) {
+      return '1. Deita-te num banco ou no chão e segura um halter em cada mão, braços esticados por cima do peito. '
+          '2. Vira as palmas para a frente, na direção dos pés, e mantém os punhos firmes. '
+          '3. Dobra os cotovelos para fora, deixando-os abertos ao lado, e desce os halteres em direção ao meio do peito. '
+          '4. Para com as pontas dos halteres quase a tocar no peito, sem apoiar. '
+          '5. Estende os cotovelos para empurrar os halteres de volta ao topo, mantendo os ombros quietos. '
+          '6. Não transformes o movimento num supino: só os cotovelos dobram e esticam. '
+          '7. Inspira ao descer e expira ao estender.';
+    }
     // Pernas — agachamentos e variações.
     if (_has(n, ['agachamento bulgaro'])) {
       final support = _has(n, ['com apoio'])
@@ -1877,7 +2282,7 @@ class ExerciseCatalogContextService {
           : 'um banco estável';
       return '1. Senta-te no chão com a parte de cima das costas encostada a $support. '
           '2. Apoia a zona abaixo das omoplatas na borda e dobra os joelhos com os pés à largura da anca. '
-          '3. Coloca a carga sobre a anca se usares peso, ou mantém as mãos na borda do apoio. '
+          '3. Se usares peso extra, apoia-o sobre a anca; sem peso, mantém as mãos na borda do apoio. '
           '4. Recolhe ligeiramente o queixo e ativa o abdómen. '
           '5. Empurra o chão com os calcanhares e eleva a anca até o tronco e as coxas ficarem alinhados. '
           '6. Aperta os glúteos no topo sem arquear a lombar nem empurrar com a cabeça. '
@@ -1931,14 +2336,14 @@ class ExerciseCatalogContextService {
     }
     if (_has(n, ['gemeos sentado'])) {
       return '1. Senta-te num banco ou cadeira estável com os pés apoiados no chão ou num degrau baixo. '
-          '2. Coloca uma carga (halteres ou discos) em cima das coxas, perto dos joelhos, ou usa a máquina própria. '
+          '2. Para mais dificuldade, pousa um objeto pesado e estável sobre as coxas, perto dos joelhos. '
           '3. Mantém os joelhos dobrados a 90 graus e o tronco direito. '
-          '4. Sobe os calcanhares empurrando com a ponta dos pés, levantando a carga com a perna inferior. '
+          '4. Sobe os calcanhares empurrando com a ponta dos pés, usando a parte inferior das pernas. '
           '5. Faz uma pausa curta no topo. '
           '6. Desce os calcanhares devagar até um alongamento confortável. '
           '7. Expira ao subir e inspira ao descer. '
           '8. Com o joelho dobrado, o esforço concentra-se mais no sóleo, o músculo profundo do gémeo. '
-          '9. Segura a carga com as mãos para ela não deslizar das coxas.';
+          '9. Se usares um objeto sobre as coxas, segura-o com as mãos para não deslizar.';
     }
     if (_has(n, ['elevacao de gemeos unilateral'])) {
       return '1. Fica de pé sobre uma perna, com a outra dobrada atrás ou apoiada levemente. '
@@ -1953,14 +2358,14 @@ class ExerciseCatalogContextService {
     }
     if (_has(n, ['soleo sentado'])) {
       return '1. Senta-te num banco ou cadeira com os joelhos dobrados a 90 graus e os pés no chão. '
-          '2. Coloca uma carga leve sobre as coxas, perto dos joelhos, segurando-a com as mãos. '
+          '2. Para mais resistência, pousa um objeto leve sobre as coxas, segurando-o com as mãos. '
           '3. Mantém o tronco direito e os pés à largura da anca. '
           '4. Sobe os calcanhares devagar, empurrando com a ponta dos pés. '
           '5. Faz uma pausa curta no topo, sentindo a parte profunda da barriga da perna. '
           '6. Desce os calcanhares em dois a três segundos até tocar no chão. '
           '7. Expira ao subir e inspira ao descer. '
           '8. O joelho dobrado tira trabalho ao gémeo grande e concentra-o no sóleo. '
-          '9. Aumenta a carga apenas quando controlares a subida e a descida.';
+          '9. Aumenta a resistência apenas quando controlares a subida e a descida.';
     }
     if (_has(n, ['elevacao tibial'])) {
       return '1. Encosta as costas a uma parede e afasta os pés meio passo para a frente. '
@@ -2016,10 +2421,10 @@ class ExerciseCatalogContextService {
     if (_has(n, ['remo alto leve'])) {
       return '1. Segura os halteres ou a barra à frente das coxas, com pega à largura dos ombros e punhos direitos. '
           '2. Fica de pé com o tronco direito e o abdómen ativo. '
-          '3. Puxa a carga para cima, junto ao corpo, levando os cotovelos para fora e para cima. '
+          '3. Puxa o peso para cima, junto ao corpo, levando os cotovelos para fora e para cima. '
           '4. Sobe apenas até os cotovelos ficarem à altura dos ombros ou abaixo, nunca mais alto. '
           '5. Mantém os ombros afastados das orelhas e as escápulas controladas. '
-          '6. Desce a carga devagar pelo mesmo caminho, junto ao tronco. '
+          '6. Desce o peso devagar pelo mesmo caminho, junto ao tronco. '
           '7. Expira ao puxar e inspira ao descer. '
           '8. Usa carga leve: este movimento é para trapézio e ombros, não para força máxima. '
           '9. Para se sentires beliscar ou dor na frente do ombro, ou se a lombar arquear.';
@@ -2048,7 +2453,7 @@ class ExerciseCatalogContextService {
     }
     if (_has(n, ['arnold press'])) {
       return '1. Senta-te num banco com encosto ou fica de pé com o abdómen ativo e os pés firmes. '
-          '2. Começa com os halteres à frente dos ombros, com as palmas viradas para ti, como no fim de um curl. '
+          '2. Segura os halteres à frente dos ombros, com as palmas viradas para ti, como no fim de um curl. '
           '3. Mantém os punhos direitos e os cotovelos à frente do corpo. '
           '4. Empurra os halteres para cima e, ao mesmo tempo, roda as palmas para a frente. '
           '5. Termina com os braços quase estendidos por cima da cabeça e as palmas viradas para a frente. '
@@ -2151,7 +2556,7 @@ class ExerciseCatalogContextService {
     // Costas.
     if (_has(n, ['remo unilateral com halter'])) {
       return '1. Coloca um joelho e a mão do mesmo lado em cima de um banco estável; o outro pé fica no chão. '
-          '2. Segura o halter com a mão livre, com o braço pendurado e o punho direito. '
+          '2. Segura o halter com a mão livre, com pega firme, o braço pendurado e o punho direito. '
           '3. Mantém as costas planas, paralelas ao chão, e o pescoço alinhado com a coluna. '
           '4. Antes de puxar, baixa o ombro do lado que trabalha, ativando a escápula. '
           '5. Puxa o halter para cima, levando o cotovelo para trás junto ao tronco, na direção da anca. '
@@ -2177,7 +2582,7 @@ class ExerciseCatalogContextService {
       return '1. Coloca a polia na posição alta e prende uma barra reta ou corda. '
           '2. Segura a pega com as duas mãos à largura dos ombros e dá um passo atrás. '
           '3. Inclina o tronco ligeiramente à frente, com a lombar neutra e o abdómen ativo. '
-          '4. Começa com os braços esticados à frente, à altura dos ombros, com os cotovelos quase estendidos. '
+          '4. Começa com os braços esticados à frente, na linha do cabo, com os cotovelos quase estendidos. '
           '5. Puxa a barra para baixo num arco, com os braços sempre esticados, até às coxas. '
           '6. Sente os dorsais, dos lados das costas, a fazer o trabalho, e as escápulas a descer. '
           '7. Deixa a barra subir devagar pelo mesmo arco, mantendo tensão. '
@@ -2196,7 +2601,16 @@ class ExerciseCatalogContextService {
           '9. Não inclines o tronco para trás para ganhar força: o movimento é só dos braços e costas.';
     }
     // Lombar.
-    if (_has(n, ['hiperextensao no banco romano']) || n == 'hiperextensao lombar') {
+    if (n == 'hiperextensao lombar') {
+      return '1. Ajusta a máquina ou o banco de hiperextensões para a almofada apoiar a parte de cima das coxas. '
+          '2. Prende os pés nos apoios e cruza os braços à frente do peito. '
+          '3. Desce o tronco devagar, dobrando pela anca, até um alongamento confortável atrás das coxas. '
+          '4. Sobe o tronco apertando glúteos e posteriores até à linha reta do corpo, sem passar dela. '
+          '5. Mantém a coluna neutra durante todo o movimento, sem enrolar nem hiperestender. '
+          '6. Inspira ao descer e expira ao subir. '
+          '7. Usa uma amplitude menor se sentires pressão na lombar.';
+    }
+    if (_has(n, ['hiperextensao no banco romano'])) {
       return '1. Ajusta o banco romano para a almofada apoiar a parte de cima das coxas, abaixo da crista da anca. '
           '2. Prende os pés nos apoios e cruza os braços à frente do peito. '
           '3. Começa com o corpo em linha reta, da cabeça aos calcanhares. '
@@ -2253,7 +2667,7 @@ class ExerciseCatalogContextService {
     }
     // Bíceps.
     if (_has(n, ['curl concentrado'])) {
-      return '1. Senta-te num banco ou cadeira com as pernas afastadas e um halter numa mão. '
+      return '1. Senta-te num banco ou cadeira com as pernas afastadas e segura um halter com pega firme. '
           '2. Apoia a parte de trás desse braço na parte interna da coxa do mesmo lado. '
           '3. Deixa o braço pendurado com o halter, punho direito e palma para a frente. '
           '4. Mantém o tronco inclinado à frente e a outra mão apoiada na outra coxa. '
@@ -2266,7 +2680,7 @@ class ExerciseCatalogContextService {
     }
     if (_has(n, ['curl spider'])) {
       return '1. Deita-te de barriga para baixo num banco inclinado, com o peito apoiado e os braços pendurados. '
-          '2. Segura um halter em cada mão com as palmas para a frente e punhos direitos. '
+          '2. Segura um halter em cada mão com pega firme, palmas para a frente e punhos direitos. '
           '3. Deixa os braços verticais, perpendiculares ao chão. '
           '4. Sobe os halteres dobrando apenas os cotovelos, sem balançar os ombros. '
           '5. O peito apoiado impede o tronco de ajudar: todo o esforço fica no bíceps. '
@@ -2277,7 +2691,7 @@ class ExerciseCatalogContextService {
     }
     if (_has(n, ['curl inclinado'])) {
       return '1. Ajusta um banco inclinado entre 45 e 60 graus e senta-te com as costas e a cabeça apoiadas. '
-          '2. Deixa os braços pendurados ao lado, com um halter em cada mão e palmas para a frente. '
+          '2. Deixa os braços pendurados ao lado e segura um halter em cada mão com pega firme, palmas para a frente. '
           '3. Sente o bíceps alongado nessa posição inicial, com os punhos direitos. '
           '4. Sobe os halteres dobrando os cotovelos, sem deixar os cotovelos vir para a frente. '
           '5. Mantém os ombros encostados ao banco durante toda a repetição. '
@@ -2287,7 +2701,7 @@ class ExerciseCatalogContextService {
           '9. Usa carga menor que no curl em pé, porque o bíceps parte de uma posição alongada.';
     }
     if (_has(n, ['curl isometrico'])) {
-      return '1. Fica de pé com um halter em cada mão e os cotovelos junto ao tronco. '
+      return '1. Fica de pé, segura um halter em cada mão com pega firme e mantém os cotovelos junto ao tronco. '
           '2. Sobe os halteres até os cotovelos ficarem dobrados a cerca de 90 graus. '
           '3. Para nessa posição, com os punhos direitos e os antebraços paralelos ao chão. '
           '4. Aguenta parado 15 a 30 segundos, mantendo o tronco direito. '
@@ -2339,7 +2753,7 @@ class ExerciseCatalogContextService {
           '2. Segura uma ponta em cada mão com pega neutra e punhos direitos. '
           '3. Fica de pé de frente para o cabo, com um pé ligeiramente à frente e o tronco quase direito. '
           '4. Cola os cotovelos ao lado do tronco: eles não devem mexer durante a repetição. '
-          '5. Empurra a corda para baixo estendendo os cotovelos e afasta as pontas no fim. '
+          '5. Desce a corda estendendo os cotovelos e afasta as pontas das mãos no fim. '
           '6. Aperta o tríceps por um segundo com os braços quase estendidos. '
           '7. Deixa a corda subir devagar até os antebraços passarem a horizontal, sem os cotovelos levantarem. '
           '8. Expira ao empurrar para baixo e inspira ao subir. '
@@ -2351,7 +2765,7 @@ class ExerciseCatalogContextService {
           '2. Segura a pega com as palmas para baixo e punhos direitos. '
           '3. Fica de pé de frente para o cabo, com o tronco quase direito e o abdómen ativo. '
           '4. Cola os cotovelos ao lado do tronco durante toda a série. '
-          '5. Empurra a barra para baixo estendendo os cotovelos até os braços quase esticarem. '
+          '5. Desce a barra estendendo os cotovelos até os braços quase esticarem. '
           '6. Faz uma pausa curta em baixo, apertando o tríceps. '
           '7. Deixa a barra subir devagar até os antebraços ficarem paralelos ao chão. '
           '8. Expira ao empurrar para baixo e inspira ao subir. '
@@ -2458,7 +2872,7 @@ class ExerciseCatalogContextService {
           '7. Expira ao subir e inspira ao inclinar. '
           '8. Não rodes o tronco nem deixes a anca fugir para o lado. '
           '9. Completa as repetições de um lado antes de trocar. '
-          '10. Para adicionar carga, segura uma garrafa de água ou outra carga pequena na mão do lado que desliza.';
+          '10. Para dificultar, segura uma garrafa de água cheia na mão do lado que desliza.';
     }
     if (_has(n, ['vacuum abdominal'])) {
       return '1. Fica de pé, sentado ou em quatro apoios, com a coluna neutra. '
@@ -2476,7 +2890,7 @@ class ExerciseCatalogContextService {
           '2. Inclina o tronco para trás até sentir o abdómen a trabalhar, mantendo as costas direitas. '
           '3. Junta as mãos à frente do peito, com ou sem carga leve. '
           '4. Roda o tronco para um lado, levando as mãos na direção do chão ao lado da anca. '
-          '5. Roda depois para o outro lado, com o movimento a vir do tronco e não dos braços. '
+          '5. Roda depois para o outro lado, voltando a passar pelo centro com controlo. '
           '6. Mantém o peito aberto e o queixo neutro. '
           '7. Expira em cada rotação e inspira ao passar pelo centro. '
           '8. Faz as rotações devagar, sem balancear as pernas. '
@@ -2791,7 +3205,7 @@ class ExerciseCatalogContextService {
       '1. Fica de pé ou sentado com pés firmes, peito alto e abdómen ligeiramente ativo. '
       '2. Segura $equipment com a pega da variação, mantendo punhos direitos e ombros relaxados. '
       '3. Encosta os cotovelos ao lado do tronco ou mantém-nos ligeiramente à frente se a variação pedir. '
-      '4. Sobe a carga dobrando apenas os cotovelos, sem atirar a anca para a frente nem inclinar as costas. '
+      '4. Sobe o peso dobrando apenas os cotovelos, sem atirar a anca para a frente nem inclinar as costas. '
       '5. Para perto do topo quando o antebraço se aproxima do braço e sentes contração no braço. '
       '6. Desce durante 2 a 3 segundos até quase estender os cotovelos, mantendo punhos alinhados. '
       '7. Expira ao subir e inspira ao descer. '
@@ -2800,8 +3214,8 @@ class ExerciseCatalogContextService {
   static String _curlInversoSteps(String equipment) =>
       '1. Fica de pé com pés à largura da anca, joelhos soltos e tronco alto. '
       '2. Segura $equipment à frente das coxas com pega pronada: palmas viradas para baixo e nós dos dedos para a frente. '
-      '3. Mantém punhos direitos, cotovelos junto ao tronco e ombros afastados das orelhas. '
-      '4. Sobe a carga dobrando os cotovelos sem rodar os punhos para cima. '
+      '3. Mantém os punhos alinhados, cotovelos junto ao tronco e ombros afastados das orelhas. '
+      '4. Sobe o peso dobrando os cotovelos sem rodar os punhos para cima. '
       '5. Para quando os antebraços ficarem perto da horizontal ou quando começares a perder a pega pronada. '
       '6. Desce devagar até quase estender os cotovelos, sem deixar os halteres cair. '
       '7. Expira ao subir e inspira ao descer. '
@@ -2855,11 +3269,11 @@ class ExerciseCatalogContextService {
     if (_has(n, ['farmer hold', 'hold estatico', 'aperto'])) {
       return '1. Segura os halteres ao lado do corpo com as mãos fechadas e punhos direitos. 2. Fica de pé com pés à largura da anca, peito alto e ombros afastados das orelhas. 3. Aperta as pegas como se quisesses marcar os dedos no metal. 4. Mantém os braços esticados sem bloquear agressivamente os cotovelos. 5. Aguenta 10 a 30 segundos, respirando sem prender o ar. 6. Pousa os halteres antes de a pega falhar completamente. 7. Usa carga menor se os punhos dobrarem ou se o tronco inclinar.';
     }
-    if (_has(n, ['wrist curl'])) {
-      return '1. Senta-te com antebraços apoiados nas coxas e palmas viradas para cima. 2. Deixa só as mãos fora do apoio, segurando $equipment com dedos fechados. 3. Baixa os nós dos dedos na direção do chão até sentires alongamento na parte interna do antebraço. 4. Fecha a pega e dobra os punhos para trazer as palmas na direção do antebraço. 5. Sobe apenas pela flexão do punho, sem levantar os antebraços. 6. Mantém cotovelos colados ao apoio. 7. Desce durante 2 segundos e inspira nessa fase. 8. Expira ao fletir os punhos. 9. Termina se aparecer dor na parte da frente do punho.';
-    }
     if (_has(n, ['reverse wrist'])) {
       return '1. Senta-te com os antebraços apoiados e palmas viradas para baixo. 2. Segura $equipment com pega leve, deixando os punhos fora do banco ou das coxas. 3. Mantém cotovelos parados e ombros relaxados. 4. Sobe os nós dos dedos para cima, como se quisesses apontar as costas da mão para o teto. 5. Para antes de sentir dor na parte de cima do punho. 6. Baixa a carga devagar até os punhos voltarem a ficar alinhados ou ligeiramente fletidos. 7. Expira ao levantar os nós dos dedos e inspira ao baixar. 8. Usa carga menor se precisares de mexer cotovelos ou ombros para subir.';
+    }
+    if (_has(n, ['wrist curl'])) {
+      return '1. Senta-te com antebraços apoiados nas coxas e palmas viradas para cima. 2. Deixa só as mãos fora do apoio, segurando $equipment com dedos fechados. 3. Baixa os nós dos dedos na direção do chão até sentires alongamento na parte interna do antebraço. 4. Fecha a pega e dobra os punhos para trazer as palmas na direção do antebraço. 5. Sobe apenas pela flexão do punho, sem levantar os antebraços. 6. Mantém cotovelos colados ao apoio. 7. Desce durante 2 segundos e inspira nessa fase. 8. Expira ao fletir os punhos. 9. Termina se aparecer dor na parte da frente do punho.';
     }
     if (_has(n, ['pronacao'])) {
       return '1. Senta-te com o cotovelo apoiado a 90 graus e o antebraço estável. 2. Segura um halter leve por uma ponta, como uma alavanca curta. 3. Começa com a palma virada para dentro. 4. Roda devagar até a palma apontar para baixo. 5. Mantém cotovelo parado e punho alinhado. 6. Volta à posição inicial sem deixar o peso cair. 7. Respira devagar e usa amplitude sem dor. 8. Usa carga muito leve, porque a alavanca aumenta o esforço.';
@@ -2876,26 +3290,28 @@ class ExerciseCatalogContextService {
   static String _tricepsSteps(String name, String equipment) {
     final n = _n(name);
     if (_has(n, ['kickback'])) {
-      return '1. Inclina o tronco à frente com coluna neutra e apoia uma mão num banco se precisares. 2. Segura o halter ou pega do cabo com o cotovelo dobrado a cerca de 90 graus. 3. Cola o braço ao lado do tronco, com o cotovelo apontado para trás. 4. Estende o cotovelo até o braço ficar quase direito, sem mexer o ombro. 5. Pausa um instante contraindo o tríceps. 6. Volta devagar até 90 graus. 7. Expira ao estender e inspira ao voltar. 8. Usa carga leve se o cotovelo cair ou se tiveres de balançar.';
+      return '1. Inclina o tronco à frente com coluna neutra e apoia uma mão num banco se precisares. 2. Segura o halter ou pega do cabo com o cotovelo dobrado a cerca de 90 graus. 3. Cola o braço ao lado do tronco, com o cotovelo apontado para trás. 4. Estende o cotovelo até o braço ficar quase direito, sem mexer o ombro. 5. Pausa um instante contraindo o tríceps. 6. Desce o antebraço devagar até voltar aos 90 graus. 7. Expira ao estender e inspira ao voltar. 8. Usa carga leve se o cotovelo cair ou se tiveres de balançar.';
     }
     if (_has(n, ['acima da cabeca', 'francesa'])) {
-      return '1. Senta-te ou fica de pé com pés firmes e abdómen ativo. 2. Segura $equipment acima da cabeça com punhos alinhados. 3. Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado. 4. Desce a carga atrás da cabeça dobrando apenas os cotovelos. 5. Para quando sentires alongamento confortável no tríceps, sem dor no ombro. 6. Estende os cotovelos para subir, mantendo costelas baixas e lombar neutra. 7. Inspira ao descer e expira ao subir. 8. Reduz a carga se os cotovelos abrirem ou a lombar arquear.';
+      return '1. Senta-te ou fica de pé com pés firmes e abdómen ativo. 2. Segura $equipment acima da cabeça com pega firme e punhos alinhados. 3. Mantém cotovelos apontados para a frente e próximos, sem abrir demasiado. 4. Desce o peso atrás da cabeça dobrando apenas os cotovelos. 5. Para quando sentires alongamento confortável no tríceps, sem dor no ombro. 6. Estende os cotovelos para subir, mantendo costelas baixas e lombar neutra. 7. Inspira ao descer e expira ao subir. 8. Reduz a carga se os cotovelos abrirem ou a lombar arquear.';
     }
     if (_has(n, ['testa', 'deitado'])) {
-      return '1. Deita-te num banco ou no chão com a carga acima do peito. 2. Mantém punhos alinhados e braços ligeiramente inclinados para trás. 3. Dobra os cotovelos levando a carga em direção à testa ou ligeiramente atrás da cabeça. 4. Mantém os cotovelos apontados para cima, sem abrirem para os lados. 5. Estende os cotovelos até quase bloquear, contraindo o tríceps. 6. Inspira ao descer e expira ao estender. 7. Usa carga leve e controla a descida. 8. Pára se sentires dor no cotovelo ou ombro.';
+      return '1. Deita-te num banco ou no chão e segura o peso acima do peito com pega firme. 2. Mantém punhos alinhados e braços ligeiramente inclinados para trás. 3. Dobra os cotovelos levando a carga em direção à testa ou ligeiramente atrás da cabeça. 4. Mantém os cotovelos apontados para cima, sem abrirem para os lados. 5. Estende os cotovelos até quase bloquear, contraindo o tríceps. 6. Inspira ao descer e expira ao estender. 7. Usa carga leve e controla a descida. 8. Pára se sentires dor no cotovelo ou ombro.';
     }
     if (_has(n, ['press fechado', 'supino fechado', 'tate press'])) {
-      return '1. Deita-te num banco ou no chão com a carga acima do peito. 2. Usa pega mais fechada que num supino normal e punhos alinhados. 3. Mantém cotovelos relativamente perto do tronco. 4. Desce a carga para a zona média do peito com controlo. 5. Empurra para cima focando a extensão dos cotovelos e o tríceps. 6. Não deixes os ombros subir para as orelhas. 7. Inspira ao descer e expira ao empurrar. 8. Usa carga menor se os punhos dobrarem ou os cotovelos abrirem demais.';
+      return '1. Deita-te num banco ou no chão com a barra acima do peito. 2. Usa pega mais fechada que num supino normal e punhos alinhados. 3. Mantém cotovelos relativamente perto do tronco. 4. Desce a barra para a zona média do peito com controlo. 5. Empurra para cima focando a extensão dos cotovelos e o tríceps. 6. Não deixes os ombros subir para as orelhas. 7. Inspira ao descer e expira ao empurrar. 8. Usa carga menor se os punhos dobrarem ou os cotovelos abrirem demais.';
     }
-    return '1. Coloca-te numa base firme e segura $equipment com punhos alinhados. 2. Mantém o braço estável para que o movimento venha sobretudo do cotovelo. 3. Dobra o cotovelo até sentires alongamento controlado no tríceps. 4. Estende o cotovelo até quase endireitar o braço. 5. Mantém ombros baixos e costelas controladas. 6. Regressa devagar sem deixar a carga cair. 7. Expira ao estender e inspira ao dobrar. 8. Reduz a carga se houver dor no cotovelo, ombro ou punho.';
+    return '1. Coloca-te numa base firme e segura $equipment com pega firme e punhos alinhados. 2. Mantém o braço estável para que o movimento venha sobretudo do cotovelo. 3. Dobra o cotovelo, descendo a mão até um alongamento controlado no tríceps. 4. Estende o cotovelo até quase endireitar o braço. 5. Mantém ombros baixos e costelas controladas. 6. Regressa devagar, controlando o retorno. 7. Expira ao estender e inspira ao dobrar. 8. Reduz o peso se houver dor no cotovelo, ombro ou punho.';
   }
 
   static String _pushupSteps(String name) {
     final n = _n(name);
     final handCue = _has(n, ['diamante'])
         ? 'mãos próximas, formando um losango ou triângulo por baixo do peito'
+        : _has(n, ['fechada'])
+        ? 'mãos à largura dos ombros ou ligeiramente mais juntas, por baixo do peito'
         : _has(n, ['aberta'])
-        ? 'mãos mais abertas que os ombros'
+        ? 'mãos bem mais abertas que os ombros'
         : 'mãos ligeiramente mais largas que os ombros';
     final footCue = _has(n, ['joelhos'])
         ? 'joelhos apoiados no chão e corpo em linha dos joelhos à cabeça'
@@ -2909,16 +3325,16 @@ class ExerciseCatalogContextService {
 
   static String _pressSteps(String name, String equipment) =>
       '1. Posiciona-te no banco, chão ou máquina com pés bem apoiados. '
-      '2. Segura $equipment com punhos alinhados e cotovelos por baixo ou ligeiramente à frente da carga. '
+      '2. Segura $equipment com pega firme, punhos alinhados e cotovelos por baixo do peso. '
       '3. Junta ligeiramente as omoplatas e mantém peito aberto sem arquear a lombar em excesso. '
-      '4. Desce a carga até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina. '
+      '4. Desce o peso até uma amplitude confortável, normalmente perto do peito ou da linha indicada pela máquina. '
       '5. Mantém cotovelos guiados, sem abrir completamente para os lados. '
       '6. Empurra a carga para cima até quase estender os braços. '
       '7. Inspira ao descer e expira ao empurrar. '
       '8. Pára se perderes o controlo da carga ou se sentires dor no ombro.';
 
   static String _flySteps(String name, String equipment) =>
-      '1. Deita-te ou posiciona-te de forma estável com $equipment nas mãos. '
+      '1. Deita-te ou posiciona-te de forma estável e segura $equipment com pega firme. '
       '2. Começa com braços à frente do peito e cotovelos ligeiramente dobrados. '
       '3. Mantém essa pequena dobra dos cotovelos durante toda a repetição. '
       '4. Abre os braços em arco até sentires alongamento confortável no peito, sem dor no ombro. '
@@ -2928,7 +3344,7 @@ class ExerciseCatalogContextService {
       '8. Usa carga leve, porque este exercício exige mais controlo do que força bruta.';
 
   static String _facePullSteps(String equipment) =>
-      '1. Ajusta o cabo alto ou prende o elástico à altura do rosto. '
+      '1. Coloca a polia do cabo na posição alta, à altura do rosto, ou prende lá o elástico. '
       '2. Segura a corda ou pega com as palmas viradas uma para a outra. '
       '3. Dá um passo atrás até haver tensão e fica com tronco alto. '
       '4. Puxa a corda em direção ao rosto, separando ligeiramente as mãos. '
@@ -2970,18 +3386,21 @@ class ExerciseCatalogContextService {
   static String _shoulderSteps(String name, String equipment) {
     final n = _n(name);
     if (_has(n, ['elevacao lateral'])) {
-      return '1. Fica de pé com halteres ao lado do corpo e cotovelos ligeiramente dobrados. 2. Mantém punhos neutros e ombros afastados das orelhas. 3. Sobe os braços para os lados até perto da altura dos ombros. 4. Mantém os cotovelos ligeiramente acima ou na linha dos punhos. 5. Desce devagar sem deixar os halteres cair. 6. Expira ao subir e inspira ao descer. 7. Usa carga leve se precisares de balançar o tronco.';
+      return '1. Fica de pé e segura um halter em cada mão ao lado do corpo, com os cotovelos ligeiramente dobrados. 2. Mantém punhos neutros e ombros afastados das orelhas. 3. Sobe os braços para os lados até perto da altura dos ombros. 4. Mantém os cotovelos ligeiramente acima ou na linha dos punhos. 5. Desce devagar sem deixar os halteres cair. 6. Expira ao subir e inspira ao descer. 7. Usa carga leve se precisares de balançar o tronco.';
     }
     if (_has(n, ['elevacao frontal'])) {
       return '1. Segura os halteres à frente das coxas com punhos alinhados. 2. Mantém tronco alto e costelas controladas. 3. Sobe um ou ambos os braços à frente até perto da altura dos ombros. 4. Evita encolher os ombros ou arquear a lombar. 5. Desce devagar até à posição inicial. 6. Expira ao subir e inspira ao descer. 7. Usa amplitude menor se houver desconforto no ombro.';
     }
     if (_has(n, ['reverse fly', 'elevacao posterior', 'y raise', 'w raise'])) {
-      return '1. Inclina o tronco à frente ou apoia o peito num banco inclinado. 2. Segura a carga leve com braços pendurados e pescoço relaxado. 3. Abre os braços na direção indicada pela variação, focando ombros posteriores e escápulas. 4. Mantém cotovelos ligeiramente dobrados e punhos neutros. 5. Para antes de encolher o pescoço. 6. Desce devagar. 7. Expira ao abrir e inspira ao voltar. 8. Usa carga leve para não transformar em balanço.';
+      return '1. Fica com o tronco inclinado à frente ou apoia o peito num banco inclinado. 2. Segura halteres leves com os braços pendurados e o pescoço relaxado. 3. Abre os braços na direção indicada pela variação, focando ombros posteriores e escápulas. 4. Mantém cotovelos ligeiramente dobrados e punhos neutros. 5. Para antes de encolher o pescoço. 6. Desce devagar. 7. Expira ao abrir e inspira ao voltar. 8. Usa carga leve para não transformar em balanço.';
     }
-    if (_has(n, ['rotacao externa', 'rotacao interna'])) {
-      return '1. Mantém o cotovelo junto ao corpo a cerca de 90 graus. 2. Segura elástico, cabo ou halter leve com punho alinhado. 3. Roda o antebraço devagar para fora ou para dentro, conforme a variação. 4. Mantém o cotovelo fixo e o ombro baixo. 5. Usa amplitude pequena e sem dor. 6. Regressa devagar ao centro. 7. Respira sem prender o ar. 8. Escolhe resistência muito leve.';
+    if (_has(n, ['rotacao externa'])) {
+      return '1. Fica de pé ou sentado e mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço à frente da barriga. 2. Segura o elástico ou a pega com o punho direito. 3. Roda o antebraço para fora, afastando a mão da barriga sem descolar o cotovelo. 4. Usa uma amplitude pequena e sem dor, sentindo a parte de trás do ombro. 5. Regressa devagar ao centro, controlando a resistência. 6. Escolhe uma resistência muito leve. 7. Expira ao rodar para fora e inspira no retorno.';
     }
-    return '1. Fica em base estável com $equipment controlado. 2. Mantém tronco alto, abdómen ativo e ombros afastados das orelhas. 3. Leva a carga ou os braços pela trajetória do $name sem perder punhos alinhados. 4. Para na amplitude em que controlas o ombro sem dor. 5. Regressa devagar, sem deixar a carga cair. 6. Expira na fase de esforço e inspira no retorno. 7. Reduz carga se precisares de inclinar o tronco ou encolher o pescoço.';
+    if (_has(n, ['rotacao interna'])) {
+      return '1. Fica de pé ou sentado e mantém o cotovelo colado ao corpo, dobrado a 90 graus, com o antebraço apontado para fora. 2. Segura o elástico ou a pega com o punho direito. 3. Roda o antebraço para dentro, trazendo a mão em direção à barriga sem descolar o cotovelo. 4. Usa uma amplitude pequena e sem dor. 5. Regressa devagar à posição inicial, resistindo à tração. 6. Escolhe uma resistência muito leve. 7. Expira ao rodar para dentro e inspira no retorno.';
+    }
+    return '1. Fica em base estável com $equipment controlado. 2. Mantém tronco alto, abdómen ativo e ombros afastados das orelhas. 3. Leva o peso ou os braços pela trajetória do exercício sem perder punhos alinhados. 4. Para na amplitude em que controlas o ombro sem dor. 5. Regressa devagar, controlando o retorno. 6. Expira na fase de esforço e inspira no retorno. 7. Reduz o peso se precisares de inclinar o tronco ou encolher o pescoço.';
   }
 
   static String _squatSteps(String name, String equipment) =>
@@ -3041,8 +3460,11 @@ class ExerciseCatalogContextService {
     if (_has(n, ['crunch', 'toe touches'])) {
       return '1. Deita-te de barriga para cima com joelhos fletidos ou pernas na posição da variação. 2. Mantém lombar confortável e queixo ligeiramente recolhido. 3. Sobe a parte alta do tronco aproximando costelas da bacia. 4. Não puxes o pescoço com as mãos. 5. Pausa brevemente no topo. 6. Desce devagar até ombros quase tocarem no chão. 7. Expira ao subir e inspira ao descer. 8. Reduz amplitude se houver tensão no pescoço.';
     }
-    if (_has(n, ['dead bug', 'bird dog'])) {
-      return '1. Começa em posição controlada: deitado de costas para dead bug ou em quatro apoios para bird dog. 2. Ativa o abdómen antes de mexer braços ou pernas. 3. Estende o braço e a perna indicados sem deixar a lombar arquear. 4. Mantém a bacia estável e respira devagar. 5. Regressa ao centro com controlo. 6. Alterna lados sem pressa. 7. Usa menor amplitude se a lombar mexer. 8. Pára se perderes estabilidade.';
+    if (_has(n, ['dead bug'])) {
+      return '1. Deita-te de costas com os braços apontados ao teto e os joelhos dobrados a 90 graus no ar. 2. Encosta a lombar ao chão ativando o abdómen antes de mexer. 3. Estende devagar um braço atrás da cabeça e a perna contrária à frente, sem tocar no chão. 4. Mantém a lombar encostada durante toda a extensão. 5. Regressa ao centro com controlo e alterna os lados. 6. Usa menor amplitude se a lombar levantar. 7. Expira ao estender e inspira ao recolher.';
+    }
+    if (_has(n, ['bird dog'])) {
+      return '1. Coloca-te em quatro apoios, com os punhos por baixo dos ombros e os joelhos por baixo da anca. 2. Ativa o abdómen e mantém o olhar no chão. 3. Estende ao mesmo tempo um braço em frente e a perna contrária atrás, até ficarem na linha do tronco. 4. Mantém a bacia nivelada, sem rodar para o lado. 5. Sustém um a dois segundos e regressa com controlo. 6. Alterna os lados sem pressa. 7. Expira ao estender e inspira ao regressar.';
     }
     return '1. Coloca-te na posição inicial do $name com coluna neutra e abdómen ativo. 2. Define se o exercício exige flexão, rotação ou resistência do tronco. 3. Move apenas até onde controlas a lombar. 4. Mantém respiração regular durante cada repetição ou tempo de suporte. 5. Evita puxar o pescoço ou balançar as pernas. 6. Regressa devagar à posição inicial. 7. Expira na fase de esforço e inspira no retorno. 8. Reduz amplitude se a lombar levantar ou houver dor.';
   }
@@ -3057,16 +3479,16 @@ class ExerciseCatalogContextService {
         return '1. Depois da parte principal, reduz a velocidade gradualmente. 2. Se usaste inclinação, baixa primeiro a inclinação. 3. Caminha 3 a 8 minutos a ritmo fácil. 4. Mantém passadas curtas e tronco alto enquanto a respiração desacelera. 5. Usa os apoios apenas para equilíbrio, não para suportar o peso. 6. Sai só quando a passadeira estiver lenta ou parada. 7. Pára se houver tontura, dor no peito ou desequilíbrio.';
       }
       if (_has(n, ['interval', 'sprint', 'hiit'])) {
-        return '1. Aquece 5 a 10 minutos em caminhada ou corrida leve. 2. Escolhe uma velocidade forte mas controlável para o intervalo. 3. Corre 20 a 60 segundos mantendo tronco alto e passada estável. 4. Recupera em caminhada ou trote leve durante 60 a 120 segundos. 5. Repete poucos blocos no início. 6. Respira de forma contínua e reduz se perderes técnica. 7. Faz 3 a 8 minutos de cooldown no fim.';
+        return '1. Aquece 5 a 10 minutos na passadeira, em caminhada ou corrida leve. 2. Escolhe uma velocidade forte mas controlável para o intervalo. 3. Corre 20 a 60 segundos mantendo tronco alto e passada estável. 4. Recupera em caminhada ou trote leve durante 60 a 120 segundos. 5. Repete poucos blocos no início. 6. Respira de forma contínua e reduz se perderes técnica. 7. Faz 3 a 8 minutos de cooldown no fim.';
       }
       if (_has(n, ['inclinacao'])) {
-        return '1. Começa em caminhada fácil com inclinação baixa. 2. Aumenta a inclinação gradualmente sem agarrar os apoios. 3. Mantém tronco alto e passada curta, empurrando o chão com glúteos e gémeos. 4. Usa velocidade mais baixa do que numa caminhada plana. 5. Mantém 5 a 20 minutos conforme o nível. 6. Respira de forma regular. 7. Baixa a inclinação antes de terminar.';
+        return '1. Começa na passadeira em caminhada fácil com inclinação baixa. 2. Aumenta a inclinação gradualmente sem agarrar os apoios. 3. Mantém tronco alto e passada curta, empurrando o chão com glúteos e gémeos. 4. Usa velocidade mais baixa do que numa caminhada plana. 5. Mantém 5 a 20 minutos conforme o nível. 6. Respira de forma regular. 7. Baixa a inclinação antes de terminar.';
       }
       return '1. Sobe para a passadeira e começa devagar. 2. Ajusta a velocidade para caminhada ou corrida leve. 3. Mantém tronco alto, olhar em frente e passadas controladas. 4. Evita aterrar muito à frente do corpo. 5. Mantém 5 a 20 minutos num ritmo sustentável. 6. Respira de forma contínua, sem prender o ar. 7. Reduz velocidade no fim antes de sair.';
     }
     if (_has(n, ['bicicleta'])) {
       if (_has(n, ['cooldown'])) {
-        return '1. Senta-te bem na bicicleta e baixa a resistência para nível fácil. 2. Pedala 3 a 8 minutos com cadência confortável. 3. Mantém tronco alto, ombros relaxados e mãos leves no guiador. 4. Deixa a respiração e a frequência cardíaca descerem gradualmente. 5. Não pares de pedalar de repente depois de esforço forte. 6. Termina quando te sentires estável. 7. Sai com cuidado, especialmente se as pernas estiverem pesadas.';
+        return '1. Senta-te bem no selim da bicicleta e baixa a resistência para nível fácil. 2. Pedala 3 a 8 minutos com cadência confortável. 3. Mantém tronco alto, ombros relaxados e mãos leves no guiador. 4. Deixa a respiração e a frequência cardíaca descerem gradualmente. 5. Não pares de pedalar de repente depois de esforço forte. 6. Termina quando te sentires estável. 7. Sai com cuidado, especialmente se as pernas estiverem pesadas.';
       }
       if (_has(n, ['aquecimento'])) {
         return '1. Ajusta o selim para o joelho ficar ligeiramente fletido no ponto baixo da pedalada. 2. Começa com resistência baixa. 3. Pedala 5 a 10 minutos com cadência confortável. 4. Mantém tronco alto e ombros relaxados. 5. Aumenta resistência apenas um pouco no fim do aquecimento. 6. Respira de forma fácil. 7. Avança para a parte principal quando as pernas estiverem quentes.';
@@ -3081,7 +3503,7 @@ class ExerciseCatalogContextService {
       return '1. Sobe para a elíptica segurando os apoios. 2. Começa com resistência leve e movimento fluido. 3. Mantém tronco alto, pés apoiados e ombros relaxados. 4. Empurra e puxa os braços apenas se a máquina tiver pegas móveis. 5. Mantém ritmo contínuo por 5 a 20 minutos ou blocos intervalados. 6. Respira de forma regular. 7. Reduz resistência e ritmo no fim antes de sair.';
     }
     if (_has(n, ['burpees'])) {
-      return '1. Fica de pé com espaço livre. 2. Agacha e coloca as mãos no chão. 3. Leva os pés para trás até prancha. 4. Faz flexão apenas se a variação pedir e conseguires controlar. 5. Traz os pés para perto das mãos. 6. Levanta-te ou salta baixo. 7. Respira a cada repetição e abranda se perderes postura.';
+      return '1. Fica de pé com espaço livre. 2. Agacha e coloca as mãos no chão. 3. Leva os pés para trás até prancha. 4. Faz flexão apenas se a variação pedir e conseguires controlar. 5. Traz os pés para perto das mãos. 6. Levanta-te ou salta baixo. 7. Trabalha em blocos de 20 a 40 segundos a ritmo calmo, respira a cada repetição e abranda se perderes a postura.';
     }
     return '1. Começa em pé com espaço livre e postura alta. 2. Executa a variação escolhida em ritmo fácil nos primeiros 30 a 60 segundos. 3. Mantém joelhos suaves, pés a aterrar com controlo e abdómen ativo. 4. Aumenta intensidade só se a coordenação continuar limpa. 5. Trabalha 20 a 60 segundos por bloco ou 5 a 20 minutos em ritmo contínuo. 6. Respira de forma regular. 7. Abranda antes de parar totalmente.';
   }
@@ -3095,7 +3517,7 @@ class ExerciseCatalogContextService {
         : _has(n, ['double unders'])
         ? 'faz a corda passar duas vezes por cada salto, apenas se já dominas o salto simples'
         : 'faz saltos baixos com os dois pés ou alterna de forma simples';
-    return '1. Segura uma pega em cada mão com cotovelos próximos do corpo. 2. Mantém a corda atrás dos pés antes da primeira volta. 3. Roda a corda principalmente pelos punhos, não pelos ombros. 4. Salta baixo, apenas o suficiente para a corda passar. 5. $variation. 6. Aterra na parte da frente dos pés com joelhos ligeiramente flexionados. 7. Respira em ritmo constante e faz blocos curtos no início. 8. Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.';
+    return '1. Segura uma pega em cada mão com cotovelos próximos do corpo. 2. Mantém a corda atrás dos pés antes da primeira volta. 3. Roda a corda principalmente pelos punhos, não pelos ombros. 4. Salta baixo, apenas o suficiente para a corda passar. 5. $variation. 6. Aterra na parte da frente dos pés com joelhos ligeiramente flexionados. 7. Faz blocos de 30 a 60 segundos no início, respirando em ritmo constante. 8. Pára se tropeçares repetidamente, se os gémeos ficarem rígidos ou se perderes coordenação.';
   }
 
   static String _mobilitySteps(String name, String equipment) {
@@ -3124,10 +3546,10 @@ class ExerciseCatalogContextService {
       return '1. Coloca-te na posição indicada, com coluna confortável e respiração calma. 2. Organiza ombros afastados das orelhas antes de mexer. 3. Move braços, escápulas ou coluna torácica devagar até amplitude confortável. 4. Não forces a frente do ombro nem a lombar. 5. Mantém 15 a 40 segundos ou faz 6 a 10 repetições lentas. 6. Respira durante todo o movimento. 7. Regressa devagar à posição inicial. 8. Pára se houver dor aguda ou formigueiro.';
     }
     if (_has(n, ['mobilidade de tornozelo na parede'])) {
-      return '1. Fica de frente para uma parede com um pé a alguns centímetros dela. 2. Mantém o calcanhar desse pé totalmente apoiado no chão. 3. Leva o joelho devagar na direção da parede, alinhado com o segundo ou terceiro dedo do pé. 4. Para quando o calcanhar quiser levantar ou o arco do pé colapsar. 5. Volta o joelho para trás e repete 8 a 12 vezes. 6. Respira de forma calma a cada avanço. 7. Afasta ou aproxima o pé da parede para ajustar a dificuldade. 8. Pára se houver dor no tendão de Aquiles, tornozelo ou frente do pé.';
+      return '1. Fica de frente para uma parede com um pé a alguns centímetros dela. 2. Mantém o calcanhar desse pé totalmente apoiado no chão. 3. Leva o joelho devagar na direção da parede, alinhado com o segundo ou terceiro dedo do pé. 4. Para quando o calcanhar quiser levantar ou o arco do pé colapsar. 5. Volta o joelho para trás, mantendo a respiração calma, e repete 8 a 12 vezes. 7. Afasta ou aproxima o pé da parede para ajustar a dificuldade. 8. Pára se houver dor no tendão de Aquiles, tornozelo ou frente do pé.';
     }
     if (_has(n, ['circulos de tornozelo'])) {
-      return '1. Senta-te ou fica de pé com apoio e tira ligeiramente um pé do chão. 2. Mantém a perna quieta para o movimento vir do tornozelo. 3. Desenha círculos lentos com a ponta do pé, primeiro para dentro e depois para fora. 4. Faz 6 a 10 círculos por direção. 5. Mantém os dedos relaxados, sem enrolar o pé. 6. Respira normalmente durante o movimento. 7. Troca de lado e repete. 8. Reduz o tamanho do círculo se houver dor ou estalidos desconfortáveis.';
+      return '1. Senta-te ou fica de pé com apoio e tira ligeiramente um pé do chão. 2. Mantém a perna quieta e a respiração calma: o movimento vem só do tornozelo. 3. Desenha círculos lentos com a ponta do pé, primeiro para dentro e depois para fora. 4. Faz 6 a 10 círculos por direção. 5. Mantém os dedos relaxados, sem enrolar o pé. 6. Respira normalmente durante o movimento. 7. Troca de lado e repete. 8. Reduz o tamanho do círculo se houver dor ou estalidos desconfortáveis.';
     }
     if (_has(n, ['tornozelo', 'gemeos'])) {
       return '1. Coloca o pé no chão ou contra a parede conforme a variação. 2. Mantém o calcanhar apoiado quando o objetivo for gémeos ou tornozelo. 3. Leva o joelho ou o tronco devagar até sentir tensão confortável. 4. Não deixes o arco do pé colapsar para dentro. 5. Mantém 20 a 40 segundos ou faz repetições lentas. 6. Respira calmamente. 7. Troca de lado. 8. Pára se houver dor no tendão de Aquiles ou tornozelo.';
@@ -3150,7 +3572,7 @@ class ExerciseCatalogContextService {
 
   static String _jiuJitsuSteps(String name) =>
       '1. Começa no tatami ou numa superfície segura, com espaço à volta. '
-      '2. Define a posição inicial do $name: guarda, ponte, fuga de anca, base técnica ou passagem. '
+      '2. Define o objetivo técnico e a posição inicial: guarda, ponte, fuga de anca, base ou passagem. '
       '3. Move primeiro devagar, usando anca, core e apoios das mãos ou pés. '
       '4. Mantém queixo protegido, pescoço longo e respiração controlada. '
       '5. Regressa à posição inicial sem cair desorganizado. '
@@ -3163,60 +3585,246 @@ class ExerciseCatalogContextService {
     String group,
     String equipment,
   ) =>
-      '1. Coloca-te numa posição estável para $name, com espaço livre e $equipment preparado. '
+      '1. Coloca-te numa posição estável, com espaço livre e $equipment preparado. '
       '2. Organiza pés, tronco e cabeça antes de iniciar a repetição. '
       '3. Mantém ombros afastados das orelhas e punhos alinhados quando as mãos participarem. '
       '4. Executa a ação do exercício devagar até à amplitude em que controlas o músculo ou articulação trabalhados. '
       '5. Pausa um instante no ponto de maior esforço sem prender a respiração. '
-      '6. Regressa devagar ao início, sem deixar a carga ou o corpo cair. '
+      '6. Regressa devagar ao início, controlando o corpo até à posição de partida. '
       '7. Expira na fase de esforço e inspira no retorno. '
-      '8. Reduz carga ou amplitude se perderes alinhamento, equilíbrio ou controlo.';
+      '8. Reduz a dificuldade ou a amplitude se perderes alinhamento, equilíbrio ou controlo.';
 
-  static String _mistakesFor(String name, String group, String equipment) {
+  static List<String> _mistakesFor(String name, String group, String equipment) {
     final n = _n(name);
+    final bodyweight = _isBodyweightEquipment(equipment);
+    if (_has(n, ['flexao diamante'])) {
+      return [
+        'abrir demasiado os cotovelos para os lados',
+        'colocar as mãos demasiado à frente do peito',
+        'perder o alinhamento do corpo e deixar a anca cair',
+        'descer sem controlo',
+      ];
+    }
+    if (_has(n, ['curl arrastado'])) {
+      return [
+        'transformar o movimento num curl normal, sem recuar os cotovelos',
+        'balançar o tronco para subir os halteres',
+        'encolher os ombros durante a subida',
+        'afastar os halteres do tronco',
+        'descer depressa e sem controlo',
+      ];
+    }
+    if (_has(n, ['tate press'])) {
+      return [
+        'transformar o movimento num supino fechado, movendo os ombros',
+        'deixar os cotovelos fechar junto ao tronco',
+        'bater com os halteres no peito',
+        'dobrar os punhos com a carga em cima',
+        'usar halteres pesados demais para controlar a descida',
+      ];
+    }
     if (group == 'Cardio') {
       if (_has(n, ['bicicleta'])) {
-        return 'Selim mal ajustado, resistência alta demais, joelhos a abrir para fora, pedalar aos solavancos, encolher ombros ou parar de repente após esforço forte.';
+        return [
+          'pedalar com o selim mal ajustado',
+          'usar resistência alta demais para o teu nível',
+          'deixar os joelhos abrir para fora',
+          'encolher os ombros contra o guiador',
+          'parar de repente depois de esforço forte',
+        ];
       }
       if (_has(n, ['corda'])) {
-        return 'Rodar a corda pelos ombros, saltar demasiado alto, aterrar com pernas rígidas, olhar para baixo, prender a respiração ou continuar quando tropeças sempre.';
+        return [
+          'rodar a corda pelos ombros em vez dos punhos',
+          'saltar demasiado alto',
+          'aterrar com as pernas rígidas',
+          'olhar para baixo e perder a postura',
+          'continuar depois de tropeçar repetidamente',
+        ];
       }
       if (_has(n, ['passadeira'])) {
-        return 'Começar rápido demais, agarrar os apoios para compensar, dar passadas longas demais, olhar para os pés, ignorar tontura ou sair sem abrandar.';
+        return [
+          'começar rápido demais, sem aquecer',
+          'agarrar os apoios para compensar o ritmo',
+          'dar passadas longas demais',
+          'olhar para os pés em vez de olhar em frente',
+          'sair da passadeira sem abrandar primeiro',
+        ];
       }
-      return 'Aumentar intensidade antes da técnica, ignorar aquecimento, perder respiração, aterrar sem controlo ou continuar com dor articular.';
+      return [
+        'aumentar a intensidade antes de dominar a técnica',
+        'saltar o aquecimento',
+        'perder o ritmo da respiração',
+        'aterrar sem controlo',
+        'continuar com dor articular',
+      ];
     }
     if (group == 'Mobilidade') {
-      return 'Forçar dor, fazer balanços rápidos, prender a respiração, compensar com lombar ou ombros, sair da posição de repente ou tentar ganhar amplitude à força.';
+      return [
+        'forçar até à dor em vez de tensão leve',
+        'fazer balanços rápidos',
+        'prender a respiração',
+        'compensar com a lombar ou com os ombros',
+        'sair da posição de repente',
+      ];
     }
     if (group == 'Karate' || group == 'Jiu-Jitsu') {
-      return 'Acelerar antes de controlar a técnica, perder base, cruzar pés de forma insegura, prender a respiração, torcer joelhos ou repetir cansado com má coordenação.';
+      return [
+        'acelerar antes de controlar a técnica',
+        'perder a base ou cruzar os pés de forma insegura',
+        'prender a respiração',
+        'torcer joelhos ou ombros sem controlo',
+        'repetir cansado com má coordenação',
+      ];
     }
     if (_isCurl(name)) {
-      return 'Balançar o tronco, levar cotovelos para trás e para a frente, dobrar os punhos, subir só metade, usar carga excessiva ou deixar a carga cair na descida.';
+      return [
+        'balançar o tronco para subir o peso',
+        'deixar os cotovelos fugir para a frente ou para trás',
+        'dobrar os punhos durante a repetição',
+        'subir só metade do caminho',
+        'deixar o peso descer sem controlo',
+      ];
     }
     if (_isTriceps(name)) {
-      return 'Abrir demasiado os cotovelos, mexer o ombro em vez do cotovelo, arquear a lombar, usar carga excessiva ou encurtar a descida.';
+      if (bodyweight) {
+        return [
+          'abrir demasiado os cotovelos',
+          'mexer o ombro em vez do cotovelo',
+          'arquear a lombar',
+          'encurtar a descida do corpo',
+        ];
+      }
+      return [
+        'abrir demasiado os cotovelos',
+        'mexer o ombro em vez do cotovelo',
+        'arquear a lombar',
+        'usar peso excessivo',
+        'encurtar a descida',
+      ];
     }
     if (_isGripOrForearm(name, group)) {
-      return 'Dobrar os punhos sem controlo, usar carga pesada demais, perder pega de repente, encolher ombros, prender a respiração ou continuar com dor no punho.';
+      return [
+        'dobrar os punhos sem controlo',
+        'usar peso pesado demais',
+        'deixar a pega abrir de repente',
+        'encolher os ombros',
+        'continuar com dor no punho',
+      ];
     }
     if (_isPushupOrPress(name)) {
-      return 'Abrir cotovelos demais, perder posição das escápulas, deixar punhos dobrarem, arquear a lombar, bater a carga ou descer sem controlo.';
+      if (bodyweight) {
+        return [
+          'abrir demasiado os cotovelos',
+          'deixar a anca cair ou subir em pico',
+          'dobrar os punhos',
+          'descer o corpo sem controlo',
+          'encurtar a amplitude',
+        ];
+      }
+      return [
+        'abrir demasiado os cotovelos',
+        'perder a posição das escápulas',
+        'dobrar os punhos',
+        'arquear a lombar em excesso',
+        'descer o peso sem controlo',
+      ];
     }
     if (_isRowOrPull(name)) {
-      return 'Puxar com balanço, encolher ombros, arredondar lombar, puxar atrás da nuca, largar a subida ou transformar a puxada num movimento de bíceps apenas.';
+      return [
+        'puxar com balanço do tronco',
+        'encolher os ombros',
+        'arredondar a lombar',
+        'puxar atrás da nuca',
+        'largar a fase de retorno sem controlo',
+      ];
     }
     if (_isSquat(name) || _isLunge(name)) {
-      return 'Joelhos a cair para dentro, calcanhares a levantar, tronco a colapsar, carga mal posicionada, descer mais do que controlas ou prender a respiração.';
+      if (bodyweight) {
+        return [
+          'deixar os joelhos cair para dentro',
+          'levantar os calcanhares do chão',
+          'deixar o tronco colapsar à frente',
+          'descer mais do que consegues controlar',
+          'prender a respiração',
+        ];
+      }
+      return [
+        'deixar os joelhos cair para dentro',
+        'levantar os calcanhares do chão',
+        'deixar o tronco colapsar à frente',
+        'posicionar mal o peso antes de começar',
+        'descer mais do que consegues controlar',
+      ];
     }
     if (_isHinge(name)) {
-      return 'Arredondar a lombar, afastar a carga do corpo, dobrar demasiado os joelhos, não levar a anca para trás ou subir puxando só pelas costas.';
+      if (bodyweight) {
+        return [
+          'arredondar a lombar',
+          'dobrar demasiado os joelhos',
+          'não levar a anca para trás',
+          'subir puxando só pelas costas',
+        ];
+      }
+      return [
+        'arredondar a lombar',
+        'afastar o peso do corpo',
+        'dobrar demasiado os joelhos',
+        'não levar a anca para trás',
+        'subir puxando só pelas costas',
+      ];
     }
     if (_has(n, ['extensao lombar quadrupede'])) {
-      return 'Abrir a bacia para o lado, afundar entre as omoplatas, atirar o pé para cima, mexer o tronco a cada repetição ou procurar altura em vez de estabilidade.';
+      return [
+        'abrir a bacia para o lado',
+        'afundar entre as omoplatas',
+        'atirar o pé para cima',
+        'procurar altura em vez de estabilidade',
+      ];
     }
-    return 'Usar carga acima do controlo, perder alinhamento, encurtar amplitude, prender a respiração ou continuar quando o músculo trabalhado já não controla o exercício.';
+    if (_isCore(name, group)) {
+      return [
+        'deixar a lombar arquear ou descolar do apoio',
+        'puxar o pescoço com as mãos',
+        'usar impulso em vez de controlo',
+        'prender a respiração',
+        'encurtar a amplitude útil',
+      ];
+    }
+    if (bodyweight) {
+      return [
+        'perder o alinhamento do corpo',
+        'encurtar a amplitude útil',
+        'prender a respiração',
+        'continuar depois de perder o controlo do movimento',
+      ];
+    }
+    return [
+      'usar peso acima do que controlas',
+      'perder o alinhamento durante a repetição',
+      'encurtar a amplitude útil',
+      'prender a respiração',
+      'continuar quando o músculo alvo já não controla o movimento',
+    ];
+  }
+
+  static bool _isBodyweightEquipment(String equipment) {
+    final e = _n(equipment);
+    if (_has(e, [
+      'halter',
+      'barra',
+      'cabo',
+      'polia',
+      'maquina',
+      'disco',
+      'kettlebell',
+      'mochila',
+      'garrafao',
+      'elastico',
+    ])) {
+      return false;
+    }
+    return true;
   }
 
   static String _safetyFor(String name, String group, String equipment) {
@@ -3225,7 +3833,19 @@ class ExerciseCatalogContextService {
       return 'Usa força muito leve. Para imediatamente com tontura, formigueiro, dor irradiada, pressão na cabeça, visão turva ou dor aguda no pescoço.';
     }
     if (group == 'Cardio') {
-      return 'Mantém intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal, dor articular ou perda de coordenação.';
+      if (_has(n, ['passadeira'])) {
+        return 'Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.';
+      }
+      if (_has(n, ['bicicleta', 'eliptica'])) {
+        return 'Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.';
+      }
+      if (_has(n, ['corda', 'saltos', 'jacks', 'burpees', 'skaters', 'knees'])) {
+        return 'Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.';
+      }
+      if (_has(n, ['exterior', 'subida', 'marcha'])) {
+        return 'Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.';
+      }
+      return 'Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.';
     }
     if (group == 'Mobilidade') {
       return 'Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.';
@@ -3237,28 +3857,52 @@ class ExerciseCatalogContextService {
       return 'Mantém o gesto pequeno e silencioso. Interrompe se a bacia rodar sempre, se a lombar apertar, se surgir dor irradiada ou se precisares de impulso para levantar a perna.';
     }
     if (_isHinge(name)) {
-      return 'Mantém a coluna neutra e a carga perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.';
+      return _isBodyweightEquipment(equipment)
+          ? 'Mantém a coluna neutra durante a dobradiça da anca. Para com dor lombar aguda, formigueiro ou perda de força.'
+          : 'Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.';
     }
     if (_isPushupOrPress(name) || _isShoulder(name)) {
-      return 'Protege ombros e punhos mantendo carga controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo da carga.';
+      return _isBodyweightEquipment(equipment)
+          ? 'Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.'
+          : 'Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.';
     }
-    if (_isGripOrForearm(name, group) || _isCurl(name) || _isTriceps(name)) {
-      return 'Mantém punhos e cotovelos alinhados. Reduz carga ou termina se houver dor no cotovelo, punho, formigueiro nos dedos ou perda de pega.';
+    if (_isGripOrForearm(name, group)) {
+      return 'Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.';
+    }
+    if (_isCurl(name)) {
+      return _isBodyweightEquipment(equipment)
+          ? 'Mantém os punhos alinhados e os cotovelos estáveis. Para se houver dor no cotovelo ou no punho.'
+          : 'Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.';
+    }
+    if (_isTriceps(name)) {
+      return _isBodyweightEquipment(equipment)
+          ? 'Guia os cotovelos sem os abrir em excesso. Para com dor no cotovelo, no ombro ou na lombar.'
+          : 'Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.';
     }
     if (_isSquat(name) || _isLunge(name)) {
       return 'Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.';
     }
-    return 'Usa $equipment apenas com carga e amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.';
+    return _isBodyweightEquipment(equipment)
+        ? 'Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.'
+        : 'Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.';
   }
 
   static bool _beginnerUnderstands(ExerciseCatalogDetails details) {
-    final text = '${details.description} ${details.executionSteps}';
-    final lower = text.toLowerCase();
-    return details.description.length > 80 &&
-        details.executionSteps.split(RegExp(r'\d+\.')).length >= 6 &&
-        (lower.contains('respira') ||
-            lower.contains('inspira') ||
-            lower.contains('expira')) &&
+    final stepLines = details.executionSteps
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .length;
+    final breathingText =
+        '${details.executionSteps} ${details.breathingTips}'.toLowerCase();
+    final lower =
+        '${details.description} ${details.executionSteps}'.toLowerCase();
+    return details.description.length >= 60 &&
+        details.description.length <= 280 &&
+        stepLines >= 4 &&
+        stepLines <= 7 &&
+        (breathingText.contains('respira') ||
+            breathingText.contains('inspira') ||
+            breathingText.contains('expira')) &&
         details.equipment.trim().isNotEmpty &&
         !lower.contains('no contexto') &&
         !lower.contains('equipamento indicado') &&
@@ -3299,9 +3943,9 @@ class ExerciseCatalogContextService {
     return _has(n, [
       'triceps',
       'tricep',
-      'triceps',
       'extensao francesa',
       'extensao de triceps',
+      'extensao acima da cabeca',
       'kickback',
       'tate press',
       'press fechado',
@@ -3403,4 +4047,11 @@ class ExerciseCatalogContextService {
     final normalized = _n(haystack);
     return needles.any((needle) => normalized.contains(_n(needle)));
   }
+}
+
+class _NamedSummary {
+  const _NamedSummary(this.text, {this.contextGroup});
+
+  final String text;
+  final String? contextGroup;
 }
