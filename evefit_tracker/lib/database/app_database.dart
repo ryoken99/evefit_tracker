@@ -977,7 +977,9 @@ class AppDatabase {
 
   Future<void> _ensureExerciseCatalogEntryIndex(Database db) async {
     await db.execute(
-      'CREATE UNIQUE INDEX IF NOT EXISTS idx_exercises_catalog_entry_key ON exercises(catalog_entry_key) WHERE catalog_entry_key IS NOT NULL AND catalog_entry_key != ""',
+      // Aspas simples: builds estritos do SQLite (DQS desativado) rejeitam
+      // literais de texto com aspas duplas.
+      "CREATE UNIQUE INDEX IF NOT EXISTS idx_exercises_catalog_entry_key ON exercises(catalog_entry_key) WHERE catalog_entry_key IS NOT NULL AND catalog_entry_key != ''",
     );
   }
 
