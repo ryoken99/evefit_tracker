@@ -102,11 +102,11 @@ void main() {
     expect(sets, hasLength(1));
     expect(sets.single['reps'], 12);
 
-    // Instalações novas e antigas convergem: todos os 315 exercícios de
+    // Instalações novas e antigas convergem: todos os 353 exercícios de
     // catálogo ficam presentes após o refresh.
     final total = await db.rawQuery(
       'SELECT COUNT(*) AS c FROM exercises WHERE is_default = 1',
     );
-    expect(total.single['c'], 315);
+    expect(total.single['c'], 353);
   });
 }

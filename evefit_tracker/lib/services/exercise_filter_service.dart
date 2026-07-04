@@ -357,6 +357,12 @@ class ExerciseFilterService {
     // An unknown or tag-only focus must not silently accept every exercise:
     // that showed whole regions under muscles the exercise never trains.
     if (keywords == null || keywords.isEmpty) return false;
+    // Martial-arts technique focuses are identified by the drill name; a
+    // broader text match pulls drills into focuses their description merely
+    // mentions (e.g. bag work under "guarda").
+    if (_isMartialFocusKey(focus)) {
+      return _textHas(WorkoutTaxonomy.normalize(exercise.name), keywords);
+    }
     if (_primaryOnlyHierarchyFocuses.contains(focus)) {
       return _containsAnyPrimary(exercise, keywords);
     }
@@ -507,6 +513,19 @@ class ExerciseFilterService {
   static bool _textHas(String text, List<String> values) =>
       values.any((value) => text.contains(WorkoutTaxonomy.normalize(value)));
 
+  static bool _isMartialFocusKey(String focus) =>
+      focus.startsWith('karate_') ||
+      focus.startsWith('jiu_jitsu_') ||
+      const {
+        'kihon',
+        'kata',
+        'kumite_technical',
+        'shrimp',
+        'grappling_bridge',
+        'technical_stand_up',
+        'guard_passing',
+      }.contains(focus);
+
   static const _primaryOnlyHierarchyFocuses = {
     'biceps_brachii',
     'biceps',
@@ -602,6 +621,12 @@ class ExerciseFilterService {
   };
 
   static const _focusTagAliases = {
+    'karate_conditioning': ['martial_conditioning'],
+    'jiu_jitsu_conditioning': ['martial_conditioning'],
+    'karate_mobility': ['martial_mobility'],
+    'jiu_jitsu_mobility': ['martial_mobility'],
+    'jiu_jitsu_core': ['martial_core'],
+    'jiu_jitsu_grip': ['grappling_grip'],
     'upper_arm': ['anterior_arm', 'posterior_arm'],
     'forearm_hand': ['forearm_hand', 'grip_strength'],
     'biceps': ['biceps'],
@@ -794,6 +819,11 @@ class ExerciseFilterService {
     'kumite_technical': ['kumite'],
     'karate_shadow': ['sombra de karate'],
     'karate_footwork': ['deslocamento', 'deslocamentos'],
+    'karate_stances': ['bases', 'dachi'],
+    'karate_blocks': ['bloqueio', 'bloqueios', 'uke'],
+    'karate_evasions': ['esquiva', 'esquivas', 'tai-sabaki', 'tai sabaki'],
+    'karate_knees': ['joelhada', 'joelhadas'],
+    'karate_bag': ['saco'],
     'karate_guard': ['guarda'],
     'karate_punches': ['socos', 'soco'],
     'karate_kicks': ['pontapés', 'pontapes', 'pontapé', 'pontape'],
@@ -802,6 +832,9 @@ class ExerciseFilterService {
     'shrimp': ['shrimp', 'fuga de anca'],
     'grappling_bridge': ['ponte de grappling'],
     'technical_stand_up': ['technical stand-up'],
+    'jiu_jitsu_rolls': ['rolamento', 'rolamentos'],
+    'jiu_jitsu_breakfalls': ['breakfall', 'breakfalls', 'ukemi'],
+    'jiu_jitsu_inversions': ['inversão', 'inversao', 'granby'],
     'jiu_jitsu_guard': ['guarda'],
     'guard_passing': ['passagem de guarda'],
     'jiu_jitsu_grip': ['força de pega', 'forca de pega', 'grip'],

@@ -2358,6 +2358,14 @@ class TrainingArchitecture {
     if (_has(name, ['mobilidade de ombro'])) {
       return ['scapular_stabilizers', 'external_rotators'];
     }
+    if (_has(name, ['plano da omoplata'])) {
+      return [
+        'lateral_deltoid',
+        'deltoid_lateral',
+        'external_rotators',
+        'scapular_stabilizers',
+      ];
+    }
     if (_has(name, ['elevacao lateral'])) {
       return ['lateral_deltoid', 'deltoid_lateral'];
     }
@@ -2389,6 +2397,9 @@ class TrainingArchitecture {
   static List<String> _neckMuscles(String name) {
     if (_has(name, ['frontal'])) {
       return ['anterior_neck', 'cervical_stabilizers'];
+    }
+    if (_has(name, ['posterior'])) {
+      return ['posterior_neck', 'cervical_stabilizers'];
     }
     if (_has(name, ['lateral'])) {
       return ['lateral_neck', 'cervical_stabilizers'];
@@ -2513,6 +2524,12 @@ class TrainingArchitecture {
       // Side bend é flexão lateral ativa, não trabalho anti-flexão lateral.
       return ['external_obliques', 'internal_obliques'];
     }
+    if (_has(name, ['lenhador'])) {
+      return ['external_obliques', 'internal_obliques', 'anti_rotation'];
+    }
+    if (_has(name, ['toque no ombro'])) {
+      return ['anti_rotation', 'anti_extension', 'deep_stability'];
+    }
     if (_has(name, ['russian', 'bicycle'])) {
       return ['external_obliques', 'internal_obliques', 'rectus_abdominis'];
     }
@@ -2602,6 +2619,29 @@ class TrainingArchitecture {
         group: 'quadriceps',
         subgroup: 'quadriceps',
         muscles: ['vastus_medialis', 'rectus_femoris'],
+      );
+      return;
+    }
+    if (_has(name, ['clamshell'])) {
+      add(
+        region: 'lower',
+        group: 'abductors',
+        subgroup: 'abductors',
+        muscles: [
+          'abductors',
+          'glute_med',
+          'glute_min',
+          'hip_external_rotators',
+        ],
+      );
+      return;
+    }
+    if (_has(name, ['curl nordico'])) {
+      add(
+        region: 'lower',
+        group: 'hamstrings',
+        subgroup: 'hamstrings',
+        muscles: ['biceps_femoris', 'semitendinosus', 'semimembranosus'],
       );
       return;
     }
@@ -2734,6 +2774,32 @@ class TrainingArchitecture {
     })
     add,
   ) {
+    if (_has(name, ['remo ergometro'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'rower');
+      add(region: 'cardio', group: 'cardio_machine', subgroup: 'rower');
+      return;
+    }
+    if (_has(name, ['stepper'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'stepper');
+      add(region: 'cardio', group: 'cardio_machine', subgroup: 'stepper');
+      return;
+    }
+    if (_has(name, ['air bike'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'air_bike');
+      add(region: 'cardio', group: 'cardio_machine', subgroup: 'air_bike');
+      return;
+    }
+    if (_has(name, ['subida de escadas'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'outdoor_run');
+      add(region: 'cardio', group: 'outdoor_cardio', subgroup: 'outdoor_run');
+      return;
+    }
+    if (_has(name, ['shadow boxing'])) {
+      add(region: 'cardio', group: 'cardio_general', subgroup: 'hiit');
+      add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
+      add(region: 'martial_arts', group: 'martial_conditioning');
+      return;
+    }
     if (_has(name, ['passadeira'])) {
       add(region: 'cardio', group: 'cardio_general', subgroup: 'treadmill');
       add(region: 'cardio', group: 'cardio_machine', subgroup: 'treadmill');
@@ -2786,6 +2852,44 @@ class TrainingArchitecture {
     if (_has(name, ['alongamento'])) {
       add(region: 'mobility_recovery', group: 'stretching');
     }
+    if (_has(name, ['borboleta', 'adutores'])) {
+      add(region: 'mobility_recovery', group: 'hip_mobility');
+    }
+    if (_has(name, ['flexores da anca'])) {
+      add(region: 'mobility_recovery', group: 'hip_mobility');
+      add(region: 'mobility_recovery', group: 'quadriceps_mobility');
+    }
+    if (_has(name, ['triceps atras da cabeca'])) {
+      add(region: 'mobility_recovery', group: 'shoulder_mobility');
+    }
+    if (_has(name, ['cobra suave'])) {
+      add(region: 'mobility_recovery', group: 'thoracic_mobility');
+      add(region: 'mobility_recovery', group: 'back_mobility');
+    }
+    if (_has(name, ['dinamico global'])) {
+      add(region: 'mobility_recovery', group: 'hip_mobility');
+      add(region: 'mobility_recovery', group: 'thoracic_mobility');
+      add(region: 'mobility_recovery', group: 'hamstring_mobility');
+    }
+    if (_has(name, ['foam roller', 'bola de massagem'])) {
+      add(region: 'mobility_recovery', group: 'active_recovery');
+    }
+    if (_has(name, ['foam roller para costas'])) {
+      add(region: 'mobility_recovery', group: 'back_mobility');
+    }
+    if (_has(name, ['foam roller para pernas'])) {
+      add(region: 'mobility_recovery', group: 'quadriceps_mobility');
+      add(region: 'mobility_recovery', group: 'calf_mobility');
+      add(region: 'mobility_recovery', group: 'hamstring_mobility');
+    }
+    if (_has(name, ['arrefecimento pos'])) {
+      add(region: 'mobility_recovery', group: 'active_recovery');
+      add(region: 'mobility_recovery', group: 'stretching');
+    }
+    if (_has(name, ['aquecimento dinamico'])) {
+      add(region: 'mobility_recovery', group: 'hip_mobility');
+      add(region: 'mobility_recovery', group: 'shoulder_mobility');
+    }
     if (_has(name, [
       'respiracao',
       'respiracao',
@@ -2801,7 +2905,7 @@ class TrainingArchitecture {
     if (_has(name, ['gluteo', 'piriforme', 'pigeon', 'figura 4', '90 90'])) {
       add(region: 'mobility_recovery', group: 'glute_mobility');
     }
-    if (_has(name, ['posterior'])) {
+    if (_has(name, ['posterior', 'isquiotibiais'])) {
       add(region: 'mobility_recovery', group: 'hamstring_mobility');
     }
     if (_has(name, ['quadriceps'])) {
@@ -2876,10 +2980,22 @@ class TrainingArchitecture {
     addIf('elliptical', ['eliptica', 'elíptica']);
     addIf('jump_rope', ['corda']);
     addIf('heavy_bag', ['saco']);
+    addIf('rower', ['remo ergometro']);
+    addIf('stepper', ['stepper']);
+    addIf('air_bike', ['air bike']);
+    addIf('foam_roller', ['rolo de espuma', 'foam roller']);
+    addIf('massage_ball', ['bola de massagem']);
+    addIf('free_space', ['espaco livre']);
     addIf('tatami', ['tatami']);
     addIf('mat', ['tapete', 'colchonete']);
     addIf('outdoor_space', ['exterior', 'espaco exterior', 'espaço exterior']);
     addIf('none', ['nenhum equipamento']);
+    // Auxiliares de mobilidade usam-se em posições de peso corporal: mantêm
+    // a chave bodyweight para responder às seleções de mobilidade/recuperação
+    // (o requisito do auxiliar continua a ser exigido pela disponibilidade).
+    if (keys.any({'broomstick', 'foam_roller', 'massage_ball'}.contains)) {
+      keys.add('bodyweight');
+    }
     if (keys.isEmpty) keys.add('bodyweight');
     return keys;
   }

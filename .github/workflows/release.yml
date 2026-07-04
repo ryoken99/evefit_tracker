@@ -9,7 +9,7 @@ on:
       version:
         description: 'Versão do release (v0.9.1)'
         required: true
-        default: 'v0.9.1'
+        default: 'v0.9.2'
 
 permissions:
   contents: write
@@ -62,6 +62,15 @@ jobs:
           generate_release_notes: false
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
+
+            ### Novidades v0.9.2
+            - Catálogo expandido de 315 para 353 exercícios: coifa do ombro, pescoço, core anti-rotação, glúteo médio, isquiotibiais excêntricos e equilíbrio unilateral.
+            - Cardio novo: remo ergómetro, stepper/escadas, air bike, shadow boxing, shuttle runs e subida de escadas, com filtros próprios.
+            - Alongamentos PNF, flexores da anca, adutores, tríceps e cobra; rotinas de aquecimento e arrefecimento guiadas.
+            - Karate: bases, bloqueios, esquivas, joelhadas e trabalho ao saco. Jiu-Jitsu: rolamentos, breakfalls e inversões.
+            - Recuperação: respiração nasal, foam roller e bola de massagem.
+            - Todos os exercícios novos com instruções passo a passo escritas de raiz; filtros validados e migração segura do catálogo.
+            - Atualizada versão da app para v0.9.2.
 
             ### Novidades v0.9.1
             - Explicações de todos os 315 exercícios reescritas: objetivo curto, passos em lista, erros comuns e variações concretas.

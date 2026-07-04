@@ -1,3 +1,17 @@
+# v0.9.2
+
+- Expansão do catálogo de exercícios: 315 → 353 (38 novos), fechando lacunas reais identificadas em gap analysis: coifa do ombro (elevação no plano da omoplata), extensão cervical, rotação do tronco com carga (lenhador no cabo), anti-rotação sem equipamento (prancha com toque no ombro), rotadores externos da anca (clamshell), isquiotibiais excêntricos (curl nórdico assistido) e dobradiça unilateral (peso morto unilateral).
+- Cardio novo com filtros próprios: remo ergómetro, stepper/escadas e air bike (contínuo + intervalos), subida de escadas no exterior, shadow boxing leve e shuttle runs, com nível de impacto indicado no texto.
+- Mobilidade e elasticidade: primeiros alongamentos PNF (isquiotibiais e peitoral), flexores da anca em afundo, borboleta de adutores, tríceps atrás da cabeça, cobra suave e alongamento dinâmico global.
+- Artes marciais: Karate ganhou bases (dachi), bloqueios (uke), esquivas/tai-sabaki, joelhadas e trabalho leve ao saco (marcado como exigindo saco de pancada); Jiu-Jitsu ganhou rolamentos, breakfalls (ukemi) e inversão granby, com novos focos técnicos nos filtros.
+- Recuperação e prevenção: respiração nasal lenta, foam roller (pernas e costas), bola de massagem, arrefecimentos guiados pós-força e pós-artes marciais e aquecimento dinâmico geral.
+- Descrições dos 38 exercícios novos escritas de raiz no modelo canónico (objetivo, 4-7 passos, erros comuns, regressão/progressão, segurança).
+- Corrigidos filtros de exercícios existentes: "Mobilidade de ombro com cabo de vassoura" e "Rotação externa da anca no chão" voltaram a aparecer nos filtros; drills marciais deixaram de aparecer em focos técnicos errados.
+- Removidas as últimas frases-muleta ("conforme a variação", "indicada pela variação") de 47 exercícios; prancha lateral e face pull com elástico ganharam passos próprios.
+- Migração segura (base de dados v20): os novos exercícios entram e os textos atualizam sem tocar em exercícios personalizados, treinos, séries, medidas, fotos ou objetivos.
+- 28 novos testes obrigatórios de catálogo e filtros (total: 417 testes).
+- Atualizada versão da app para v0.9.2.
+
 # v0.9.1
 
 - Revisão pedagógica completa dos 315 exercícios do catálogo: objetivo curto e específico, execução em lista de 4 a 7 passos, erros comuns em lista e versões mais fácil/difícil concretas.

@@ -57,6 +57,23 @@ class ExerciseCatalogDetailService {
 
   static String equipmentFor(String name) {
     final n = _n(name);
+    if (_has(n, ['remo ergometro'])) return 'Remo ergómetro';
+    if (_has(n, ['stepper'])) return 'Stepper / escadas';
+    if (_has(n, ['subida de escadas no exterior'])) {
+      return 'Espaço exterior com escadas';
+    }
+    if (_has(n, ['air bike'])) return 'Air bike';
+    if (_has(n, ['shuttle runs'])) return 'Peso corporal, espaço livre';
+    if (_has(n, ['shadow boxing'])) return 'Peso corporal';
+    if (_has(n, ['elevacao no plano da omoplata'])) return 'Halteres';
+    if (_has(n, ['lenhador no cabo'])) return 'Cabo / polia';
+    if (_has(n, ['peso morto unilateral'])) return 'Halteres';
+    if (_has(n, ['curl nordico assistido'])) {
+      return 'Peso corporal, apoio para os pés';
+    }
+    if (_has(n, ['trabalho leve ao saco'])) return 'Saco de pancada';
+    if (_has(n, ['foam roller'])) return 'Rolo de espuma (foam roller)';
+    if (_has(n, ['bola de massagem'])) return 'Bola de massagem';
     if (_has(n, ['flexao classica', 'flexao aberta', 'flexao arqueiro'])) {
       return 'Peso corporal';
     }
@@ -232,6 +249,7 @@ class ExerciseCatalogDetailService {
     ])) {
       return n.contains('towel') ? 'Barra fixa, toalha' : 'Barra fixa';
     }
+    if (_has(n, ['rotacao externa da anca'])) return 'Peso corporal';
     if (_has(n, [
       'elastico',
       'pull-apart',
@@ -787,7 +805,7 @@ class ExerciseCatalogDetailService {
       '1. Aproxima-te da barra e escolhe uma pega segura, normalmente à largura dos ombros ou um pouco mais aberta conforme $name. 2. Alinha punhos, cotovelos e tronco antes de tirar a barra do apoio ou do chão. 3. Mantém a barra perto da linha de força do corpo. 4. Sobe, desce ou move a barra só até onde consegues manter lombar, punhos e ombros alinhados, conforme a direção do exercício. 5. Controla a barra na descida e evita bater no suporte. 6. Inspira antes da fase difícil e expira ao terminar o esforço. 7. Usa a barra vazia ou uma carga que permita repetir a mesma trajetória sem perder punhos, ombros e lombar.';
 
   static String _cableSteps(String name) =>
-      '1. Ajusta a polia à altura indicada pela variação de $name. 2. Escolhe uma pega que permita punhos alinhados e ombros relaxados. 3. Dá um passo para criar tensão no cabo antes da primeira repetição. 4. Move a pega até ao ponto em que a articulação alvo continua estável, dobrando ou estendendo os cotovelos conforme o exercício, sem puxar com balanço do tronco. 5. Pausa brevemente no ponto de contração. 6. Deixa o cabo regressar devagar, mantendo tensão. 7. Inspira no retorno e expira quando puxas ou empurras.';
+      '1. Ajusta a polia à altura de trabalho de $name (alta, média ou baixa). 2. Escolhe uma pega que permita punhos alinhados e ombros relaxados. 3. Dá um passo para criar tensão no cabo antes da primeira repetição. 4. Move a pega até ao ponto em que a articulação alvo continua estável, dobrando ou estendendo os cotovelos conforme o exercício, sem puxar com balanço do tronco. 5. Pausa brevemente no ponto de contração. 6. Deixa o cabo regressar devagar, mantendo tensão. 7. Inspira no retorno e expira quando puxas ou empurras.';
 
   static String _machineSteps(String name) =>
       '1. Ajusta banco, encosto e pegas para a zona que vai mover ficar alinhada com o eixo da máquina. 2. Seleciona carga leve para testar o caminho da máquina. 3. Segura as pegas com punhos alinhados ou apoia os pés no local indicado. 4. Empurra ou puxa enquanto dobras ou estendes a zona trabalhada, parando antes de a máquina causar dor ou tirar as costas do apoio. 5. Regressa devagar até sentires alongamento ou flexão segura. 6. Inspira no retorno e expira no esforço. 7. Mantém costas e cabeça apoiadas quando a máquina tiver apoio.';
