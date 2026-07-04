@@ -194,7 +194,14 @@ void main() {
       for (final entry in ExerciseCatalogContextService.entries.where(
         (entry) => entry.group == 'Karate',
       )) {
-        expect(entry.details.equipment, 'Peso corporal', reason: entry.name);
+        // Único drill com equipamento próprio: o trabalho ao saco.
+        expect(
+          entry.details.equipment,
+          entry.name == 'Trabalho leve ao saco'
+              ? 'Saco de pancada'
+              : 'Peso corporal',
+          reason: entry.name,
+        );
       }
       expect(availableAt('Casa', {}), contains('Drills de guarda'));
     });

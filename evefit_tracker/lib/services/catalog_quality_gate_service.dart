@@ -403,7 +403,10 @@ class CatalogQualityGateService {
         ]);
       } else if (name.contains('curl') &&
           !name.contains('wrist') &&
-          !name.contains('finger')) {
+          !name.contains('finger') &&
+          // Curl nórdico é excêntrico de isquiotibiais, não flexão de
+          // cotovelo; tem os seus próprios passos.
+          !name.contains('nordico')) {
         _requireAll(failures, entry, 'movement_family', text, [
           'pega',
           'cotovel',
@@ -414,10 +417,12 @@ class CatalogQualityGateService {
           'respira',
         ]);
       }
-      if (name.contains('triceps') ||
-          name.contains('tricep') ||
-          name.contains('tríceps') ||
-          name.contains('extensao francesa')) {
+      if ((name.contains('triceps') ||
+              name.contains('tricep') ||
+              name.contains('tríceps') ||
+              name.contains('extensao francesa')) &&
+          // Alongamentos de tríceps são mobilidade, não extensão com carga.
+          !name.contains('alongamento')) {
         _requireAll(failures, entry, 'movement_family', text, [
           'cotovel',
           'estende',
@@ -1520,7 +1525,8 @@ class CatalogQualityGateService {
             label: TrainingFlow.suggestedWorkoutName(flow),
             type: flow.typeKey,
             location: 'Dojo / Artes marciais',
-            equipment: {'tatami', 'bodyweight'},
+            // Saco de pancada: só desbloqueia o drill de trabalho ao saco.
+            equipment: {'tatami', 'bodyweight', 'heavy_bag'},
             selection: TrainingFlow.toTrainingSelection(flow),
           ),
         );

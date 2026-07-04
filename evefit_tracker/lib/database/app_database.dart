@@ -72,7 +72,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 19,
+      version: 20,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -91,6 +91,7 @@ class AppDatabase {
         await _migrateV717(db);
         await _migrateV080(db);
         await _migrateV091(db);
+        await _migrateV092(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -146,6 +147,9 @@ class AppDatabase {
         }
         if (oldVersion < 19) {
           await _migrateV091(db);
+        }
+        if (oldVersion < 20) {
+          await _migrateV092(db);
         }
       },
     );
@@ -237,6 +241,14 @@ class AppDatabase {
   /// catalog_entry_key, preservando exercícios personalizados, histórico de
   /// treinos, séries, medidas, fotos e objetivos.
   Future<void> _migrateV091(Database db) async {
+    await refreshCatalogExercises(db);
+  }
+
+  /// v0.9.2: expansão do catálogo (353 exercícios) e revisão de textos.
+  /// Reaproveita o upsert idempotente por catalog_entry_key: insere os novos
+  /// exercícios de sistema e atualiza os textos dos existentes, sem tocar em
+  /// exercícios personalizados, histórico, séries, medições ou objetivos.
+  Future<void> _migrateV092(Database db) async {
     await refreshCatalogExercises(db);
   }
 
