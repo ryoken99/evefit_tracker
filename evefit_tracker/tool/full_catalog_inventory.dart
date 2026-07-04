@@ -617,7 +617,7 @@ String difficultyLevel(ExerciseCatalogEntry entry) {
   if (has([
         'com apoio',
         'na parede',
-        'inclinada',
+        'flexao inclinada',
         'assistid',
         'iniciante',
         'leve',

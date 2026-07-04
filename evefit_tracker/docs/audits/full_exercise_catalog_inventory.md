@@ -79,8 +79,8 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 
 ### Por nível estimado
 
-- intermédio: 246
-- iniciante: 101
+- intermédio: 249
+- iniciante: 98
 - avançado: 6
 
 ### Por equipamento
@@ -813,7 +813,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: outro / técnico
-- Nível estimado: iniciante
+- Nível estimado: intermédio
 - Articulações principais: várias
 - Músculos (tags): mid_chest, upper_chest, lower_chest
 - Músculos secundários: Deltoide anterior, bíceps como estabilizador e escápulas
@@ -826,7 +826,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 
 - Grupo: Peito | Área: cabo
 - Padrão de movimento: outro / técnico
-- Nível estimado: iniciante
+- Nível estimado: intermédio
 - Articulações principais: várias
 - Músculos (tags): mid_chest, upper_chest, lower_chest
 - Músculos secundários: Deltoide anterior, bíceps como estabilizador e escápulas
@@ -839,7 +839,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 
 - Grupo: Peito | Área: elastico
 - Padrão de movimento: outro / técnico
-- Nível estimado: iniciante
+- Nível estimado: intermédio
 - Articulações principais: várias
 - Músculos (tags): mid_chest, upper_chest, lower_chest
 - Músculos secundários: Deltoide anterior, bíceps como estabilizador e escápulas
