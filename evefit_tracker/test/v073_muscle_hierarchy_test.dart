@@ -48,26 +48,23 @@ void main() {
       );
     });
 
-    test(
-      'upper arm opens biceps brachialis brachioradialis and triceps',
-      () {
-        expect(
-          TrainingFlow.strengthSpecificOptions(
-            'arms',
-            'upper_arm',
-          ).map((item) => item.value),
-          [
-            'Bíceps braquial',
-            'Braquial',
-            'Braquiorradial',
-            'Tríceps completo',
-            'Tríceps cabeça longa',
-            'Tríceps cabeça lateral',
-            'Tríceps cabeça medial',
-          ],
-        );
-      },
-    );
+    test('upper arm opens biceps brachialis brachioradialis and triceps', () {
+      expect(
+        TrainingFlow.strengthSpecificOptions(
+          'arms',
+          'upper_arm',
+        ).map((item) => item.value),
+        [
+          'Bíceps braquial',
+          'Braquial',
+          'Braquiorradial',
+          'Tríceps completo',
+          'Tríceps cabeça longa',
+          'Tríceps cabeça lateral',
+          'Tríceps cabeça medial',
+        ],
+      );
+    });
 
     test(
       'forearm opens flexors extensors pronators supinators wrist fingers and grip',

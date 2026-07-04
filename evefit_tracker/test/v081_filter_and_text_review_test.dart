@@ -16,14 +16,12 @@ void main() {
   }) {
     final selection = TrainingFlow.toTrainingSelection(flow);
     return ExerciseFilterService.getAvailableExercises(
-          exercises: exercises,
-          trainingLocation: location,
-          availableEquipmentKeys: equipment,
-          selection: selection,
-          showAllExercises: false,
-        )
-        .map((item) => item.exercise.name)
-        .toSet();
+      exercises: exercises,
+      trainingLocation: location,
+      availableEquipmentKeys: equipment,
+      selection: selection,
+      showAllExercises: false,
+    ).map((item) => item.exercise.name).toSet();
   }
 
   TrainingFlowSelection strength({
@@ -169,19 +167,20 @@ void main() {
   group('v0.8.1 location and equipment corrections', () {
     Set<String> availableAt(String location, Set<String> equipment) {
       return ExerciseFilterService.getAvailableExercises(
-            exercises: exercises,
-            trainingLocation: location,
-            availableEquipmentKeys: equipment,
-            selection: const TrainingSelection(),
-            showAllExercises: false,
-          )
-          .map((item) => item.exercise.name)
-          .toSet();
+        exercises: exercises,
+        trainingLocation: location,
+        availableEquipmentKeys: equipment,
+        selection: const TrainingSelection(),
+        showAllExercises: false,
+      ).map((item) => item.exercise.name).toSet();
     }
 
     test('uphill running needs outdoor space', () {
       expect(availableAt('Casa', {}), isNot(contains('Corrida em subida')));
-      expect(availableAt('Exterior / parque', {}), contains('Corrida em subida'));
+      expect(
+        availableAt('Exterior / parque', {}),
+        contains('Corrida em subida'),
+      );
     });
 
     test('gym includes jump rope and mat-based grappling drills', () {
@@ -220,8 +219,10 @@ void main() {
       expect(text, contains('joelhos'));
       expect(text, contains('calcanhares'));
       expect(text, isNot(contains('bíceps braquial')));
-      expect(entry.details.secondaryGroups.toLowerCase(),
-          isNot(contains('braquiorradial')));
+      expect(
+        entry.details.secondaryGroups.toLowerCase(),
+        isNot(contains('braquiorradial')),
+      );
     });
 
     test('leg extension and leg press describe the machines', () {
@@ -236,8 +237,10 @@ void main() {
     });
 
     test('bulgarian split squat explains the rear foot on the bench', () {
-      final steps =
-          entryFor('Agachamento búlgaro', 'Pernas').details.executionSteps;
+      final steps = entryFor(
+        'Agachamento búlgaro',
+        'Pernas',
+      ).details.executionSteps;
       expect(steps.toLowerCase(), contains('peito do pé de trás'));
       expect(steps.toLowerCase(), contains('banco'));
     });
@@ -248,10 +251,10 @@ void main() {
         contains('eleva a anca'),
       );
       expect(
-        entryFor('Ponte de glúteo', 'Pernas')
-            .details
-            .executionSteps
-            .toLowerCase(),
+        entryFor(
+          'Ponte de glúteo',
+          'Pernas',
+        ).details.executionSteps.toLowerCase(),
         contains('eleva a anca'),
       );
     });

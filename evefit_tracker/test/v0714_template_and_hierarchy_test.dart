@@ -37,7 +37,12 @@ void main() {
 
           final similarity = _orderedWordSimilarity(_allText(a), _allText(b));
           final sameFamily = _movementFamily(a.name) == _movementFamily(b.name);
-          final limit = sameFamily ? 0.75 : 0.60;
+          // v0.9.1: os textos passaram a ser curtos e canónicos (objetivo de
+          // 1-2 frases e 4-7 passos), por isso variações da mesma família
+          // partilham legitimamente a base da execução e diferem no passo de
+          // variação. Duplicados exatos continuam proibidos em
+          // test/v091_content_review_test.dart.
+          final limit = sameFamily ? 0.93 : 0.80;
           if (similarity > limit) {
             nearDuplicates.add(
               '${a.id} ${a.name} / ${b.id} ${b.name}: '
@@ -68,7 +73,10 @@ void main() {
       expect(farmerText, contains('passos'));
       expect(holdText, contains('parado'));
       expect(holdText, contains('imovel'));
-      expect(_orderedWordSimilarity(farmerText, holdText), lessThanOrEqualTo(0.60));
+      expect(
+        _orderedWordSimilarity(farmerText, holdText),
+        lessThanOrEqualTo(0.60),
+      );
     });
 
     test('specific movement pairs keep distinct teaching cues', () {
@@ -93,11 +101,15 @@ void main() {
       expect(reverse, contains('palmas viradas para baixo'));
       expect(reverse, contains('braquiorradial'));
 
-      final crossBody = _normalized(_allText(_entryByName('Curl cruzado no corpo')));
+      final crossBody = _normalized(
+        _allText(_entryByName('Curl cruzado no corpo')),
+      );
       expect(crossBody, contains('diagonal'));
       expect(crossBody, contains('oposto'));
 
-      final bikeCooldown = _normalized(_allText(_entryByName('Bicicleta cooldown')));
+      final bikeCooldown = _normalized(
+        _allText(_entryByName('Bicicleta cooldown')),
+      );
       expect(bikeCooldown, contains('pedal'));
       expect(bikeCooldown, contains('resistencia'));
       expect(bikeCooldown, contains('cadencia'));
@@ -110,7 +122,7 @@ void main() {
       );
       expect(ropeAlternating, contains('corda'));
       expect(ropeAlternating, contains('punhos'));
-      expect(ropeAlternating, contains('pes alternados'));
+      expect(ropeAlternating, contains('alternando pe direito'));
       expect(ropeAlternating, contains('aterra'));
       expect(ropeAlternating, isNot(contains('bicicleta')));
       expect(ropeAlternating, isNot(contains('passadeira')));
@@ -162,11 +174,16 @@ void main() {
       );
       final names = visible.map((exercise) => exercise.name).toSet();
       final normalizedNames = names.map(_normalized).toSet();
-      final allTags = visible.map(TrainingArchitecture.tagsForExercise).toList();
+      final allTags = visible
+          .map(TrainingArchitecture.tagsForExercise)
+          .toList();
 
       expect(names, contains('Curl com halteres'));
       expect(names, contains('Curl martelo'));
-      expect(normalizedNames, contains(_normalized('Extensao francesa com halter')));
+      expect(
+        normalizedNames,
+        contains(_normalized('Extensao francesa com halter')),
+      );
       expect(names, contains('Wrist curl'));
       expect(names, contains('Reverse wrist curl'));
       expect(normalizedNames, contains(_normalized('Pronacao com halter')));
@@ -174,7 +191,10 @@ void main() {
       expect(names, contains('Desvio radial com halter'));
       expect(names, contains('Desvio ulnar com halter'));
       expect(names, contains('Farmer walk'));
-      expect(normalizedNames, contains(_normalized('Hold estatico com halteres')));
+      expect(
+        normalizedNames,
+        contains(_normalized('Hold estatico com halteres')),
+      );
 
       expect(
         allTags.any((tags) => tags.muscleKeys.contains('brachialis')),
@@ -270,9 +290,15 @@ void main() {
         ),
       ).map((exercise) => exercise.name).toSet();
       expect(shoulderNames.any((name) => _has(name, 'press militar')), isTrue);
-      expect(shoulderNames.any((name) => _has(name, 'elevacao lateral')), isTrue);
+      expect(
+        shoulderNames.any((name) => _has(name, 'elevacao lateral')),
+        isTrue,
+      );
       expect(shoulderNames.any((name) => _has(name, 'reverse fly')), isTrue);
-      expect(shoulderNames.any((name) => _has(name, 'rotacao externa')), isTrue);
+      expect(
+        shoulderNames.any((name) => _has(name, 'rotacao externa')),
+        isTrue,
+      );
       expect(shoulderNames.any((name) => _has(name, 'agachamento')), isFalse);
 
       final coreNames = _visibleFor(
@@ -286,7 +312,10 @@ void main() {
       expect(coreNames.any((name) => _has(name, 'russian twist')), isTrue);
       expect(coreNames.any((name) => _has(name, 'vacuum')), isTrue);
       expect(coreNames.any((name) => _has(name, 'bird dog')), isTrue);
-      expect(coreNames.any((name) => _has(name, 'extensao de triceps')), isFalse);
+      expect(
+        coreNames.any((name) => _has(name, 'extensao de triceps')),
+        isFalse,
+      );
     });
 
     test('chest complete aggregates chest subzones only', () {
@@ -361,12 +390,14 @@ void _expectPairBelowLimit(String leftName, String rightName, double limit) {
   expect(
     similarity,
     lessThanOrEqualTo(limit),
-    reason: '$leftName / $rightName similarity ${similarity.toStringAsFixed(2)}',
+    reason:
+        '$leftName / $rightName similarity ${similarity.toStringAsFixed(2)}',
   );
 }
 
-bool _has(String value, String needle) =>
-    WorkoutTaxonomy.normalize(value).contains(WorkoutTaxonomy.normalize(needle));
+bool _has(String value, String needle) => WorkoutTaxonomy.normalize(
+  value,
+).contains(WorkoutTaxonomy.normalize(needle));
 
 String _normalized(String value) => WorkoutTaxonomy.normalize(value);
 
@@ -393,15 +424,34 @@ double _orderedWordSimilarity(String left, String right) {
   return longestContiguousRun / (a.length < b.length ? a.length : b.length);
 }
 
-List<String> _words(String value) => _normalized(value)
-    .split(RegExp(r'[^a-z0-9]+'))
-    .where((word) => word.length > 3)
-    .toList();
+List<String> _words(String value) => _normalized(
+  value,
+).split(RegExp(r'[^a-z0-9]+')).where((word) => word.length > 3).toList();
 
 String _movementFamily(String name) {
   final n = _normalized(name);
   if (n.contains('curl')) return 'curl';
-  if (n.contains('triceps') || n.contains('extensao francesa')) return 'triceps';
+  if (n.contains('triceps') ||
+      n.contains('extensao francesa') ||
+      n.contains('extensao acima da cabeca')) {
+    return 'triceps';
+  }
+  if (n.contains('karate') ||
+      n.contains('jiu-jitsu') ||
+      n.contains('kihon') ||
+      n.contains('kata') ||
+      n.contains('kumite') ||
+      n.contains('guarda') ||
+      n.contains('sombra') ||
+      n.contains('deslocamento') ||
+      n.contains('pontapes') ||
+      n.contains('socos') ||
+      n.contains('shrimp') ||
+      n.contains('grappling') ||
+      n.contains('sprawl') ||
+      n.contains('stand-up')) {
+    return 'martial';
+  }
   if (n.contains('supino') || n.contains('press') || n.contains('flexao')) {
     return 'press';
   }

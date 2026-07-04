@@ -13,7 +13,14 @@ void main() {
     'goblet': ['junto ao peito', 'ao peito', 'frente do peito'],
     'sumo': ['mais afastados', 'bem afastados', 'largura larga', 'para fora'],
     'smith': ['smith', 'barra guiada', 'guiada'],
-    'unilateral': ['uma perna', 'um braco', 'uma mao', 'um lado', 'perna de cada vez', 'braco de cada vez'],
+    'unilateral': [
+      'uma perna',
+      'um braco',
+      'uma mao',
+      'um lado',
+      'perna de cada vez',
+      'braco de cada vez',
+    ],
     'alternado': ['alterna'],
     'inclinado': ['inclinado', 'inclinada'],
     'declinado': ['declinado', 'declinada'],
@@ -23,7 +30,14 @@ void main() {
     'em pe': ['de pe', 'em pe'],
     'deitado': ['deita', 'deitado'],
     'suspenso': ['pendura', 'suspens', 'barra fixa'],
-    'isometric': ['segura', 'aguenta', 'mantem', 'parado', 'sem movimento', 'sustenta'],
+    'isometric': [
+      'segura',
+      'aguenta',
+      'mantem',
+      'parado',
+      'sem movimento',
+      'sustenta',
+    ],
     'com apoio': ['apoio', 'apoiada', 'apoiado', 'banco', 'cadeira', 'parede'],
     'na maquina': ['maquina'],
     'no cabo': ['cabo', 'polia'],
@@ -42,7 +56,13 @@ void main() {
     'banco romano': ['banco romano', 'romano', 'maquina'],
     'no chao': ['chao'],
     'quadrupede': ['maos e joelhos', 'quatro apoios', 'quadrupedia'],
-    'hiperextensao': ['estende', 'sobe o tronco', 'eleva o tronco', 'eleva bracos e pernas', 'extensao da anca'],
+    'hiperextensao': [
+      'estende',
+      'sobe o tronco',
+      'eleva o tronco',
+      'eleva bracos e pernas',
+      'extensao da anca',
+    ],
     'kickback': ['para tras'],
     'crossover': ['cruza'],
     'pullover': ['arco', 'atras da cabeca'],
@@ -54,8 +74,19 @@ void main() {
     'step-up': ['sobe', 'degrau', 'apoio elevado', 'banco'],
     'leg press': ['plataforma', 'maquina'],
     'extensao de perna': ['maquina', 'estende os joelhos', 'estende o joelho'],
-    'curl de perna': ['maquina', 'dobra o joelho', 'dobra os joelhos', 'calcanhar'],
-    'hip thrust': ['costas apoiadas', 'apoia as costas', 'ombros apoiados', 'anca para cima', 'eleva a anca'],
+    'curl de perna': [
+      'maquina',
+      'dobra o joelho',
+      'dobra os joelhos',
+      'calcanhar',
+    ],
+    'hip thrust': [
+      'costas apoiadas',
+      'apoia as costas',
+      'ombros apoiados',
+      'anca para cima',
+      'eleva a anca',
+    ],
     'ponte': ['eleva a anca', 'anca para cima', 'sobe a anca'],
     'abducao': ['afasta', 'para fora', 'lateral'],
     'aducao': ['aproxima', 'para dentro', 'junta'],
@@ -93,7 +124,9 @@ void main() {
       }
     }
     if (missing.isNotEmpty) {
-      buffer.writeln('- ${entry.id} ${entry.name} [${entry.group}] falta: $missing');
+      buffer.writeln(
+        '- ${entry.id} ${entry.name} [${entry.group}] falta: $missing',
+      );
     }
   }
   File('tool/step_specificity_output.md').writeAsStringSync(buffer.toString());

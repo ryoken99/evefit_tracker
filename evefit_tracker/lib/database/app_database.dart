@@ -72,7 +72,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 18,
+      version: 19,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -90,6 +90,7 @@ class AppDatabase {
         await _migrateV711(db);
         await _migrateV717(db);
         await _migrateV080(db);
+        await _migrateV091(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -142,6 +143,9 @@ class AppDatabase {
         }
         if (oldVersion < 18) {
           await _migrateV080(db);
+        }
+        if (oldVersion < 19) {
+          await _migrateV091(db);
         }
       },
     );
@@ -227,6 +231,19 @@ class AppDatabase {
     }
     await _ensureExerciseCatalogEntryIndex(db);
   }
+
+  /// v0.9.1: reescreve os textos pedagógicos de todos os exercícios do
+  /// catálogo. Atualiza apenas linhas com is_default = 1, identificadas por
+  /// catalog_entry_key, preservando exercícios personalizados, histórico de
+  /// treinos, séries, medidas, fotos e objetivos.
+  Future<void> _migrateV091(Database db) async {
+    await refreshCatalogExercises(db);
+  }
+
+  /// Reaplica os textos do catálogo às linhas de sistema (is_default = 1),
+  /// sem tocar em exercícios personalizados nem em dados de treino.
+  /// Público para permitir testes de migração com bases em memória.
+  Future<void> refreshCatalogExercises(Database db) => _seedExercises(db);
 
   Future<void> _migrateV5(Database db) async {
     await _createDashboardWidgetsTable(db);

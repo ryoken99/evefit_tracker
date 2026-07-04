@@ -1,3 +1,13 @@
+# v0.9.1
+
+- Revisão pedagógica completa dos 315 exercícios do catálogo: objetivo curto e específico, execução em lista de 4 a 7 passos, erros comuns em lista e versões mais fácil/difícil concretas.
+- Corrigida a linguagem errada de equipamento (exercícios de peso corporal deixaram de falar em "carga"; cada tipo de equipamento tem instruções próprias).
+- Flexão diamante, Curl arrastado com halteres e Tate press ensinados corretamente, passo a passo.
+- Novo modal de detalhes do exercício com secções (Resumo, Objetivo, Como fazer, Erros comuns, Variações, Segurança) e listas verticais legíveis no telemóvel.
+- Migração segura: instalações existentes recebem os textos novos sem tocar em exercícios personalizados, treinos, séries, medidas, fotos ou objetivos.
+- Novos testes e quality gate impedem regressões de conteúdo.
+- Atualizada versão da app para v0.9.1.
+
 # v0.9.0
 
 - Corrigida a filtragem por músculo específico: focos sem correspondência deixaram de mostrar a região inteira (deltoide posterior, rotadores, lombar, etc.) e focos sem mapa deixaram de ficar vazios (deltoide anterior/lateral, trapézio superior/médio/inferior, romboides, dorsal, pescoço, vastos, isquiotibiais específicos, glúteos, flexores da anca, pés).
