@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 /// FASE 14 da revisão/expansão do catálogo (v0.9.2): os 28 testes
-/// obrigatórios pedidos na especificação, aplicados aos 353 exercícios.
+/// obrigatórios pedidos na especificação, aplicados aos 398 exercícios.
 void main() {
   final entries = ExerciseCatalogContextService.entries;
   final exercises = entries.map((entry) => entry.toExercise()).toList();
@@ -52,6 +52,10 @@ void main() {
     'Arrefecimento pós-treino de força',
     'Arrefecimento pós-artes marciais',
     'Aquecimento dinâmico geral',
+    'Elevação Y-T-W deitado no chão',
+    'Rotação externa isométrica na parede',
+    'Encolhimento isométrico de ombros',
+    'Torção de toalha',
   ];
 
   List<String> steps(ExerciseCatalogEntry entry) => entry.details.executionSteps
@@ -526,7 +530,7 @@ void main() {
       }
     });
 
-    test('28 "mostrar todos" inclui os 353 exercícios válidos', () {
+    test('28 "mostrar todos" inclui os 398 exercícios válidos', () {
       final all = ExerciseFilterService.getAvailableExercises(
         exercises: exercises,
         trainingLocation: 'Casa',
@@ -534,7 +538,7 @@ void main() {
         selection: const TrainingSelection(),
         showAllExercises: true,
       );
-      expect(all, hasLength(353));
+      expect(all, hasLength(398));
       for (final name in newNames) {
         expect(all.map((item) => item.exercise.name), contains(name));
       }
@@ -592,12 +596,12 @@ void main() {
       },
     );
 
-    test('26 seeds e migração inserem os 353 exercícios de catálogo', () async {
+    test('26 seeds e migração inserem os 398 exercícios de catálogo', () async {
       await AppDatabase.forTesting(db).refreshCatalogExercises(db);
       final total = await db.rawQuery(
         'SELECT COUNT(*) AS c FROM exercises WHERE is_default = 1',
       );
-      expect(total.single['c'], 353);
+      expect(total.single['c'], 398);
       for (final name in newNames) {
         final rows = await db.query(
           'exercises',

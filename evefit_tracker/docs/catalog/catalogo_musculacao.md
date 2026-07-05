@@ -8,117 +8,122 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Flexão inclinada (E035) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão com joelhos apoiados (E034) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Dips assistidos para peito na máquina (E053) | iniciante | Máquina assistida de dips | — | ✅ | ✅ | — | — |
-| 4 | Flexão declinada (E036) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Flexão aberta (E037) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Flexão clássica (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Scapular push-up (E030) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Chest press (E051) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 9 | Supino declinado na máquina (E045) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 10 | Aberturas inclinadas com elástico (E049) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Aberturas inclinadas no cabo (E048) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 12 | Crossover no cabo (E054) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 13 | Aberturas com halteres (E046) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 14 | Aberturas inclinadas com halteres (E047) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
-| 15 | Pullover com halter (E055) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Squeeze press (E050) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Supino com halteres (E040) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 18 | Supino declinado com halteres (E043) | intermédio | Halteres, banco declinado | — | ✅ | ✅ | — | — |
-| 19 | Supino inclinado com halteres (E041) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 20 | Supino com barra (E039) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 21 | Supino declinado com barra (E044) | intermédio | Barra, banco declinado | — | ✅ | ✅ | — | — |
-| 22 | Supino inclinado com barra (E042) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 23 | Dips para peito em paralelas (E052) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
-| 24 | Flexão arqueiro (E038) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Flexão inclinada (E048) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão com joelhos apoiados (E047) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Dips assistidos para peito na máquina (E066) | iniciante | Máquina assistida de dips | — | ✅ | ✅ | — | — |
+| 4 | Flexão declinada (E049) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 5 | Flexão aberta (E050) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Flexão clássica (E046) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Scapular push-up (E032) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Chest press (E064) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Supino declinado na máquina (E058) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 10 | Aberturas inclinadas com elástico (E062) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Press de peito com elástico (E069) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Aberturas inclinadas no cabo (E061) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 13 | Crossover no cabo (E067) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 14 | Aberturas com halteres (E059) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 15 | Aberturas inclinadas com halteres (E060) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
+| 16 | Pullover com halter (E068) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Squeeze press (E063) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Supino com halteres (E053) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 19 | Supino declinado com halteres (E056) | intermédio | Halteres, banco declinado | — | ✅ | ✅ | — | — |
+| 20 | Supino inclinado com halteres (E054) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 21 | Supino com barra (E052) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 22 | Supino declinado com barra (E057) | intermédio | Barra, banco declinado | — | ✅ | ✅ | — | — |
+| 23 | Supino inclinado com barra (E055) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 24 | Dips para peito em paralelas (E065) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 25 | Flexão arqueiro (E051) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Peito › Peito superior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Flexão com joelhos apoiados (E034) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Flexão declinada (E036) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 3 | Flexão aberta (E037) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Flexão clássica (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Chest press (E051) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 6 | Aberturas inclinadas com elástico (E049) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 7 | Aberturas inclinadas no cabo (E048) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Aberturas com halteres (E046) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 9 | Aberturas inclinadas com halteres (E047) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
-| 10 | Squeeze press (E050) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Supino com halteres (E040) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 12 | Supino inclinado com halteres (E041) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Supino com barra (E039) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 14 | Supino inclinado com barra (E042) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 15 | Flexão arqueiro (E038) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Flexão com joelhos apoiados (E047) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Flexão declinada (E049) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 3 | Flexão aberta (E050) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Flexão clássica (E046) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Chest press (E064) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 6 | Aberturas inclinadas com elástico (E062) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Press de peito com elástico (E069) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Aberturas inclinadas no cabo (E061) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Aberturas com halteres (E059) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 10 | Aberturas inclinadas com halteres (E060) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
+| 11 | Squeeze press (E063) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Supino com halteres (E053) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 13 | Supino inclinado com halteres (E054) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Supino com barra (E052) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 15 | Supino inclinado com barra (E055) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 16 | Flexão arqueiro (E051) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Peito › Peito médio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Flexão inclinada (E035) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão com joelhos apoiados (E034) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Flexão aberta (E037) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Flexão clássica (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Chest press (E051) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 6 | Aberturas inclinadas com elástico (E049) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 7 | Aberturas inclinadas no cabo (E048) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Crossover no cabo (E054) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Aberturas com halteres (E046) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 10 | Aberturas inclinadas com halteres (E047) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
-| 11 | Pullover com halter (E055) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Squeeze press (E050) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Supino com halteres (E040) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 14 | Supino com barra (E039) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 15 | Flexão arqueiro (E038) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Flexão inclinada (E048) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão com joelhos apoiados (E047) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Flexão aberta (E050) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Flexão clássica (E046) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Chest press (E064) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 6 | Aberturas inclinadas com elástico (E062) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Press de peito com elástico (E069) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Aberturas inclinadas no cabo (E061) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Crossover no cabo (E067) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Aberturas com halteres (E059) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 11 | Aberturas inclinadas com halteres (E060) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
+| 12 | Pullover com halter (E068) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Squeeze press (E063) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Supino com halteres (E053) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 15 | Supino com barra (E052) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 16 | Flexão arqueiro (E051) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Peito › Peito inferior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Flexão inclinada (E035) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão com joelhos apoiados (E034) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Dips assistidos para peito na máquina (E053) | iniciante | Máquina assistida de dips | — | ✅ | ✅ | — | — |
-| 4 | Flexão aberta (E037) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Flexão clássica (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Chest press (E051) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 7 | Supino declinado na máquina (E045) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 8 | Aberturas inclinadas com elástico (E049) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Aberturas inclinadas no cabo (E048) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Crossover no cabo (E054) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 11 | Aberturas com halteres (E046) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 12 | Aberturas inclinadas com halteres (E047) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
-| 13 | Squeeze press (E050) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Supino com halteres (E040) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 15 | Supino declinado com halteres (E043) | intermédio | Halteres, banco declinado | — | ✅ | ✅ | — | — |
-| 16 | Supino com barra (E039) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 17 | Supino declinado com barra (E044) | intermédio | Barra, banco declinado | — | ✅ | ✅ | — | — |
-| 18 | Dips para peito em paralelas (E052) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
-| 19 | Flexão arqueiro (E038) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Flexão inclinada (E048) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão com joelhos apoiados (E047) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Dips assistidos para peito na máquina (E066) | iniciante | Máquina assistida de dips | — | ✅ | ✅ | — | — |
+| 4 | Flexão aberta (E050) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Flexão clássica (E046) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Chest press (E064) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 7 | Supino declinado na máquina (E058) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 8 | Aberturas inclinadas com elástico (E062) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Press de peito com elástico (E069) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Aberturas inclinadas no cabo (E061) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Crossover no cabo (E067) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Aberturas com halteres (E059) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 13 | Aberturas inclinadas com halteres (E060) | intermédio | Halteres, banco inclinado | — | ✅ | ✅ | — | — |
+| 14 | Squeeze press (E063) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Supino com halteres (E053) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 16 | Supino declinado com halteres (E056) | intermédio | Halteres, banco declinado | — | ✅ | ✅ | — | — |
+| 17 | Supino com barra (E052) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 18 | Supino declinado com barra (E057) | intermédio | Barra, banco declinado | — | ✅ | ✅ | — | — |
+| 19 | Dips para peito em paralelas (E065) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 20 | Flexão arqueiro (E051) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Peito › Peitoral menor
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Dips assistidos para peito na máquina (E053) | iniciante | Máquina assistida de dips | — | ✅ | ✅ | — | — |
-| 2 | Crossover no cabo (E054) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 3 | Dips para peito em paralelas (E052) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 1 | Dips assistidos para peito na máquina (E066) | iniciante | Máquina assistida de dips | — | ✅ | ✅ | — | — |
+| 2 | Scapular push-up (E032) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Crossover no cabo (E067) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 4 | Dips para peito em paralelas (E065) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
 
 ## Peito › Serrátil anterior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Flexão inclinada (E035) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão com joelhos apoiados (E034) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Flexão declinada (E036) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 4 | Flexão aberta (E037) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Flexão clássica (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Scapular push-up (E030) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Pullover com halter (E055) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Supino inclinado com halteres (E041) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Supino inclinado com barra (E042) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 10 | Flexão arqueiro (E038) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Flexão inclinada (E048) | iniciante | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão com joelhos apoiados (E047) | iniciante | Peso corporal, tapete / colchonete | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Flexão declinada (E049) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 4 | Flexão aberta (E050) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Flexão clássica (E046) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Scapular push-up (E032) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Pullover com halter (E068) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Supino inclinado com halteres (E054) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Supino inclinado com barra (E055) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 10 | Flexão arqueiro (E051) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 # Costas
 
@@ -126,453 +131,521 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 4 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 8 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 9 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 10 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 11 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 12 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 13 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 14 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 15 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 16 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 17 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 18 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 19 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 20 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 21 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 22 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 23 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 24 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 25 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 26 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 27 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 28 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 29 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 30 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 31 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 32 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 33 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Encolhimento isométrico de ombros (E011) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 6 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 11 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 12 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 13 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 14 | Encolhimento de ombros com elástico (E012) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 15 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 17 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 18 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 19 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 20 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 21 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 22 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 23 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 24 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 25 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 26 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 27 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 28 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 29 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 30 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 31 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 32 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 33 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 34 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 35 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 36 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 37 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 38 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 39 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 40 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ## Costas › Costas superior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 4 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 6 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 7 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 11 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 12 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 15 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 16 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 17 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 18 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 19 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 20 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Encolhimento isométrico de ombros (E011) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 6 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 7 | Encolhimento de ombros com elástico (E012) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 12 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 13 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 14 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 15 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 16 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 17 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 21 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 22 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 23 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 24 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 25 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 26 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 27 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Trapézio superior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Encolhimento isométrico de ombros (E011) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Encolhimento de ombros com elástico (E012) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Trapézio médio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 6 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 9 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 10 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 2 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 7 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 11 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 12 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 13 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Trapézio inferior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 2 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 3 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 3 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 4 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Romboides
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 2 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 12 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 13 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 14 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 3 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 15 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 16 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 17 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 18 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Deltoide posterior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Estabilizadores escapulares
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Face pull no cabo (E019) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 3 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 4 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Face pull no cabo (E021) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 5 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 6 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ## Costas › Costas média
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 6 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 11 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 12 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 13 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 15 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 16 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 17 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 18 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 19 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 20 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 21 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 2 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 8 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 13 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 14 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 15 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 19 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 20 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 21 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 22 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 23 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 24 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 25 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Romboides
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 2 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 12 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 13 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 14 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 3 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 15 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 16 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 17 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 18 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Trapézio médio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 6 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 9 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 10 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 2 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 7 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 11 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 12 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 13 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Redondo maior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 2 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 3 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 2 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 3 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 4 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 5 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Redondo menor
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull no cabo (E069) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Face pull no cabo (E083) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Dorsal / latíssimo do dorso
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 2 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 13 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 14 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 15 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 16 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 17 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 18 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 2 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 5 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 15 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 16 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 17 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 18 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 19 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 20 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 21 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ## Costas › Costas inferior / lombar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 7 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 8 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 7 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 8 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Eretores da espinha
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 7 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 8 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 7 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 8 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Lombar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 7 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 8 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 7 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 8 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Quadrado lombar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 6 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 7 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 8 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 6 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 7 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Estabilidade lombar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 7 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 8 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 7 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 8 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ## Costas › Costas largura
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 2 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 3 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 9 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 10 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 2 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 3 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 4 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 5 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 11 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 12 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 13 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Dorsal / latíssimo do dorso
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 2 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 13 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 14 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 15 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 16 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 17 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 18 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 2 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 5 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 15 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 16 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 17 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 18 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 19 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 20 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 21 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Redondo maior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 2 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 3 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 2 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 3 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 4 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 5 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Puxadas verticais
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 2 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 3 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 5 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 6 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 2 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 3 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 4 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 5 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 7 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ## Costas › Costas espessura
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 4 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 8 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 9 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 10 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 12 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 13 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 14 | Pullover no cabo (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 15 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 16 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 17 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 18 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 19 | Puxada com braços esticados (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 20 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 21 | Pullover com halter (E071) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 22 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 23 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 24 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 25 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 26 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 27 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 28 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 29 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 30 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Encolhimento isométrico de ombros (E011) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 6 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 11 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 12 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 13 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 14 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 15 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 17 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 18 | Pullover no cabo (E084) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 19 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 20 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 21 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 22 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 23 | Puxada com braços esticados (E087) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 24 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 25 | Pullover com halter (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 26 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 27 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 28 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 29 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 30 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 31 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 32 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 33 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 34 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 35 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 36 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Romboides
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 2 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 5 | Puxada alta (E056) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Puxada alta pega aberta (E057) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Puxada alta pega fechada (E059) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Puxada alta pega neutra (E058) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Pull-up (E066) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 12 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 13 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 14 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 3 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Puxada ajoelhada com elástico (E091) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 7 | Puxada alta (E070) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Puxada alta pega aberta (E071) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Puxada alta pega fechada (E073) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Puxada alta pega neutra (E072) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Pull-up (E080) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 15 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 16 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 17 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 18 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Trapézio médio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 6 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 9 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 10 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 2 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 7 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 11 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 12 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 13 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 ### Músculo específico: Trapézio inferior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 2 | Dead hang escapular (E068) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 3 | Scapular pull-up (E067) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 3 | Dead hang escapular (E082) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 4 | Scapular pull-up (E081) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Remadas horizontais
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo sentado (E061) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 2 | Remo com elástico (E074) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Remo baixo no cabo (E060) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Remo unilateral com halter (E062) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Remo com barra (E063) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 6 | Remo invertido (E064) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 7 | Remo invertido em mesa resistente (E065) | intermédio | Mesa resistente | — | ✅ | — | — | — |
+| 1 | Remo sentado (E075) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 2 | Remo com elástico (E088) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Remo baixo no cabo (E074) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 4 | Remo curvado com halteres (E089) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Remo unilateral com halter (E076) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Remo com barra (E077) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 7 | Remo invertido (E078) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 8 | Remo com kettlebell (E090) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 9 | Remo invertido em mesa resistente (E079) | intermédio | Mesa resistente | — | ✅ | — | — | — |
 
 # Ombros
 
@@ -580,110 +653,143 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Mobilidade de ombro com elástico (E022) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Pike push-up (E031) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Scapular push-up (E030) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Wall slides (E023) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 6 | Pull-apart (E021) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 7 | Rotação externa (E024) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 8 | Rotação externa com elástico (E025) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Rotação interna (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Rotação interna com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Face pull no cabo (E019) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 12 | Arnold press (E014) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Elevação frontal (E016) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Elevação lateral (E015) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 15 | Elevação no plano da omoplata (E032) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Elevação posterior (E017) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Press militar com halteres (E012) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 18 | Reverse fly (E018) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 19 | W raise (E029) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 20 | Y raise (E028) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 21 | Press militar com barra (E013) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 22 | Press militar com barra em pé (E011) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Rotação interna isométrica na parede (E037) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 3 | Mobilidade de ombro com elástico (E024) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Pike push-up (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Scapular push-up (E032) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Wall slides (E025) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 8 | Press de ombros na máquina (E038) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Elevação frontal com elástico (E044) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Elevação lateral com elástico (E042) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Press de ombros com elástico (E040) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 13 | Pull-apart (E023) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 14 | Rotação externa (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 15 | Rotação externa com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Rotação interna (E028) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 17 | Rotação interna com elástico (E029) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 18 | Elevação frontal no cabo (E043) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 19 | Elevação lateral no cabo (E041) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 20 | Face pull no cabo (E021) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 21 | Arnold press (E016) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 22 | Elevação frontal (E018) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 23 | Elevação lateral (E017) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 24 | Elevação no plano da omoplata (E034) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 25 | Elevação posterior (E019) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 26 | Press militar com halteres (E014) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 27 | Reverse fly (E020) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 28 | W raise (E031) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 29 | Y raise (E030) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 30 | Press militar com barra (E015) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 31 | Press militar com barra em pé (E013) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 32 | Halo com kettlebell (E045) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 33 | Press de ombros com kettlebell (E039) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Ombros › Deltoide anterior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pike push-up (E031) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Arnold press (E014) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Elevação frontal (E016) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Press militar com halteres (E012) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Press militar com barra (E013) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 6 | Press militar com barra em pé (E011) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Pike push-up (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Press de ombros na máquina (E038) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 3 | Elevação frontal com elástico (E044) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Press de ombros com elástico (E040) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Elevação frontal no cabo (E043) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Arnold press (E016) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 7 | Elevação frontal (E018) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Press militar com halteres (E014) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Press militar com barra (E015) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 10 | Press militar com barra em pé (E013) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 11 | Press de ombros com kettlebell (E039) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Ombros › Deltoide lateral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pike push-up (E031) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Arnold press (E014) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Elevação lateral (E015) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Elevação no plano da omoplata (E032) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Press militar com halteres (E012) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Press militar com barra (E013) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 7 | Press militar com barra em pé (E011) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Pike push-up (E033) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Press de ombros na máquina (E038) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 3 | Elevação lateral com elástico (E042) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Press de ombros com elástico (E040) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Elevação lateral no cabo (E041) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Arnold press (E016) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 7 | Elevação lateral (E017) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Elevação no plano da omoplata (E034) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Press militar com halteres (E014) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Press militar com barra (E015) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 11 | Press militar com barra em pé (E013) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 12 | Halo com kettlebell (E045) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 13 | Press de ombros com kettlebell (E039) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Ombros › Deltoide posterior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Pull-apart (E021) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Face pull no cabo (E019) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 4 | Elevação posterior (E017) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Reverse fly (E018) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Pull-apart (E023) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Face pull no cabo (E021) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 5 | Elevação posterior (E019) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Reverse fly (E020) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ## Ombros › Manguito rotador
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Mobilidade de ombro com elástico (E022) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Rotação externa (E024) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Rotação externa com elástico (E025) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Rotação interna (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Rotação interna com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 6 | Elevação no plano da omoplata (E032) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | W raise (E029) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Rotação interna isométrica na parede (E037) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 3 | Mobilidade de ombro com elástico (E024) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Rotação externa (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Rotação externa com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Rotação interna (E028) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Rotação interna com elástico (E029) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Elevação no plano da omoplata (E034) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | W raise (E031) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Halo com kettlebell (E045) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Ombros › Rotadores externos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Mobilidade de ombro com elástico (E022) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Rotação externa (E024) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Rotação externa com elástico (E025) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Elevação no plano da omoplata (E032) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | W raise (E029) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Mobilidade de ombro com elástico (E024) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Rotação externa (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Rotação externa com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Elevação no plano da omoplata (E034) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | W raise (E031) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 7 | Halo com kettlebell (E045) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Ombros › Rotadores internos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Rotação interna (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Rotação interna com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 1 | Rotação interna isométrica na parede (E037) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Rotação interna (E028) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Rotação interna com elástico (E029) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
 
 ## Ombros › Estabilidade escapular
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Mobilidade de ombro com elástico (E022) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Scapular push-up (E030) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Wall slides (E023) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 4 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Pull-apart (E021) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 6 | Rotação externa (E024) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 7 | Rotação externa com elástico (E025) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 8 | Rotação interna (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Rotação interna com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Face pull no cabo (E019) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 11 | Elevação no plano da omoplata (E032) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Elevação posterior (E017) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Reverse fly (E018) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | W raise (E029) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 15 | Y raise (E028) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Rotação externa isométrica na parede (E036) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Rotação interna isométrica na parede (E037) | iniciante | Peso corporal, parede | ✅ | ✅ | ✅ | — | ✅ |
+| 3 | Mobilidade de ombro com elástico (E024) | iniciante | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Scapular push-up (E032) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Wall slides (E025) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 7 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Pull-apart (E023) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Rotação externa (E026) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Rotação externa com elástico (E027) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Rotação interna (E028) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Rotação interna com elástico (E029) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 13 | Face pull no cabo (E021) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 14 | Elevação no plano da omoplata (E034) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Elevação posterior (E019) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Reverse fly (E020) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | W raise (E031) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Y raise (E030) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Halo com kettlebell (E045) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 # Trapézio e escápula
 
@@ -691,51 +797,59 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Pull-apart (E021) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 6 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | W raise (E029) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Y raise (E028) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Encolhimento isométrico de ombros (E011) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Encolhimento de ombros com elástico (E012) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Pull-apart (E023) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 9 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | W raise (E031) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Y raise (E030) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ## Trapézio e escápula › Trapézio superior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 3 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Encolhimento isométrico de ombros (E011) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Encolhimento de ombros na máquina (E008) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Encolhimento de ombros com elástico (E012) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Encolhimento de ombros com halteres (E006) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Encolhimento de ombros com barra (E007) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ## Trapézio e escápula › Trapézio médio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Remo alto leve (E009) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Pull-apart (E021) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 5 | W raise (E029) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Pull-apart (E023) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 6 | W raise (E031) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ## Trapézio e escápula › Trapézio inferior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 2 | Y raise (E028) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Face pull no cabo (E010) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 3 | Y raise (E030) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ## Trapézio e escápula › Estabilidade escapular
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Face pull com elástico (E020) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Pull-apart (E021) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Face pull no cabo (E019) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
-| 4 | W raise (E029) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Y raise (E028) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Elevação Y-T-W deitado no chão (E035) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Face pull com elástico (E022) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Pull-apart (E023) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Face pull no cabo (E021) | intermédio | Cabo alto / polia | — | ✅ | ✅ | — | — |
+| 5 | W raise (E031) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Y raise (E030) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 # Pescoço
 
@@ -787,406 +901,441 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Curl isométrico (E098) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Curl inclinado com halteres (E088) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 5 | Curl spider (E093) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 6 | Fundos entre apoios (E108) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 7 | Flexão diamante (E110) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Flexão fechada (E109) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Curl com elástico (E095) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Tríceps com elástico (E119) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 12 | Curl no cabo (E094) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 13 | Extensão de tríceps no cabo (E100) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 14 | Extensão francesa no cabo (E116) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 15 | Kickback no cabo (E112) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 16 | Tríceps no cabo com corda (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 17 | Curl 21 com halteres (E096) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 18 | Curl Zottman (E091) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 19 | Curl alternado (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 20 | Curl arrastado com halteres (E097) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 21 | Curl com halteres (E084) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 22 | Curl concentrado (E087) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 23 | Curl cruzado no corpo (E092) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 24 | Curl inverso com halteres (E090) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 25 | Curl martelo (E086) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 26 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 27 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 28 | Extensão acima da cabeça com halter (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 29 | Extensão de tríceps deitado com halteres (E104) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 30 | Extensão francesa com halter (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 31 | Extensão unilateral de tríceps (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 32 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 33 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 34 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 35 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 36 | Kickback de tríceps (E111) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 37 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 38 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 39 | Press fechado com halteres (E106) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 40 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 41 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 42 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 43 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 44 | Tate press (E107) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 45 | Tríceps testa com halteres (E103) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 46 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 47 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 48 | Curl com barra (E083) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 49 | Curl inverso (E089) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
-| 50 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 51 | Extensão francesa com barra EZ (E115) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 52 | Supino fechado (E105) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 53 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
-| 54 | Tríceps testa com barra EZ (E102) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 55 | Dips para tríceps (E117) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Curl isométrico (E115) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Curl inclinado com halteres (E105) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 5 | Curl spider (E110) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 6 | Fundos entre apoios (E126) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 7 | Flexão diamante (E128) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Flexão fechada (E127) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Curl na máquina (E117) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 11 | Extensão de tríceps na máquina (E138) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 12 | Curl com elástico (E112) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 13 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 14 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 15 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Tríceps com elástico (E137) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 17 | Curl no cabo (E111) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 18 | Extensão de tríceps no cabo (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 19 | Extensão francesa no cabo (E134) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 20 | Kickback no cabo (E130) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 21 | Tríceps no cabo com corda (E136) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 22 | Curl 21 com halteres (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 23 | Curl Zottman (E108) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 24 | Curl alternado (E102) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 25 | Curl arrastado com halteres (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 26 | Curl com halteres (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 27 | Curl concentrado (E104) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 28 | Curl cruzado no corpo (E109) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 29 | Curl inverso com halteres (E107) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 30 | Curl martelo (E103) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 31 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 32 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 33 | Extensão acima da cabeça com halter (E119) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 34 | Extensão de tríceps deitado com halteres (E122) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 35 | Extensão francesa com halter (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 36 | Extensão unilateral de tríceps (E131) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 37 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 38 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 39 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 40 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 41 | Kickback de tríceps (E129) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 42 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 43 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 44 | Press fechado com halteres (E124) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 45 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 46 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 47 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 48 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 49 | Tate press (E125) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 50 | Tríceps testa com halteres (E121) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 51 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 52 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 53 | Curl com barra (E100) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 54 | Curl inverso (E106) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 55 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 56 | Extensão francesa com barra EZ (E133) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 57 | Supino fechado (E123) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 58 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 59 | Tríceps testa com barra EZ (E120) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 60 | Dips para tríceps (E135) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 61 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Braços › Braço
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Curl isométrico (E098) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Curl inclinado com halteres (E088) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 3 | Curl spider (E093) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 4 | Fundos entre apoios (E108) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Flexão diamante (E110) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Flexão fechada (E109) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Curl com elástico (E095) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 8 | Tríceps com elástico (E119) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Curl no cabo (E094) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 10 | Extensão de tríceps no cabo (E100) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 11 | Extensão francesa no cabo (E116) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 12 | Kickback no cabo (E112) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 13 | Tríceps no cabo com corda (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 14 | Curl 21 com halteres (E096) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 15 | Curl Zottman (E091) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Curl alternado (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Curl arrastado com halteres (E097) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 18 | Curl com halteres (E084) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 19 | Curl concentrado (E087) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 20 | Curl cruzado no corpo (E092) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 21 | Curl inverso com halteres (E090) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 22 | Curl martelo (E086) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 23 | Extensão acima da cabeça com halter (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 24 | Extensão de tríceps deitado com halteres (E104) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 25 | Extensão francesa com halter (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 26 | Extensão unilateral de tríceps (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 27 | Kickback de tríceps (E111) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 28 | Press fechado com halteres (E106) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 29 | Tate press (E107) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 30 | Tríceps testa com halteres (E103) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 31 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 32 | Curl com barra (E083) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 33 | Curl inverso (E089) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
-| 34 | Extensão francesa com barra EZ (E115) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 35 | Supino fechado (E105) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 36 | Tríceps testa com barra EZ (E102) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 37 | Dips para tríceps (E117) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 1 | Curl isométrico (E115) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Curl inclinado com halteres (E105) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 3 | Curl spider (E110) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 4 | Fundos entre apoios (E126) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 5 | Flexão diamante (E128) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Flexão fechada (E127) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Curl na máquina (E117) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 8 | Extensão de tríceps na máquina (E138) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Curl com elástico (E112) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Tríceps com elástico (E137) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Curl no cabo (E111) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Extensão de tríceps no cabo (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 13 | Extensão francesa no cabo (E134) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 14 | Kickback no cabo (E130) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 15 | Tríceps no cabo com corda (E136) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 16 | Curl 21 com halteres (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Curl Zottman (E108) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Curl alternado (E102) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Curl arrastado com halteres (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Curl com halteres (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 21 | Curl concentrado (E104) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 22 | Curl cruzado no corpo (E109) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 23 | Curl inverso com halteres (E107) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 24 | Curl martelo (E103) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 25 | Extensão acima da cabeça com halter (E119) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 26 | Extensão de tríceps deitado com halteres (E122) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 27 | Extensão francesa com halter (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 28 | Extensão unilateral de tríceps (E131) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 29 | Kickback de tríceps (E129) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 30 | Press fechado com halteres (E124) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 31 | Tate press (E125) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 32 | Tríceps testa com halteres (E121) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 33 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 34 | Curl com barra (E100) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 35 | Curl inverso (E106) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 36 | Extensão francesa com barra EZ (E133) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 37 | Supino fechado (E123) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 38 | Tríceps testa com barra EZ (E120) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 39 | Dips para tríceps (E135) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Bíceps braquial
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Curl isométrico (E098) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Curl inclinado com halteres (E088) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 3 | Curl spider (E093) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 4 | Curl com elástico (E095) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Curl no cabo (E094) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Curl 21 com halteres (E096) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Curl Zottman (E091) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Curl alternado (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Curl arrastado com halteres (E097) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Curl com halteres (E084) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Curl concentrado (E087) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Curl cruzado no corpo (E092) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Curl martelo (E086) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 15 | Curl com barra (E083) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Curl isométrico (E115) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Curl inclinado com halteres (E105) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 3 | Curl spider (E110) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 4 | Curl na máquina (E117) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Curl com elástico (E112) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Curl no cabo (E111) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Curl 21 com halteres (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Curl Zottman (E108) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Curl alternado (E102) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Curl arrastado com halteres (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Curl com halteres (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Curl concentrado (E104) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Curl cruzado no corpo (E109) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Curl martelo (E103) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 16 | Curl com barra (E100) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Braquial
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Curl isométrico (E098) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Curl inclinado com halteres (E088) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 3 | Curl spider (E093) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
-| 4 | Curl com elástico (E095) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Curl no cabo (E094) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Curl 21 com halteres (E096) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Curl Zottman (E091) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Curl alternado (E085) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Curl arrastado com halteres (E097) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Curl com halteres (E084) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 11 | Curl concentrado (E087) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Curl cruzado no corpo (E092) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Curl inverso com halteres (E090) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Curl martelo (E086) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 15 | Chin-up (E099) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 16 | Curl com barra (E083) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 17 | Curl inverso (E089) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 1 | Curl isométrico (E115) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Curl inclinado com halteres (E105) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 3 | Curl spider (E110) | intermédio | Halteres, banco inclinado ou apoio estável | — | ✅ | ✅ | — | — |
+| 4 | Curl na máquina (E117) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Curl com elástico (E112) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Curl no cabo (E111) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Curl 21 com halteres (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Curl Zottman (E108) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Curl alternado (E102) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Curl arrastado com halteres (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Curl com halteres (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Curl concentrado (E104) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Curl cruzado no corpo (E109) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Curl inverso com halteres (E107) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Curl martelo (E103) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Chin-up (E116) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 17 | Curl com barra (E100) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 18 | Curl inverso (E106) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Braquiorradial
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Curl Zottman (E091) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Curl cruzado no corpo (E092) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Curl inverso com halteres (E090) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Curl martelo (E086) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Curl inverso (E089) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 1 | Curl Zottman (E108) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Curl cruzado no corpo (E109) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Curl inverso com halteres (E107) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Curl martelo (E103) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Curl inverso (E106) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Tríceps completo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Fundos entre apoios (E108) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão diamante (E110) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Flexão fechada (E109) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Tríceps com elástico (E119) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Extensão de tríceps no cabo (E100) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Extensão francesa no cabo (E116) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Kickback no cabo (E112) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Tríceps no cabo com corda (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Extensão acima da cabeça com halter (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Extensão de tríceps deitado com halteres (E104) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 11 | Extensão francesa com halter (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Extensão unilateral de tríceps (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Kickback de tríceps (E111) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Press fechado com halteres (E106) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 15 | Tate press (E107) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 16 | Tríceps testa com halteres (E103) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 17 | Extensão francesa com barra EZ (E115) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Supino fechado (E105) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 19 | Tríceps testa com barra EZ (E102) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 20 | Dips para tríceps (E117) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 1 | Fundos entre apoios (E126) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão diamante (E128) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Flexão fechada (E127) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de tríceps na máquina (E138) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Tríceps com elástico (E137) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Extensão de tríceps no cabo (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Extensão francesa no cabo (E134) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Kickback no cabo (E130) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Tríceps no cabo com corda (E136) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Extensão acima da cabeça com halter (E119) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Extensão de tríceps deitado com halteres (E122) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 12 | Extensão francesa com halter (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Extensão unilateral de tríceps (E131) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Kickback de tríceps (E129) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Press fechado com halteres (E124) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 16 | Tate press (E125) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 17 | Tríceps testa com halteres (E121) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 18 | Extensão francesa com barra EZ (E133) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 19 | Supino fechado (E123) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 20 | Tríceps testa com barra EZ (E120) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dips para tríceps (E135) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Tríceps cabeça longa
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Fundos entre apoios (E108) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão diamante (E110) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Flexão fechada (E109) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Tríceps com elástico (E119) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Extensão de tríceps no cabo (E100) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Extensão francesa no cabo (E116) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Kickback no cabo (E112) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Tríceps no cabo com corda (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Extensão acima da cabeça com halter (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Extensão de tríceps deitado com halteres (E104) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 11 | Extensão francesa com halter (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Extensão unilateral de tríceps (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Kickback de tríceps (E111) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Press fechado com halteres (E106) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 15 | Tate press (E107) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 16 | Tríceps testa com halteres (E103) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 17 | Extensão francesa com barra EZ (E115) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Supino fechado (E105) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 19 | Tríceps testa com barra EZ (E102) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 20 | Dips para tríceps (E117) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 1 | Fundos entre apoios (E126) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão diamante (E128) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Flexão fechada (E127) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de tríceps na máquina (E138) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Tríceps com elástico (E137) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Extensão de tríceps no cabo (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Extensão francesa no cabo (E134) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Kickback no cabo (E130) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Tríceps no cabo com corda (E136) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Extensão acima da cabeça com halter (E119) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Extensão de tríceps deitado com halteres (E122) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 12 | Extensão francesa com halter (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Extensão unilateral de tríceps (E131) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Kickback de tríceps (E129) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Press fechado com halteres (E124) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 16 | Tate press (E125) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 17 | Tríceps testa com halteres (E121) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 18 | Extensão francesa com barra EZ (E133) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 19 | Supino fechado (E123) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 20 | Tríceps testa com barra EZ (E120) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dips para tríceps (E135) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Tríceps cabeça lateral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Fundos entre apoios (E108) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão diamante (E110) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Flexão fechada (E109) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Tríceps com elástico (E119) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Extensão de tríceps no cabo (E100) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Extensão francesa no cabo (E116) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Kickback no cabo (E112) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Tríceps no cabo com corda (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Extensão acima da cabeça com halter (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Extensão de tríceps deitado com halteres (E104) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 11 | Extensão francesa com halter (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Extensão unilateral de tríceps (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Kickback de tríceps (E111) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Press fechado com halteres (E106) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 15 | Tate press (E107) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 16 | Tríceps testa com halteres (E103) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 17 | Extensão francesa com barra EZ (E115) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Supino fechado (E105) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 19 | Tríceps testa com barra EZ (E102) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 20 | Dips para tríceps (E117) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 1 | Fundos entre apoios (E126) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão diamante (E128) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Flexão fechada (E127) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de tríceps na máquina (E138) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Tríceps com elástico (E137) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Extensão de tríceps no cabo (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Extensão francesa no cabo (E134) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Kickback no cabo (E130) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Tríceps no cabo com corda (E136) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Extensão acima da cabeça com halter (E119) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Extensão de tríceps deitado com halteres (E122) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 12 | Extensão francesa com halter (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Extensão unilateral de tríceps (E131) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Kickback de tríceps (E129) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Press fechado com halteres (E124) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 16 | Tate press (E125) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 17 | Tríceps testa com halteres (E121) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 18 | Extensão francesa com barra EZ (E133) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 19 | Supino fechado (E123) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 20 | Tríceps testa com barra EZ (E120) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dips para tríceps (E135) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Tríceps cabeça medial
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Fundos entre apoios (E108) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Flexão diamante (E110) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Flexão fechada (E109) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Tríceps com elástico (E119) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Extensão de tríceps no cabo (E100) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 6 | Extensão francesa no cabo (E116) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 7 | Kickback no cabo (E112) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 8 | Tríceps no cabo com corda (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 9 | Extensão acima da cabeça com halter (E101) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Extensão de tríceps deitado com halteres (E104) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 11 | Extensão francesa com halter (E114) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 12 | Extensão unilateral de tríceps (E113) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Kickback de tríceps (E111) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Press fechado com halteres (E106) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 15 | Tate press (E107) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 16 | Tríceps testa com halteres (E103) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
-| 17 | Extensão francesa com barra EZ (E115) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Supino fechado (E105) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 19 | Tríceps testa com barra EZ (E102) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
-| 20 | Dips para tríceps (E117) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
+| 1 | Fundos entre apoios (E126) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Flexão diamante (E128) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Flexão fechada (E127) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de tríceps na máquina (E138) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Tríceps com elástico (E137) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Extensão de tríceps no cabo (E118) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Extensão francesa no cabo (E134) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 8 | Kickback no cabo (E130) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 9 | Tríceps no cabo com corda (E136) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Extensão acima da cabeça com halter (E119) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Extensão de tríceps deitado com halteres (E122) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 12 | Extensão francesa com halter (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Extensão unilateral de tríceps (E131) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Kickback de tríceps (E129) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Press fechado com halteres (E124) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 16 | Tate press (E125) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 17 | Tríceps testa com halteres (E121) | intermédio | Halteres, banco ou chão estável | — | ✅ | ✅ | — | — |
+| 18 | Extensão francesa com barra EZ (E133) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 19 | Supino fechado (E123) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 20 | Tríceps testa com barra EZ (E120) | intermédio | Barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dips para tríceps (E135) | intermédio | Paralelas | — | ✅ | ✅ | — | — |
 
 ## Braços › Antebraço / punho / mão
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 11 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 12 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 15 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 19 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 14 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 15 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 18 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 22 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 23 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Antebraço completo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 11 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 12 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 15 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 19 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 14 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 15 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 18 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 22 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 23 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Flexores do antebraço
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 8 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 10 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 7 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 9 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 11 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 12 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Extensores do antebraço
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 1 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 2 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Pronadores
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Supinadores
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Punho
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 1 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 7 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Dedos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 5 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 6 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 5 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 6 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Pega de suporte
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 6 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 7 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 8 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 6 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 7 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 8 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 9 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Pega de pinça
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 2 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 1 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 2 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Força de pega geral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 11 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 12 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 15 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 19 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 14 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 15 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 18 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 22 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 23 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 # Antebraço, punho e mão
 
@@ -1194,128 +1343,145 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 11 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 12 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 15 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 19 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 14 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 15 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 18 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 22 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 23 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Flexores do antebraço
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 8 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 10 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 7 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 9 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 11 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 12 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Extensores do antebraço
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 2 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 1 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 2 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Pronadores
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Supinadores
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 1 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Punho
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 1 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 6 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 7 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Dedos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 5 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 6 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 5 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 6 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Pega de suporte
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 4 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 6 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 7 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 8 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 4 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 5 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 6 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 7 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 8 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 9 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Pega de pinça
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 2 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 1 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 2 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
 
 ## Antebraço, punho e mão › Força de pega geral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Aperto isométrico (E125) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 2 | Rotação controlada com halter leve (E138) | iniciante | Halteres | — | ✅ | ✅ | — | — |
-| 3 | Extensão de dedos com elástico (E133) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 4 | Desvio radial com halter (E134) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Desvio ulnar com halter (E135) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Farmer hold (E123) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 7 | Farmer walk (E122) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 8 | Finger curls (E132) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Hold estático com halteres (E137) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Pinch grip (E129) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 11 | Plate hold (E130) | intermédio | Discos | — | ✅ | ✅ | — | — |
-| 12 | Pronação com halter (E127) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 13 | Reverse wrist curl (E121) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 15 | Supinação com halter (E128) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Wrist curl (E120) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Curl inverso (E126) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
-| 18 | Dead hang (E124) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 19 | Towel grip hold (E131) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 1 | Aperto isométrico (E144) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 2 | Rotação controlada com halter leve (E157) | iniciante | Halteres | — | ✅ | ✅ | — | — |
+| 3 | Torção de toalha (E158) | intermédio | Peso corporal, toalha | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão de dedos com elástico (E152) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Extensão de punho com elástico (E160) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Flexão de punho com elástico (E159) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Desvio radial com halter (E153) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Desvio ulnar com halter (E154) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Farmer hold (E142) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 10 | Farmer walk (E141) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 11 | Finger curls (E151) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 12 | Hold estático com halteres (E156) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 13 | Pinch grip (E148) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 14 | Plate hold (E149) | intermédio | Discos | — | ✅ | ✅ | — | — |
+| 15 | Pronação com halter (E146) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Reverse wrist curl (E140) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 17 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 18 | Supinação com halter (E147) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Wrist curl (E139) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Curl inverso (E145) | intermédio | Barra ou barra EZ | — | ✅ | ✅ | — | — |
+| 21 | Dead hang (E143) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 22 | Towel grip hold (E150) | intermédio | Barra fixa, toalha | — | ✅ | ✅ | — | — |
+| 23 | Farmer carry com kettlebell (E161) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 # Core
 
@@ -1323,315 +1489,332 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 4 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Bird dog (E152) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Elevação de pernas (E143) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Flutter kicks (E155) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Hollow hold (E146) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Mountain climbers (E147) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Prancha com toque no ombro (E159) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 20 | Side bend (E153) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 21 | Superman (E157) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 22 | Toe touches (E156) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 23 | Vacuum abdominal (E154) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 24 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 25 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 26 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 27 | Pallof press com elástico (E149) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 28 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 29 | Pallof press no cabo (E148) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 30 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 31 | Elevação de joelhos suspenso (E144) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
-| 32 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 4 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Bird dog (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Elevação de pernas (E166) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Flutter kicks (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Hollow hold (E169) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Mountain climbers (E170) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Prancha com toque no ombro (E182) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | Side bend (E176) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Superman (E180) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Toe touches (E179) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 23 | Vacuum abdominal (E177) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 24 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 25 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 26 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 27 | Pallof press com elástico (E172) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 28 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 29 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 30 | Pallof press no cabo (E171) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 31 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 32 | Elevação de joelhos suspenso (E167) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 33 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 34 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ## Core › Abdominal
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Bird dog (E152) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Elevação de pernas (E143) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Flutter kicks (E155) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Hollow hold (E146) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Mountain climbers (E147) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Prancha com toque no ombro (E159) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Side bend (E153) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Superman (E157) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Toe touches (E156) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Vacuum abdominal (E154) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Pallof press com elástico (E149) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 20 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 21 | Pallof press no cabo (E148) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 22 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 23 | Elevação de joelhos suspenso (E144) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Bird dog (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Elevação de pernas (E166) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Flutter kicks (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Hollow hold (E169) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Mountain climbers (E170) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Prancha com toque no ombro (E182) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Side bend (E176) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Superman (E180) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Toe touches (E179) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Vacuum abdominal (E177) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Pallof press com elástico (E172) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 20 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 21 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 22 | Pallof press no cabo (E171) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 23 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 24 | Elevação de joelhos suspenso (E167) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 25 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Abdominal completo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Bird dog (E152) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Elevação de pernas (E143) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Flutter kicks (E155) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Hollow hold (E146) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Mountain climbers (E147) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Prancha com toque no ombro (E159) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Side bend (E153) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Superman (E157) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Toe touches (E156) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Vacuum abdominal (E154) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Pallof press com elástico (E149) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 20 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 21 | Pallof press no cabo (E148) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 22 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 23 | Elevação de joelhos suspenso (E144) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Bird dog (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Elevação de pernas (E166) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Flutter kicks (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Hollow hold (E169) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Mountain climbers (E170) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Prancha com toque no ombro (E182) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Side bend (E176) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Superman (E180) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Toe touches (E179) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Vacuum abdominal (E177) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Pallof press com elástico (E172) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 20 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 21 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 22 | Pallof press no cabo (E171) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 23 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 24 | Elevação de joelhos suspenso (E167) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 25 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Abdominal superior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Toe touches (E156) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Toe touches (E179) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Abdominal médio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Abdominal inferior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Elevação de pernas (E143) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Flutter kicks (E155) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Elevação de joelhos suspenso (E144) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Elevação de pernas (E166) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Flutter kicks (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Elevação de joelhos suspenso (E167) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Abdominais laterais / oblíquos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Pallof press com elástico (E149) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 11 | Pallof press no cabo (E148) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Pallof press com elástico (E172) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Pallof press no cabo (E171) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 13 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Reto abdominal
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Elevação de pernas (E143) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Flutter kicks (E155) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Mountain climbers (E147) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Toe touches (E156) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Elevação de joelhos suspenso (E144) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Elevação de pernas (E166) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Flutter kicks (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Mountain climbers (E170) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Toe touches (E179) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Elevação de joelhos suspenso (E167) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 11 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Oblíquos externos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Side bend (E153) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 1 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Side bend (E176) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Oblíquos internos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Side bend (E153) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 1 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Side bend (E176) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Transverso abdominal
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Elevação de pernas (E143) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Flutter kicks (E155) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hollow hold (E146) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Mountain climbers (E147) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Toe touches (E156) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Vacuum abdominal (E154) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Elevação de joelhos suspenso (E144) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Elevação de pernas (E166) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Flutter kicks (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hollow hold (E169) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Mountain climbers (E170) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Toe touches (E179) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Vacuum abdominal (E177) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 12 | Elevação de joelhos suspenso (E167) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
 
 ## Core › Lombar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 7 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 8 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 7 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 8 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Lombar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Bird dog (E152) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Superman (E157) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 9 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 10 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Bird dog (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Superman (E180) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 9 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 10 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Eretores da espinha
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Bird dog (E152) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Good morning sem carga (E072) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Superman (E157) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 9 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 10 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Bird dog (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Good morning sem carga (E086) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Superman (E180) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 9 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 10 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Quadrado lombar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Superman isométrico (E078) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Good morning leve isométrico (E081) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Extensão lombar quadrupede (E079) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Hiperextensão no chão (E076) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Hiperextensão lombar (E075) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 6 | Hiperextensão no banco romano (E077) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
-| 7 | Extensão lombar com elástico (E082) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 8 | Good morning com barra (E080) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Superman isométrico (E095) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Good morning leve isométrico (E098) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Extensão lombar quadrupede (E096) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Hiperextensão no chão (E093) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hiperextensão lombar (E092) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 6 | Hiperextensão no banco romano (E094) | intermédio | Banco romano / máquina | — | ✅ | ✅ | — | — |
+| 7 | Extensão lombar com elástico (E099) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Good morning com barra (E097) | intermédio | Barra | — | ✅ | ✅ | — | — |
 
 ## Core › Estabilidade do core
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Bicycle crunch (E151) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Bird dog (E152) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Crunch (E141) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Elevação de pernas (E143) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Flutter kicks (E155) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Hollow hold (E146) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Mountain climbers (E147) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Prancha com toque no ombro (E159) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Reverse crunch (E142) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Russian twist (E150) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Side bend (E153) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Superman (E157) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Toe touches (E156) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Vacuum abdominal (E154) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Pallof press com elástico (E149) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 20 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 21 | Pallof press no cabo (E148) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 22 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
-| 23 | Elevação de joelhos suspenso (E144) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Bicycle crunch (E174) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Bird dog (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Crunch (E164) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Elevação de pernas (E166) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Flutter kicks (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Hollow hold (E169) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Mountain climbers (E170) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Prancha com toque no ombro (E182) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Reverse crunch (E165) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Russian twist (E173) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Side bend (E176) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Superman (E180) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Toe touches (E179) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Vacuum abdominal (E177) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Pallof press com elástico (E172) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 20 | Crunch no cabo (E183) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 21 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 22 | Pallof press no cabo (E171) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 23 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 24 | Elevação de joelhos suspenso (E167) | intermédio | Barra fixa | — | ✅ | ✅ | — | — |
+| 25 | Russian twist com kettlebell (E184) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Anti-rotação
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Prancha com toque no ombro (E159) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Pallof press com elástico (E149) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 3 | Lenhador no cabo (E158) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 4 | Pallof press no cabo (E148) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 1 | Prancha com toque no ombro (E182) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Pallof press com elástico (E172) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 3 | Lenhador no cabo (E181) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 4 | Pallof press no cabo (E171) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Anti-extensão
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Hollow hold (E146) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Prancha com toque no ombro (E159) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Hollow hold (E169) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Prancha com toque no ombro (E182) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Músculo específico: Anti-flexão lateral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Estabilidade profunda
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Bird dog (E152) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Dead bug (E145) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Hollow hold (E146) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Prancha (E139) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Prancha com toque no ombro (E159) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Prancha lateral (E140) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Vacuum abdominal (E154) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Pallof press com elástico (E149) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Pallof press no cabo (E148) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
-| 11 | Suitcase carry (E136) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Bird dog (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Dead bug (E168) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Hollow hold (E169) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Prancha (E162) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Prancha com toque no ombro (E182) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Prancha lateral (E163) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Vacuum abdominal (E177) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Pallof press com elástico (E172) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Pallof press no cabo (E171) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Suitcase carry (E155) | intermédio | Halteres, espaço livre | — | ✅ | ✅ | — | — |
 
 # Pernas, glúteos e anca
 
@@ -1639,511 +1822,651 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 3 | Hip thrust com apoio (E186) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
-| 4 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 6 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 7 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 8 | Gémeos sentado (E191) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 9 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 10 | Sóleo sentado (E193) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 11 | Abdução de anca deitada (E204) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Clamshell (E205) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Elevação de gémeos unilateral (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Elevação tibial (E195) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 17 | Flexão ativa dos dedos do pé (E197) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Gémeos em pé (E190) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 20 | Hip thrust (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 21 | Kickback de glúteo (E189) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 22 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 23 | Ponte de glúteo (E184) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 24 | Short foot / doming (E196) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 25 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 26 | Abdução de anca (E187) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 27 | Adução de anca (E188) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 28 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 29 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 30 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 31 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 32 | Dorsiflexão do tornozelo com elástico (E198) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 33 | Eversão do tornozelo com elástico (E200) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 34 | Extensão terminal do joelho com elástico (E203) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 35 | Flexão da anca em pé com elástico (E201) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 36 | Inversão do tornozelo com elástico (E199) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 37 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 38 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 39 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 40 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 41 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 42 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 43 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 44 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 45 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 46 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 47 | Curl nórdico assistido (E206) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
-| 48 | Saltos leves (E194) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 3 | Hip thrust com apoio (E211) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
+| 4 | Marcha do psoas deitado (E248) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 6 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 7 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 8 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 9 | Gémeos sentado (E216) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 10 | Hip thrust com barra (E240) | intermédio | Barra, banco ou apoio estável | — | ✅ | ✅ | — | — |
+| 11 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 12 | Sóleo sentado (E218) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 13 | Abdução de anca deitada (E229) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Clamshell (E230) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Elevação de gémeos unilateral (E217) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Elevação tibial (E220) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 20 | Flexão ativa dos dedos do pé (E222) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Gémeos em pé (E215) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 23 | Hip thrust (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 24 | Kickback de glúteo (E214) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 25 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 26 | Ponte de glúteo (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 27 | Short foot / doming (E221) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 28 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 29 | Abdução de anca (E212) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 30 | Adução de anca (E213) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 31 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 32 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 33 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 34 | Gémeos na máquina (E250) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 35 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 36 | Abdução de anca com elástico (E244) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 37 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 38 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 39 | Dorsiflexão do tornozelo com elástico (E223) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 40 | Eversão do tornozelo com elástico (E225) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 41 | Extensão terminal do joelho com elástico (E228) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 42 | Flexão da anca em pé com elástico (E226) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 43 | Gémeos sentado com elástico (E251) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 44 | Inversão do tornozelo com elástico (E224) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 45 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 46 | Ponte de glúteo com elástico (E241) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 47 | Abdução de anca no cabo (E243) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 48 | Adução de anca no cabo (E245) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 49 | Kickback de glúteo no cabo (E242) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 50 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 51 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 52 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 53 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 54 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 55 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 56 | Gémeos em pé com halteres (E249) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 57 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 58 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 59 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 60 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 61 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 62 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 63 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 64 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 65 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 66 | Curl nórdico assistido (E231) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
+| 67 | Saltos leves (E219) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Pernas, glúteos e anca › Acima do joelho / coxa e anca
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 3 | Hip thrust com apoio (E186) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
-| 4 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 6 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 7 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 8 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 9 | Abdução de anca deitada (E204) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Clamshell (E205) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Hip thrust (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Kickback de glúteo (E189) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Ponte de glúteo (E184) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Abdução de anca (E187) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 20 | Adução de anca (E188) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 21 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 22 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 23 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 24 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 25 | Extensão terminal do joelho com elástico (E203) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 26 | Flexão da anca em pé com elástico (E201) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 27 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 28 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 29 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 30 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 31 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 32 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 33 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 34 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 35 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 36 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 37 | Curl nórdico assistido (E206) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 3 | Hip thrust com apoio (E211) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
+| 4 | Marcha do psoas deitado (E248) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 6 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 7 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 8 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 9 | Hip thrust com barra (E240) | intermédio | Barra, banco ou apoio estável | — | ✅ | ✅ | — | — |
+| 10 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 11 | Abdução de anca deitada (E229) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Clamshell (E230) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Hip thrust (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Kickback de glúteo (E214) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | Ponte de glúteo (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Abdução de anca (E212) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 23 | Adução de anca (E213) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 24 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 25 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 26 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 27 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 28 | Abdução de anca com elástico (E244) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 29 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 30 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 31 | Extensão terminal do joelho com elástico (E228) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 32 | Flexão da anca em pé com elástico (E226) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 33 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 34 | Ponte de glúteo com elástico (E241) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 35 | Abdução de anca no cabo (E243) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 36 | Adução de anca no cabo (E245) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 37 | Kickback de glúteo no cabo (E242) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 38 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 39 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 40 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 41 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 42 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 43 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 44 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 45 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 46 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 47 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 48 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 49 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 50 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 51 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 52 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 53 | Curl nórdico assistido (E231) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Coxa completa
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 3 | Hip thrust com apoio (E186) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
-| 4 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 6 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 7 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 8 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 9 | Abdução de anca deitada (E204) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Clamshell (E205) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Hip thrust (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Kickback de glúteo (E189) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Ponte de glúteo (E184) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Abdução de anca (E187) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 20 | Adução de anca (E188) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 21 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 22 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 23 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 24 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 25 | Extensão terminal do joelho com elástico (E203) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 26 | Flexão da anca em pé com elástico (E201) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 27 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 28 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 29 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 30 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 31 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 32 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 33 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 34 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 35 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 36 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 37 | Curl nórdico assistido (E206) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 3 | Hip thrust com apoio (E211) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
+| 4 | Marcha do psoas deitado (E248) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 6 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 7 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 8 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 9 | Hip thrust com barra (E240) | intermédio | Barra, banco ou apoio estável | — | ✅ | ✅ | — | — |
+| 10 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 11 | Abdução de anca deitada (E229) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Clamshell (E230) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Hip thrust (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Kickback de glúteo (E214) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | Ponte de glúteo (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Abdução de anca (E212) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 23 | Adução de anca (E213) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 24 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 25 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 26 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 27 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 28 | Abdução de anca com elástico (E244) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 29 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 30 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 31 | Extensão terminal do joelho com elástico (E228) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 32 | Flexão da anca em pé com elástico (E226) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 33 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 34 | Ponte de glúteo com elástico (E241) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 35 | Abdução de anca no cabo (E243) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 36 | Adução de anca no cabo (E245) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 37 | Kickback de glúteo no cabo (E242) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 38 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 39 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 40 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 41 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 42 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 43 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 44 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 45 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 46 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 47 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 48 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 49 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 50 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 51 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 52 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 53 | Curl nórdico assistido (E231) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Quadríceps completo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 3 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 4 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 6 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 11 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 12 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 13 | Extensão terminal do joelho com elástico (E203) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 14 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 15 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 17 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 18 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 19 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 20 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 3 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 4 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 5 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 6 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 12 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 13 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 14 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 15 | Extensão terminal do joelho com elástico (E228) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 17 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 19 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 21 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 22 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 23 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 24 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Reto femoral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 3 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 4 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 6 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 11 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 12 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 13 | Extensão terminal do joelho com elástico (E203) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 14 | Flexão da anca em pé com elástico (E201) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 15 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 16 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 18 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 19 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 20 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 21 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Marcha do psoas deitado (E248) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 4 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 5 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 6 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 7 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 13 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 14 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 15 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Extensão terminal do joelho com elástico (E228) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 17 | Flexão da anca em pé com elástico (E226) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 18 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 19 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 21 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 22 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 23 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 24 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 25 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 26 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Vasto lateral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 3 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 4 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 6 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 11 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 12 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 13 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 14 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 15 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 16 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 18 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 19 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 3 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 4 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 5 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 6 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 11 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 12 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 13 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 14 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 15 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 17 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 21 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 22 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Vasto medial
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 3 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 4 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 6 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 11 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 12 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 13 | Extensão terminal do joelho com elástico (E203) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 14 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 15 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 16 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 17 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 18 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 19 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 20 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 3 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 4 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 5 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 6 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 12 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 13 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 14 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 15 | Extensão terminal do joelho com elástico (E228) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 17 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 19 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 21 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 22 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 23 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 24 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Vasto intermédio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 3 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 4 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 6 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 11 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 12 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 13 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 14 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 15 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 16 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 17 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 18 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 19 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 3 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 4 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 5 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 6 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 11 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 12 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 13 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 14 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 15 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 17 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 18 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 20 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 21 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 22 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Posterior de coxa completo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 2 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 4 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 7 | Curl nórdico assistido (E206) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
+| 1 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 2 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 10 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 11 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 12 | Curl nórdico assistido (E231) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Bíceps femoral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Hip thrust com apoio (E186) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
-| 2 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 3 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Hip thrust (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Kickback de glúteo (E189) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Ponte de glúteo (E184) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 8 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 9 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 10 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 11 | Curl nórdico assistido (E206) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
+| 1 | Hip thrust com apoio (E211) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
+| 2 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 3 | Hip thrust com barra (E240) | intermédio | Barra, banco ou apoio estável | — | ✅ | ✅ | — | — |
+| 4 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Hip thrust (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Kickback de glúteo (E214) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Ponte de glúteo (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Ponte de glúteo com elástico (E241) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Kickback de glúteo no cabo (E242) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 13 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 14 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 15 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 16 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 17 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 18 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 19 | Curl nórdico assistido (E231) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Semitendinoso
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 2 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 4 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 7 | Curl nórdico assistido (E206) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
+| 1 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 2 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 10 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 11 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 12 | Curl nórdico assistido (E231) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Semimembranoso
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 2 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 4 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 5 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 6 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 7 | Curl nórdico assistido (E206) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
+| 1 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 2 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 7 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 9 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 10 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 11 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 12 | Curl nórdico assistido (E231) | avançado | Peso corporal, apoio para os pés | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Glúteos completo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Hip thrust com apoio (E186) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
-| 2 | Hip thrust (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Kickback de glúteo (E189) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Ponte de glúteo (E184) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Flexão da anca em pé com elástico (E201) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 1 | Hip thrust com apoio (E211) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
+| 2 | Marcha do psoas deitado (E248) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Hip thrust com barra (E240) | intermédio | Barra, banco ou apoio estável | — | ✅ | ✅ | — | — |
+| 4 | Hip thrust (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Kickback de glúteo (E214) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Ponte de glúteo (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Flexão da anca em pé com elástico (E226) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 8 | Ponte de glúteo com elástico (E241) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 9 | Kickback de glúteo no cabo (E242) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 10 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 11 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Glúteo máximo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Hip thrust com apoio (E186) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
-| 3 | Wall sit (E174) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 4 | Good morning leve (E182) | iniciante | Barra | — | ✅ | ✅ | — | — |
-| 5 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 6 | Agachamento para cadeira (E161) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 7 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 8 | Agachamento com peso corporal (E160) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Good morning sem carga (E183) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Hip thrust (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Kickback de glúteo (E189) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Ponte de glúteo (E184) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Agachamento na máquina Smith (E168) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 17 | Curl de perna (E181) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 18 | Extensão de perna (E171) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 19 | Leg press (E172) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 20 | Agachamento com garrafão (E166) | intermédio | Garrafão de água | — | ✅ | — | — | — |
-| 21 | Agachamento com halteres ao lado (E163) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 22 | Agachamento com mochila (E165) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 23 | Agachamento goblet (E162) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 24 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 25 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
-| 26 | Peso morto romeno com halteres (E180) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 27 | Peso morto unilateral com halteres (E207) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 28 | Agachamento com barra (E164) | intermédio | Barra | — | ✅ | ✅ | — | — |
-| 29 | Peso morto tradicional (E179) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Hip thrust com apoio (E211) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
+| 3 | Wall sit (E199) | iniciante | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 4 | Good morning leve (E207) | iniciante | Barra | — | ✅ | ✅ | — | — |
+| 5 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 6 | Agachamento para cadeira (E186) | intermédio | Peso corporal, banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 7 | Hip thrust com barra (E240) | intermédio | Barra, banco ou apoio estável | — | ✅ | ✅ | — | — |
+| 8 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 9 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Agachamento com peso corporal (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Good morning sem carga (E208) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Hip thrust (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Kickback de glúteo (E214) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Ponte de glúteo (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Agachamento na máquina Smith (E193) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 19 | Curl de perna (E206) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 20 | Extensão de perna (E196) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 21 | Leg press (E197) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 22 | Agachamento com elástico (E237) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 23 | Curl de perna com elástico (E247) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 24 | Peso morto com elástico (E236) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 25 | Ponte de glúteo com elástico (E241) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 26 | Kickback de glúteo no cabo (E242) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 27 | Pull-through no cabo (E246) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 28 | Agachamento com garrafão (E191) | intermédio | Garrafão de água | — | ✅ | — | — | — |
+| 29 | Agachamento com halteres ao lado (E188) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 30 | Agachamento com mochila (E190) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 31 | Agachamento goblet (E187) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 32 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 33 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 34 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 35 | Peso morto romeno com halteres (E205) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 36 | Peso morto unilateral com halteres (E232) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 37 | Agachamento com barra (E189) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 38 | Peso morto tradicional (E204) | intermédio | Barra | — | ✅ | ✅ | — | — |
+| 39 | Agachamento goblet com kettlebell (E234) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 40 | Kettlebell swing (E233) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
+| 41 | Peso morto com kettlebell (E235) | intermédio | Kettlebell | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Glúteo médio
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Agachamento búlgaro com apoio (E170) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Hip thrust com apoio (E186) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
-| 3 | Agachamento búlgaro (E169) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 4 | Step-up (E173) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 5 | Abdução de anca deitada (E204) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Clamshell (E205) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Hip thrust (E185) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Kickback de glúteo (E189) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Lunges (E175) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Ponte de glúteo (E184) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Walking lunges (E178) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Abdução de anca (E187) | intermédio | Máquina | — | ✅ | ✅ | — | — |
-| 13 | Lunges com halteres (E176) | intermédio | Halteres | — | ✅ | ✅ | — | — |
-| 14 | Lunges com mochila (E177) | intermédio | Mochila com peso | — | ✅ | — | — | — |
+| 1 | Agachamento búlgaro com apoio (E195) | iniciante | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Hip thrust com apoio (E211) | iniciante | Peso corporal | — | ✅ | ✅ | — | — |
+| 3 | Agachamento búlgaro (E194) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 4 | Hip thrust com barra (E240) | intermédio | Barra, banco ou apoio estável | — | ✅ | ✅ | — | — |
+| 5 | Step-up (E198) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 6 | Abdução de anca deitada (E229) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Clamshell (E230) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Hip thrust (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Kickback de glúteo (E214) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Lunges (E200) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Ponte de glúteo (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Walking lunges (E203) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Abdução de anca (E212) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 14 | Abdução de anca com elástico (E244) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 15 | Ponte de glúteo com elástico (E241) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 16 | Abdução de anca no cabo (E243) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 17 | Kickback de glúteo no cabo (E242) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 18 | Lunges com halteres (E201) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 19 | Lunges com mochila (E202) | intermédio | Mochila com peso | — | ✅ | — | — | — |
 
 ### Músculo específico: Glúteo mínimo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Abdução de anca deitada (E204) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Clamshell (E205) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Abdução de anca (E187) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 1 | Abdução de anca deitada (E229) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Clamshell (E230) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Abdução de anca (E212) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Abdução de anca com elástico (E244) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Abdução de anca no cabo (E243) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Adutores
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Copenhagen plank com apoio (E202) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
-| 2 | Agachamento sumo (E167) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Adução de anca (E188) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 1 | Copenhagen plank com apoio (E227) | iniciante | Banco / cadeira / apoio estável | — | ✅ | ✅ | — | — |
+| 2 | Afundo lateral (E239) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Agachamento sumo (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Adução de anca (E213) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 5 | Adução de anca no cabo (E245) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
+| 6 | Agachamento sumo com halteres (E238) | intermédio | Halteres | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Abdutores
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Abdução de anca deitada (E204) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Clamshell (E205) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Abdução de anca (E187) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 1 | Abdução de anca deitada (E229) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Clamshell (E230) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Abdução de anca (E212) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 4 | Abdução de anca com elástico (E244) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Abdução de anca no cabo (E243) | intermédio | Cabo / polia | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Flexores da anca
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Flexão da anca em pé com elástico (E201) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 1 | Marcha do psoas deitado (E248) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Flexão da anca em pé com elástico (E226) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
 
 ## Pernas, glúteos e anca › Abaixo do joelho / perna inferior e pé
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Gémeos sentado (E191) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Sóleo sentado (E193) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 3 | Elevação de gémeos unilateral (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Elevação tibial (E195) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Flexão ativa dos dedos do pé (E197) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Gémeos em pé (E190) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Short foot / doming (E196) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Dorsiflexão do tornozelo com elástico (E198) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Eversão do tornozelo com elástico (E200) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Inversão do tornozelo com elástico (E199) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Saltos leves (E194) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Gémeos sentado (E216) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Sóleo sentado (E218) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 3 | Elevação de gémeos unilateral (E217) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Elevação tibial (E220) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 5 | Flexão ativa dos dedos do pé (E222) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Gémeos em pé (E215) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Short foot / doming (E221) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Gémeos na máquina (E250) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Dorsiflexão do tornozelo com elástico (E223) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Eversão do tornozelo com elástico (E225) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Gémeos sentado com elástico (E251) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Inversão do tornozelo com elástico (E224) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 13 | Gémeos em pé com halteres (E249) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Saltos leves (E219) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Músculo específico: Perna inferior completa
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Gémeos sentado (E191) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Sóleo sentado (E193) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 3 | Elevação de gémeos unilateral (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Elevação tibial (E195) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Flexão ativa dos dedos do pé (E197) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Gémeos em pé (E190) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Short foot / doming (E196) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Dorsiflexão do tornozelo com elástico (E198) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Eversão do tornozelo com elástico (E200) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Inversão do tornozelo com elástico (E199) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Saltos leves (E194) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Gémeos sentado (E216) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Sóleo sentado (E218) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 3 | Elevação de gémeos unilateral (E217) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Elevação tibial (E220) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 5 | Flexão ativa dos dedos do pé (E222) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Gémeos em pé (E215) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Short foot / doming (E221) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Gémeos na máquina (E250) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Dorsiflexão do tornozelo com elástico (E223) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Eversão do tornozelo com elástico (E225) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Gémeos sentado com elástico (E251) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Inversão do tornozelo com elástico (E224) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 13 | Gémeos em pé com halteres (E249) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Saltos leves (E219) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Músculo específico: Gémeos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Gémeos sentado (E191) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Sóleo sentado (E193) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 3 | Elevação de gémeos unilateral (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Gémeos em pé (E190) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Saltos leves (E194) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Gémeos sentado (E216) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Sóleo sentado (E218) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 3 | Elevação de gémeos unilateral (E217) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Gémeos em pé (E215) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Gémeos na máquina (E250) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 6 | Gémeos sentado com elástico (E251) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 7 | Gémeos em pé com halteres (E249) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 8 | Saltos leves (E219) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Músculo específico: Sóleo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Gémeos sentado (E191) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Sóleo sentado (E193) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 3 | Saltos leves (E194) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Gémeos sentado (E216) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Sóleo sentado (E218) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 3 | Gémeos sentado com elástico (E251) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 4 | Saltos leves (E219) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Músculo específico: Tibial anterior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Elevação tibial (E195) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 2 | Dorsiflexão do tornozelo com elástico (E198) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 1 | Elevação tibial (E220) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Dorsiflexão do tornozelo com elástico (E223) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Tornozelo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Gémeos sentado (E191) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Sóleo sentado (E193) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 3 | Elevação de gémeos unilateral (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Elevação tibial (E195) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Flexão ativa dos dedos do pé (E197) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Gémeos em pé (E190) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Short foot / doming (E196) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Dorsiflexão do tornozelo com elástico (E198) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Eversão do tornozelo com elástico (E200) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Inversão do tornozelo com elástico (E199) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Saltos leves (E194) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Gémeos sentado (E216) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Sóleo sentado (E218) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 3 | Elevação de gémeos unilateral (E217) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Elevação tibial (E220) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 5 | Flexão ativa dos dedos do pé (E222) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Gémeos em pé (E215) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Short foot / doming (E221) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Gémeos na máquina (E250) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Dorsiflexão do tornozelo com elástico (E223) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Eversão do tornozelo com elástico (E225) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Gémeos sentado com elástico (E251) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Inversão do tornozelo com elástico (E224) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 13 | Gémeos em pé com halteres (E249) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Saltos leves (E219) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Músculo específico: Pés
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Elevação tibial (E195) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 2 | Flexão ativa dos dedos do pé (E197) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Short foot / doming (E196) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Dorsiflexão do tornozelo com elástico (E198) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 5 | Eversão do tornozelo com elástico (E200) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 6 | Inversão do tornozelo com elástico (E199) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 1 | Elevação tibial (E220) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 2 | Flexão ativa dos dedos do pé (E222) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Short foot / doming (E221) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Dorsiflexão do tornozelo com elástico (E223) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 5 | Eversão do tornozelo com elástico (E225) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 6 | Inversão do tornozelo com elástico (E224) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
 
 ### Músculo específico: Estabilidade do tornozelo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Gémeos sentado (E191) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 2 | Sóleo sentado (E193) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
-| 3 | Elevação de gémeos unilateral (E192) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Elevação tibial (E195) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
-| 5 | Flexão ativa dos dedos do pé (E197) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Gémeos em pé (E190) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Short foot / doming (E196) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Dorsiflexão do tornozelo com elástico (E198) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 9 | Eversão do tornozelo com elástico (E200) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 10 | Inversão do tornozelo com elástico (E199) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
-| 11 | Saltos leves (E194) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Gémeos sentado (E216) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 2 | Sóleo sentado (E218) | intermédio | Banco / cadeira / apoio | — | ✅ | ✅ | — | — |
+| 3 | Elevação de gémeos unilateral (E217) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Elevação tibial (E220) | intermédio | Peso corporal | ✅ | ✅ | ✅ | — | ✅ |
+| 5 | Flexão ativa dos dedos do pé (E222) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Gémeos em pé (E215) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Short foot / doming (E221) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Gémeos na máquina (E250) | intermédio | Máquina | — | ✅ | ✅ | — | — |
+| 9 | Dorsiflexão do tornozelo com elástico (E223) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 10 | Eversão do tornozelo com elástico (E225) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 11 | Gémeos sentado com elástico (E251) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 12 | Inversão do tornozelo com elástico (E224) | intermédio | Elásticos | — | ✅ | ✅ | — | — |
+| 13 | Gémeos em pé com halteres (E249) | intermédio | Halteres | — | ✅ | ✅ | — | — |
+| 14 | Saltos leves (E219) | avançado | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Fichas completas (do mais simples ao mais complexo)
 
-### E170 — Agachamento búlgaro com apoio
+### E195 — Agachamento búlgaro com apoio
 
 - **Nível**: iniciante | **Padrão**: afundo | **Grupo**: Pernas
 - **Equipamento**: Banco / cadeira / apoio
@@ -2175,7 +2498,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E202 — Copenhagen plank com apoio
+### E227 — Copenhagen plank com apoio
 
 - **Nível**: iniciante | **Padrão**: outro / técnico | **Grupo**: Pernas
 - **Equipamento**: Banco / cadeira / apoio estável
@@ -2206,7 +2529,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E035 — Flexão inclinada
+### E048 — Flexão inclinada
 
 - **Nível**: iniciante | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Peso corporal, banco / cadeira / apoio
@@ -2238,7 +2561,94 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E034 — Flexão com joelhos apoiados
+### E036 — Rotação externa isométrica na parede
+
+- **Nível**: iniciante | **Padrão**: outro / técnico | **Grupo**: Ombros
+- **Equipamento**: Peso corporal, parede
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Dojo
+- **Músculos secundários**: Infraespinhoso, redondo menor e estabilizadores escapulares
+
+**Objetivo**: Pressão isométrica do dorso da mão contra uma parede, com o cotovelo fixo junto ao corpo, para fortalecer os rotadores externos do ombro sem carga. Serve para treinar ombros e estabilizadores escapulares.
+
+**Como executar:**
+
+1. Fica de lado para uma parede, com o cotovelo dobrado a 90 graus e colado às costelas.
+2. Encosta o dorso da mão mais próxima da parede a ela, com o antebraço na horizontal.
+3. Empurra a mão contra a parede como se quisesses rodar o ombro para fora, sem deixar o cotovelo despegar do corpo.
+4. Mantém a pressão 5 a 10 segundos, respirando normalmente.
+5. Solta devagar, descansa e repete 3 a 5 vezes antes de trocar de lado.
+
+**Erros comuns:**
+
+- Deixar o cotovelo afastar-se das costelas.
+- Empurrar com o ombro em vez de com o antebraço.
+- Prender a respiração durante a pressão.
+- Usar demasiada força logo nas primeiras repetições.
+
+- **Versão mais fácil**: Reduz a força da pressão e o tempo de sustentação até dominares a posição do cotovelo.
+- **Versão mais difícil**: Aumenta a duração da pressão até 10 segundos ou passa a usar um elástico leve em vez da parede.
+- **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
+- **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
+
+### E037 — Rotação interna isométrica na parede
+
+- **Nível**: iniciante | **Padrão**: outro / técnico | **Grupo**: Ombros
+- **Equipamento**: Peso corporal, parede
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Dojo
+- **Músculos secundários**: Subescapular, peito e estabilizadores escapulares
+
+**Objetivo**: Pressão isométrica da palma da mão contra a parede, com o cotovelo fixo junto ao corpo, para fortalecer os rotadores internos do ombro sem carga.
+
+**Como executar:**
+
+1. Fica de lado para uma parede, com o cotovelo dobrado a 90 graus e colado às costelas.
+2. Encosta a palma da mão mais próxima à parede, com o antebraço na horizontal.
+3. Empurra a palma contra a parede como se quisesses rodar o antebraço para dentro, sem deixar o cotovelo despegar do corpo.
+4. Mantém a pressão 5 a 10 segundos, respirando normalmente.
+5. Solta devagar, descansa e repete 3 a 5 vezes antes de trocar de lado.
+
+**Erros comuns:**
+
+- Deixar o cotovelo afastar-se das costelas.
+- Empurrar com o corpo em vez do antebraço.
+- Prender a respiração durante a pressão.
+- Usar força máxima logo nas primeiras repetições.
+
+- **Versão mais fácil**: Reduz a força da pressão e o tempo de sustentação.
+- **Versão mais difícil**: Aumenta a duração até 10 segundos ou passa a usar um elástico leve em vez da parede.
+- **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
+- **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
+
+### E011 — Encolhimento isométrico de ombros
+
+- **Nível**: iniciante | **Padrão**: elevação escapular | **Grupo**: Trapézio
+- **Equipamento**: Peso corporal
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Exterior, Dojo
+- **Músculos secundários**: Trapézio médio, elevador da omoplata e estabilizadores cervicais
+
+**Objetivo**: Elevação ativa e sustentada dos ombros em direção às orelhas, sem carga, para ativar o trapézio superior.
+
+**Como executar:**
+
+1. Fica de pé ou sentado, com a coluna direita e os braços relaxados ao lado do corpo.
+2. Sobe os ombros o mais alto que conseguires, na direção das orelhas, com força voluntária.
+3. Mantém a posição 5 a 10 segundos, sem prender a respiração.
+4. Desce os ombros devagar até relaxarem completamente.
+5. Descansa 2 a 3 segundos e repete 5 a 8 vezes.
+
+**Erros comuns:**
+
+- Encolher só um ombro de cada vez.
+- Prender a respiração durante a subida.
+- Deixar os ombros rodarem para a frente.
+- Fazer o movimento com impulso em vez de contração controlada.
+
+- **Versão mais fácil**: Usa menos força na subida e sustenta apenas 3 a 5 segundos.
+- **Versão mais difícil**: Aumenta a sustentação até 10 segundos ou segura um objeto leve em cada mão, como garrafas de água.
+- **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
+- **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
+
+### E047 — Flexão com joelhos apoiados
 
 - **Nível**: iniciante | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Peso corporal, tapete / colchonete
@@ -2270,7 +2680,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E186 — Hip thrust com apoio
+### E211 — Hip thrust com apoio
 
 - **Nível**: iniciante | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -2393,7 +2803,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa força muito leve. Para imediatamente com tontura, formigueiro, dor irradiada, pressão na cabeça, visão turva ou dor aguda no pescoço.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E078 — Superman isométrico
+### E248 — Marcha do psoas deitado
+
+- **Nível**: iniciante | **Padrão**: outro / técnico | **Grupo**: Pernas
+- **Equipamento**: Peso corporal
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Exterior, Dojo
+- **Músculos secundários**: Flexores da anca, reto femoral, transverso abdominal e lombar
+
+**Objetivo**: Flexão alternada das ancas deitado de costas, levando um joelho de cada vez ao peito com o core firme, para fortalecer os flexores da anca.
+
+**Como executar:**
+
+1. Deita-te de costas com os joelhos dobrados e os pés no chão, lombar em posição neutra.
+2. Aperta o abdómen como se preparasses para um leve toque na barriga.
+3. Leva um joelho em direção ao peito, dobrando pela anca, sem deixar a lombar descolar.
+4. Volta a pousar o pé devagar e leva o outro joelho, alternando como uma marcha.
+5. Mantém o ritmo lento: cerca de dois segundos por perna.
+6. Faz 8 a 12 marchas por perna, a expirar de cada vez que o joelho sobe.
+
+**Erros comuns:**
+
+- Deixar a lombar arquear quando a perna desce.
+- Puxar o joelho com as mãos.
+- Fazer a marcha depressa e sem controlo.
+- Prender a respiração com o abdómen contraído.
+
+- **Versão mais fácil**: Desliza o calcanhar pelo chão em vez de elevar o joelho, mantendo a lombar neutra.
+- **Versão mais difícil**: Estica a perna que desce sem tocar no chão, ou coloca um elástico à volta dos pés.
+- **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E095 — Superman isométrico
 
 - **Nível**: iniciante | **Padrão**: outro / técnico | **Grupo**: Lombar
 - **Equipamento**: Peso corporal
@@ -2425,7 +2865,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E174 — Wall sit
+### E199 — Wall sit
 
 - **Nível**: iniciante | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -2457,7 +2897,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E053 — Dips assistidos para peito na máquina
+### E066 — Dips assistidos para peito na máquina
 
 - **Nível**: iniciante | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Máquina assistida de dips
@@ -2485,10 +2925,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Faz com apoio dos pés, elástico ou máquina assistida, mantendo a mesma trajetória articular.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E022 — Mobilidade de ombro com elástico
+### E024 — Mobilidade de ombro com elástico
 
 - **Nível**: iniciante | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Elásticos
@@ -2517,10 +2957,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E125 — Aperto isométrico
+### E144 — Aperto isométrico
 
 - **Nível**: iniciante | **Padrão**: pega / punho | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -2551,7 +2991,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E098 — Curl isométrico
+### E115 — Curl isométrico
 
 - **Nível**: iniciante | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -2615,7 +3055,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E138 — Rotação controlada com halter leve
+### E157 — Rotação controlada com halter leve
 
 - **Nível**: iniciante | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -2647,7 +3087,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E182 — Good morning leve
+### E207 — Good morning leve
 
 - **Nível**: iniciante | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Barra
@@ -2679,7 +3119,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E081 — Good morning leve isométrico
+### E098 — Good morning leve isométrico
 
 - **Nível**: iniciante | **Padrão**: dobradiça de anca | **Grupo**: Lombar
 - **Equipamento**: Barra
@@ -2711,7 +3151,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E169 — Agachamento búlgaro
+### E194 — Agachamento búlgaro
 
 - **Nível**: intermédio | **Padrão**: afundo | **Grupo**: Pernas
 - **Equipamento**: Banco / cadeira / apoio
@@ -2743,7 +3183,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E161 — Agachamento para cadeira
+### E186 — Agachamento para cadeira
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Peso corporal, banco / cadeira / apoio
@@ -2775,7 +3215,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E088 — Curl inclinado com halteres
+### E105 — Curl inclinado com halteres
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres, banco inclinado ou apoio estável
@@ -2807,7 +3247,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E093 — Curl spider
+### E110 — Curl spider
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres, banco inclinado ou apoio estável
@@ -2839,7 +3279,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E036 — Flexão declinada
+### E049 — Flexão declinada
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Peso corporal, banco / cadeira / apoio
@@ -2871,7 +3311,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E108 — Fundos entre apoios
+### E126 — Fundos entre apoios
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Tríceps
 - **Equipamento**: Banco / cadeira / apoio
@@ -2902,7 +3342,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E191 — Gémeos sentado
+### E216 — Gémeos sentado
 
 - **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
 - **Equipamento**: Banco / cadeira / apoio
@@ -2933,7 +3373,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E173 — Step-up
+### E240 — Hip thrust com barra
+
+- **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
+- **Equipamento**: Barra, banco ou apoio estável
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Glúteo máximo, posterior de coxa, quadríceps e core
+
+**Objetivo**: Elevação da anca com as costas apoiadas num banco e a barra sobre a bacia; a forma mais forte de carregar os glúteos. Serve para o treinar com controlo.
+
+**Como executar:**
+
+1. Senta-te no chão com a parte alta das costas num banco firme e a barra sobre a dobra da anca, com uma proteção na posição certa.
+2. Segura a barra com pega firme das duas mãos e apoia os pés à largura da anca, joelhos dobrados.
+3. Mantém o queixo recolhido e as costelas em baixo antes de subir.
+4. Empurra o chão com os calcanhares e eleva a anca até o tronco e as coxas ficarem em linha.
+5. Aperta os glúteos um segundo em cima, sem arquear a lombar.
+6. Desce devagar até a bacia quase tocar no chão e repete; expira ao subir e inspira ao descer.
+
+**Erros comuns:**
+
+- Arquear a lombar em vez de subir com os glúteos.
+- Empurrar com a ponta dos pés.
+- Deixar os joelhos fechar para dentro.
+- Esticar o pescoço e olhar para o teto no topo.
+
+- **Versão mais fácil**: Faz o hip thrust sem barra ou com um halter sobre a anca até dominares a posição.
+- **Versão mais difícil**: Aumenta a barra aos poucos, pausa dois segundos em cima ou faz a uma perna sem carga.
+- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E198 — Step-up
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Banco / cadeira / apoio
@@ -2965,7 +3435,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E193 — Sóleo sentado
+### E218 — Sóleo sentado
 
 - **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
 - **Equipamento**: Banco / cadeira / apoio
@@ -2996,7 +3466,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E204 — Abdução de anca deitada
+### E229 — Abdução de anca deitada
 
 - **Nível**: intermédio | **Padrão**: abdução de anca/ombro | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3027,7 +3497,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E160 — Agachamento com peso corporal
+### E239 — Afundo lateral
+
+- **Nível**: intermédio | **Padrão**: afundo | **Grupo**: Pernas
+- **Equipamento**: Peso corporal
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Exterior, Dojo
+- **Músculos secundários**: Quadríceps, glúteos, adutores e equilíbrio
+
+**Objetivo**: Passo largo para o lado com descida sobre essa perna, mantendo a outra esticada; trabalha quadríceps, glúteos e adutores em conjunto.
+
+**Como executar:**
+
+1. Fica de pé com os pés juntos e as mãos à frente do peito.
+2. Dá um passo largo para o lado e desce dobrando o joelho dessa perna, empurrando a anca para trás.
+3. Mantém a outra perna esticada e os dois pés virados em frente.
+4. Desce com o tronco direito até onde o calcanhar de apoio fica no chão.
+5. Empurra o chão com a perna dobrada e volta à posição inicial.
+6. Alterna os lados ou faz todas as repetições de um lado; inspira ao descer e expira ao subir.
+
+**Erros comuns:**
+
+- Deixar o joelho da perna dobrada fechar para dentro.
+- Curvar o tronco à frente na descida.
+- Levantar o calcanhar da perna de apoio.
+- Dar um passo curto demais para descer com controlo.
+
+- **Versão mais fácil**: Dá um passo mais curto e desce menos, ou apoia as mãos numa cadeira à frente.
+- **Versão mais difícil**: Segura um halter ao peito ou desce mais fundo mantendo o calcanhar no chão.
+- **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E185 — Agachamento com peso corporal
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3059,7 +3559,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E167 — Agachamento sumo
+### E192 — Agachamento sumo
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3091,7 +3591,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E151 — Bicycle crunch
+### E174 — Bicycle crunch
 
 - **Nível**: intermédio | **Padrão**: flexão de tronco | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3123,7 +3623,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E152 — Bird dog
+### E175 — Bird dog
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3185,7 +3685,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa força muito leve. Para imediatamente com tontura, formigueiro, dor irradiada, pressão na cabeça, visão turva ou dor aguda no pescoço.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E205 — Clamshell
+### E230 — Clamshell
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3215,7 +3715,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E141 — Crunch
+### E164 — Crunch
 
 - **Nível**: intermédio | **Padrão**: flexão de tronco | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3247,7 +3747,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E145 — Dead bug
+### E168 — Dead bug
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3278,7 +3778,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E192 — Elevação de gémeos unilateral
+### E035 — Elevação Y-T-W deitado no chão
+
+- **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
+- **Equipamento**: Peso corporal
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Exterior, Dojo
+- **Músculos secundários**: Deltoide posterior, trapézio médio e inferior, romboides e estabilizadores da escápula
+
+**Objetivo**: Elevação dos braços deitado de bruços no chão, passando pelas posições Y, T e W, para ativar deltoide posterior e trapézio sem qualquer equipamento. Serve para treinar Ombros.
+
+**Como executar:**
+
+1. Deita-te de barriga para baixo com a testa apoiada num tapete ou toalha dobrada.
+2. Estica os braços à frente em V aberto, polegares a apontar para o teto (posição Y).
+3. Eleva os braços e o peito alguns centímetros do chão, sem forçar o pescoço, e desce devagar.
+4. Abre os braços na horizontal, alinhados com os ombros, cotovelos quase esticados (posição T), e repete a elevação.
+5. Dobra os cotovelos a 90 graus junto ao corpo e roda os antebraços para cima (posição W), repetindo a elevação.
+6. Mantém o umbigo colado ao chão durante toda a série, sem arquear a lombar.
+
+**Erros comuns:**
+
+- Arquear a lombar para ganhar amplitude.
+- Levantar a cabeça em vez do peito.
+- Fazer o movimento com impulso.
+- Encolher os ombros junto às orelhas.
+
+- **Versão mais fácil**: Faz sem elevar o peito do chão, só ativando a posição correta dos braços em Y, T e W ao nível do solo.
+- **Versão mais difícil**: Segura 1 a 2 segundos em cada posição no topo, ou acrescenta um halter muito leve em cada mão.
+- **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E217 — Elevação de gémeos unilateral
 
 - **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3309,7 +3839,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E143 — Elevação de pernas
+### E166 — Elevação de pernas
 
 - **Nível**: intermédio | **Padrão**: flexão de tronco | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3341,7 +3871,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E195 — Elevação tibial
+### E220 — Elevação tibial
 
 - **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3372,7 +3902,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E079 — Extensão lombar quadrupede
+### E096 — Extensão lombar quadrupede
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Lombar
 - **Equipamento**: Peso corporal
@@ -3402,7 +3932,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém o gesto pequeno e silencioso. Interrompe se a bacia rodar sempre, se a lombar apertar, se surgir dor irradiada ou se precisares de impulso para levantar a perna.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E037 — Flexão aberta
+### E050 — Flexão aberta
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Peso corporal
@@ -3434,7 +3964,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E197 — Flexão ativa dos dedos do pé
+### E222 — Flexão ativa dos dedos do pé
 
 - **Nível**: intermédio | **Padrão**: pega / punho | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3466,7 +3996,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E033 — Flexão clássica
+### E046 — Flexão clássica
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Peso corporal
@@ -3498,7 +4028,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E110 — Flexão diamante
+### E128 — Flexão diamante
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Tríceps
 - **Equipamento**: Peso corporal
@@ -3527,7 +4057,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E109 — Flexão fechada
+### E127 — Flexão fechada
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Tríceps
 - **Equipamento**: Peso corporal
@@ -3558,7 +4088,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E155 — Flutter kicks
+### E178 — Flutter kicks
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3590,7 +4120,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E183 — Good morning sem carga
+### E208 — Good morning sem carga
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3621,7 +4151,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra durante a dobradiça da anca. Para com dor lombar aguda, formigueiro ou perda de força.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E072 — Good morning sem carga
+### E086 — Good morning sem carga
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Costas
 - **Equipamento**: Peso corporal
@@ -3652,7 +4182,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra durante a dobradiça da anca. Para com dor lombar aguda, formigueiro ou perda de força.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E190 — Gémeos em pé
+### E215 — Gémeos em pé
 
 - **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3683,7 +4213,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E185 — Hip thrust
+### E210 — Hip thrust
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3714,7 +4244,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E076 — Hiperextensão no chão
+### E093 — Hiperextensão no chão
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Lombar
 - **Equipamento**: Peso corporal
@@ -3745,7 +4275,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra durante a dobradiça da anca. Para com dor lombar aguda, formigueiro ou perda de força.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E146 — Hollow hold
+### E169 — Hollow hold
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3777,7 +4307,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E189 — Kickback de glúteo
+### E214 — Kickback de glúteo
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3808,7 +4338,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E175 — Lunges
+### E200 — Lunges
 
 - **Nível**: intermédio | **Padrão**: afundo | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3840,7 +4370,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E147 — Mountain climbers
+### E170 — Mountain climbers
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3872,7 +4402,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E031 — Pike push-up
+### E033 — Pike push-up
 
 - **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
 - **Equipamento**: Peso corporal
@@ -3903,7 +4433,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E184 — Ponte de glúteo
+### E209 — Ponte de glúteo
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -3934,7 +4464,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E139 — Prancha
+### E162 — Prancha
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3966,7 +4496,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E159 — Prancha com toque no ombro
+### E182 — Prancha com toque no ombro
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -3996,7 +4526,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E140 — Prancha lateral
+### E163 — Prancha lateral
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -4027,7 +4557,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E142 — Reverse crunch
+### E165 — Reverse crunch
 
 - **Nível**: intermédio | **Padrão**: flexão de tronco | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -4090,7 +4620,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa força muito leve. Para imediatamente com tontura, formigueiro, dor irradiada, pressão na cabeça, visão turva ou dor aguda no pescoço.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E150 — Russian twist
+### E173 — Russian twist
 
 - **Nível**: intermédio | **Padrão**: rotação de tronco | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -4122,7 +4652,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E030 — Scapular push-up
+### E032 — Scapular push-up
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Peso corporal
@@ -4153,7 +4683,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E196 — Short foot / doming
+### E221 — Short foot / doming
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -4184,7 +4714,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E153 — Side bend
+### E176 — Side bend
 
 - **Nível**: intermédio | **Padrão**: flexão lateral | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -4216,7 +4746,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E157 — Superman
+### E180 — Superman
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -4248,7 +4778,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E156 — Toe touches
+### E179 — Toe touches
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -4280,7 +4810,36 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E154 — Vacuum abdominal
+### E158 — Torção de toalha
+
+- **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
+- **Equipamento**: Peso corporal, toalha
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Exterior, Dojo
+- **Músculos secundários**: Flexores e extensores do punho e força de pega geral
+
+**Objetivo**: Torção de uma toalha enrolada com as duas mãos em direções opostas, como quem espreme água, para treinar pronação, supinação e pega. Serve para treinar Antebraço/Pega.
+
+**Como executar:**
+
+1. Enrola uma toalha e segura-a com as duas mãos, afastadas cerca de 20 a 30 cm.
+2. Fica de pé com os cotovelos junto ao corpo e os punhos alinhados com os antebraços.
+3. Torce a toalha rodando uma mão para dentro e a outra para fora, como se espremesses água.
+4. Mantém a torção 2 a 3 segundos e inverte a direção, trocando qual mão roda para cada lado.
+5. Repete 8 a 12 torções em cada direção, sem deixar os cotovelos afastarem do corpo.
+
+**Erros comuns:**
+
+- Mover os cotovelos em vez dos punhos.
+- Torcer com pressa e sem controlo.
+- Segurar a toalha demasiado perto do centro.
+- Prender a respiração durante a torção.
+
+- **Versão mais fácil**: Usa uma toalha mais fina e torce com menos força.
+- **Versão mais difícil**: Usa uma toalha mais grossa ou molhada, ou aumenta o tempo de cada torção.
+- **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E177 — Vacuum abdominal
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Peso corporal
@@ -4311,7 +4870,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E178 — Walking lunges
+### E203 — Walking lunges
 
 - **Nível**: intermédio | **Padrão**: afundo | **Grupo**: Pernas
 - **Equipamento**: Peso corporal
@@ -4343,7 +4902,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E023 — Wall slides
+### E025 — Wall slides
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Peso corporal
@@ -4374,7 +4933,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E187 — Abdução de anca
+### E212 — Abdução de anca
 
 - **Nível**: intermédio | **Padrão**: abdução de anca/ombro | **Grupo**: Pernas
 - **Equipamento**: Máquina
@@ -4403,10 +4962,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E188 — Adução de anca
+### E213 — Adução de anca
 
 - **Nível**: intermédio | **Padrão**: adução de anca | **Grupo**: Pernas
 - **Equipamento**: Máquina
@@ -4435,10 +4994,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E168 — Agachamento na máquina Smith
+### E193 — Agachamento na máquina Smith
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Máquina
@@ -4470,7 +5029,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E051 — Chest press
+### E064 — Chest press
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Máquina
@@ -4502,7 +5061,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E181 — Curl de perna
+### E206 — Curl de perna
 
 - **Nível**: intermédio | **Padrão**: flexão de joelho | **Grupo**: Pernas
 - **Equipamento**: Máquina
@@ -4531,7 +5090,36 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E117 — Curl na máquina
+
+- **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
+- **Equipamento**: Máquina
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Bíceps, braquial, antebraços e pega
+
+**Objetivo**: Flexão dos cotovelos na máquina de curl, com os braços apoiados; isola o bíceps e elimina o balanço do tronco.
+
+**Como executar:**
+
+1. Ajusta o banco para as axilas encostarem ao apoio e os cotovelos ficarem alinhados com o eixo da máquina.
+2. Segura as pegas com pega firme, palmas para cima e punhos direitos.
+3. Sobe as pegas dobrando os cotovelos, sem levantar os ombros nem mover o tronco.
+4. Aperta o bíceps no topo durante um segundo.
+5. Desce devagar até os braços quase esticarem, mantendo tensão.
+
+**Erros comuns:**
+
+- Levantar os cotovelos do apoio na subida.
+- Dobrar os punhos para trás com a carga.
+- Largar a carga na descida em vez de a travar.
+- Encolher o tronco para ajudar a subida.
+
+- **Versão mais fácil**: Reduz a carga e trabalha a amplitude completa devagar.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou desce em três a quatro segundos.
+- **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
 ### E008 — Encolhimento de ombros na máquina
@@ -4566,7 +5154,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E171 — Extensão de perna
+### E196 — Extensão de perna
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Máquina
@@ -4598,7 +5186,66 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E075 — Hiperextensão lombar
+### E138 — Extensão de tríceps na máquina
+
+- **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
+- **Equipamento**: Máquina
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Tríceps, antebraços e estabilidade do cotovelo
+
+**Objetivo**: Extensão dos cotovelos na máquina de tríceps, com os braços apoiados, para isolar o tríceps com percurso guiado.
+
+**Como executar:**
+
+1. Ajusta o banco para os cotovelos ficarem alinhados com o eixo da máquina e os braços apoiados.
+2. Segura as pegas com pega firme e punhos direitos.
+3. Estende os cotovelos empurrando as pegas para baixo e para a frente até os braços esticarem.
+4. Mantém os ombros em baixo e o tronco encostado durante a extensão.
+5. Desce devagar com as pegas até os cotovelos dobrarem a cerca de 90 graus, mantendo a tensão.
+
+**Erros comuns:**
+
+- Levantar os cotovelos do apoio durante a extensão.
+- Usar o peso do tronco para empurrar.
+- Dobrar os punhos com a carga.
+- Encurtar a amplitude para levar mais carga.
+
+- **Versão mais fácil**: Reduz a carga e estende até onde os cotovelos ficam alinhados e sem dor.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou acrescenta uma pausa de um segundo com os braços esticados.
+- **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E250 — Gémeos na máquina
+
+- **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
+- **Equipamento**: Máquina
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Gémeos, sóleo, tornozelo e equilíbrio
+
+**Objetivo**: Elevação dos calcanhares na máquina de gémeos, com carga guiada e amplitude completa, para trabalhar os gémeos com progressão fácil.
+
+**Como executar:**
+
+1. Coloca os ombros por baixo dos apoios da máquina e a ponta dos pés na plataforma, com os calcanhares de fora.
+2. Fica alto, com os joelhos quase esticados e o tronco direito.
+3. Deixa os calcanhares descer abaixo da plataforma até sentir alongar os gémeos.
+4. Sobe nas pontas dos pés o mais alto que conseguires, com os tornozelos firmes.
+5. Pausa um segundo em cima e desce devagar.
+6. Expira ao subir e inspira ao descer; usa amplitude completa em todas as repetições.
+
+**Erros comuns:**
+
+- Fazer repetições curtas e a ressaltar.
+- Dobrar e esticar os joelhos para ajudar.
+- Deixar os tornozelos rodar para fora.
+- Descer sem controlo até ao fundo.
+
+- **Versão mais fácil**: Reduz a carga e faz as repetições mais lentas, com pausa em baixo.
+- **Versão mais difícil**: Aumenta a carga, faz a subida a duas pernas e a descida a uma, ou pausa dois segundos em cima.
+- **Segurança**: Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E092 — Hiperextensão lombar
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Lombar
 - **Equipamento**: Banco romano / máquina
@@ -4629,7 +5276,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E077 — Hiperextensão no banco romano
+### E094 — Hiperextensão no banco romano
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Lombar
 - **Equipamento**: Banco romano / máquina
@@ -4661,7 +5308,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E172 — Leg press
+### E197 — Leg press
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Máquina
@@ -4693,7 +5340,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E061 — Remo sentado
+### E038 — Press de ombros na máquina
+
+- **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
+- **Equipamento**: Máquina
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide, tríceps, trapézio e serrátil anterior
+
+**Objetivo**: Empurrar as pegas da máquina de ombros para cima, com o percurso guiado; boa forma de treinar o press vertical com segurança. Serve para treinar deltoide anterior e lateral e tríceps.
+
+**Como executar:**
+
+1. Ajusta o banco para as pegas ficarem à altura dos ombros.
+2. Senta-te com as costas apoiadas e os pés firmes no chão.
+3. Segura as pegas com os punhos direitos e os cotovelos por baixo das mãos.
+4. Empurra para cima até os braços quase esticarem, sem bater com força no topo.
+5. Desce devagar até as mãos ficarem à altura dos ombros.
+6. Expira ao empurrar e inspira ao descer; a máquina guia o caminho, tu controlas a velocidade.
+
+**Erros comuns:**
+
+- Arquear a lombar e descolar as costas do encosto.
+- Usar carga acima do que controlas na descida.
+- Encolher os ombros contra as orelhas.
+- Esticar os cotovelos com impacto no topo.
+
+- **Versão mais fácil**: Reduz a carga da máquina e trabalha só a metade inferior do movimento.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou faz a descida em três segundos.
+- **Segurança**: Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E075 — Remo sentado
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Máquina
@@ -4722,10 +5399,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E045 — Supino declinado na máquina
+### E058 — Supino declinado na máquina
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Máquina
@@ -4757,7 +5434,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E049 — Aberturas inclinadas com elástico
+### E244 — Abdução de anca com elástico
+
+- **Nível**: intermédio | **Padrão**: abdução de anca/ombro | **Grupo**: Pernas
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Glúteo médio, glúteo mínimo, core lateral e equilíbrio
+
+**Objetivo**: Abertura lateral da perna contra um elástico à volta das pernas, para ativar e fortalecer o glúteo médio em casa.
+
+**Como executar:**
+
+1. Coloca o elástico à volta das pernas, acima dos joelhos ou nos tornozelos.
+2. Fica de pé, com uma mão apoiada numa parede ou cadeira para equilibrar.
+3. Afasta uma perna para o lado, com o joelho esticado e o pé a apontar em frente.
+4. Mantém o tronco direito e a bacia nivelada: só a perna se move.
+5. Volta devagar, resistindo ao elástico, sem pousar o pé entre repetições.
+6. Faz as repetições de uma perna e troca; expira ao afastar e inspira ao voltar.
+
+**Erros comuns:**
+
+- Inclinar o tronco para o lado contrário.
+- Rodar o pé para cima durante a abertura.
+- Balançar a perna em vez de a controlar.
+- Usar um elástico tão forte que a bacia roda.
+
+- **Versão mais fácil**: Usa um elástico mais fino ou faz o movimento deitado de lado.
+- **Versão mais difícil**: Usa um elástico mais forte, coloca-o nos tornozelos ou pausa um segundo no ponto mais aberto.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E062 — Aberturas inclinadas com elástico
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Peito
 - **Equipamento**: Elásticos
@@ -4786,10 +5493,39 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E095 — Curl com elástico
+### E237 — Agachamento com elástico
+
+- **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Quadríceps, glúteos, core e parte alta das costas
+
+**Objetivo**: Agachamento com o elástico pisado e apoiado nos ombros, que aumenta a resistência na subida; carga progressiva sem pesos. Serve para treinar quadríceps e glúteos com resistência de elástico.
+
+**Como executar:**
+
+1. Pisa o meio do elástico com os pés à largura dos ombros e leva as pontas aos ombros, uma em cada mão.
+2. Fica alto, com o peito aberto e o abdómen firme, tronco direito.
+3. Desce dobrando joelhos e anca ao mesmo tempo, até onde os calcanhares ficam no chão.
+4. Mantém os joelhos alinhados com os pés durante a descida.
+5. Empurra o chão e sobe contra a tensão do elástico, que aumenta perto do topo.
+
+**Erros comuns:**
+
+- Deixar o elástico puxar os ombros à frente e curvar o tronco.
+- Deixar os joelhos fechar para dentro.
+- Subir a anca primeiro e o peito depois.
+- Encurtar a descida quando a tensão aumenta.
+
+- **Versão mais fácil**: Segura as pontas mais compridas para reduzir a tensão ou faz sem elástico.
+- **Versão mais difícil**: Encurta o elástico nas mãos ou faz uma pausa de dois segundos em baixo.
+- **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E112 — Curl com elástico
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Elásticos
@@ -4821,7 +5557,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E198 — Dorsiflexão do tornozelo com elástico
+### E247 — Curl de perna com elástico
+
+- **Nível**: intermédio | **Padrão**: flexão de joelho | **Grupo**: Pernas
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Posterior de coxa, gémeos e glúteos
+
+**Objetivo**: Flexão do joelho deitado de barriga para baixo, a puxar o calcanhar contra o elástico; o curl de perna de quem treina em casa. Serve para treinar posterior de coxa com elástico.
+
+**Como executar:**
+
+1. Prende o elástico num ponto baixo e firme e deita-te de barriga para baixo, com a outra ponta presa ao tornozelo.
+2. Afasta-te até haver tensão com a perna esticada e apoia a testa nas mãos.
+3. Dobra o joelho puxando o calcanhar em direção ao glúteo, contra o elástico.
+4. Mantém a bacia colada ao chão: se levantar, encurta o movimento.
+5. Volta devagar até a perna quase esticar, resistindo ao elástico.
+6. Faz as repetições de uma perna e troca; expira ao dobrar e inspira ao esticar.
+
+**Erros comuns:**
+
+- Levantar a bacia do chão para dobrar mais.
+- Puxar com impulso em vez de controlo.
+- Deixar o elástico esticar a perna de repente.
+- Prender o elástico num ponto que escorrega.
+
+- **Versão mais fácil**: Usa um elástico mais fino ou aproxima-te do ponto de fixação.
+- **Versão mais difícil**: Usa um elástico mais forte ou sustenta um segundo com o calcanhar perto do glúteo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E223 — Dorsiflexão do tornozelo com elástico
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Pernas
 - **Equipamento**: Elásticos
@@ -4853,7 +5619,94 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E200 — Eversão do tornozelo com elástico
+### E044 — Elevação frontal com elástico
+
+- **Nível**: intermédio | **Padrão**: elevação de ombro (isolamento) | **Grupo**: Ombros
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide anterior, peito superior e core
+
+**Objetivo**: Elevação dos braços em frente contra o elástico pisado, para trabalhar o deltoide anterior em casa.
+
+**Como executar:**
+
+1. Pisa o meio do elástico e segura uma ponta em cada mão, braços ao lado das coxas.
+2. Fica alto, com o abdómen firme e os punhos direitos.
+3. Eleva os braços em frente até à altura dos ombros, com os cotovelos quase esticados.
+4. Mantém as costelas em baixo, sem arquear a lombar.
+5. Desce devagar até às coxas, resistindo ao elástico.
+
+**Erros comuns:**
+
+- Arquear a lombar para subir mais alto.
+- Dobrar os punhos com a tensão do elástico.
+- Usar impulso do tronco.
+- Subir acima da linha dos ombros com tensão alta.
+
+- **Versão mais fácil**: Segura o elástico mais comprido ou sobe só até ao nível do peito.
+- **Versão mais difícil**: Afasta os pés sobre o elástico ou alterna os braços sem descanso.
+- **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E042 — Elevação lateral com elástico
+
+- **Nível**: intermédio | **Padrão**: elevação de ombro (isolamento) | **Grupo**: Ombros
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide lateral, trapézio e estabilizadores da escápula
+
+**Objetivo**: Elevação lateral dos braços contra o elástico pisado, para trabalhar o deltoide lateral em casa com resistência progressiva.
+
+**Como executar:**
+
+1. Pisa o meio do elástico com os dois pés e segura uma ponta em cada mão ao lado do corpo.
+2. Fica alto, com os ombros longe das orelhas e os cotovelos quase esticados.
+3. Eleva os braços para os lados até à altura dos ombros, guiando com os cotovelos.
+4. Mantém o tronco parado: nada de balançar para ajudar.
+5. Desce devagar, resistindo ao elástico, até os braços voltarem ao lado do corpo.
+
+**Erros comuns:**
+
+- Balançar o tronco para ganhar impulso.
+- Encolher os ombros durante a subida.
+- Subir as mãos acima da linha dos ombros com tensão alta.
+- Deixar o elástico fechar os braços de repente.
+
+- **Versão mais fácil**: Segura o elástico mais comprido ou eleva um braço de cada vez.
+- **Versão mais difícil**: Afasta os pés para aumentar a tensão ou faz uma pausa de um segundo na altura dos ombros.
+- **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E012 — Encolhimento de ombros com elástico
+
+- **Nível**: intermédio | **Padrão**: elevação escapular | **Grupo**: Trapézio
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Trapézio superior, elevador da omoplata e pega
+
+**Objetivo**: Elevação dos ombros contra o elástico pisado, para trabalhar o trapézio superior em casa sem halteres.
+
+**Como executar:**
+
+1. Pisa o meio do elástico com os dois pés e segura uma ponta em cada mão ao lado do corpo.
+2. Fica alto, com os braços esticados e pega firme nas pontas.
+3. Sobe os ombros na direção das orelhas, o mais alto que conseguires, sem dobrar os cotovelos.
+4. Pausa um segundo em cima com o trapézio apertado.
+5. Desce devagar até os ombros relaxarem, resistindo ao elástico.
+
+**Erros comuns:**
+
+- Dobrar os cotovelos para ajudar a subida.
+- Rodar os ombros em círculo em vez de subir e descer.
+- Projetar o queixo à frente durante a subida.
+- Deixar o elástico puxar os ombros de repente.
+
+- **Versão mais fácil**: Segura o elástico mais comprido para reduzir a tensão.
+- **Versão mais difícil**: Afasta os pés sobre o elástico ou sustenta o topo durante dois segundos.
+- **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E225 — Eversão do tornozelo com elástico
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Pernas
 - **Equipamento**: Elásticos
@@ -4882,10 +5735,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E133 — Extensão de dedos com elástico
+### E152 — Extensão de dedos com elástico
 
 - **Nível**: intermédio | **Padrão**: pega / punho | **Grupo**: Antebraço/Pega
 - **Equipamento**: Elásticos
@@ -4917,7 +5770,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E082 — Extensão lombar com elástico
+### E160 — Extensão de punho com elástico
+
+- **Nível**: intermédio | **Padrão**: pega / punho | **Grupo**: Antebraço/Pega
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Extensores do antebraço, punho e estabilidade da pega
+
+**Objetivo**: Extensão do punho contra o elástico, com o antebraço apoiado e a palma para baixo, para equilibrar os extensores do antebraço.
+
+**Como executar:**
+
+1. Senta-te e apoia o antebraço na coxa, com a palma da mão para baixo e o punho fora do joelho.
+2. Pisa uma ponta do elástico e segura a outra na mão, com tensão leve.
+3. Sobe as costas da mão para cima, contra o elástico, sem mover o antebraço.
+4. Pausa um segundo no topo.
+5. Desce devagar até o punho dobrar para baixo, resistindo ao elástico.
+6. Faz as repetições de uma mão e troca; expira ao subir e inspira ao descer.
+
+**Erros comuns:**
+
+- Levantar o antebraço da coxa.
+- Usar tensão alta demais para esta zona sensível.
+- Fazer repetições rápidas e curtas.
+- Dobrar o cotovelo para compensar.
+
+- **Versão mais fácil**: Usa um elástico mais fino: os extensores são mais fracos que os flexores.
+- **Versão mais difícil**: Encurta ligeiramente o elástico ou desce em três segundos.
+- **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E099 — Extensão lombar com elástico
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Lombar
 - **Equipamento**: Elásticos
@@ -4946,10 +5829,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E203 — Extensão terminal do joelho com elástico
+### E228 — Extensão terminal do joelho com elástico
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Pernas
 - **Equipamento**: Elásticos
@@ -4978,10 +5861,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E020 — Face pull com elástico
+### E022 — Face pull com elástico
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Ombros
 - **Equipamento**: Elásticos
@@ -5010,10 +5893,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E201 — Flexão da anca em pé com elástico
+### E226 — Flexão da anca em pé com elástico
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Pernas
 - **Equipamento**: Elásticos
@@ -5045,7 +5928,67 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E199 — Inversão do tornozelo com elástico
+### E159 — Flexão de punho com elástico
+
+- **Nível**: intermédio | **Padrão**: pega / punho | **Grupo**: Antebraço/Pega
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Flexores do antebraço, punho e pega
+
+**Objetivo**: Flexão do punho contra o elástico, com o antebraço apoiado, para fortalecer os flexores do antebraço em casa.
+
+**Como executar:**
+
+1. Senta-te e apoia o antebraço na coxa, com a palma da mão para cima e o punho fora do joelho.
+2. Pisa uma ponta do elástico com o pé do mesmo lado e segura a outra na mão.
+3. Dobra o punho para cima, contra o elástico, sem mover o antebraço.
+4. Pausa um segundo no topo com o punho fechado.
+5. Desce devagar até o punho estender, resistindo ao elástico.
+6. Faz as repetições de uma mão e troca; expira ao subir e inspira ao descer.
+
+**Erros comuns:**
+
+- Levantar o antebraço da coxa.
+- Dobrar o cotovelo para ajudar.
+- Usar tensão alta demais e perder a amplitude.
+- Largar o elástico de repente na descida.
+
+- **Versão mais fácil**: Usa um elástico mais fino ou segura mais longe da ponta.
+- **Versão mais difícil**: Encurta o elástico para aumentar a tensão ou desce em três segundos.
+- **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E251 — Gémeos sentado com elástico
+
+- **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Sóleo, gémeos, tornozelo e pés
+
+**Objetivo**: Flexão plantar sentado contra o elástico preso na ponta do pé, para trabalhar o sóleo em casa.
+
+**Como executar:**
+
+1. Senta-te no chão com uma perna esticada e passa o meio do elástico pela ponta desse pé.
+2. Segura as pontas do elástico com as duas mãos, junto ao tronco, com tensão.
+3. Empurra a ponta do pé para a frente e para baixo, como quem acelera um carro.
+4. Mantém o joelho parado: o movimento é só do tornozelo.
+5. Volta devagar até os dedos apontarem para ti, resistindo ao elástico.
+6. Faz as repetições de um pé e troca; expira ao empurrar e inspira ao voltar.
+
+**Erros comuns:**
+
+- Dobrar e esticar o joelho para ajudar.
+- Deixar o elástico escorregar da ponta do pé.
+- Fazer repetições rápidas e curtas.
+- Puxar as mãos em vez de empurrar o pé.
+
+- **Versão mais fácil**: Usa um elástico mais fino ou reduz a amplitude.
+- **Versão mais difícil**: Dobra o elástico ao meio para aumentar a tensão ou pausa um segundo com o pé em ponta.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E224 — Inversão do tornozelo com elástico
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Pernas
 - **Equipamento**: Elásticos
@@ -5074,10 +6017,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E149 — Pallof press com elástico
+### E172 — Pallof press com elástico
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Elásticos
@@ -5106,10 +6049,128 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Encurta a alavanca ou a duração e usa menos resistência sem perder a posição das costelas e da bacia.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E021 — Pull-apart
+### E236 — Peso morto com elástico
+
+- **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Posterior de coxa, glúteos, lombar e pega
+
+**Objetivo**: Dobradiça de anca contra o elástico pisado, que resiste mais perto do topo; forma segura de treinar o padrão do peso morto em casa. Serve para treinar posterior de coxa e glúteos com elástico.
+
+**Como executar:**
+
+1. Pisa o meio do elástico com os dois pés à largura da anca.
+2. Dobra pela anca, com os joelhos pouco fletidos e a coluna neutra, e segura uma ponta em cada mão.
+3. Aperta a pega e mantém a lombar direita antes de subir.
+4. Estica a anca até ficares de pé, apertando os glúteos contra a tensão do elástico.
+5. Dobra de novo pela anca, devagar, deixando as mãos descer rente às pernas.
+
+**Erros comuns:**
+
+- Arredondar a lombar na descida.
+- Dobrar demasiado os joelhos e transformar em agachamento.
+- Puxar com os braços em vez de esticar a anca.
+- Deixar o elástico encolher o tronco de repente.
+
+- **Versão mais fácil**: Segura o elástico mais comprido para reduzir a tensão e encurta a amplitude.
+- **Versão mais difícil**: Encurta o elástico nas mãos, usa uma banda mais forte ou pausa um segundo no topo com os glúteos apertados.
+- **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E241 — Ponte de glúteo com elástico
+
+- **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Glúteo máximo, glúteo médio, posterior de coxa e core
+
+**Objetivo**: Ponte de glúteos com o elástico acima dos joelhos: além de subir a anca, empurras os joelhos para fora, ativando também o glúteo médio.
+
+**Como executar:**
+
+1. Coloca o elástico à volta das pernas, acima dos joelhos, e deita-te de costas com os joelhos dobrados.
+2. Apoia os pés à largura da anca, perto dos glúteos, e os braços ao lado do corpo.
+3. Empurra os joelhos ligeiramente para fora, contra o elástico, e mantém-nos assim.
+4. Eleva a anca até o tronco e as coxas ficarem em linha, apertando os glúteos.
+5. Pausa um segundo em cima sem deixar os joelhos fechar.
+6. Desce devagar e repete; expira ao subir e inspira ao descer.
+
+**Erros comuns:**
+
+- Deixar os joelhos fechar contra o elástico.
+- Arquear a lombar em vez de subir com os glúteos.
+- Empurrar com a ponta dos pés.
+- Subir com impulso e deixar cair.
+
+- **Versão mais fácil**: Usa um elástico mais fino ou faz a ponte sem elástico.
+- **Versão mais difícil**: Usa um elástico mais forte, sustenta dois segundos em cima ou faz a ponte a uma perna sem elástico.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E040 — Press de ombros com elástico
+
+- **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide, tríceps, trapézio e core
+
+**Objetivo**: Empurrar as pontas do elástico acima da cabeça, com a banda presa debaixo dos pés; press vertical completo sem halteres. Serve para treinar deltoide e tríceps com elástico.
+
+**Como executar:**
+
+1. Pisa o meio do elástico com os dois pés à largura da anca.
+2. Segura uma ponta em cada mão à altura dos ombros, com os cotovelos para baixo e os punhos direitos.
+3. Empurra as mãos para cima até os braços esticarem, sem arquear a lombar.
+4. Mantém as costelas em baixo e o abdómen firme durante a subida.
+5. Desce devagar até às orelhas, resistindo ao elástico.
+
+**Erros comuns:**
+
+- Arquear a lombar quando o elástico fica pesado.
+- Empurrar com os punhos dobrados para trás.
+- Deixar o elástico bater na descida em vez de a travar.
+- Encolher os ombros no topo.
+
+- **Versão mais fácil**: Pisa o elástico com um pé só, para reduzir a tensão, ou faz o movimento sentado.
+- **Versão mais difícil**: Afasta mais os pés sobre o elástico ou faz uma pausa de um segundo com os braços esticados.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E069 — Press de peito com elástico
+
+- **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Peito, deltoide anterior, tríceps e serrátil anterior
+
+**Objetivo**: Empurrar as pontas do elástico à frente do peito, com a banda a passar pelas costas; o supino de quem treina em casa. Serve para o treinar com controlo.
+
+**Como executar:**
+
+1. Passa o elástico pelas costas, à altura das omoplatas, e segura uma ponta em cada mão.
+2. Fica de pé com um pé à frente do outro para equilibrar, cotovelos dobrados ao lado do peito.
+3. Empurra as mãos em frente até os braços quase esticarem, juntando ligeiramente as mãos no fim.
+4. Mantém os ombros longe das orelhas e os punhos direitos.
+5. Volta devagar até os cotovelos passarem ligeiramente atrás do tronco, resistindo ao elástico.
+6. Expira ao empurrar e inspira ao voltar; ajusta a tensão encurtando o elástico nas mãos.
+
+**Erros comuns:**
+
+- Deixar o elástico escorregar nas costas por falta de tensão.
+- Arquear a lombar para empurrar mais.
+- Dobrar os punhos no fim do movimento.
+- Encolher os ombros durante o press.
+
+- **Versão mais fácil**: Segura o elástico mais comprido para reduzir a tensão ou empurra um braço de cada vez.
+- **Versão mais difícil**: Encurta o elástico nas mãos para aumentar a tensão ou faz a fase de retorno em três segundos.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E023 — Pull-apart
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Ombros
 - **Equipamento**: Elásticos
@@ -5140,7 +6201,36 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E074 — Remo com elástico
+### E091 — Puxada ajoelhada com elástico
+
+- **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Costas
+- **Equipamento**: Elásticos
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Dorsal, redondo maior, romboides, bíceps e pega
+
+**Objetivo**: Puxada vertical ajoelhado, com o elástico preso num ponto alto, para treinar o dorsal em casa como numa puxada de ginásio.
+
+**Como executar:**
+
+1. Prende o elástico num ponto alto e firme (topo de uma porta com fixador ou barra) e ajoelha-te de frente.
+2. Segura uma ponta em cada mão, com pega firme e os braços esticados acima da cabeça.
+3. Puxa os cotovelos para baixo e para trás, em direção às costelas, fechando as escápulas.
+4. Mantém o tronco alto e a lombar neutra, sem te inclinares para trás.
+5. Volta devagar até os braços esticarem, resistindo ao elástico.
+
+**Erros comuns:**
+
+- Puxar com os braços sem fechar as escápulas.
+- Inclinar o tronco para trás para ajudar.
+- Arredondar a lombar durante a puxada.
+- Prender o elástico num ponto instável.
+
+- **Versão mais fácil**: Usa um elástico mais fino ou aproxima os joelhos do ponto de fixação para reduzir a tensão.
+- **Versão mais difícil**: Usa um elástico mais forte ou faz uma pausa de um segundo com os cotovelos junto às costelas.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E088 — Remo com elástico
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Elásticos
@@ -5169,10 +6259,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E024 — Rotação externa
+### E026 — Rotação externa
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Elásticos
@@ -5203,7 +6293,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E025 — Rotação externa com elástico
+### E027 — Rotação externa com elástico
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Elásticos
@@ -5235,7 +6325,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E026 — Rotação interna
+### E028 — Rotação interna
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Elásticos
@@ -5266,7 +6356,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E027 — Rotação interna com elástico
+### E029 — Rotação interna com elástico
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Elásticos
@@ -5298,7 +6388,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E119 — Tríceps com elástico
+### E137 — Tríceps com elástico
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Tríceps
 - **Equipamento**: Elásticos
@@ -5330,7 +6420,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E048 — Aberturas inclinadas no cabo
+### E243 — Abdução de anca no cabo
+
+- **Nível**: intermédio | **Padrão**: abdução de anca/ombro | **Grupo**: Pernas
+- **Equipamento**: Cabo / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Glúteo médio, glúteo mínimo, core lateral e equilíbrio
+
+**Objetivo**: Abertura lateral da perna contra o cabo preso ao tornozelo, para trabalhar o glúteo médio em pé.
+
+**Como executar:**
+
+1. Prende a tira do cabo ao tornozelo mais afastado da máquina, com a polia em baixo.
+2. Fica de lado para a máquina e apoia a mão mais próxima no equipamento, com pega leve.
+3. Afasta a perna do cabo para o lado, com o joelho esticado e o pé a apontar em frente.
+4. Mantém o tronco direito, sem inclinar para o lado contrário.
+5. Volta devagar, cruzando ligeiramente a perna à frente da de apoio.
+6. Faz as repetições de uma perna e troca; expira ao afastar e inspira ao voltar.
+
+**Erros comuns:**
+
+- Inclinar o tronco para o lado para subir mais a perna.
+- Rodar o pé para cima durante a abertura.
+- Usar impulso em vez de controlo.
+- Deixar o cabo fechar a perna de repente.
+
+- **Versão mais fácil**: Reduz a carga e afasta menos a perna, mantendo a bacia nivelada.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou faz uma pausa de um segundo no ponto mais aberto.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E061 — Aberturas inclinadas no cabo
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Peito
 - **Equipamento**: Cabo / polia
@@ -5359,10 +6479,40 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E054 — Crossover no cabo
+### E245 — Adução de anca no cabo
+
+- **Nível**: intermédio | **Padrão**: adução de anca | **Grupo**: Pernas
+- **Equipamento**: Cabo / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Adutores, glúteos e core lateral
+
+**Objetivo**: Fecho da perna contra o cabo preso ao tornozelo, cruzando à frente do corpo, para trabalhar os adutores em pé.
+
+**Como executar:**
+
+1. Prende a tira do cabo ao tornozelo mais próximo da máquina, com a polia em baixo.
+2. Fica de lado para a máquina, com a perna do cabo ligeiramente afastada, e apoia a mão no equipamento com pega leve.
+3. Puxa a perna do cabo para dentro, cruzando à frente da perna de apoio.
+4. Mantém o tronco direito e a bacia estável durante o fecho.
+5. Volta devagar, deixando o cabo abrir a perna até sentir alongar por dentro da coxa.
+6. Faz as repetições de uma perna e troca; expira ao fechar e inspira ao abrir.
+
+**Erros comuns:**
+
+- Inclinar o tronco para compensar o fecho.
+- Rodar a bacia durante o movimento.
+- Fechar com impulso em vez de controlo.
+- Usar carga alta demais e perder o equilíbrio.
+
+- **Versão mais fácil**: Reduz a carga e encurta o cruzamento, mantendo o tronco direito.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou faz uma pausa de um segundo no ponto mais fechado.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E067 — Crossover no cabo
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Cabo / polia
@@ -5391,10 +6541,39 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E094 — Curl no cabo
+### E183 — Crunch no cabo
+
+- **Nível**: intermédio | **Padrão**: flexão de tronco | **Grupo**: Core
+- **Equipamento**: Cabo / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Reto abdominal, oblíquos e controlo da respiração
+
+**Objetivo**: Flexão do tronco ajoelhado, a puxar a corda do cabo com o abdómen, para treinar o reto abdominal com carga progressiva.
+
+**Como executar:**
+
+1. Coloca a polia do cabo na posição alta com a corda presa e ajoelha-te de frente para a máquina.
+2. Segura as pontas da corda com pega firme ao lado da cabeça, com as mãos junto às orelhas.
+3. Enrola o tronco para baixo, levando as costelas em direção à bacia.
+4. Mantém a anca parada: quem puxa é o abdómen, não os braços.
+5. Volta devagar até o tronco quase esticar, mantendo tensão no cabo.
+
+**Erros comuns:**
+
+- Puxar com os braços em vez do abdómen.
+- Dobrar pela anca em vez de enrolar o tronco.
+- Usar carga alta demais e perder o controlo do retorno.
+- Esticar totalmente o tronco e perder a tensão.
+
+- **Versão mais fácil**: Reduz a carga e encurta o movimento, focando só no enrolar das costelas.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou faz uma pausa de um segundo no ponto mais enrolado.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E111 — Curl no cabo
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Cabo / polia
@@ -5426,7 +6605,67 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E100 — Extensão de tríceps no cabo
+### E043 — Elevação frontal no cabo
+
+- **Nível**: intermédio | **Padrão**: elevação de ombro (isolamento) | **Grupo**: Ombros
+- **Equipamento**: Cabo / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide anterior, peito superior e core
+
+**Objetivo**: Elevação do braço em frente ao corpo contra o cabo, para trabalhar o deltoide anterior com tensão constante.
+
+**Como executar:**
+
+1. Coloca a polia do cabo na posição baixa e fica de costas para a máquina, com o cabo a passar entre as pernas ou ao lado.
+2. Segura a pega com uma mão, braço ao lado da coxa e cotovelo quase esticado.
+3. Eleva o braço em frente até à altura do ombro, com o punho direito.
+4. Mantém as costelas em baixo, sem arquear a lombar.
+5. Desce devagar até ao lado da coxa, resistindo ao cabo.
+6. Faz as repetições de um lado e troca; expira ao subir e inspira ao descer.
+
+**Erros comuns:**
+
+- Arquear a lombar para subir mais alto.
+- Balançar o corpo para ganhar impulso.
+- Subir acima da linha do ombro com carga.
+- Dobrar o punho durante a elevação.
+
+- **Versão mais fácil**: Reduz a carga do cabo ou sobe só até ao nível do peito.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou faz uma pausa de um segundo no topo.
+- **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E041 — Elevação lateral no cabo
+
+- **Nível**: intermédio | **Padrão**: elevação de ombro (isolamento) | **Grupo**: Ombros
+- **Equipamento**: Cabo / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide lateral, trapézio e estabilizadores da escápula
+
+**Objetivo**: Elevação lateral do braço contra a resistência do cabo, que mantém tensão constante do início ao fim do movimento. Serve para treinar deltoide lateral com tensão constante.
+
+**Como executar:**
+
+1. Coloca a polia do cabo na posição baixa e fica de lado para a máquina.
+2. Segura a pega com a mão mais afastada, à frente do corpo, com o cotovelo quase esticado.
+3. Eleva o braço para o lado até à altura do ombro, guiando com o cotovelo.
+4. Mantém o tronco direito e o ombro longe da orelha durante a subida.
+5. Desce devagar, resistindo à tração do cabo, até a mão voltar à frente do corpo.
+6. Faz as repetições de um lado e troca; expira ao subir e inspira ao descer.
+
+**Erros comuns:**
+
+- Balançar o tronco para ajudar a subida.
+- Encolher o ombro durante a elevação.
+- Subir a mão acima da linha do ombro com carga.
+- Deixar o cabo puxar o braço de volta sem controlo.
+
+- **Versão mais fácil**: Reduz a carga do cabo e sobe só até 45 graus, com pausa curta.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou desce em três segundos, mantendo a tensão do cabo.
+- **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E118 — Extensão de tríceps no cabo
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Cabo / polia
@@ -5458,7 +6697,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E116 — Extensão francesa no cabo
+### E134 — Extensão francesa no cabo
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Cabo / polia
@@ -5490,7 +6729,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E069 — Face pull no cabo
+### E083 — Face pull no cabo
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Cabo alto / polia
@@ -5519,39 +6758,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
-- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
-
-### E019 — Face pull no cabo
-
-- **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Ombros
-- **Equipamento**: Cabo alto / polia
-- **Onde**: Casa c/ equip., Ginásio
-- **Músculos secundários**: Bíceps, braquial, antebraço, trapézio e romboides
-
-**Objetivo**: Puxada em direção ao rosto com cotovelos altos para treinar deltoide posterior, romboides e controlo das escápulas. Serve para treinar costas, escápulas e dorsal. Nesta lista, conta para o treino de ombros.
-
-**Como executar:**
-
-1. Coloca a polia do cabo na posição alta, à altura do rosto.
-2. Segura a corda com pega firme e as palmas viradas uma para a outra.
-3. Dá um passo atrás até haver tensão e fica com tronco alto.
-4. Puxa a corda em direção ao rosto, separando ligeiramente as mãos.
-5. Leva os cotovelos para trás e para fora, juntando as escápulas sem encolher o pescoço.
-6. Para quando as mãos ficam perto das orelhas ou bochechas.
-7. Volta devagar até os braços estenderem sem perder tensão.
-
-**Erros comuns:**
-
-- Puxar com balanço do tronco.
-- Encolher os ombros.
-- Arredondar a lombar.
-- Puxar atrás da nuca.
-- Largar a fase de retorno sem controlo.
-
-- **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
-- **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
 ### E010 — Face pull no cabo
@@ -5583,10 +6790,72 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E112 — Kickback no cabo
+### E021 — Face pull no cabo
+
+- **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Ombros
+- **Equipamento**: Cabo alto / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Bíceps, braquial, antebraço, trapézio e romboides
+
+**Objetivo**: Puxada em direção ao rosto com cotovelos altos para treinar deltoide posterior, romboides e controlo das escápulas. Serve para treinar costas, escápulas e dorsal. Nesta lista, conta para o treino de ombros.
+
+**Como executar:**
+
+1. Coloca a polia do cabo na posição alta, à altura do rosto.
+2. Segura a corda com pega firme e as palmas viradas uma para a outra.
+3. Dá um passo atrás até haver tensão e fica com tronco alto.
+4. Puxa a corda em direção ao rosto, separando ligeiramente as mãos.
+5. Leva os cotovelos para trás e para fora, juntando as escápulas sem encolher o pescoço.
+6. Para quando as mãos ficam perto das orelhas ou bochechas.
+7. Volta devagar até os braços estenderem sem perder tensão.
+
+**Erros comuns:**
+
+- Puxar com balanço do tronco.
+- Encolher os ombros.
+- Arredondar a lombar.
+- Puxar atrás da nuca.
+- Largar a fase de retorno sem controlo.
+
+- **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
+- **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E242 — Kickback de glúteo no cabo
+
+- **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Pernas
+- **Equipamento**: Cabo / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Glúteo máximo, posterior de coxa e core
+
+**Objetivo**: Extensão da perna para trás contra o cabo preso ao tornozelo, para isolar o glúteo máximo com tensão constante.
+
+**Como executar:**
+
+1. Prende a tira do cabo ao tornozelo, com a polia na posição baixa.
+2. Fica de frente para a máquina e apoia as mãos no equipamento com pega leve, tronco ligeiramente inclinado.
+3. Leva a perna do cabo para trás, esticada, apertando o glúteo no fim.
+4. Mantém a bacia estável e a lombar neutra: o movimento é da anca, não das costas.
+5. Volta devagar, resistindo ao cabo, sem pousar o pé entre repetições.
+6. Faz as repetições de uma perna e troca; expira ao levar atrás e inspira ao voltar.
+
+**Erros comuns:**
+
+- Arquear a lombar para levar a perna mais atrás.
+- Rodar a bacia durante a extensão.
+- Usar impulso em vez de apertar o glúteo.
+- Carga alta demais para controlar o retorno.
+
+- **Versão mais fácil**: Reduz a carga e encurta a amplitude, parando quando a bacia começa a rodar.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou faz uma pausa de um segundo com o glúteo apertado.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E130 — Kickback no cabo
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Cabo / polia
@@ -5618,7 +6887,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E158 — Lenhador no cabo
+### E181 — Lenhador no cabo
 
 - **Nível**: intermédio | **Padrão**: rotação de tronco | **Grupo**: Core
 - **Equipamento**: Cabo / polia
@@ -5645,10 +6914,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Baixa a carga e encurta a diagonal, rodando só até onde a lombar fica neutra.
 - **Versão mais difícil**: Aumenta a carga aos poucos ou faz a diagonal de baixo para cima, que exige mais controlo.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E148 — Pallof press no cabo
+### E171 — Pallof press no cabo
 
 - **Nível**: intermédio | **Padrão**: anti-movimento de core | **Grupo**: Core
 - **Equipamento**: Cabo / polia
@@ -5677,10 +6946,39 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Encurta a alavanca ou a duração e usa menos resistência sem perder a posição das costelas e da bacia.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E070 — Pullover no cabo
+### E246 — Pull-through no cabo
+
+- **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Pernas
+- **Equipamento**: Cabo / polia
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Glúteos, posterior de coxa, lombar e core
+
+**Objetivo**: Dobradiça de anca de costas para a polia baixa, a puxar a corda entre as pernas; ensina o padrão do peso morto com tensão constante e é amigável para a lombar. Serve para treinar glúteos e posterior de coxa com dobradiça guiada.
+
+**Como executar:**
+
+1. Coloca a polia do cabo na posição baixa com a corda presa e fica de costas para a máquina.
+2. Segura a corda entre as pernas com pega firme nas duas mãos e dá dois passos em frente para criar tensão.
+3. Dobra pela anca, deixando a corda puxar as mãos para trás entre as pernas, com os joelhos pouco dobrados e a coluna neutra.
+4. Sente alongar o posterior de coxa e mantém a lombar direita.
+5. Estica a anca com força, apertando os glúteos até ficares de pé.
+
+**Erros comuns:**
+
+- Puxar a corda com os braços.
+- Arredondar a lombar na descida.
+- Dobrar demasiado os joelhos e transformar em agachamento.
+- Inclinar para trás no topo do movimento.
+
+- **Versão mais fácil**: Reduz a carga e encurta a amplitude da dobradiça.
+- **Versão mais difícil**: Aumenta a carga aos poucos ou faz uma pausa de um segundo com os glúteos apertados no topo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E084 — Pullover no cabo
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Costas
 - **Equipamento**: Cabo / polia
@@ -5709,10 +7007,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E056 — Puxada alta
+### E070 — Puxada alta
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Costas
 - **Equipamento**: Cabo / polia
@@ -5741,10 +7039,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E057 — Puxada alta pega aberta
+### E071 — Puxada alta pega aberta
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Costas
 - **Equipamento**: Cabo / polia
@@ -5773,10 +7071,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E059 — Puxada alta pega fechada
+### E073 — Puxada alta pega fechada
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Costas
 - **Equipamento**: Cabo / polia
@@ -5805,10 +7103,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E058 — Puxada alta pega neutra
+### E072 — Puxada alta pega neutra
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Costas
 - **Equipamento**: Cabo / polia
@@ -5837,10 +7135,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E073 — Puxada com braços esticados
+### E087 — Puxada com braços esticados
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Costas
 - **Equipamento**: Cabo / polia
@@ -5869,10 +7167,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E060 — Remo baixo no cabo
+### E074 — Remo baixo no cabo
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Cabo / polia
@@ -5900,10 +7198,10 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 - **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
 - **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Segurança**: Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E118 — Tríceps no cabo com corda
+### E136 — Tríceps no cabo com corda
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Tríceps
 - **Equipamento**: Cabo / polia
@@ -5935,7 +7233,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E046 — Aberturas com halteres
+### E059 — Aberturas com halteres
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Peito
 - **Equipamento**: Halteres, banco ou chão estável
@@ -5967,7 +7265,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E047 — Aberturas inclinadas com halteres
+### E060 — Aberturas inclinadas com halteres
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Peito
 - **Equipamento**: Halteres, banco inclinado
@@ -5999,7 +7297,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E166 — Agachamento com garrafão
+### E191 — Agachamento com garrafão
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Garrafão de água
@@ -6031,7 +7329,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E163 — Agachamento com halteres ao lado
+### E188 — Agachamento com halteres ao lado
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Halteres
@@ -6063,7 +7361,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E165 — Agachamento com mochila
+### E190 — Agachamento com mochila
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Mochila com peso
@@ -6095,7 +7393,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E162 — Agachamento goblet
+### E187 — Agachamento goblet
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Halteres
@@ -6127,7 +7425,36 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E014 — Arnold press
+### E238 — Agachamento sumo com halteres
+
+- **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
+- **Equipamento**: Halteres
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Adutores, glúteos, quadríceps e core
+
+**Objetivo**: Agachamento de pés afastados com um halter seguro à frente, para carregar o padrão sumo e pedir mais aos adutores e glúteos.
+
+**Como executar:**
+
+1. Segura um halter na vertical com as duas mãos, à frente da anca, e afasta bem os pés, com as pontas para fora.
+2. Fica alto, com o peito aberto e o abdómen firme, tronco direito.
+3. Desce dobrando joelhos e anca, empurrando os joelhos para fora na direção dos pés.
+4. Desce até o halter passar a linha dos joelhos ou até onde a lombar fica direita.
+5. Empurra o chão e sobe, apertando glúteos e parte interna das coxas.
+
+**Erros comuns:**
+
+- Deixar os joelhos fechar para dentro.
+- Inclinar o tronco à frente com o peso.
+- Encurtar a descida com carga alta.
+- Levantar os calcanhares no fundo.
+
+- **Versão mais fácil**: Faz o sumo sem halter ou com um peso mais leve.
+- **Versão mais difícil**: Aumenta o halter aos poucos ou faz uma pausa de dois segundos em baixo.
+- **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E016 — Arnold press
 
 - **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -6159,7 +7486,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E096 — Curl 21 com halteres
+### E113 — Curl 21 com halteres
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6191,7 +7518,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E091 — Curl Zottman
+### E108 — Curl Zottman
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6223,7 +7550,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E085 — Curl alternado
+### E102 — Curl alternado
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6255,7 +7582,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E097 — Curl arrastado com halteres
+### E114 — Curl arrastado com halteres
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6286,7 +7613,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E084 — Curl com halteres
+### E101 — Curl com halteres
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6318,7 +7645,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E087 — Curl concentrado
+### E104 — Curl concentrado
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6350,7 +7677,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E092 — Curl cruzado no corpo
+### E109 — Curl cruzado no corpo
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6382,7 +7709,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E090 — Curl inverso com halteres
+### E107 — Curl inverso com halteres
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6414,7 +7741,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E086 — Curl martelo
+### E103 — Curl martelo
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Halteres
@@ -6446,7 +7773,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E134 — Desvio radial com halter
+### E153 — Desvio radial com halter
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -6478,7 +7805,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E135 — Desvio ulnar com halter
+### E154 — Desvio ulnar com halter
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -6510,7 +7837,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E016 — Elevação frontal
+### E018 — Elevação frontal
 
 - **Nível**: intermédio | **Padrão**: elevação de ombro (isolamento) | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -6541,7 +7868,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E015 — Elevação lateral
+### E017 — Elevação lateral
 
 - **Nível**: intermédio | **Padrão**: elevação de ombro (isolamento) | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -6572,7 +7899,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E032 — Elevação no plano da omoplata
+### E034 — Elevação no plano da omoplata
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -6602,7 +7929,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E017 — Elevação posterior
+### E019 — Elevação posterior
 
 - **Nível**: intermédio | **Padrão**: elevação de ombro (isolamento) | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -6666,7 +7993,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E101 — Extensão acima da cabeça com halter
+### E119 — Extensão acima da cabeça com halter
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Halteres
@@ -6698,7 +8025,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E104 — Extensão de tríceps deitado com halteres
+### E122 — Extensão de tríceps deitado com halteres
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Halteres, banco ou chão estável
@@ -6730,7 +8057,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E114 — Extensão francesa com halter
+### E132 — Extensão francesa com halter
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Halteres
@@ -6762,7 +8089,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E113 — Extensão unilateral de tríceps
+### E131 — Extensão unilateral de tríceps
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Halteres
@@ -6794,7 +8121,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E123 — Farmer hold
+### E142 — Farmer hold
 
 - **Nível**: intermédio | **Padrão**: transporte | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -6826,7 +8153,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E122 — Farmer walk
+### E141 — Farmer walk
 
 - **Nível**: intermédio | **Padrão**: transporte | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -6858,7 +8185,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E132 — Finger curls
+### E151 — Finger curls
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -6890,7 +8217,36 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E137 — Hold estático com halteres
+### E249 — Gémeos em pé com halteres
+
+- **Nível**: intermédio | **Padrão**: flexão plantar/dorsal | **Grupo**: Pernas
+- **Equipamento**: Halteres
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Gémeos, sóleo, tornozelo, equilíbrio e pega
+
+**Objetivo**: Elevação dos calcanhares em pé com um halter em cada mão, para carregar os gémeos sem máquina.
+
+**Como executar:**
+
+1. Segura um halter em cada mão ao lado do corpo, com pega firme.
+2. Fica de pé com a ponta dos pés num degrau ou livro grosso e os calcanhares de fora (ou no chão plano).
+3. Deixa os calcanhares descer até sentir alongar os gémeos.
+4. Sobe nas pontas dos pés o mais alto que conseguires, com os tornozelos firmes.
+5. Pausa um segundo em cima e desce devagar.
+
+**Erros comuns:**
+
+- Fazer repetições curtas e a ressaltar.
+- Dobrar os joelhos para ajudar a subida.
+- Deixar os tornozelos rodar para fora.
+- Perder o equilíbrio com halteres pesados demais.
+
+- **Versão mais fácil**: Faz sem halteres ou com apoio de uma mão na parede.
+- **Versão mais difícil**: Aumenta os halteres, usa um degrau para mais amplitude ou faz a uma perna com um halter só.
+- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E156 — Hold estático com halteres
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -6922,7 +8278,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E111 — Kickback de tríceps
+### E129 — Kickback de tríceps
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Halteres
@@ -6954,7 +8310,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E176 — Lunges com halteres
+### E201 — Lunges com halteres
 
 - **Nível**: intermédio | **Padrão**: afundo | **Grupo**: Pernas
 - **Equipamento**: Halteres
@@ -6986,7 +8342,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E177 — Lunges com mochila
+### E202 — Lunges com mochila
 
 - **Nível**: intermédio | **Padrão**: afundo | **Grupo**: Pernas
 - **Equipamento**: Mochila com peso
@@ -7018,7 +8374,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E180 — Peso morto romeno com halteres
+### E205 — Peso morto romeno com halteres
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Halteres
@@ -7050,7 +8406,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E207 — Peso morto unilateral com halteres
+### E232 — Peso morto unilateral com halteres
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Halteres
@@ -7080,7 +8436,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E129 — Pinch grip
+### E148 — Pinch grip
 
 - **Nível**: intermédio | **Padrão**: pega / punho | **Grupo**: Antebraço/Pega
 - **Equipamento**: Discos
@@ -7112,7 +8468,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E130 — Plate hold
+### E149 — Plate hold
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Discos
@@ -7144,7 +8500,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E106 — Press fechado com halteres
+### E124 — Press fechado com halteres
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Tríceps
 - **Equipamento**: Halteres, banco ou chão estável
@@ -7176,7 +8532,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E012 — Press militar com halteres
+### E014 — Press militar com halteres
 
 - **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -7208,7 +8564,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E127 — Pronação com halter
+### E146 — Pronação com halter
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -7240,39 +8596,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E055 — Pullover com halter
-
-- **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
-- **Equipamento**: Halteres
-- **Onde**: Casa c/ equip., Ginásio
-- **Músculos secundários**: Bíceps, braquial, antebraço, trapézio e romboides
-
-**Objetivo**: Movimento em arco dos braços acima do tronco para trabalhar dorsal ou peito conforme o contexto. Serve para treinar costas, escápulas e dorsal. Nesta lista, conta para o treino de peito.
-
-**Como executar:**
-
-1. Deita-te num banco (ou no chão) com os pés firmes e a lombar neutra.
-2. Segura um halter com as duas mãos por baixo da cabeça de cima, com os braços quase esticados sobre o peito.
-3. Mantém os cotovelos ligeiramente dobrados e apontados para a frente, mais próximos que na versão para costas.
-4. Desce o halter em arco para trás da cabeça até sentir alongamento no peito e nas costelas.
-5. Não deixes a lombar arquear nem as costelas abrir.
-6. Puxa o halter de volta pelo mesmo arco, apertando o peito ao passar por cima do rosto.
-7. Faz o movimento devagar, sem balanço; usa carga leve e pega firme para o halter não escapar.
-
-**Erros comuns:**
-
-- Puxar com balanço do tronco.
-- Encolher os ombros.
-- Arredondar a lombar.
-- Puxar atrás da nuca.
-- Largar a fase de retorno sem controlo.
-
-- **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
-- **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
-- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
-- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
-
-### E071 — Pullover com halter
+### E085 — Pullover com halter
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Costas
 - **Equipamento**: Halteres
@@ -7304,7 +8628,68 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E062 — Remo unilateral com halter
+### E068 — Pullover com halter
+
+- **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
+- **Equipamento**: Halteres
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Bíceps, braquial, antebraço, trapézio e romboides
+
+**Objetivo**: Movimento em arco dos braços acima do tronco para trabalhar dorsal ou peito conforme o contexto. Serve para treinar costas, escápulas e dorsal. Nesta lista, conta para o treino de peito.
+
+**Como executar:**
+
+1. Deita-te num banco (ou no chão) com os pés firmes e a lombar neutra.
+2. Segura um halter com as duas mãos por baixo da cabeça de cima, com os braços quase esticados sobre o peito.
+3. Mantém os cotovelos ligeiramente dobrados e apontados para a frente, mais próximos que na versão para costas.
+4. Desce o halter em arco para trás da cabeça até sentir alongamento no peito e nas costelas.
+5. Não deixes a lombar arquear nem as costelas abrir.
+6. Puxa o halter de volta pelo mesmo arco, apertando o peito ao passar por cima do rosto.
+7. Faz o movimento devagar, sem balanço; usa carga leve e pega firme para o halter não escapar.
+
+**Erros comuns:**
+
+- Puxar com balanço do tronco.
+- Encolher os ombros.
+- Arredondar a lombar.
+- Puxar atrás da nuca.
+- Largar a fase de retorno sem controlo.
+
+- **Versão mais fácil**: Usa menos peso ou resistência, menor amplitude e um apoio estável, mantendo a trajetória descrita.
+- **Versão mais difícil**: Sobe ligeiramente o peso, alonga a pausa ou desce mais devagar, alterando uma variável de cada vez.
+- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E089 — Remo curvado com halteres
+
+- **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
+- **Equipamento**: Halteres
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Dorsal, romboides, trapézio médio, bíceps e lombar
+
+**Objetivo**: Remada com o tronco inclinado e um halter em cada mão, para trabalhar o meio das costas com os dois braços ao mesmo tempo.
+
+**Como executar:**
+
+1. Segura um halter em cada mão e inclina o tronco à frente, dobrando pela anca, até cerca de 45 graus.
+2. Deixa os braços pendurados, com pega firme e as palmas viradas uma para a outra ou para trás.
+3. Mantém a lombar neutra e os joelhos pouco dobrados.
+4. Puxa os dois halteres até às costelas, levando os cotovelos para trás e fechando as escápulas.
+5. Desce devagar até os braços esticarem, sem deixar os ombros cair.
+
+**Erros comuns:**
+
+- Arredondar a lombar durante a série.
+- Levantar o tronco a cada repetição para ajudar.
+- Puxar os halteres até aos ombros em vez das costelas.
+- Encolher os ombros contra as orelhas.
+
+- **Versão mais fácil**: Usa halteres mais leves ou apoia o peito num banco inclinado para proteger a lombar.
+- **Versão mais difícil**: Aumenta o peso aos poucos ou faz uma pausa de um segundo com as escápulas fechadas.
+- **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E076 — Remo unilateral com halter
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Halteres
@@ -7336,7 +8721,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E018 — Reverse fly
+### E020 — Reverse fly
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -7368,7 +8753,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E121 — Reverse wrist curl
+### E140 — Reverse wrist curl
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -7400,7 +8785,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E050 — Squeeze press
+### E063 — Squeeze press
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Halteres
@@ -7432,7 +8817,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E136 — Suitcase carry
+### E155 — Suitcase carry
 
 - **Nível**: intermédio | **Padrão**: transporte | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres, espaço livre
@@ -7464,7 +8849,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E128 — Supinação com halter
+### E147 — Supinação com halter
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -7496,7 +8881,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E040 — Supino com halteres
+### E053 — Supino com halteres
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Halteres, banco ou chão estável
@@ -7528,7 +8913,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E043 — Supino declinado com halteres
+### E056 — Supino declinado com halteres
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Halteres, banco declinado
@@ -7560,7 +8945,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E041 — Supino inclinado com halteres
+### E054 — Supino inclinado com halteres
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Halteres
@@ -7592,7 +8977,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E107 — Tate press
+### E125 — Tate press
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Tríceps
 - **Equipamento**: Halteres, banco ou chão estável
@@ -7623,7 +9008,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E103 — Tríceps testa com halteres
+### E121 — Tríceps testa com halteres
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Halteres, banco ou chão estável
@@ -7655,7 +9040,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E029 — W raise
+### E031 — W raise
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -7687,7 +9072,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E120 — Wrist curl
+### E139 — Wrist curl
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Antebraço/Pega
 - **Equipamento**: Halteres
@@ -7719,7 +9104,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E028 — Y raise
+### E030 — Y raise
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
 - **Equipamento**: Halteres
@@ -7751,7 +9136,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E164 — Agachamento com barra
+### E189 — Agachamento com barra
 
 - **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
 - **Equipamento**: Barra
@@ -7783,7 +9168,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E099 — Chin-up
+### E116 — Chin-up
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Bíceps
 - **Equipamento**: Barra fixa
@@ -7815,7 +9200,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E083 — Curl com barra
+### E100 — Curl com barra
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Barra
@@ -7847,7 +9232,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E126 — Curl inverso
+### E145 — Curl inverso
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Antebraço/Pega
 - **Equipamento**: Barra ou barra EZ
@@ -7879,7 +9264,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E089 — Curl inverso
+### E106 — Curl inverso
 
 - **Nível**: intermédio | **Padrão**: flexão de cotovelo | **Grupo**: Bíceps
 - **Equipamento**: Barra ou barra EZ
@@ -7911,7 +9296,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos junto ao tronco. Reduz o peso ou para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E124 — Dead hang
+### E143 — Dead hang
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Antebraço/Pega
 - **Equipamento**: Barra fixa
@@ -7943,7 +9328,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E068 — Dead hang escapular
+### E082 — Dead hang escapular
 
 - **Nível**: intermédio | **Padrão**: puxar vertical | **Grupo**: Costas
 - **Equipamento**: Barra fixa
@@ -7975,7 +9360,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E144 — Elevação de joelhos suspenso
+### E167 — Elevação de joelhos suspenso
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Core
 - **Equipamento**: Barra fixa
@@ -8039,7 +9424,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E115 — Extensão francesa com barra EZ
+### E133 — Extensão francesa com barra EZ
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Barra EZ
@@ -8071,7 +9456,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E080 — Good morning com barra
+### E097 — Good morning com barra
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Lombar
 - **Equipamento**: Barra
@@ -8103,7 +9488,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E179 — Peso morto tradicional
+### E204 — Peso morto tradicional
 
 - **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
 - **Equipamento**: Barra
@@ -8135,7 +9520,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E013 — Press militar com barra
+### E015 — Press militar com barra
 
 - **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
 - **Equipamento**: Barra
@@ -8167,7 +9552,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E011 — Press militar com barra em pé
+### E013 — Press militar com barra em pé
 
 - **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
 - **Equipamento**: Barra
@@ -8199,7 +9584,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E066 — Pull-up
+### E080 — Pull-up
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Costas
 - **Equipamento**: Barra fixa
@@ -8231,7 +9616,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E063 — Remo com barra
+### E077 — Remo com barra
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Barra
@@ -8263,7 +9648,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E064 — Remo invertido
+### E078 — Remo invertido
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Barra fixa
@@ -8295,7 +9680,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E067 — Scapular pull-up
+### E081 — Scapular pull-up
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Costas
 - **Equipamento**: Barra fixa
@@ -8327,7 +9712,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Usa um peso e uma amplitude que consigas controlar. Para se houver dor aguda, tontura, formigueiro, perda de equilíbrio ou perda de controlo.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E039 — Supino com barra
+### E052 — Supino com barra
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Barra
@@ -8359,7 +9744,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E044 — Supino declinado com barra
+### E057 — Supino declinado com barra
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Barra, banco declinado
@@ -8391,7 +9776,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E105 — Supino fechado
+### E123 — Supino fechado
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Tríceps
 - **Equipamento**: Barra
@@ -8423,7 +9808,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E042 — Supino inclinado com barra
+### E055 — Supino inclinado com barra
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Barra
@@ -8455,7 +9840,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos com um peso controlável e amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do peso.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E131 — Towel grip hold
+### E150 — Towel grip hold
 
 - **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Antebraço/Pega
 - **Equipamento**: Barra fixa, toalha
@@ -8487,7 +9872,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
 - **Respiração**: Respira de forma curta e contínua durante a sustentação; nunca prendas o ar.
 
-### E102 — Tríceps testa com barra EZ
+### E120 — Tríceps testa com barra EZ
 
 - **Nível**: intermédio | **Padrão**: extensão de cotovelo | **Grupo**: Tríceps
 - **Equipamento**: Barra EZ
@@ -8519,7 +9904,36 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso e usa um peso controlável. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E052 — Dips para peito em paralelas
+### E234 — Agachamento goblet com kettlebell
+
+- **Nível**: intermédio | **Padrão**: agachamento / joelho dominante | **Grupo**: Pernas
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Quadríceps, glúteos, core e parte alta das costas
+
+**Objetivo**: Agachamento com o kettlebell seguro junto ao peito, que ajuda a manter o tronco direito; ideal para aprender a agachar com carga. Serve para treinar quadríceps, glúteos e tronco estável.
+
+**Como executar:**
+
+1. Segura o kettlebell pelas pegas laterais, junto ao peito, com os cotovelos para baixo.
+2. Fica com os pés à largura dos ombros e as pontas ligeiramente para fora.
+3. Desce dobrando joelhos e anca ao mesmo tempo, com o tronco direito.
+4. Desce até onde os calcanhares ficam no chão e a lombar não enrola.
+5. Empurra o chão com os pés e sobe, mantendo os joelhos alinhados com os pés.
+
+**Erros comuns:**
+
+- Deixar os cotovelos cair e o kettlebell afastar-se do peito.
+- Subir a anca primeiro e o peito depois.
+- Deixar os joelhos fechar para dentro.
+- Levantar os calcanhares no fundo.
+
+- **Versão mais fácil**: Agacha até uma profundidade menor ou usa um kettlebell mais leve.
+- **Versão mais difícil**: Aumenta o peso, desce mais fundo com controlo ou faz uma pausa de dois segundos em baixo.
+- **Segurança**: Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E065 — Dips para peito em paralelas
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Paralelas
@@ -8549,7 +9963,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E117 — Dips para tríceps
+### E135 — Dips para tríceps
 
 - **Nível**: intermédio | **Padrão**: empurrar horizontal | **Grupo**: Tríceps
 - **Equipamento**: Paralelas
@@ -8580,7 +9994,185 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Guia os cotovelos sem os abrir em excesso. Para com dor no cotovelo, no ombro ou na lombar.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E065 — Remo invertido em mesa resistente
+### E161 — Farmer carry com kettlebell
+
+- **Nível**: intermédio | **Padrão**: transporte | **Grupo**: Antebraço/Pega
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Antebraços, trapézio, ombros, core e postura
+
+**Objetivo**: Caminhada carregada com um kettlebell em cada mão, para treinar pega, ombros estáveis e tronco firme em movimento. Serve para treinar força de pega, ombros e core em transporte.
+
+**Como executar:**
+
+1. Segura um kettlebell em cada mão, ao lado do corpo, com pega firme.
+2. Fica alto: ombros para trás e para baixo, costelas sobre a bacia, olhar em frente.
+3. Caminha em passos curtos e controlados, sem deixar os kettlebells baterem nas pernas.
+4. Mantém os punhos direitos e o tronco sem inclinar para os lados.
+5. Percorre 15 a 30 metros ou caminha 20 a 40 segundos, descansa e repete.
+6. Pousa os kettlebells dobrando pela anca com a lombar direita.
+
+**Erros comuns:**
+
+- Deixar os ombros cair para a frente.
+- Inclinar o tronco para um dos lados.
+- Dar passos longos e desequilibrados.
+- Largar os kettlebells no chão sem controlo.
+
+- **Versão mais fácil**: Usa kettlebells mais leves ou percorre uma distância mais curta.
+- **Versão mais difícil**: Aumenta o peso ou a distância, ou leva um só kettlebell de cada vez para desafiar o core (suitcase carry).
+- **Segurança**: Trabalha a pega com punhos direitos e termina antes de a mão abrir sozinha. Para com dor no punho ou formigueiro nos dedos.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E045 — Halo com kettlebell
+
+- **Nível**: intermédio | **Padrão**: outro / técnico | **Grupo**: Ombros
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide, coifa dos rotadores, trapézio, core e pega
+
+**Objetivo**: Círculos lentos do kettlebell à volta da cabeça, para mobilizar e fortalecer os ombros e a coifa com carga leve.
+
+**Como executar:**
+
+1. Segura o kettlebell de cabeça para baixo, pelas pegas laterais, à frente do peito.
+2. Fica de pé com os pés à largura da anca e o abdómen firme.
+3. Leva o kettlebell devagar à volta da cabeça: passa junto a uma orelha, atrás da nuca e volta pela outra orelha.
+4. Mantém o kettlebell perto da cabeça e os cotovelos a apontar para baixo.
+5. Faz 5 a 8 círculos numa direção e troca o sentido.
+
+**Erros comuns:**
+
+- Fazer círculos largos e rápidos longe da cabeça.
+- Arquear a lombar quando o kettlebell passa atrás.
+- Encolher os ombros durante o círculo.
+- Usar um kettlebell pesado demais para controlar.
+
+- **Versão mais fácil**: Usa um kettlebell muito leve ou faz o círculo ajoelhado para estabilizar o tronco.
+- **Versão mais difícil**: Aumenta ligeiramente o peso ou faz os círculos mais lentos, com pausas atrás da cabeça.
+- **Segurança**: Começa com um kettlebell leve e pousa-o sempre com a lombar direita. Para com dor lombar, dor no ombro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E233 — Kettlebell swing
+
+- **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Glúteos, posterior de coxa, lombar, core e pega
+
+**Objetivo**: Balanço explosivo do kettlebell entre as pernas e até à altura do peito, gerado pela extensão forte da anca, para treinar glúteos e posterior de coxa.
+
+**Como executar:**
+
+1. Coloca o kettlebell no chão à frente dos pés e segura a pega com as duas mãos.
+2. Dobra pela anca com a coluna neutra e os joelhos ligeiramente fletidos, lombar direita.
+3. Puxa o kettlebell para trás, entre as pernas, como quem faz um passe.
+4. Estica a anca com força, apertando os glúteos: é a anca que lança o kettlebell até à altura do peito.
+5. Deixa o kettlebell descer e voltar entre as pernas, dobrando de novo pela anca.
+6. Faz 8 a 15 balanços seguidos e pousa o kettlebell no chão com controlo.
+
+**Erros comuns:**
+
+- Levantar o kettlebell com os braços em vez da anca.
+- Arredondar a lombar na descida.
+- Agachar em vez de dobrar pela anca.
+- Subir o kettlebell acima da cabeça sem dominar a técnica.
+
+- **Versão mais fácil**: Treina primeiro a dobradiça sem kettlebell e depois faz balanços curtos só até à cintura.
+- **Versão mais difícil**: Aumenta o peso do kettlebell ou faz séries mais longas, mantendo a lombar neutra em todas as repetições.
+- **Segurança**: Começa com um kettlebell leve e pousa-o sempre com a lombar direita. Para com dor lombar, dor no ombro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E235 — Peso morto com kettlebell
+
+- **Nível**: intermédio | **Padrão**: dobradiça de anca | **Grupo**: Pernas
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Posterior de coxa, glúteos, lombar, core e pega
+
+**Objetivo**: Dobradiça de anca a levantar o kettlebell do chão entre os pés, com a coluna neutra; a forma mais simples de aprender o peso morto. Serve para treinar posterior de coxa, glúteos e lombar controlada.
+
+**Como executar:**
+
+1. Coloca o kettlebell no chão entre os pés e fica com os pés à largura da anca.
+2. Dobra pela anca e pelos joelhos e segura a pega com as duas mãos, com a coluna neutra.
+3. Aperta a pega, peito para a frente e lombar direita antes de puxar.
+4. Empurra o chão com os pés e estica a anca e os joelhos ao mesmo tempo, sem enrolar as costas.
+5. Termina de pé, com os glúteos apertados, e desce o kettlebell pelo mesmo caminho.
+
+**Erros comuns:**
+
+- Arredondar a lombar para chegar à pega.
+- Puxar com os braços em vez de empurrar com as pernas.
+- Deixar o kettlebell afastar-se do corpo.
+- Olhar para cima e perder o pescoço neutro.
+
+- **Versão mais fácil**: Eleva o kettlebell sobre um degrau ou caixa para encurtar a amplitude até dominares a coluna neutra.
+- **Versão mais difícil**: Aumenta o peso ou passa para o kettlebell swing quando a dobradiça estiver dominada.
+- **Segurança**: Mantém a coluna neutra e o peso perto do corpo. Para com dor lombar aguda, formigueiro, perda de força ou incapacidade de controlar a anca.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E039 — Press de ombros com kettlebell
+
+- **Nível**: intermédio | **Padrão**: empurrar vertical | **Grupo**: Ombros
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Deltoide, tríceps, trapézio, core e pega
+
+**Objetivo**: Empurrar o kettlebell acima da cabeça a partir do ombro, com o corpo estável; a pega descentrada exige mais controlo do que um halter. Serve para treinar deltoide anterior e lateral, tríceps e core.
+
+**Como executar:**
+
+1. Leva o kettlebell à posição de apoio: pega na mão, peso encostado às costas do antebraço, cotovelo junto ao corpo.
+2. Fica de pé com os pés à largura da anca, glúteos e abdómen firmes.
+3. Empurra o kettlebell para cima até o braço esticar, com o punho direito.
+4. Mantém as costelas em baixo, sem arquear a lombar durante a subida.
+5. Desce o kettlebell devagar até ao ombro, controlando o caminho.
+6. Faz as repetições de um braço e troca; expira ao empurrar e inspira ao descer.
+
+**Erros comuns:**
+
+- Arquear a lombar para ajudar a subida.
+- Deixar o punho dobrar para trás com o peso.
+- Empurrar com impulso das pernas sem querer.
+- Descer o kettlebell sem controlo.
+
+- **Versão mais fácil**: Usa um kettlebell mais leve ou faz o press ajoelhado para bloquear o impulso das pernas.
+- **Versão mais difícil**: Aumenta o peso, faz o press em pé com pausa em cima ou alterna os braços sem pousar.
+- **Segurança**: Começa com um kettlebell leve e pousa-o sempre com a lombar direita. Para com dor lombar, dor no ombro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E090 — Remo com kettlebell
+
+- **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Dorsal, romboides, trapézio médio, bíceps e pega
+
+**Objetivo**: Remada unilateral com o kettlebell, com o tronco inclinado e apoiado, para trabalhar o meio das costas com a pega exigente do kettlebell. Serve para treinar dorsal, romboides e meio das costas.
+
+**Como executar:**
+
+1. Apoia uma mão e o joelho do mesmo lado num banco ou apoio firme, com o tronco quase paralelo ao chão.
+2. Segura o kettlebell com a outra mão, braço esticado e pega firme.
+3. Mantém a lombar neutra e as costelas controladas antes de puxar.
+4. Puxa o kettlebell até à anca, levando o cotovelo para trás rente ao tronco e fechando a escápula.
+5. Desce devagar até o braço esticar, sem rodar o tronco.
+6. Faz as repetições de um lado e troca; expira ao puxar e inspira ao descer.
+
+**Erros comuns:**
+
+- Rodar o tronco para ajudar a puxada.
+- Puxar o kettlebell até ao ombro em vez da anca.
+- Encolher o ombro contra a orelha.
+- Arredondar a lombar durante a série.
+
+- **Versão mais fácil**: Usa um kettlebell mais leve ou faz a remada com os dois pés no chão e a mão bem apoiada.
+- **Versão mais difícil**: Aumenta o peso ou faz uma pausa de um segundo com a escápula fechada em cada repetição.
+- **Segurança**: Começa com um kettlebell leve e pousa-o sempre com a lombar direita. Para com dor lombar, dor no ombro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E079 — Remo invertido em mesa resistente
 
 - **Nível**: intermédio | **Padrão**: puxar horizontal | **Grupo**: Costas
 - **Equipamento**: Mesa resistente
@@ -8612,7 +10204,37 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E206 — Curl nórdico assistido
+### E184 — Russian twist com kettlebell
+
+- **Nível**: intermédio | **Padrão**: rotação de tronco | **Grupo**: Core
+- **Equipamento**: Kettlebell
+- **Onde**: Casa c/ equip., Ginásio
+- **Músculos secundários**: Oblíquos, reto abdominal, flexores da anca e pega
+
+**Objetivo**: Rotação do tronco sentado, a passar o kettlebell de um lado para o outro, para treinar os oblíquos com carga.
+
+**Como executar:**
+
+1. Senta-te no chão com os joelhos dobrados e os calcanhares apoiados.
+2. Segura o kettlebell pelas pegas laterais, junto ao tronco.
+3. Inclina o tronco ligeiramente atrás, com as costas direitas, até sentir o abdómen ativo.
+4. Roda o tronco para um lado e leva o kettlebell até junto da anca, sem o pousar.
+5. Roda para o outro lado com controlo; o movimento nasce no tronco, não nos braços.
+6. Faz 8 a 12 rotações por lado, a expirar em cada rotação.
+
+**Erros comuns:**
+
+- Mover só os braços com o tronco parado.
+- Arredondar as costas para trás.
+- Rodar depressa e sem controlo.
+- Usar um kettlebell pesado demais para manter o tronco direito.
+
+- **Versão mais fácil**: Faz sem kettlebell ou mantém os pés apoiados no chão todo o tempo.
+- **Versão mais difícil**: Eleva os pés do chão ou aumenta ligeiramente o peso, mantendo as costas direitas.
+- **Segurança**: Começa com um kettlebell leve e pousa-o sempre com a lombar direita. Para com dor lombar, dor no ombro ou perda de controlo do movimento.
+- **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
+
+### E231 — Curl nórdico assistido
 
 - **Nível**: avançado | **Padrão**: flexão de joelho | **Grupo**: Pernas
 - **Equipamento**: Peso corporal, apoio para os pés
@@ -8642,7 +10264,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém os punhos alinhados e os cotovelos estáveis. Para se houver dor no cotovelo ou no punho.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E038 — Flexão arqueiro
+### E051 — Flexão arqueiro
 
 - **Nível**: avançado | **Padrão**: empurrar horizontal | **Grupo**: Peito
 - **Equipamento**: Peso corporal
@@ -8674,7 +10296,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Protege ombros e punhos usando uma amplitude sem dor. Para com dor aguda no ombro, dormência no braço ou perda de controlo do movimento.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E194 — Saltos leves
+### E219 — Saltos leves
 
 - **Nível**: avançado | **Padrão**: outro / técnico | **Grupo**: Pernas
 - **Equipamento**: Peso corporal

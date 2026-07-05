@@ -72,7 +72,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 20,
+      version: 21,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -92,6 +92,7 @@ class AppDatabase {
         await _migrateV080(db);
         await _migrateV091(db);
         await _migrateV092(db);
+        await _migrateV093(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -150,6 +151,9 @@ class AppDatabase {
         }
         if (oldVersion < 20) {
           await _migrateV092(db);
+        }
+        if (oldVersion < 21) {
+          await _migrateV093(db);
         }
       },
     );
@@ -249,6 +253,14 @@ class AppDatabase {
   /// exercícios de sistema e atualiza os textos dos existentes, sem tocar em
   /// exercícios personalizados, histórico, séries, medições ou objetivos.
   Future<void> _migrateV092(Database db) async {
+    await refreshCatalogExercises(db);
+  }
+
+  /// v0.9.3: 4 novos exercícios de peso corporal fecham lacunas em que um
+  /// músculo só era treinável com equipamento (deltoide posterior, manguito
+  /// rotador, trapézio e pronação/supinação do antebraço). Mesmo upsert
+  /// idempotente e seguro.
+  Future<void> _migrateV093(Database db) async {
     await refreshCatalogExercises(db);
   }
 

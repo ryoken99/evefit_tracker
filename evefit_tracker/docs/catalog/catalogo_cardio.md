@@ -8,254 +8,254 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Circuito cardio leve (E256) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Marcha no lugar (E208) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Shadow boxing leve (E264) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Burpees (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Circuito cardio peso corporal (E213) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | HIIT cardio (E251) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | HIIT peso corporal (E250) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | HIIT simples (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | High knees (E212) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Jumping jacks (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Shuttle runs / corrida vaivém (E265) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Skaters (E211) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Circuito cardio leve (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Marcha no lugar (E252) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Shadow boxing leve (E308) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Burpees (E254) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Circuito cardio peso corporal (E257) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | HIIT cardio (E295) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | HIIT peso corporal (E294) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | HIIT simples (E299) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | High knees (E256) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Jumping jacks (E253) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Shuttle runs / corrida vaivém (E309) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Skaters (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Cardio › Passadeira
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Passadeira caminhada (E214) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 2 | Passadeira caminhada rápida (E215) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 3 | Passadeira corrida leve (E216) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 4 | HIIT passadeira (E252) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 5 | Passadeira aquecimento (E222) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 6 | Passadeira cooldown (E223) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 7 | Passadeira corrida intervalada (E217) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 8 | Passadeira inclinação (E218) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 9 | Passadeira inclinação moderada (E219) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 10 | Passadeira sprints (E220) | avançado | Passadeira | — | ✅ | ✅ | — | — |
-| 11 | Passadeira sprints intervalados (E221) | avançado | Passadeira | — | ✅ | ✅ | — | — |
+| 1 | Passadeira caminhada (E258) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 2 | Passadeira caminhada rápida (E259) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 3 | Passadeira corrida leve (E260) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 4 | HIIT passadeira (E296) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 5 | Passadeira aquecimento (E266) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 6 | Passadeira cooldown (E267) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 7 | Passadeira corrida intervalada (E261) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 8 | Passadeira inclinação (E262) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 9 | Passadeira inclinação moderada (E263) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 10 | Passadeira sprints (E264) | avançado | Passadeira | — | ✅ | ✅ | — | — |
+| 11 | Passadeira sprints intervalados (E265) | avançado | Passadeira | — | ✅ | ✅ | — | — |
 
 ## Cardio › Bicicleta
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Bicicleta ritmo leve (E224) | iniciante | Bicicleta | — | ✅ | ✅ | — | — |
-| 2 | Bicicleta aquecimento (E228) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 3 | Bicicleta cooldown (E229) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 4 | Bicicleta intervalos (E226) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 5 | Bicicleta resistência (E227) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 6 | Bicicleta ritmo moderado (E225) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 7 | HIIT bicicleta (E253) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 1 | Bicicleta ritmo leve (E268) | iniciante | Bicicleta | — | ✅ | ✅ | — | — |
+| 2 | Bicicleta aquecimento (E272) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 3 | Bicicleta cooldown (E273) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 4 | Bicicleta intervalos (E270) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 5 | Bicicleta resistência (E271) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 6 | Bicicleta ritmo moderado (E269) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 7 | HIIT bicicleta (E297) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
 
 ## Cardio › Elíptica
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Elíptica ritmo leve (E230) | iniciante | Elíptica | — | ✅ | ✅ | — | — |
-| 2 | Elíptica aquecimento (E234) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 3 | Elíptica cooldown (E235) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 4 | Elíptica intervalos (E232) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 5 | Elíptica resistência (E233) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 6 | Elíptica ritmo moderado (E231) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 1 | Elíptica ritmo leve (E274) | iniciante | Elíptica | — | ✅ | ✅ | — | — |
+| 2 | Elíptica aquecimento (E278) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 3 | Elíptica cooldown (E279) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 4 | Elíptica intervalos (E276) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 5 | Elíptica resistência (E277) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 6 | Elíptica ritmo moderado (E275) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
 
 ## Cardio › Remo ergómetro
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Remo ergómetro intervalos (E258) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
-| 2 | Remo ergómetro ritmo contínuo (E257) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
+| 1 | Remo ergómetro intervalos (E302) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
+| 2 | Remo ergómetro ritmo contínuo (E301) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
 
 ## Cardio › Stepper / escadas
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Stepper / escadas intervalos (E260) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
-| 2 | Stepper / escadas ritmo contínuo (E259) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
+| 1 | Stepper / escadas intervalos (E304) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
+| 2 | Stepper / escadas ritmo contínuo (E303) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
 
 ## Cardio › Air bike
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Air bike intervalos (E263) | intermédio | Air bike | — | ✅ | ✅ | — | — |
-| 2 | Air bike ritmo contínuo (E262) | intermédio | Air bike | — | ✅ | ✅ | — | — |
+| 1 | Air bike intervalos (E307) | intermédio | Air bike | — | ✅ | ✅ | — | — |
+| 2 | Air bike ritmo contínuo (E306) | intermédio | Air bike | — | ✅ | ✅ | — | — |
 
 ## Cardio › Corda de saltar
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Corda de saltar ritmo leve (E236) | iniciante | Corda de saltar | — | ✅ | ✅ | — | — |
-| 2 | Corda de saltar double unders (E240) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 3 | Corda de saltar intervalos (E237) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 4 | Corda de saltar joelhos altos (E239) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 5 | Corda de saltar pés alternados (E238) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 6 | HIIT corda (E254) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 1 | Corda de saltar ritmo leve (E280) | iniciante | Corda de saltar | — | ✅ | ✅ | — | — |
+| 2 | Corda de saltar double unders (E284) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 3 | Corda de saltar intervalos (E281) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 4 | Corda de saltar joelhos altos (E283) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 5 | Corda de saltar pés alternados (E282) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 6 | HIIT corda (E298) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
 
 ## Cardio › Caminhada exterior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Caminhada exterior em subida (E244) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 2 | Caminhada exterior leve (E241) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 3 | Caminhada exterior moderada (E242) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 4 | Caminhada exterior rápida (E243) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 1 | Caminhada exterior em subida (E288) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 2 | Caminhada exterior leve (E285) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 3 | Caminhada exterior moderada (E286) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 4 | Caminhada exterior rápida (E287) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
 
 ## Cardio › Corrida exterior
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Corrida exterior leve (E245) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 2 | Corrida exterior intervalada (E247) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 3 | Corrida exterior moderada (E246) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 4 | Subida de escadas no exterior (E261) | intermédio | Espaço exterior com escadas | — | ✅ | — | ✅ | — |
+| 1 | Corrida exterior leve (E289) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 2 | Corrida exterior intervalada (E291) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 3 | Corrida exterior moderada (E290) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 4 | Subida de escadas no exterior (E305) | intermédio | Espaço exterior com escadas | — | ✅ | — | ✅ | — |
 
 ## Cardio › HIIT
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Circuito cardio leve (E256) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Marcha no lugar (E208) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Shadow boxing leve (E264) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Burpees (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Circuito cardio peso corporal (E213) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | HIIT cardio (E251) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | HIIT peso corporal (E250) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | HIIT simples (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | High knees (E212) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Jumping jacks (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Shuttle runs / corrida vaivém (E265) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Skaters (E211) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Circuito cardio leve (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Marcha no lugar (E252) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Shadow boxing leve (E308) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Burpees (E254) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Circuito cardio peso corporal (E257) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | HIIT cardio (E295) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | HIIT peso corporal (E294) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | HIIT simples (E299) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | High knees (E256) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Jumping jacks (E253) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Shuttle runs / corrida vaivém (E309) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Skaters (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Cardio › Resistência aeróbia
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Circuito cardio leve (E256) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Marcha no lugar (E208) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Shadow boxing leve (E264) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Bicicleta ritmo leve (E224) | iniciante | Bicicleta | — | ✅ | ✅ | — | — |
-| 5 | Elíptica ritmo leve (E230) | iniciante | Elíptica | — | ✅ | ✅ | — | — |
-| 6 | Passadeira caminhada (E214) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 7 | Passadeira caminhada rápida (E215) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 8 | Passadeira corrida leve (E216) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 9 | Caminhada exterior em subida (E244) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 10 | Caminhada exterior leve (E241) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 11 | Caminhada exterior moderada (E242) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 12 | Caminhada exterior rápida (E243) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 13 | Corda de saltar ritmo leve (E236) | iniciante | Corda de saltar | — | ✅ | ✅ | — | — |
-| 14 | Corrida exterior leve (E245) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 15 | Burpees (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Circuito cardio peso corporal (E213) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | HIIT cardio (E251) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | HIIT peso corporal (E250) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | HIIT simples (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 20 | High knees (E212) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 21 | Jumping jacks (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 22 | Shuttle runs / corrida vaivém (E265) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 23 | Skaters (E211) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 24 | Air bike intervalos (E263) | intermédio | Air bike | — | ✅ | ✅ | — | — |
-| 25 | Air bike ritmo contínuo (E262) | intermédio | Air bike | — | ✅ | ✅ | — | — |
-| 26 | Bicicleta aquecimento (E228) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 27 | Bicicleta cooldown (E229) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 28 | Bicicleta intervalos (E226) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 29 | Bicicleta resistência (E227) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 30 | Bicicleta ritmo moderado (E225) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 31 | Elíptica aquecimento (E234) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 32 | Elíptica cooldown (E235) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 33 | Elíptica intervalos (E232) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 34 | Elíptica resistência (E233) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 35 | Elíptica ritmo moderado (E231) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 36 | HIIT bicicleta (E253) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 37 | HIIT passadeira (E252) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 38 | Passadeira aquecimento (E222) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 39 | Passadeira cooldown (E223) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 40 | Passadeira corrida intervalada (E217) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 41 | Passadeira inclinação (E218) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 42 | Passadeira inclinação moderada (E219) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 43 | Remo ergómetro intervalos (E258) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
-| 44 | Remo ergómetro ritmo contínuo (E257) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
-| 45 | Stepper / escadas intervalos (E260) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
-| 46 | Stepper / escadas ritmo contínuo (E259) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
-| 47 | Corda de saltar double unders (E240) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 48 | Corda de saltar intervalos (E237) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 49 | Corda de saltar joelhos altos (E239) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 50 | Corda de saltar pés alternados (E238) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 51 | Corrida em subida (E249) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 52 | Corrida exterior intervalada (E247) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 53 | Corrida exterior moderada (E246) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 54 | HIIT corda (E254) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 55 | Subida de escadas no exterior (E261) | intermédio | Espaço exterior com escadas | — | ✅ | — | ✅ | — |
-| 56 | Passadeira sprints (E220) | avançado | Passadeira | — | ✅ | ✅ | — | — |
-| 57 | Passadeira sprints intervalados (E221) | avançado | Passadeira | — | ✅ | ✅ | — | — |
-| 58 | Sprints exterior (E248) | avançado | Espaço exterior | — | ✅ | — | ✅ | — |
+| 1 | Circuito cardio leve (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Marcha no lugar (E252) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Shadow boxing leve (E308) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Bicicleta ritmo leve (E268) | iniciante | Bicicleta | — | ✅ | ✅ | — | — |
+| 5 | Elíptica ritmo leve (E274) | iniciante | Elíptica | — | ✅ | ✅ | — | — |
+| 6 | Passadeira caminhada (E258) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 7 | Passadeira caminhada rápida (E259) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 8 | Passadeira corrida leve (E260) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 9 | Caminhada exterior em subida (E288) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 10 | Caminhada exterior leve (E285) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 11 | Caminhada exterior moderada (E286) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 12 | Caminhada exterior rápida (E287) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 13 | Corda de saltar ritmo leve (E280) | iniciante | Corda de saltar | — | ✅ | ✅ | — | — |
+| 14 | Corrida exterior leve (E289) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 15 | Burpees (E254) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Circuito cardio peso corporal (E257) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | HIIT cardio (E295) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | HIIT peso corporal (E294) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | HIIT simples (E299) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | High knees (E256) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Jumping jacks (E253) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Shuttle runs / corrida vaivém (E309) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 23 | Skaters (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 24 | Air bike intervalos (E307) | intermédio | Air bike | — | ✅ | ✅ | — | — |
+| 25 | Air bike ritmo contínuo (E306) | intermédio | Air bike | — | ✅ | ✅ | — | — |
+| 26 | Bicicleta aquecimento (E272) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 27 | Bicicleta cooldown (E273) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 28 | Bicicleta intervalos (E270) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 29 | Bicicleta resistência (E271) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 30 | Bicicleta ritmo moderado (E269) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 31 | Elíptica aquecimento (E278) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 32 | Elíptica cooldown (E279) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 33 | Elíptica intervalos (E276) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 34 | Elíptica resistência (E277) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 35 | Elíptica ritmo moderado (E275) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 36 | HIIT bicicleta (E297) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 37 | HIIT passadeira (E296) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 38 | Passadeira aquecimento (E266) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 39 | Passadeira cooldown (E267) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 40 | Passadeira corrida intervalada (E261) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 41 | Passadeira inclinação (E262) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 42 | Passadeira inclinação moderada (E263) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 43 | Remo ergómetro intervalos (E302) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
+| 44 | Remo ergómetro ritmo contínuo (E301) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
+| 45 | Stepper / escadas intervalos (E304) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
+| 46 | Stepper / escadas ritmo contínuo (E303) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
+| 47 | Corda de saltar double unders (E284) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 48 | Corda de saltar intervalos (E281) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 49 | Corda de saltar joelhos altos (E283) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 50 | Corda de saltar pés alternados (E282) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 51 | Corrida em subida (E293) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 52 | Corrida exterior intervalada (E291) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 53 | Corrida exterior moderada (E290) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 54 | HIIT corda (E298) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 55 | Subida de escadas no exterior (E305) | intermédio | Espaço exterior com escadas | — | ✅ | — | ✅ | — |
+| 56 | Passadeira sprints (E264) | avançado | Passadeira | — | ✅ | ✅ | — | — |
+| 57 | Passadeira sprints intervalados (E265) | avançado | Passadeira | — | ✅ | ✅ | — | — |
+| 58 | Sprints exterior (E292) | avançado | Espaço exterior | — | ✅ | — | ✅ | — |
 
 ## Cardio › Intervalos / HIIT
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Circuito cardio leve (E256) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Marcha no lugar (E208) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Shadow boxing leve (E264) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Bicicleta ritmo leve (E224) | iniciante | Bicicleta | — | ✅ | ✅ | — | — |
-| 5 | Elíptica ritmo leve (E230) | iniciante | Elíptica | — | ✅ | ✅ | — | — |
-| 6 | Passadeira caminhada (E214) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 7 | Passadeira caminhada rápida (E215) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 8 | Passadeira corrida leve (E216) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
-| 9 | Caminhada exterior em subida (E244) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 10 | Caminhada exterior leve (E241) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 11 | Caminhada exterior moderada (E242) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 12 | Caminhada exterior rápida (E243) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 13 | Corda de saltar ritmo leve (E236) | iniciante | Corda de saltar | — | ✅ | ✅ | — | — |
-| 14 | Corrida exterior leve (E245) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
-| 15 | Burpees (E210) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Circuito cardio peso corporal (E213) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | HIIT cardio (E251) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | HIIT peso corporal (E250) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | HIIT simples (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 20 | High knees (E212) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 21 | Jumping jacks (E209) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 22 | Shuttle runs / corrida vaivém (E265) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 23 | Skaters (E211) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 24 | Air bike intervalos (E263) | intermédio | Air bike | — | ✅ | ✅ | — | — |
-| 25 | Air bike ritmo contínuo (E262) | intermédio | Air bike | — | ✅ | ✅ | — | — |
-| 26 | Bicicleta aquecimento (E228) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 27 | Bicicleta cooldown (E229) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 28 | Bicicleta intervalos (E226) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 29 | Bicicleta resistência (E227) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 30 | Bicicleta ritmo moderado (E225) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 31 | Elíptica aquecimento (E234) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 32 | Elíptica cooldown (E235) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 33 | Elíptica intervalos (E232) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 34 | Elíptica resistência (E233) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 35 | Elíptica ritmo moderado (E231) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
-| 36 | HIIT bicicleta (E253) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
-| 37 | HIIT passadeira (E252) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 38 | Passadeira aquecimento (E222) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 39 | Passadeira cooldown (E223) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 40 | Passadeira corrida intervalada (E217) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 41 | Passadeira inclinação (E218) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 42 | Passadeira inclinação moderada (E219) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
-| 43 | Remo ergómetro intervalos (E258) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
-| 44 | Remo ergómetro ritmo contínuo (E257) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
-| 45 | Stepper / escadas intervalos (E260) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
-| 46 | Stepper / escadas ritmo contínuo (E259) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
-| 47 | Corda de saltar double unders (E240) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 48 | Corda de saltar intervalos (E237) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 49 | Corda de saltar joelhos altos (E239) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 50 | Corda de saltar pés alternados (E238) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 51 | Corrida em subida (E249) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 52 | Corrida exterior intervalada (E247) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 53 | Corrida exterior moderada (E246) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
-| 54 | HIIT corda (E254) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
-| 55 | Subida de escadas no exterior (E261) | intermédio | Espaço exterior com escadas | — | ✅ | — | ✅ | — |
-| 56 | Passadeira sprints (E220) | avançado | Passadeira | — | ✅ | ✅ | — | — |
-| 57 | Passadeira sprints intervalados (E221) | avançado | Passadeira | — | ✅ | ✅ | — | — |
-| 58 | Sprints exterior (E248) | avançado | Espaço exterior | — | ✅ | — | ✅ | — |
+| 1 | Circuito cardio leve (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Marcha no lugar (E252) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Shadow boxing leve (E308) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Bicicleta ritmo leve (E268) | iniciante | Bicicleta | — | ✅ | ✅ | — | — |
+| 5 | Elíptica ritmo leve (E274) | iniciante | Elíptica | — | ✅ | ✅ | — | — |
+| 6 | Passadeira caminhada (E258) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 7 | Passadeira caminhada rápida (E259) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 8 | Passadeira corrida leve (E260) | iniciante | Passadeira | — | ✅ | ✅ | — | — |
+| 9 | Caminhada exterior em subida (E288) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 10 | Caminhada exterior leve (E285) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 11 | Caminhada exterior moderada (E286) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 12 | Caminhada exterior rápida (E287) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 13 | Corda de saltar ritmo leve (E280) | iniciante | Corda de saltar | — | ✅ | ✅ | — | — |
+| 14 | Corrida exterior leve (E289) | iniciante | Espaço exterior | — | ✅ | — | ✅ | — |
+| 15 | Burpees (E254) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Circuito cardio peso corporal (E257) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | HIIT cardio (E295) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | HIIT peso corporal (E294) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | HIIT simples (E299) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | High knees (E256) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Jumping jacks (E253) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Shuttle runs / corrida vaivém (E309) | intermédio | Peso corporal, espaço livre | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 23 | Skaters (E255) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 24 | Air bike intervalos (E307) | intermédio | Air bike | — | ✅ | ✅ | — | — |
+| 25 | Air bike ritmo contínuo (E306) | intermédio | Air bike | — | ✅ | ✅ | — | — |
+| 26 | Bicicleta aquecimento (E272) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 27 | Bicicleta cooldown (E273) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 28 | Bicicleta intervalos (E270) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 29 | Bicicleta resistência (E271) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 30 | Bicicleta ritmo moderado (E269) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 31 | Elíptica aquecimento (E278) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 32 | Elíptica cooldown (E279) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 33 | Elíptica intervalos (E276) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 34 | Elíptica resistência (E277) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 35 | Elíptica ritmo moderado (E275) | intermédio | Elíptica | — | ✅ | ✅ | — | — |
+| 36 | HIIT bicicleta (E297) | intermédio | Bicicleta | — | ✅ | ✅ | — | — |
+| 37 | HIIT passadeira (E296) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 38 | Passadeira aquecimento (E266) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 39 | Passadeira cooldown (E267) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 40 | Passadeira corrida intervalada (E261) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 41 | Passadeira inclinação (E262) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 42 | Passadeira inclinação moderada (E263) | intermédio | Passadeira | — | ✅ | ✅ | — | — |
+| 43 | Remo ergómetro intervalos (E302) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
+| 44 | Remo ergómetro ritmo contínuo (E301) | intermédio | Remo ergómetro | — | ✅ | ✅ | — | — |
+| 45 | Stepper / escadas intervalos (E304) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
+| 46 | Stepper / escadas ritmo contínuo (E303) | intermédio | Stepper / escadas | — | ✅ | ✅ | — | — |
+| 47 | Corda de saltar double unders (E284) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 48 | Corda de saltar intervalos (E281) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 49 | Corda de saltar joelhos altos (E283) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 50 | Corda de saltar pés alternados (E282) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 51 | Corrida em subida (E293) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 52 | Corrida exterior intervalada (E291) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 53 | Corrida exterior moderada (E290) | intermédio | Espaço exterior | — | ✅ | — | ✅ | — |
+| 54 | HIIT corda (E298) | intermédio | Corda de saltar | — | ✅ | ✅ | — | — |
+| 55 | Subida de escadas no exterior (E305) | intermédio | Espaço exterior com escadas | — | ✅ | — | ✅ | — |
+| 56 | Passadeira sprints (E264) | avançado | Passadeira | — | ✅ | ✅ | — | — |
+| 57 | Passadeira sprints intervalados (E265) | avançado | Passadeira | — | ✅ | ✅ | — | — |
+| 58 | Sprints exterior (E292) | avançado | Espaço exterior | — | ✅ | — | ✅ | — |
 
 ## Fichas completas (do mais simples ao mais complexo)
 
-### E256 — Circuito cardio leve
+### E300 — Circuito cardio leve
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -287,7 +287,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E208 — Marcha no lugar
+### E252 — Marcha no lugar
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -319,7 +319,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E264 — Shadow boxing leve
+### E308 — Shadow boxing leve
 
 - **Nível**: iniciante | **Padrão**: cardio de coordenação | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -349,7 +349,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E224 — Bicicleta ritmo leve
+### E268 — Bicicleta ritmo leve
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Bicicleta
@@ -381,7 +381,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E230 — Elíptica ritmo leve
+### E274 — Elíptica ritmo leve
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Elíptica
@@ -413,7 +413,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E214 — Passadeira caminhada
+### E258 — Passadeira caminhada
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -445,7 +445,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E215 — Passadeira caminhada rápida
+### E259 — Passadeira caminhada rápida
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -477,7 +477,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E216 — Passadeira corrida leve
+### E260 — Passadeira corrida leve
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -509,7 +509,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E244 — Caminhada exterior em subida
+### E288 — Caminhada exterior em subida
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -541,7 +541,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E241 — Caminhada exterior leve
+### E285 — Caminhada exterior leve
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -573,7 +573,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E242 — Caminhada exterior moderada
+### E286 — Caminhada exterior moderada
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -605,7 +605,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E243 — Caminhada exterior rápida
+### E287 — Caminhada exterior rápida
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -637,7 +637,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E236 — Corda de saltar ritmo leve
+### E280 — Corda de saltar ritmo leve
 
 - **Nível**: iniciante | **Padrão**: cardio de coordenação | **Grupo**: Cardio
 - **Equipamento**: Corda de saltar
@@ -669,7 +669,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E245 — Corrida exterior leve
+### E289 — Corrida exterior leve
 
 - **Nível**: iniciante | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -701,7 +701,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E210 — Burpees
+### E254 — Burpees
 
 - **Nível**: intermédio | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -733,7 +733,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E213 — Circuito cardio peso corporal
+### E257 — Circuito cardio peso corporal
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -765,7 +765,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E251 — HIIT cardio
+### E295 — HIIT cardio
 
 - **Nível**: intermédio | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -797,7 +797,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E250 — HIIT peso corporal
+### E294 — HIIT peso corporal
 
 - **Nível**: intermédio | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -829,7 +829,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E255 — HIIT simples
+### E299 — HIIT simples
 
 - **Nível**: intermédio | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -861,7 +861,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E212 — High knees
+### E256 — High knees
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -893,7 +893,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E209 — Jumping jacks
+### E253 — Jumping jacks
 
 - **Nível**: intermédio | **Padrão**: cardio de coordenação | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -925,7 +925,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E265 — Shuttle runs / corrida vaivém
+### E309 — Shuttle runs / corrida vaivém
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Peso corporal, espaço livre
@@ -955,7 +955,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E211 — Skaters
+### E255 — Skaters
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Peso corporal
@@ -987,7 +987,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E263 — Air bike intervalos
+### E307 — Air bike intervalos
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Air bike
@@ -1017,7 +1017,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E262 — Air bike ritmo contínuo
+### E306 — Air bike ritmo contínuo
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Air bike
@@ -1047,7 +1047,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E228 — Bicicleta aquecimento
+### E272 — Bicicleta aquecimento
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Bicicleta
@@ -1078,7 +1078,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E229 — Bicicleta cooldown
+### E273 — Bicicleta cooldown
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Bicicleta
@@ -1110,7 +1110,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E226 — Bicicleta intervalos
+### E270 — Bicicleta intervalos
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Bicicleta
@@ -1141,7 +1141,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E227 — Bicicleta resistência
+### E271 — Bicicleta resistência
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Bicicleta
@@ -1173,7 +1173,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E225 — Bicicleta ritmo moderado
+### E269 — Bicicleta ritmo moderado
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Bicicleta
@@ -1205,7 +1205,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E234 — Elíptica aquecimento
+### E278 — Elíptica aquecimento
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Elíptica
@@ -1237,7 +1237,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E235 — Elíptica cooldown
+### E279 — Elíptica cooldown
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Elíptica
@@ -1269,7 +1269,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E232 — Elíptica intervalos
+### E276 — Elíptica intervalos
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Elíptica
@@ -1301,7 +1301,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E233 — Elíptica resistência
+### E277 — Elíptica resistência
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Elíptica
@@ -1333,7 +1333,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E231 — Elíptica ritmo moderado
+### E275 — Elíptica ritmo moderado
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Elíptica
@@ -1365,7 +1365,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E253 — HIIT bicicleta
+### E297 — HIIT bicicleta
 
 - **Nível**: intermédio | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Bicicleta
@@ -1397,7 +1397,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Ajusta a máquina ao teu corpo antes de acelerar. Abranda ou termina com tontura, dor no peito, dor no joelho ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E252 — HIIT passadeira
+### E296 — HIIT passadeira
 
 - **Nível**: intermédio | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -1429,7 +1429,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E222 — Passadeira aquecimento
+### E266 — Passadeira aquecimento
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -1460,7 +1460,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E223 — Passadeira cooldown
+### E267 — Passadeira cooldown
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -1492,7 +1492,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E217 — Passadeira corrida intervalada
+### E261 — Passadeira corrida intervalada
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -1523,7 +1523,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E218 — Passadeira inclinação
+### E262 — Passadeira inclinação
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -1555,7 +1555,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E219 — Passadeira inclinação moderada
+### E263 — Passadeira inclinação moderada
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -1587,7 +1587,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E258 — Remo ergómetro intervalos
+### E302 — Remo ergómetro intervalos
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Remo ergómetro
@@ -1617,7 +1617,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E257 — Remo ergómetro ritmo contínuo
+### E301 — Remo ergómetro ritmo contínuo
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Remo ergómetro
@@ -1647,7 +1647,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E260 — Stepper / escadas intervalos
+### E304 — Stepper / escadas intervalos
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Stepper / escadas
@@ -1677,7 +1677,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E259 — Stepper / escadas ritmo contínuo
+### E303 — Stepper / escadas ritmo contínuo
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Stepper / escadas
@@ -1707,7 +1707,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Mantém a intensidade adequada ao teu nível. Abranda ou termina se houver tontura, dor no peito, falta de ar fora do normal ou perda de coordenação.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E240 — Corda de saltar double unders
+### E284 — Corda de saltar double unders
 
 - **Nível**: intermédio | **Padrão**: cardio de coordenação | **Grupo**: Cardio
 - **Equipamento**: Corda de saltar
@@ -1739,7 +1739,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E237 — Corda de saltar intervalos
+### E281 — Corda de saltar intervalos
 
 - **Nível**: intermédio | **Padrão**: cardio de coordenação | **Grupo**: Cardio
 - **Equipamento**: Corda de saltar
@@ -1771,7 +1771,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E239 — Corda de saltar joelhos altos
+### E283 — Corda de saltar joelhos altos
 
 - **Nível**: intermédio | **Padrão**: cardio de coordenação | **Grupo**: Cardio
 - **Equipamento**: Corda de saltar
@@ -1803,7 +1803,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E238 — Corda de saltar pés alternados
+### E282 — Corda de saltar pés alternados
 
 - **Nível**: intermédio | **Padrão**: cardio de coordenação | **Grupo**: Cardio
 - **Equipamento**: Corda de saltar
@@ -1835,7 +1835,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E249 — Corrida em subida
+### E293 — Corrida em subida
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -1867,7 +1867,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E247 — Corrida exterior intervalada
+### E291 — Corrida exterior intervalada
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -1899,7 +1899,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E246 — Corrida exterior moderada
+### E290 — Corrida exterior moderada
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior
@@ -1931,7 +1931,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E254 — HIIT corda
+### E298 — HIIT corda
 
 - **Nível**: intermédio | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Corda de saltar
@@ -1963,7 +1963,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Aterra em silêncio, com os joelhos suaves. Para com dor nos tornozelos, joelhos ou canelas, tontura ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E261 — Subida de escadas no exterior
+### E305 — Subida de escadas no exterior
 
 - **Nível**: intermédio | **Padrão**: cardio contínuo | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior com escadas
@@ -1993,7 +1993,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Escolhe piso regular e atenção ao trânsito. Abranda ou termina com tontura, dor no peito, dor articular ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E220 — Passadeira sprints
+### E264 — Passadeira sprints
 
 - **Nível**: avançado | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -2025,7 +2025,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E221 — Passadeira sprints intervalados
+### E265 — Passadeira sprints intervalados
 
 - **Nível**: avançado | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Passadeira
@@ -2057,7 +2057,7 @@ O nível de impacto (baixo/médio/alto) está indicado no objetivo de cada ficha
 - **Segurança**: Segura os apoios da passadeira apenas para equilibrar e abranda antes de sair. Para com tontura, dor no peito ou falta de ar fora do normal.
 - **Respiração**: Mantém a respiração contínua e reduz o ritmo se não conseguires recuperar o padrão respiratório.
 
-### E248 — Sprints exterior
+### E292 — Sprints exterior
 
 - **Nível**: avançado | **Padrão**: cardio intervalado | **Grupo**: Cardio
 - **Equipamento**: Espaço exterior

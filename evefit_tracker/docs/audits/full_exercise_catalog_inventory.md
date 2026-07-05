@@ -8,135 +8,140 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 
 ## Totais
 
-- Total de exercícios: **353**
-- Nomes únicos: 347
+- Total de exercícios: **398**
+- Nomes únicos: 392
 - Seleções de UI avaliadas: 189
 
 ### Por área (tipo de treino)
 
-- peso_corporal: 66
+- peso_corporal: 73
+- halteres: 60
 - cardio: 58
-- halteres: 57
-- mobilidade: 34
+- mobilidade: 35
+- elastico: 33
 - artes_marciais: 30
+- cabo: 26
 - alongamento: 24
-- cabo: 19
-- elastico: 19
-- barra: 18
+- barra: 19
+- maquina: 17
 - isometria: 15
-- maquina: 13
+- kettlebell: 8
 
 ### Por grupo do catálogo
 
 - Pescoço: 5
-- Trapézio: 5
-- Ombros: 22
-- Peito: 23
-- Costas: 19
+- Trapézio: 7
+- Ombros: 33
+- Peito: 24
+- Costas: 22
 - Lombar: 8
-- Bíceps: 17
-- Tríceps: 20
-- Antebraço/Pega: 19
-- Core: 21
-- Pernas: 48
+- Bíceps: 18
+- Tríceps: 21
+- Antebraço/Pega: 23
+- Core: 23
+- Pernas: 67
 - Cardio: 58
 - Karate: 16
 - Jiu-Jitsu: 14
-- Mobilidade: 58
+- Mobilidade: 59
 
 ### Por padrão de movimento
 
+- outro / técnico: 47
 - cardio contínuo: 41
-- outro / técnico: 40
-- mobilidade dinâmica: 32
+- mobilidade dinâmica: 33
+- empurrar horizontal: 30
 - técnica marcial: 30
-- empurrar horizontal: 29
 - alongamento estático: 24
-- flexão de cotovelo: 20
-- extensão de cotovelo: 15
-- dobradiça de anca: 14
-- puxar horizontal: 13
-- agachamento / joelho dominante: 13
+- flexão de cotovelo: 21
+- dobradiça de anca: 19
+- extensão de cotovelo: 17
+- agachamento / joelho dominante: 16
+- puxar horizontal: 15
 - cardio intervalado: 10
+- puxar vertical: 9
 - anti-movimento de core: 9
-- puxar vertical: 8
+- empurrar vertical: 8
+- flexão plantar/dorsal: 8
+- elevação de ombro (isolamento): 7
+- afundo: 7
 - cardio de coordenação: 7
-- afundo: 6
+- pega / punho: 6
 - flexão/extensão de pescoço: 5
-- empurrar vertical: 5
-- flexão plantar/dorsal: 5
-- pega / punho: 4
-- flexão de tronco: 4
-- elevação escapular: 3
-- elevação de ombro (isolamento): 3
-- transporte: 3
-- rotação de tronco: 2
-- flexão de joelho: 2
-- abdução de anca/ombro: 2
+- elevação escapular: 5
+- flexão de tronco: 5
+- transporte: 4
+- abdução de anca/ombro: 4
+- rotação de tronco: 3
+- flexão de joelho: 3
+- adução de anca: 2
 - respiração / recuperação: 2
 - flexão lateral: 1
-- adução de anca: 1
 
 ### Por nível estimado
 
-- intermédio: 249
-- iniciante: 98
+- intermédio: 289
+- iniciante: 103
 - avançado: 6
 
 ### Por equipamento
 
-- Peso corporal: 137
-- Halteres: 47
-- Elásticos: 19
-- Cabo / polia: 16
+- Peso corporal: 142
+- Halteres: 50
+- Elásticos: 33
+- Cabo / polia: 23
+- Máquina: 14
 - Barra: 13
 - Passadeira: 11
-- Máquina: 10
 - Tatami ou tapete / colchonete: 9
 - Espaço exterior: 9
+- Kettlebell: 8
 - Barra fixa: 7
 - Bicicleta: 7
 - Banco / cadeira / apoio: 6
-- Halteres, banco ou chão estável: 6
-- Elíptica: 6
 - Corda de saltar: 6
+- Elíptica: 6
+- Halteres, banco ou chão estável: 6
 - Peso corporal, banco / cadeira / apoio: 3
 - Cabo alto / polia: 3
+- Air bike: 2
+- Remo ergómetro: 2
+- Peso corporal, parede: 2
+- Rolo de espuma (foam roller): 2
 - Banco romano / máquina: 2
 - Halteres, banco inclinado ou apoio estável: 2
 - Barra ou barra EZ: 2
 - Barra EZ: 2
+- Paralelas: 2
 - Discos: 2
 - Mochila com peso: 2
-- Paralelas: 2
-- Remo ergómetro: 2
 - Stepper / escadas: 2
-- Air bike: 2
-- Rolo de espuma (foam roller): 2
-- Mesa resistente: 1
-- Máquina assistida de dips: 1
-- Barra fixa, toalha: 1
-- Halteres, espaço livre: 1
-- Garrafão de água: 1
 - Banco / cadeira / apoio estável: 1
 - Bola de massagem: 1
-- Barra, banco declinado: 1
+- Barra, banco ou apoio estável: 1
+- Peso corporal, toalha: 1
+- Halteres, espaço livre: 1
+- Barra fixa, toalha: 1
+- Mesa resistente: 1
+- Máquina assistida de dips: 1
 - Halteres, banco inclinado: 1
-- Peso corporal, tapete / colchonete: 1
+- Peso corporal, apoio para os pés: 1
 - Espaço exterior com escadas: 1
+- Barra, banco declinado: 1
 - Peso corporal, espaço livre: 1
 - Saco de pancada: 1
 - Halteres, banco declinado: 1
 - Cabo de vassoura: 1
-- Peso corporal, apoio para os pés: 1
+- Peso corporal, tapete / colchonete: 1
+- Garrafão de água: 1
 
 ### Disponíveis por local (sem seleção de músculo)
 
-- Casa sem equipamento: 138
-- Casa equipada: 353
-- Exterior / parque: 145
-- Dojo / tatami: 147
-- Ginásio: 335
+- Casa sem equipamento: 146
+- Casa equipada: 398
+- Exterior / parque: 151
+- Dojo / tatami: 155
+- Ginásio: 380
 
 ## Problemas detetados
 
@@ -176,38 +181,51 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 
 - (nenhum)
 
-### Quase-duplicados (mesmo movimento, variação de equipamento ou posição) (30)
+### Quase-duplicados (mesmo movimento, variação de equipamento ou posição) (43)
 
-- `encolhimento ombros`: E006 Encolhimento de ombros com halteres [Trapézio] | E007 Encolhimento de ombros com barra [Trapézio] | E008 Encolhimento de ombros na máquina [Trapézio]
-- `face pull`: E010 Face pull no cabo [Trapézio] | E019 Face pull no cabo [Ombros] | E020 Face pull com elástico [Ombros] | E069 Face pull no cabo [Costas]
-- `press militar`: E011 Press militar com barra em pé [Ombros] | E012 Press militar com halteres [Ombros] | E013 Press militar com barra [Ombros]
-- `mobilidade ombro`: E022 Mobilidade de ombro com elástico [Ombros] | E297 Mobilidade de ombro [Mobilidade] | E301 Mobilidade de ombro com toalha [Mobilidade]
-- `rotacao externa`: E024 Rotação externa [Ombros] | E025 Rotação externa com elástico [Ombros]
-- `rotacao interna`: E026 Rotação interna [Ombros] | E027 Rotação interna com elástico [Ombros]
-- `flexao`: E035 Flexão inclinada [Peito] | E036 Flexão declinada [Peito]
-- `supino`: E039 Supino com barra [Peito] | E040 Supino com halteres [Peito] | E041 Supino inclinado com halteres [Peito] | E042 Supino inclinado com barra [Peito] | E043 Supino declinado com halteres [Peito] | E044 Supino declinado com barra [Peito] | E045 Supino declinado na máquina [Peito]
-- `aberturas inclinadas`: E047 Aberturas inclinadas com halteres [Peito] | E048 Aberturas inclinadas no cabo [Peito] | E049 Aberturas inclinadas com elástico [Peito]
-- `pullover`: E055 Pullover com halter [Peito] | E070 Pullover no cabo [Costas] | E071 Pullover com halter [Costas]
-- `remo`: E061 Remo sentado [Costas] | E062 Remo unilateral com halter [Costas] | E063 Remo com barra [Costas] | E074 Remo com elástico [Costas]
-- `good morning sem carga`: E072 Good morning sem carga [Costas] | E183 Good morning sem carga [Pernas]
-- `hiperextensao`: E076 Hiperextensão no chão [Lombar] | E077 Hiperextensão no banco romano [Lombar]
-- `curl`: E083 Curl com barra [Bíceps] | E084 Curl com halteres [Bíceps] | E085 Curl alternado [Bíceps] | E088 Curl inclinado com halteres [Bíceps] | E094 Curl no cabo [Bíceps] | E095 Curl com elástico [Bíceps]
-- `curl inverso`: E089 Curl inverso [Bíceps] | E090 Curl inverso com halteres [Bíceps] | E126 Curl inverso [Antebraço/Pega]
-- `extensao triceps`: E100 Extensão de tríceps no cabo [Tríceps] | E104 Extensão de tríceps deitado com halteres [Tríceps] | E113 Extensão unilateral de tríceps [Tríceps]
-- `triceps testa`: E102 Tríceps testa com barra EZ [Tríceps] | E103 Tríceps testa com halteres [Tríceps]
-- `extensao francesa`: E114 Extensão francesa com halter [Tríceps] | E115 Extensão francesa com barra EZ [Tríceps] | E116 Extensão francesa no cabo [Tríceps]
-- `triceps`: E118 Tríceps no cabo com corda [Tríceps] | E119 Tríceps com elástico [Tríceps]
-- `pallof press`: E148 Pallof press no cabo [Core] | E149 Pallof press com elástico [Core]
-- `agachamento`: E164 Agachamento com barra [Pernas] | E165 Agachamento com mochila [Pernas] | E166 Agachamento com garrafão [Pernas] | E168 Agachamento na máquina Smith [Pernas]
-- `agachamento bulgaro`: E169 Agachamento búlgaro [Pernas] | E170 Agachamento búlgaro com apoio [Pernas]
-- `lunges`: E175 Lunges [Pernas] | E176 Lunges com halteres [Pernas] | E177 Lunges com mochila [Pernas]
-- `hip thrust`: E185 Hip thrust [Pernas] | E186 Hip thrust com apoio [Pernas]
-- `gemeos`: E190 Gémeos em pé [Pernas] | E191 Gémeos sentado [Pernas]
-- `drills guarda`: E271 Drills de guarda [Karate] | E286 Drills de guarda [Jiu-Jitsu]
-- `alongamento peitoral`: E303 Alongamento peitoral [Mobilidade] | E304 Alongamento peitoral na parede [Mobilidade]
-- `alongamento posterior`: E311 Alongamento posterior sentado [Mobilidade] | E312 Alongamento posterior em pé [Mobilidade]
-- `tocar nos pes`: E313 Tocar nos pés sentado [Mobilidade] | E314 Tocar nos pés em pé [Mobilidade]
-- `alongamento gemeos`: E327 Alongamento gémeos [Mobilidade] | E328 Alongamento gémeos na parede [Mobilidade]
+- `encolhimento ombros`: E006 Encolhimento de ombros com halteres [Trapézio] | E007 Encolhimento de ombros com barra [Trapézio] | E008 Encolhimento de ombros na máquina [Trapézio] | E012 Encolhimento de ombros com elástico [Trapézio]
+- `face pull`: E010 Face pull no cabo [Trapézio] | E021 Face pull no cabo [Ombros] | E022 Face pull com elástico [Ombros] | E083 Face pull no cabo [Costas]
+- `press militar`: E013 Press militar com barra em pé [Ombros] | E014 Press militar com halteres [Ombros] | E015 Press militar com barra [Ombros]
+- `elevacao lateral`: E017 Elevação lateral [Ombros] | E041 Elevação lateral no cabo [Ombros] | E042 Elevação lateral com elástico [Ombros]
+- `elevacao frontal`: E018 Elevação frontal [Ombros] | E043 Elevação frontal no cabo [Ombros] | E044 Elevação frontal com elástico [Ombros]
+- `mobilidade ombro`: E024 Mobilidade de ombro com elástico [Ombros] | E341 Mobilidade de ombro [Mobilidade] | E345 Mobilidade de ombro com toalha [Mobilidade]
+- `rotacao externa`: E026 Rotação externa [Ombros] | E027 Rotação externa com elástico [Ombros]
+- `rotacao interna`: E028 Rotação interna [Ombros] | E029 Rotação interna com elástico [Ombros]
+- `press ombros`: E038 Press de ombros na máquina [Ombros] | E039 Press de ombros com kettlebell [Ombros] | E040 Press de ombros com elástico [Ombros]
+- `flexao`: E048 Flexão inclinada [Peito] | E049 Flexão declinada [Peito]
+- `supino`: E052 Supino com barra [Peito] | E053 Supino com halteres [Peito] | E054 Supino inclinado com halteres [Peito] | E055 Supino inclinado com barra [Peito] | E056 Supino declinado com halteres [Peito] | E057 Supino declinado com barra [Peito] | E058 Supino declinado na máquina [Peito]
+- `aberturas inclinadas`: E060 Aberturas inclinadas com halteres [Peito] | E061 Aberturas inclinadas no cabo [Peito] | E062 Aberturas inclinadas com elástico [Peito]
+- `pullover`: E068 Pullover com halter [Peito] | E084 Pullover no cabo [Costas] | E085 Pullover com halter [Costas]
+- `remo`: E075 Remo sentado [Costas] | E076 Remo unilateral com halter [Costas] | E077 Remo com barra [Costas] | E088 Remo com elástico [Costas] | E090 Remo com kettlebell [Costas]
+- `good morning sem carga`: E086 Good morning sem carga [Costas] | E208 Good morning sem carga [Pernas]
+- `hiperextensao`: E093 Hiperextensão no chão [Lombar] | E094 Hiperextensão no banco romano [Lombar]
+- `curl`: E100 Curl com barra [Bíceps] | E101 Curl com halteres [Bíceps] | E102 Curl alternado [Bíceps] | E105 Curl inclinado com halteres [Bíceps] | E111 Curl no cabo [Bíceps] | E112 Curl com elástico [Bíceps] | E117 Curl na máquina [Bíceps]
+- `curl inverso`: E106 Curl inverso [Bíceps] | E107 Curl inverso com halteres [Bíceps] | E145 Curl inverso [Antebraço/Pega]
+- `extensao triceps`: E118 Extensão de tríceps no cabo [Tríceps] | E122 Extensão de tríceps deitado com halteres [Tríceps] | E131 Extensão unilateral de tríceps [Tríceps] | E138 Extensão de tríceps na máquina [Tríceps]
+- `triceps testa`: E120 Tríceps testa com barra EZ [Tríceps] | E121 Tríceps testa com halteres [Tríceps]
+- `extensao francesa`: E132 Extensão francesa com halter [Tríceps] | E133 Extensão francesa com barra EZ [Tríceps] | E134 Extensão francesa no cabo [Tríceps]
+- `triceps`: E136 Tríceps no cabo com corda [Tríceps] | E137 Tríceps com elástico [Tríceps]
+- `crunch`: E164 Crunch [Core] | E183 Crunch no cabo [Core]
+- `pallof press`: E171 Pallof press no cabo [Core] | E172 Pallof press com elástico [Core]
+- `russian twist`: E173 Russian twist [Core] | E184 Russian twist com kettlebell [Core]
+- `agachamento goblet`: E187 Agachamento goblet [Pernas] | E234 Agachamento goblet com kettlebell [Pernas]
+- `agachamento`: E189 Agachamento com barra [Pernas] | E190 Agachamento com mochila [Pernas] | E191 Agachamento com garrafão [Pernas] | E193 Agachamento na máquina Smith [Pernas] | E237 Agachamento com elástico [Pernas]
+- `agachamento sumo`: E192 Agachamento sumo [Pernas] | E238 Agachamento sumo com halteres [Pernas]
+- `agachamento bulgaro`: E194 Agachamento búlgaro [Pernas] | E195 Agachamento búlgaro com apoio [Pernas]
+- `lunges`: E200 Lunges [Pernas] | E201 Lunges com halteres [Pernas] | E202 Lunges com mochila [Pernas]
+- `curl perna`: E206 Curl de perna [Pernas] | E247 Curl de perna com elástico [Pernas]
+- `ponte gluteo`: E209 Ponte de glúteo [Pernas] | E241 Ponte de glúteo com elástico [Pernas]
+- `hip thrust`: E210 Hip thrust [Pernas] | E211 Hip thrust com apoio [Pernas] | E240 Hip thrust com barra [Pernas]
+- `abducao anca`: E212 Abdução de anca [Pernas] | E243 Abdução de anca no cabo [Pernas] | E244 Abdução de anca com elástico [Pernas]
+- `aducao anca`: E213 Adução de anca [Pernas] | E245 Adução de anca no cabo [Pernas]
+- `kickback gluteo`: E214 Kickback de glúteo [Pernas] | E242 Kickback de glúteo no cabo [Pernas]
+- `gemeos`: E215 Gémeos em pé [Pernas] | E216 Gémeos sentado [Pernas] | E249 Gémeos em pé com halteres [Pernas] | E250 Gémeos na máquina [Pernas] | E251 Gémeos sentado com elástico [Pernas]
+- `peso morto`: E232 Peso morto unilateral com halteres [Pernas] | E235 Peso morto com kettlebell [Pernas] | E236 Peso morto com elástico [Pernas]
+- `drills guarda`: E315 Drills de guarda [Karate] | E330 Drills de guarda [Jiu-Jitsu]
+- `alongamento peitoral`: E347 Alongamento peitoral [Mobilidade] | E348 Alongamento peitoral na parede [Mobilidade]
+- `alongamento posterior`: E355 Alongamento posterior sentado [Mobilidade] | E356 Alongamento posterior em pé [Mobilidade]
+- `tocar nos pes`: E357 Tocar nos pés sentado [Mobilidade] | E358 Tocar nos pés em pé [Mobilidade]
+- `alongamento gemeos`: E371 Alongamento gémeos [Mobilidade] | E372 Alongamento gémeos na parede [Mobilidade]
 
 ## Lista completa (um registo por exercício)
 
@@ -341,7 +359,33 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (16): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > lower_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_upper > posterior_deltoid | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > lower_traps | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > mid_traps | Musculação > traps_scapula > lower_traps
 - Objetivo (208 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E011 — Press militar com barra em pé
+### E011 — Encolhimento isométrico de ombros
+
+- Grupo: Trapézio | Área: peso_corporal
+- Padrão de movimento: elevação escapular
+- Nível estimado: iniciante
+- Articulações principais: escápula
+- Músculos (tags): upper_traps
+- Músculos secundários: Trapézio médio, elevador da omoplata e estabilizadores cervicais
+- Equipamento: Peso corporal
+- Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
+- Filtros onde aparece (6): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > upper_traps | Musculação > back > back_thickness | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > upper_traps
+- Objetivo (105 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E012 — Encolhimento de ombros com elástico
+
+- Grupo: Trapézio | Área: elastico
+- Padrão de movimento: elevação escapular
+- Nível estimado: intermédio
+- Articulações principais: escápula
+- Músculos (tags): upper_traps
+- Músculos secundários: Trapézio superior, elevador da omoplata e pega
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (5): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > upper_traps | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > upper_traps
+- Objetivo (102 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E013 — Press militar com barra em pé
 
 - Grupo: Ombros | Área: barra
 - Padrão de movimento: empurrar vertical
@@ -354,7 +398,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
 - Objetivo (158 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E012 — Press militar com halteres
+### E014 — Press militar com halteres
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: empurrar vertical
@@ -367,7 +411,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E013 — Press militar com barra
+### E015 — Press militar com barra
 
 - Grupo: Ombros | Área: barra
 - Padrão de movimento: empurrar vertical
@@ -380,7 +424,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
 - Objetivo (138 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E014 — Arnold press
+### E016 — Arnold press
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: empurrar vertical
@@ -393,7 +437,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
 - Objetivo (127 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E015 — Elevação lateral
+### E017 — Elevação lateral
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: elevação de ombro (isolamento)
@@ -406,7 +450,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Musculação > shoulders > shoulders_complete | Musculação > shoulders > lateral_deltoid
 - Objetivo (94 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E016 — Elevação frontal
+### E018 — Elevação frontal
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: elevação de ombro (isolamento)
@@ -419,7 +463,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid
 - Objetivo (126 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E017 — Elevação posterior
+### E019 — Elevação posterior
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: elevação de ombro (isolamento)
@@ -432,7 +476,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > posterior_deltoid | Musculação > shoulders > scapular_stability
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E018 — Reverse fly
+### E020 — Reverse fly
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -445,7 +489,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > posterior_deltoid | Musculação > shoulders > scapular_stability
 - Objetivo (130 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E019 — Face pull no cabo
+### E021 — Face pull no cabo
 
 - Grupo: Ombros | Área: cabo
 - Padrão de movimento: puxar horizontal
@@ -458,7 +502,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (18): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_upper > posterior_deltoid | Musculação > back > back_upper > scapular_stabilizers | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > shoulders > shoulders_complete | Musculação > shoulders > posterior_deltoid | Musculação > shoulders > scapular_stability | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > mid_traps | Musculação > traps_scapula > scapular_stability
 - Objetivo (206 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E020 — Face pull com elástico
+### E022 — Face pull com elástico
 
 - Grupo: Ombros | Área: elastico
 - Padrão de movimento: puxar horizontal
@@ -471,7 +515,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (18): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_upper > posterior_deltoid | Musculação > back > back_upper > scapular_stabilizers | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > shoulders > shoulders_complete | Musculação > shoulders > posterior_deltoid | Musculação > shoulders > scapular_stability | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > mid_traps | Musculação > traps_scapula > scapular_stability
 - Objetivo (162 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E021 — Pull-apart
+### E023 — Pull-apart
 
 - Grupo: Ombros | Área: elastico
 - Padrão de movimento: puxar horizontal
@@ -484,7 +528,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > shoulders > shoulders_complete | Musculação > shoulders > posterior_deltoid | Musculação > shoulders > scapular_stability | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > mid_traps | Musculação > traps_scapula > scapular_stability
 - Objetivo (146 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E022 — Mobilidade de ombro com elástico
+### E024 — Mobilidade de ombro com elástico
 
 - Grupo: Ombros | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -497,7 +541,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > external_rotators | Musculação > shoulders > scapular_stability
 - Objetivo (129 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E023 — Wall slides
+### E025 — Wall slides
 
 - Grupo: Ombros | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -510,7 +554,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Musculação > shoulders > shoulders_complete | Musculação > shoulders > scapular_stability
 - Objetivo (155 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E024 — Rotação externa
+### E026 — Rotação externa
 
 - Grupo: Ombros | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -523,7 +567,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > external_rotators | Musculação > shoulders > scapular_stability
 - Objetivo (135 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E025 — Rotação externa com elástico
+### E027 — Rotação externa com elástico
 
 - Grupo: Ombros | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -536,7 +580,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > external_rotators | Musculação > shoulders > scapular_stability
 - Objetivo (128 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E026 — Rotação interna
+### E028 — Rotação interna
 
 - Grupo: Ombros | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -549,7 +593,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > internal_rotators | Musculação > shoulders > scapular_stability
 - Objetivo (149 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E027 — Rotação interna com elástico
+### E029 — Rotação interna com elástico
 
 - Grupo: Ombros | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -562,7 +606,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > internal_rotators | Musculação > shoulders > scapular_stability
 - Objetivo (137 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E028 — Y raise
+### E030 — Y raise
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -575,7 +619,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > shoulders > shoulders_complete | Musculação > shoulders > scapular_stability | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > lower_traps | Musculação > traps_scapula > scapular_stability
 - Objetivo (145 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E029 — W raise
+### E031 — W raise
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -588,20 +632,20 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > external_rotators | Musculação > shoulders > scapular_stability | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > mid_traps | Musculação > traps_scapula > scapular_stability
 - Objetivo (151 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E030 — Scapular push-up
+### E032 — Scapular push-up
 
 - Grupo: Ombros | Área: peso_corporal
 - Padrão de movimento: outro / técnico
 - Nível estimado: intermédio
 - Articulações principais: várias
-- Músculos (tags): serratus_anterior, scapular_stabilizers
+- Músculos (tags): serratus_anterior, scapular_stabilizers, pectoralis_minor
 - Músculos secundários: Trapézio, serrátil anterior, manguito rotador e core
 - Equipamento: Peso corporal
 - Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
-- Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > serratus_anterior | Musculação > shoulders > shoulders_complete | Musculação > shoulders > scapular_stability
+- Filtros onde aparece (5): Musculação > chest > chest_complete | Musculação > chest > pectoralis_minor | Musculação > chest > serratus_anterior | Musculação > shoulders > shoulders_complete | Musculação > shoulders > scapular_stability
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E031 — Pike push-up
+### E033 — Pike push-up
 
 - Grupo: Ombros | Área: peso_corporal
 - Padrão de movimento: empurrar vertical
@@ -614,7 +658,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
 - Objetivo (83 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E032 — Elevação no plano da omoplata
+### E034 — Elevação no plano da omoplata
 
 - Grupo: Ombros | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -627,7 +671,150 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > shoulders > shoulders_complete | Musculação > shoulders > lateral_deltoid | Musculação > shoulders > rotator_cuff | Musculação > shoulders > external_rotators | Musculação > shoulders > scapular_stability
 - Objetivo (182 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E033 — Flexão clássica
+### E035 — Elevação Y-T-W deitado no chão
+
+- Grupo: Ombros | Área: peso_corporal
+- Padrão de movimento: outro / técnico
+- Nível estimado: intermédio
+- Articulações principais: várias
+- Músculos (tags): posterior_deltoid, mid_traps, lower_traps, scapular_stabilizers, rhomboids
+- Músculos secundários: Deltoide posterior, trapézio médio e inferior, romboides e estabilizadores da escápula
+- Equipamento: Peso corporal
+- Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
+- Filtros onde aparece (21): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > lower_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_upper > posterior_deltoid | Musculação > back > back_upper > scapular_stabilizers | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > lower_traps | Musculação > shoulders > shoulders_complete | Musculação > shoulders > posterior_deltoid | Musculação > shoulders > scapular_stability | Musculação > traps_scapula > traps_complete | Musculação > traps_scapula > mid_traps | Musculação > traps_scapula > lower_traps | Musculação > traps_scapula > scapular_stability
+- Objetivo (175 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E036 — Rotação externa isométrica na parede
+
+- Grupo: Ombros | Área: peso_corporal
+- Padrão de movimento: outro / técnico
+- Nível estimado: iniciante
+- Articulações principais: várias
+- Músculos (tags): external_rotators, teres_minor, scapular_stabilizers
+- Músculos secundários: Infraespinhoso, redondo menor e estabilizadores escapulares
+- Equipamento: Peso corporal, parede
+- Locais possíveis: Casa sem equipamento | Casa equipada | Dojo / tatami | Ginásio
+- Filtros onde aparece (9): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > scapular_stabilizers | Musculação > back > back_mid > teres_minor | Musculação > back > back_thickness | Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > external_rotators | Musculação > shoulders > scapular_stability
+- Objetivo (204 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E037 — Rotação interna isométrica na parede
+
+- Grupo: Ombros | Área: peso_corporal
+- Padrão de movimento: outro / técnico
+- Nível estimado: iniciante
+- Articulações principais: várias
+- Músculos (tags): internal_rotators, scapular_stabilizers
+- Músculos secundários: Subescapular, peito e estabilizadores escapulares
+- Equipamento: Peso corporal, parede
+- Locais possíveis: Casa sem equipamento | Casa equipada | Dojo / tatami | Ginásio
+- Filtros onde aparece (4): Musculação > shoulders > shoulders_complete | Musculação > shoulders > rotator_cuff | Musculação > shoulders > internal_rotators | Musculação > shoulders > scapular_stability
+- Objetivo (145 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E038 — Press de ombros na máquina
+
+- Grupo: Ombros | Área: maquina
+- Padrão de movimento: empurrar vertical
+- Nível estimado: intermédio
+- Articulações principais: ombro, cotovelo, escápula
+- Músculos (tags): anterior_deltoid, lateral_deltoid, deltoid_lateral
+- Músculos secundários: Deltoide, tríceps, trapézio e serrátil anterior
+- Equipamento: Máquina
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
+- Objetivo (183 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E039 — Press de ombros com kettlebell
+
+- Grupo: Ombros | Área: kettlebell
+- Padrão de movimento: empurrar vertical
+- Nível estimado: intermédio
+- Articulações principais: ombro, cotovelo, escápula
+- Músculos (tags): anterior_deltoid, lateral_deltoid, deltoid_lateral
+- Músculos secundários: Deltoide, tríceps, trapézio, core e pega
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
+- Objetivo (198 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E040 — Press de ombros com elástico
+
+- Grupo: Ombros | Área: elastico
+- Padrão de movimento: empurrar vertical
+- Nível estimado: intermédio
+- Articulações principais: ombro, cotovelo, escápula
+- Músculos (tags): anterior_deltoid, lateral_deltoid, deltoid_lateral
+- Músculos secundários: Deltoide, tríceps, trapézio e core
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (3): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid | Musculação > shoulders > lateral_deltoid
+- Objetivo (172 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E041 — Elevação lateral no cabo
+
+- Grupo: Ombros | Área: cabo
+- Padrão de movimento: elevação de ombro (isolamento)
+- Nível estimado: intermédio
+- Articulações principais: ombro
+- Músculos (tags): lateral_deltoid, deltoid_lateral
+- Músculos secundários: Deltoide lateral, trapézio e estabilizadores da escápula
+- Equipamento: Cabo / polia
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (2): Musculação > shoulders > shoulders_complete | Musculação > shoulders > lateral_deltoid
+- Objetivo (172 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E042 — Elevação lateral com elástico
+
+- Grupo: Ombros | Área: elastico
+- Padrão de movimento: elevação de ombro (isolamento)
+- Nível estimado: intermédio
+- Articulações principais: ombro
+- Músculos (tags): lateral_deltoid, deltoid_lateral
+- Músculos secundários: Deltoide lateral, trapézio e estabilizadores da escápula
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (2): Musculação > shoulders > shoulders_complete | Musculação > shoulders > lateral_deltoid
+- Objetivo (124 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E043 — Elevação frontal no cabo
+
+- Grupo: Ombros | Área: cabo
+- Padrão de movimento: elevação de ombro (isolamento)
+- Nível estimado: intermédio
+- Articulações principais: ombro
+- Músculos (tags): anterior_deltoid
+- Músculos secundários: Deltoide anterior, peito superior e core
+- Equipamento: Cabo / polia
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (2): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid
+- Objetivo (108 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E044 — Elevação frontal com elástico
+
+- Grupo: Ombros | Área: elastico
+- Padrão de movimento: elevação de ombro (isolamento)
+- Nível estimado: intermédio
+- Articulações principais: ombro
+- Músculos (tags): anterior_deltoid
+- Músculos secundários: Deltoide anterior, peito superior e core
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (2): Musculação > shoulders > shoulders_complete | Musculação > shoulders > anterior_deltoid
+- Objetivo (99 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E045 — Halo com kettlebell
+
+- Grupo: Ombros | Área: kettlebell
+- Padrão de movimento: outro / técnico
+- Nível estimado: intermédio
+- Articulações principais: várias
+- Músculos (tags): scapular_stabilizers, external_rotators, lateral_deltoid
+- Músculos secundários: Deltoide, coifa dos rotadores, trapézio, core e pega
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (5): Musculação > shoulders > shoulders_complete | Musculação > shoulders > lateral_deltoid | Musculação > shoulders > rotator_cuff | Musculação > shoulders > external_rotators | Musculação > shoulders > scapular_stability
+- Objetivo (112 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E046 — Flexão clássica
 
 - Grupo: Peito | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -640,7 +827,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest | Musculação > chest > serratus_anterior
 - Objetivo (127 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E034 — Flexão com joelhos apoiados
+### E047 — Flexão com joelhos apoiados
 
 - Grupo: Peito | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -653,7 +840,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest | Musculação > chest > serratus_anterior
 - Objetivo (115 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E035 — Flexão inclinada
+### E048 — Flexão inclinada
 
 - Grupo: Peito | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -666,7 +853,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > mid_chest | Musculação > chest > lower_chest | Musculação > chest > serratus_anterior
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E036 — Flexão declinada
+### E049 — Flexão declinada
 
 - Grupo: Peito | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -679,7 +866,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > serratus_anterior
 - Objetivo (114 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E037 — Flexão aberta
+### E050 — Flexão aberta
 
 - Grupo: Peito | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -692,7 +879,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest | Musculação > chest > serratus_anterior
 - Objetivo (79 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E038 — Flexão arqueiro
+### E051 — Flexão arqueiro
 
 - Grupo: Peito | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -705,7 +892,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest | Musculação > chest > serratus_anterior
 - Objetivo (141 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E039 — Supino com barra
+### E052 — Supino com barra
 
 - Grupo: Peito | Área: barra
 - Padrão de movimento: empurrar horizontal
@@ -718,7 +905,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (121 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E040 — Supino com halteres
+### E053 — Supino com halteres
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -731,7 +918,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (136 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E041 — Supino inclinado com halteres
+### E054 — Supino inclinado com halteres
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -744,7 +931,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > serratus_anterior
 - Objetivo (118 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E042 — Supino inclinado com barra
+### E055 — Supino inclinado com barra
 
 - Grupo: Peito | Área: barra
 - Padrão de movimento: empurrar horizontal
@@ -757,7 +944,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > serratus_anterior
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E043 — Supino declinado com halteres
+### E056 — Supino declinado com halteres
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -770,7 +957,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Musculação > chest > chest_complete | Musculação > chest > lower_chest
 - Objetivo (99 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E044 — Supino declinado com barra
+### E057 — Supino declinado com barra
 
 - Grupo: Peito | Área: barra
 - Padrão de movimento: empurrar horizontal
@@ -783,7 +970,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Musculação > chest > chest_complete | Musculação > chest > lower_chest
 - Objetivo (91 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E045 — Supino declinado na máquina
+### E058 — Supino declinado na máquina
 
 - Grupo: Peito | Área: maquina
 - Padrão de movimento: empurrar horizontal
@@ -796,7 +983,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Musculação > chest > chest_complete | Musculação > chest > lower_chest
 - Objetivo (124 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E046 — Aberturas com halteres
+### E059 — Aberturas com halteres
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -809,7 +996,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (118 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E047 — Aberturas inclinadas com halteres
+### E060 — Aberturas inclinadas com halteres
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -822,7 +1009,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (113 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E048 — Aberturas inclinadas no cabo
+### E061 — Aberturas inclinadas no cabo
 
 - Grupo: Peito | Área: cabo
 - Padrão de movimento: outro / técnico
@@ -835,7 +1022,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (120 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E049 — Aberturas inclinadas com elástico
+### E062 — Aberturas inclinadas com elástico
 
 - Grupo: Peito | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -848,7 +1035,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (95 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E050 — Squeeze press
+### E063 — Squeeze press
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -861,7 +1048,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (86 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E051 — Chest press
+### E064 — Chest press
 
 - Grupo: Peito | Área: maquina
 - Padrão de movimento: empurrar horizontal
@@ -874,7 +1061,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
 - Objetivo (111 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E052 — Dips para peito em paralelas
+### E065 — Dips para peito em paralelas
 
 - Grupo: Peito | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -887,7 +1074,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > chest > chest_complete | Musculação > chest > lower_chest | Musculação > chest > pectoralis_minor
 - Objetivo (75 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E053 — Dips assistidos para peito na máquina
+### E066 — Dips assistidos para peito na máquina
 
 - Grupo: Peito | Área: maquina
 - Padrão de movimento: empurrar horizontal
@@ -900,7 +1087,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > chest > chest_complete | Musculação > chest > lower_chest | Musculação > chest > pectoralis_minor
 - Objetivo (133 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E054 — Crossover no cabo
+### E067 — Crossover no cabo
 
 - Grupo: Peito | Área: cabo
 - Padrão de movimento: empurrar horizontal
@@ -913,7 +1100,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > mid_chest | Musculação > chest > lower_chest | Musculação > chest > pectoralis_minor
 - Objetivo (84 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E055 — Pullover com halter
+### E068 — Pullover com halter
 
 - Grupo: Peito | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -926,7 +1113,20 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Musculação > chest > chest_complete | Musculação > chest > mid_chest | Musculação > chest > serratus_anterior
 - Objetivo (186 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E056 — Puxada alta
+### E069 — Press de peito com elástico
+
+- Grupo: Peito | Área: elastico
+- Padrão de movimento: empurrar horizontal
+- Nível estimado: intermédio
+- Articulações principais: ombro, cotovelo, escápula
+- Músculos (tags): mid_chest, upper_chest, lower_chest
+- Músculos secundários: Peito, deltoide anterior, tríceps e serrátil anterior
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (4): Musculação > chest > chest_complete | Musculação > chest > upper_chest | Musculação > chest > mid_chest | Musculação > chest > lower_chest
+- Objetivo (152 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E070 — Puxada alta
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: puxar vertical
@@ -939,7 +1139,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_width > vertical_pulls | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E057 — Puxada alta pega aberta
+### E071 — Puxada alta pega aberta
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: puxar vertical
@@ -952,7 +1152,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_width > vertical_pulls | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids
 - Objetivo (97 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E058 — Puxada alta pega neutra
+### E072 — Puxada alta pega neutra
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: puxar vertical
@@ -965,7 +1165,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_width > vertical_pulls | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E059 — Puxada alta pega fechada
+### E073 — Puxada alta pega fechada
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: puxar vertical
@@ -978,7 +1178,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_width > vertical_pulls | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids
 - Objetivo (134 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E060 — Remo baixo no cabo
+### E074 — Remo baixo no cabo
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: puxar horizontal
@@ -991,7 +1191,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
 - Objetivo (147 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E061 — Remo sentado
+### E075 — Remo sentado
 
 - Grupo: Costas | Área: maquina
 - Padrão de movimento: puxar horizontal
@@ -1004,7 +1204,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E062 — Remo unilateral com halter
+### E076 — Remo unilateral com halter
 
 - Grupo: Costas | Área: halteres
 - Padrão de movimento: puxar horizontal
@@ -1017,7 +1217,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E063 — Remo com barra
+### E077 — Remo com barra
 
 - Grupo: Costas | Área: barra
 - Padrão de movimento: puxar horizontal
@@ -1030,7 +1230,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
 - Objetivo (130 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E064 — Remo invertido
+### E078 — Remo invertido
 
 - Grupo: Costas | Área: peso_corporal
 - Padrão de movimento: puxar horizontal
@@ -1043,7 +1243,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
 - Objetivo (128 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E065 — Remo invertido em mesa resistente
+### E079 — Remo invertido em mesa resistente
 
 - Grupo: Costas | Área: peso_corporal
 - Padrão de movimento: puxar horizontal
@@ -1056,7 +1256,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
 - Objetivo (130 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E066 — Pull-up
+### E080 — Pull-up
 
 - Grupo: Costas | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -1069,7 +1269,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_width > vertical_pulls | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids
 - Objetivo (148 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E067 — Scapular pull-up
+### E081 — Scapular pull-up
 
 - Grupo: Costas | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -1082,7 +1282,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > lower_traps | Musculação > back > back_upper > scapular_stabilizers | Musculação > back > back_mid | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > lower_traps
 - Objetivo (150 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E068 — Dead hang escapular
+### E082 — Dead hang escapular
 
 - Grupo: Costas | Área: isometria
 - Padrão de movimento: puxar vertical
@@ -1095,7 +1295,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > lower_traps | Musculação > back > back_upper > scapular_stabilizers | Musculação > back > back_mid | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > lower_traps
 - Objetivo (153 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E069 — Face pull no cabo
+### E083 — Face pull no cabo
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: puxar horizontal
@@ -1108,7 +1308,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_upper > posterior_deltoid | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > teres_minor | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps
 - Objetivo (206 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E070 — Pullover no cabo
+### E084 — Pullover no cabo
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: empurrar horizontal
@@ -1121,7 +1321,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > back > back_complete | Musculação > back > back_mid | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_thickness
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E071 — Pullover com halter
+### E085 — Pullover com halter
 
 - Grupo: Costas | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -1134,7 +1334,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > back > back_complete | Musculação > back > back_mid | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_thickness
 - Objetivo (187 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E072 — Good morning sem carga
+### E086 — Good morning sem carga
 
 - Grupo: Costas | Área: peso_corporal
 - Padrão de movimento: dobradiça de anca
@@ -1147,7 +1347,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors
 - Objetivo (205 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E073 — Puxada com braços esticados
+### E087 — Puxada com braços esticados
 
 - Grupo: Costas | Área: cabo
 - Padrão de movimento: puxar vertical
@@ -1160,7 +1360,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > back > back_complete | Musculação > back > back_mid | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_thickness
 - Objetivo (159 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E074 — Remo com elástico
+### E088 — Remo com elástico
 
 - Grupo: Costas | Área: elastico
 - Padrão de movimento: puxar horizontal
@@ -1173,7 +1373,46 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
 - Objetivo (130 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E075 — Hiperextensão lombar
+### E089 — Remo curvado com halteres
+
+- Grupo: Costas | Área: halteres
+- Padrão de movimento: puxar horizontal
+- Nível estimado: intermédio
+- Articulações principais: ombro, cotovelo, escápula
+- Músculos (tags): rhomboids, mid_traps, lats, horizontal_rows
+- Músculos secundários: Dorsal, romboides, trapézio médio, bíceps e lombar
+- Equipamento: Halteres
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (15): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_lower | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
+- Objetivo (122 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E090 — Remo com kettlebell
+
+- Grupo: Costas | Área: kettlebell
+- Padrão de movimento: puxar horizontal
+- Nível estimado: intermédio
+- Articulações principais: ombro, cotovelo, escápula
+- Músculos (tags): rhomboids, mid_traps, lats, horizontal_rows
+- Músculos secundários: Dorsal, romboides, trapézio médio, bíceps e pega
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (14): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > mid_traps | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > mid_traps | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids | Musculação > back > back_thickness > mid_traps | Musculação > back > back_thickness > horizontal_rows
+- Objetivo (193 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E091 — Puxada ajoelhada com elástico
+
+- Grupo: Costas | Área: elastico
+- Padrão de movimento: puxar vertical
+- Nível estimado: intermédio
+- Articulações principais: ombro, cotovelo, escápula
+- Músculos (tags): lats, teres_major, vertical_pulls, rhomboids
+- Músculos secundários: Dorsal, redondo maior, romboides, bíceps e pega
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (13): Musculação > back > back_complete | Musculação > back > back_upper | Musculação > back > back_upper > rhomboids | Musculação > back > back_mid | Musculação > back > back_mid > rhomboids | Musculação > back > back_mid > teres_major | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > teres_major | Musculação > back > back_width > vertical_pulls | Musculação > back > back_thickness | Musculação > back > back_thickness > rhomboids
+- Objetivo (122 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E092 — Hiperextensão lombar
 
 - Grupo: Lombar | Área: maquina
 - Padrão de movimento: dobradiça de anca
@@ -1186,7 +1425,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (159 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E076 — Hiperextensão no chão
+### E093 — Hiperextensão no chão
 
 - Grupo: Lombar | Área: peso_corporal
 - Padrão de movimento: dobradiça de anca
@@ -1199,7 +1438,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (156 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E077 — Hiperextensão no banco romano
+### E094 — Hiperextensão no banco romano
 
 - Grupo: Lombar | Área: maquina
 - Padrão de movimento: dobradiça de anca
@@ -1212,7 +1451,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (156 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E078 — Superman isométrico
+### E095 — Superman isométrico
 
 - Grupo: Lombar | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -1225,7 +1464,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (152 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E079 — Extensão lombar quadrupede
+### E096 — Extensão lombar quadrupede
 
 - Grupo: Lombar | Área: peso_corporal
 - Padrão de movimento: extensão de cotovelo
@@ -1238,7 +1477,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (123 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E080 — Good morning com barra
+### E097 — Good morning com barra
 
 - Grupo: Lombar | Área: barra
 - Padrão de movimento: dobradiça de anca
@@ -1251,7 +1490,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (162 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E081 — Good morning leve isométrico
+### E098 — Good morning leve isométrico
 
 - Grupo: Lombar | Área: barra
 - Padrão de movimento: dobradiça de anca
@@ -1264,7 +1503,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (100 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E082 — Extensão lombar com elástico
+### E099 — Extensão lombar com elástico
 
 - Grupo: Lombar | Área: elastico
 - Padrão de movimento: extensão de cotovelo
@@ -1277,7 +1516,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > back > back_complete | Musculação > back > back_lower | Musculação > back > back_lower > erectors | Musculação > back > back_lower > lumbar | Musculação > back > back_lower > quadratus_lumborum | Musculação > back > back_lower > lumbar_stability | Musculação > back > back_thickness | Musculação > core > core_complete | Musculação > core > lumbar_zone | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > lumbar_zone > quadratus_lumborum
 - Objetivo (125 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E083 — Curl com barra
+### E100 — Curl com barra
 
 - Grupo: Bíceps | Área: barra
 - Padrão de movimento: flexão de cotovelo
@@ -1290,7 +1529,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E084 — Curl com halteres
+### E101 — Curl com halteres
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1303,7 +1542,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (148 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E085 — Curl alternado
+### E102 — Curl alternado
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1316,7 +1555,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (148 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E086 — Curl martelo
+### E103 — Curl martelo
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1329,7 +1568,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis | Musculação > arms > upper_arm > brachioradialis
 - Objetivo (110 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E087 — Curl concentrado
+### E104 — Curl concentrado
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1342,7 +1581,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (137 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E088 — Curl inclinado com halteres
+### E105 — Curl inclinado com halteres
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1355,7 +1594,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (80 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E089 — Curl inverso
+### E106 — Curl inverso
 
 - Grupo: Bíceps | Área: barra
 - Padrão de movimento: flexão de cotovelo
@@ -1368,7 +1607,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > brachialis | Musculação > arms > upper_arm > brachioradialis
 - Objetivo (137 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E090 — Curl inverso com halteres
+### E107 — Curl inverso com halteres
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1381,7 +1620,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > brachialis | Musculação > arms > upper_arm > brachioradialis
 - Objetivo (93 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E091 — Curl Zottman
+### E108 — Curl Zottman
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1394,7 +1633,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis | Musculação > arms > upper_arm > brachioradialis
 - Objetivo (94 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E092 — Curl cruzado no corpo
+### E109 — Curl cruzado no corpo
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1407,7 +1646,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis | Musculação > arms > upper_arm > brachioradialis
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E093 — Curl spider
+### E110 — Curl spider
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1420,7 +1659,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (135 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E094 — Curl no cabo
+### E111 — Curl no cabo
 
 - Grupo: Bíceps | Área: cabo
 - Padrão de movimento: flexão de cotovelo
@@ -1433,7 +1672,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E095 — Curl com elástico
+### E112 — Curl com elástico
 
 - Grupo: Bíceps | Área: elastico
 - Padrão de movimento: flexão de cotovelo
@@ -1446,7 +1685,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (163 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E096 — Curl 21 com halteres
+### E113 — Curl 21 com halteres
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1459,7 +1698,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E097 — Curl arrastado com halteres
+### E114 — Curl arrastado com halteres
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1472,7 +1711,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (146 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E098 — Curl isométrico
+### E115 — Curl isométrico
 
 - Grupo: Bíceps | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1485,7 +1724,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E099 — Chin-up
+### E116 — Chin-up
 
 - Grupo: Bíceps | Área: peso_corporal
 - Padrão de movimento: puxar vertical
@@ -1498,7 +1737,20 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (11): Musculação > back > back_complete | Musculação > back > back_mid | Musculação > back > back_mid > latissimus_dorsi | Musculação > back > back_width | Musculação > back > back_width > latissimus_dorsi | Musculação > back > back_width > vertical_pulls | Musculação > back > back_thickness | Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
 - Objetivo (137 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E100 — Extensão de tríceps no cabo
+### E117 — Curl na máquina
+
+- Grupo: Bíceps | Área: maquina
+- Padrão de movimento: flexão de cotovelo
+- Nível estimado: intermédio
+- Articulações principais: cotovelo
+- Músculos (tags): biceps, brachialis
+- Músculos secundários: Bíceps, braquial, antebraços e pega
+- Equipamento: Máquina
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (4): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > biceps_brachii | Musculação > arms > upper_arm > brachialis
+- Objetivo (110 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E118 — Extensão de tríceps no cabo
 
 - Grupo: Tríceps | Área: cabo
 - Padrão de movimento: extensão de cotovelo
@@ -1511,7 +1763,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E101 — Extensão acima da cabeça com halter
+### E119 — Extensão acima da cabeça com halter
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: extensão de cotovelo
@@ -1524,7 +1776,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (114 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E102 — Tríceps testa com barra EZ
+### E120 — Tríceps testa com barra EZ
 
 - Grupo: Tríceps | Área: barra
 - Padrão de movimento: extensão de cotovelo
@@ -1537,7 +1789,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (128 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E103 — Tríceps testa com halteres
+### E121 — Tríceps testa com halteres
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: extensão de cotovelo
@@ -1550,7 +1802,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E104 — Extensão de tríceps deitado com halteres
+### E122 — Extensão de tríceps deitado com halteres
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: extensão de cotovelo
@@ -1563,7 +1815,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (90 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E105 — Supino fechado
+### E123 — Supino fechado
 
 - Grupo: Tríceps | Área: barra
 - Padrão de movimento: empurrar horizontal
@@ -1576,7 +1828,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (128 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E106 — Press fechado com halteres
+### E124 — Press fechado com halteres
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -1589,7 +1841,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (122 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E107 — Tate press
+### E125 — Tate press
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: empurrar horizontal
@@ -1602,7 +1854,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (100 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E108 — Fundos entre apoios
+### E126 — Fundos entre apoios
 
 - Grupo: Tríceps | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -1615,7 +1867,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (120 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E109 — Flexão fechada
+### E127 — Flexão fechada
 
 - Grupo: Tríceps | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -1628,7 +1880,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E110 — Flexão diamante
+### E128 — Flexão diamante
 
 - Grupo: Tríceps | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -1641,7 +1893,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (106 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E111 — Kickback de tríceps
+### E129 — Kickback de tríceps
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: extensão de cotovelo
@@ -1654,7 +1906,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (100 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E112 — Kickback no cabo
+### E130 — Kickback no cabo
 
 - Grupo: Tríceps | Área: cabo
 - Padrão de movimento: extensão de cotovelo
@@ -1667,7 +1919,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (117 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E113 — Extensão unilateral de tríceps
+### E131 — Extensão unilateral de tríceps
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: extensão de cotovelo
@@ -1680,7 +1932,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (114 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E114 — Extensão francesa com halter
+### E132 — Extensão francesa com halter
 
 - Grupo: Tríceps | Área: halteres
 - Padrão de movimento: extensão de cotovelo
@@ -1693,7 +1945,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (123 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E115 — Extensão francesa com barra EZ
+### E133 — Extensão francesa com barra EZ
 
 - Grupo: Tríceps | Área: barra
 - Padrão de movimento: extensão de cotovelo
@@ -1706,7 +1958,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (126 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E116 — Extensão francesa no cabo
+### E134 — Extensão francesa no cabo
 
 - Grupo: Tríceps | Área: cabo
 - Padrão de movimento: extensão de cotovelo
@@ -1719,7 +1971,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (116 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E117 — Dips para tríceps
+### E135 — Dips para tríceps
 
 - Grupo: Tríceps | Área: peso_corporal
 - Padrão de movimento: empurrar horizontal
@@ -1732,7 +1984,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (100 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E118 — Tríceps no cabo com corda
+### E136 — Tríceps no cabo com corda
 
 - Grupo: Tríceps | Área: cabo
 - Padrão de movimento: outro / técnico
@@ -1745,7 +1997,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (124 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E119 — Tríceps com elástico
+### E137 — Tríceps com elástico
 
 - Grupo: Tríceps | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -1758,7 +2010,20 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
 - Objetivo (117 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E120 — Wrist curl
+### E138 — Extensão de tríceps na máquina
+
+- Grupo: Tríceps | Área: maquina
+- Padrão de movimento: extensão de cotovelo
+- Nível estimado: intermédio
+- Articulações principais: cotovelo
+- Músculos (tags): triceps_long, triceps_lateral, triceps_medial
+- Músculos secundários: Tríceps, antebraços e estabilidade do cotovelo
+- Equipamento: Máquina
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (6): Musculação > arms > arms_complete | Musculação > arms > upper_arm | Musculação > arms > upper_arm > triceps | Musculação > arms > upper_arm > triceps_long | Musculação > arms > upper_arm > triceps_lateral | Musculação > arms > upper_arm > triceps_medial
+- Objetivo (112 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E139 — Wrist curl
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1771,7 +2036,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (152 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E121 — Reverse wrist curl
+### E140 — Reverse wrist curl
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1784,7 +2049,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > forearm_extensors | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > forearm_extensors | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E122 — Farmer walk
+### E141 — Farmer walk
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: transporte
@@ -1797,7 +2062,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip
 - Objetivo (188 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E123 — Farmer hold
+### E142 — Farmer hold
 
 - Grupo: Antebraço/Pega | Área: isometria
 - Padrão de movimento: transporte
@@ -1810,7 +2075,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip
 - Objetivo (155 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E124 — Dead hang
+### E143 — Dead hang
 
 - Grupo: Antebraço/Pega | Área: isometria
 - Padrão de movimento: puxar vertical
@@ -1823,7 +2088,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E125 — Aperto isométrico
+### E144 — Aperto isométrico
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: pega / punho
@@ -1836,7 +2101,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > fingers | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > fingers | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip
 - Objetivo (83 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E126 — Curl inverso
+### E145 — Curl inverso
 
 - Grupo: Antebraço/Pega | Área: barra
 - Padrão de movimento: flexão de cotovelo
@@ -1849,7 +2114,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > arms > arms_complete | Musculação > arms > upper_arm > brachialis | Musculação > arms > upper_arm > brachioradialis | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_extensors | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_extensors | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E127 — Pronação com halter
+### E146 — Pronação com halter
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -1862,7 +2127,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > pronators | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > pronators | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E128 — Supinação com halter
+### E147 — Supinação com halter
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -1875,7 +2140,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > supinators | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > supinators | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E129 — Pinch grip
+### E148 — Pinch grip
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: pega / punho
@@ -1888,7 +2153,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > fingers | Musculação > arms > forearm_hand > pinch_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > fingers | Musculação > forearm_hand > pinch_grip | Musculação > forearm_hand > general_grip
 - Objetivo (152 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E130 — Plate hold
+### E149 — Plate hold
 
 - Grupo: Antebraço/Pega | Área: isometria
 - Padrão de movimento: outro / técnico
@@ -1901,7 +2166,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > fingers | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > pinch_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > fingers | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > pinch_grip | Musculação > forearm_hand > general_grip
 - Objetivo (136 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E131 — Towel grip hold
+### E150 — Towel grip hold
 
 - Grupo: Antebraço/Pega | Área: isometria
 - Padrão de movimento: outro / técnico
@@ -1914,7 +2179,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (12): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > fingers | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > fingers | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip
 - Objetivo (151 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E132 — Finger curls
+### E151 — Finger curls
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: flexão de cotovelo
@@ -1927,7 +2192,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > fingers | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > fingers | Musculação > forearm_hand > general_grip
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E133 — Extensão de dedos com elástico
+### E152 — Extensão de dedos com elástico
 
 - Grupo: Antebraço/Pega | Área: elastico
 - Padrão de movimento: pega / punho
@@ -1940,7 +2205,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_extensors | Musculação > arms > forearm_hand > fingers | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_extensors | Musculação > forearm_hand > fingers | Musculação > forearm_hand > general_grip
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E134 — Desvio radial com halter
+### E153 — Desvio radial com halter
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -1953,7 +2218,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (74 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E135 — Desvio ulnar com halter
+### E154 — Desvio ulnar com halter
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -1966,7 +2231,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (101 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E136 — Suitcase carry
+### E155 — Suitcase carry
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: transporte
@@ -1979,7 +2244,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (16): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip | Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_lateral_flexion | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (130 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E137 — Hold estático com halteres
+### E156 — Hold estático com halteres
 
 - Grupo: Antebraço/Pega | Área: isometria
 - Padrão de movimento: outro / técnico
@@ -1992,7 +2257,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip
 - Objetivo (155 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E138 — Rotação controlada com halter leve
+### E157 — Rotação controlada com halter leve
 
 - Grupo: Antebraço/Pega | Área: halteres
 - Padrão de movimento: outro / técnico
@@ -2005,7 +2270,59 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
 - Objetivo (91 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E139 — Prancha
+### E158 — Torção de toalha
+
+- Grupo: Antebraço/Pega | Área: peso_corporal
+- Padrão de movimento: outro / técnico
+- Nível estimado: intermédio
+- Articulações principais: várias
+- Músculos (tags): pronators, supinators, wrist
+- Músculos secundários: Flexores e extensores do punho e força de pega geral
+- Equipamento: Peso corporal, toalha
+- Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
+- Filtros onde aparece (12): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > pronators | Musculação > arms > forearm_hand > supinators | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > pronators | Musculação > forearm_hand > supinators | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
+- Objetivo (167 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E159 — Flexão de punho com elástico
+
+- Grupo: Antebraço/Pega | Área: elastico
+- Padrão de movimento: pega / punho
+- Nível estimado: intermédio
+- Articulações principais: punho, dedos
+- Músculos (tags): forearm_flexors, wrist
+- Músculos secundários: Flexores do antebraço, punho e pega
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
+- Objetivo (109 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E160 — Extensão de punho com elástico
+
+- Grupo: Antebraço/Pega | Área: elastico
+- Padrão de movimento: pega / punho
+- Nível estimado: intermédio
+- Articulações principais: punho, dedos
+- Músculos (tags): forearm_extensors, wrist
+- Músculos secundários: Extensores do antebraço, punho e estabilidade da pega
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_extensors | Musculação > arms > forearm_hand > wrist | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_extensors | Musculação > forearm_hand > wrist | Musculação > forearm_hand > general_grip
+- Objetivo (126 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E161 — Farmer carry com kettlebell
+
+- Grupo: Antebraço/Pega | Área: kettlebell
+- Padrão de movimento: transporte
+- Nível estimado: intermédio
+- Articulações principais: punho, ombro, anca
+- Músculos (tags): grip_support, forearm_flexors
+- Músculos secundários: Antebraços, trapézio, ombros, core e postura
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (10): Musculação > arms > arms_complete | Musculação > arms > forearm_hand | Musculação > arms > forearm_hand > forearm_complete | Musculação > arms > forearm_hand > forearm_flexors | Musculação > arms > forearm_hand > support_grip | Musculação > arms > forearm_hand > general_grip | Musculação > forearm_hand > forearm_complete | Musculação > forearm_hand > forearm_flexors | Musculação > forearm_hand > support_grip | Musculação > forearm_hand > general_grip
+- Objetivo (177 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E162 — Prancha
 
 - Grupo: Core | Área: isometria
 - Padrão de movimento: anti-movimento de core
@@ -2018,7 +2335,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_extension | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (118 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E140 — Prancha lateral
+### E163 — Prancha lateral
 
 - Grupo: Core | Área: isometria
 - Padrão de movimento: anti-movimento de core
@@ -2031,7 +2348,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > external_obliques | Musculação > core > abdominal_zone > internal_obliques | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_lateral_flexion | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (135 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E141 — Crunch
+### E164 — Crunch
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: flexão de tronco
@@ -2044,7 +2361,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > upper_abs | Musculação > core > abdominal_zone > mid_abs | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E142 — Reverse crunch
+### E165 — Reverse crunch
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: flexão de tronco
@@ -2057,7 +2374,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > upper_abs | Musculação > core > abdominal_zone > mid_abs | Musculação > core > abdominal_zone > lower_abs | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E143 — Elevação de pernas
+### E166 — Elevação de pernas
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: flexão de tronco
@@ -2070,7 +2387,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lower_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E144 — Elevação de joelhos suspenso
+### E167 — Elevação de joelhos suspenso
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2083,7 +2400,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lower_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E145 — Dead bug
+### E168 — Dead bug
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: anti-movimento de core
@@ -2096,7 +2413,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_extension | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (128 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E146 — Hollow hold
+### E169 — Hollow hold
 
 - Grupo: Core | Área: isometria
 - Padrão de movimento: anti-movimento de core
@@ -2109,7 +2426,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_extension | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (140 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E147 — Mountain climbers
+### E170 — Mountain climbers
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2122,7 +2439,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone | Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (120 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E148 — Pallof press no cabo
+### E171 — Pallof press no cabo
 
 - Grupo: Core | Área: cabo
 - Padrão de movimento: anti-movimento de core
@@ -2135,7 +2452,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_rotation | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (151 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E149 — Pallof press com elástico
+### E172 — Pallof press com elástico
 
 - Grupo: Core | Área: elastico
 - Padrão de movimento: anti-movimento de core
@@ -2148,7 +2465,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_rotation | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E150 — Russian twist
+### E173 — Russian twist
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: rotação de tronco
@@ -2161,7 +2478,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > external_obliques | Musculação > core > abdominal_zone > internal_obliques | Musculação > core > core_stability_zone
 - Objetivo (157 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E151 — Bicycle crunch
+### E174 — Bicycle crunch
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: flexão de tronco
@@ -2174,7 +2491,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > upper_abs | Musculação > core > abdominal_zone > mid_abs | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > external_obliques | Musculação > core > abdominal_zone > internal_obliques | Musculação > core > core_stability_zone
 - Objetivo (145 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E152 — Bird dog
+### E175 — Bird dog
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: anti-movimento de core
@@ -2187,7 +2504,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (127 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E153 — Side bend
+### E176 — Side bend
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: flexão lateral
@@ -2200,7 +2517,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > external_obliques | Musculação > core > abdominal_zone > internal_obliques | Musculação > core > core_stability_zone
 - Objetivo (150 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E154 — Vacuum abdominal
+### E177 — Vacuum abdominal
 
 - Grupo: Core | Área: isometria
 - Padrão de movimento: anti-movimento de core
@@ -2213,7 +2530,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (137 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E155 — Flutter kicks
+### E178 — Flutter kicks
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2226,7 +2543,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lower_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone
 - Objetivo (145 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E156 — Toe touches
+### E179 — Toe touches
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2239,7 +2556,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > upper_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E157 — Superman
+### E180 — Superman
 
 - Grupo: Core | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2252,7 +2569,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > lumbar_zone > lumbar | Musculação > core > lumbar_zone > erectors | Musculação > core > core_stability_zone
 - Objetivo (158 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E158 — Lenhador no cabo
+### E181 — Lenhador no cabo
 
 - Grupo: Core | Área: cabo
 - Padrão de movimento: rotação de tronco
@@ -2265,7 +2582,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > external_obliques | Musculação > core > abdominal_zone > internal_obliques | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_rotation
 - Objetivo (191 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E159 — Prancha com toque no ombro
+### E182 — Prancha com toque no ombro
 
 - Grupo: Core | Área: isometria
 - Padrão de movimento: anti-movimento de core
@@ -2278,7 +2595,33 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_rotation | Musculação > core > core_stability_zone > anti_extension | Musculação > core > core_stability_zone > deep_stability
 - Objetivo (117 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E160 — Agachamento com peso corporal
+### E183 — Crunch no cabo
+
+- Grupo: Core | Área: cabo
+- Padrão de movimento: flexão de tronco
+- Nível estimado: intermédio
+- Articulações principais: coluna, anca
+- Músculos (tags): rectus_abdominis, transverse_abdominis
+- Músculos secundários: Reto abdominal, oblíquos e controlo da respiração
+- Equipamento: Cabo / polia
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (9): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > upper_abs | Musculação > core > abdominal_zone > mid_abs | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > transverse_abdominis | Musculação > core > core_stability_zone
+- Objetivo (119 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E184 — Russian twist com kettlebell
+
+- Grupo: Core | Área: kettlebell
+- Padrão de movimento: rotação de tronco
+- Nível estimado: intermédio
+- Articulações principais: coluna, anca
+- Músculos (tags): external_obliques, internal_obliques, rectus_abdominis
+- Músculos secundários: Oblíquos, reto abdominal, flexores da anca e pega
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (8): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > abdominal_zone > rectus_abdominis | Musculação > core > abdominal_zone > external_obliques | Musculação > core > abdominal_zone > internal_obliques | Musculação > core > core_stability_zone
+- Objetivo (109 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E185 — Agachamento com peso corporal
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: agachamento / joelho dominante
@@ -2291,7 +2634,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E161 — Agachamento para cadeira
+### E186 — Agachamento para cadeira
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: agachamento / joelho dominante
@@ -2304,7 +2647,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (159 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E162 — Agachamento goblet
+### E187 — Agachamento goblet
 
 - Grupo: Pernas | Área: halteres
 - Padrão de movimento: agachamento / joelho dominante
@@ -2317,7 +2660,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (161 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E163 — Agachamento com halteres ao lado
+### E188 — Agachamento com halteres ao lado
 
 - Grupo: Pernas | Área: halteres
 - Padrão de movimento: agachamento / joelho dominante
@@ -2330,7 +2673,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E164 — Agachamento com barra
+### E189 — Agachamento com barra
 
 - Grupo: Pernas | Área: barra
 - Padrão de movimento: agachamento / joelho dominante
@@ -2343,7 +2686,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (156 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E165 — Agachamento com mochila
+### E190 — Agachamento com mochila
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: agachamento / joelho dominante
@@ -2356,7 +2699,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (134 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E166 — Agachamento com garrafão
+### E191 — Agachamento com garrafão
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: agachamento / joelho dominante
@@ -2369,7 +2712,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (150 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E167 — Agachamento sumo
+### E192 — Agachamento sumo
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: agachamento / joelho dominante
@@ -2382,7 +2725,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > adductors
 - Objetivo (199 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E168 — Agachamento na máquina Smith
+### E193 — Agachamento na máquina Smith
 
 - Grupo: Pernas | Área: maquina
 - Padrão de movimento: agachamento / joelho dominante
@@ -2395,7 +2738,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E169 — Agachamento búlgaro
+### E194 — Agachamento búlgaro
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: afundo
@@ -2408,7 +2751,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (169 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E170 — Agachamento búlgaro com apoio
+### E195 — Agachamento búlgaro com apoio
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: afundo
@@ -2421,7 +2764,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (154 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E171 — Extensão de perna
+### E196 — Extensão de perna
 
 - Grupo: Pernas | Área: maquina
 - Padrão de movimento: agachamento / joelho dominante
@@ -2434,7 +2777,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (132 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E172 — Leg press
+### E197 — Leg press
 
 - Grupo: Pernas | Área: maquina
 - Padrão de movimento: agachamento / joelho dominante
@@ -2447,7 +2790,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (168 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E173 — Step-up
+### E198 — Step-up
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: agachamento / joelho dominante
@@ -2460,7 +2803,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E174 — Wall sit
+### E199 — Wall sit
 
 - Grupo: Pernas | Área: isometria
 - Padrão de movimento: agachamento / joelho dominante
@@ -2473,7 +2816,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (151 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E175 — Lunges
+### E200 — Lunges
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: afundo
@@ -2486,7 +2829,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (153 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E176 — Lunges com halteres
+### E201 — Lunges com halteres
 
 - Grupo: Pernas | Área: halteres
 - Padrão de movimento: afundo
@@ -2499,7 +2842,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (140 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E177 — Lunges com mochila
+### E202 — Lunges com mochila
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: afundo
@@ -2512,7 +2855,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E178 — Walking lunges
+### E203 — Walking lunges
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: afundo
@@ -2525,7 +2868,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E179 — Peso morto tradicional
+### E204 — Peso morto tradicional
 
 - Grupo: Pernas | Área: barra
 - Padrão de movimento: dobradiça de anca
@@ -2538,7 +2881,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (152 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E180 — Peso morto romeno com halteres
+### E205 — Peso morto romeno com halteres
 
 - Grupo: Pernas | Área: halteres
 - Padrão de movimento: dobradiça de anca
@@ -2551,7 +2894,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (86 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E181 — Curl de perna
+### E206 — Curl de perna
 
 - Grupo: Pernas | Área: maquina
 - Padrão de movimento: flexão de joelho
@@ -2564,7 +2907,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (112 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E182 — Good morning leve
+### E207 — Good morning leve
 
 - Grupo: Pernas | Área: barra
 - Padrão de movimento: dobradiça de anca
@@ -2577,7 +2920,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (168 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E183 — Good morning sem carga
+### E208 — Good morning sem carga
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: dobradiça de anca
@@ -2590,7 +2933,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (205 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E184 — Ponte de glúteo
+### E209 — Ponte de glúteo
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: dobradiça de anca
@@ -2603,7 +2946,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (182 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E185 — Hip thrust
+### E210 — Hip thrust
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: dobradiça de anca
@@ -2616,7 +2959,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (177 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E186 — Hip thrust com apoio
+### E211 — Hip thrust com apoio
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: dobradiça de anca
@@ -2629,7 +2972,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (187 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E187 — Abdução de anca
+### E212 — Abdução de anca
 
 - Grupo: Pernas | Área: maquina
 - Padrão de movimento: abdução de anca/ombro
@@ -2642,7 +2985,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > glute_med | Musculação > legs > upper_leg_hip > glute_min | Musculação > legs > upper_leg_hip > abductors
 - Objetivo (130 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E188 — Adução de anca
+### E213 — Adução de anca
 
 - Grupo: Pernas | Área: maquina
 - Padrão de movimento: adução de anca
@@ -2655,7 +2998,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > adductors
 - Objetivo (126 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E189 — Kickback de glúteo
+### E214 — Kickback de glúteo
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: extensão de cotovelo
@@ -2668,7 +3011,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
 - Objetivo (172 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E190 — Gémeos em pé
+### E215 — Gémeos em pé
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: flexão plantar/dorsal
@@ -2681,7 +3024,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (81 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E191 — Gémeos sentado
+### E216 — Gémeos sentado
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: flexão plantar/dorsal
@@ -2694,7 +3037,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > soleus | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (129 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E192 — Elevação de gémeos unilateral
+### E217 — Elevação de gémeos unilateral
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: flexão plantar/dorsal
@@ -2707,7 +3050,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (139 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E193 — Sóleo sentado
+### E218 — Sóleo sentado
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: flexão plantar/dorsal
@@ -2720,7 +3063,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > soleus | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (115 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E194 — Saltos leves
+### E219 — Saltos leves
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2733,7 +3076,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > soleus | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (109 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E195 — Elevação tibial
+### E220 — Elevação tibial
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: flexão plantar/dorsal
@@ -2746,7 +3089,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > tibialis_anterior | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > feet | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (100 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E196 — Short foot / doming
+### E221 — Short foot / doming
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2759,7 +3102,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > feet | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (162 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E197 — Flexão ativa dos dedos do pé
+### E222 — Flexão ativa dos dedos do pé
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: pega / punho
@@ -2772,7 +3115,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > feet | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (196 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E198 — Dorsiflexão do tornozelo com elástico
+### E223 — Dorsiflexão do tornozelo com elástico
 
 - Grupo: Pernas | Área: elastico
 - Padrão de movimento: empurrar horizontal
@@ -2785,7 +3128,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > tibialis_anterior | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > feet | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (166 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E199 — Inversão do tornozelo com elástico
+### E224 — Inversão do tornozelo com elástico
 
 - Grupo: Pernas | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -2798,7 +3141,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > feet | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (171 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E200 — Eversão do tornozelo com elástico
+### E225 — Eversão do tornozelo com elástico
 
 - Grupo: Pernas | Área: elastico
 - Padrão de movimento: outro / técnico
@@ -2811,7 +3154,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > feet | Musculação > legs > lower_leg_foot > ankle_stability
 - Objetivo (173 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E201 — Flexão da anca em pé com elástico
+### E226 — Flexão da anca em pé com elástico
 
 - Grupo: Pernas | Área: elastico
 - Padrão de movimento: empurrar horizontal
@@ -2824,7 +3167,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > hip_flexors
 - Objetivo (154 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E202 — Copenhagen plank com apoio
+### E227 — Copenhagen plank com apoio
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2837,7 +3180,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (11): Musculação > core > core_complete | Musculação > core > abdominal_zone | Musculação > core > abdominal_zone > abs_complete | Musculação > core > abdominal_zone > lateral_abs | Musculação > core > core_stability_zone | Musculação > core > core_stability_zone > anti_lateral_flexion | Musculação > core > core_stability_zone > deep_stability | Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > adductors
 - Objetivo (169 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E203 — Extensão terminal do joelho com elástico
+### E228 — Extensão terminal do joelho com elástico
 
 - Grupo: Pernas | Área: elastico
 - Padrão de movimento: extensão de cotovelo
@@ -2850,7 +3193,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_medialis
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E204 — Abdução de anca deitada
+### E229 — Abdução de anca deitada
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: abdução de anca/ombro
@@ -2863,7 +3206,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > glute_med | Musculação > legs > upper_leg_hip > glute_min | Musculação > legs > upper_leg_hip > abductors
 - Objetivo (163 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E205 — Clamshell
+### E230 — Clamshell
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: outro / técnico
@@ -2876,7 +3219,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > glute_med | Musculação > legs > upper_leg_hip > glute_min | Musculação > legs > upper_leg_hip > abductors
 - Objetivo (140 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E206 — Curl nórdico assistido
+### E231 — Curl nórdico assistido
 
 - Grupo: Pernas | Área: peso_corporal
 - Padrão de movimento: flexão de joelho
@@ -2889,7 +3232,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus
 - Objetivo (214 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E207 — Peso morto unilateral com halteres
+### E232 — Peso morto unilateral com halteres
 
 - Grupo: Pernas | Área: halteres
 - Padrão de movimento: dobradiça de anca
@@ -2902,7 +3245,254 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
 - Objetivo (173 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E208 — Marcha no lugar
+### E233 — Kettlebell swing
+
+- Grupo: Pernas | Área: kettlebell
+- Padrão de movimento: dobradiça de anca
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho
+- Músculos (tags): glute_max, biceps_femoris, semitendinosus, semimembranosus
+- Músculos secundários: Glúteos, posterior de coxa, lombar, core e pega
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max
+- Objetivo (150 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E234 — Agachamento goblet com kettlebell
+
+- Grupo: Pernas | Área: kettlebell
+- Padrão de movimento: agachamento / joelho dominante
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho, tornozelo
+- Músculos (tags): rectus_femoris, vastus_lateralis, vastus_medialis, vastus_intermedius, glute_max
+- Músculos secundários: Quadríceps, glúteos, core e parte alta das costas
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
+- Objetivo (186 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E235 — Peso morto com kettlebell
+
+- Grupo: Pernas | Área: kettlebell
+- Padrão de movimento: dobradiça de anca
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho
+- Músculos (tags): biceps_femoris, semitendinosus, semimembranosus, glute_max
+- Músculos secundários: Posterior de coxa, glúteos, lombar, core e pega
+- Equipamento: Kettlebell
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
+- Objetivo (198 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E236 — Peso morto com elástico
+
+- Grupo: Pernas | Área: elastico
+- Padrão de movimento: dobradiça de anca
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho
+- Músculos (tags): biceps_femoris, semitendinosus, semimembranosus, glute_max
+- Músculos secundários: Posterior de coxa, glúteos, lombar e pega
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
+- Objetivo (192 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E237 — Agachamento com elástico
+
+- Grupo: Pernas | Área: elastico
+- Padrão de movimento: agachamento / joelho dominante
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho, tornozelo
+- Músculos (tags): rectus_femoris, vastus_lateralis, vastus_medialis, vastus_intermedius, glute_max
+- Músculos secundários: Quadríceps, glúteos, core e parte alta das costas
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max
+- Objetivo (190 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E238 — Agachamento sumo com halteres
+
+- Grupo: Pernas | Área: halteres
+- Padrão de movimento: agachamento / joelho dominante
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho, tornozelo
+- Músculos (tags): rectus_femoris, vastus_lateralis, vastus_medialis, vastus_intermedius, glute_max, adductors
+- Músculos secundários: Adutores, glúteos, quadríceps e core
+- Equipamento: Halteres
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (10): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_lateralis | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > vastus_intermedius | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > adductors
+- Objetivo (124 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E239 — Afundo lateral
+
+- Grupo: Pernas | Área: peso_corporal
+- Padrão de movimento: afundo
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho, tornozelo
+- Músculos (tags): rectus_femoris, vastus_medialis, glute_max, adductors
+- Músculos secundários: Quadríceps, glúteos, adutores e equilíbrio
+- Equipamento: Peso corporal
+- Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
+- Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > quadriceps_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > vastus_medialis | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > adductors
+- Objetivo (133 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E240 — Hip thrust com barra
+
+- Grupo: Pernas | Área: barra
+- Padrão de movimento: dobradiça de anca
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho
+- Músculos (tags): glute_max, glute_med, biceps_femoris
+- Músculos secundários: Glúteo máximo, posterior de coxa, quadríceps e core
+- Equipamento: Barra, banco ou apoio estável
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
+- Objetivo (152 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E241 — Ponte de glúteo com elástico
+
+- Grupo: Pernas | Área: elastico
+- Padrão de movimento: dobradiça de anca
+- Nível estimado: intermédio
+- Articulações principais: anca, joelho
+- Músculos (tags): glute_max, glute_med, biceps_femoris
+- Músculos secundários: Glúteo máximo, glúteo médio, posterior de coxa e core
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
+- Objetivo (135 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E242 — Kickback de glúteo no cabo
+
+- Grupo: Pernas | Área: cabo
+- Padrão de movimento: extensão de cotovelo
+- Nível estimado: intermédio
+- Articulações principais: cotovelo
+- Músculos (tags): glute_max, glute_med, biceps_femoris
+- Músculos secundários: Glúteo máximo, posterior de coxa e core
+- Equipamento: Cabo / polia
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max | Musculação > legs > upper_leg_hip > glute_med
+- Objetivo (111 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E243 — Abdução de anca no cabo
+
+- Grupo: Pernas | Área: cabo
+- Padrão de movimento: abdução de anca/ombro
+- Nível estimado: intermédio
+- Articulações principais: anca
+- Músculos (tags): abductors, glute_med, glute_min
+- Músculos secundários: Glúteo médio, glúteo mínimo, core lateral e equilíbrio
+- Equipamento: Cabo / polia
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > glute_med | Musculação > legs > upper_leg_hip > glute_min | Musculação > legs > upper_leg_hip > abductors
+- Objetivo (96 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E244 — Abdução de anca com elástico
+
+- Grupo: Pernas | Área: elastico
+- Padrão de movimento: abdução de anca/ombro
+- Nível estimado: intermédio
+- Articulações principais: anca
+- Músculos (tags): abductors, glute_med, glute_min
+- Músculos secundários: Glúteo médio, glúteo mínimo, core lateral e equilíbrio
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > glute_med | Musculação > legs > upper_leg_hip > glute_min | Musculação > legs > upper_leg_hip > abductors
+- Objetivo (113 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E245 — Adução de anca no cabo
+
+- Grupo: Pernas | Área: cabo
+- Padrão de movimento: adução de anca
+- Nível estimado: intermédio
+- Articulações principais: anca
+- Músculos (tags): adductors
+- Músculos secundários: Adutores, glúteos e core lateral
+- Equipamento: Cabo / polia
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (4): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > adductors
+- Objetivo (110 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E246 — Pull-through no cabo
+
+- Grupo: Pernas | Área: cabo
+- Padrão de movimento: outro / técnico
+- Nível estimado: intermédio
+- Articulações principais: várias
+- Músculos (tags): glute_max, biceps_femoris, semitendinosus, semimembranosus
+- Músculos secundários: Glúteos, posterior de coxa, lombar e core
+- Equipamento: Cabo / polia
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (9): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > glute_max
+- Objetivo (228 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E247 — Curl de perna com elástico
+
+- Grupo: Pernas | Área: elastico
+- Padrão de movimento: flexão de joelho
+- Nível estimado: intermédio
+- Articulações principais: joelho
+- Músculos (tags): biceps_femoris, semitendinosus, semimembranosus, glute_max
+- Músculos secundários: Posterior de coxa, gémeos e glúteos
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (8): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > hamstrings_complete | Musculação > legs > upper_leg_hip > biceps_femoris | Musculação > legs > upper_leg_hip > semitendinosus | Musculação > legs > upper_leg_hip > semimembranosus | Musculação > legs > upper_leg_hip > glute_max
+- Objetivo (177 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E248 — Marcha do psoas deitado
+
+- Grupo: Pernas | Área: peso_corporal
+- Padrão de movimento: outro / técnico
+- Nível estimado: iniciante
+- Articulações principais: várias
+- Músculos (tags): hip_flexors, rectus_femoris
+- Músculos secundários: Flexores da anca, reto femoral, transverso abdominal e lombar
+- Equipamento: Peso corporal
+- Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
+- Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > upper_leg_hip | Musculação > legs > upper_leg_hip > thigh_complete | Musculação > legs > upper_leg_hip > rectus_femoris | Musculação > legs > upper_leg_hip > glutes_complete | Musculação > legs > upper_leg_hip > hip_flexors
+- Objetivo (139 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E249 — Gémeos em pé com halteres
+
+- Grupo: Pernas | Área: halteres
+- Padrão de movimento: flexão plantar/dorsal
+- Nível estimado: intermédio
+- Articulações principais: tornozelo
+- Músculos (tags): calves, ankle
+- Músculos secundários: Gémeos, sóleo, tornozelo, equilíbrio e pega
+- Equipamento: Halteres
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
+- Objetivo (94 chars) ✓ | Execução (5 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E250 — Gémeos na máquina
+
+- Grupo: Pernas | Área: maquina
+- Padrão de movimento: flexão plantar/dorsal
+- Nível estimado: intermédio
+- Articulações principais: tornozelo
+- Músculos (tags): calves, ankle
+- Músculos secundários: Gémeos, sóleo, tornozelo e equilíbrio
+- Equipamento: Máquina
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (6): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
+- Objetivo (132 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E251 — Gémeos sentado com elástico
+
+- Grupo: Pernas | Área: elastico
+- Padrão de movimento: flexão plantar/dorsal
+- Nível estimado: intermédio
+- Articulações principais: tornozelo
+- Músculos (tags): calves, soleus, ankle
+- Músculos secundários: Sóleo, gémeos, tornozelo e pés
+- Equipamento: Elásticos
+- Locais possíveis: Casa equipada | Ginásio
+- Filtros onde aparece (7): Musculação > legs > legs_complete | Musculação > legs > lower_leg_foot | Musculação > legs > lower_leg_foot > lower_leg_complete | Musculação > legs > lower_leg_foot > calves | Musculação > legs > lower_leg_foot > soleus | Musculação > legs > lower_leg_foot > ankle | Musculação > legs > lower_leg_foot > ankle_stability
+- Objetivo (94 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E252 — Marcha no lugar
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -2915,7 +3505,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (136 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E209 — Jumping jacks
+### E253 — Jumping jacks
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio de coordenação
@@ -2928,7 +3518,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (135 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E210 — Burpees
+### E254 — Burpees
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -2941,7 +3531,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (162 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E211 — Skaters
+### E255 — Skaters
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -2954,7 +3544,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (125 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E212 — High knees
+### E256 — High knees
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -2967,7 +3557,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E213 — Circuito cardio peso corporal
+### E257 — Circuito cardio peso corporal
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -2980,7 +3570,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (145 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E214 — Passadeira caminhada
+### E258 — Passadeira caminhada
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -2993,7 +3583,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (145 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E215 — Passadeira caminhada rápida
+### E259 — Passadeira caminhada rápida
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3006,7 +3596,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E216 — Passadeira corrida leve
+### E260 — Passadeira corrida leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3019,7 +3609,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (120 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E217 — Passadeira corrida intervalada
+### E261 — Passadeira corrida intervalada
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3032,7 +3622,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (140 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E218 — Passadeira inclinação
+### E262 — Passadeira inclinação
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3045,7 +3635,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E219 — Passadeira inclinação moderada
+### E263 — Passadeira inclinação moderada
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3058,7 +3648,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (141 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E220 — Passadeira sprints
+### E264 — Passadeira sprints
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3071,7 +3661,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (140 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E221 — Passadeira sprints intervalados
+### E265 — Passadeira sprints intervalados
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3084,7 +3674,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (134 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E222 — Passadeira aquecimento
+### E266 — Passadeira aquecimento
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3097,7 +3687,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (149 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E223 — Passadeira cooldown
+### E267 — Passadeira cooldown
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3110,7 +3700,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (148 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E224 — Bicicleta ritmo leve
+### E268 — Bicicleta ritmo leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3123,7 +3713,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (109 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E225 — Bicicleta ritmo moderado
+### E269 — Bicicleta ritmo moderado
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3136,7 +3726,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (117 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E226 — Bicicleta intervalos
+### E270 — Bicicleta intervalos
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3149,7 +3739,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (120 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E227 — Bicicleta resistência
+### E271 — Bicicleta resistência
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3162,7 +3752,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (87 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E228 — Bicicleta aquecimento
+### E272 — Bicicleta aquecimento
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3175,7 +3765,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (131 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E229 — Bicicleta cooldown
+### E273 — Bicicleta cooldown
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3188,7 +3778,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (121 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E230 — Elíptica ritmo leve
+### E274 — Elíptica ritmo leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3201,7 +3791,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > elliptical | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (142 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E231 — Elíptica ritmo moderado
+### E275 — Elíptica ritmo moderado
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3214,7 +3804,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > elliptical | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E232 — Elíptica intervalos
+### E276 — Elíptica intervalos
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3227,7 +3817,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > elliptical | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (140 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E233 — Elíptica resistência
+### E277 — Elíptica resistência
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3240,7 +3830,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > elliptical | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (88 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E234 — Elíptica aquecimento
+### E278 — Elíptica aquecimento
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3253,7 +3843,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > elliptical | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (148 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E235 — Elíptica cooldown
+### E279 — Elíptica cooldown
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3266,7 +3856,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > elliptical | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (140 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E236 — Corda de saltar ritmo leve
+### E280 — Corda de saltar ritmo leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio de coordenação
@@ -3279,7 +3869,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > jump_rope | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (123 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E237 — Corda de saltar intervalos
+### E281 — Corda de saltar intervalos
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio de coordenação
@@ -3292,7 +3882,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > jump_rope | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (138 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E238 — Corda de saltar pés alternados
+### E282 — Corda de saltar pés alternados
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio de coordenação
@@ -3305,7 +3895,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > jump_rope | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (136 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E239 — Corda de saltar joelhos altos
+### E283 — Corda de saltar joelhos altos
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio de coordenação
@@ -3318,7 +3908,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > jump_rope | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E240 — Corda de saltar double unders
+### E284 — Corda de saltar double unders
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio de coordenação
@@ -3331,7 +3921,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > jump_rope | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E241 — Caminhada exterior leve
+### E285 — Caminhada exterior leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3344,7 +3934,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_walk | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (140 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E242 — Caminhada exterior moderada
+### E286 — Caminhada exterior moderada
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3357,7 +3947,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_walk | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (150 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E243 — Caminhada exterior rápida
+### E287 — Caminhada exterior rápida
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3370,7 +3960,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_walk | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (134 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E244 — Caminhada exterior em subida
+### E288 — Caminhada exterior em subida
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3383,7 +3973,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_walk | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (135 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E245 — Corrida exterior leve
+### E289 — Corrida exterior leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3396,7 +3986,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_run | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (136 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E246 — Corrida exterior moderada
+### E290 — Corrida exterior moderada
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3409,7 +3999,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_run | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E247 — Corrida exterior intervalada
+### E291 — Corrida exterior intervalada
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3422,7 +4012,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_run | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (142 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E248 — Sprints exterior
+### E292 — Sprints exterior
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3435,7 +4025,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E249 — Corrida em subida
+### E293 — Corrida em subida
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3448,7 +4038,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (141 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E250 — HIIT peso corporal
+### E294 — HIIT peso corporal
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3461,7 +4051,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (141 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E251 — HIIT cardio
+### E295 — HIIT cardio
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3474,7 +4064,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (138 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E252 — HIIT passadeira
+### E296 — HIIT passadeira
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3487,7 +4077,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > treadmill | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (148 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E253 — HIIT bicicleta
+### E297 — HIIT bicicleta
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3500,7 +4090,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (152 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E254 — HIIT corda
+### E298 — HIIT corda
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3513,7 +4103,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > jump_rope | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E255 — HIIT simples
+### E299 — HIIT simples
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio intervalado
@@ -3526,7 +4116,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (151 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E256 — Circuito cardio leve
+### E300 — Circuito cardio leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3539,7 +4129,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E257 — Remo ergómetro ritmo contínuo
+### E301 — Remo ergómetro ritmo contínuo
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3552,7 +4142,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > rower | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (219 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E258 — Remo ergómetro intervalos
+### E302 — Remo ergómetro intervalos
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3565,7 +4155,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > rower | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (183 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E259 — Stepper / escadas ritmo contínuo
+### E303 — Stepper / escadas ritmo contínuo
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3578,7 +4168,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > stairs | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (168 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E260 — Stepper / escadas intervalos
+### E304 — Stepper / escadas intervalos
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3591,7 +4181,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > stairs | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (179 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E261 — Subida de escadas no exterior
+### E305 — Subida de escadas no exterior
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3604,7 +4194,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > outdoor_run | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (172 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E262 — Air bike ritmo contínuo
+### E306 — Air bike ritmo contínuo
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3617,7 +4207,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > air_bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (183 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E263 — Air bike intervalos
+### E307 — Air bike intervalos
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3630,7 +4220,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Cardio > air_bike | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (157 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E264 — Shadow boxing leve
+### E308 — Shadow boxing leve
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio de coordenação
@@ -3643,7 +4233,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (166 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E265 — Shuttle runs / corrida vaivém
+### E309 — Shuttle runs / corrida vaivém
 
 - Grupo: Cardio | Área: cardio
 - Padrão de movimento: cardio contínuo
@@ -3656,7 +4246,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Cardio > no_equipment | Cardio > hiit | Cardio > aerobic_endurance | Cardio > treadmill_intervals
 - Objetivo (168 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E266 — Kihon
+### E310 — Kihon
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3669,7 +4259,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > kihon
 - Objetivo (116 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E267 — Kata
+### E311 — Kata
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3682,7 +4272,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > kata
 - Objetivo (113 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E268 — Kumite técnico
+### E312 — Kumite técnico
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3695,7 +4285,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > kumite_technical
 - Objetivo (126 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E269 — Sombra de Karate
+### E313 — Sombra de Karate
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3708,7 +4298,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_shadow
 - Objetivo (119 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E270 — Drills de deslocamento
+### E314 — Drills de deslocamento
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3721,7 +4311,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_footwork
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E271 — Drills de guarda
+### E315 — Drills de guarda
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3734,7 +4324,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_guard
 - Objetivo (195 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E272 — Pontapés técnicos
+### E316 — Pontapés técnicos
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3747,7 +4337,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_kicks
 - Objetivo (126 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E273 — Socos técnicos
+### E317 — Socos técnicos
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3760,7 +4350,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_punches
 - Objetivo (122 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E274 — Mobilidade de anca para Karate
+### E318 — Mobilidade de anca para Karate
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3773,7 +4363,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_mobility
 - Objetivo (134 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E275 — Mobilidade de ombro para Karate
+### E319 — Mobilidade de ombro para Karate
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3786,7 +4376,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_mobility
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E276 — Condicionamento leve para Karate
+### E320 — Condicionamento leve para Karate
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3799,7 +4389,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_conditioning
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E277 — Treino de bases (dachi)
+### E321 — Treino de bases (dachi)
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3812,7 +4402,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_stances
 - Objetivo (181 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E278 — Bloqueios técnicos (uke)
+### E322 — Bloqueios técnicos (uke)
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3825,7 +4415,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_blocks
 - Objetivo (185 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E279 — Esquivas e tai-sabaki
+### E323 — Esquivas e tai-sabaki
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3838,7 +4428,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_evasions
 - Objetivo (170 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E280 — Joelhadas técnicas
+### E324 — Joelhadas técnicas
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3851,7 +4441,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_knees
 - Objetivo (182 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E281 — Trabalho leve ao saco
+### E325 — Trabalho leve ao saco
 
 - Grupo: Karate | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3864,7 +4454,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > karate > karate_complete | Artes marciais > karate > karate_bag
 - Objetivo (174 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E282 — Shrimp / fuga de anca
+### E326 — Shrimp / fuga de anca
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3877,7 +4467,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > shrimp
 - Objetivo (129 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E283 — Ponte de grappling
+### E327 — Ponte de grappling
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3890,7 +4480,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > grappling_bridge
 - Objetivo (132 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E284 — Technical stand-up
+### E328 — Technical stand-up
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3903,7 +4493,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > technical_stand_up
 - Objetivo (137 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E285 — Sprawl
+### E329 — Sprawl
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3916,7 +4506,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_conditioning
 - Objetivo (177 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E286 — Drills de guarda
+### E330 — Drills de guarda
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3929,7 +4519,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_guard
 - Objetivo (175 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E287 — Drills de passagem de guarda
+### E331 — Drills de passagem de guarda
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3942,7 +4532,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_guard | Artes marciais > jiu_jitsu > guard_passing
 - Objetivo (151 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E288 — Mobilidade de anca para Jiu-Jitsu
+### E332 — Mobilidade de anca para Jiu-Jitsu
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3955,7 +4545,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_mobility
 - Objetivo (141 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E289 — Mobilidade de ombro para Jiu-Jitsu
+### E333 — Mobilidade de ombro para Jiu-Jitsu
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3968,7 +4558,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_mobility
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E290 — Força de pega para Jiu-Jitsu
+### E334 — Força de pega para Jiu-Jitsu
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3981,7 +4571,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_grip
 - Objetivo (139 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E291 — Core para Jiu-Jitsu
+### E335 — Core para Jiu-Jitsu
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -3994,7 +4584,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_core
 - Objetivo (143 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E292 — Condicionamento leve para Jiu-Jitsu
+### E336 — Condicionamento leve para Jiu-Jitsu
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -4007,7 +4597,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_conditioning
 - Objetivo (154 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E293 — Rolamentos de solo
+### E337 — Rolamentos de solo
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -4020,7 +4610,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_rolls
 - Objetivo (192 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E294 — Breakfalls (ukemi)
+### E338 — Breakfalls (ukemi)
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -4033,7 +4623,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_breakfalls
 - Objetivo (191 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E295 — Inversão granby com apoio
+### E339 — Inversão granby com apoio
 
 - Grupo: Jiu-Jitsu | Área: artes_marciais
 - Padrão de movimento: técnica marcial
@@ -4046,7 +4636,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Artes marciais > jiu_jitsu > jiu_jitsu_complete | Artes marciais > jiu_jitsu > jiu_jitsu_inversions
 - Objetivo (201 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E296 — Mobilidade torácica
+### E340 — Mobilidade torácica
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4059,7 +4649,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > thoracic_mobility | Recuperação > light_mobility
 - Objetivo (135 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E297 — Mobilidade de ombro
+### E341 — Mobilidade de ombro
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4072,7 +4662,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Recuperação > light_mobility
 - Objetivo (158 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E298 — Mobilidade de anca
+### E342 — Mobilidade de anca
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4085,7 +4675,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > hip_mobility | Recuperação > light_mobility
 - Objetivo (137 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E299 — Círculos de ombro
+### E343 — Círculos de ombro
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4098,7 +4688,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Recuperação > light_mobility
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E300 — Alongamento posterior do ombro
+### E344 — Alongamento posterior do ombro
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4111,7 +4701,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (145 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E301 — Mobilidade de ombro com toalha
+### E345 — Mobilidade de ombro com toalha
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4124,7 +4714,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Recuperação > light_mobility
 - Objetivo (119 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E302 — Mobilidade de ombro com cabo de vassoura
+### E346 — Mobilidade de ombro com cabo de vassoura
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4137,7 +4727,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Recuperação > light_mobility
 - Objetivo (106 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E303 — Alongamento peitoral
+### E347 — Alongamento peitoral
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4150,7 +4740,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > chest_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (136 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E304 — Alongamento peitoral na parede
+### E348 — Alongamento peitoral na parede
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4163,7 +4753,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > chest_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (138 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E305 — Alongamento peitoral no canto
+### E349 — Alongamento peitoral no canto
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4176,7 +4766,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > chest_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (133 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E306 — Alongamento dorsal
+### E350 — Alongamento dorsal
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4189,7 +4779,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > back_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E307 — Rotação torácica no chão
+### E351 — Rotação torácica no chão
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4202,7 +4792,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > thoracic_mobility | Recuperação > light_mobility
 - Objetivo (156 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E308 — Cat-cow
+### E352 — Cat-cow
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4215,7 +4805,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > thoracic_mobility | Recuperação > light_mobility
 - Objetivo (150 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E309 — Open book
+### E353 — Open book
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4228,7 +4818,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > thoracic_mobility | Recuperação > light_mobility
 - Objetivo (154 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E310 — Alongamento posterior de coxa
+### E354 — Alongamento posterior de coxa
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4241,7 +4831,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (128 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E311 — Alongamento posterior sentado
+### E355 — Alongamento posterior sentado
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4254,7 +4844,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (142 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E312 — Alongamento posterior em pé
+### E356 — Alongamento posterior em pé
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4267,7 +4857,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (137 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E313 — Tocar nos pés sentado
+### E357 — Tocar nos pés sentado
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4280,7 +4870,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Mobilidade > general_mobility | Recuperação > light_mobility
 - Objetivo (142 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E314 — Tocar nos pés em pé
+### E358 — Tocar nos pés em pé
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4293,7 +4883,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (2): Mobilidade > general_mobility | Recuperação > light_mobility
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E315 — Alongamento posterior com perna elevada
+### E359 — Alongamento posterior com perna elevada
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4306,7 +4896,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E316 — Mobilidade dinâmica de posterior
+### E360 — Mobilidade dinâmica de posterior
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4319,7 +4909,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E317 — Alongamento glúteos
+### E361 — Alongamento glúteos
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4332,7 +4922,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > glute_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (152 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E318 — Alongamento de glúteo sentado
+### E362 — Alongamento de glúteo sentado
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4345,7 +4935,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > glute_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (154 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E319 — Alongamento figura 4
+### E363 — Alongamento figura 4
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4358,7 +4948,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > glute_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E320 — Pigeon stretch
+### E364 — Pigeon stretch
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4371,7 +4961,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > glute_mobility | Recuperação > light_mobility
 - Objetivo (132 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E321 — Alongamento piriforme
+### E365 — Alongamento piriforme
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4384,7 +4974,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > glute_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (150 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E322 — Rotação externa da anca no chão
+### E366 — Rotação externa da anca no chão
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4397,7 +4987,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > hip_mobility | Recuperação > light_mobility
 - Objetivo (158 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E323 — Mobilidade 90/90
+### E367 — Mobilidade 90/90
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4410,7 +5000,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hip_mobility | Mobilidade > glute_mobility | Recuperação > light_mobility
 - Objetivo (130 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E324 — Mobilidade dinâmica de anca
+### E368 — Mobilidade dinâmica de anca
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4423,7 +5013,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > hip_mobility | Recuperação > light_mobility
 - Objetivo (141 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E325 — Alongamento quadríceps em pé
+### E369 — Alongamento quadríceps em pé
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4436,7 +5026,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > quadriceps_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (154 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E326 — Alongamento quadríceps de lado
+### E370 — Alongamento quadríceps de lado
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4449,7 +5039,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > quadriceps_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (146 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E327 — Alongamento gémeos
+### E371 — Alongamento gémeos
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4462,7 +5052,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > calf_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (139 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E328 — Alongamento gémeos na parede
+### E372 — Alongamento gémeos na parede
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4475,7 +5065,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > calf_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (115 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E329 — Mobilidade de tornozelo na parede
+### E373 — Mobilidade de tornozelo na parede
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4488,7 +5078,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > ankle_mobility | Recuperação > light_mobility
 - Objetivo (147 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E330 — Círculos de tornozelo
+### E374 — Círculos de tornozelo
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4501,7 +5091,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > ankle_mobility | Recuperação > light_mobility
 - Objetivo (141 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E331 — Mobilidade de punhos
+### E375 — Mobilidade de punhos
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4514,7 +5104,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > wrist_mobility | Recuperação > light_mobility
 - Objetivo (149 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E332 — Extensão de punhos no chão
+### E376 — Extensão de punhos no chão
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4527,7 +5117,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > wrist_mobility | Recuperação > light_mobility
 - Objetivo (144 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E333 — Flexão de punhos no chão
+### E377 — Flexão de punhos no chão
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4540,7 +5130,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > wrist_mobility | Recuperação > light_mobility
 - Objetivo (118 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E334 — Alongamento cervical leve
+### E378 — Alongamento cervical leve
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4553,7 +5143,20 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > neck_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (142 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E335 — Mobilidade leve de ombros
+### E379 — Meio-círculos de pescoço
+
+- Grupo: Mobilidade | Área: mobilidade
+- Padrão de movimento: mobilidade dinâmica
+- Nível estimado: iniciante
+- Articulações principais: articulação alvo do alongamento
+- Músculos (tags): 
+- Músculos secundários: Pescoço, trapézio superior e postura da cabeça
+- Equipamento: Peso corporal
+- Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
+- Filtros onde aparece (3): Mobilidade > general_mobility | Mobilidade > neck_mobility | Recuperação > light_mobility
+- Objetivo (203 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+
+### E380 — Mobilidade leve de ombros
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4566,7 +5169,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (132 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E336 — Mobilidade leve de anca
+### E381 — Mobilidade leve de anca
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4579,7 +5182,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hip_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (142 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E337 — Respiração diafragmática
+### E382 — Respiração diafragmática
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: respiração / recuperação
@@ -4592,7 +5195,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Mobilidade > general_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > light_stretching | Recuperação > breathing | Recuperação > active_recovery
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E338 — Caminhada leve
+### E383 — Caminhada leve
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4605,7 +5208,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Mobilidade > general_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > breathing | Recuperação > active_recovery
 - Objetivo (113 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E339 — Relaxamento deitado
+### E384 — Relaxamento deitado
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4618,7 +5221,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Mobilidade > general_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > breathing | Recuperação > active_recovery
 - Objetivo (131 chars) ✓ | Execução (7 passos) ✓ | Erros comuns (5) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E340 — Alongamento PNF de isquiotibiais
+### E385 — Alongamento PNF de isquiotibiais
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4631,7 +5234,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (192 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E341 — Alongamento PNF de peitoral na parede
+### E386 — Alongamento PNF de peitoral na parede
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4644,7 +5247,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > chest_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (169 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E342 — Alongamento de flexores da anca em afundo
+### E387 — Alongamento de flexores da anca em afundo
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4657,7 +5260,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Mobilidade > general_mobility | Mobilidade > hip_mobility | Mobilidade > quadriceps_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (156 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E343 — Alongamento borboleta de adutores
+### E388 — Alongamento borboleta de adutores
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4670,7 +5273,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > hip_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (164 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E344 — Alongamento dinâmico global
+### E389 — Alongamento dinâmico global
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4683,7 +5286,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (6): Mobilidade > general_mobility | Mobilidade > thoracic_mobility | Mobilidade > hip_mobility | Mobilidade > hamstring_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (187 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E345 — Alongamento de tríceps atrás da cabeça
+### E390 — Alongamento de tríceps atrás da cabeça
 
 - Grupo: Mobilidade | Área: alongamento
 - Padrão de movimento: alongamento estático
@@ -4696,7 +5299,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Recuperação > light_mobility | Recuperação > light_stretching
 - Objetivo (121 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E346 — Cobra suave no chão
+### E391 — Cobra suave no chão
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4709,7 +5312,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > back_mobility | Mobilidade > thoracic_mobility | Recuperação > light_mobility
 - Objetivo (172 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E347 — Respiração nasal lenta
+### E392 — Respiração nasal lenta
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: respiração / recuperação
@@ -4722,7 +5325,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Mobilidade > general_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > breathing | Recuperação > active_recovery
 - Objetivo (173 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E348 — Foam roller para pernas
+### E393 — Foam roller para pernas
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4735,7 +5338,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (7): Mobilidade > general_mobility | Mobilidade > hamstring_mobility | Mobilidade > quadriceps_mobility | Mobilidade > calf_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > active_recovery
 - Objetivo (181 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E349 — Foam roller para costas
+### E394 — Foam roller para costas
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4748,7 +5351,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Mobilidade > general_mobility | Mobilidade > back_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > active_recovery
 - Objetivo (190 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E350 — Bola de massagem para pés e glúteos
+### E395 — Bola de massagem para pés e glúteos
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4761,7 +5364,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (5): Mobilidade > general_mobility | Mobilidade > glute_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > active_recovery
 - Objetivo (163 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E351 — Arrefecimento pós-treino de força
+### E396 — Arrefecimento pós-treino de força
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4774,7 +5377,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > active_recovery
 - Objetivo (169 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E352 — Arrefecimento pós-artes marciais
+### E397 — Arrefecimento pós-artes marciais
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4787,7 +5390,7 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Filtros onde aparece (4): Mobilidade > general_mobility | Recuperação > easy_walk | Recuperação > light_mobility | Recuperação > active_recovery
 - Objetivo (172 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 
-### E353 — Aquecimento dinâmico geral
+### E398 — Aquecimento dinâmico geral
 
 - Grupo: Mobilidade | Área: mobilidade
 - Padrão de movimento: mobilidade dinâmica
@@ -4798,5 +5401,5 @@ visibilidade por filtro/local: `ExerciseFilterService`.
 - Equipamento: Peso corporal
 - Locais possíveis: Casa sem equipamento | Casa equipada | Exterior / parque | Dojo / tatami | Ginásio
 - Filtros onde aparece (4): Mobilidade > general_mobility | Mobilidade > shoulder_mobility | Mobilidade > hip_mobility | Recuperação > light_mobility
-- Objetivo (184 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
+- Objetivo (136 chars) ✓ | Execução (6 passos) ✓ | Erros comuns (4) ✓ | Regressão/Progressão ✓ | Respiração ✓ | Postura ✓
 

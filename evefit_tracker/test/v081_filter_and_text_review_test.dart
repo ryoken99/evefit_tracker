@@ -146,7 +146,10 @@ void main() {
       );
       expect(adductors, {
         'Agachamento sumo',
+        'Agachamento sumo com halteres',
         'Adução de anca',
+        'Adução de anca no cabo',
+        'Afundo lateral',
         'Copenhagen plank com apoio',
       });
     });

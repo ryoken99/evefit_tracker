@@ -2170,7 +2170,32 @@ class TrainingArchitecture {
             muscles: ['rhomboids'],
           );
         }
-        if (_has(name, ['y raise', 'w raise', 'pull-apart', 'face pull'])) {
+        if (_has(name, ['y-t-w'])) {
+          // Tal como o face pull, o Y-T-W trabalha a parte alta das costas.
+          add(
+            region: 'upper',
+            group: 'back',
+            subgroup: 'back_thickness',
+            muscles: ['rhomboids'],
+          );
+        }
+        if (_has(name, ['rotacao externa isometrica'])) {
+          // O redondo menor é rotador externo: responde também às seleções
+          // de costas que o filtram (como o face pull).
+          add(
+            region: 'upper',
+            group: 'back',
+            subgroup: 'back_thickness',
+            muscles: ['teres_minor'],
+          );
+        }
+        if (_has(name, [
+          'y raise',
+          'w raise',
+          'pull-apart',
+          'face pull',
+          'y-t-w',
+        ])) {
           add(region: 'upper', group: 'traps_scapula', subgroup: 'traps');
         }
         if (_has(name, ['scapular push-up'])) {
@@ -2178,7 +2203,7 @@ class TrainingArchitecture {
             region: 'upper',
             group: 'chest',
             subgroup: 'chest_primary',
-            muscles: ['serratus_anterior'],
+            muscles: ['serratus_anterior', 'pectoralis_minor'],
           );
         }
         break;
@@ -2358,6 +2383,9 @@ class TrainingArchitecture {
     if (_has(name, ['mobilidade de ombro'])) {
       return ['scapular_stabilizers', 'external_rotators'];
     }
+    if (_has(name, ['halo'])) {
+      return ['scapular_stabilizers', 'external_rotators', 'lateral_deltoid'];
+    }
     if (_has(name, ['plano da omoplata'])) {
       return [
         'lateral_deltoid',
@@ -2377,6 +2405,14 @@ class TrainingArchitecture {
     }
     if (_has(name, ['press', 'arnold'])) {
       return ['anterior_deltoid', 'lateral_deltoid', 'deltoid_lateral'];
+    }
+    if (_has(name, ['y-t-w'])) {
+      return [
+        'posterior_deltoid',
+        'mid_traps',
+        'lower_traps',
+        'scapular_stabilizers',
+      ];
     }
     return ['lateral_deltoid', 'deltoid_lateral', 'scapular_stabilizers'];
   }
@@ -2453,10 +2489,10 @@ class TrainingArchitecture {
   }
 
   static List<String> _forearmMuscles(String name) {
-    if (_has(name, ['reverse wrist'])) {
+    if (_has(name, ['reverse wrist', 'extensao de punho'])) {
       return ['forearm_extensors', 'wrist'];
     }
-    if (_has(name, ['wrist curl'])) {
+    if (_has(name, ['wrist curl', 'flexao de punho'])) {
       return ['forearm_flexors', 'wrist'];
     }
     if (_has(name, ['finger curls'])) {
@@ -2481,6 +2517,9 @@ class TrainingArchitecture {
     }
     if (_has(name, ['towel'])) {
       return ['grip_support', 'fingers', 'forearm_flexors'];
+    }
+    if (_has(name, ['torcao de toalha'])) {
+      return ['pronators', 'supinators', 'wrist'];
     }
     return ['grip_support', 'forearm_flexors'];
   }
@@ -2619,6 +2658,50 @@ class TrainingArchitecture {
         group: 'quadriceps',
         subgroup: 'quadriceps',
         muscles: ['vastus_medialis', 'rectus_femoris'],
+      );
+      return;
+    }
+    if (_has(name, ['kettlebell swing', 'pull-through'])) {
+      add(
+        region: 'lower',
+        group: 'hips_glutes',
+        subgroup: 'glutes',
+        muscles: [
+          'glute_max',
+          'biceps_femoris',
+          'semitendinosus',
+          'semimembranosus',
+        ],
+      );
+      add(
+        region: 'lower',
+        group: 'hamstrings',
+        subgroup: 'hamstrings',
+        muscles: ['biceps_femoris'],
+      );
+      return;
+    }
+    if (_has(name, ['afundo lateral'])) {
+      add(
+        region: 'lower',
+        group: 'quadriceps',
+        subgroup: 'quadriceps',
+        muscles: ['rectus_femoris', 'vastus_medialis', 'glute_max'],
+      );
+      add(
+        region: 'lower',
+        group: 'adductors',
+        subgroup: 'adductors',
+        muscles: ['adductors'],
+      );
+      return;
+    }
+    if (_has(name, ['psoas'])) {
+      add(
+        region: 'lower',
+        group: 'hips_glutes',
+        subgroup: 'hip_flexors_sub',
+        muscles: ['hip_flexors', 'rectus_femoris'],
       );
       return;
     }

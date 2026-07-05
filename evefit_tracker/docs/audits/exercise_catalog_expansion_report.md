@@ -1,4 +1,44 @@
-# Relatório de expansão do catálogo de exercícios (v0.9.2)
+# Relatório de expansão do catálogo de exercícios (v0.9.2 e v0.9.3)
+
+## Adenda v0.9.3 — cobertura total músculo × equipamento × local
+
+Depois da expansão v0.9.2 (315 → 353), a matriz de cobertura
+(`coverage_matrix_v093.md`, gerada por `tool/coverage_matrix.dart`) revelou
+células vazias sistemáticas: o kettlebell não tinha um único exercício, e
+vários músculos não tinham opção para certas classes de equipamento ou para
+treino em casa sem equipamento. A v0.9.3 fecha essas células com **45
+exercícios novos (353 → 398)**:
+
+- **Peso corporal (7)**: Elevação Y-T-W deitado no chão, Rotação externa
+  isométrica na parede, Rotação interna isométrica na parede, Encolhimento
+  isométrico de ombros, Torção de toalha, Afundo lateral, Marcha do psoas
+  deitado — todos os músculos passam a ter opção 100% peso corporal, exceto
+  três casos fisicamente impossíveis (pinça exige objeto; extensores do
+  antebraço têm versão de mobilidade no chão; braquiorradial exige barra
+  fixa ou halteres).
+- **Kettlebell (8)**: swing, agachamento goblet, peso morto, press de
+  ombros, remo, halo, farmer carry, russian twist.
+- **Máquina (4)**: press de ombros, curl, extensão de tríceps, gémeos.
+- **Cabo (7)**: elevação lateral, elevação frontal, kickback de glúteo,
+  abdução de anca, adução de anca, crunch, pull-through.
+- **Elástico (15)**: press de peito, press de ombros, elevações lateral e
+  frontal, puxada ajoelhada, encolhimento de ombros, agachamento, peso
+  morto, curl de perna, ponte de glúteo, abdução de anca, gémeos sentado,
+  flexão de punho, extensão de punho — e o Encolhimento de ombros com
+  elástico no Trapézio.
+- **Halteres/Barra (4)**: remo curvado com halteres, agachamento sumo com
+  halteres, gémeos em pé com halteres, hip thrust com barra.
+- **Mobilidade (1)**: meios-círculos de pescoço.
+
+Cada um tem ficha completa escrita de raiz (objetivo, passos, erros comuns,
+regressão, progressão, músculos, segurança por classe de equipamento) e
+aparece nos filtros corretos — validado por inventário (0 inalcançáveis) e
+pela suite de 417 testes. Migração segura na base de dados v21. O catálogo
+mestre em `docs/catalog/` foi regenerado com os 398.
+
+---
+
+# Relatório da expansão v0.9.2
 
 Resultado das FASES 4-9 da revisão/expansão. Documentos relacionados:
 `full_exercise_catalog_inventory.md` (FASE 1), `target_exercise_catalog_reference.md`

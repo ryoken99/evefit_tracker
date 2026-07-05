@@ -54,6 +54,8 @@ class ExerciseCapabilityService {
     'wall_sit': {'wall'},
     'wall_slides': {'wall'},
     'elevacao_tibial': {'wall'},
+    'rotacao_externa_isometrica_na_parede': {'wall'},
+    'rotacao_interna_isometrica_na_parede': {'wall'},
   };
 
   static final Set<String> _bodyweightWithSupport = <String>{

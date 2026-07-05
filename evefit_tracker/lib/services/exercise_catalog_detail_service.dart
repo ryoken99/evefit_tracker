@@ -57,6 +57,53 @@ class ExerciseCatalogDetailService {
 
   static String equipmentFor(String name) {
     final n = _n(name);
+    // Regras específicas primeiro: variantes de cabo/elástico/kettlebell de
+    // nomes que também batem em regras genéricas mais abaixo.
+    if (_has(n, ['kettlebell'])) return 'Kettlebell';
+    if (_has(n, [
+      'elevacao lateral no cabo',
+      'elevacao frontal no cabo',
+      'kickback de gluteo no cabo',
+      'abducao de anca no cabo',
+      'aducao de anca no cabo',
+      'crunch no cabo',
+      'pull-through no cabo',
+    ])) {
+      return 'Cabo / polia';
+    }
+    if (_has(n, [
+      'elevacao lateral com elastico',
+      'elevacao frontal com elastico',
+      'press de peito com elastico',
+      'press de ombros com elastico',
+      'puxada ajoelhada com elastico',
+      'encolhimento de ombros com elastico',
+      'agachamento com elastico',
+      'abducao de anca com elastico',
+      'curl de perna com elastico',
+      'ponte de gluteo com elastico',
+      'gemeos sentado com elastico',
+      'peso morto com elastico',
+      'flexao de punho com elastico',
+      'extensao de punho com elastico',
+    ])) {
+      return 'Elásticos';
+    }
+    if (_has(n, [
+      'press de ombros na maquina',
+      'curl na maquina',
+      'extensao de triceps na maquina',
+      'gemeos na maquina',
+    ])) {
+      return 'Máquina';
+    }
+    if (_has(n, ['agachamento sumo com halteres'])) return 'Halteres';
+    if (_has(n, ['gemeos em pe com halteres'])) return 'Halteres';
+    if (_has(n, ['remo curvado com halteres'])) return 'Halteres';
+    if (_has(n, ['hip thrust com barra'])) {
+      return 'Barra, banco ou apoio estável';
+    }
+    if (_has(n, ['afundo lateral', 'marcha do psoas'])) return 'Peso corporal';
     if (_has(n, ['remo ergometro'])) return 'Remo ergómetro';
     if (_has(n, ['stepper'])) return 'Stepper / escadas';
     if (_has(n, ['subida de escadas no exterior'])) {
@@ -250,6 +297,13 @@ class ExerciseCatalogDetailService {
       return n.contains('towel') ? 'Barra fixa, toalha' : 'Barra fixa';
     }
     if (_has(n, ['rotacao externa da anca'])) return 'Peso corporal';
+    if (_has(n, ['isometrica na parede'])) {
+      return 'Peso corporal, parede';
+    }
+    if (_has(n, ['elevacao y-t-w', 'encolhimento isometrico de ombros'])) {
+      return 'Peso corporal';
+    }
+    if (_has(n, ['torcao de toalha'])) return 'Peso corporal, toalha';
     if (_has(n, [
       'elastico',
       'pull-apart',

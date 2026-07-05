@@ -1,3 +1,14 @@
+# v0.9.3
+
+- Cobertura total músculo × equipamento × local: 44 exercícios novos (398 no total) fecham todas as células em falta da matriz de treino.
+- Kettlebell estreia no catálogo com 8 exercícios (swing, goblet, peso morto, press, remo, halo, farmer carry, russian twist) — o equipamento existia na app sem um único exercício.
+- Novos exercícios de máquina (press de ombros, curl, extensão de tríceps, gémeos), de cabo (elevações lateral/frontal, kickback de glúteo, abdução/adução de anca, crunch, pull-through) e 15 de elástico (press de peito/ombros, elevações, puxada ajoelhada, encolhimento, agachamento, peso morto, curl de perna, ponte de glúteo, abdução, gémeos sentado, flexão/extensão de punho).
+- Todos os músculos passam a ter opção 100% peso corporal em casa: Y-T-W no chão, rotações interna/externa isométricas na parede, encolhimento isométrico, torção de toalha, afundo lateral, marcha do psoas e meios-círculos de pescoço.
+- Novo catálogo mestre em docs/catalog/: para cada músculo, modo de cardio, zona de mobilidade, foco marcial e tipo de recuperação, todos os exercícios possíveis por condição (casa sem/com equipamento, ginásio, exterior, dojo), do mais simples ao mais complexo, com fichas de execução completas.
+- Segurança específica por classe de equipamento (kettlebell, elástico, cabo, máquina) em todos os exercícios abrangidos.
+- Migração segura (base de dados v21): exercícios novos entram sem tocar em personalizados, treinos, séries, medidas, fotos ou objetivos.
+- Atualizada versão da app para v0.9.3.
+
 # v0.9.2
 
 - Expansão do catálogo de exercícios: 315 → 353 (38 novos), fechando lacunas reais identificadas em gap analysis: coifa do ombro (elevação no plano da omoplata), extensão cervical, rotação do tronco com carga (lenhador no cabo), anti-rotação sem equipamento (prancha com toque no ombro), rotadores externos da anca (clamshell), isquiotibiais excêntricos (curl nórdico assistido) e dobradiça unilateral (peso morto unilateral).

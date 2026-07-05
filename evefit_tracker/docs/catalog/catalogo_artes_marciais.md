@@ -10,113 +10,113 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Condicionamento leve para Karate (E276) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Mobilidade de anca para Karate (E274) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Mobilidade de ombro para Karate (E275) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Trabalho leve ao saco (E281) | iniciante | Saco de pancada | — | ✅ | — | — | ✅ |
-| 5 | Bloqueios técnicos (uke) (E278) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Drills de deslocamento (E270) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Drills de guarda (E271) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Esquivas e tai-sabaki (E279) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Joelhadas técnicas (E280) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Kata (E267) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Kihon (E266) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Kumite técnico (E268) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Pontapés técnicos (E272) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Socos técnicos (E273) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Sombra de Karate (E269) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Treino de bases (dachi) (E277) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Condicionamento leve para Karate (E320) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Mobilidade de anca para Karate (E318) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Mobilidade de ombro para Karate (E319) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Trabalho leve ao saco (E325) | iniciante | Saco de pancada | — | ✅ | — | — | ✅ |
+| 5 | Bloqueios técnicos (uke) (E322) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Drills de deslocamento (E314) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Drills de guarda (E315) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Esquivas e tai-sabaki (E323) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Joelhadas técnicas (E324) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Kata (E311) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Kihon (E310) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Kumite técnico (E312) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Pontapés técnicos (E316) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Socos técnicos (E317) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Sombra de Karate (E313) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Treino de bases (dachi) (E321) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Kihon
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Kihon (E266) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Kihon (E310) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Kata
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Kata (E267) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Kata (E311) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Kumite técnico
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Kumite técnico (E268) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Kumite técnico (E312) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Sombra de Karate
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Sombra de Karate (E269) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Sombra de Karate (E313) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Deslocamentos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Drills de deslocamento (E270) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Drills de deslocamento (E314) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Bases (dachi)
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Treino de bases (dachi) (E277) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Treino de bases (dachi) (E321) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Guarda
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Drills de guarda (E271) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Drills de guarda (E315) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Socos técnicos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Socos técnicos (E273) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Socos técnicos (E317) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Pontapés técnicos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Pontapés técnicos (E272) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Pontapés técnicos (E316) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Bloqueios
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Bloqueios técnicos (uke) (E278) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Bloqueios técnicos (uke) (E322) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Esquivas / tai-sabaki
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Esquivas e tai-sabaki (E279) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Esquivas e tai-sabaki (E323) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Joelhadas
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Joelhadas técnicas (E280) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Joelhadas técnicas (E324) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Trabalho ao saco
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Trabalho leve ao saco (E281) | iniciante | Saco de pancada | — | ✅ | — | — | ✅ |
+| 1 | Trabalho leve ao saco (E325) | iniciante | Saco de pancada | — | ✅ | — | — | ✅ |
 
 ## Karate › Mobilidade para Karate
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Mobilidade de anca para Karate (E274) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Mobilidade de ombro para Karate (E275) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Mobilidade de anca para Karate (E318) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Mobilidade de ombro para Karate (E319) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Karate › Condicionamento para Karate
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Condicionamento leve para Karate (E276) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Condicionamento leve para Karate (E320) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 # Jiu-Jitsu
 
@@ -124,99 +124,99 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Condicionamento leve para Jiu-Jitsu (E292) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Inversão granby com apoio (E295) | iniciante | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 3 | Mobilidade de anca para Jiu-Jitsu (E288) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Mobilidade de ombro para Jiu-Jitsu (E289) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Breakfalls (ukemi) (E294) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 6 | Core para Jiu-Jitsu (E291) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Drills de guarda (E286) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 8 | Drills de passagem de guarda (E287) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 9 | Força de pega para Jiu-Jitsu (E290) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Ponte de grappling (E283) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 11 | Rolamentos de solo (E293) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 12 | Shrimp / fuga de anca (E282) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 13 | Sprawl (E285) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 14 | Technical stand-up (E284) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Condicionamento leve para Jiu-Jitsu (E336) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Inversão granby com apoio (E339) | iniciante | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 3 | Mobilidade de anca para Jiu-Jitsu (E332) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Mobilidade de ombro para Jiu-Jitsu (E333) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Breakfalls (ukemi) (E338) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 6 | Core para Jiu-Jitsu (E335) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Drills de guarda (E330) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 8 | Drills de passagem de guarda (E331) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 9 | Força de pega para Jiu-Jitsu (E334) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Ponte de grappling (E327) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 11 | Rolamentos de solo (E337) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 12 | Shrimp / fuga de anca (E326) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 13 | Sprawl (E329) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 14 | Technical stand-up (E328) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Shrimp / fuga de anca
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Shrimp / fuga de anca (E282) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Shrimp / fuga de anca (E326) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Ponte de grappling
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Ponte de grappling (E283) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Ponte de grappling (E327) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Technical stand-up
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Technical stand-up (E284) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Technical stand-up (E328) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Rolamentos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Rolamentos de solo (E293) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Rolamentos de solo (E337) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Breakfalls / ukemi
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Breakfalls (ukemi) (E294) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Breakfalls (ukemi) (E338) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Inversões
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Inversão granby com apoio (E295) | iniciante | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Inversão granby com apoio (E339) | iniciante | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Guarda
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Drills de guarda (E286) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
-| 2 | Drills de passagem de guarda (E287) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Drills de guarda (E330) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 2 | Drills de passagem de guarda (E331) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Passagem de guarda
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Drills de passagem de guarda (E287) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Drills de passagem de guarda (E331) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Jiu-Jitsu › Força de pega
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Força de pega para Jiu-Jitsu (E290) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Força de pega para Jiu-Jitsu (E334) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Jiu-Jitsu › Core para Jiu-Jitsu
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Core para Jiu-Jitsu (E291) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Core para Jiu-Jitsu (E335) | intermédio | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Jiu-Jitsu › Mobilidade para Jiu-Jitsu
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Mobilidade de anca para Jiu-Jitsu (E288) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Mobilidade de ombro para Jiu-Jitsu (E289) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Mobilidade de anca para Jiu-Jitsu (E332) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Mobilidade de ombro para Jiu-Jitsu (E333) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Jiu-Jitsu › Condicionamento para Jiu-Jitsu
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Condicionamento leve para Jiu-Jitsu (E292) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Sprawl (E285) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
+| 1 | Condicionamento leve para Jiu-Jitsu (E336) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Sprawl (E329) | intermédio | Tatami ou tapete / colchonete | — | ✅ | ✅ | — | ✅ |
 
 ## Fichas completas (do mais simples ao mais complexo)
 
-### E292 — Condicionamento leve para Jiu-Jitsu
+### E336 — Condicionamento leve para Jiu-Jitsu
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Peso corporal
@@ -248,7 +248,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E276 — Condicionamento leve para Karate
+### E320 — Condicionamento leve para Karate
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -280,7 +280,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E295 — Inversão granby com apoio
+### E339 — Inversão granby com apoio
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -310,7 +310,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E288 — Mobilidade de anca para Jiu-Jitsu
+### E332 — Mobilidade de anca para Jiu-Jitsu
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Peso corporal
@@ -342,7 +342,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E274 — Mobilidade de anca para Karate
+### E318 — Mobilidade de anca para Karate
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -374,7 +374,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E289 — Mobilidade de ombro para Jiu-Jitsu
+### E333 — Mobilidade de ombro para Jiu-Jitsu
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Peso corporal
@@ -406,7 +406,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E275 — Mobilidade de ombro para Karate
+### E319 — Mobilidade de ombro para Karate
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -438,7 +438,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E281 — Trabalho leve ao saco
+### E325 — Trabalho leve ao saco
 
 - **Nível**: iniciante | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Saco de pancada
@@ -468,7 +468,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E278 — Bloqueios técnicos (uke)
+### E322 — Bloqueios técnicos (uke)
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -498,7 +498,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E294 — Breakfalls (ukemi)
+### E338 — Breakfalls (ukemi)
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -528,7 +528,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E291 — Core para Jiu-Jitsu
+### E335 — Core para Jiu-Jitsu
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Peso corporal
@@ -560,7 +560,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E270 — Drills de deslocamento
+### E314 — Drills de deslocamento
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -592,7 +592,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E271 — Drills de guarda
+### E315 — Drills de guarda
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -624,7 +624,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E286 — Drills de guarda
+### E330 — Drills de guarda
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -656,7 +656,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E287 — Drills de passagem de guarda
+### E331 — Drills de passagem de guarda
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -688,7 +688,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E279 — Esquivas e tai-sabaki
+### E323 — Esquivas e tai-sabaki
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -718,7 +718,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E290 — Força de pega para Jiu-Jitsu
+### E334 — Força de pega para Jiu-Jitsu
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Peso corporal
@@ -750,7 +750,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E280 — Joelhadas técnicas
+### E324 — Joelhadas técnicas
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -780,7 +780,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E267 — Kata
+### E311 — Kata
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -812,7 +812,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E266 — Kihon
+### E310 — Kihon
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -844,7 +844,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E268 — Kumite técnico
+### E312 — Kumite técnico
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -876,7 +876,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E272 — Pontapés técnicos
+### E316 — Pontapés técnicos
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -908,7 +908,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E283 — Ponte de grappling
+### E327 — Ponte de grappling
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -940,7 +940,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E293 — Rolamentos de solo
+### E337 — Rolamentos de solo
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -970,7 +970,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E282 — Shrimp / fuga de anca
+### E326 — Shrimp / fuga de anca
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -1002,7 +1002,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E273 — Socos técnicos
+### E317 — Socos técnicos
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -1034,7 +1034,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E269 — Sombra de Karate
+### E313 — Sombra de Karate
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal
@@ -1066,7 +1066,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E285 — Sprawl
+### E329 — Sprawl
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -1098,7 +1098,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E284 — Technical stand-up
+### E328 — Technical stand-up
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Jiu-Jitsu
 - **Equipamento**: Tatami ou tapete / colchonete
@@ -1130,7 +1130,7 @@ Drills que exigem material próprio (saco de pancada, tatami ou tapete) estão m
 - **Segurança**: Treina em piso seguro e aumenta velocidade só depois de controlar a técnica. Para com dor articular, impacto na cabeça, tontura ou instabilidade.
 - **Respiração**: Inspira na fase de preparação ou de retorno e expira durante o esforço, sem prender a respiração.
 
-### E277 — Treino de bases (dachi)
+### E321 — Treino de bases (dachi)
 
 - **Nível**: intermédio | **Padrão**: técnica marcial | **Grupo**: Karate
 - **Equipamento**: Peso corporal

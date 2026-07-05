@@ -47,9 +47,9 @@ void main() {
     '${entry.details.adaptationNotes}',
   );
 
-  group('v0.9.1 canonical content for all 353 catalog entries', () {
-    test('catalog exposes all 353 entries', () {
-      expect(entries, hasLength(353));
+  group('v0.9.1 canonical content for all 398 catalog entries', () {
+    test('catalog exposes all 398 entries', () {
+      expect(entries, hasLength(398));
     });
 
     test('1. every exercise has a non-empty objective', () {

@@ -393,12 +393,15 @@ class CatalogQualityGateService {
       final name = _norm(entry.name);
       final text = _text(entry);
       if (name.contains('curl de perna')) {
-        // Curl de perna é máquina de posterior de coxa, não flexão de
-        // cotovelo: exige instruções de joelho e calcanhar.
+        // Curl de perna é flexão de joelho de posterior de coxa, não flexão
+        // de cotovelo: exige instruções de joelho e calcanhar, e a menção ao
+        // implemento certo (máquina ou elástico).
         _requireAll(failures, entry, 'movement_family', text, [
           'joelh',
           'calcanhar',
-          'maquina',
+          name.contains('elastico') || name.contains('elástico')
+              ? 'elastico'
+              : 'maquina',
           'respira',
         ]);
       } else if (name.contains('curl') &&
@@ -440,7 +443,7 @@ class CatalogQualityGateService {
             'dedos do pe',
             'dorsiflexao',
             'flexao da anca',
-            'flexao de punhos',
+            'flexao de punho',
             'flexao ativa',
           ]);
       if (isPushFamily) {

@@ -8,173 +8,175 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento PNF de isquiotibiais (E340) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento PNF de peitoral na parede (E341) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento borboleta de adutores (E343) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Alongamento cervical leve (E334) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Alongamento de flexores da anca em afundo (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Alongamento de glúteo sentado (E318) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Alongamento de tríceps atrás da cabeça (E345) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Alongamento dinâmico global (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Alongamento dorsal (E306) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Alongamento figura 4 (E319) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Alongamento glúteos (E317) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Alongamento gémeos (E327) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Alongamento gémeos na parede (E328) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Alongamento peitoral (E303) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Alongamento peitoral na parede (E304) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Alongamento peitoral no canto (E305) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Alongamento piriforme (E321) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Alongamento posterior com perna elevada (E315) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Alongamento posterior de coxa (E310) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 20 | Alongamento posterior do ombro (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 21 | Alongamento posterior em pé (E312) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 22 | Alongamento posterior sentado (E311) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 23 | Alongamento quadríceps de lado (E326) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 24 | Alongamento quadríceps em pé (E325) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 25 | Aquecimento dinâmico geral (E353) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 26 | Cat-cow (E308) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 27 | Cobra suave no chão (E346) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 28 | Círculos de ombro (E299) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 29 | Círculos de tornozelo (E330) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 30 | Extensão de punhos no chão (E332) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 31 | Flexão de punhos no chão (E333) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 32 | Mobilidade 90/90 (E323) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 33 | Mobilidade de anca (E298) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 34 | Mobilidade de ombro (E297) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 35 | Mobilidade de ombro com toalha (E301) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 36 | Mobilidade de punhos (E331) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 37 | Mobilidade de tornozelo na parede (E329) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 38 | Mobilidade dinâmica de anca (E324) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 39 | Mobilidade dinâmica de posterior (E316) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 40 | Mobilidade leve de anca (E336) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 41 | Mobilidade leve de ombros (E335) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 42 | Mobilidade torácica (E296) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 43 | Open book (E309) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 44 | Pigeon stretch (E320) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 45 | Rotação externa da anca no chão (E322) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 46 | Rotação torácica no chão (E307) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 47 | Tocar nos pés em pé (E314) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 48 | Tocar nos pés sentado (E313) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 49 | Mobilidade de ombro com cabo de vassoura (E302) | iniciante | Cabo de vassoura | — | ✅ | ✅ | — | — |
+| 1 | Alongamento PNF de isquiotibiais (E385) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento PNF de peitoral na parede (E386) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento borboleta de adutores (E388) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Alongamento cervical leve (E378) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Alongamento de flexores da anca em afundo (E387) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Alongamento de glúteo sentado (E362) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Alongamento de tríceps atrás da cabeça (E390) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Alongamento dinâmico global (E389) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Alongamento dorsal (E350) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Alongamento figura 4 (E363) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Alongamento glúteos (E361) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Alongamento gémeos (E371) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Alongamento gémeos na parede (E372) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Alongamento peitoral (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Alongamento peitoral na parede (E348) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Alongamento peitoral no canto (E349) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Alongamento piriforme (E365) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Alongamento posterior com perna elevada (E359) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Alongamento posterior de coxa (E354) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | Alongamento posterior do ombro (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Alongamento posterior em pé (E356) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Alongamento posterior sentado (E355) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 23 | Alongamento quadríceps de lado (E370) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 24 | Alongamento quadríceps em pé (E369) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 25 | Aquecimento dinâmico geral (E398) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 26 | Cat-cow (E352) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 27 | Cobra suave no chão (E391) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 28 | Círculos de ombro (E343) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 29 | Círculos de tornozelo (E374) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 30 | Extensão de punhos no chão (E376) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 31 | Flexão de punhos no chão (E377) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 32 | Meio-círculos de pescoço (E379) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 33 | Mobilidade 90/90 (E367) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 34 | Mobilidade de anca (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 35 | Mobilidade de ombro (E341) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 36 | Mobilidade de ombro com toalha (E345) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 37 | Mobilidade de punhos (E375) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 38 | Mobilidade de tornozelo na parede (E373) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 39 | Mobilidade dinâmica de anca (E368) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 40 | Mobilidade dinâmica de posterior (E360) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 41 | Mobilidade leve de anca (E381) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 42 | Mobilidade leve de ombros (E380) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 43 | Mobilidade torácica (E340) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 44 | Open book (E353) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 45 | Pigeon stretch (E364) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 46 | Rotação externa da anca no chão (E366) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 47 | Rotação torácica no chão (E351) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 48 | Tocar nos pés em pé (E358) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 49 | Tocar nos pés sentado (E357) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 50 | Mobilidade de ombro com cabo de vassoura (E346) | iniciante | Cabo de vassoura | — | ✅ | ✅ | — | — |
 
 ## Mobilidade › Ombros
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento de tríceps atrás da cabeça (E345) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento posterior do ombro (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Aquecimento dinâmico geral (E353) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Círculos de ombro (E299) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Mobilidade de ombro (E297) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Mobilidade de ombro com toalha (E301) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Mobilidade leve de ombros (E335) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Mobilidade de ombro com cabo de vassoura (E302) | iniciante | Cabo de vassoura | — | ✅ | ✅ | — | — |
+| 1 | Alongamento de tríceps atrás da cabeça (E390) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento posterior do ombro (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Aquecimento dinâmico geral (E398) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Círculos de ombro (E343) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Mobilidade de ombro (E341) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Mobilidade de ombro com toalha (E345) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Mobilidade leve de ombros (E380) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Mobilidade de ombro com cabo de vassoura (E346) | iniciante | Cabo de vassoura | — | ✅ | ✅ | — | — |
 
 ## Mobilidade › Peitoral
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento PNF de peitoral na parede (E341) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento peitoral (E303) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento peitoral na parede (E304) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Alongamento peitoral no canto (E305) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento PNF de peitoral na parede (E386) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento peitoral (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento peitoral na parede (E348) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Alongamento peitoral no canto (E349) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Dorsal
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento dorsal (E306) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Cobra suave no chão (E346) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento dorsal (E350) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Cobra suave no chão (E391) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Coluna torácica
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento dinâmico global (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Cat-cow (E308) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Cobra suave no chão (E346) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Mobilidade torácica (E296) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Open book (E309) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Rotação torácica no chão (E307) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento dinâmico global (E389) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Cat-cow (E352) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Cobra suave no chão (E391) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Mobilidade torácica (E340) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Open book (E353) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Rotação torácica no chão (E351) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Anca
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento borboleta de adutores (E343) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento de flexores da anca em afundo (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento dinâmico global (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Aquecimento dinâmico geral (E353) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Mobilidade 90/90 (E323) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Mobilidade de anca (E298) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Mobilidade dinâmica de anca (E324) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Mobilidade leve de anca (E336) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Rotação externa da anca no chão (E322) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento borboleta de adutores (E388) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento de flexores da anca em afundo (E387) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento dinâmico global (E389) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Aquecimento dinâmico geral (E398) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Mobilidade 90/90 (E367) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Mobilidade de anca (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Mobilidade dinâmica de anca (E368) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Mobilidade leve de anca (E381) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Rotação externa da anca no chão (E366) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Posterior de coxa
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento PNF de isquiotibiais (E340) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento dinâmico global (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento posterior com perna elevada (E315) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Alongamento posterior de coxa (E310) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Alongamento posterior do ombro (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Alongamento posterior em pé (E312) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Alongamento posterior sentado (E311) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Mobilidade dinâmica de posterior (E316) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento PNF de isquiotibiais (E385) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento dinâmico global (E389) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento posterior com perna elevada (E359) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Alongamento posterior de coxa (E354) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Alongamento posterior do ombro (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Alongamento posterior em pé (E356) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Alongamento posterior sentado (E355) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Mobilidade dinâmica de posterior (E360) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Glúteos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento de glúteo sentado (E318) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento figura 4 (E319) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento glúteos (E317) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Alongamento piriforme (E321) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Mobilidade 90/90 (E323) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Pigeon stretch (E320) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento de glúteo sentado (E362) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento figura 4 (E363) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento glúteos (E361) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Alongamento piriforme (E365) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Mobilidade 90/90 (E367) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Pigeon stretch (E364) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Quadríceps
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento de flexores da anca em afundo (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento quadríceps de lado (E326) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento quadríceps em pé (E325) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento de flexores da anca em afundo (E387) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento quadríceps de lado (E370) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento quadríceps em pé (E369) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Tornozelo
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Círculos de tornozelo (E330) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Mobilidade de tornozelo na parede (E329) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Círculos de tornozelo (E374) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Mobilidade de tornozelo na parede (E373) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Gémeos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento gémeos (E327) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento gémeos na parede (E328) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento gémeos (E371) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento gémeos na parede (E372) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Punhos
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Extensão de punhos no chão (E332) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Flexão de punhos no chão (E333) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Mobilidade de punhos (E331) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Extensão de punhos no chão (E376) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Flexão de punhos no chão (E377) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Mobilidade de punhos (E375) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Mobilidade › Pescoço
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento cervical leve (E334) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento cervical leve (E378) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Meio-círculos de pescoço (E379) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Fichas completas (do mais simples ao mais complexo)
 
-### E340 — Alongamento PNF de isquiotibiais
+### E385 — Alongamento PNF de isquiotibiais
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -204,7 +206,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Contrai com força moderada, nunca máxima, e alonga sem dor. Para com dor aguda, formigueiro, cãibra forte ou dormência.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E341 — Alongamento PNF de peitoral na parede
+### E386 — Alongamento PNF de peitoral na parede
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -234,7 +236,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Contrai com força moderada, nunca máxima, e alonga sem dor. Para com dor aguda, formigueiro, cãibra forte ou dormência.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E343 — Alongamento borboleta de adutores
+### E388 — Alongamento borboleta de adutores
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -264,7 +266,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Alonga até uma tensão confortável, nunca até à dor. Sai devagar da posição e para com formigueiro, dormência ou dor aguda.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E334 — Alongamento cervical leve
+### E378 — Alongamento cervical leve
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -296,7 +298,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Usa força muito leve. Para imediatamente com tontura, formigueiro, dor irradiada, pressão na cabeça, visão turva ou dor aguda no pescoço.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E342 — Alongamento de flexores da anca em afundo
+### E387 — Alongamento de flexores da anca em afundo
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -326,7 +328,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Alonga até uma tensão confortável, nunca até à dor. Sai devagar da posição e para com formigueiro, dormência ou dor aguda.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E318 — Alongamento de glúteo sentado
+### E362 — Alongamento de glúteo sentado
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -358,7 +360,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E345 — Alongamento de tríceps atrás da cabeça
+### E390 — Alongamento de tríceps atrás da cabeça
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -388,7 +390,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Alonga até uma tensão confortável, nunca até à dor. Sai devagar da posição e para com formigueiro, dormência ou dor aguda.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E344 — Alongamento dinâmico global
+### E389 — Alongamento dinâmico global
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -418,7 +420,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Alonga até uma tensão confortável, nunca até à dor. Sai devagar da posição e para com formigueiro, dormência ou dor aguda.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E306 — Alongamento dorsal
+### E350 — Alongamento dorsal
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -450,7 +452,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E319 — Alongamento figura 4
+### E363 — Alongamento figura 4
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -482,7 +484,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E317 — Alongamento glúteos
+### E361 — Alongamento glúteos
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -514,7 +516,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E327 — Alongamento gémeos
+### E371 — Alongamento gémeos
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -546,7 +548,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E328 — Alongamento gémeos na parede
+### E372 — Alongamento gémeos na parede
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -578,7 +580,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E303 — Alongamento peitoral
+### E347 — Alongamento peitoral
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -610,7 +612,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E304 — Alongamento peitoral na parede
+### E348 — Alongamento peitoral na parede
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -642,7 +644,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E305 — Alongamento peitoral no canto
+### E349 — Alongamento peitoral no canto
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -674,7 +676,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E321 — Alongamento piriforme
+### E365 — Alongamento piriforme
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -706,7 +708,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E315 — Alongamento posterior com perna elevada
+### E359 — Alongamento posterior com perna elevada
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -738,7 +740,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E310 — Alongamento posterior de coxa
+### E354 — Alongamento posterior de coxa
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -770,7 +772,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E300 — Alongamento posterior do ombro
+### E344 — Alongamento posterior do ombro
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -802,7 +804,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E312 — Alongamento posterior em pé
+### E356 — Alongamento posterior em pé
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -834,7 +836,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E311 — Alongamento posterior sentado
+### E355 — Alongamento posterior sentado
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -866,7 +868,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E326 — Alongamento quadríceps de lado
+### E370 — Alongamento quadríceps de lado
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -898,7 +900,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E325 — Alongamento quadríceps em pé
+### E369 — Alongamento quadríceps em pé
 
 - **Nível**: iniciante | **Padrão**: alongamento estático | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -930,14 +932,14 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E353 — Aquecimento dinâmico geral
+### E398 — Aquecimento dinâmico geral
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
 - **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Exterior, Dojo
 - **Músculos secundários**: respiração, postura, controlo articular e consciência corporal
 
-**Objetivo**: Rotina de aquecimento sem equipamento que mobiliza as articulações de cima para baixo e termina com movimentos que elevam o pulso. Serve para treinar preparação do corpo para o treino.
+**Objetivo**: Mobilidade suave da zona indicada, procurando tensão leve e controlo respiratório. Serve para treinar preparação do corpo para o treino.
 
 **Como executar:**
 
@@ -960,7 +962,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Mantém a intensidade muito baixa e o ritmo confortável. Para com tontura, falta de ar fora do normal ou dor.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E308 — Cat-cow
+### E352 — Cat-cow
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -992,7 +994,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E346 — Cobra suave no chão
+### E391 — Cobra suave no chão
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1022,7 +1024,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Alonga até uma tensão confortável, nunca até à dor. Sai devagar da posição e para com formigueiro, dormência ou dor aguda.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E299 — Círculos de ombro
+### E343 — Círculos de ombro
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1054,7 +1056,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E330 — Círculos de tornozelo
+### E374 — Círculos de tornozelo
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1086,7 +1088,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E332 — Extensão de punhos no chão
+### E376 — Extensão de punhos no chão
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1118,7 +1120,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E333 — Flexão de punhos no chão
+### E377 — Flexão de punhos no chão
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1150,7 +1152,37 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E323 — Mobilidade 90/90
+### E379 — Meio-círculos de pescoço
+
+- **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
+- **Equipamento**: Peso corporal
+- **Onde**: Casa s/ equip., Casa c/ equip., Ginásio, Exterior, Dojo
+- **Músculos secundários**: Pescoço, trapézio superior e postura da cabeça
+
+**Objetivo**: Meios-círculos lentos da cabeça pela frente do corpo, de ombro a ombro, para mobilizar o pescoço com segurança; evita o círculo completo para trás. Serve para treinar mobilidade suave da zona do pescoço.
+
+**Como executar:**
+
+1. Senta-te ou fica de pé com a coluna direita e os ombros descontraídos.
+2. Deixa o queixo descer suavemente em direção ao peito.
+3. Rola a cabeça devagar para um lado, levando a orelha na direção do ombro.
+4. Volta pela frente, passando com o queixo baixo, até à orelha do outro lado.
+5. Faz 4 a 6 meios-círculos lentos, sempre pela frente, a respirar devagar.
+6. Pára se sentires dor, tontura ou formigueiro na zona do pescoço.
+
+**Erros comuns:**
+
+- Fazer o círculo completo com a cabeça para trás.
+- Rodar depressa e com balanço.
+- Encolher os ombros durante o movimento.
+- Forçar a amplitude com dor.
+
+- **Versão mais fácil**: Reduz a amplitude, fazendo só o queixo ao peito e pequenas inclinações laterais.
+- **Versão mais difícil**: Aumenta ligeiramente a amplitude lateral ou acrescenta uma pausa suave de 2 a 3 segundos em cada ombro.
+- **Segurança**: Usa força muito leve. Para imediatamente com tontura, formigueiro, dor irradiada, pressão na cabeça, visão turva ou dor aguda no pescoço.
+- **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
+
+### E367 — Mobilidade 90/90
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1182,7 +1214,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E298 — Mobilidade de anca
+### E342 — Mobilidade de anca
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1214,7 +1246,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E297 — Mobilidade de ombro
+### E341 — Mobilidade de ombro
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1246,7 +1278,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E301 — Mobilidade de ombro com toalha
+### E345 — Mobilidade de ombro com toalha
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1278,7 +1310,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E331 — Mobilidade de punhos
+### E375 — Mobilidade de punhos
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1310,7 +1342,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E329 — Mobilidade de tornozelo na parede
+### E373 — Mobilidade de tornozelo na parede
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1342,7 +1374,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E324 — Mobilidade dinâmica de anca
+### E368 — Mobilidade dinâmica de anca
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1374,7 +1406,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E316 — Mobilidade dinâmica de posterior
+### E360 — Mobilidade dinâmica de posterior
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1406,7 +1438,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E336 — Mobilidade leve de anca
+### E381 — Mobilidade leve de anca
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1438,7 +1470,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E335 — Mobilidade leve de ombros
+### E380 — Mobilidade leve de ombros
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1470,7 +1502,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E296 — Mobilidade torácica
+### E340 — Mobilidade torácica
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1502,7 +1534,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E309 — Open book
+### E353 — Open book
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1534,7 +1566,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E320 — Pigeon stretch
+### E364 — Pigeon stretch
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1566,7 +1598,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E322 — Rotação externa da anca no chão
+### E366 — Rotação externa da anca no chão
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1598,7 +1630,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E307 — Rotação torácica no chão
+### E351 — Rotação torácica no chão
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1629,7 +1661,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E314 — Tocar nos pés em pé
+### E358 — Tocar nos pés em pé
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1661,7 +1693,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E313 — Tocar nos pés sentado
+### E357 — Tocar nos pés sentado
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -1693,7 +1725,7 @@ Tipo de trabalho por ficha: mobilidade dinâmica, alongamento estático ou along
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E302 — Mobilidade de ombro com cabo de vassoura
+### E346 — Mobilidade de ombro com cabo de vassoura
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Cabo de vassoura

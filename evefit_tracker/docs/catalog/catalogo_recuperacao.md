@@ -6,137 +6,138 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Arrefecimento pós-artes marciais (E352) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Arrefecimento pós-treino de força (E351) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Caminhada leve (E338) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Relaxamento deitado (E339) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Respiração diafragmática (E337) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Respiração nasal lenta (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Bola de massagem para pés e glúteos (E350) | iniciante | Bola de massagem | — | ✅ | — | — | — |
-| 8 | Foam roller para costas (E349) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
-| 9 | Foam roller para pernas (E348) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
+| 1 | Arrefecimento pós-artes marciais (E397) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Arrefecimento pós-treino de força (E396) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Caminhada leve (E383) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Relaxamento deitado (E384) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Respiração diafragmática (E382) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Respiração nasal lenta (E392) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Bola de massagem para pés e glúteos (E395) | iniciante | Bola de massagem | — | ✅ | — | — | — |
+| 8 | Foam roller para costas (E394) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
+| 9 | Foam roller para pernas (E393) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
 
 ## Recuperação › Mobilidade leve
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento PNF de isquiotibiais (E340) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento PNF de peitoral na parede (E341) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento borboleta de adutores (E343) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Alongamento cervical leve (E334) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Alongamento de flexores da anca em afundo (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Alongamento de glúteo sentado (E318) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Alongamento de tríceps atrás da cabeça (E345) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Alongamento dinâmico global (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Alongamento dorsal (E306) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Alongamento figura 4 (E319) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Alongamento glúteos (E317) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Alongamento gémeos (E327) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Alongamento gémeos na parede (E328) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Alongamento peitoral (E303) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Alongamento peitoral na parede (E304) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Alongamento peitoral no canto (E305) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Alongamento piriforme (E321) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Alongamento posterior com perna elevada (E315) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Alongamento posterior de coxa (E310) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 20 | Alongamento posterior do ombro (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 21 | Alongamento posterior em pé (E312) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 22 | Alongamento posterior sentado (E311) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 23 | Alongamento quadríceps de lado (E326) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 24 | Alongamento quadríceps em pé (E325) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 25 | Aquecimento dinâmico geral (E353) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 26 | Arrefecimento pós-artes marciais (E352) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 27 | Arrefecimento pós-treino de força (E351) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 28 | Caminhada leve (E338) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 29 | Cat-cow (E308) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 30 | Cobra suave no chão (E346) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 31 | Círculos de ombro (E299) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 32 | Círculos de tornozelo (E330) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 33 | Extensão de punhos no chão (E332) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 34 | Flexão de punhos no chão (E333) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 35 | Mobilidade 90/90 (E323) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 36 | Mobilidade de anca (E298) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 37 | Mobilidade de ombro (E297) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 38 | Mobilidade de ombro com toalha (E301) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 39 | Mobilidade de punhos (E331) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 40 | Mobilidade de tornozelo na parede (E329) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 41 | Mobilidade dinâmica de anca (E324) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 42 | Mobilidade dinâmica de posterior (E316) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 43 | Mobilidade leve de anca (E336) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 44 | Mobilidade leve de ombros (E335) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 45 | Mobilidade torácica (E296) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 46 | Open book (E309) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 47 | Pigeon stretch (E320) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 48 | Relaxamento deitado (E339) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 49 | Respiração diafragmática (E337) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 50 | Respiração nasal lenta (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 51 | Rotação externa da anca no chão (E322) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 52 | Rotação torácica no chão (E307) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 53 | Tocar nos pés em pé (E314) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 54 | Tocar nos pés sentado (E313) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 55 | Mobilidade de ombro com cabo de vassoura (E302) | iniciante | Cabo de vassoura | — | ✅ | ✅ | — | — |
-| 56 | Bola de massagem para pés e glúteos (E350) | iniciante | Bola de massagem | — | ✅ | — | — | — |
-| 57 | Foam roller para costas (E349) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
-| 58 | Foam roller para pernas (E348) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
+| 1 | Alongamento PNF de isquiotibiais (E385) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento PNF de peitoral na parede (E386) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento borboleta de adutores (E388) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Alongamento cervical leve (E378) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Alongamento de flexores da anca em afundo (E387) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Alongamento de glúteo sentado (E362) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Alongamento de tríceps atrás da cabeça (E390) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Alongamento dinâmico global (E389) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Alongamento dorsal (E350) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Alongamento figura 4 (E363) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Alongamento glúteos (E361) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Alongamento gémeos (E371) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Alongamento gémeos na parede (E372) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Alongamento peitoral (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Alongamento peitoral na parede (E348) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Alongamento peitoral no canto (E349) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Alongamento piriforme (E365) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Alongamento posterior com perna elevada (E359) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Alongamento posterior de coxa (E354) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | Alongamento posterior do ombro (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Alongamento posterior em pé (E356) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Alongamento posterior sentado (E355) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 23 | Alongamento quadríceps de lado (E370) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 24 | Alongamento quadríceps em pé (E369) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 25 | Aquecimento dinâmico geral (E398) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 26 | Arrefecimento pós-artes marciais (E397) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 27 | Arrefecimento pós-treino de força (E396) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 28 | Caminhada leve (E383) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 29 | Cat-cow (E352) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 30 | Cobra suave no chão (E391) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 31 | Círculos de ombro (E343) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 32 | Círculos de tornozelo (E374) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 33 | Extensão de punhos no chão (E376) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 34 | Flexão de punhos no chão (E377) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 35 | Meio-círculos de pescoço (E379) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 36 | Mobilidade 90/90 (E367) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 37 | Mobilidade de anca (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 38 | Mobilidade de ombro (E341) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 39 | Mobilidade de ombro com toalha (E345) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 40 | Mobilidade de punhos (E375) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 41 | Mobilidade de tornozelo na parede (E373) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 42 | Mobilidade dinâmica de anca (E368) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 43 | Mobilidade dinâmica de posterior (E360) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 44 | Mobilidade leve de anca (E381) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 45 | Mobilidade leve de ombros (E380) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 46 | Mobilidade torácica (E340) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 47 | Open book (E353) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 48 | Pigeon stretch (E364) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 49 | Relaxamento deitado (E384) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 50 | Respiração diafragmática (E382) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 51 | Respiração nasal lenta (E392) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 52 | Rotação externa da anca no chão (E366) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 53 | Rotação torácica no chão (E351) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 54 | Tocar nos pés em pé (E358) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 55 | Tocar nos pés sentado (E357) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 56 | Mobilidade de ombro com cabo de vassoura (E346) | iniciante | Cabo de vassoura | — | ✅ | ✅ | — | — |
+| 57 | Bola de massagem para pés e glúteos (E395) | iniciante | Bola de massagem | — | ✅ | — | — | — |
+| 58 | Foam roller para costas (E394) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
+| 59 | Foam roller para pernas (E393) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
 
 ## Recuperação › Alongamentos leves
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Alongamento PNF de isquiotibiais (E340) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Alongamento PNF de peitoral na parede (E341) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Alongamento borboleta de adutores (E343) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Alongamento cervical leve (E334) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Alongamento de flexores da anca em afundo (E342) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Alongamento de glúteo sentado (E318) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Alongamento de tríceps atrás da cabeça (E345) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Alongamento dinâmico global (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Alongamento dorsal (E306) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 10 | Alongamento figura 4 (E319) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 11 | Alongamento glúteos (E317) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 12 | Alongamento gémeos (E327) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13 | Alongamento gémeos na parede (E328) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 14 | Alongamento peitoral (E303) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 15 | Alongamento peitoral na parede (E304) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 | Alongamento peitoral no canto (E305) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 17 | Alongamento piriforme (E321) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 18 | Alongamento posterior com perna elevada (E315) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | Alongamento posterior de coxa (E310) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 20 | Alongamento posterior do ombro (E300) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 21 | Alongamento posterior em pé (E312) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 22 | Alongamento posterior sentado (E311) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 23 | Alongamento quadríceps de lado (E326) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 24 | Alongamento quadríceps em pé (E325) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 25 | Mobilidade leve de anca (E336) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 26 | Mobilidade leve de ombros (E335) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 27 | Respiração diafragmática (E337) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Alongamento PNF de isquiotibiais (E385) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Alongamento PNF de peitoral na parede (E386) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Alongamento borboleta de adutores (E388) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Alongamento cervical leve (E378) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Alongamento de flexores da anca em afundo (E387) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Alongamento de glúteo sentado (E362) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Alongamento de tríceps atrás da cabeça (E390) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 8 | Alongamento dinâmico global (E389) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 9 | Alongamento dorsal (E350) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 10 | Alongamento figura 4 (E363) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 11 | Alongamento glúteos (E361) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | Alongamento gémeos (E371) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | Alongamento gémeos na parede (E372) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | Alongamento peitoral (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | Alongamento peitoral na parede (E348) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | Alongamento peitoral no canto (E349) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 17 | Alongamento piriforme (E365) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 18 | Alongamento posterior com perna elevada (E359) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 19 | Alongamento posterior de coxa (E354) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 20 | Alongamento posterior do ombro (E344) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 21 | Alongamento posterior em pé (E356) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 22 | Alongamento posterior sentado (E355) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 23 | Alongamento quadríceps de lado (E370) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 24 | Alongamento quadríceps em pé (E369) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 25 | Mobilidade leve de anca (E381) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 26 | Mobilidade leve de ombros (E380) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 27 | Respiração diafragmática (E382) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Recuperação › Respiração
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Caminhada leve (E338) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Relaxamento deitado (E339) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Respiração diafragmática (E337) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Respiração nasal lenta (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1 | Caminhada leve (E383) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Relaxamento deitado (E384) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Respiração diafragmática (E382) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Respiração nasal lenta (E392) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Recuperação › Recuperação ativa
 
 | # | Exercício (ficha) | Nível | Equipamento | Casa s/ equip. | Casa c/ equip. | Ginásio | Exterior | Dojo |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Arrefecimento pós-artes marciais (E352) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | Arrefecimento pós-treino de força (E351) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Caminhada leve (E338) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Relaxamento deitado (E339) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Respiração diafragmática (E337) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Respiração nasal lenta (E347) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Bola de massagem para pés e glúteos (E350) | iniciante | Bola de massagem | — | ✅ | — | — | — |
-| 8 | Foam roller para costas (E349) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
-| 9 | Foam roller para pernas (E348) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
+| 1 | Arrefecimento pós-artes marciais (E397) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | Arrefecimento pós-treino de força (E396) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 | Caminhada leve (E383) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | Relaxamento deitado (E384) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | Respiração diafragmática (E382) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 6 | Respiração nasal lenta (E392) | iniciante | Peso corporal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 7 | Bola de massagem para pés e glúteos (E395) | iniciante | Bola de massagem | — | ✅ | — | — | — |
+| 8 | Foam roller para costas (E394) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
+| 9 | Foam roller para pernas (E393) | iniciante | Rolo de espuma (foam roller) | — | ✅ | — | — | — |
 
 ## Fichas completas (do mais simples ao mais complexo)
 
-### E352 — Arrefecimento pós-artes marciais
+### E397 — Arrefecimento pós-artes marciais
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -166,7 +167,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a intensidade muito baixa e o ritmo confortável. Para com tontura, falta de ar fora do normal ou dor.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E351 — Arrefecimento pós-treino de força
+### E396 — Arrefecimento pós-treino de força
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -196,7 +197,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a intensidade muito baixa e o ritmo confortável. Para com tontura, falta de ar fora do normal ou dor.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E338 — Caminhada leve
+### E383 — Caminhada leve
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -227,7 +228,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E339 — Relaxamento deitado
+### E384 — Relaxamento deitado
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -259,7 +260,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E337 — Respiração diafragmática
+### E382 — Respiração diafragmática
 
 - **Nível**: iniciante | **Padrão**: respiração / recuperação | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -291,7 +292,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Procura tensão leve e respirável. Para se a sensação virar dor aguda, dormência, formigueiro, cãibra forte, pressão articular ou instabilidade.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E347 — Respiração nasal lenta
+### E392 — Respiração nasal lenta
 
 - **Nível**: iniciante | **Padrão**: respiração / recuperação | **Grupo**: Mobilidade
 - **Equipamento**: Peso corporal
@@ -321,7 +322,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Mantém a intensidade muito baixa e o ritmo confortável. Para com tontura, falta de ar fora do normal ou dor.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E350 — Bola de massagem para pés e glúteos
+### E395 — Bola de massagem para pés e glúteos
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Bola de massagem
@@ -351,7 +352,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Evita rolar ossos, articulações, a lombar e o pescoço. Para se a pressão causar dor aguda, formigueiro ou dormência.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E349 — Foam roller para costas
+### E394 — Foam roller para costas
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Rolo de espuma (foam roller)
@@ -381,7 +382,7 @@ Gerado por `tool/master_catalog.dart` a partir dos mesmos serviços de filtragem
 - **Segurança**: Evita rolar ossos, articulações, a lombar e o pescoço. Para se a pressão causar dor aguda, formigueiro ou dormência.
 - **Respiração**: Respira lentamente e usa a expiração para relaxar a zona alongada, sem forçar mais amplitude.
 
-### E348 — Foam roller para pernas
+### E393 — Foam roller para pernas
 
 - **Nível**: iniciante | **Padrão**: mobilidade dinâmica | **Grupo**: Mobilidade
 - **Equipamento**: Rolo de espuma (foam roller)

@@ -550,6 +550,141 @@ class ExerciseCatalogContextService {
 
   static String _regressionFor(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['press de peito com elastico'])) {
+      return 'Segura o elástico mais comprido para reduzir a tensão ou empurra um braço de cada vez.';
+    }
+    if (_has(n, ['press de ombros com elastico'])) {
+      return 'Pisa o elástico com um pé só, para reduzir a tensão, ou faz o movimento sentado.';
+    }
+    if (_has(n, ['elevacao lateral com elastico'])) {
+      return 'Segura o elástico mais comprido ou eleva um braço de cada vez.';
+    }
+    if (_has(n, ['elevacao frontal com elastico'])) {
+      return 'Segura o elástico mais comprido ou sobe só até ao nível do peito.';
+    }
+    if (_has(n, ['puxada ajoelhada com elastico'])) {
+      return 'Usa um elástico mais fino ou aproxima os joelhos do ponto de fixação para reduzir a tensão.';
+    }
+    if (_has(n, ['encolhimento de ombros com elastico'])) {
+      return 'Segura o elástico mais comprido para reduzir a tensão.';
+    }
+    if (_has(n, ['agachamento com elastico'])) {
+      return 'Segura as pontas mais compridas para reduzir a tensão ou faz sem elástico.';
+    }
+    if (_has(n, ['abducao de anca com elastico'])) {
+      return 'Usa um elástico mais fino ou faz o movimento deitado de lado.';
+    }
+    if (_has(n, ['curl de perna com elastico'])) {
+      return 'Usa um elástico mais fino ou aproxima-te do ponto de fixação.';
+    }
+    if (_has(n, ['ponte de gluteo com elastico'])) {
+      return 'Usa um elástico mais fino ou faz a ponte sem elástico.';
+    }
+    if (_has(n, ['gemeos sentado com elastico'])) {
+      return 'Usa um elástico mais fino ou reduz a amplitude.';
+    }
+    if (_has(n, ['peso morto com elastico'])) {
+      return 'Segura o elástico mais comprido para reduzir a tensão e encurta a amplitude.';
+    }
+    if (_has(n, ['flexao de punho com elastico'])) {
+      return 'Usa um elástico mais fino ou segura mais longe da ponta.';
+    }
+    if (_has(n, ['extensao de punho com elastico'])) {
+      return 'Usa um elástico mais fino: os extensores são mais fracos que os flexores.';
+    }
+    if (_has(n, ['remo curvado com halteres'])) {
+      return 'Usa halteres mais leves ou apoia o peito num banco inclinado para proteger a lombar.';
+    }
+    if (_has(n, ['agachamento sumo com halteres'])) {
+      return 'Faz o sumo sem halter ou com um peso mais leve.';
+    }
+    if (_has(n, ['gemeos em pe com halteres'])) {
+      return 'Faz sem halteres ou com apoio de uma mão na parede.';
+    }
+    if (_has(n, ['hip thrust com barra'])) {
+      return 'Faz o hip thrust sem barra ou com um halter sobre a anca até dominares a posição.';
+    }
+    if (_has(n, ['rotacao interna isometrica na parede'])) {
+      return 'Reduz a força da pressão e o tempo de sustentação.';
+    }
+    if (_has(n, ['afundo lateral'])) {
+      return 'Dá um passo mais curto e desce menos, ou apoia as mãos numa cadeira à frente.';
+    }
+    if (_has(n, ['marcha do psoas deitado'])) {
+      return 'Desliza o calcanhar pelo chão em vez de elevar o joelho, mantendo a lombar neutra.';
+    }
+    if (_has(n, ['meio-circulos de pescoco'])) {
+      return 'Reduz a amplitude, fazendo só o queixo ao peito e pequenas inclinações laterais.';
+    }
+    if (_has(n, ['kettlebell swing'])) {
+      return 'Treina primeiro a dobradiça sem kettlebell e depois faz balanços curtos só até à cintura.';
+    }
+    if (_has(n, ['agachamento goblet com kettlebell'])) {
+      return 'Agacha até uma profundidade menor ou usa um kettlebell mais leve.';
+    }
+    if (_has(n, ['peso morto com kettlebell'])) {
+      return 'Eleva o kettlebell sobre um degrau ou caixa para encurtar a amplitude até dominares a coluna neutra.';
+    }
+    if (_has(n, ['press de ombros com kettlebell'])) {
+      return 'Usa um kettlebell mais leve ou faz o press ajoelhado para bloquear o impulso das pernas.';
+    }
+    if (_has(n, ['remo com kettlebell'])) {
+      return 'Usa um kettlebell mais leve ou faz a remada com os dois pés no chão e a mão bem apoiada.';
+    }
+    if (_has(n, ['halo com kettlebell'])) {
+      return 'Usa um kettlebell muito leve ou faz o círculo ajoelhado para estabilizar o tronco.';
+    }
+    if (_has(n, ['farmer carry com kettlebell'])) {
+      return 'Usa kettlebells mais leves ou percorre uma distância mais curta.';
+    }
+    if (_has(n, ['russian twist com kettlebell'])) {
+      return 'Faz sem kettlebell ou mantém os pés apoiados no chão todo o tempo.';
+    }
+    if (_has(n, ['press de ombros na maquina'])) {
+      return 'Reduz a carga da máquina e trabalha só a metade inferior do movimento.';
+    }
+    if (_has(n, ['curl na maquina'])) {
+      return 'Reduz a carga e trabalha a amplitude completa devagar.';
+    }
+    if (_has(n, ['extensao de triceps na maquina'])) {
+      return 'Reduz a carga e estende até onde os cotovelos ficam alinhados e sem dor.';
+    }
+    if (_has(n, ['gemeos na maquina'])) {
+      return 'Reduz a carga e faz as repetições mais lentas, com pausa em baixo.';
+    }
+    if (_has(n, ['elevacao lateral no cabo'])) {
+      return 'Reduz a carga do cabo e sobe só até 45 graus, com pausa curta.';
+    }
+    if (_has(n, ['elevacao frontal no cabo'])) {
+      return 'Reduz a carga do cabo ou sobe só até ao nível do peito.';
+    }
+    if (_has(n, ['kickback de gluteo no cabo'])) {
+      return 'Reduz a carga e encurta a amplitude, parando quando a bacia começa a rodar.';
+    }
+    if (_has(n, ['abducao de anca no cabo'])) {
+      return 'Reduz a carga e afasta menos a perna, mantendo a bacia nivelada.';
+    }
+    if (_has(n, ['aducao de anca no cabo'])) {
+      return 'Reduz a carga e encurta o cruzamento, mantendo o tronco direito.';
+    }
+    if (_has(n, ['crunch no cabo'])) {
+      return 'Reduz a carga e encurta o movimento, focando só no enrolar das costelas.';
+    }
+    if (_has(n, ['pull-through no cabo'])) {
+      return 'Reduz a carga e encurta a amplitude da dobradiça.';
+    }
+    if (_has(n, ['y-t-w'])) {
+      return 'Faz sem elevar o peito do chão, só ativando a posição correta dos braços em Y, T e W ao nível do solo.';
+    }
+    if (_has(n, ['rotacao externa isometrica na parede'])) {
+      return 'Reduz a força da pressão e o tempo de sustentação até dominares a posição do cotovelo.';
+    }
+    if (_has(n, ['encolhimento isometrico de ombros'])) {
+      return 'Usa menos força na subida e sustenta apenas 3 a 5 segundos.';
+    }
+    if (_has(n, ['torcao de toalha'])) {
+      return 'Usa uma toalha mais fina e torce com menos força.';
+    }
     if (_has(n, ['isometria cervical posterior'])) {
       return 'Usa apenas dois dedos de cada mão e sustenta a pressão por 3 a 5 segundos.';
     }
@@ -636,6 +771,141 @@ class ExerciseCatalogContextService {
 
   static String _progressionFor(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['press de peito com elastico'])) {
+      return 'Encurta o elástico nas mãos para aumentar a tensão ou faz a fase de retorno em três segundos.';
+    }
+    if (_has(n, ['press de ombros com elastico'])) {
+      return 'Afasta mais os pés sobre o elástico ou faz uma pausa de um segundo com os braços esticados.';
+    }
+    if (_has(n, ['elevacao lateral com elastico'])) {
+      return 'Afasta os pés para aumentar a tensão ou faz uma pausa de um segundo na altura dos ombros.';
+    }
+    if (_has(n, ['elevacao frontal com elastico'])) {
+      return 'Afasta os pés sobre o elástico ou alterna os braços sem descanso.';
+    }
+    if (_has(n, ['puxada ajoelhada com elastico'])) {
+      return 'Usa um elástico mais forte ou faz uma pausa de um segundo com os cotovelos junto às costelas.';
+    }
+    if (_has(n, ['encolhimento de ombros com elastico'])) {
+      return 'Afasta os pés sobre o elástico ou sustenta o topo durante dois segundos.';
+    }
+    if (_has(n, ['agachamento com elastico'])) {
+      return 'Encurta o elástico nas mãos ou faz uma pausa de dois segundos em baixo.';
+    }
+    if (_has(n, ['abducao de anca com elastico'])) {
+      return 'Usa um elástico mais forte, coloca-o nos tornozelos ou pausa um segundo no ponto mais aberto.';
+    }
+    if (_has(n, ['curl de perna com elastico'])) {
+      return 'Usa um elástico mais forte ou sustenta um segundo com o calcanhar perto do glúteo.';
+    }
+    if (_has(n, ['ponte de gluteo com elastico'])) {
+      return 'Usa um elástico mais forte, sustenta dois segundos em cima ou faz a ponte a uma perna sem elástico.';
+    }
+    if (_has(n, ['gemeos sentado com elastico'])) {
+      return 'Dobra o elástico ao meio para aumentar a tensão ou pausa um segundo com o pé em ponta.';
+    }
+    if (_has(n, ['peso morto com elastico'])) {
+      return 'Encurta o elástico nas mãos, usa uma banda mais forte ou pausa um segundo no topo com os glúteos apertados.';
+    }
+    if (_has(n, ['flexao de punho com elastico'])) {
+      return 'Encurta o elástico para aumentar a tensão ou desce em três segundos.';
+    }
+    if (_has(n, ['extensao de punho com elastico'])) {
+      return 'Encurta ligeiramente o elástico ou desce em três segundos.';
+    }
+    if (_has(n, ['remo curvado com halteres'])) {
+      return 'Aumenta o peso aos poucos ou faz uma pausa de um segundo com as escápulas fechadas.';
+    }
+    if (_has(n, ['agachamento sumo com halteres'])) {
+      return 'Aumenta o halter aos poucos ou faz uma pausa de dois segundos em baixo.';
+    }
+    if (_has(n, ['gemeos em pe com halteres'])) {
+      return 'Aumenta os halteres, usa um degrau para mais amplitude ou faz a uma perna com um halter só.';
+    }
+    if (_has(n, ['hip thrust com barra'])) {
+      return 'Aumenta a barra aos poucos, pausa dois segundos em cima ou faz a uma perna sem carga.';
+    }
+    if (_has(n, ['rotacao interna isometrica na parede'])) {
+      return 'Aumenta a duração até 10 segundos ou passa a usar um elástico leve em vez da parede.';
+    }
+    if (_has(n, ['afundo lateral'])) {
+      return 'Segura um halter ao peito ou desce mais fundo mantendo o calcanhar no chão.';
+    }
+    if (_has(n, ['marcha do psoas deitado'])) {
+      return 'Estica a perna que desce sem tocar no chão, ou coloca um elástico à volta dos pés.';
+    }
+    if (_has(n, ['meio-circulos de pescoco'])) {
+      return 'Aumenta ligeiramente a amplitude lateral ou acrescenta uma pausa suave de 2 a 3 segundos em cada ombro.';
+    }
+    if (_has(n, ['kettlebell swing'])) {
+      return 'Aumenta o peso do kettlebell ou faz séries mais longas, mantendo a lombar neutra em todas as repetições.';
+    }
+    if (_has(n, ['agachamento goblet com kettlebell'])) {
+      return 'Aumenta o peso, desce mais fundo com controlo ou faz uma pausa de dois segundos em baixo.';
+    }
+    if (_has(n, ['peso morto com kettlebell'])) {
+      return 'Aumenta o peso ou passa para o kettlebell swing quando a dobradiça estiver dominada.';
+    }
+    if (_has(n, ['press de ombros com kettlebell'])) {
+      return 'Aumenta o peso, faz o press em pé com pausa em cima ou alterna os braços sem pousar.';
+    }
+    if (_has(n, ['remo com kettlebell'])) {
+      return 'Aumenta o peso ou faz uma pausa de um segundo com a escápula fechada em cada repetição.';
+    }
+    if (_has(n, ['halo com kettlebell'])) {
+      return 'Aumenta ligeiramente o peso ou faz os círculos mais lentos, com pausas atrás da cabeça.';
+    }
+    if (_has(n, ['farmer carry com kettlebell'])) {
+      return 'Aumenta o peso ou a distância, ou leva um só kettlebell de cada vez para desafiar o core (suitcase carry).';
+    }
+    if (_has(n, ['russian twist com kettlebell'])) {
+      return 'Eleva os pés do chão ou aumenta ligeiramente o peso, mantendo as costas direitas.';
+    }
+    if (_has(n, ['press de ombros na maquina'])) {
+      return 'Aumenta a carga aos poucos ou faz a descida em três segundos.';
+    }
+    if (_has(n, ['curl na maquina'])) {
+      return 'Aumenta a carga aos poucos ou desce em três a quatro segundos.';
+    }
+    if (_has(n, ['extensao de triceps na maquina'])) {
+      return 'Aumenta a carga aos poucos ou acrescenta uma pausa de um segundo com os braços esticados.';
+    }
+    if (_has(n, ['gemeos na maquina'])) {
+      return 'Aumenta a carga, faz a subida a duas pernas e a descida a uma, ou pausa dois segundos em cima.';
+    }
+    if (_has(n, ['elevacao lateral no cabo'])) {
+      return 'Aumenta a carga aos poucos ou desce em três segundos, mantendo a tensão do cabo.';
+    }
+    if (_has(n, ['elevacao frontal no cabo'])) {
+      return 'Aumenta a carga aos poucos ou faz uma pausa de um segundo no topo.';
+    }
+    if (_has(n, ['kickback de gluteo no cabo'])) {
+      return 'Aumenta a carga aos poucos ou faz uma pausa de um segundo com o glúteo apertado.';
+    }
+    if (_has(n, ['abducao de anca no cabo'])) {
+      return 'Aumenta a carga aos poucos ou faz uma pausa de um segundo no ponto mais aberto.';
+    }
+    if (_has(n, ['aducao de anca no cabo'])) {
+      return 'Aumenta a carga aos poucos ou faz uma pausa de um segundo no ponto mais fechado.';
+    }
+    if (_has(n, ['crunch no cabo'])) {
+      return 'Aumenta a carga aos poucos ou faz uma pausa de um segundo no ponto mais enrolado.';
+    }
+    if (_has(n, ['pull-through no cabo'])) {
+      return 'Aumenta a carga aos poucos ou faz uma pausa de um segundo com os glúteos apertados no topo.';
+    }
+    if (_has(n, ['y-t-w'])) {
+      return 'Segura 1 a 2 segundos em cada posição no topo, ou acrescenta um halter muito leve em cada mão.';
+    }
+    if (_has(n, ['rotacao externa isometrica na parede'])) {
+      return 'Aumenta a duração da pressão até 10 segundos ou passa a usar um elástico leve em vez da parede.';
+    }
+    if (_has(n, ['encolhimento isometrico de ombros'])) {
+      return 'Aumenta a sustentação até 10 segundos ou segura um objeto leve em cada mão, como garrafas de água.';
+    }
+    if (_has(n, ['torcao de toalha'])) {
+      return 'Usa uma toalha mais grossa ou molhada, ou aumenta o tempo de cada torção.';
+    }
     if (_has(n, ['isometria cervical posterior'])) {
       return 'Aumenta a duração de cada pressão até 10 segundos antes de aumentares a força.';
     }
@@ -828,6 +1098,141 @@ class ExerciseCatalogContextService {
 
   static String _secondaryFor(String name, String group, String baseSecondary) {
     final n = _n(name);
+    if (_has(n, ['press de peito com elastico'])) {
+      return 'Peito, deltoide anterior, tríceps e serrátil anterior';
+    }
+    if (_has(n, ['press de ombros com elastico'])) {
+      return 'Deltoide, tríceps, trapézio e core';
+    }
+    if (_has(n, ['elevacao lateral com elastico'])) {
+      return 'Deltoide lateral, trapézio e estabilizadores da escápula';
+    }
+    if (_has(n, ['elevacao frontal com elastico'])) {
+      return 'Deltoide anterior, peito superior e core';
+    }
+    if (_has(n, ['puxada ajoelhada com elastico'])) {
+      return 'Dorsal, redondo maior, romboides, bíceps e pega';
+    }
+    if (_has(n, ['encolhimento de ombros com elastico'])) {
+      return 'Trapézio superior, elevador da omoplata e pega';
+    }
+    if (_has(n, ['agachamento com elastico'])) {
+      return 'Quadríceps, glúteos, core e parte alta das costas';
+    }
+    if (_has(n, ['abducao de anca com elastico'])) {
+      return 'Glúteo médio, glúteo mínimo, core lateral e equilíbrio';
+    }
+    if (_has(n, ['curl de perna com elastico'])) {
+      return 'Posterior de coxa, gémeos e glúteos';
+    }
+    if (_has(n, ['ponte de gluteo com elastico'])) {
+      return 'Glúteo máximo, glúteo médio, posterior de coxa e core';
+    }
+    if (_has(n, ['gemeos sentado com elastico'])) {
+      return 'Sóleo, gémeos, tornozelo e pés';
+    }
+    if (_has(n, ['peso morto com elastico'])) {
+      return 'Posterior de coxa, glúteos, lombar e pega';
+    }
+    if (_has(n, ['flexao de punho com elastico'])) {
+      return 'Flexores do antebraço, punho e pega';
+    }
+    if (_has(n, ['extensao de punho com elastico'])) {
+      return 'Extensores do antebraço, punho e estabilidade da pega';
+    }
+    if (_has(n, ['remo curvado com halteres'])) {
+      return 'Dorsal, romboides, trapézio médio, bíceps e lombar';
+    }
+    if (_has(n, ['agachamento sumo com halteres'])) {
+      return 'Adutores, glúteos, quadríceps e core';
+    }
+    if (_has(n, ['gemeos em pe com halteres'])) {
+      return 'Gémeos, sóleo, tornozelo, equilíbrio e pega';
+    }
+    if (_has(n, ['hip thrust com barra'])) {
+      return 'Glúteo máximo, posterior de coxa, quadríceps e core';
+    }
+    if (_has(n, ['rotacao interna isometrica na parede'])) {
+      return 'Subescapular, peito e estabilizadores escapulares';
+    }
+    if (_has(n, ['afundo lateral'])) {
+      return 'Quadríceps, glúteos, adutores e equilíbrio';
+    }
+    if (_has(n, ['marcha do psoas deitado'])) {
+      return 'Flexores da anca, reto femoral, transverso abdominal e lombar';
+    }
+    if (_has(n, ['meio-circulos de pescoco'])) {
+      return 'Pescoço, trapézio superior e postura da cabeça';
+    }
+    if (_has(n, ['kettlebell swing'])) {
+      return 'Glúteos, posterior de coxa, lombar, core e pega';
+    }
+    if (_has(n, ['agachamento goblet com kettlebell'])) {
+      return 'Quadríceps, glúteos, core e parte alta das costas';
+    }
+    if (_has(n, ['peso morto com kettlebell'])) {
+      return 'Posterior de coxa, glúteos, lombar, core e pega';
+    }
+    if (_has(n, ['press de ombros com kettlebell'])) {
+      return 'Deltoide, tríceps, trapézio, core e pega';
+    }
+    if (_has(n, ['remo com kettlebell'])) {
+      return 'Dorsal, romboides, trapézio médio, bíceps e pega';
+    }
+    if (_has(n, ['halo com kettlebell'])) {
+      return 'Deltoide, coifa dos rotadores, trapézio, core e pega';
+    }
+    if (_has(n, ['farmer carry com kettlebell'])) {
+      return 'Antebraços, trapézio, ombros, core e postura';
+    }
+    if (_has(n, ['russian twist com kettlebell'])) {
+      return 'Oblíquos, reto abdominal, flexores da anca e pega';
+    }
+    if (_has(n, ['press de ombros na maquina'])) {
+      return 'Deltoide, tríceps, trapézio e serrátil anterior';
+    }
+    if (_has(n, ['curl na maquina'])) {
+      return 'Bíceps, braquial, antebraços e pega';
+    }
+    if (_has(n, ['extensao de triceps na maquina'])) {
+      return 'Tríceps, antebraços e estabilidade do cotovelo';
+    }
+    if (_has(n, ['gemeos na maquina'])) {
+      return 'Gémeos, sóleo, tornozelo e equilíbrio';
+    }
+    if (_has(n, ['elevacao lateral no cabo'])) {
+      return 'Deltoide lateral, trapézio e estabilizadores da escápula';
+    }
+    if (_has(n, ['elevacao frontal no cabo'])) {
+      return 'Deltoide anterior, peito superior e core';
+    }
+    if (_has(n, ['kickback de gluteo no cabo'])) {
+      return 'Glúteo máximo, posterior de coxa e core';
+    }
+    if (_has(n, ['abducao de anca no cabo'])) {
+      return 'Glúteo médio, glúteo mínimo, core lateral e equilíbrio';
+    }
+    if (_has(n, ['aducao de anca no cabo'])) {
+      return 'Adutores, glúteos e core lateral';
+    }
+    if (_has(n, ['crunch no cabo'])) {
+      return 'Reto abdominal, oblíquos e controlo da respiração';
+    }
+    if (_has(n, ['pull-through no cabo'])) {
+      return 'Glúteos, posterior de coxa, lombar e core';
+    }
+    if (_has(n, ['y-t-w'])) {
+      return 'Deltoide posterior, trapézio médio e inferior, romboides e estabilizadores da escápula';
+    }
+    if (_has(n, ['rotacao externa isometrica na parede'])) {
+      return 'Infraespinhoso, redondo menor e estabilizadores escapulares';
+    }
+    if (_has(n, ['encolhimento isometrico de ombros'])) {
+      return 'Trapézio médio, elevador da omoplata e estabilizadores cervicais';
+    }
+    if (_has(n, ['torcao de toalha'])) {
+      return 'Flexores e extensores do punho e força de pega geral';
+    }
     if (_has(n, ['lenhador'])) {
       return 'Oblíquos, glúteos, ombros e estabilidade da anca';
     }
@@ -1486,8 +1891,140 @@ class ExerciseCatalogContextService {
     'arrefecimento pos artes marciais': _NamedSummary(
       'rotina de fim de treino de artes marciais: marcha lenta, círculos de ombros e anca e alongamentos leves de pernas e costas.',
     ),
-    'aquecimento dinamico geral': _NamedSummary(
-      'rotina de aquecimento sem equipamento que mobiliza as articulações de cima para baixo e termina com movimentos que elevam o pulso.',
+    'elevacao y-t-w deitado no chao': _NamedSummary(
+      'elevação dos braços deitado de bruços no chão, passando pelas posições Y, T e W, para ativar deltoide posterior e trapézio sem qualquer equipamento.',
+    ),
+    'rotacao externa isometrica na parede': _NamedSummary(
+      'pressão isométrica do dorso da mão contra uma parede, com o cotovelo fixo junto ao corpo, para fortalecer os rotadores externos do ombro sem carga.',
+    ),
+    'encolhimento isometrico de ombros': _NamedSummary(
+      'elevação ativa e sustentada dos ombros em direção às orelhas, sem carga, para ativar o trapézio superior.',
+    ),
+    'torcao de toalha': _NamedSummary(
+      'torção de uma toalha enrolada com as duas mãos em direções opostas, como quem espreme água, para treinar pronação, supinação e pega.',
+    ),
+    'kettlebell swing': _NamedSummary(
+      'balanço explosivo do kettlebell entre as pernas e até à altura do peito, gerado pela extensão forte da anca, para treinar glúteos e posterior de coxa.',
+    ),
+    'agachamento goblet com kettlebell': _NamedSummary(
+      'agachamento com o kettlebell seguro junto ao peito, que ajuda a manter o tronco direito; ideal para aprender a agachar com carga.',
+    ),
+    'peso morto com kettlebell': _NamedSummary(
+      'dobradiça de anca a levantar o kettlebell do chão entre os pés, com a coluna neutra; a forma mais simples de aprender o peso morto.',
+    ),
+    'press de ombros com kettlebell': _NamedSummary(
+      'empurrar o kettlebell acima da cabeça a partir do ombro, com o corpo estável; a pega descentrada exige mais controlo do que um halter.',
+    ),
+    'remo com kettlebell': _NamedSummary(
+      'remada unilateral com o kettlebell, com o tronco inclinado e apoiado, para trabalhar o meio das costas com a pega exigente do kettlebell.',
+    ),
+    'halo com kettlebell': _NamedSummary(
+      'círculos lentos do kettlebell à volta da cabeça, para mobilizar e fortalecer os ombros e a coifa com carga leve.',
+    ),
+    'farmer carry com kettlebell': _NamedSummary(
+      'caminhada carregada com um kettlebell em cada mão, para treinar pega, ombros estáveis e tronco firme em movimento.',
+    ),
+    'russian twist com kettlebell': _NamedSummary(
+      'rotação do tronco sentado, a passar o kettlebell de um lado para o outro, para treinar os oblíquos com carga.',
+    ),
+    'press de ombros na maquina': _NamedSummary(
+      'empurrar as pegas da máquina de ombros para cima, com o percurso guiado; boa forma de treinar o press vertical com segurança.',
+    ),
+    'curl na maquina': _NamedSummary(
+      'flexão dos cotovelos na máquina de curl, com os braços apoiados; isola o bíceps e elimina o balanço do tronco.',
+    ),
+    'extensao de triceps na maquina': _NamedSummary(
+      'extensão dos cotovelos na máquina de tríceps, com os braços apoiados, para isolar o tríceps com percurso guiado.',
+    ),
+    'gemeos na maquina': _NamedSummary(
+      'elevação dos calcanhares na máquina de gémeos, com carga guiada e amplitude completa, para trabalhar os gémeos com progressão fácil.',
+    ),
+    'elevacao lateral no cabo': _NamedSummary(
+      'elevação lateral do braço contra a resistência do cabo, que mantém tensão constante do início ao fim do movimento.',
+    ),
+    'elevacao frontal no cabo': _NamedSummary(
+      'elevação do braço em frente ao corpo contra o cabo, para trabalhar o deltoide anterior com tensão constante.',
+    ),
+    'kickback de gluteo no cabo': _NamedSummary(
+      'extensão da perna para trás contra o cabo preso ao tornozelo, para isolar o glúteo máximo com tensão constante.',
+    ),
+    'abducao de anca no cabo': _NamedSummary(
+      'abertura lateral da perna contra o cabo preso ao tornozelo, para trabalhar o glúteo médio em pé.',
+    ),
+    'aducao de anca no cabo': _NamedSummary(
+      'fecho da perna contra o cabo preso ao tornozelo, cruzando à frente do corpo, para trabalhar os adutores em pé.',
+    ),
+    'crunch no cabo': _NamedSummary(
+      'flexão do tronco ajoelhado, a puxar a corda do cabo com o abdómen, para treinar o reto abdominal com carga progressiva.',
+    ),
+    'pull-through no cabo': _NamedSummary(
+      'dobradiça de anca de costas para a polia baixa, a puxar a corda entre as pernas; ensina o padrão do peso morto com tensão constante e é amigável para a lombar.',
+    ),
+    'press de peito com elastico': _NamedSummary(
+      'empurrar as pontas do elástico à frente do peito, com a banda a passar pelas costas; o supino de quem treina em casa.',
+    ),
+    'press de ombros com elastico': _NamedSummary(
+      'empurrar as pontas do elástico acima da cabeça, com a banda presa debaixo dos pés; press vertical completo sem halteres.',
+    ),
+    'elevacao lateral com elastico': _NamedSummary(
+      'elevação lateral dos braços contra o elástico pisado, para trabalhar o deltoide lateral em casa com resistência progressiva.',
+    ),
+    'elevacao frontal com elastico': _NamedSummary(
+      'elevação dos braços em frente contra o elástico pisado, para trabalhar o deltoide anterior em casa.',
+    ),
+    'puxada ajoelhada com elastico': _NamedSummary(
+      'puxada vertical ajoelhado, com o elástico preso num ponto alto, para treinar o dorsal em casa como numa puxada de ginásio.',
+    ),
+    'encolhimento de ombros com elastico': _NamedSummary(
+      'elevação dos ombros contra o elástico pisado, para trabalhar o trapézio superior em casa sem halteres.',
+    ),
+    'agachamento com elastico': _NamedSummary(
+      'agachamento com o elástico pisado e apoiado nos ombros, que aumenta a resistência na subida; carga progressiva sem pesos.',
+    ),
+    'abducao de anca com elastico': _NamedSummary(
+      'abertura lateral da perna contra um elástico à volta das pernas, para ativar e fortalecer o glúteo médio em casa.',
+    ),
+    'curl de perna com elastico': _NamedSummary(
+      'flexão do joelho deitado de barriga para baixo, a puxar o calcanhar contra o elástico; o curl de perna de quem treina em casa.',
+    ),
+    'ponte de gluteo com elastico': _NamedSummary(
+      'ponte de glúteos com o elástico acima dos joelhos: além de subir a anca, empurras os joelhos para fora, ativando também o glúteo médio.',
+    ),
+    'gemeos sentado com elastico': _NamedSummary(
+      'flexão plantar sentado contra o elástico preso na ponta do pé, para trabalhar o sóleo em casa.',
+    ),
+    'peso morto com elastico': _NamedSummary(
+      'dobradiça de anca contra o elástico pisado, que resiste mais perto do topo; forma segura de treinar o padrão do peso morto em casa.',
+    ),
+    'flexao de punho com elastico': _NamedSummary(
+      'flexão do punho contra o elástico, com o antebraço apoiado, para fortalecer os flexores do antebraço em casa.',
+    ),
+    'extensao de punho com elastico': _NamedSummary(
+      'extensão do punho contra o elástico, com o antebraço apoiado e a palma para baixo, para equilibrar os extensores do antebraço.',
+    ),
+    'remo curvado com halteres': _NamedSummary(
+      'remada com o tronco inclinado e um halter em cada mão, para trabalhar o meio das costas com os dois braços ao mesmo tempo.',
+    ),
+    'agachamento sumo com halteres': _NamedSummary(
+      'agachamento de pés afastados com um halter seguro à frente, para carregar o padrão sumo e pedir mais aos adutores e glúteos.',
+    ),
+    'gemeos em pe com halteres': _NamedSummary(
+      'elevação dos calcanhares em pé com um halter em cada mão, para carregar os gémeos sem máquina.',
+    ),
+    'hip thrust com barra': _NamedSummary(
+      'elevação da anca com as costas apoiadas num banco e a barra sobre a bacia; a forma mais forte de carregar os glúteos.',
+    ),
+    'rotacao interna isometrica na parede': _NamedSummary(
+      'pressão isométrica da palma da mão contra a parede, com o cotovelo fixo junto ao corpo, para fortalecer os rotadores internos do ombro sem carga.',
+    ),
+    'afundo lateral': _NamedSummary(
+      'passo largo para o lado com descida sobre essa perna, mantendo a outra esticada; trabalha quadríceps, glúteos e adutores em conjunto.',
+    ),
+    'marcha do psoas deitado': _NamedSummary(
+      'flexão alternada das ancas deitado de costas, levando um joelho de cada vez ao peito com o core firme, para fortalecer os flexores da anca.',
+    ),
+    'meio-circulos de pescoco': _NamedSummary(
+      'meios-círculos lentos da cabeça pela frente do corpo, de ombro a ombro, para mobilizar o pescoço com segurança; evita o círculo completo para trás.',
     ),
   };
 
@@ -2189,6 +2726,121 @@ class ExerciseCatalogContextService {
 
   static String _primaryTarget(String name, String group) {
     final n = _n(name);
+    if (_has(n, ['press de peito com elastico'])) {
+      return 'peito, ombros e tríceps com elástico';
+    }
+    if (_has(n, ['press de ombros com elastico'])) {
+      return 'deltoide e tríceps com elástico';
+    }
+    if (_has(n, ['elevacao lateral com elastico'])) {
+      return 'deltoide lateral com elástico';
+    }
+    if (_has(n, ['elevacao frontal com elastico'])) {
+      return 'deltoide anterior com elástico';
+    }
+    if (_has(n, ['puxada ajoelhada com elastico'])) {
+      return 'dorsal e puxada vertical em casa';
+    }
+    if (_has(n, ['encolhimento de ombros com elastico'])) {
+      return 'trapézio superior com elástico';
+    }
+    if (_has(n, ['agachamento com elastico'])) {
+      return 'quadríceps e glúteos com resistência de elástico';
+    }
+    if (_has(n, ['abducao de anca com elastico'])) {
+      return 'glúteo médio com elástico';
+    }
+    if (_has(n, ['curl de perna com elastico'])) {
+      return 'posterior de coxa com elástico';
+    }
+    if (_has(n, ['ponte de gluteo com elastico'])) {
+      return 'glúteo máximo e médio na ponte';
+    }
+    if (_has(n, ['gemeos sentado com elastico'])) {
+      return 'sóleo e gémeos sentado com elástico';
+    }
+    if (_has(n, ['peso morto com elastico'])) {
+      return 'posterior de coxa e glúteos com elástico';
+    }
+    if (_has(n, ['flexao de punho com elastico'])) {
+      return 'flexores do punho com elástico';
+    }
+    if (_has(n, ['extensao de punho com elastico'])) {
+      return 'extensores do punho com elástico';
+    }
+    if (_has(n, ['remo curvado com halteres'])) {
+      return 'costas médias com halteres bilaterais';
+    }
+    if (_has(n, ['agachamento sumo com halteres'])) {
+      return 'adutores, glúteos e quadríceps com carga';
+    }
+    if (_has(n, ['gemeos em pe com halteres'])) return 'gémeos com carga livre';
+    if (_has(n, ['hip thrust com barra'])) {
+      return 'glúteo máximo com carga alta';
+    }
+    if (_has(n, ['rotacao interna isometrica na parede'])) {
+      return 'rotadores internos do ombro sem carga';
+    }
+    if (_has(n, ['afundo lateral'])) {
+      return 'quadríceps, glúteos e adutores num só movimento';
+    }
+    if (_has(n, ['marcha do psoas deitado'])) {
+      return 'flexores da anca e core em coordenação';
+    }
+    if (_has(n, ['meio-circulos de pescoco'])) {
+      return 'mobilidade suave da zona do pescoço';
+    }
+    if (_has(n, ['kettlebell swing'])) {
+      return 'glúteos, posterior de coxa e potência da anca';
+    }
+    if (_has(n, ['agachamento goblet com kettlebell'])) {
+      return 'quadríceps, glúteos e tronco estável';
+    }
+    if (_has(n, ['peso morto com kettlebell'])) {
+      return 'posterior de coxa, glúteos e lombar controlada';
+    }
+    if (_has(n, ['press de ombros com kettlebell'])) {
+      return 'deltoide anterior e lateral, tríceps e core';
+    }
+    if (_has(n, ['remo com kettlebell'])) {
+      return 'dorsal, romboides e meio das costas';
+    }
+    if (_has(n, ['halo com kettlebell'])) {
+      return 'ombros, coifa dos rotadores e controlo escapular';
+    }
+    if (_has(n, ['farmer carry com kettlebell'])) {
+      return 'força de pega, ombros e core em transporte';
+    }
+    if (_has(n, ['russian twist com kettlebell'])) {
+      return 'oblíquos e rotação do tronco com carga';
+    }
+    if (_has(n, ['press de ombros na maquina'])) {
+      return 'deltoide anterior e lateral e tríceps';
+    }
+    if (_has(n, ['curl na maquina'])) {
+      return 'bíceps braquial e braquial isolados';
+    }
+    if (_has(n, ['extensao de triceps na maquina'])) {
+      return 'tríceps isolado com apoio';
+    }
+    if (_has(n, ['gemeos na maquina'])) return 'gémeos com carga guiada';
+    if (_has(n, ['elevacao lateral no cabo'])) {
+      return 'deltoide lateral com tensão constante';
+    }
+    if (_has(n, ['elevacao frontal no cabo'])) {
+      return 'deltoide anterior com tensão constante';
+    }
+    if (_has(n, ['kickback de gluteo no cabo'])) {
+      return 'glúteo máximo isolado no cabo';
+    }
+    if (_has(n, ['abducao de anca no cabo'])) {
+      return 'glúteo médio e abdutores em pé';
+    }
+    if (_has(n, ['aducao de anca no cabo'])) return 'adutores da coxa em pé';
+    if (_has(n, ['crunch no cabo'])) return 'reto abdominal com carga';
+    if (_has(n, ['pull-through no cabo'])) {
+      return 'glúteos e posterior de coxa com dobradiça guiada';
+    }
     if (_has(n, ['curl nordico'])) {
       return 'posterior de coxa em travagem, glúteos e core';
     }
@@ -2407,6 +3059,362 @@ class ExerciseCatalogContextService {
   /// do pé de trás no banco; curl de perna é máquina de posterior de coxa).
   static String? _specificSteps(String name, String group, String equipment) {
     final n = _n(name);
+    if (_has(n, ['press de peito com elastico'])) {
+      return '1. Passa o elástico pelas costas, à altura das omoplatas, e segura uma ponta em cada mão. '
+          '2. Fica de pé com um pé à frente do outro para equilibrar, cotovelos dobrados ao lado do peito. '
+          '3. Empurra as mãos em frente até os braços quase esticarem, juntando ligeiramente as mãos no fim. '
+          '4. Mantém os ombros longe das orelhas e os punhos direitos. '
+          '5. Volta devagar até os cotovelos passarem ligeiramente atrás do tronco, resistindo ao elástico. '
+          '6. Expira ao empurrar e inspira ao voltar; ajusta a tensão encurtando o elástico nas mãos.';
+    }
+    if (_has(n, ['press de ombros com elastico'])) {
+      return '1. Pisa o meio do elástico com os dois pés à largura da anca. '
+          '2. Segura uma ponta em cada mão à altura dos ombros, com os cotovelos para baixo e os punhos direitos. '
+          '3. Empurra as mãos para cima até os braços esticarem, sem arquear a lombar. '
+          '4. Mantém as costelas em baixo e o abdómen firme durante a subida. '
+          '5. Desce devagar até às orelhas, resistindo ao elástico. '
+          '6. Expira ao empurrar e inspira ao descer; afasta os pés para aumentar a tensão.';
+    }
+    if (_has(n, ['elevacao lateral com elastico'])) {
+      return '1. Pisa o meio do elástico com os dois pés e segura uma ponta em cada mão ao lado do corpo. '
+          '2. Fica alto, com os ombros longe das orelhas e os cotovelos quase esticados. '
+          '3. Eleva os braços para os lados até à altura dos ombros, guiando com os cotovelos. '
+          '4. Mantém o tronco parado: nada de balançar para ajudar. '
+          '5. Desce devagar, resistindo ao elástico, até os braços voltarem ao lado do corpo. '
+          '6. Expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['elevacao frontal com elastico'])) {
+      return '1. Pisa o meio do elástico e segura uma ponta em cada mão, braços ao lado das coxas. '
+          '2. Fica alto, com o abdómen firme e os punhos direitos. '
+          '3. Eleva os braços em frente até à altura dos ombros, com os cotovelos quase esticados. '
+          '4. Mantém as costelas em baixo, sem arquear a lombar. '
+          '5. Desce devagar até às coxas, resistindo ao elástico. '
+          '6. Expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['puxada ajoelhada com elastico'])) {
+      return '1. Prende o elástico num ponto alto e firme (topo de uma porta com fixador ou barra) e ajoelha-te de frente. '
+          '2. Segura uma ponta em cada mão, com pega firme e os braços esticados acima da cabeça. '
+          '3. Puxa os cotovelos para baixo e para trás, em direção às costelas, fechando as escápulas. '
+          '4. Mantém o tronco alto e a lombar neutra, sem te inclinares para trás. '
+          '5. Volta devagar até os braços esticarem, resistindo ao elástico. '
+          '6. Expira ao puxar e inspira ao subir as mãos.';
+    }
+    if (_has(n, ['encolhimento de ombros com elastico'])) {
+      return '1. Pisa o meio do elástico com os dois pés e segura uma ponta em cada mão ao lado do corpo. '
+          '2. Fica alto, com os braços esticados e pega firme nas pontas. '
+          '3. Sobe os ombros na direção das orelhas, o mais alto que conseguires, sem dobrar os cotovelos. '
+          '4. Pausa um segundo em cima com o trapézio apertado. '
+          '5. Desce devagar até os ombros relaxarem, resistindo ao elástico. '
+          '6. Expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['agachamento com elastico'])) {
+      return '1. Pisa o meio do elástico com os pés à largura dos ombros e leva as pontas aos ombros, uma em cada mão. '
+          '2. Fica alto, com o peito aberto e o abdómen firme, tronco direito. '
+          '3. Desce dobrando joelhos e anca ao mesmo tempo, até onde os calcanhares ficam no chão. '
+          '4. Mantém os joelhos alinhados com os pés durante a descida. '
+          '5. Empurra o chão e sobe contra a tensão do elástico, que aumenta perto do topo. '
+          '6. Inspira na descida e expira na subida.';
+    }
+    if (_has(n, ['abducao de anca com elastico'])) {
+      return '1. Coloca o elástico à volta das pernas, acima dos joelhos ou nos tornozelos. '
+          '2. Fica de pé, com uma mão apoiada numa parede ou cadeira para equilibrar. '
+          '3. Afasta uma perna para o lado, com o joelho esticado e o pé a apontar em frente. '
+          '4. Mantém o tronco direito e a bacia nivelada: só a perna se move. '
+          '5. Volta devagar, resistindo ao elástico, sem pousar o pé entre repetições. '
+          '6. Faz as repetições de uma perna e troca; expira ao afastar e inspira ao voltar.';
+    }
+    if (_has(n, ['curl de perna com elastico'])) {
+      return '1. Prende o elástico num ponto baixo e firme e deita-te de barriga para baixo, com a outra ponta presa ao tornozelo. '
+          '2. Afasta-te até haver tensão com a perna esticada e apoia a testa nas mãos. '
+          '3. Dobra o joelho puxando o calcanhar em direção ao glúteo, contra o elástico. '
+          '4. Mantém a bacia colada ao chão: se levantar, encurta o movimento. '
+          '5. Volta devagar até a perna quase esticar, resistindo ao elástico. '
+          '6. Faz as repetições de uma perna e troca; expira ao dobrar e inspira ao esticar.';
+    }
+    if (_has(n, ['ponte de gluteo com elastico'])) {
+      return '1. Coloca o elástico à volta das pernas, acima dos joelhos, e deita-te de costas com os joelhos dobrados. '
+          '2. Apoia os pés à largura da anca, perto dos glúteos, e os braços ao lado do corpo. '
+          '3. Empurra os joelhos ligeiramente para fora, contra o elástico, e mantém-nos assim. '
+          '4. Eleva a anca até o tronco e as coxas ficarem em linha, apertando os glúteos. '
+          '5. Pausa um segundo em cima sem deixar os joelhos fechar. '
+          '6. Desce devagar e repete; expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['gemeos sentado com elastico'])) {
+      return '1. Senta-te no chão com uma perna esticada e passa o meio do elástico pela ponta desse pé. '
+          '2. Segura as pontas do elástico com as duas mãos, junto ao tronco, com tensão. '
+          '3. Empurra a ponta do pé para a frente e para baixo, como quem acelera um carro. '
+          '4. Mantém o joelho parado: o movimento é só do tornozelo. '
+          '5. Volta devagar até os dedos apontarem para ti, resistindo ao elástico. '
+          '6. Faz as repetições de um pé e troca; expira ao empurrar e inspira ao voltar.';
+    }
+    if (_has(n, ['peso morto com elastico'])) {
+      return '1. Pisa o meio do elástico com os dois pés à largura da anca. '
+          '2. Dobra pela anca, com os joelhos pouco fletidos e a coluna neutra, e segura uma ponta em cada mão. '
+          '3. Aperta a pega e mantém a lombar direita antes de subir. '
+          '4. Estica a anca até ficares de pé, apertando os glúteos contra a tensão do elástico. '
+          '5. Dobra de novo pela anca, devagar, deixando as mãos descer rente às pernas. '
+          '6. Inspira ao descer e expira ao subir.';
+    }
+    if (_has(n, ['flexao de punho com elastico'])) {
+      return '1. Senta-te e apoia o antebraço na coxa, com a palma da mão para cima e o punho fora do joelho. '
+          '2. Pisa uma ponta do elástico com o pé do mesmo lado e segura a outra na mão. '
+          '3. Dobra o punho para cima, contra o elástico, sem mover o antebraço. '
+          '4. Pausa um segundo no topo com o punho fechado. '
+          '5. Desce devagar até o punho estender, resistindo ao elástico. '
+          '6. Faz as repetições de uma mão e troca; expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['extensao de punho com elastico'])) {
+      return '1. Senta-te e apoia o antebraço na coxa, com a palma da mão para baixo e o punho fora do joelho. '
+          '2. Pisa uma ponta do elástico e segura a outra na mão, com tensão leve. '
+          '3. Sobe as costas da mão para cima, contra o elástico, sem mover o antebraço. '
+          '4. Pausa um segundo no topo. '
+          '5. Desce devagar até o punho dobrar para baixo, resistindo ao elástico. '
+          '6. Faz as repetições de uma mão e troca; expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['remo curvado com halteres'])) {
+      return '1. Segura um halter em cada mão e inclina o tronco à frente, dobrando pela anca, até cerca de 45 graus. '
+          '2. Deixa os braços pendurados, com pega firme e as palmas viradas uma para a outra ou para trás. '
+          '3. Mantém a lombar neutra e os joelhos pouco dobrados. '
+          '4. Puxa os dois halteres até às costelas, levando os cotovelos para trás e fechando as escápulas. '
+          '5. Desce devagar até os braços esticarem, sem deixar os ombros cair. '
+          '6. Expira ao puxar e inspira ao descer.';
+    }
+    if (_has(n, ['agachamento sumo com halteres'])) {
+      return '1. Segura um halter na vertical com as duas mãos, à frente da anca, e afasta bem os pés, com as pontas para fora. '
+          '2. Fica alto, com o peito aberto e o abdómen firme, tronco direito. '
+          '3. Desce dobrando joelhos e anca, empurrando os joelhos para fora na direção dos pés. '
+          '4. Desce até o halter passar a linha dos joelhos ou até onde a lombar fica direita. '
+          '5. Empurra o chão e sobe, apertando glúteos e parte interna das coxas. '
+          '6. Inspira na descida e expira na subida.';
+    }
+    if (_has(n, ['gemeos em pe com halteres'])) {
+      return '1. Segura um halter em cada mão ao lado do corpo, com pega firme. '
+          '2. Fica de pé com a ponta dos pés num degrau ou livro grosso e os calcanhares de fora (ou no chão plano). '
+          '3. Deixa os calcanhares descer até sentir alongar os gémeos. '
+          '4. Sobe nas pontas dos pés o mais alto que conseguires, com os tornozelos firmes. '
+          '5. Pausa um segundo em cima e desce devagar. '
+          '6. Expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['hip thrust com barra'])) {
+      return '1. Senta-te no chão com a parte alta das costas num banco firme e a barra sobre a dobra da anca, com uma proteção na posição certa. '
+          '2. Segura a barra com pega firme das duas mãos e apoia os pés à largura da anca, joelhos dobrados. '
+          '3. Mantém o queixo recolhido e as costelas em baixo antes de subir. '
+          '4. Empurra o chão com os calcanhares e eleva a anca até o tronco e as coxas ficarem em linha. '
+          '5. Aperta os glúteos um segundo em cima, sem arquear a lombar. '
+          '6. Desce devagar até a bacia quase tocar no chão e repete; expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['rotacao interna isometrica na parede'])) {
+      return '1. Fica de lado para uma parede, com o cotovelo dobrado a 90 graus e colado às costelas. '
+          '2. Encosta a palma da mão mais próxima à parede, com o antebraço na horizontal. '
+          '3. Empurra a palma contra a parede como se quisesses rodar o antebraço para dentro, sem deixar o cotovelo despegar do corpo. '
+          '4. Mantém a pressão 5 a 10 segundos, respirando normalmente. '
+          '5. Solta devagar, descansa e repete 3 a 5 vezes antes de trocar de lado.';
+    }
+    if (_has(n, ['afundo lateral'])) {
+      return '1. Fica de pé com os pés juntos e as mãos à frente do peito. '
+          '2. Dá um passo largo para o lado e desce dobrando o joelho dessa perna, empurrando a anca para trás. '
+          '3. Mantém a outra perna esticada e os dois pés virados em frente. '
+          '4. Desce com o tronco direito até onde o calcanhar de apoio fica no chão. '
+          '5. Empurra o chão com a perna dobrada e volta à posição inicial. '
+          '6. Alterna os lados ou faz todas as repetições de um lado; inspira ao descer e expira ao subir.';
+    }
+    if (_has(n, ['marcha do psoas deitado'])) {
+      return '1. Deita-te de costas com os joelhos dobrados e os pés no chão, lombar em posição neutra. '
+          '2. Aperta o abdómen como se preparasses para um leve toque na barriga. '
+          '3. Leva um joelho em direção ao peito, dobrando pela anca, sem deixar a lombar descolar. '
+          '4. Volta a pousar o pé devagar e leva o outro joelho, alternando como uma marcha. '
+          '5. Mantém o ritmo lento: cerca de dois segundos por perna. '
+          '6. Faz 8 a 12 marchas por perna, a expirar de cada vez que o joelho sobe.';
+    }
+    if (_has(n, ['meio-circulos de pescoco'])) {
+      return '1. Senta-te ou fica de pé com a coluna direita e os ombros descontraídos. '
+          '2. Deixa o queixo descer suavemente em direção ao peito. '
+          '3. Rola a cabeça devagar para um lado, levando a orelha na direção do ombro. '
+          '4. Volta pela frente, passando com o queixo baixo, até à orelha do outro lado. '
+          '5. Faz 4 a 6 meios-círculos lentos, sempre pela frente, a respirar devagar. '
+          '6. Pára se sentires dor, tontura ou formigueiro na zona do pescoço.';
+    }
+    if (_has(n, ['kettlebell swing'])) {
+      return '1. Coloca o kettlebell no chão à frente dos pés e segura a pega com as duas mãos. '
+          '2. Dobra pela anca com a coluna neutra e os joelhos ligeiramente fletidos, lombar direita. '
+          '3. Puxa o kettlebell para trás, entre as pernas, como quem faz um passe. '
+          '4. Estica a anca com força, apertando os glúteos: é a anca que lança o kettlebell até à altura do peito. '
+          '5. Deixa o kettlebell descer e voltar entre as pernas, dobrando de novo pela anca. '
+          '6. Faz 8 a 15 balanços seguidos e pousa o kettlebell no chão com controlo.';
+    }
+    if (_has(n, ['agachamento goblet com kettlebell'])) {
+      return '1. Segura o kettlebell pelas pegas laterais, junto ao peito, com os cotovelos para baixo. '
+          '2. Fica com os pés à largura dos ombros e as pontas ligeiramente para fora. '
+          '3. Desce dobrando joelhos e anca ao mesmo tempo, com o tronco direito. '
+          '4. Desce até onde os calcanhares ficam no chão e a lombar não enrola. '
+          '5. Empurra o chão com os pés e sobe, mantendo os joelhos alinhados com os pés. '
+          '6. Respira: inspira na descida e expira na subida.';
+    }
+    if (_has(n, ['peso morto com kettlebell'])) {
+      return '1. Coloca o kettlebell no chão entre os pés e fica com os pés à largura da anca. '
+          '2. Dobra pela anca e pelos joelhos e segura a pega com as duas mãos, com a coluna neutra. '
+          '3. Aperta a pega, peito para a frente e lombar direita antes de puxar. '
+          '4. Empurra o chão com os pés e estica a anca e os joelhos ao mesmo tempo, sem enrolar as costas. '
+          '5. Termina de pé, com os glúteos apertados, e desce o kettlebell pelo mesmo caminho. '
+          '6. Inspira antes de levantar e expira perto do topo.';
+    }
+    if (_has(n, ['press de ombros com kettlebell'])) {
+      return '1. Leva o kettlebell à posição de apoio: pega na mão, peso encostado às costas do antebraço, cotovelo junto ao corpo. '
+          '2. Fica de pé com os pés à largura da anca, glúteos e abdómen firmes. '
+          '3. Empurra o kettlebell para cima até o braço esticar, com o punho direito. '
+          '4. Mantém as costelas em baixo, sem arquear a lombar durante a subida. '
+          '5. Desce o kettlebell devagar até ao ombro, controlando o caminho. '
+          '6. Faz as repetições de um braço e troca; expira ao empurrar e inspira ao descer.';
+    }
+    if (_has(n, ['remo com kettlebell'])) {
+      return '1. Apoia uma mão e o joelho do mesmo lado num banco ou apoio firme, com o tronco quase paralelo ao chão. '
+          '2. Segura o kettlebell com a outra mão, braço esticado e pega firme. '
+          '3. Mantém a lombar neutra e as costelas controladas antes de puxar. '
+          '4. Puxa o kettlebell até à anca, levando o cotovelo para trás rente ao tronco e fechando a escápula. '
+          '5. Desce devagar até o braço esticar, sem rodar o tronco. '
+          '6. Faz as repetições de um lado e troca; expira ao puxar e inspira ao descer.';
+    }
+    if (_has(n, ['halo com kettlebell'])) {
+      return '1. Segura o kettlebell de cabeça para baixo, pelas pegas laterais, à frente do peito. '
+          '2. Fica de pé com os pés à largura da anca e o abdómen firme. '
+          '3. Leva o kettlebell devagar à volta da cabeça: passa junto a uma orelha, atrás da nuca e volta pela outra orelha. '
+          '4. Mantém o kettlebell perto da cabeça e os cotovelos a apontar para baixo. '
+          '5. Faz 5 a 8 círculos numa direção e troca o sentido. '
+          '6. Respira de forma contínua; o movimento é lento e controlado.';
+    }
+    if (_has(n, ['farmer carry com kettlebell'])) {
+      return '1. Segura um kettlebell em cada mão, ao lado do corpo, com pega firme. '
+          '2. Fica alto: ombros para trás e para baixo, costelas sobre a bacia, olhar em frente. '
+          '3. Caminha em passos curtos e controlados, sem deixar os kettlebells baterem nas pernas. '
+          '4. Mantém os punhos direitos e o tronco sem inclinar para os lados. '
+          '5. Percorre 15 a 30 metros ou caminha 20 a 40 segundos, descansa e repete. '
+          '6. Pousa os kettlebells dobrando pela anca com a lombar direita.';
+    }
+    if (_has(n, ['russian twist com kettlebell'])) {
+      return '1. Senta-te no chão com os joelhos dobrados e os calcanhares apoiados. '
+          '2. Segura o kettlebell pelas pegas laterais, junto ao tronco. '
+          '3. Inclina o tronco ligeiramente atrás, com as costas direitas, até sentir o abdómen ativo. '
+          '4. Roda o tronco para um lado e leva o kettlebell até junto da anca, sem o pousar. '
+          '5. Roda para o outro lado com controlo; o movimento nasce no tronco, não nos braços. '
+          '6. Faz 8 a 12 rotações por lado, a expirar em cada rotação.';
+    }
+    if (_has(n, ['press de ombros na maquina'])) {
+      return '1. Ajusta o banco para as pegas ficarem à altura dos ombros. '
+          '2. Senta-te com as costas apoiadas e os pés firmes no chão. '
+          '3. Segura as pegas com os punhos direitos e os cotovelos por baixo das mãos. '
+          '4. Empurra para cima até os braços quase esticarem, sem bater com força no topo. '
+          '5. Desce devagar até as mãos ficarem à altura dos ombros. '
+          '6. Expira ao empurrar e inspira ao descer; a máquina guia o caminho, tu controlas a velocidade.';
+    }
+    if (_has(n, ['curl na maquina'])) {
+      return '1. Ajusta o banco para as axilas encostarem ao apoio e os cotovelos ficarem alinhados com o eixo da máquina. '
+          '2. Segura as pegas com pega firme, palmas para cima e punhos direitos. '
+          '3. Sobe as pegas dobrando os cotovelos, sem levantar os ombros nem mover o tronco. '
+          '4. Aperta o bíceps no topo durante um segundo. '
+          '5. Desce devagar até os braços quase esticarem, mantendo tensão. '
+          '6. Expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['extensao de triceps na maquina'])) {
+      return '1. Ajusta o banco para os cotovelos ficarem alinhados com o eixo da máquina e os braços apoiados. '
+          '2. Segura as pegas com pega firme e punhos direitos. '
+          '3. Estende os cotovelos empurrando as pegas para baixo e para a frente até os braços esticarem. '
+          '4. Mantém os ombros em baixo e o tronco encostado durante a extensão. '
+          '5. Desce devagar com as pegas até os cotovelos dobrarem a cerca de 90 graus, mantendo a tensão. '
+          '6. Expira ao estender e inspira ao voltar.';
+    }
+    if (_has(n, ['gemeos na maquina'])) {
+      return '1. Coloca os ombros por baixo dos apoios da máquina e a ponta dos pés na plataforma, com os calcanhares de fora. '
+          '2. Fica alto, com os joelhos quase esticados e o tronco direito. '
+          '3. Deixa os calcanhares descer abaixo da plataforma até sentir alongar os gémeos. '
+          '4. Sobe nas pontas dos pés o mais alto que conseguires, com os tornozelos firmes. '
+          '5. Pausa um segundo em cima e desce devagar. '
+          '6. Expira ao subir e inspira ao descer; usa amplitude completa em todas as repetições.';
+    }
+    if (_has(n, ['elevacao lateral no cabo'])) {
+      return '1. Coloca a polia do cabo na posição baixa e fica de lado para a máquina. '
+          '2. Segura a pega com a mão mais afastada, à frente do corpo, com o cotovelo quase esticado. '
+          '3. Eleva o braço para o lado até à altura do ombro, guiando com o cotovelo. '
+          '4. Mantém o tronco direito e o ombro longe da orelha durante a subida. '
+          '5. Desce devagar, resistindo à tração do cabo, até a mão voltar à frente do corpo. '
+          '6. Faz as repetições de um lado e troca; expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['elevacao frontal no cabo'])) {
+      return '1. Coloca a polia do cabo na posição baixa e fica de costas para a máquina, com o cabo a passar entre as pernas ou ao lado. '
+          '2. Segura a pega com uma mão, braço ao lado da coxa e cotovelo quase esticado. '
+          '3. Eleva o braço em frente até à altura do ombro, com o punho direito. '
+          '4. Mantém as costelas em baixo, sem arquear a lombar. '
+          '5. Desce devagar até ao lado da coxa, resistindo ao cabo. '
+          '6. Faz as repetições de um lado e troca; expira ao subir e inspira ao descer.';
+    }
+    if (_has(n, ['kickback de gluteo no cabo'])) {
+      return '1. Prende a tira do cabo ao tornozelo, com a polia na posição baixa. '
+          '2. Fica de frente para a máquina e apoia as mãos no equipamento com pega leve, tronco ligeiramente inclinado. '
+          '3. Leva a perna do cabo para trás, esticada, apertando o glúteo no fim. '
+          '4. Mantém a bacia estável e a lombar neutra: o movimento é da anca, não das costas. '
+          '5. Volta devagar, resistindo ao cabo, sem pousar o pé entre repetições. '
+          '6. Faz as repetições de uma perna e troca; expira ao levar atrás e inspira ao voltar.';
+    }
+    if (_has(n, ['abducao de anca no cabo'])) {
+      return '1. Prende a tira do cabo ao tornozelo mais afastado da máquina, com a polia em baixo. '
+          '2. Fica de lado para a máquina e apoia a mão mais próxima no equipamento, com pega leve. '
+          '3. Afasta a perna do cabo para o lado, com o joelho esticado e o pé a apontar em frente. '
+          '4. Mantém o tronco direito, sem inclinar para o lado contrário. '
+          '5. Volta devagar, cruzando ligeiramente a perna à frente da de apoio. '
+          '6. Faz as repetições de uma perna e troca; expira ao afastar e inspira ao voltar.';
+    }
+    if (_has(n, ['aducao de anca no cabo'])) {
+      return '1. Prende a tira do cabo ao tornozelo mais próximo da máquina, com a polia em baixo. '
+          '2. Fica de lado para a máquina, com a perna do cabo ligeiramente afastada, e apoia a mão no equipamento com pega leve. '
+          '3. Puxa a perna do cabo para dentro, cruzando à frente da perna de apoio. '
+          '4. Mantém o tronco direito e a bacia estável durante o fecho. '
+          '5. Volta devagar, deixando o cabo abrir a perna até sentir alongar por dentro da coxa. '
+          '6. Faz as repetições de uma perna e troca; expira ao fechar e inspira ao abrir.';
+    }
+    if (_has(n, ['crunch no cabo'])) {
+      return '1. Coloca a polia do cabo na posição alta com a corda presa e ajoelha-te de frente para a máquina. '
+          '2. Segura as pontas da corda com pega firme ao lado da cabeça, com as mãos junto às orelhas. '
+          '3. Enrola o tronco para baixo, levando as costelas em direção à bacia. '
+          '4. Mantém a anca parada: quem puxa é o abdómen, não os braços. '
+          '5. Volta devagar até o tronco quase esticar, mantendo tensão no cabo. '
+          '6. Expira ao enrolar e inspira ao voltar.';
+    }
+    if (_has(n, ['pull-through no cabo'])) {
+      return '1. Coloca a polia do cabo na posição baixa com a corda presa e fica de costas para a máquina. '
+          '2. Segura a corda entre as pernas com pega firme nas duas mãos e dá dois passos em frente para criar tensão. '
+          '3. Dobra pela anca, deixando a corda puxar as mãos para trás entre as pernas, com os joelhos pouco dobrados e a coluna neutra. '
+          '4. Sente alongar o posterior de coxa e mantém a lombar direita. '
+          '5. Estica a anca com força, apertando os glúteos até ficares de pé. '
+          '6. Expira ao subir e inspira ao dobrar; o tronco não puxa, a anca é que trabalha.';
+    }
+    if (_has(n, ['y-t-w'])) {
+      return '1. Deita-te de barriga para baixo com a testa apoiada num tapete ou toalha dobrada. '
+          '2. Estica os braços à frente em V aberto, polegares a apontar para o teto (posição Y). '
+          '3. Eleva os braços e o peito alguns centímetros do chão, sem forçar o pescoço, e desce devagar. '
+          '4. Abre os braços na horizontal, alinhados com os ombros, cotovelos quase esticados (posição T), e repete a elevação. '
+          '5. Dobra os cotovelos a 90 graus junto ao corpo e roda os antebraços para cima (posição W), repetindo a elevação. '
+          '6. Mantém o umbigo colado ao chão durante toda a série, sem arquear a lombar.';
+    }
+    if (_has(n, ['rotacao externa isometrica na parede'])) {
+      return '1. Fica de lado para uma parede, com o cotovelo dobrado a 90 graus e colado às costelas. '
+          '2. Encosta o dorso da mão mais próxima da parede a ela, com o antebraço na horizontal. '
+          '3. Empurra a mão contra a parede como se quisesses rodar o ombro para fora, sem deixar o cotovelo despegar do corpo. '
+          '4. Mantém a pressão 5 a 10 segundos, respirando normalmente. '
+          '5. Solta devagar, descansa e repete 3 a 5 vezes antes de trocar de lado.';
+    }
+    if (_has(n, ['encolhimento isometrico de ombros'])) {
+      return '1. Fica de pé ou sentado, com a coluna direita e os braços relaxados ao lado do corpo. '
+          '2. Sobe os ombros o mais alto que conseguires, na direção das orelhas, com força voluntária. '
+          '3. Mantém a posição 5 a 10 segundos, sem prender a respiração. '
+          '4. Desce os ombros devagar até relaxarem completamente. '
+          '5. Descansa 2 a 3 segundos e repete 5 a 8 vezes.';
+    }
+    if (_has(n, ['torcao de toalha'])) {
+      return '1. Enrola uma toalha e segura-a com as duas mãos, afastadas cerca de 20 a 30 cm. '
+          '2. Fica de pé com os cotovelos junto ao corpo e os punhos alinhados com os antebraços. '
+          '3. Torce a toalha rodando uma mão para dentro e a outra para fora, como se espremesses água. '
+          '4. Mantém a torção 2 a 3 segundos e inverte a direção, trocando qual mão roda para cada lado. '
+          '5. Repete 8 a 12 torções em cada direção, sem deixar os cotovelos afastarem do corpo.';
+    }
     if (_has(n, ['prancha lateral'])) {
       return '1. Deita-te de lado com o antebraço no chão e o cotovelo debaixo do ombro. '
           '2. Empilha os pés um sobre o outro, ou cruza-os, e estica as pernas. '
@@ -4307,6 +5315,366 @@ class ExerciseCatalogContextService {
     String equipment,
   ) {
     final n = _n(name);
+    if (_has(n, ['press de peito com elastico'])) {
+      return [
+        'deixar o elástico escorregar nas costas por falta de tensão',
+        'arquear a lombar para empurrar mais',
+        'dobrar os punhos no fim do movimento',
+        'encolher os ombros durante o press',
+      ];
+    }
+    if (_has(n, ['press de ombros com elastico'])) {
+      return [
+        'arquear a lombar quando o elástico fica pesado',
+        'empurrar com os punhos dobrados para trás',
+        'deixar o elástico bater na descida em vez de a travar',
+        'encolher os ombros no topo',
+      ];
+    }
+    if (_has(n, ['elevacao lateral com elastico'])) {
+      return [
+        'balançar o tronco para ganhar impulso',
+        'encolher os ombros durante a subida',
+        'subir as mãos acima da linha dos ombros com tensão alta',
+        'deixar o elástico fechar os braços de repente',
+      ];
+    }
+    if (_has(n, ['elevacao frontal com elastico'])) {
+      return [
+        'arquear a lombar para subir mais alto',
+        'dobrar os punhos com a tensão do elástico',
+        'usar impulso do tronco',
+        'subir acima da linha dos ombros com tensão alta',
+      ];
+    }
+    if (_has(n, ['puxada ajoelhada com elastico'])) {
+      return [
+        'puxar com os braços sem fechar as escápulas',
+        'inclinar o tronco para trás para ajudar',
+        'arredondar a lombar durante a puxada',
+        'prender o elástico num ponto instável',
+      ];
+    }
+    if (_has(n, ['encolhimento de ombros com elastico'])) {
+      return [
+        'dobrar os cotovelos para ajudar a subida',
+        'rodar os ombros em círculo em vez de subir e descer',
+        'projetar o queixo à frente durante a subida',
+        'deixar o elástico puxar os ombros de repente',
+      ];
+    }
+    if (_has(n, ['agachamento com elastico'])) {
+      return [
+        'deixar o elástico puxar os ombros à frente e curvar o tronco',
+        'deixar os joelhos fechar para dentro',
+        'subir a anca primeiro e o peito depois',
+        'encurtar a descida quando a tensão aumenta',
+      ];
+    }
+    if (_has(n, ['abducao de anca com elastico'])) {
+      return [
+        'inclinar o tronco para o lado contrário',
+        'rodar o pé para cima durante a abertura',
+        'balançar a perna em vez de a controlar',
+        'usar um elástico tão forte que a bacia roda',
+      ];
+    }
+    if (_has(n, ['curl de perna com elastico'])) {
+      return [
+        'levantar a bacia do chão para dobrar mais',
+        'puxar com impulso em vez de controlo',
+        'deixar o elástico esticar a perna de repente',
+        'prender o elástico num ponto que escorrega',
+      ];
+    }
+    if (_has(n, ['ponte de gluteo com elastico'])) {
+      return [
+        'deixar os joelhos fechar contra o elástico',
+        'arquear a lombar em vez de subir com os glúteos',
+        'empurrar com a ponta dos pés',
+        'subir com impulso e deixar cair',
+      ];
+    }
+    if (_has(n, ['gemeos sentado com elastico'])) {
+      return [
+        'dobrar e esticar o joelho para ajudar',
+        'deixar o elástico escorregar da ponta do pé',
+        'fazer repetições rápidas e curtas',
+        'puxar as mãos em vez de empurrar o pé',
+      ];
+    }
+    if (_has(n, ['peso morto com elastico'])) {
+      return [
+        'arredondar a lombar na descida',
+        'dobrar demasiado os joelhos e transformar em agachamento',
+        'puxar com os braços em vez de esticar a anca',
+        'deixar o elástico encolher o tronco de repente',
+      ];
+    }
+    if (_has(n, ['flexao de punho com elastico'])) {
+      return [
+        'levantar o antebraço da coxa',
+        'dobrar o cotovelo para ajudar',
+        'usar tensão alta demais e perder a amplitude',
+        'largar o elástico de repente na descida',
+      ];
+    }
+    if (_has(n, ['extensao de punho com elastico'])) {
+      return [
+        'levantar o antebraço da coxa',
+        'usar tensão alta demais para esta zona sensível',
+        'fazer repetições rápidas e curtas',
+        'dobrar o cotovelo para compensar',
+      ];
+    }
+    if (_has(n, ['remo curvado com halteres'])) {
+      return [
+        'arredondar a lombar durante a série',
+        'levantar o tronco a cada repetição para ajudar',
+        'puxar os halteres até aos ombros em vez das costelas',
+        'encolher os ombros contra as orelhas',
+      ];
+    }
+    if (_has(n, ['agachamento sumo com halteres'])) {
+      return [
+        'deixar os joelhos fechar para dentro',
+        'inclinar o tronco à frente com o peso',
+        'encurtar a descida com carga alta',
+        'levantar os calcanhares no fundo',
+      ];
+    }
+    if (_has(n, ['gemeos em pe com halteres'])) {
+      return [
+        'fazer repetições curtas e a ressaltar',
+        'dobrar os joelhos para ajudar a subida',
+        'deixar os tornozelos rodar para fora',
+        'perder o equilíbrio com halteres pesados demais',
+      ];
+    }
+    if (_has(n, ['hip thrust com barra'])) {
+      return [
+        'arquear a lombar em vez de subir com os glúteos',
+        'empurrar com a ponta dos pés',
+        'deixar os joelhos fechar para dentro',
+        'esticar o pescoço e olhar para o teto no topo',
+      ];
+    }
+    if (_has(n, ['rotacao interna isometrica na parede'])) {
+      return [
+        'deixar o cotovelo afastar-se das costelas',
+        'empurrar com o corpo em vez do antebraço',
+        'prender a respiração durante a pressão',
+        'usar força máxima logo nas primeiras repetições',
+      ];
+    }
+    if (_has(n, ['afundo lateral'])) {
+      return [
+        'deixar o joelho da perna dobrada fechar para dentro',
+        'curvar o tronco à frente na descida',
+        'levantar o calcanhar da perna de apoio',
+        'dar um passo curto demais para descer com controlo',
+      ];
+    }
+    if (_has(n, ['marcha do psoas deitado'])) {
+      return [
+        'deixar a lombar arquear quando a perna desce',
+        'puxar o joelho com as mãos',
+        'fazer a marcha depressa e sem controlo',
+        'prender a respiração com o abdómen contraído',
+      ];
+    }
+    if (_has(n, ['meio-circulos de pescoco'])) {
+      return [
+        'fazer o círculo completo com a cabeça para trás',
+        'rodar depressa e com balanço',
+        'encolher os ombros durante o movimento',
+        'forçar a amplitude com dor',
+      ];
+    }
+    if (_has(n, ['kettlebell swing'])) {
+      return [
+        'levantar o kettlebell com os braços em vez da anca',
+        'arredondar a lombar na descida',
+        'agachar em vez de dobrar pela anca',
+        'subir o kettlebell acima da cabeça sem dominar a técnica',
+      ];
+    }
+    if (_has(n, ['agachamento goblet com kettlebell'])) {
+      return [
+        'deixar os cotovelos cair e o kettlebell afastar-se do peito',
+        'subir a anca primeiro e o peito depois',
+        'deixar os joelhos fechar para dentro',
+        'levantar os calcanhares no fundo',
+      ];
+    }
+    if (_has(n, ['peso morto com kettlebell'])) {
+      return [
+        'arredondar a lombar para chegar à pega',
+        'puxar com os braços em vez de empurrar com as pernas',
+        'deixar o kettlebell afastar-se do corpo',
+        'olhar para cima e perder o pescoço neutro',
+      ];
+    }
+    if (_has(n, ['press de ombros com kettlebell'])) {
+      return [
+        'arquear a lombar para ajudar a subida',
+        'deixar o punho dobrar para trás com o peso',
+        'empurrar com impulso das pernas sem querer',
+        'descer o kettlebell sem controlo',
+      ];
+    }
+    if (_has(n, ['remo com kettlebell'])) {
+      return [
+        'rodar o tronco para ajudar a puxada',
+        'puxar o kettlebell até ao ombro em vez da anca',
+        'encolher o ombro contra a orelha',
+        'arredondar a lombar durante a série',
+      ];
+    }
+    if (_has(n, ['halo com kettlebell'])) {
+      return [
+        'fazer círculos largos e rápidos longe da cabeça',
+        'arquear a lombar quando o kettlebell passa atrás',
+        'encolher os ombros durante o círculo',
+        'usar um kettlebell pesado demais para controlar',
+      ];
+    }
+    if (_has(n, ['farmer carry com kettlebell'])) {
+      return [
+        'deixar os ombros cair para a frente',
+        'inclinar o tronco para um dos lados',
+        'dar passos longos e desequilibrados',
+        'largar os kettlebells no chão sem controlo',
+      ];
+    }
+    if (_has(n, ['russian twist com kettlebell'])) {
+      return [
+        'mover só os braços com o tronco parado',
+        'arredondar as costas para trás',
+        'rodar depressa e sem controlo',
+        'usar um kettlebell pesado demais para manter o tronco direito',
+      ];
+    }
+    if (_has(n, ['press de ombros na maquina'])) {
+      return [
+        'arquear a lombar e descolar as costas do encosto',
+        'usar carga acima do que controlas na descida',
+        'encolher os ombros contra as orelhas',
+        'esticar os cotovelos com impacto no topo',
+      ];
+    }
+    if (_has(n, ['curl na maquina'])) {
+      return [
+        'levantar os cotovelos do apoio na subida',
+        'dobrar os punhos para trás com a carga',
+        'largar a carga na descida em vez de a travar',
+        'encolher o tronco para ajudar a subida',
+      ];
+    }
+    if (_has(n, ['extensao de triceps na maquina'])) {
+      return [
+        'levantar os cotovelos do apoio durante a extensão',
+        'usar o peso do tronco para empurrar',
+        'dobrar os punhos com a carga',
+        'encurtar a amplitude para levar mais carga',
+      ];
+    }
+    if (_has(n, ['gemeos na maquina'])) {
+      return [
+        'fazer repetições curtas e a ressaltar',
+        'dobrar e esticar os joelhos para ajudar',
+        'deixar os tornozelos rodar para fora',
+        'descer sem controlo até ao fundo',
+      ];
+    }
+    if (_has(n, ['elevacao lateral no cabo'])) {
+      return [
+        'balançar o tronco para ajudar a subida',
+        'encolher o ombro durante a elevação',
+        'subir a mão acima da linha do ombro com carga',
+        'deixar o cabo puxar o braço de volta sem controlo',
+      ];
+    }
+    if (_has(n, ['elevacao frontal no cabo'])) {
+      return [
+        'arquear a lombar para subir mais alto',
+        'balançar o corpo para ganhar impulso',
+        'subir acima da linha do ombro com carga',
+        'dobrar o punho durante a elevação',
+      ];
+    }
+    if (_has(n, ['kickback de gluteo no cabo'])) {
+      return [
+        'arquear a lombar para levar a perna mais atrás',
+        'rodar a bacia durante a extensão',
+        'usar impulso em vez de apertar o glúteo',
+        'carga alta demais para controlar o retorno',
+      ];
+    }
+    if (_has(n, ['abducao de anca no cabo'])) {
+      return [
+        'inclinar o tronco para o lado para subir mais a perna',
+        'rodar o pé para cima durante a abertura',
+        'usar impulso em vez de controlo',
+        'deixar o cabo fechar a perna de repente',
+      ];
+    }
+    if (_has(n, ['aducao de anca no cabo'])) {
+      return [
+        'inclinar o tronco para compensar o fecho',
+        'rodar a bacia durante o movimento',
+        'fechar com impulso em vez de controlo',
+        'usar carga alta demais e perder o equilíbrio',
+      ];
+    }
+    if (_has(n, ['crunch no cabo'])) {
+      return [
+        'puxar com os braços em vez do abdómen',
+        'dobrar pela anca em vez de enrolar o tronco',
+        'usar carga alta demais e perder o controlo do retorno',
+        'esticar totalmente o tronco e perder a tensão',
+      ];
+    }
+    if (_has(n, ['pull-through no cabo'])) {
+      return [
+        'puxar a corda com os braços',
+        'arredondar a lombar na descida',
+        'dobrar demasiado os joelhos e transformar em agachamento',
+        'inclinar para trás no topo do movimento',
+      ];
+    }
+    if (_has(n, ['y-t-w'])) {
+      return [
+        'arquear a lombar para ganhar amplitude',
+        'levantar a cabeça em vez do peito',
+        'fazer o movimento com impulso',
+        'encolher os ombros junto às orelhas',
+      ];
+    }
+    if (_has(n, ['rotacao externa isometrica na parede'])) {
+      return [
+        'deixar o cotovelo afastar-se das costelas',
+        'empurrar com o ombro em vez de com o antebraço',
+        'prender a respiração durante a pressão',
+        'usar demasiada força logo nas primeiras repetições',
+      ];
+    }
+    if (_has(n, ['encolhimento isometrico de ombros'])) {
+      return [
+        'encolher só um ombro de cada vez',
+        'prender a respiração durante a subida',
+        'deixar os ombros rodarem para a frente',
+        'fazer o movimento com impulso em vez de contração controlada',
+      ];
+    }
+    if (_has(n, ['torcao de toalha'])) {
+      return [
+        'mover os cotovelos em vez dos punhos',
+        'torcer com pressa e sem controlo',
+        'segurar a toalha demasiado perto do centro',
+        'prender a respiração durante a torção',
+      ];
+    }
     if (_has(n, ['prancha lateral'])) {
       return [
         'deixar a anca descer ou rodar para trás',
@@ -4901,6 +6269,19 @@ class ExerciseCatalogContextService {
     }
     if (_isSquat(name) || _isLunge(name)) {
       return 'Mantém joelhos alinhados com os pés e coluna controlada. Para com dor aguda no joelho, anca, tornozelo ou lombar.';
+    }
+    final equip = _n(equipment);
+    if (equip.contains('kettlebell')) {
+      return 'Começa com um kettlebell leve e pousa-o sempre com a lombar direita. Para com dor lombar, dor no ombro ou perda de controlo do movimento.';
+    }
+    if (equip.contains('elastico')) {
+      return 'Verifica o estado do elástico e prende-o num ponto firme antes de criar tensão. Para se o elástico escapar ou com dor aguda, formigueiro ou perda de controlo.';
+    }
+    if (equip.contains('cabo') && !equip.contains('vassoura')) {
+      return 'Ajusta a polia e a carga antes da primeira repetição e nunca largues a pega com o cabo em tensão. Para com dor aguda, formigueiro ou perda de controlo.';
+    }
+    if (equip.contains('maquina')) {
+      return 'Ajusta a máquina ao teu corpo e começa com carga leve. Para com dor articular, formigueiro ou perda de controlo do movimento.';
     }
     return _isBodyweightEquipment(equipment)
         ? 'Controla o movimento do início ao fim e usa uma amplitude que domines. Para se houver dor aguda, tontura, formigueiro ou perda de equilíbrio.'
