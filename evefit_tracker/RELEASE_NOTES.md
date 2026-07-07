@@ -1,3 +1,23 @@
+# v0.9.4
+
+- Criada alfandega permanente dos catalogos com `dart run tool/catalog_audit_report.dart --strict`.
+- Corrigida passadeira em `Cardio - Passadeira - Resistencia aerobica` e adicionadas/corrigidas entradas essenciais de passadeira.
+- Corrigido `Adductor squeeze leve` com explicacao real para iniciantes e musculos corretos.
+- Adicionados inventario, gap analysis, docs de qualidade e guia para adicionar exercicio novo.
+- Validadores agora falham em problemas criticos de IDs, filtros, linguagem, conteudo, seguranca, equipamento e local.
+- Atualizada versao da app para v0.9.4.
+
+# v0.9.3
+
+- Reconstrucao canonica do catalogo de exercicios, separando `canonical_id` de `catalog_entry_key`.
+- Catalogo expandido para 1171 entradas, com 1141 canonical IDs unicos e 1192 alias pairs.
+- Novos filtros por local, equipamento e contexto, preservando compatibilidade com historico antigo.
+- Menus progressivos para musculacao, cardio, artes marciais, mobilidade, elasticidade, recuperacao, aquecimento, ativacao e prevencao.
+- Descricoes, execucoes passo a passo, respiracao, erros comuns, cuidados, regressao e progressao completos para iniciantes.
+- Migracao segura com base de dados v21, mantendo `catalog_entry_key`, templates, exercicios personalizados e series antigas.
+- QA, testes e build Android validados: `flutter analyze`, `flutter test`, APK debug e APK release.
+- Atualizada versão da app para v0.9.3.
+
 # v0.9.2
 
 - Expansão do catálogo de exercícios: 315 → 353 (38 novos), fechando lacunas reais identificadas em gap analysis: coifa do ombro (elevação no plano da omoplata), extensão cervical, rotação do tronco com carga (lenhador no cabo), anti-rotação sem equipamento (prancha com toque no ombro), rotadores externos da anca (clamshell), isquiotibiais excêntricos (curl nórdico assistido) e dobradiça unilateral (peso morto unilateral).

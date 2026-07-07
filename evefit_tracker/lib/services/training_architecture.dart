@@ -154,6 +154,8 @@ class ExerciseArchitectureTags {
 class TrainingArchitecture {
   const TrainingArchitecture._();
 
+  static final Map<String, ExerciseArchitectureTags> _tagsCache = {};
+
   static const regions = [
     TrainingRegion(
       key: 'full_body',
@@ -1567,6 +1569,35 @@ class TrainingArchitecture {
   }
 
   static ExerciseArchitectureTags tagsForExercise(Exercise exercise) {
+    final cacheKey = _tagsCacheKey(exercise);
+    final cached = _tagsCache[cacheKey];
+    if (cached != null) return cached;
+    final tags = _buildTagsForExercise(exercise);
+    _tagsCache[cacheKey] = tags;
+    return tags;
+  }
+
+  static String _tagsCacheKey(Exercise exercise) {
+    return [
+      exercise.catalogEntryKey,
+      exercise.exerciseKey,
+      exercise.contextKey,
+      exercise.name,
+      exercise.muscleGroup,
+      exercise.secondaryMuscleGroups,
+      exercise.equipment,
+      exercise.primaryType,
+      exercise.secondaryTypes.join(','),
+      exercise.regionKeys.join(','),
+      exercise.groupKeys.join(','),
+      exercise.subgroupKeys.join(','),
+      exercise.primaryMuscleKey,
+      exercise.secondaryMuscleKeys.join(','),
+      exercise.equipmentKeys.join(','),
+    ].join('|');
+  }
+
+  static ExerciseArchitectureTags _buildTagsForExercise(Exercise exercise) {
     if (exercise.regionKeys.isNotEmpty &&
         exercise.groupKeys.isNotEmpty &&
         exercise.primaryMuscleKey.isNotEmpty &&
@@ -2805,6 +2836,47 @@ class TrainingArchitecture {
       add(region: 'cardio', group: 'cardio_machine', subgroup: 'treadmill');
       if (_has(name, ['hiit'])) {
         add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_intervals', 'hiit'],
+        );
+      } else if (_has(name, ['interval', 'sprint'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_intervals'],
+        );
+      } else if (_has(name, ['aquecimento', 'caminhada na passadeira'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_warmup', 'treadmill_easy'],
+        );
+      } else if (_has(name, ['ritmo leve', 'cooldown', 'arrefecimento'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_easy'],
+        );
+      } else if (_has(name, ['ritmo moderado', 'resistencia', 'resistência'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_moderate', 'treadmill_aerobic'],
+        );
+      } else {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_aerobic'],
+        );
       }
     } else if (_has(name, ['bicicleta'])) {
       add(region: 'cardio', group: 'cardio_general', subgroup: 'bike');

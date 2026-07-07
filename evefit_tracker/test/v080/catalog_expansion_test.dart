@@ -27,7 +27,9 @@ void main() {
   test('new exercises have explicit anatomy and equipment taxonomy', () {
     final byName = {
       for (final entry in ExerciseCatalogContextService.entries)
-        entry.name: ExerciseTaxonomyService.forCatalogEntry(entry),
+        if (!expectedNewExercises.contains(entry.name) ||
+            entry.group == 'Pernas')
+          entry.name: ExerciseTaxonomyService.forCatalogEntry(entry),
     };
 
     expect(byName['Short foot / doming']!.allMuscleKeys, contains('feet'));

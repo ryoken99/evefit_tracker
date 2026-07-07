@@ -1,3 +1,5 @@
+enum CapabilityKind { equipment, surface, support, accessory, location, human }
+
 class EquipmentDefinition {
   const EquipmentDefinition({
     required this.key,
@@ -422,7 +424,213 @@ class EquipmentCatalogService {
     'broomstick',
   };
 
+  static const placeHomeNoEquipment = 'place_home_no_equipment';
+  static const placeHomeEquipped = 'place_home_equipped';
+  static const placeGym = 'place_gym';
+  static const placeDojo = 'place_dojo';
+  static const placeTatami = 'place_tatami';
+  static const placeOutdoor = 'place_outdoor';
+  static const placeWorkTravel = 'place_work_travel';
+  static const placeClinic = 'place_clinic';
+
+  static const canonicalPlaceNames = <String, String>{
+    placeHomeNoEquipment: 'Casa sem equipamento',
+    placeHomeEquipped: 'Casa equipada',
+    placeGym: 'Ginasio',
+    placeDojo: 'Dojo',
+    placeTatami: 'Tatami',
+    placeOutdoor: 'Exterior',
+    placeWorkTravel: 'Trabalho ou viagem',
+    placeClinic: 'Clinica ou fisioterapia',
+  };
+
+  static const surfaceKeys = <String>{'floor', 'mat', 'tatami'};
+  static const supportKeys = <String>{
+    'wall',
+    'chair_support',
+    'bench',
+    'adjustable_bench',
+    'flat_bench',
+    'incline_bench',
+    'decline_bench',
+    'stable_step',
+    'sturdy_table',
+    'yoga_block',
+  };
+  static const accessoryKeys = <String>{
+    'broomstick',
+    'towel',
+    'gloves',
+    'shin_guards',
+    'pads',
+    'gi',
+    'belt',
+  };
+  static const humanKeys = <String>{'partner'};
+  static const locationCapabilityKeys = <String>{'free_space', 'outdoor_space'};
+
+  static CapabilityKind kindFor(String key) {
+    if (surfaceKeys.contains(key)) return CapabilityKind.surface;
+    if (supportKeys.contains(key)) return CapabilityKind.support;
+    if (accessoryKeys.contains(key)) return CapabilityKind.accessory;
+    if (humanKeys.contains(key)) return CapabilityKind.human;
+    if (locationCapabilityKeys.contains(key)) return CapabilityKind.location;
+    return CapabilityKind.equipment;
+  }
+
+  static String normalizeEquipmentToken(String value, {String context = ''}) {
+    final text = _normalize('$value $context');
+    if (text.isEmpty) return '';
+
+    if (text.contains('barra fixa') ||
+        text.contains('pull up') ||
+        text.contains('pull-up') ||
+        text.contains('chin up') ||
+        text.contains('chin-up')) {
+      return 'pullup_bar';
+    }
+    if (text.contains('barra') &&
+        (text.contains('cabo') || text.contains('polia'))) {
+      return 'adjustable_cable';
+    }
+    if (text.contains('barra') &&
+        (text.contains('maquina') || text.contains('smith'))) {
+      return 'machine';
+    }
+    if (text.contains('barra')) return 'barbell';
+    if (text.contains('saco') && text.contains('areia')) return 'sandbag';
+    if (text.contains('saco')) return 'heavy_bag';
+    if (text.contains('banco') && text.contains('inclinado')) {
+      return 'incline_bench';
+    }
+    if (text.contains('banco') && text.contains('declinado')) {
+      return 'decline_bench';
+    }
+    if (text.contains('cadeira') ||
+        text.contains('sofa') ||
+        text.contains('apoio improvisado')) {
+      return 'chair_support';
+    }
+    if (text.contains('banco')) return 'bench';
+
+    const aliases = <String, Set<String>>{
+      'bodyweight': {'peso corporal', 'sem equipamento', 'eq none', 'none'},
+      'floor': {'chao', 'solo'},
+      'wall': {'parede', 'eq wall'},
+      'mat': {'tapete', 'colchonete', 'mat', 'eq floor mat'},
+      'towel': {'toalha', 'eq towel'},
+      'dumbbells': {
+        'halter',
+        'halteres',
+        'dumbbell',
+        'dumbbells',
+        'eq dumbbells',
+      },
+      'bands': {
+        'elastico',
+        'elasticos',
+        'banda elastica',
+        'resistance band',
+        'band',
+        'eq long band',
+      },
+      'machine': {'maquina', 'maquina de ginasio'},
+      'high_cable': {'cabo alto'},
+      'low_cable': {'cabo baixo'},
+      'adjustable_cable': {'cabo', 'polia', 'cabo ajustavel'},
+      'tatami': {'tatami', 'tapete de artes marciais', 'martial arts mat'},
+      'heavy_bag': {'saco de boxe', 'saco de pancada', 'heavy bag'},
+      'partner': {'parceiro', 'partner', 'eq partner'},
+      'pullup_bar': {'barra fixa', 'pull up bar', 'chin up bar'},
+      'barbell': {'barra livre', 'barra longa', 'barbell'},
+    };
+
+    for (final entry in aliases.entries) {
+      if (entry.value.any(text.contains)) return entry.key;
+    }
+    for (final key in definitions.keys) {
+      if (text.contains(_normalize(key))) return key;
+    }
+    return '';
+  }
+
+  static Set<String> normalizeEquipmentTokens(Iterable<String> values) {
+    return values
+        .map((value) => normalizeEquipmentToken(value))
+        .where((key) => key.isNotEmpty)
+        .toSet();
+  }
+
+  static Set<String> normalizePlaceTokens(Iterable<String> values) {
+    final result = <String>{};
+    for (final value in values) {
+      final text = _normalize(value);
+      if (text.contains('casa') &&
+          (text.contains('sem equipamento') || text.contains('sem equip'))) {
+        result.add(placeHomeNoEquipment);
+      } else if (text.contains('casa')) {
+        result.add(placeHomeEquipped);
+      } else if (text.contains('ginasio') || text.contains('gym')) {
+        result.add(placeGym);
+      } else if (text.contains('dojo') || text.contains('artes marciais')) {
+        result.add(placeDojo);
+      } else if (text.contains('tatami')) {
+        result.add(placeTatami);
+      } else if (text.contains('exterior') || text.contains('parque')) {
+        result.add(placeOutdoor);
+      } else if (text.contains('trabalho') ||
+          text.contains('viagem') ||
+          text.contains('hotel')) {
+        result.add(placeWorkTravel);
+      } else if (text.contains('clinica') ||
+          text.contains('fisioterapia') ||
+          text.contains('reabilitacao')) {
+        result.add(placeClinic);
+      }
+    }
+    return result;
+  }
+
   static Set<String> availableKeys({
+    required Set<String> trainingLocations,
+    required Set<String> selectedEquipmentKeys,
+  }) {
+    final places = normalizePlaceTokens(trainingLocations);
+    final selected = <String>{
+      ...selectedEquipmentKeys.where(definitions.containsKey),
+      ...normalizeEquipmentTokens(selectedEquipmentKeys),
+    };
+    final result = <String>{
+      'bodyweight',
+      'floor',
+      ...selected,
+    };
+    if (places.isEmpty || places.contains(placeHomeNoEquipment)) {
+      result.add('wall');
+    }
+    if (places.contains(placeHomeEquipped)) {
+      result.add('wall');
+    }
+    if (places.contains(placeGym)) {
+      result.addAll(gymEquipmentKeys);
+      result.addAll({'bench', 'chair_support', 'stable_step', 'wall'});
+    }
+    if (places.contains(placeOutdoor)) {
+      result.add('outdoor_space');
+    }
+    if (places.contains(placeDojo)) {
+      result.addAll({'wall', 'tatami'});
+    }
+    if (places.contains(placeTatami)) {
+      result.addAll({'wall', 'tatami'});
+    }
+    if (places.contains(placeWorkTravel)) {
+      result.add('wall');
+    }
+    return result;
+  }
+
+  static Set<String> legacyAvailableKeys({
     required Set<String> trainingLocations,
     required Set<String> selectedEquipmentKeys,
   }) {
@@ -463,5 +671,39 @@ class EquipmentCatalogService {
       result.add('tatami');
     }
     return result;
+  }
+
+  static String _normalize(String value) {
+    var text = value.toLowerCase();
+    const replacements = {
+      'á': 'a',
+      'à': 'a',
+      'ã': 'a',
+      'â': 'a',
+      'ä': 'a',
+      'é': 'e',
+      'ê': 'e',
+      'è': 'e',
+      'í': 'i',
+      'ó': 'o',
+      'õ': 'o',
+      'ô': 'o',
+      'ú': 'u',
+      'ç': 'c',
+      'Ã¡': 'a',
+      'Ã£': 'a',
+      'Ã¢': 'a',
+      'Ã©': 'e',
+      'Ãª': 'e',
+      'Ã­': 'i',
+      'Ã³': 'o',
+      'Ãµ': 'o',
+      'Ãº': 'u',
+      'Ã§': 'c',
+    };
+    for (final entry in replacements.entries) {
+      text = text.replaceAll(entry.key, entry.value);
+    }
+    return text.replaceAll(RegExp(r'[^a-z0-9]+'), ' ').trim();
   }
 }

@@ -32,6 +32,10 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+*.apk
+*.sha1
+.codex-remote-attachments/
+**/.codex-remote-attachments/
 
 # Symbolication related
 app.*.symbols
@@ -43,3 +47,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Local SDKs must stay outside commits.
+/flutter/
+/development/flutter/

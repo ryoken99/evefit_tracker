@@ -22,6 +22,10 @@ class Exercise {
     this.createdAt,
     this.updatedAt,
     this.notes = '',
+    this.canonicalId = '',
+    this.aliases = const {},
+    this.primaryType = '',
+    this.secondaryTypes = const {},
     this.exerciseKey = '',
     this.contextKey = '',
     this.catalogEntryKey = '',
@@ -60,6 +64,10 @@ class Exercise {
   final DateTime? createdAt;
   final DateTime? updatedAt;
   final String notes;
+  final String canonicalId;
+  final Set<String> aliases;
+  final String primaryType;
+  final Set<String> secondaryTypes;
   final String exerciseKey;
   final String contextKey;
   final String catalogEntryKey;
@@ -104,6 +112,10 @@ class Exercise {
     DateTime? createdAt,
     DateTime? updatedAt,
     String? notes,
+    String? canonicalId,
+    Set<String>? aliases,
+    String? primaryType,
+    Set<String>? secondaryTypes,
     String? exerciseKey,
     String? contextKey,
     String? catalogEntryKey,
@@ -143,6 +155,10 @@ class Exercise {
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       notes: notes ?? this.notes,
+      canonicalId: canonicalId ?? this.canonicalId,
+      aliases: aliases ?? this.aliases,
+      primaryType: primaryType ?? this.primaryType,
+      secondaryTypes: secondaryTypes ?? this.secondaryTypes,
       exerciseKey: exerciseKey ?? this.exerciseKey,
       contextKey: contextKey ?? this.contextKey,
       catalogEntryKey: catalogEntryKey ?? this.catalogEntryKey,
@@ -190,6 +206,10 @@ class Exercise {
         ? null
         : DateTime.parse(map['updated_at'] as String),
     notes: map['notes'] as String? ?? '',
+    canonicalId: map['canonical_id'] as String? ?? '',
+    aliases: ExerciseTaxonomy.parseKeys(map['aliases']),
+    primaryType: map['primary_type'] as String? ?? '',
+    secondaryTypes: ExerciseTaxonomy.parseKeys(map['secondary_types']),
     exerciseKey: map['exercise_key'] as String? ?? '',
     contextKey: map['context_key'] as String? ?? '',
     catalogEntryKey: map['catalog_entry_key'] as String? ?? '',
@@ -236,6 +256,11 @@ class Exercise {
     'created_at': createdAt?.toIso8601String(),
     'updated_at': updatedAt?.toIso8601String(),
     'notes': notes,
+    if (canonicalId.isNotEmpty) 'canonical_id': canonicalId,
+    if (aliases.isNotEmpty) 'aliases': ExerciseTaxonomy.serializeKeys(aliases),
+    if (primaryType.isNotEmpty) 'primary_type': primaryType,
+    if (secondaryTypes.isNotEmpty)
+      'secondary_types': ExerciseTaxonomy.serializeKeys(secondaryTypes),
     'exercise_key': exerciseKey,
     'context_key': contextKey,
     'catalog_entry_key': catalogEntryKey,

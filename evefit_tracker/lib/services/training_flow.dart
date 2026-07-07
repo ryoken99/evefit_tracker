@@ -1,9 +1,11 @@
 import 'training_architecture.dart';
+import 'equipment_catalog_service.dart';
 import 'workout_taxonomy.dart';
 
 class TrainingFlowSelection {
   const TrainingFlowSelection({
     this.typeKey = '',
+    this.locationKey = '',
     this.equipmentKey = '',
     this.regionKey = '',
     this.groupKey = '',
@@ -16,6 +18,7 @@ class TrainingFlowSelection {
   });
 
   final String typeKey;
+  final String locationKey;
   final String equipmentKey;
   final String regionKey;
   final String groupKey;
@@ -28,6 +31,7 @@ class TrainingFlowSelection {
 
   TrainingFlowSelection copyWith({
     String? typeKey,
+    String? locationKey,
     String? equipmentKey,
     String? regionKey,
     String? groupKey,
@@ -40,6 +44,7 @@ class TrainingFlowSelection {
   }) {
     return TrainingFlowSelection(
       typeKey: typeKey ?? this.typeKey,
+      locationKey: locationKey ?? this.locationKey,
       equipmentKey: equipmentKey ?? this.equipmentKey,
       regionKey: regionKey ?? this.regionKey,
       groupKey: groupKey ?? this.groupKey,
@@ -60,10 +65,95 @@ class TrainingFlow {
     'strength': 'Musculação',
     'cardio': 'Cardio',
     'martial_arts': 'Artes marciais',
-    'mobility': 'Mobilidade / elasticidade',
+    'mobility': 'Mobilidade',
+    'elasticity': 'Elasticidade',
     'recovery': 'Recuperação',
+    'warmup': 'Aquecimento',
+    'activation': 'Ativação',
+    'prevention': 'Prevenção',
     'custom': 'Personalizado',
   };
+
+  static const objectiveLabels = {
+    'muscle_gain': 'Ganhar músculo',
+    'strength': 'Força',
+    'endurance': 'Resistência',
+    'cardio': 'Cardio',
+    'mobility': 'Mobilidade',
+    'elasticity': 'Elasticidade',
+    'recovery': 'Recuperação',
+    'martial_arts': 'Artes marciais',
+    'warmup': 'Aquecimento',
+    'activation': 'Ativação',
+    'prevention': 'Prevenção',
+  };
+
+  static const locationLabels = EquipmentCatalogService.canonicalPlaceNames;
+
+  static List<TrainingEquipment> availableEquipmentForLocation(
+    String locationKey, {
+    required Set<String> selectedEquipmentKeys,
+  }) {
+    final keys = EquipmentCatalogService.availableKeys(
+      trainingLocations: {locationKey},
+      selectedEquipmentKeys: selectedEquipmentKeys,
+    );
+    return [
+      for (final key in keys)
+        if (EquipmentCatalogService.definitions.containsKey(key))
+          TrainingEquipment(
+            key: key,
+            name: EquipmentCatalogService.definitions[key]!.name,
+            category: EquipmentCatalogService.definitions[key]!.category,
+            description: EquipmentCatalogService.definitions[key]!.name,
+          ),
+    ]..sort((a, b) => a.name.compareTo(b.name));
+  }
+
+  static TrainingFlowSelection clearFilters(TrainingFlowSelection flow) {
+    return switch (flow.typeKey) {
+      'cardio' => const TrainingFlowSelection(
+        typeKey: 'cardio',
+        locationKey: EquipmentCatalogService.placeHomeNoEquipment,
+        equipmentKey: 'bodyweight',
+        cardioFocusKey: 'no_equipment',
+      ),
+      'martial_arts' => const TrainingFlowSelection(
+        typeKey: 'martial_arts',
+        locationKey: EquipmentCatalogService.placeDojo,
+        martialArtKey: 'karate',
+        focusKey: 'karate_complete',
+      ),
+      'mobility' => const TrainingFlowSelection(
+        typeKey: 'mobility',
+        locationKey: EquipmentCatalogService.placeHomeNoEquipment,
+        equipmentKey: 'bodyweight',
+        mobilityZoneKey: 'general_mobility',
+      ),
+      'elasticity' => const TrainingFlowSelection(
+        typeKey: 'elasticity',
+        locationKey: EquipmentCatalogService.placeHomeNoEquipment,
+        equipmentKey: 'bodyweight',
+      ),
+      'recovery' => const TrainingFlowSelection(
+        typeKey: 'recovery',
+        locationKey: EquipmentCatalogService.placeHomeNoEquipment,
+        equipmentKey: 'bodyweight',
+        recoveryKey: 'easy_walk',
+      ),
+      'warmup' || 'activation' || 'prevention' => TrainingFlowSelection(
+        typeKey: flow.typeKey,
+        locationKey: EquipmentCatalogService.placeHomeNoEquipment,
+        equipmentKey: 'bodyweight',
+      ),
+      _ => const TrainingFlowSelection(
+        typeKey: 'strength',
+        locationKey: EquipmentCatalogService.placeHomeNoEquipment,
+        equipmentKey: 'bodyweight',
+        regionKey: 'full_body',
+      ),
+    };
+  }
 
   static const strengthFocusLabels = {
     'chest_complete': 'Peito completo',
@@ -363,6 +453,9 @@ class TrainingFlow {
     'outdoor_run': 'Corrida exterior',
     'hiit': 'HIIT',
     'aerobic_endurance': 'Resistência aeróbia',
+    'treadmill_warmup': 'Aquecimento',
+    'treadmill_easy_pace': 'Ritmo leve',
+    'treadmill_moderate_pace': 'Ritmo moderado',
     'treadmill_intervals': 'Intervalos / HIIT',
   };
 
@@ -568,7 +661,13 @@ class TrainingFlow {
     String equipmentKey,
   ) {
     final keys = switch (equipmentKey) {
-      'treadmill' => ['aerobic_endurance', 'treadmill_intervals'],
+      'treadmill' => [
+        'aerobic_endurance',
+        'treadmill_warmup',
+        'treadmill_easy_pace',
+        'treadmill_moderate_pace',
+        'treadmill_intervals',
+      ],
       'bike' => ['aerobic_endurance', 'hiit'],
       'elliptical' => ['aerobic_endurance'],
       'jump_rope' => ['jump_rope', 'hiit'],
@@ -622,7 +721,23 @@ class TrainingFlow {
       'cardio' => _cardioSelection(flow),
       'martial_arts' => _martialSelection(flow),
       'mobility' => _mobilitySelection(flow),
+      'elasticity' => const TrainingSelection(
+        regionKey: 'elasticity',
+        equipmentKey: 'bodyweight',
+      ),
       'recovery' => _recoverySelection(flow),
+      'warmup' => const TrainingSelection(
+        regionKey: 'warmup',
+        equipmentKey: 'bodyweight',
+      ),
+      'activation' => const TrainingSelection(
+        regionKey: 'activation',
+        equipmentKey: 'bodyweight',
+      ),
+      'prevention' => const TrainingSelection(
+        regionKey: 'prevention',
+        equipmentKey: 'bodyweight',
+      ),
       _ => TrainingSelection(
         regionKey: flow.regionKey,
         groupKey: flow.groupKey,
@@ -744,6 +859,9 @@ class TrainingFlow {
         subgroupKey: 'treadmill',
         specificMuscleKey: switch (focusKey) {
           'aerobic_endurance' => 'treadmill_aerobic',
+          'treadmill_warmup' => 'treadmill_warmup',
+          'treadmill_easy_pace' => 'treadmill_easy',
+          'treadmill_moderate_pace' => 'treadmill_moderate',
           'treadmill_intervals' || 'hiit' => 'treadmill_intervals',
           _ => '',
         },

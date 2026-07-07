@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('v0.9.2 public version metadata', () {
-    test('all current release surfaces identify v0.9.2', () {
+  group('v0.9.4 public version metadata', () {
+    test('all current release surfaces identify v0.9.4', () {
       final pubspec = _contents('pubspec.yaml');
       final settings = _contents('lib/screens/settings_screen.dart');
       final readme = _contents('README.md');
@@ -12,15 +12,15 @@ void main() {
       final changelog = _contents('CHANGELOG.md');
       final releaseNotes = _contents('RELEASE_NOTES.md');
 
-      expect(pubspec, contains(RegExp(r'^version: 0\.9\.2$', multiLine: true)));
-      expect(pubspec, isNot(contains('0.9.2+25')));
-      expect(settings, contains("appVersionLabel = 'v0.9.2'"));
-      expect(settings, contains('Ver atualizações v0.9.2'));
-      expect(readme, contains('v0.9.2'));
-      expect(workflow, contains("default: 'v0.9.2'"));
-      expect(workflow, contains('### Novidades v0.9.2'));
-      expect(changelog, contains('# v0.9.2'));
-      expect(releaseNotes, contains('# v0.9.2'));
+      expect(pubspec, contains(RegExp(r'^version: 0\.9\.4$', multiLine: true)));
+      expect(pubspec, isNot(contains('0.9.3+25')));
+      expect(settings, contains("appVersionLabel = 'v0.9.4'"));
+      expect(settings, contains('Ver atualizações v0.9.4'));
+      expect(readme, contains('v0.9.4'));
+      expect(workflow, contains("default: 'v0.9.4'"));
+      expect(workflow, contains('### Novidades v0.9.4'));
+      expect(changelog, contains('# v0.9.4'));
+      expect(releaseNotes, contains('# v0.9.4'));
     });
 
     test('release notes contain the required integrity summary', () {
@@ -41,6 +41,8 @@ void main() {
         'Atualizada versão da app para v0.9.0.',
         'Atualizada versão da app para v0.9.1.',
         'Atualizada versão da app para v0.9.2.',
+        'Atualizada versão da app para v0.9.3.',
+        'Atualizada versao da app para v0.9.4.',
       ];
 
       for (final document in documents) {

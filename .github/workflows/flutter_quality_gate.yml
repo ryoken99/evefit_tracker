@@ -1,0 +1,23 @@
+name: Flutter quality gate
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: evefit_tracker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test -r compact
+      - run: dart run tool/catalog_audit_report.dart --strict
+

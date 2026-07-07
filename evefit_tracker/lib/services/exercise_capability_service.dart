@@ -48,7 +48,7 @@ class ExerciseCapabilityService {
       'stable_step',
       ..._benchAlternatives,
     },
-    'copenhagen_plank_com_apoio': {'chair_support', ..._benchAlternatives},
+    'copenhagen_plank_com_apoio': _benchAlternatives,
     'remo_invertido': {'sturdy_table', 'pullup_bar', 'rings', 'trx'},
     'remo_invertido_em_mesa_resistente': {'sturdy_table'},
     'wall_sit': {'wall'},
@@ -83,6 +83,7 @@ class ExerciseCapabilityService {
   static List<Set<String>> requirementGroups(Exercise exercise) {
     final exerciseKey = _exerciseKey(exercise);
     final equipmentKeys = <String>{
+      ...exercise.equipmentKeys,
       ...TrainingArchitecture.tagsForExercise(exercise).equipmentKeys,
     };
     if (equipmentKeys.contains('pullup_bar')) {
@@ -112,7 +113,6 @@ class ExerciseCapabilityService {
           groups.add(_benchAlternatives);
         }
       } else if (key == 'tatami') {
-        // Drills de solo aceitam tatami ou um tapete/colchonete.
         groups.add({'tatami', 'mat'});
       } else if (key == 'mat') {
         groups.add({'mat', 'floor'});

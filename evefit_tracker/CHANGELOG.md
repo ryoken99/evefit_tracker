@@ -1,3 +1,25 @@
+# v0.9.4
+
+- Criada alfandega permanente dos catalogos com auditoria reutilizavel, modo relatorio e modo `--strict`.
+- Adicionados validadores permanentes para identidade canonica, taxonomia, equipamento/local, filtros, conteudo, seguranca e linguagem.
+- Gerados inventario completo e gap analysis do catalogo em `build/reports/`.
+- Corrigido bug de `Cardio - Passadeira - Resistencia aerobica`, incluindo exercicios essenciais de passadeira.
+- Corrigidas descricoes genericas e musculos de `Adductor squeeze leve` e variantes relacionadas.
+- Criado comando unico de QA em `tool/run_quality_gate.ps1` e workflow de quality gate para PRs.
+- QA, testes e build Android validados para versao testavel v0.9.4.
+- Atualizada versao da app para v0.9.4.
+
+# v0.9.3
+
+- Reconstrucao canonica do catalogo de exercicios, separando `canonical_id` de `catalog_entry_key`.
+- Catalogo expandido para 1171 entradas, com 1141 canonical IDs unicos e 1192 alias pairs.
+- Novos filtros por local, equipamento e contexto, preservando compatibilidade com historico antigo.
+- Menus progressivos para musculacao, cardio, artes marciais, mobilidade, elasticidade, recuperacao, aquecimento, ativacao e prevencao.
+- Descricoes, execucoes passo a passo, respiracao, erros comuns, cuidados, regressao e progressao completos para iniciantes.
+- Migracao segura com base de dados v21, mantendo `catalog_entry_key`, templates, exercicios personalizados e series antigas.
+- QA, testes e build Android validados: `flutter analyze`, `flutter test`, APK debug e APK release.
+- Atualizada versão da app para v0.9.3.
+
 # v0.9.2
 
 - Expansão do catálogo de exercícios: 315 → 353 (38 novos), fechando lacunas reais identificadas em gap analysis: coifa do ombro (elevação no plano da omoplata), extensão cervical, rotação do tronco com carga (lenhador no cabo), anti-rotação sem equipamento (prancha com toque no ombro), rotadores externos da anca (clamshell), isquiotibiais excêntricos (curl nórdico assistido) e dobradiça unilateral (peso morto unilateral).

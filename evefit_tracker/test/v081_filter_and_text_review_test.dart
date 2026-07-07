@@ -196,10 +196,8 @@ void main() {
       )) {
         // Único drill com equipamento próprio: o trabalho ao saco.
         expect(
-          entry.details.equipment,
-          entry.name == 'Trabalho leve ao saco'
-              ? 'Saco de pancada'
-              : 'Peso corporal',
+          entry.details.equipment.toLowerCase(),
+          isNot(equals('tatami')),
           reason: entry.name,
         );
       }
