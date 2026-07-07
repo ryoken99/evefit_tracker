@@ -513,7 +513,10 @@ class CatalogTotalMatrixAudit {
         availableEquipmentKeys: selectedEquipment,
       );
       for (final mode in modes) {
-        final equipment = mode.key == 'no_equipment' ? 'bodyweight' : mode.key;
+        final equipment = switch (mode.key) {
+          'no_equipment' || 'hiit' => 'bodyweight',
+          _ => mode.key,
+        };
         for (final focus in TrainingFlow.cardioFocusOptionsForEquipment(
           equipment,
         )) {
@@ -590,16 +593,19 @@ class CatalogTotalMatrixAudit {
           selection.equipmentKey,
         }.where((item) => item.isNotEmpty),
       );
-    final available = _availableExercisesFor(
-      exercises: exercises,
-      availableEquipmentKeys: selectedEquipment,
-      selection: selection,
-    );
+    final available =
+        _availableExercisesFor(
+              exercises: exercises,
+              availableEquipmentKeys: selectedEquipment,
+              selection: selection,
+            )
+            .where((exercise) => _matchesFlowFocus(exercise, flow))
+            .toList(growable: false);
     final exerciseKeys = available
         .map((exercise) => exercise.catalogEntryKey)
         .toList(growable: false);
     final wrong = available
-        .where((exercise) => !_matchesFlowType(exercise, flow.typeKey))
+        .where((exercise) => !_matchesFlowDomain(exercise, flow))
         .toList(growable: false);
     if (wrong.isNotEmpty) {
       return _path(
@@ -630,7 +636,11 @@ class CatalogTotalMatrixAudit {
                     ..add('wall'),
               selection: selection.copyWith(equipmentKey: ''),
             )
-            .where((exercise) => _matchesFlowType(exercise, flow.typeKey))
+            .where(
+              (exercise) =>
+                  _matchesFlowFocus(exercise, flow) &&
+                  _matchesFlowDomain(exercise, flow),
+            )
             .toList(growable: false);
     if (fallback.isNotEmpty) {
       return _path(
@@ -673,7 +683,9 @@ class CatalogTotalMatrixAudit {
       cardioFocusKey: flow.cardioFocusKey,
       martialArtKey: flow.martialArtKey,
       status: status,
-      resultCount: status == MenuMatrixStatus.okWithResults
+      resultCount:
+          status == MenuMatrixStatus.okWithResults ||
+              status == MenuMatrixStatus.failWrongResults
           ? exerciseKeys.length
           : 0,
       fallbackCount: fallbackCount,
@@ -800,9 +812,111 @@ class CatalogTotalMatrixAudit {
     return result;
   }
 
-  static bool _matchesFlowType(Exercise exercise, String typeKey) =>
-      _typeForExercise(exercise) == typeKey ||
-      (typeKey == 'martial_arts' && exercise.primaryType == 'artes_marciais');
+  static bool _matchesFlowDomain(
+    Exercise exercise,
+    TrainingFlowSelection flow,
+  ) {
+    final typeKey = flow.typeKey;
+    final expected = _primaryTypeForFlow(typeKey);
+    if (_typeForExercise(exercise) == typeKey) return true;
+    if (typeKey == 'recovery' &&
+        const {'mobilidade', 'elasticidade'}.contains(exercise.primaryType)) {
+      return true;
+    }
+    if (expected.isEmpty) return false;
+    if (exercise.secondaryTypes.contains(expected) ||
+        exercise.contextKey == expected) {
+      return true;
+    }
+    final tags = TrainingArchitecture.tagsForExercise(exercise);
+    if (typeKey == 'cardio' && tags.regionKeys.contains('cardio')) {
+      return true;
+    }
+    if (typeKey == 'martial_arts' && tags.regionKeys.contains('martial_arts')) {
+      return true;
+    }
+    return false;
+  }
+
+  static bool _matchesFlowFocus(Exercise exercise, TrainingFlowSelection flow) {
+    if (flow.typeKey == 'mobility' &&
+        flow.mobilityZoneKey == 'general_mobility' &&
+        exercise.primaryType == 'artes_marciais') {
+      return false;
+    }
+    if (flow.typeKey != 'recovery') return true;
+    final text = _normalizedCatalogText(exercise);
+    if (flow.recoveryKey == 'breathing') {
+      return _hasAny(text, const [
+            'respiracao',
+            'respira',
+            'breathing',
+            'relaxamento',
+            'downshift',
+          ]) &&
+          !_hasAny(text, const ['caminhada', 'walk']);
+    }
+    if (flow.recoveryKey == 'light_mobility') {
+      return exercise.primaryType == 'mobilidade' &&
+          !_hasAny(text, const ['hiit', 'sprint', 'sparring', 'kumite']);
+    }
+    if (flow.recoveryKey == 'light_stretching') {
+      return exercise.primaryType == 'elasticidade' ||
+          _hasAny(text, const ['alongamento', 'stretch']);
+    }
+    if (flow.recoveryKey == 'easy_walk') {
+      return _hasAny(text, const ['caminhada', 'walk']) &&
+          !_hasAny(text, const ['hiit', 'sprint', 'corrida intervalada']);
+    }
+    if (flow.recoveryKey == 'active_recovery') {
+      return !_hasAny(text, const ['hiit', 'sprint', 'pesado', 'sparring']);
+    }
+    return true;
+  }
+
+  static String _normalizedCatalogText(Exercise exercise) {
+    var text =
+        '${exercise.name} ${exercise.description} ${exercise.muscleGroup} '
+                '${exercise.secondaryMuscleGroups} ${exercise.equipment} '
+                '${exercise.primaryType} ${exercise.secondaryTypes.join(' ')} '
+                '${exercise.contextKey} ${exercise.catalogEntryKey}'
+            .toLowerCase();
+    const replacements = {
+      'á': 'a',
+      'à': 'a',
+      'ã': 'a',
+      'â': 'a',
+      'é': 'e',
+      'ê': 'e',
+      'í': 'i',
+      'ó': 'o',
+      'õ': 'o',
+      'ô': 'o',
+      'ú': 'u',
+      'ç': 'c',
+    };
+    for (final entry in replacements.entries) {
+      text = text.replaceAll(entry.key, entry.value);
+    }
+    return text;
+  }
+
+  static bool _hasAny(String text, List<String> values) =>
+      values.any(text.contains);
+
+  static String _primaryTypeForFlow(String typeKey) {
+    return switch (typeKey) {
+      'strength' => 'musculacao',
+      'martial_arts' => 'artes_marciais',
+      'mobility' => 'mobilidade',
+      'elasticity' => 'elasticidade',
+      'recovery' => 'recuperacao',
+      'warmup' => 'aquecimento',
+      'activation' => 'ativacao',
+      'prevention' => 'prevencao',
+      _ => typeKey,
+    };
+  }
 
   static String _typeForExercise(Exercise exercise) {
     return switch (exercise.primaryType) {
