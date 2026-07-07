@@ -1,4 +1,5 @@
 import 'package:evefit_tracker/services/catalog_quality_gate_service.dart';
+import 'package:evefit_tracker/services/exercise_catalog_context_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -11,8 +12,12 @@ void main() {
         isEmpty,
         reason: CatalogQualityGateService.formatFailures(failures),
       );
-      expect(CatalogQualityGateService.catalogEntryCount, 353);
-      expect(CatalogQualityGateService.uniqueExerciseCount, 347);
+      expect(
+        CatalogQualityGateService.catalogEntryCount,
+        ExerciseCatalogContextService.entries.length,
+      );
+      expect(CatalogQualityGateService.catalogEntryCount, greaterThan(353));
+      expect(CatalogQualityGateService.uniqueExerciseCount, greaterThan(347));
     });
   });
 }

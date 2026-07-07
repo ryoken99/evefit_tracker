@@ -7,6 +7,8 @@ import 'workout_taxonomy.dart';
 class ExerciseFilterService {
   const ExerciseFilterService._();
 
+  static final Map<String, List<ExerciseAvailability>> _availabilityCache = {};
+
   static const emptyStateMessage =
       'Não há exercícios disponíveis para este foco com as capacidades atuais. '
       'Ativa Mostrar todos para ver o equipamento/local em falta.';
@@ -143,6 +145,26 @@ class ExerciseFilterService {
     return ['Todos', ...groups];
   }
 
+  static bool matchesSearchQuery(Exercise exercise, String query) {
+    final normalizedQuery = _searchNormalize(query);
+    if (normalizedQuery.isEmpty) return true;
+    final equipmentLabels = exercise.equipmentKeys
+        .map(TrainingArchitecture.equipmentNameFor)
+        .join(' ');
+    final haystack = _searchNormalize(
+      '${exercise.name} ${exercise.canonicalId} ${exercise.aliases.join(' ')} '
+      '${exercise.exerciseKey} ${exercise.catalogEntryKey} '
+      '${exercise.muscleGroup} ${exercise.secondaryMuscleGroups} '
+      '${exercise.primaryMuscleNodes ?? ''} ${exercise.secondaryMuscleNodes ?? ''} '
+      '${exercise.primaryMuscleKey} ${exercise.secondaryMuscleKeys.join(' ')} '
+      '${exercise.equipment} ${exercise.equipmentKeys.join(' ')} $equipmentLabels '
+      '${exercise.regionKeys.join(' ')} ${exercise.groupKeys.join(' ')} '
+      '${exercise.subgroupKeys.join(' ')} ${exercise.primaryType} '
+      '${exercise.secondaryTypes.join(' ')}',
+    );
+    return haystack.contains(normalizedQuery);
+  }
+
   static List<ExerciseAvailability> getAvailableExercises({
     required List<Exercise> exercises,
     required String trainingLocation,
@@ -150,13 +172,31 @@ class ExerciseFilterService {
     required TrainingSelection selection,
     required bool showAllExercises,
   }) {
+    final cacheKey = _availabilityCacheKey(
+      exercises: exercises,
+      trainingLocation: trainingLocation,
+      availableEquipmentKeys: availableEquipmentKeys,
+      selection: selection,
+      showAllExercises: showAllExercises,
+    );
+    final cached = _availabilityCache[cacheKey];
+    if (cached != null) return List.of(cached, growable: false);
+
     final availability = exercises.map((exercise) {
+      final matchesPreparation = _matchesPreparationSelection(
+        exercise,
+        selection,
+      );
       final matchesSelection =
-          TrainingArchitecture.matchesSelection(
-            exercise,
-            _baseSelectionForHierarchy(selection).copyWith(equipmentKey: ''),
-          ) &&
-          _matchesHierarchyFocus(exercise, selection);
+          (matchesPreparation ||
+              (TrainingArchitecture.matchesSelection(
+                    exercise,
+                    _baseSelectionForHierarchy(
+                      selection,
+                    ).copyWith(equipmentKey: ''),
+                  ) &&
+                  _matchesHierarchyFocus(exercise, selection))) &&
+          _matchesVisibilityRules(exercise, selection);
       final matchesEquipment = _matchesEquipment(
         exercise,
         trainingLocation,
@@ -181,9 +221,50 @@ class ExerciseFilterService {
             : equipmentReason,
       );
     }).toList();
-    if (showAllExercises) return availability;
-    return availability.where((item) => item.isAvailable).toList();
+    final result = showAllExercises
+        ? availability
+        : availability.where((item) => item.isAvailable).toList();
+    if (_availabilityCache.length > 80) _availabilityCache.clear();
+    _availabilityCache[cacheKey] = List.unmodifiable(result);
+    return List.of(result, growable: false);
   }
+
+  static String _availabilityCacheKey({
+    required List<Exercise> exercises,
+    required String trainingLocation,
+    required Set<String> availableEquipmentKeys,
+    required TrainingSelection selection,
+    required bool showAllExercises,
+  }) {
+    final equipment = availableEquipmentKeys.toList()..sort();
+    return [
+      _exerciseListSignature(exercises),
+      exercises.length,
+      trainingLocation,
+      equipment.join(','),
+      selection.regionKey,
+      selection.groupKey,
+      selection.subgroupKey,
+      selection.specificMuscleKey,
+      selection.equipmentKey,
+      showAllExercises,
+    ].join('|');
+  }
+
+  static String _exerciseListSignature(List<Exercise> exercises) =>
+      exercises.map(_exerciseSignature).join('>');
+
+  static String _exerciseSignature(Exercise exercise) => [
+    exercise.id ?? '',
+    exercise.catalogEntryKey,
+    exercise.exerciseKey,
+    exercise.contextKey,
+    exercise.name,
+    exercise.primaryType,
+    exercise.primaryMuscleKey,
+    exercise.equipmentKeys.join(','),
+    exercise.updatedAt?.toIso8601String() ?? '',
+  ].join(':');
 
   static String _equipmentUnavailableReason({
     required Exercise exercise,
@@ -248,6 +329,172 @@ class ExerciseFilterService {
       selectedEquipmentKey: selectedEquipmentKey,
     );
   }
+
+  static bool _matchesVisibilityRules(
+    Exercise exercise,
+    TrainingSelection selection,
+  ) {
+    final domain = _domainForSelection(selection);
+    if (!_matchesCanonicalDomain(exercise, domain)) return false;
+    if (_isRecoverySelection(selection) &&
+        _isHighIntensityOrContact(exercise)) {
+      return false;
+    }
+    if (_isActiveMobilitySelection(selection) && _isPassiveStretch(exercise)) {
+      return false;
+    }
+    if (_isStretchingSelection(selection) && _isActiveConditioning(exercise)) {
+      return false;
+    }
+    if (_isMartialSelection(selection) && _isSparringOrContact(exercise)) {
+      return false;
+    }
+    return true;
+  }
+
+  static bool _matchesPreparationSelection(
+    Exercise exercise,
+    TrainingSelection selection,
+  ) {
+    final type = _preparationTypeForSelection(selection);
+    if (type.isEmpty) return false;
+    return exercise.primaryType == type ||
+        exercise.secondaryTypes.contains(type) ||
+        exercise.contextKey == type;
+  }
+
+  static String _preparationTypeForSelection(TrainingSelection selection) {
+    return switch (selection.regionKey) {
+      'elasticity' => 'elasticidade',
+      'recovery' => 'recuperacao',
+      'warmup' => 'aquecimento',
+      'activation' => 'ativacao',
+      'prevention' => 'prevencao',
+      _ => '',
+    };
+  }
+
+  static String _domainForSelection(TrainingSelection selection) {
+    final preparationType = _preparationTypeForSelection(selection);
+    if (preparationType.isNotEmpty) return preparationType;
+    if (selection.regionKey == 'cardio') return 'cardio';
+    if (selection.regionKey == 'martial_arts') return 'artes_marciais';
+    if (selection.regionKey == 'mobility_recovery') {
+      if (_isRecoverySelection(selection)) return 'recuperacao';
+      if (_isStretchingSelection(selection)) return 'elasticidade';
+      return 'mobilidade';
+    }
+    if (selection.regionKey == 'upper' ||
+        selection.regionKey == 'lower' ||
+        selection.regionKey == 'core' ||
+        selection.regionKey == 'full_body') {
+      return 'musculacao';
+    }
+    return '';
+  }
+
+  static bool _matchesCanonicalDomain(Exercise exercise, String domain) {
+    if (domain.isEmpty || exercise.primaryType.isEmpty) return true;
+    if (exercise.primaryType == domain ||
+        exercise.secondaryTypes.contains(domain)) {
+      return true;
+    }
+    final tags = TrainingArchitecture.tagsForExercise(exercise);
+    if (domain == 'cardio' && tags.regionKeys.contains('cardio')) return true;
+    if (domain == 'artes_marciais' &&
+        tags.regionKeys.contains('martial_arts')) {
+      return true;
+    }
+    if (domain == 'mobilidade' && exercise.primaryType == 'elasticidade') {
+      return false;
+    }
+    if (domain == 'musculacao') return false;
+    if (domain == 'cardio' || domain == 'artes_marciais') return false;
+    if (const {'aquecimento', 'ativacao', 'prevencao'}.contains(domain)) {
+      return false;
+    }
+    return true;
+  }
+
+  static bool _isRecoverySelection(TrainingSelection selection) =>
+      selection.groupKey == 'active_recovery' ||
+      selection.groupKey == 'breathing' ||
+      selection.specificMuscleKey == 'recovery' ||
+      selection.subgroupKey == 'recovery';
+
+  static bool _isActiveMobilitySelection(TrainingSelection selection) =>
+      selection.regionKey == 'mobility_recovery' &&
+      (selection.groupKey.isEmpty ||
+          selection.groupKey == 'general_mobility' ||
+          selection.groupKey.endsWith('_mobility'));
+
+  static bool _isStretchingSelection(TrainingSelection selection) =>
+      selection.groupKey == 'stretching' ||
+      selection.specificMuscleKey == 'stretching' ||
+      selection.subgroupKey == 'stretching';
+
+  static bool _isMartialSelection(TrainingSelection selection) =>
+      selection.regionKey == 'martial_arts';
+
+  static bool _isPassiveStretch(Exercise exercise) {
+    if (exercise.primaryType == 'elasticidade') return true;
+    if (exercise.secondaryTypes.contains('elasticidade') &&
+        !exercise.secondaryTypes.contains('mobilidade')) {
+      return true;
+    }
+    final text = _visibilityText(exercise);
+    if (_textHas(text, ['mobilidade dinamica', 'aquecimento dinamico'])) {
+      return false;
+    }
+    return false;
+  }
+
+  static bool _isActiveConditioning(Exercise exercise) {
+    final text = _visibilityText(exercise);
+    return _textHas(text, [
+      'hiit',
+      'sprint',
+      'mountain climbers',
+      'burpee',
+      'sparring',
+      'kumite',
+      'maquina',
+      'cabo',
+      'supino',
+      'curl',
+    ]);
+  }
+
+  static bool _isHighIntensityOrContact(Exercise exercise) {
+    final text = _visibilityText(exercise);
+    return _textHas(text, [
+      'hiit',
+      'sprint',
+      'intervalado',
+      'double unders',
+      'sparring',
+      'kumite',
+      'saco',
+      'carga alta',
+      'pesado',
+    ]);
+  }
+
+  static bool _isSparringOrContact(Exercise exercise) {
+    final text = _visibilityText(exercise);
+    final equipment = {
+      ...exercise.equipmentKeys,
+      ...TrainingArchitecture.tagsForExercise(exercise).equipmentKeys,
+    };
+    if (equipment.contains('partner')) return true;
+    return _textHas(text, ['sparring', 'combate com contacto']);
+  }
+
+  static String _visibilityText(Exercise exercise) => WorkoutTaxonomy.normalize(
+    '${exercise.name} ${exercise.muscleGroup} ${exercise.secondaryMuscleGroups} '
+    '${exercise.equipment} ${exercise.primaryType} ${exercise.secondaryTypes.join(' ')} '
+    '${exercise.contextKey} ${exercise.catalogEntryKey}',
+  );
 
   static bool _isKnownFocusKey(String key) =>
       key.isNotEmpty &&
@@ -512,6 +759,45 @@ class ExerciseFilterService {
 
   static bool _textHas(String text, List<String> values) =>
       values.any((value) => text.contains(WorkoutTaxonomy.normalize(value)));
+
+  static String _searchNormalize(String value) {
+    var text = value.toLowerCase();
+    const replacements = {
+      'á': 'a',
+      'à': 'a',
+      'ã': 'a',
+      'â': 'a',
+      'ä': 'a',
+      'é': 'e',
+      'ê': 'e',
+      'è': 'e',
+      'í': 'i',
+      'ó': 'o',
+      'õ': 'o',
+      'ô': 'o',
+      'ú': 'u',
+      'ç': 'c',
+      'Ã¡': 'a',
+      'Ã ': 'a',
+      'Ã£': 'a',
+      'Ã¢': 'a',
+      'Ã©': 'e',
+      'Ãª': 'e',
+      'Ã­': 'i',
+      'Ã³': 'o',
+      'Ãµ': 'o',
+      'Ã´': 'o',
+      'Ãº': 'u',
+      'Ã§': 'c',
+    };
+    for (final entry in replacements.entries) {
+      text = text.replaceAll(entry.key, entry.value);
+    }
+    return text
+        .replaceAll(RegExp(r'[^a-z0-9]+'), ' ')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+  }
 
   static bool _isMartialFocusKey(String focus) =>
       focus.startsWith('karate_') ||

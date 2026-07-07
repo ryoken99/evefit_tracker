@@ -1,6 +1,8 @@
 import '../database/seed_data.dart';
 import '../models/exercise.dart';
+import 'canonical_exercise_identity_service.dart';
 import 'exercise_catalog_detail_service.dart';
+import 'v100_catalog_domain_data.dart';
 
 class ExerciseCatalogEntry {
   const ExerciseCatalogEntry({
@@ -25,26 +27,38 @@ class ExerciseCatalogEntry {
   final bool beginnerUnderstands;
   final bool dependsOnlyOnGenericFallback;
 
-  Exercise toExercise({int? id}) => Exercise(
-    id: id,
-    name: name,
-    muscleGroup: group,
-    isDefault: true,
-    secondaryMuscleGroups: details.secondaryGroups,
-    equipment: details.equipment,
-    description: details.description,
-    executionSteps: details.executionSteps,
-    commonMistakes: details.commonMistakes,
-    safetyNotes: details.safetyNotes,
-    regression: details.regression,
-    progression: details.progression,
-    breathingTips: details.breathingTips,
-    postureTips: details.postureTips,
-    adaptationNotes: details.adaptationNotes,
-    exerciseKey: exerciseKey,
-    contextKey: contextKey,
-    catalogEntryKey: catalogEntryKey,
-  );
+  Exercise toExercise({int? id}) {
+    final identity = CanonicalExerciseIdentityService.forCatalogEntry(
+      name: name,
+      group: group,
+      exerciseKey: exerciseKey,
+      contextKey: contextKey,
+    );
+    return Exercise(
+      id: id,
+      name: name,
+      muscleGroup: group,
+      isDefault: true,
+      secondaryMuscleGroups: details.secondaryGroups,
+      equipment: details.equipment,
+      description: details.description,
+      executionSteps: details.executionSteps,
+      commonMistakes: details.commonMistakes,
+      safetyNotes: details.safetyNotes,
+      regression: details.regression,
+      progression: details.progression,
+      breathingTips: details.breathingTips,
+      postureTips: details.postureTips,
+      adaptationNotes: details.adaptationNotes,
+      canonicalId: identity.canonicalId,
+      aliases: identity.aliases,
+      primaryType: identity.primaryType,
+      secondaryTypes: identity.secondaryTypes,
+      exerciseKey: exerciseKey,
+      contextKey: contextKey,
+      catalogEntryKey: catalogEntryKey,
+    );
+  }
 }
 
 class ExerciseCatalogContextService {
@@ -119,7 +133,312 @@ class ExerciseCatalogContextService {
         index++;
       }
     }
+    for (final data in v100CatalogDomainEntries) {
+      final exerciseKey = stableKey(data.name);
+      final contextKey = data.contextKey;
+      final alreadyHasNameContext = result.any(
+        (entry) =>
+            entry.exerciseKey == exerciseKey && entry.contextKey == contextKey,
+      );
+      if (alreadyHasNameContext) continue;
+      final catalogEntryKey = _uniqueCatalogEntryKey(
+        base: '${exerciseKey}__$contextKey',
+        conceptId: data.conceptId,
+        existing: result.map((entry) => entry.catalogEntryKey).toSet(),
+      );
+      final details = _derivedDomainDetails(data);
+      result.add(
+        ExerciseCatalogEntry(
+          id: 'E${index.toString().padLeft(3, '0')}',
+          name: data.name,
+          group: _displayGroupForContext(contextKey),
+          exerciseKey: exerciseKey,
+          contextKey: contextKey,
+          catalogEntryKey: catalogEntryKey,
+          details: details,
+          beginnerUnderstands: _beginnerUnderstands(details),
+          dependsOnlyOnGenericFallback: false,
+        ),
+      );
+      index++;
+    }
     return List.unmodifiable(result);
+  }
+
+  static String _uniqueCatalogEntryKey({
+    required String base,
+    required String conceptId,
+    required Set<String> existing,
+  }) {
+    if (!existing.contains(base)) return base;
+    final candidate = '${base}__${stableKey(conceptId)}';
+    if (!existing.contains(candidate)) return candidate;
+    var index = 2;
+    while (existing.contains('${candidate}_$index')) {
+      index++;
+    }
+    return '${candidate}_$index';
+  }
+
+  static String _displayGroupForContext(String contextKey) =>
+      switch (contextKey) {
+        'boxe' => 'Boxe',
+        'kickboxing' => 'Kickboxing',
+        'muay_thai' => 'Muay Thai',
+        'judo' => 'Judo',
+        'taekwondo' => 'Taekwondo',
+        'defesa_pessoal' => 'Defesa pessoal',
+        'karate' => 'Karate',
+        'jiu_jitsu' => 'Jiu-Jitsu',
+        'mobilidade' => 'Mobilidade',
+        'elasticidade' => 'Elasticidade',
+        'recuperacao' => 'Recuperacao',
+        'aquecimento' => 'Aquecimento',
+        'ativacao' => 'Ativacao',
+        'prevencao' => 'Prevencao',
+        _ => 'Artes marciais',
+      };
+
+  static ExerciseCatalogDetails _derivedDomainDetails(
+    V100CatalogDomainEntryData data,
+  ) {
+    final group = _displayGroupForContext(data.contextKey);
+    final action = data.primaryType == 'recuperacao'
+        ? 'reduzir fadiga e recuperar sem acrescentar esforco relevante'
+        : data.primaryType == 'elasticidade'
+        ? 'ganhar tolerancia progressiva numa posicao alongada'
+        : data.primaryType == 'mobilidade'
+        ? 'melhorar controlo ativo e amplitude confortavel'
+        : data.primaryType == 'aquecimento'
+        ? 'preparar o corpo para treinar sem cansar'
+        : data.primaryType == 'ativacao'
+        ? 'acordar o padrao alvo com baixa fadiga'
+        : data.primaryType == 'prevencao'
+        ? 'melhorar controlo e tolerancia sem prometer evitar lesoes'
+        : 'praticar tecnica, base, distancia e controlo antes da velocidade';
+    final equipment = _derivedEquipmentLabel(data);
+    final section = _safeLoadLanguage(data.section, equipment);
+    final signature = _signatureFor(data, equipment);
+    final description =
+        'Entrada para $action. Trabalha $section '
+        'com referencia tecnica $signature, intensidade conservadora e nivel ajustado ao praticante.';
+    final safety = _derivedSafetyText(data);
+    final regressionName = _safeLoadLanguage(data.name, equipment);
+    return ExerciseCatalogDetails(
+      equipment: equipment,
+      secondaryGroups: data.section.trim().isEmpty ? group : data.section,
+      description: description.length <= 280
+          ? description
+          : '${description.substring(0, 277).trimRight()}...',
+      executionSteps: _derivedDomainSteps(data),
+      commonMistakes:
+          'Acelerar antes de controlar $section.\n'
+          'Procurar amplitude ou intensidade maxima cedo demais.\n'
+          'Ignorar dor, tontura ou perda de postura.',
+      safetyNotes: safety,
+      regression:
+          'Reduz amplitude, velocidade, duracao ou complexidade ate conseguires repetir $regressionName com controlo.',
+      progression:
+          'Aumenta apenas uma variavel de cada vez: duracao, amplitude, complexidade tecnica ou resistencia.',
+      breathingTips:
+          'Respira de forma continua; expira nos momentos de maior esforco e volta a um ritmo calmo se ficares ofegante.',
+      postureTips:
+          'Mantem apoios estaveis, olhar controlado e articulacoes alinhadas com a direcao do movimento.',
+      adaptationNotes:
+          'Evita ou adapta quando houver dor aguda, tontura, instabilidade ou quando o local/equipamento necessario nao estiver disponivel.',
+    );
+  }
+
+  static String _derivedEquipmentLabel(V100CatalogDomainEntryData data) {
+    final value = data.equipment.trim();
+    if (value.isEmpty || _n(value) == 'sem equipamento') {
+      return 'Peso corporal';
+    }
+    return value;
+  }
+
+  static String _derivedSafetyText(V100CatalogDomainEntryData data) {
+    final equipment = _derivedEquipmentLabel(data);
+    final source = data.safety.trim();
+    final prefix = _safeLoadLanguage(
+      source.isEmpty
+          ? 'Mantem intensidade baixa a moderada e tecnica controlada.'
+          : source,
+      equipment,
+    );
+    return '$prefix Para, interrompe ou abranda se houver dor aguda, tontura, formigueiro, falta de ar anormal, instabilidade ou perda de controlo.';
+  }
+
+  static String _derivedDomainSteps(V100CatalogDomainEntryData data) {
+    final group = _displayGroupForContext(data.contextKey).toLowerCase();
+    final equipment = _derivedEquipmentLabel(data);
+    final equipmentCue = _derivedEquipmentCue(equipment);
+    final movementCue = _derivedMovementCue(data);
+    final familyCue = _derivedFamilyCue(data);
+    final dosingCue = data.contextKey == 'mobilidade'
+        ? ' Usa 20 a 40 segundos, 3 a 6 ciclos ou 5 a 10 repeticoes por lado.'
+        : '';
+    final sectionCue = stableKey(data.section).replaceAll('_', ' ');
+    final conceptCue = _signatureFor(data, equipment);
+    final specificCue = [
+      movementCue,
+      familyCue,
+    ].where((cue) => cue.trim().isNotEmpty).join(' ');
+    return [
+      '1. Escolhe um local seguro para $group e confirma que tens $equipment antes de comecar.',
+      '2. Usa ${_stepCue(_safeLoadLanguage(sectionCue, equipment), 48)} com referencia ${_stepCue(_safeLoadLanguage(conceptCue, equipment), 86)}.',
+      '3. Leva a zona trabalhada por uma trajetoria curta, controlavel e com respiracao continua.$dosingCue',
+      '4. $equipmentCue',
+      if (specificCue.isNotEmpty) '5. $specificCue',
+      '${specificCue.isNotEmpty ? 6 : 5}. Regressa a posicao inicial com controlo e faz uma pausa curta se a tecnica piorar.',
+      '${specificCue.isNotEmpty ? 7 : 6}. Termina a serie com boa postura e reduz volume se houver fadiga, dor aguda ou perda de equilibrio.',
+    ].join('\n');
+  }
+
+  static String _derivedMovementCue(V100CatalogDomainEntryData data) {
+    if (!_isMartialContext(data.contextKey)) return '';
+    if (data.contextKey == 'jiu_jitsu') {
+      return 'Mantem base, guarda, ombros e cotovelos organizados; o objetivo e controlo tecnico antes da velocidade.';
+    }
+    return 'Mantem base e guarda organizadas; o objetivo e controlo tecnico, distancia segura e respiracao continua.';
+  }
+
+  static String _derivedFamilyCue(V100CatalogDomainEntryData data) {
+    final name = _n(data.name);
+    if (_has(name, ['supino', 'press', 'flexao', 'dips'])) {
+      return 'Organiza pes, ombros e cotovelos; empurra sem perder a respiracao.';
+    }
+    if (_has(name, ['triceps', 'tricep', 'extensao francesa'])) {
+      return 'Mantem a pega simples, cotovelos estaveis e lombar neutra; estende e desce sem prender a respiracao.';
+    }
+    if (_has(name, ['curl']) &&
+        !_has(name, ['wrist', 'finger', 'nordico', 'curl de perna'])) {
+      return 'Controla a pega, cotovelos, punhos e tronco; sobe e desce sem prender a respiracao.';
+    }
+    if (_has(name, ['remo', 'puxada', 'pull-up', 'chin-up', 'face pull'])) {
+      return 'Confirma a pega, estabiliza tronco e lombar, aproxima escapulas e puxa pelos cotovelos.';
+    }
+    if (_has(name, ['agachamento', 'lunges', 'leg press', 'step-up'])) {
+      return 'Mantem pes firmes, joelhos alinhados, anca livre e tronco estavel enquanto desce.';
+    }
+    if (_has(name, ['peso morto', 'good morning'])) {
+      return 'Dobra pela anca com coluna e lombar neutras, joelhos suaves e respiracao continua.';
+    }
+    return '';
+  }
+
+  static bool _isMartialContext(String contextKey) => const {
+    'artes_marciais',
+    'karate',
+    'jiu_jitsu',
+    'boxe',
+    'kickboxing',
+    'muay_thai',
+    'judo',
+    'taekwondo',
+    'defesa_pessoal',
+  }.contains(contextKey);
+
+  static String _signatureFor(
+    V100CatalogDomainEntryData data,
+    String equipment,
+  ) {
+    final base = stableKey(
+      '${data.section} ${data.conceptId}',
+    ).replaceAll('_', ' ');
+    final name = stableKey(data.name).replaceAll('_', ' ');
+    final signature = base.contains(name) ? base : '$base $name';
+    return _safeLoadLanguage(signature, equipment);
+  }
+
+  static String _safeLoadLanguage(String text, String equipment) {
+    if (!_isBodyweightLike(equipment)) return text;
+    return text
+        .replaceAll(RegExp(r'\bcargas\b', caseSensitive: false), 'esforcos')
+        .replaceAll(RegExp(r'\bcarga\b', caseSensitive: false), 'esforco')
+        .replaceAll(
+          RegExp(r'\bbarras?\b', caseSensitive: false),
+          'treino anterior',
+        )
+        .replaceAll(
+          RegExp(r'\bpassadeira\b', caseSensitive: false),
+          'corrida anterior',
+        )
+        .replaceAll(RegExp(r'\bhalteres?\b', caseSensitive: false), 'apoio')
+        .replaceAll(RegExp(r'\bcabos?\b', caseSensitive: false), 'apoio')
+        .replaceAll(RegExp(r'\bpolias?\b', caseSensitive: false), 'apoio')
+        .replaceAll(RegExp(r'\bmaquinas?\b', caseSensitive: false), 'apoio');
+  }
+
+  static String _shortCue(String text, int maxLength) {
+    if (text.length <= maxLength) return text;
+    final words = text.split(RegExp(r'\s+'));
+    final selected = <String>[];
+    for (final word in words.reversed) {
+      final candidate = [word, ...selected].join(' ');
+      if (candidate.length > maxLength) break;
+      selected.insert(0, word);
+    }
+    return selected.isEmpty
+        ? text.substring(0, maxLength).trimRight()
+        : selected.join(' ');
+  }
+
+  static String _stepCue(String text, int maxLength) {
+    final cue = _shortCue(text, maxLength);
+    return RegExp(r'\d$').hasMatch(cue) ? '$cue sequencia' : cue;
+  }
+
+  static bool _isBodyweightLike(String equipment) {
+    final normalized = _n(equipment);
+    const loaded = [
+      'halter',
+      'barra',
+      'cabo',
+      'polia',
+      'maquina',
+      'disco',
+      'kettlebell',
+      'mochila',
+      'garrafao',
+      'elastico',
+    ];
+    return !loaded.any(normalized.contains);
+  }
+
+  static String _derivedEquipmentCue(String equipment) {
+    final normalized = _n(equipment);
+    if (normalized == 'peso corporal') {
+      return 'Mantem os apoios firmes, distribui o peso com controlo e respira sem prender o ar.';
+    }
+    final cues = <String>[];
+    if (normalized.contains('halter')) {
+      cues.add('segura o halter com pega firme e punhos alinhados');
+    }
+    if (normalized.contains('barra') && !normalized.contains('barra fixa')) {
+      cues.add('coloca a barra numa posicao estavel e confirma a pega');
+    }
+    if (normalized.contains('cabo') || normalized.contains('polia')) {
+      cues.add('ajusta a polia, confirma o cabo e segura a pega');
+    }
+    if (normalized.contains('maquina')) {
+      cues.add('ajusta a maquina, o assento ou o encosto antes de repetir');
+    }
+    if (normalized.contains('passadeira')) {
+      cues.add('usa a passadeira com velocidade e inclinacao conservadoras');
+    }
+    if (normalized.contains('bicicleta')) {
+      cues.add(
+        'ajusta o selim e pedala com resistencia e cadencia confortaveis',
+      );
+    }
+    if (normalized.contains('corda')) {
+      cues.add('segura as pegas da corda com punhos alinhados e salta baixo');
+    }
+    if (cues.isEmpty) {
+      return 'Confirma o equipamento, segura-o com controlo quando existir e respira sem prender o ar.';
+    }
+    return '${cues.join('; ')}.';
   }
 
   static String stableKey(String value) {
@@ -174,7 +493,7 @@ class ExerciseCatalogContextService {
     return ExerciseCatalogDetails(
       equipment: equipment,
       secondaryGroups: secondary,
-      description: _objectiveFor(name, group),
+      description: _beginnerDescriptionFor(name, group),
       executionSteps: _canonicalSteps(_stepsFor(name, group, equipment), name),
       commonMistakes: _canonicalMistakes(_mistakesFor(name, group, equipment)),
       safetyNotes: _safetyFor(name, group, equipment),
@@ -188,6 +507,16 @@ class ExerciseCatalogContextService {
 
   /// Passo extra, específico da variação, injetado a seguir ao primeiro passo
   /// quando a família de movimento partilha a base da execução.
+  static String _beginnerDescriptionFor(String name, String group) {
+    final base = _objectiveFor(name, group);
+    if (base.length >= 130) return base;
+    final text =
+        '$base Ensina a organizar a posicao inicial, perceber a zona que deve trabalhar e ajustar amplitude, ritmo ou apoio para aprender sem dor.';
+    return text.length <= 280
+        ? text
+        : '${text.substring(0, 277).trimRight()}...';
+  }
+
   static const Map<String, String> _variationStepByName = {
     'extensao francesa no cabo':
         'Coloca a polia na posição baixa, fica de costas para o cabo e segura a corda com pega firme atrás da cabeça.',

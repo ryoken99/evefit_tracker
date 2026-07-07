@@ -1,2 +1,12 @@
 .claude/
 .worktrees/
+.codex-remote-attachments/
+
+# Flutter/build artifacts from the app workspace.
+evefit_tracker/build/
+*.apk
+*.sha1
+
+# Local SDKs must stay outside commits.
+development/flutter/
+flutter/

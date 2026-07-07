@@ -72,7 +72,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 20,
+      version: 21,
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -92,6 +92,7 @@ class AppDatabase {
         await _migrateV080(db);
         await _migrateV091(db);
         await _migrateV092(db);
+        await _migrateV100(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -151,6 +152,9 @@ class AppDatabase {
         if (oldVersion < 20) {
           await _migrateV092(db);
         }
+        if (oldVersion < 21) {
+          await _migrateV100(db);
+        }
       },
     );
   }
@@ -195,6 +199,7 @@ class AppDatabase {
 
   Future<void> _seedExercises(Database db) async {
     await _ensureExerciseCatalogIdentityColumns(db);
+    await _ensureExerciseIdentityAliasTable(db);
     final storesTaxonomy = await _tableHasColumn(
       db,
       'exercises',
@@ -234,6 +239,7 @@ class AppDatabase {
       );
     }
     await _ensureExerciseCatalogEntryIndex(db);
+    await _refreshExerciseIdentityAliases(db);
   }
 
   /// v0.9.1: reescreve os textos pedagógicos de todos os exercícios do
@@ -249,6 +255,12 @@ class AppDatabase {
   /// exercícios de sistema e atualiza os textos dos existentes, sem tocar em
   /// exercícios personalizados, histórico, séries, medições ou objetivos.
   Future<void> _migrateV092(Database db) async {
+    await refreshCatalogExercises(db);
+  }
+
+  /// v1.0.0: adiciona identidade canonica separada da entrada de catalogo.
+  /// A chave catalog_entry_key continua a identificar contexto e historico.
+  Future<void> _migrateV100(Database db) async {
     await refreshCatalogExercises(db);
   }
 
@@ -590,6 +602,7 @@ class AppDatabase {
 
   Future<void> _refreshDefaultExerciseDetails(Database db) async {
     await _ensureExerciseCatalogIdentityColumns(db);
+    await _ensureExerciseIdentityAliasTable(db);
     final storesTaxonomy = await _tableHasColumn(
       db,
       'exercises',
@@ -613,6 +626,7 @@ class AppDatabase {
       );
     }
     await _ensureExerciseCatalogEntryIndex(db);
+    await _refreshExerciseIdentityAliases(db);
   }
 
   Future<void> _createProfileEquipmentTable(Database db) async {
@@ -799,6 +813,10 @@ class AppDatabase {
     'breathing_tips': 'TEXT',
     'posture_tips': 'TEXT',
     'adaptation_notes': 'TEXT',
+    'canonical_id': 'TEXT',
+    'aliases': 'TEXT',
+    'primary_type': 'TEXT',
+    'secondary_types': 'TEXT',
     'exercise_key': 'TEXT',
     'context_key': 'TEXT',
     'catalog_entry_key': 'TEXT',
@@ -977,6 +995,62 @@ class AppDatabase {
     await _addColumnIfMissing(db, 'exercises', 'exercise_key', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'context_key', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'catalog_entry_key', 'TEXT');
+    await _addColumnIfMissing(db, 'exercises', 'canonical_id', 'TEXT');
+    await _addColumnIfMissing(db, 'exercises', 'aliases', 'TEXT');
+    await _addColumnIfMissing(db, 'exercises', 'primary_type', 'TEXT');
+    await _addColumnIfMissing(db, 'exercises', 'secondary_types', 'TEXT');
+  }
+
+  Future<void> _ensureExerciseIdentityAliasTable(Database db) async {
+    await db.execute(
+      'CREATE TABLE IF NOT EXISTS exercise_identity_aliases('
+      'id INTEGER PRIMARY KEY AUTOINCREMENT, '
+      'alias_key TEXT NOT NULL, '
+      'canonical_id TEXT NOT NULL, '
+      'catalog_entry_key TEXT NOT NULL, '
+      'exercise_key TEXT NOT NULL, '
+      'context_key TEXT NOT NULL, '
+      'source TEXT NOT NULL, '
+      'updated_at TEXT NOT NULL, '
+      'UNIQUE(alias_key, catalog_entry_key))',
+    );
+    await db.execute(
+      'CREATE INDEX IF NOT EXISTS idx_exercise_identity_aliases_alias '
+      'ON exercise_identity_aliases(alias_key)',
+    );
+    await db.execute(
+      'CREATE INDEX IF NOT EXISTS idx_exercise_identity_aliases_canonical '
+      'ON exercise_identity_aliases(canonical_id)',
+    );
+  }
+
+  Future<void> _refreshExerciseIdentityAliases(Database db) async {
+    await _ensureExerciseIdentityAliasTable(db);
+    final now = DateTime.now().toIso8601String();
+    for (final entry in ExerciseCatalogContextService.entries) {
+      final exercise = entry.toExercise();
+      final aliases = <String>{
+        exercise.canonicalId,
+        exercise.exerciseKey,
+        exercise.catalogEntryKey,
+        ...exercise.aliases,
+      }..removeWhere((alias) => alias.trim().isEmpty);
+      for (final alias in aliases) {
+        await db.insert(
+          'exercise_identity_aliases',
+          {
+            'alias_key': alias,
+            'canonical_id': exercise.canonicalId,
+            'catalog_entry_key': exercise.catalogEntryKey,
+            'exercise_key': exercise.exerciseKey,
+            'context_key': exercise.contextKey,
+            'source': 'catalog_v100',
+            'updated_at': now,
+          },
+          conflictAlgorithm: ConflictAlgorithm.replace,
+        );
+      }
+    }
   }
 
   Map<String, Object?> _muscleNodeMapFor(ExerciseCatalogEntry entry) {

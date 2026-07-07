@@ -1,4 +1,5 @@
 import 'package:evefit_tracker/database/app_database.dart';
+import 'package:evefit_tracker/services/exercise_catalog_context_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
@@ -107,6 +108,6 @@ void main() {
     final total = await db.rawQuery(
       'SELECT COUNT(*) AS c FROM exercises WHERE is_default = 1',
     );
-    expect(total.single['c'], 353);
+    expect(total.single['c'], ExerciseCatalogContextService.entries.length);
   });
 }

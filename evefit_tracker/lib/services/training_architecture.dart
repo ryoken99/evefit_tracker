@@ -154,6 +154,8 @@ class ExerciseArchitectureTags {
 class TrainingArchitecture {
   const TrainingArchitecture._();
 
+  static final Map<String, ExerciseArchitectureTags> _tagsCache = {};
+
   static const regions = [
     TrainingRegion(
       key: 'full_body',
@@ -1567,6 +1569,35 @@ class TrainingArchitecture {
   }
 
   static ExerciseArchitectureTags tagsForExercise(Exercise exercise) {
+    final cacheKey = _tagsCacheKey(exercise);
+    final cached = _tagsCache[cacheKey];
+    if (cached != null) return cached;
+    final tags = _buildTagsForExercise(exercise);
+    _tagsCache[cacheKey] = tags;
+    return tags;
+  }
+
+  static String _tagsCacheKey(Exercise exercise) {
+    return [
+      exercise.catalogEntryKey,
+      exercise.exerciseKey,
+      exercise.contextKey,
+      exercise.name,
+      exercise.muscleGroup,
+      exercise.secondaryMuscleGroups,
+      exercise.equipment,
+      exercise.primaryType,
+      exercise.secondaryTypes.join(','),
+      exercise.regionKeys.join(','),
+      exercise.groupKeys.join(','),
+      exercise.subgroupKeys.join(','),
+      exercise.primaryMuscleKey,
+      exercise.secondaryMuscleKeys.join(','),
+      exercise.equipmentKeys.join(','),
+    ].join('|');
+  }
+
+  static ExerciseArchitectureTags _buildTagsForExercise(Exercise exercise) {
     if (exercise.regionKeys.isNotEmpty &&
         exercise.groupKeys.isNotEmpty &&
         exercise.primaryMuscleKey.isNotEmpty &&

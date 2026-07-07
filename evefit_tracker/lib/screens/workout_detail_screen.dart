@@ -376,8 +376,9 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
           }
           final visible = base.where((item) {
             final exercise = item.exercise;
-            final matchesQuery = exercise.name.toLowerCase().contains(
-              query.toLowerCase(),
+            final matchesQuery = ExerciseFilterService.matchesSearchQuery(
+              exercise,
+              query,
             );
             return matchesQuery &&
                 (showAll || _matchesFilter(exercise, filter));

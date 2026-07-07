@@ -174,6 +174,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     var flow = template == null
         ? const TrainingFlowSelection(
             typeKey: 'strength',
+            locationKey: 'place_home_no_equipment',
             equipmentKey: 'bodyweight',
             regionKey: 'full_body',
           )
@@ -244,6 +245,49 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                 },
               ),
               const SizedBox(height: 8),
+              _ChoiceTile(
+                label: 'Local',
+                value: _locationName(flow.locationKey),
+                onTap: () async {
+                  final picked = await _pickFromList<MapEntry<String, String>>(
+                    title: 'Escolher local',
+                    items: TrainingFlow.locationLabels.entries.toList(),
+                    labelFor: (item) => item.value,
+                  );
+                  if (picked == null) return;
+                  setSheetState(() {
+                    flow = flow.copyWith(
+                      locationKey: picked.key,
+                      equipmentKey: 'bodyweight',
+                      cardioFocusKey: flow.typeKey == 'cardio'
+                          ? 'no_equipment'
+                          : flow.cardioFocusKey,
+                    );
+                    selection = TrainingFlow.toTrainingSelection(flow);
+                    type = TrainingFlow.suggestedWorkoutName(flow);
+                    workoutName.text = type;
+                    workoutTypeId = _typeIdFor(types, type);
+                  });
+                },
+              ),
+              const SizedBox(height: 8),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton.icon(
+                  onPressed: () {
+                    setSheetState(() {
+                      flow = TrainingFlow.clearFilters(flow);
+                      selection = TrainingFlow.toTrainingSelection(flow);
+                      type = TrainingFlow.suggestedWorkoutName(flow);
+                      workoutName.text = type;
+                      workoutTypeId = _typeIdFor(types, type);
+                    });
+                  },
+                  icon: const Icon(Icons.filter_alt_off_outlined),
+                  label: const Text('Limpar filtros'),
+                ),
+              ),
+              const SizedBox(height: 8),
               if (flow.typeKey == 'strength') ...[
                 _ChoiceTile(
                   label: 'Equipamento disponível',
@@ -253,7 +297,10 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                   onTap: () async {
                     final picked = await _pickFromList<TrainingEquipment>(
                       title: 'Escolher equipamento',
-                      items: _availableStrengthEquipment(profileEquipment),
+                      items: _availableStrengthEquipment(
+                        profileEquipment,
+                        flow.locationKey,
+                      ),
                       labelFor: (item) => item.name,
                     );
                     if (picked == null) return;
@@ -383,6 +430,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                           title: 'Escolher modalidade',
                           items: _cardioModeOptions(
                             profileLocation,
+                            flow.locationKey,
                             profileEquipment,
                           ),
                           labelFor: (item) => item.value,
@@ -526,7 +574,10 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                   onTap: () async {
                     final picked = await _pickFromList<TrainingEquipment>(
                       title: 'Escolher equipamento opcional',
-                      items: _availableStrengthEquipment(profileEquipment),
+                      items: _availableStrengthEquipment(
+                        profileEquipment,
+                        flow.locationKey,
+                      ),
                       labelFor: (item) => item.name,
                       allowClear: true,
                     );
@@ -825,28 +876,58 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     return switch (typeKey) {
       'strength' => const TrainingFlowSelection(
         typeKey: 'strength',
+        locationKey: 'place_home_no_equipment',
         equipmentKey: 'bodyweight',
         regionKey: 'full_body',
       ),
       'cardio' => const TrainingFlowSelection(
         typeKey: 'cardio',
+        locationKey: 'place_home_no_equipment',
         equipmentKey: 'bodyweight',
         cardioFocusKey: 'no_equipment',
       ),
       'martial_arts' => const TrainingFlowSelection(
         typeKey: 'martial_arts',
+        locationKey: 'place_dojo',
         martialArtKey: 'karate',
         focusKey: 'karate_complete',
       ),
       'mobility' => const TrainingFlowSelection(
         typeKey: 'mobility',
+        locationKey: 'place_home_no_equipment',
+        equipmentKey: 'bodyweight',
         mobilityZoneKey: 'general_mobility',
+      ),
+      'elasticity' => const TrainingFlowSelection(
+        typeKey: 'elasticity',
+        locationKey: 'place_home_no_equipment',
+        equipmentKey: 'bodyweight',
       ),
       'recovery' => const TrainingFlowSelection(
         typeKey: 'recovery',
+        locationKey: 'place_home_no_equipment',
+        equipmentKey: 'bodyweight',
         recoveryKey: 'easy_walk',
       ),
-      _ => const TrainingFlowSelection(typeKey: 'custom'),
+      'warmup' => const TrainingFlowSelection(
+        typeKey: 'warmup',
+        locationKey: 'place_home_no_equipment',
+        equipmentKey: 'bodyweight',
+      ),
+      'activation' => const TrainingFlowSelection(
+        typeKey: 'activation',
+        locationKey: 'place_home_no_equipment',
+        equipmentKey: 'bodyweight',
+      ),
+      'prevention' => const TrainingFlowSelection(
+        typeKey: 'prevention',
+        locationKey: 'place_home_no_equipment',
+        equipmentKey: 'bodyweight',
+      ),
+      _ => const TrainingFlowSelection(
+        typeKey: 'custom',
+        locationKey: 'place_home_no_equipment',
+      ),
     };
   }
 
@@ -855,6 +936,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     if (legacy.regionKey == 'cardio') {
       return TrainingFlowSelection(
         typeKey: 'cardio',
+        locationKey: 'place_gym',
         equipmentKey: legacy.equipmentKey.isEmpty
             ? legacy.subgroupKey
             : legacy.equipmentKey,
@@ -867,6 +949,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
       final artKey = legacy.groupKey == 'jiu_jitsu' ? 'jiu_jitsu' : 'karate';
       return TrainingFlowSelection(
         typeKey: 'martial_arts',
+        locationKey: 'place_dojo',
         martialArtKey: artKey,
         focusKey: TrainingFlow.defaultMartialFocusForArt(artKey),
       );
@@ -874,6 +957,8 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     if (legacy.regionKey == 'mobility_recovery') {
       return TrainingFlowSelection(
         typeKey: 'mobility',
+        locationKey: 'place_home_no_equipment',
+        equipmentKey: 'bodyweight',
         mobilityZoneKey: legacy.groupKey.isEmpty
             ? 'general_mobility'
             : legacy.groupKey,
@@ -881,6 +966,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     }
     return TrainingFlowSelection(
       typeKey: 'strength',
+      locationKey: 'place_home_no_equipment',
       equipmentKey: legacy.equipmentKey.isEmpty
           ? 'bodyweight'
           : legacy.equipmentKey,
@@ -891,6 +977,9 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
 
   String _flowTypeName(String key) =>
       TrainingFlow.types[key] ?? TrainingFlow.types['custom']!;
+
+  String _locationName(String key) =>
+      TrainingFlow.locationLabels[key] ?? 'Casa sem equipamento';
 
   List<TrainingRegion> _strengthRegions() {
     const keys = {'full_body', 'upper', 'lower', 'core'};
@@ -938,8 +1027,20 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     return TrainingArchitecture.groupsForRegion(regionKey);
   }
 
-  List<TrainingEquipment> _availableStrengthEquipment(Set<String> equipment) {
-    final effective = {'bodyweight', 'none', ...equipment};
+  List<TrainingEquipment> _availableStrengthEquipment(
+    Set<String> equipment,
+    String locationKey,
+  ) {
+    final byLocation = TrainingFlow.availableEquipmentForLocation(
+      locationKey,
+      selectedEquipmentKeys: equipment,
+    );
+    final effective = {
+      'bodyweight',
+      'none',
+      ...equipment,
+      ...byLocation.map((item) => item.key),
+    };
     return TrainingArchitecture.equipment
         .where((item) => effective.contains(item.key))
         .toList();
@@ -973,11 +1074,18 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
 
   List<MapEntry<String, String>> _cardioModeOptions(
     String trainingLocation,
+    String locationKey,
     Set<String> equipment,
   ) {
+    final byLocation = TrainingFlow.availableEquipmentForLocation(
+      locationKey,
+      selectedEquipmentKeys: equipment,
+    ).map((item) => item.key);
     return TrainingFlow.availableCardioModes(
-      trainingLocation: trainingLocation,
-      availableEquipmentKeys: equipment,
+      trainingLocation: _locationName(locationKey).isEmpty
+          ? trainingLocation
+          : _locationName(locationKey),
+      availableEquipmentKeys: {...equipment, ...byLocation},
     );
   }
 

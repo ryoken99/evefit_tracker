@@ -1,3 +1,5 @@
+import 'equipment_catalog_service.dart';
+
 class TrainingLocationService {
   const TrainingLocationService._();
 
@@ -41,6 +43,9 @@ class TrainingLocationService {
   }
 
   static bool includesGym(String value) => parse(value).contains('Ginásio');
+
+  static Set<String> canonicalPlaceIds(Set<String> locations) =>
+      EquipmentCatalogService.normalizePlaceTokens(locations);
 
   static Set<String> _split(String value) {
     return value

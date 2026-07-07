@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 /// FASE 14 da revisão/expansão do catálogo (v0.9.2): os 28 testes
-/// obrigatórios pedidos na especificação, aplicados aos 353 exercícios.
+/// obrigatórios pedidos na especificação, aplicados ao catálogo atual.
 void main() {
   final entries = ExerciseCatalogContextService.entries;
   final exercises = entries.map((entry) => entry.toExercise()).toList();
@@ -76,13 +76,24 @@ void main() {
 
   group('v0.9.2 expansão do catálogo — 28 testes obrigatórios', () {
     test('01 todos os exercícios têm grupo principal', () {
+      final validGroups = {
+        ...SeedData.exercisesByGroup.keys,
+        'Boxe',
+        'Kickboxing',
+        'Muay Thai',
+        'Judo',
+        'Taekwondo',
+        'Defesa pessoal',
+        'Elasticidade',
+        'Recuperacao',
+        'Aquecimento',
+        'Ativacao',
+        'Prevencao',
+        'Artes marciais',
+      };
       for (final entry in entries) {
         expect(entry.group.trim(), isNotEmpty, reason: entry.id);
-        expect(
-          SeedData.exercisesByGroup.keys,
-          contains(entry.group),
-          reason: entry.id,
-        );
+        expect(validGroups, contains(entry.group), reason: entry.id);
       }
     });
 
@@ -102,7 +113,19 @@ void main() {
         'Cardio': 'cardio',
         'Karate': 'artes marciais',
         'Jiu-Jitsu': 'artes marciais',
+        'Boxe': 'artes marciais',
+        'Kickboxing': 'artes marciais',
+        'Muay Thai': 'artes marciais',
+        'Judo': 'artes marciais',
+        'Taekwondo': 'artes marciais',
+        'Defesa pessoal': 'artes marciais',
+        'Artes marciais': 'artes marciais',
         'Mobilidade': 'mobilidade/recuperação',
+        'Elasticidade': 'mobilidade/recuperação',
+        'Recuperacao': 'mobilidade/recuperação',
+        'Aquecimento': 'preparação',
+        'Ativacao': 'preparação',
+        'Prevencao': 'prevenção',
       };
       for (final entry in entries) {
         expect(areaByGroup[entry.group], isNotNull, reason: entry.id);
@@ -420,18 +443,35 @@ void main() {
           ),
         ),
       );
-      expect(martial('karate', 'karate_stances'), {'Treino de bases (dachi)'});
-      expect(martial('karate', 'karate_blocks'), {'Bloqueios técnicos (uke)'});
-      expect(martial('karate', 'karate_evasions'), {'Esquivas e tai-sabaki'});
-      expect(martial('karate', 'karate_knees'), {'Joelhadas técnicas'});
-      expect(martial('karate', 'karate_bag'), {'Trabalho leve ao saco'});
-      expect(martial('jiu_jitsu', 'jiu_jitsu_rolls'), {'Rolamentos de solo'});
-      expect(martial('jiu_jitsu', 'jiu_jitsu_breakfalls'), {
-        'Breakfalls (ukemi)',
-      });
-      expect(martial('jiu_jitsu', 'jiu_jitsu_inversions'), {
-        'Inversão granby com apoio',
-      });
+      expect(
+        martial('karate', 'karate_stances'),
+        contains('Treino de bases (dachi)'),
+      );
+      expect(
+        martial('karate', 'karate_blocks'),
+        contains('Bloqueios técnicos (uke)'),
+      );
+      expect(
+        martial('karate', 'karate_evasions'),
+        contains('Esquivas e tai-sabaki'),
+      );
+      expect(martial('karate', 'karate_knees'), contains('Joelhadas técnicas'));
+      expect(
+        martial('karate', 'karate_bag'),
+        contains('Trabalho leve ao saco'),
+      );
+      expect(
+        martial('jiu_jitsu', 'jiu_jitsu_rolls'),
+        contains('Rolamentos de solo'),
+      );
+      expect(
+        martial('jiu_jitsu', 'jiu_jitsu_breakfalls'),
+        contains('Breakfalls (ukemi)'),
+      );
+      expect(
+        martial('jiu_jitsu', 'jiu_jitsu_inversions'),
+        contains('Inversão granby com apoio'),
+      );
     });
 
     test('22 exercícios de recuperação aparecem em recuperação', () {
@@ -526,7 +566,7 @@ void main() {
       }
     });
 
-    test('28 "mostrar todos" inclui os 353 exercícios válidos', () {
+    test('28 "mostrar todos" inclui todos os exercícios válidos', () {
       final all = ExerciseFilterService.getAvailableExercises(
         exercises: exercises,
         trainingLocation: 'Casa',
@@ -534,7 +574,7 @@ void main() {
         selection: const TrainingSelection(),
         showAllExercises: true,
       );
-      expect(all, hasLength(353));
+      expect(all, hasLength(entries.length));
       for (final name in newNames) {
         expect(all.map((item) => item.exercise.name), contains(name));
       }
@@ -592,12 +632,12 @@ void main() {
       },
     );
 
-    test('26 seeds e migração inserem os 353 exercícios de catálogo', () async {
+    test('26 seeds e migração inserem os exercícios de catálogo', () async {
       await AppDatabase.forTesting(db).refreshCatalogExercises(db);
       final total = await db.rawQuery(
         'SELECT COUNT(*) AS c FROM exercises WHERE is_default = 1',
       );
-      expect(total.single['c'], 353);
+      expect(total.single['c'], entries.length);
       for (final name in newNames) {
         final rows = await db.query(
           'exercises',
