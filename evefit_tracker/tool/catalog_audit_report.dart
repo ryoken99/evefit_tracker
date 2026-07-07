@@ -4,7 +4,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:evefit_tracker/services/catalog_quality/catalog_quality_audit.dart';
+import 'package:evefit_tracker/services/catalog_quality/catalog_menu_axis_contract.dart';
 import 'package:evefit_tracker/services/catalog_quality/catalog_route_registry.dart';
+import 'package:evefit_tracker/services/catalog_quality/catalog_total_matrix_audit.dart';
 import 'package:evefit_tracker/services/exercise_catalog_context_service.dart';
 import 'package:evefit_tracker/services/exercise_taxonomy_service.dart';
 
@@ -14,6 +16,7 @@ void main(List<String> args) {
     _writeReachabilityV096Reports();
   }
   final result = CatalogQualityAudit.run(writeReports: true);
+  _writeMenuAxisV097Reports();
 
   print('Catalog audit');
   print('Catalog entries: ${result.totalExercises}');
@@ -44,6 +47,13 @@ void main(List<String> args) {
     stderr.writeln('Catalog quality gate failed.');
     exit(1);
   }
+}
+
+void _writeMenuAxisV097Reports() {
+  CatalogMenuAxisContractPolicy.writeReports(
+    directory: Directory('docs/catalog_reports/v0.9.7'),
+    audit: CatalogTotalMatrixAudit.run(writeReports: false),
+  );
 }
 
 void _writeReachabilityV096Reports() {

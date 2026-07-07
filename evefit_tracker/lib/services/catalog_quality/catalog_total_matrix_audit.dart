@@ -8,6 +8,7 @@ import '../exercise_filter_service.dart';
 import '../exercise_taxonomy_service.dart';
 import '../training_architecture.dart';
 import '../training_flow.dart';
+import 'catalog_menu_axis_contract.dart';
 import 'catalog_quality_models.dart';
 import 'catalog_route_registry.dart';
 
@@ -667,7 +668,7 @@ class CatalogTotalMatrixAudit {
       flow,
       MenuMatrixStatus.okEmptyWithExplicitNotice,
       const [],
-      notice: ExerciseFilterService.emptyStateMessage,
+      notice: _emptyNoticeFor(flow),
     );
   }
 
@@ -1003,6 +1004,27 @@ class CatalogTotalMatrixAudit {
       flow.mobilityZoneKey,
       flow.recoveryKey,
     ].where((item) => item.isNotEmpty).join('>');
+  }
+
+  static String _emptyNoticeFor(TrainingFlowSelection flow) {
+    final preview = MenuPathAudit(
+      id: _pathId(flow),
+      typeKey: flow.typeKey,
+      locationKey: flow.locationKey,
+      equipmentKey: flow.equipmentKey,
+      regionKey: flow.regionKey,
+      groupKey: flow.groupKey,
+      subzoneKey: flow.subzoneKey,
+      focusKey: flow.focusKey,
+      cardioFocusKey: flow.cardioFocusKey,
+      martialArtKey: flow.martialArtKey,
+      status: MenuMatrixStatus.okEmptyWithExplicitNotice,
+      resultCount: 0,
+      fallbackCount: 0,
+      notice: ExerciseFilterService.emptyStateMessage,
+      exerciseKeys: const [],
+    );
+    return CatalogMenuAxisContractPolicy.emptyPathNotice(preview);
   }
 
   static String _label(String key) => key.replaceAll('_', ' ');
