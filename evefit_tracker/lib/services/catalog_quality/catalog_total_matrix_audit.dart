@@ -9,6 +9,7 @@ import '../exercise_taxonomy_service.dart';
 import '../training_architecture.dart';
 import '../training_flow.dart';
 import 'catalog_quality_models.dart';
+import 'catalog_route_registry.dart';
 
 enum MenuMatrixStatus {
   okWithResults,
@@ -279,14 +280,22 @@ class CatalogTotalMatrixAudit {
         .toList(growable: false);
     final inventory = _axisInventory(exercises);
     final menuPaths = _menuPaths(exercises);
+    final routeRegistry = CatalogRouteRegistry.build(exercises: exercises);
     final reachableKeys = <String>{
       for (final path in menuPaths)
         if (path.status == MenuMatrixStatus.okWithResults ||
             path.status == MenuMatrixStatus.okWithFallback)
           ...path.exerciseKeys,
+      ...routeRegistry.visibleReachableExerciseKeys,
     };
     final unreachable = exercises
-        .where((exercise) => !reachableKeys.contains(exercise.catalogEntryKey))
+        .where(
+          (exercise) =>
+              !routeRegistry.internalExerciseKeys.contains(
+                exercise.catalogEntryKey,
+              ) &&
+              !reachableKeys.contains(exercise.catalogEntryKey),
+        )
         .toList(growable: false);
     final axisCoverage = _axisCoverage(exercises, inventory, menuPaths);
     final result = CatalogTotalMatrixResult(

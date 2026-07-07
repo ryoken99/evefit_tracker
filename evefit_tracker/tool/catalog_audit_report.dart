@@ -1,11 +1,18 @@
 // ignore_for_file: avoid_print
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:evefit_tracker/services/catalog_quality/catalog_quality_audit.dart';
+import 'package:evefit_tracker/services/catalog_quality/catalog_route_registry.dart';
+import 'package:evefit_tracker/services/exercise_catalog_context_service.dart';
+import 'package:evefit_tracker/services/exercise_taxonomy_service.dart';
 
 void main(List<String> args) {
   final strict = args.contains('--strict');
+  if (args.contains('--write-reachability-v096')) {
+    _writeReachabilityV096Reports();
+  }
   final result = CatalogQualityAudit.run(writeReports: true);
 
   print('Catalog audit');
@@ -37,4 +44,29 @@ void main(List<String> args) {
     stderr.writeln('Catalog quality gate failed.');
     exit(1);
   }
+}
+
+void _writeReachabilityV096Reports() {
+  final currentExercises = ExerciseCatalogContextService.entries
+      .map(ExerciseTaxonomyService.enrichCatalogExercise)
+      .toList(growable: false);
+  final byKey = {
+    for (final exercise in currentExercises) exercise.catalogEntryKey: exercise,
+  };
+  final beforeFile = File(
+    'docs/catalog_reports/v0.9.4/unreachable_exercises_audit.json',
+  );
+  final beforeRows = jsonDecode(beforeFile.readAsStringSync()) as List<Object?>;
+  final beforeUnreachable = [
+    for (final row in beforeRows)
+      if (row is Map<String, Object?>)
+        if (byKey[row['catalog_entry_key']] != null)
+          byKey[row['catalog_entry_key']]!,
+  ];
+  final registry = CatalogRouteRegistry.build(exercises: currentExercises);
+  CatalogRouteRegistry.writeReachabilityReports(
+    directory: Directory('docs/catalog_reports/v0.9.6'),
+    beforeUnreachable: beforeUnreachable,
+    afterRegistry: registry,
+  );
 }
