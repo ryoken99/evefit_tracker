@@ -1,0 +1,4457 @@
+[
+  {
+    "name": "Press militar com barra em pé",
+    "catalog_entry_key": "press_militar_com_barra_em_pe__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Press militar com halteres",
+    "catalog_entry_key": "press_militar_com_halteres__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Press militar com barra",
+    "catalog_entry_key": "press_militar_com_barra__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Arnold press",
+    "catalog_entry_key": "arnold_press__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Elevação lateral",
+    "catalog_entry_key": "elevacao_lateral__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Elevação frontal",
+    "catalog_entry_key": "elevacao_frontal__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Elevação posterior",
+    "catalog_entry_key": "elevacao_posterior__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Reverse fly",
+    "catalog_entry_key": "reverse_fly__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Mobilidade de ombro com elástico",
+    "catalog_entry_key": "mobilidade_de_ombro_com_elastico__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Rotação externa",
+    "catalog_entry_key": "rotacao_externa__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Rotação externa com elástico",
+    "catalog_entry_key": "rotacao_externa_com_elastico__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Rotação interna",
+    "catalog_entry_key": "rotacao_interna__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Rotação interna com elástico",
+    "catalog_entry_key": "rotacao_interna_com_elastico__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Elevação no plano da omoplata",
+    "catalog_entry_key": "elevacao_no_plano_da_omoplata__ombros",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino com barra",
+    "catalog_entry_key": "supino_com_barra__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino com halteres",
+    "catalog_entry_key": "supino_com_halteres__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino inclinado com halteres",
+    "catalog_entry_key": "supino_inclinado_com_halteres__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino inclinado com barra",
+    "catalog_entry_key": "supino_inclinado_com_barra__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino declinado com halteres",
+    "catalog_entry_key": "supino_declinado_com_halteres__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino declinado com barra",
+    "catalog_entry_key": "supino_declinado_com_barra__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino declinado na máquina",
+    "catalog_entry_key": "supino_declinado_na_maquina__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Aberturas com halteres",
+    "catalog_entry_key": "aberturas_com_halteres__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Aberturas inclinadas com halteres",
+    "catalog_entry_key": "aberturas_inclinadas_com_halteres__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Aberturas inclinadas no cabo",
+    "catalog_entry_key": "aberturas_inclinadas_no_cabo__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Aberturas inclinadas com elástico",
+    "catalog_entry_key": "aberturas_inclinadas_com_elastico__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Squeeze press",
+    "catalog_entry_key": "squeeze_press__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Chest press",
+    "catalog_entry_key": "chest_press__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Dips para peito em paralelas",
+    "catalog_entry_key": "dips_para_peito_em_paralelas__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Dips assistidos para peito na máquina",
+    "catalog_entry_key": "dips_assistidos_para_peito_na_maquina__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Crossover no cabo",
+    "catalog_entry_key": "crossover_no_cabo__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Pullover com halter",
+    "catalog_entry_key": "pullover_com_halter__peito",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Puxada alta",
+    "catalog_entry_key": "puxada_alta__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Puxada alta pega aberta",
+    "catalog_entry_key": "puxada_alta_pega_aberta__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Puxada alta pega neutra",
+    "catalog_entry_key": "puxada_alta_pega_neutra__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Puxada alta pega fechada",
+    "catalog_entry_key": "puxada_alta_pega_fechada__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Remo baixo no cabo",
+    "catalog_entry_key": "remo_baixo_no_cabo__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Remo sentado",
+    "catalog_entry_key": "remo_sentado__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Remo unilateral com halter",
+    "catalog_entry_key": "remo_unilateral_com_halter__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Remo com barra",
+    "catalog_entry_key": "remo_com_barra__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Remo invertido",
+    "catalog_entry_key": "remo_invertido__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Remo invertido em mesa resistente",
+    "catalog_entry_key": "remo_invertido_em_mesa_resistente__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Pull-up",
+    "catalog_entry_key": "pull_up__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Scapular pull-up",
+    "catalog_entry_key": "scapular_pull_up__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Dead hang escapular",
+    "catalog_entry_key": "dead_hang_escapular__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Face pull no cabo",
+    "catalog_entry_key": "face_pull_no_cabo__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Pullover no cabo",
+    "catalog_entry_key": "pullover_no_cabo__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Pullover com halter",
+    "catalog_entry_key": "pullover_com_halter__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Puxada com braços esticados",
+    "catalog_entry_key": "puxada_com_bracos_esticados__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Remo com elástico",
+    "catalog_entry_key": "remo_com_elastico__costas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Hiperextensão lombar",
+    "catalog_entry_key": "hiperextensao_lombar__lombar",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Hiperextensão no banco romano",
+    "catalog_entry_key": "hiperextensao_no_banco_romano__lombar",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Good morning com barra",
+    "catalog_entry_key": "good_morning_com_barra__lombar",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Good morning leve isométrico",
+    "catalog_entry_key": "good_morning_leve_isometrico__lombar",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão lombar com elástico",
+    "catalog_entry_key": "extensao_lombar_com_elastico__lombar",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Curl inverso",
+    "catalog_entry_key": "curl_inverso__biceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Curl inverso com halteres",
+    "catalog_entry_key": "curl_inverso_com_halteres__biceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão de tríceps no cabo",
+    "catalog_entry_key": "extensao_de_triceps_no_cabo__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão acima da cabeça com halter",
+    "catalog_entry_key": "extensao_acima_da_cabeca_com_halter__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Tríceps testa com barra EZ",
+    "catalog_entry_key": "triceps_testa_com_barra_ez__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Tríceps testa com halteres",
+    "catalog_entry_key": "triceps_testa_com_halteres__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão de tríceps deitado com halteres",
+    "catalog_entry_key": "extensao_de_triceps_deitado_com_halteres__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Supino fechado",
+    "catalog_entry_key": "supino_fechado__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Press fechado com halteres",
+    "catalog_entry_key": "press_fechado_com_halteres__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Tate press",
+    "catalog_entry_key": "tate_press__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Fundos entre apoios",
+    "catalog_entry_key": "fundos_entre_apoios__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Kickback de tríceps",
+    "catalog_entry_key": "kickback_de_triceps__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Kickback no cabo",
+    "catalog_entry_key": "kickback_no_cabo__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão unilateral de tríceps",
+    "catalog_entry_key": "extensao_unilateral_de_triceps__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão francesa com halter",
+    "catalog_entry_key": "extensao_francesa_com_halter__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão francesa com barra EZ",
+    "catalog_entry_key": "extensao_francesa_com_barra_ez__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão francesa no cabo",
+    "catalog_entry_key": "extensao_francesa_no_cabo__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Dips para tríceps",
+    "catalog_entry_key": "dips_para_triceps__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Tríceps no cabo com corda",
+    "catalog_entry_key": "triceps_no_cabo_com_corda__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Tríceps com elástico",
+    "catalog_entry_key": "triceps_com_elastico__triceps",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Prancha",
+    "catalog_entry_key": "prancha__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Prancha lateral",
+    "catalog_entry_key": "prancha_lateral__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Crunch",
+    "catalog_entry_key": "crunch__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Reverse crunch",
+    "catalog_entry_key": "reverse_crunch__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Elevação de pernas",
+    "catalog_entry_key": "elevacao_de_pernas__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Elevação de joelhos suspenso",
+    "catalog_entry_key": "elevacao_de_joelhos_suspenso__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Dead bug",
+    "catalog_entry_key": "dead_bug__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Hollow hold",
+    "catalog_entry_key": "hollow_hold__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Mountain climbers",
+    "catalog_entry_key": "mountain_climbers__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Pallof press no cabo",
+    "catalog_entry_key": "pallof_press_no_cabo__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Pallof press com elástico",
+    "catalog_entry_key": "pallof_press_com_elastico__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Russian twist",
+    "catalog_entry_key": "russian_twist__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Bicycle crunch",
+    "catalog_entry_key": "bicycle_crunch__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Bird dog",
+    "catalog_entry_key": "bird_dog__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Side bend",
+    "catalog_entry_key": "side_bend__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Vacuum abdominal",
+    "catalog_entry_key": "vacuum_abdominal__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Flutter kicks",
+    "catalog_entry_key": "flutter_kicks__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Toe touches",
+    "catalog_entry_key": "toe_touches__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Superman",
+    "catalog_entry_key": "superman__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Lenhador no cabo",
+    "catalog_entry_key": "lenhador_no_cabo__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Prancha com toque no ombro",
+    "catalog_entry_key": "prancha_com_toque_no_ombro__core",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento goblet",
+    "catalog_entry_key": "agachamento_goblet__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento com halteres ao lado",
+    "catalog_entry_key": "agachamento_com_halteres_ao_lado__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento com barra",
+    "catalog_entry_key": "agachamento_com_barra__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento com mochila",
+    "catalog_entry_key": "agachamento_com_mochila__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento com garrafão",
+    "catalog_entry_key": "agachamento_com_garrafao__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento na máquina Smith",
+    "catalog_entry_key": "agachamento_na_maquina_smith__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento búlgaro",
+    "catalog_entry_key": "agachamento_bulgaro__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Agachamento búlgaro com apoio",
+    "catalog_entry_key": "agachamento_bulgaro_com_apoio__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão de perna",
+    "catalog_entry_key": "extensao_de_perna__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Leg press",
+    "catalog_entry_key": "leg_press__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Step-up",
+    "catalog_entry_key": "step_up__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Lunges com halteres",
+    "catalog_entry_key": "lunges_com_halteres__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Lunges com mochila",
+    "catalog_entry_key": "lunges_com_mochila__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Peso morto tradicional",
+    "catalog_entry_key": "peso_morto_tradicional__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Peso morto romeno com halteres",
+    "catalog_entry_key": "peso_morto_romeno_com_halteres__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Curl de perna",
+    "catalog_entry_key": "curl_de_perna__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Good morning leve",
+    "catalog_entry_key": "good_morning_leve__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Abdução de anca",
+    "catalog_entry_key": "abducao_de_anca__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Adução de anca",
+    "catalog_entry_key": "aducao_de_anca__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Gémeos sentado",
+    "catalog_entry_key": "gemeos_sentado__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Sóleo sentado",
+    "catalog_entry_key": "soleo_sentado__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Dorsiflexão do tornozelo com elástico",
+    "catalog_entry_key": "dorsiflexao_do_tornozelo_com_elastico__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Inversão do tornozelo com elástico",
+    "catalog_entry_key": "inversao_do_tornozelo_com_elastico__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Eversão do tornozelo com elástico",
+    "catalog_entry_key": "eversao_do_tornozelo_com_elastico__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Flexão da anca em pé com elástico",
+    "catalog_entry_key": "flexao_da_anca_em_pe_com_elastico__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Copenhagen plank com apoio",
+    "catalog_entry_key": "copenhagen_plank_com_apoio__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Extensão terminal do joelho com elástico",
+    "catalog_entry_key": "extensao_terminal_do_joelho_com_elastico__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Peso morto unilateral com halteres",
+    "catalog_entry_key": "peso_morto_unilateral_com_halteres__pernas",
+    "primary_type": "musculacao"
+  },
+  {
+    "name": "Marcha no lugar",
+    "catalog_entry_key": "marcha_no_lugar__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Jumping jacks",
+    "catalog_entry_key": "jumping_jacks__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Burpees",
+    "catalog_entry_key": "burpees__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Skaters",
+    "catalog_entry_key": "skaters__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "High knees",
+    "catalog_entry_key": "high_knees__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Circuito cardio peso corporal",
+    "catalog_entry_key": "circuito_cardio_peso_corporal__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Sprints exterior",
+    "catalog_entry_key": "sprints_exterior__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Corrida em subida",
+    "catalog_entry_key": "corrida_em_subida__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "HIIT peso corporal",
+    "catalog_entry_key": "hiit_peso_corporal__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "HIIT cardio",
+    "catalog_entry_key": "hiit_cardio__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "HIIT simples",
+    "catalog_entry_key": "hiit_simples__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Circuito cardio leve",
+    "catalog_entry_key": "circuito_cardio_leve__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Shadow boxing leve",
+    "catalog_entry_key": "shadow_boxing_leve__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Shuttle runs / corrida vaivém",
+    "catalog_entry_key": "shuttle_runs_corrida_vaivem__cardio",
+    "primary_type": "cardio"
+  },
+  {
+    "name": "Trabalho leve ao saco",
+    "catalog_entry_key": "trabalho_leve_ao_saco__karate",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Shrimp / fuga de anca",
+    "catalog_entry_key": "shrimp_fuga_de_anca__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Ponte de grappling",
+    "catalog_entry_key": "ponte_de_grappling__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Technical stand-up",
+    "catalog_entry_key": "technical_stand_up__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sprawl",
+    "catalog_entry_key": "sprawl__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Drills de guarda",
+    "catalog_entry_key": "drills_de_guarda__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Drills de passagem de guarda",
+    "catalog_entry_key": "drills_de_passagem_de_guarda__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Rolamentos de solo",
+    "catalog_entry_key": "rolamentos_de_solo__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Breakfalls (ukemi)",
+    "catalog_entry_key": "breakfalls_ukemi__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Inversão granby com apoio",
+    "catalog_entry_key": "inversao_granby_com_apoio__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Tocar nos pés sentado",
+    "catalog_entry_key": "tocar_nos_pes_sentado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Tocar nos pés em pé",
+    "catalog_entry_key": "tocar_nos_pes_em_pe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Respiração diafragmática",
+    "catalog_entry_key": "respiracao_diafragmatica__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Caminhada leve",
+    "catalog_entry_key": "caminhada_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Relaxamento deitado",
+    "catalog_entry_key": "relaxamento_deitado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Respiração nasal lenta",
+    "catalog_entry_key": "respiracao_nasal_lenta__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Foam roller para pernas",
+    "catalog_entry_key": "foam_roller_para_pernas__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Foam roller para costas",
+    "catalog_entry_key": "foam_roller_para_costas__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Bola de massagem para pés e glúteos",
+    "catalog_entry_key": "bola_de_massagem_para_pes_e_gluteos__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Arrefecimento pós-treino de força",
+    "catalog_entry_key": "arrefecimento_pos_treino_de_forca__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Arrefecimento pós-artes marciais",
+    "catalog_entry_key": "arrefecimento_pos_artes_marciais__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Mawashi geri em alvo médio",
+    "catalog_entry_key": "mawashi_geri_em_alvo_medio__karate",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Trabalho leve ao saco com gyaku zuki",
+    "catalog_entry_key": "trabalho_leve_ao_saco_com_gyaku_zuki__karate",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Mae geri no saco leve",
+    "catalog_entry_key": "mae_geri_no_saco_leve__karate",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Shrimp básico no solo",
+    "catalog_entry_key": "shrimp_basico_no_solo__jiu_jitsu",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Base de boxe estática",
+    "catalog_entry_key": "base_de_boxe_estatica__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Guarda alta básica",
+    "catalog_entry_key": "guarda_alta_basica__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Queixo protegido em guarda",
+    "catalog_entry_key": "queixo_protegido_em_guarda__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Step-drag para frente e trás",
+    "catalog_entry_key": "step_drag_para_frente_e_tras__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Passo lateral com guarda",
+    "catalog_entry_key": "passo_lateral_com_guarda__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Pivot básico",
+    "catalog_entry_key": "pivot_basico__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Entrar e sair com jab imaginário",
+    "catalog_entry_key": "entrar_e_sair_com_jab_imaginario__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jab parado",
+    "catalog_entry_key": "jab_parado__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jab com passo",
+    "catalog_entry_key": "jab_com_passo__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Direto parado",
+    "catalog_entry_key": "direto_parado__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jab e direto 1-2",
+    "catalog_entry_key": "jab_e_direto_1_2__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Gancho curto por fases",
+    "catalog_entry_key": "gancho_curto_por_fases__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Uppercut curto por fases",
+    "catalog_entry_key": "uppercut_curto_por_fases__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Golpe ao corpo em sombra",
+    "catalog_entry_key": "golpe_ao_corpo_em_sombra__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Parry de jab com parceiro",
+    "catalog_entry_key": "parry_de_jab_com_parceiro__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Bloqueio em guarda alta",
+    "catalog_entry_key": "bloqueio_em_guarda_alta__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Slip esquerda-direita",
+    "catalog_entry_key": "slip_esquerda_direita__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Roll por baixo de linha",
+    "catalog_entry_key": "roll_por_baixo_de_linha__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Cobrir e sair em ângulo",
+    "catalog_entry_key": "cobrir_e_sair_em_angulo__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sombra de boxe leve",
+    "catalog_entry_key": "sombra_de_boxe_leve__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sombra de boxe por rounds",
+    "catalog_entry_key": "sombra_de_boxe_por_rounds__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Rounds no saco de boxe ritmo leve",
+    "catalog_entry_key": "rounds_no_saco_de_boxe_ritmo_leve__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Rounds no saco de boxe ritmo moderado",
+    "catalog_entry_key": "rounds_no_saco_de_boxe_ritmo_moderado__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "1-2 e saída lateral",
+    "catalog_entry_key": "1_2_e_saida_lateral__boxe",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Base de kickboxing estática",
+    "catalog_entry_key": "base_de_kickboxing_estatica__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Guarda de kickboxing",
+    "catalog_entry_key": "guarda_de_kickboxing__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Drill de distância mão-perna",
+    "catalog_entry_key": "drill_de_distancia_mao_perna__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Recuperar base após pontapé",
+    "catalog_entry_key": "recuperar_base_apos_pontape__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jab de kickboxing",
+    "catalog_entry_key": "jab_de_kickboxing__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Direto de kickboxing",
+    "catalog_entry_key": "direto_de_kickboxing__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Low kick por fases",
+    "catalog_entry_key": "low_kick_por_fases__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Low kick ao saco leve",
+    "catalog_entry_key": "low_kick_ao_saco_leve__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Middle kick por fases",
+    "catalog_entry_key": "middle_kick_por_fases__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "High kick técnico baixo para alto",
+    "catalog_entry_key": "high_kick_tecnico_baixo_para_alto__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Front kick para distância",
+    "catalog_entry_key": "front_kick_para_distancia__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Side kick técnico",
+    "catalog_entry_key": "side_kick_tecnico__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jab, direto, low kick",
+    "catalog_entry_key": "jab_direto_low_kick__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jab, direto, middle kick",
+    "catalog_entry_key": "jab_direto_middle_kick__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Low kick para direto",
+    "catalog_entry_key": "low_kick_para_direto__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Check de low kick básico",
+    "catalog_entry_key": "check_de_low_kick_basico__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sair em ângulo após combinação",
+    "catalog_entry_key": "sair_em_angulo_apos_combinacao__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Combinações de kickboxing no saco leve",
+    "catalog_entry_key": "combinacoes_de_kickboxing_no_saco_leve__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Rounds de kickboxing no saco moderado",
+    "catalog_entry_key": "rounds_de_kickboxing_no_saco_moderado__kickboxing",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Base de Muay Thai estática",
+    "catalog_entry_key": "base_de_muay_thai_estatica__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Guarda alta de Muay Thai",
+    "catalog_entry_key": "guarda_alta_de_muay_thai__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Transferência de peso para check",
+    "catalog_entry_key": "transferencia_de_peso_para_check__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Low kick técnico sem impacto",
+    "catalog_entry_key": "low_kick_tecnico_sem_impacto__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Low kick ao saco",
+    "catalog_entry_key": "low_kick_ao_saco__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Middle kick técnico",
+    "catalog_entry_key": "middle_kick_tecnico__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Middle kick ao saco",
+    "catalog_entry_key": "middle_kick_ao_saco__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Teep técnico",
+    "catalog_entry_key": "teep_tecnico__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Teep em alvo leve",
+    "catalog_entry_key": "teep_em_alvo_leve__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Check de low kick em sombra",
+    "catalog_entry_key": "check_de_low_kick_em_sombra__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jab e direto em guarda alta",
+    "catalog_entry_key": "jab_e_direto_em_guarda_alta__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Cotovelo horizontal básico",
+    "catalog_entry_key": "cotovelo_horizontal_basico__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Joelhada direta em sombra",
+    "catalog_entry_key": "joelhada_direta_em_sombra__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Joelhada no saco",
+    "catalog_entry_key": "joelhada_no_saco__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Postura de clinch com parceiro",
+    "catalog_entry_key": "postura_de_clinch_com_parceiro__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Entrada defensiva para clinch",
+    "catalog_entry_key": "entrada_defensiva_para_clinch__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Virar no clinch",
+    "catalog_entry_key": "virar_no_clinch__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sair do clinch",
+    "catalog_entry_key": "sair_do_clinch__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Round leve no saco de Muay Thai",
+    "catalog_entry_key": "round_leve_no_saco_de_muay_thai__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Round moderado no saco de Muay Thai",
+    "catalog_entry_key": "round_moderado_no_saco_de_muay_thai__muay_thai",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Ukemi para trás por fases",
+    "catalog_entry_key": "ukemi_para_tras_por_fases__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Ukemi lateral por fases",
+    "catalog_entry_key": "ukemi_lateral_por_fases__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Rolamento frontal básico",
+    "catalog_entry_key": "rolamento_frontal_basico__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Levantar após queda",
+    "catalog_entry_key": "levantar_apos_queda__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Postura natural de Judo",
+    "catalog_entry_key": "postura_natural_de_judo__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Kumi kata básico",
+    "catalog_entry_key": "kumi_kata_basico__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Quebra de pegada simples",
+    "catalog_entry_key": "quebra_de_pegada_simples__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Controlo de postura com pegada",
+    "catalog_entry_key": "controlo_de_postura_com_pegada__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Kuzushi para a frente",
+    "catalog_entry_key": "kuzushi_para_a_frente__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Kuzushi para trás",
+    "catalog_entry_key": "kuzushi_para_tras__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Uchikomi parado",
+    "catalog_entry_key": "uchikomi_parado__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Uchikomi em movimento",
+    "catalog_entry_key": "uchikomi_em_movimento__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "O soto gari por fases",
+    "catalog_entry_key": "o_soto_gari_por_fases__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "O goshi por fases",
+    "catalog_entry_key": "o_goshi_por_fases__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "De ashi barai técnico",
+    "catalog_entry_key": "de_ashi_barai_tecnico__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Seoi nage entrada básica",
+    "catalog_entry_key": "seoi_nage_entrada_basica__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Kesa gatame básico",
+    "catalog_entry_key": "kesa_gatame_basico__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Escape de imobilização básico",
+    "catalog_entry_key": "escape_de_imobilizacao_basico__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Transição queda para controlo",
+    "catalog_entry_key": "transicao_queda_para_controlo__judo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Base de Taekwondo estática",
+    "catalog_entry_key": "base_de_taekwondo_estatica__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Guarda de Taekwondo",
+    "catalog_entry_key": "guarda_de_taekwondo__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Bounce step leve",
+    "catalog_entry_key": "bounce_step_leve__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Entrar e sair da distância de pontapé",
+    "catalog_entry_key": "entrar_e_sair_da_distancia_de_pontape__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Pontapé frontal por fases",
+    "catalog_entry_key": "pontape_frontal_por_fases__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Pontapé circular baixo",
+    "catalog_entry_key": "pontape_circular_baixo__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Pontapé circular médio em alvo",
+    "catalog_entry_key": "pontape_circular_medio_em_alvo__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Pontapé lateral por fases",
+    "catalog_entry_key": "pontape_lateral_por_fases__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Pontapé para trás técnico",
+    "catalog_entry_key": "pontape_para_tras_tecnico__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Pontapé descendente controlado",
+    "catalog_entry_key": "pontape_descendente_controlado__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Hold de câmara de pontapé",
+    "catalog_entry_key": "hold_de_camara_de_pontape__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Extensão e recolha lenta",
+    "catalog_entry_key": "extensao_e_recolha_lenta__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Equilíbrio em uma perna",
+    "catalog_entry_key": "equilibrio_em_uma_perna__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Progressão de altura do pontapé",
+    "catalog_entry_key": "progressao_de_altura_do_pontape__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sequência frontal e circular",
+    "catalog_entry_key": "sequencia_frontal_e_circular__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Rounds de pontapés técnicos",
+    "catalog_entry_key": "rounds_de_pontapes_tecnicos__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sombra de pontapés",
+    "catalog_entry_key": "sombra_de_pontapes__taekwondo",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Mapa rápido de saídas",
+    "catalog_entry_key": "mapa_rapido_de_saidas__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Guarda não agressiva",
+    "catalog_entry_key": "guarda_nao_agressiva__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Guarda defensiva básica",
+    "catalog_entry_key": "guarda_defensiva_basica__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Passo para trás e ângulo",
+    "catalog_entry_key": "passo_para_tras_e_angulo__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Barreira verbal e mãos abertas",
+    "catalog_entry_key": "barreira_verbal_e_maos_abertas__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Cobertura básica contra golpes",
+    "catalog_entry_key": "cobertura_basica_contra_golpes__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sair da linha de ataque",
+    "catalog_entry_key": "sair_da_linha_de_ataque__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Desvio simples de mão",
+    "catalog_entry_key": "desvio_simples_de_mao__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Entrada defensiva para clinch",
+    "catalog_entry_key": "entrada_defensiva_para_clinch__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Palm strike e saída",
+    "catalog_entry_key": "palm_strike_e_saida__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Saída de agarre no pulso",
+    "catalog_entry_key": "saida_de_agarre_no_pulso__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Frame no clinch",
+    "catalog_entry_key": "frame_no_clinch__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sair do clinch com frame e passo",
+    "catalog_entry_key": "sair_do_clinch_com_frame_e_passo__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sprawl funcional",
+    "catalog_entry_key": "sprawl_funcional__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Queda segura funcional",
+    "catalog_entry_key": "queda_segura_funcional__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Frames no chão contra pressão",
+    "catalog_entry_key": "frames_no_chao_contra_pressao__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Technical stand-up funcional",
+    "catalog_entry_key": "technical_stand_up_funcional__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Palm strike em alvo",
+    "catalog_entry_key": "palm_strike_em_alvo__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Low kick simples funcional",
+    "catalog_entry_key": "low_kick_simples_funcional__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Joelhada simples para criar espaço",
+    "catalog_entry_key": "joelhada_simples_para_criar_espaco__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Empurrar e sair",
+    "catalog_entry_key": "empurrar_e_sair__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Drill decisão de fuga",
+    "catalog_entry_key": "drill_decisao_de_fuga__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Regra de múltiplas ameaças",
+    "catalog_entry_key": "regra_de_multiplas_ameacas__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Sair da parede com ângulo",
+    "catalog_entry_key": "sair_da_parede_com_angulo__defesa_pessoal",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Boxe",
+    "catalog_entry_key": "boxe__artes_marciais",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Muay Thai",
+    "catalog_entry_key": "muay_thai__artes_marciais",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Jiu-Jitsu / BJJ",
+    "catalog_entry_key": "jiu_jitsu_bjj__artes_marciais",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Judo",
+    "catalog_entry_key": "judo__artes_marciais",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "CARs cervicais suaves",
+    "catalog_entry_key": "cars_cervicais_suaves__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Chin tuck deitado",
+    "catalog_entry_key": "chin_tuck_deitado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão torácica no chão",
+    "catalog_entry_key": "extensao_toracica_no_chao__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão torácica sobre rolo",
+    "catalog_entry_key": "extensao_toracica_sobre_rolo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rotação torácica em quadrupedia",
+    "catalog_entry_key": "rotacao_toracica_em_quadrupedia__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Thread the needle",
+    "catalog_entry_key": "thread_the_needle__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Thread the needle com alcance",
+    "catalog_entry_key": "thread_the_needle_com_alcance__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Respiração costal deitada",
+    "catalog_entry_key": "respiracao_costal_deitada__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Wall angels",
+    "catalog_entry_key": "wall_angels__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Elevação de braços contra parede",
+    "catalog_entry_key": "elevacao_de_bracos_contra_parede__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pelvic tilts deitado",
+    "catalog_entry_key": "pelvic_tilts_deitado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pelvic tilts em quadrupedia",
+    "catalog_entry_key": "pelvic_tilts_em_quadrupedia__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rock back com coluna neutra",
+    "catalog_entry_key": "rock_back_com_coluna_neutra__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Hinge drill sem carga",
+    "catalog_entry_key": "hinge_drill_sem_carga__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Cat cow controlado",
+    "catalog_entry_key": "cat_cow_controlado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rotação lombar deitado joelhos lado a lado",
+    "catalog_entry_key": "rotacao_lombar_deitado_joelhos_lado_a_lado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Dead bug com retroversão",
+    "catalog_entry_key": "dead_bug_com_retroversao__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Respiração com bracing leve",
+    "catalog_entry_key": "respiracao_com_bracing_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Scapular push-up",
+    "catalog_entry_key": "scapular_push_up__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Protração e retração em quadrupedia",
+    "catalog_entry_key": "protracao_e_retracao_em_quadrupedia__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Elevação e depressão escapular em pé",
+    "catalog_entry_key": "elevacao_e_depressao_escapular_em_pe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Depressão escapular na barra",
+    "catalog_entry_key": "depressao_escapular_na_barra__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Serratus reach",
+    "catalog_entry_key": "serratus_reach__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Prancha com protração escapular",
+    "catalog_entry_key": "prancha_com_protracao_escapular__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Bear position scapular control",
+    "catalog_entry_key": "bear_position_scapular_control__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Scapular pull-up",
+    "catalog_entry_key": "scapular_pull_up__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "CARs escapulares em pé",
+    "catalog_entry_key": "cars_escapulares_em_pe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Flexão de ombro deitado",
+    "catalog_entry_key": "flexao_de_ombro_deitado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Elevação de braços na parede",
+    "catalog_entry_key": "elevacao_de_bracos_na_parede__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Shoulder extension lift-off",
+    "catalog_entry_key": "shoulder_extension_lift_off__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rotação externa com cotovelo junto ao corpo",
+    "catalog_entry_key": "rotacao_externa_com_cotovelo_junto_ao_corpo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rotação externa deitado de lado",
+    "catalog_entry_key": "rotacao_externa_deitado_de_lado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rotação interna com cotovelo junto ao corpo",
+    "catalog_entry_key": "rotacao_interna_com_cotovelo_junto_ao_corpo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Shoulder CARs",
+    "catalog_entry_key": "shoulder_cars__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Overhead hold sem carga",
+    "catalog_entry_key": "overhead_hold_sem_carga__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Passagens com cabo de vassoura",
+    "catalog_entry_key": "passagens_com_cabo_de_vassoura__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Shoulder dislocates controlados",
+    "catalog_entry_key": "shoulder_dislocates_controlados__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Guarda alta com respiração",
+    "catalog_entry_key": "guarda_alta_com_respiracao__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Guarda alta com passos leves",
+    "catalog_entry_key": "guarda_alta_com_passos_leves__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Flexão e extensão ativa do cotovelo",
+    "catalog_entry_key": "flexao_e_extensao_ativa_do_cotovelo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão terminal do cotovelo leve",
+    "catalog_entry_key": "extensao_terminal_do_cotovelo_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pronação e supinação com cotovelo fixo",
+    "catalog_entry_key": "pronacao_e_supinacao_com_cotovelo_fixo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pronação e supinação com halter leve",
+    "catalog_entry_key": "pronacao_e_supinacao_com_halter_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Isometria leve de cotovelo a 90 graus",
+    "catalog_entry_key": "isometria_leve_de_cotovelo_a_90_graus__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Frames leves em quadrupedia",
+    "catalog_entry_key": "frames_leves_em_quadrupedia__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Desvio radial e ulnar ativo",
+    "catalog_entry_key": "desvio_radial_e_ulnar_ativo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rocking de punho em quadrupedia",
+    "catalog_entry_key": "rocking_de_punho_em_quadrupedia__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão de punho com palmas no chão",
+    "catalog_entry_key": "extensao_de_punho_com_palmas_no_chao__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Punhos para flexões",
+    "catalog_entry_key": "punhos_para_flexoes__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Abrir e fechar dedos",
+    "catalog_entry_key": "abrir_e_fechar_dedos__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão dos dedos com elástico",
+    "catalog_entry_key": "extensao_dos_dedos_com_elastico__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Ondas dos dedos",
+    "catalog_entry_key": "ondas_dos_dedos__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Aquecimento de dedos para kimono",
+    "catalog_entry_key": "aquecimento_de_dedos_para_kimono__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Flexão de anca em pé com apoio",
+    "catalog_entry_key": "flexao_de_anca_em_pe_com_apoio__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Marcha lenta com joelho alto",
+    "catalog_entry_key": "marcha_lenta_com_joelho_alto__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão de anca em quadrupedia",
+    "catalog_entry_key": "extensao_de_anca_em_quadrupedia__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Hip extension lift-off",
+    "catalog_entry_key": "hip_extension_lift_off__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rotação interna de anca sentado",
+    "catalog_entry_key": "rotacao_interna_de_anca_sentado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "90/90 lift-off rotação interna",
+    "catalog_entry_key": "90_90_lift_off_rotacao_interna__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rotação externa de anca sentado",
+    "catalog_entry_key": "rotacao_externa_de_anca_sentado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pigeon ativo",
+    "catalog_entry_key": "pigeon_ativo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rock back de adutores",
+    "catalog_entry_key": "rock_back_de_adutores__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Cossack squat assistido",
+    "catalog_entry_key": "cossack_squat_assistido__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Hip CARs em pé com apoio",
+    "catalog_entry_key": "hip_cars_em_pe_com_apoio__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Hip CARs em quadrupedia",
+    "catalog_entry_key": "hip_cars_em_quadrupedia__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "90/90 switches",
+    "catalog_entry_key": "90_90_switches__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "90/90 hold ativo",
+    "catalog_entry_key": "90_90_hold_ativo__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Agachamento profundo assistido",
+    "catalog_entry_key": "agachamento_profundo_assistido__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Squat pry leve",
+    "catalog_entry_key": "squat_pry_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Câmara de pontapé frontal",
+    "catalog_entry_key": "camara_de_pontape_frontal__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Câmara de pontapé circular",
+    "catalog_entry_key": "camara_de_pontape_circular__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Recolha lenta do pontapé",
+    "catalog_entry_key": "recolha_lenta_do_pontape__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Hip heist lento",
+    "catalog_entry_key": "hip_heist_lento__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Shin box switch",
+    "catalog_entry_key": "shin_box_switch__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Heel slides",
+    "catalog_entry_key": "heel_slides__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Flexão de joelho em pé",
+    "catalog_entry_key": "flexao_de_joelho_em_pe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão ativa do joelho sentado",
+    "catalog_entry_key": "extensao_ativa_do_joelho_sentado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Extensão terminal do joelho com elástico",
+    "catalog_entry_key": "extensao_terminal_do_joelho_com_elastico__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Agachamento para cadeira controlado",
+    "catalog_entry_key": "agachamento_para_cadeira_controlado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Step down controlado",
+    "catalog_entry_key": "step_down_controlado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Split squat parcial controlado",
+    "catalog_entry_key": "split_squat_parcial_controlado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Base marcial com joelho alinhado",
+    "catalog_entry_key": "base_marcial_com_joelho_alinhado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Knee to wall",
+    "catalog_entry_key": "knee_to_wall__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Flexão plantar ativa",
+    "catalog_entry_key": "flexao_plantar_ativa__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Apontar e puxar o pé",
+    "catalog_entry_key": "apontar_e_puxar_o_pe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Inversão e eversão ativas",
+    "catalog_entry_key": "inversao_e_eversao_ativas__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Inversão e eversão com elástico leve",
+    "catalog_entry_key": "inversao_e_eversao_com_elastico_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Mobilidade de tornozelo em agachamento",
+    "catalog_entry_key": "mobilidade_de_tornozelo_em_agachamento__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pogo prep leve",
+    "catalog_entry_key": "pogo_prep_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pivots controlados",
+    "catalog_entry_key": "pivots_controlados__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Short foot",
+    "catalog_entry_key": "short_foot__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Doming do pé",
+    "catalog_entry_key": "doming_do_pe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Elevação do dedo grande",
+    "catalog_entry_key": "elevacao_do_dedo_grande__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Elevação dos quatro dedos",
+    "catalog_entry_key": "elevacao_dos_quatro_dedos__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Flexão dos dedos na toalha",
+    "catalog_entry_key": "flexao_dos_dedos_na_toalha__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Mobilidade do dedo grande na parede",
+    "catalog_entry_key": "mobilidade_do_dedo_grande_na_parede__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pronação e supinação controlada do pé",
+    "catalog_entry_key": "pronacao_e_supinacao_controlada_do_pe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Equilíbrio unipodal",
+    "catalog_entry_key": "equilibrio_unipodal__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Sit to stand sem mãos",
+    "catalog_entry_key": "sit_to_stand_sem_maos__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Technical stand-up lento",
+    "catalog_entry_key": "technical_stand_up_lento__mobilidade",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Entrar e sair do agachamento profundo assistido",
+    "catalog_entry_key": "entrar_e_sair_do_agachamento_profundo_assistido__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Agachamento profundo com troca de peso",
+    "catalog_entry_key": "agachamento_profundo_com_troca_de_peso__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Bear crawl leve",
+    "catalog_entry_key": "bear_crawl_leve__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Crawling em quadrupedia lento",
+    "catalog_entry_key": "crawling_em_quadrupedia_lento__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rolamento lateral controlado",
+    "catalog_entry_key": "rolamento_lateral_controlado__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rolamento frontal suave",
+    "catalog_entry_key": "rolamento_frontal_suave__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "World greatest stretch flow",
+    "catalog_entry_key": "world_greatest_stretch_flow__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Flow guarda, chão e levantar",
+    "catalog_entry_key": "flow_guarda_chao_e_levantar__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Câmara de pontapé frontal com apoio",
+    "catalog_entry_key": "camara_de_pontape_frontal_com_apoio__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Câmara de pontapé circular com apoio",
+    "catalog_entry_key": "camara_de_pontape_circular_com_apoio__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pontapé lento sem impacto",
+    "catalog_entry_key": "pontape_lento_sem_impacto__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "90/90 para guarda no chão",
+    "catalog_entry_key": "90_90_para_guarda_no_chao__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Shrimp lento de mobilidade",
+    "catalog_entry_key": "shrimp_lento_de_mobilidade__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Sprawl lento por fases",
+    "catalog_entry_key": "sprawl_lento_por_fases__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Technical stand-up lento por fases",
+    "catalog_entry_key": "technical_stand_up_lento_por_fases__mobilidade",
+    "primary_type": "artes_marciais"
+  },
+  {
+    "name": "Postura de clinch sem parceiro",
+    "catalog_entry_key": "postura_de_clinch_sem_parceiro__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pivot lento de boxe",
+    "catalog_entry_key": "pivot_lento_de_boxe__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Pivot para pontapé circular",
+    "catalog_entry_key": "pivot_para_pontape_circular__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Preparação de punhos para ukemi",
+    "catalog_entry_key": "preparacao_de_punhos_para_ukemi__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Rolamento suave de preparação",
+    "catalog_entry_key": "rolamento_suave_de_preparacao__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "mobilidade",
+    "catalog_entry_key": "mobilidade__mobilidade",
+    "primary_type": "mobilidade"
+  },
+  {
+    "name": "Inclinação lateral do pescoço sentado",
+    "catalog_entry_key": "inclinacao_lateral_do_pescoco_sentado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Inclinação lateral com mão atrás das costas",
+    "catalog_entry_key": "inclinacao_lateral_com_mao_atras_das_costas__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento do trapézio superior sentado",
+    "catalog_entry_key": "alongamento_do_trapezio_superior_sentado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Trapézio superior com mão presa à cadeira",
+    "catalog_entry_key": "trapezio_superior_com_mao_presa_a_cadeira__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento do elevador da escápula em diagonal",
+    "catalog_entry_key": "alongamento_do_elevador_da_escapula_em_diagonal__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento suave dos escalenos com respiração",
+    "catalog_entry_key": "alongamento_suave_dos_escalenos_com_respiracao__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Relaxamento suboccipital deitado",
+    "catalog_entry_key": "relaxamento_suboccipital_deitado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Sequência cervical leve pós-treino",
+    "catalog_entry_key": "sequencia_cervical_leve_pos_treino__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento de peito na porta",
+    "catalog_entry_key": "alongamento_de_peito_na_porta__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento unilateral de peito na porta",
+    "catalog_entry_key": "alongamento_unilateral_de_peito_na_porta__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento de peito no canto",
+    "catalog_entry_key": "alongamento_de_peito_no_canto__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Mãos atrás das costas",
+    "catalog_entry_key": "maos_atras_das_costas__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Ombro anterior com mãos apoiadas atrás",
+    "catalog_entry_key": "ombro_anterior_com_maos_apoiadas_atras__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento do bíceps na parede",
+    "catalog_entry_key": "alongamento_do_biceps_na_parede__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Bíceps com palma na parede dedos para trás",
+    "catalog_entry_key": "biceps_com_palma_na_parede_dedos_para_tras__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Abertura dinâmica de braços",
+    "catalog_entry_key": "abertura_dinamica_de_bracos__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de peito pós-empurrar",
+    "catalog_entry_key": "cooldown_de_peito_pos_empurrar__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Child pose com braços longos",
+    "catalog_entry_key": "child_pose_com_bracos_longos__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Child pose com mãos em banco",
+    "catalog_entry_key": "child_pose_com_maos_em_banco__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Child pose lateral",
+    "catalog_entry_key": "child_pose_lateral__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento lateral em pé",
+    "catalog_entry_key": "alongamento_lateral_em_pe__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Suspensão passiva leve na barra",
+    "catalog_entry_key": "suspensao_passiva_leve_na_barra__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Suspensão com pés apoiados",
+    "catalog_entry_key": "suspensao_com_pes_apoiados__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento do quadrado lombar sentado",
+    "catalog_entry_key": "alongamento_do_quadrado_lombar_sentado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento lateral com respiração",
+    "catalog_entry_key": "alongamento_lateral_com_respiracao__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de dorsal pós-puxar",
+    "catalog_entry_key": "cooldown_de_dorsal_pos_puxar__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Braço cruzado à frente do peito",
+    "catalog_entry_key": "braco_cruzado_a_frente_do_peito__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento posterior com apoio na parede",
+    "catalog_entry_key": "alongamento_posterior_com_apoio_na_parede__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento do deltoide posterior sentado",
+    "catalog_entry_key": "alongamento_do_deltoide_posterior_sentado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Abraçar o próprio corpo",
+    "catalog_entry_key": "abracar_o_proprio_corpo__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alcance à frente com mãos entrelaçadas",
+    "catalog_entry_key": "alcance_a_frente_com_maos_entrelacadas__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Sleeper stretch leve",
+    "catalog_entry_key": "sleeper_stretch_leve__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown posterior do ombro pós-puxar",
+    "catalog_entry_key": "cooldown_posterior_do_ombro_pos_puxar__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Relaxamento dos ombros pós-guarda alta",
+    "catalog_entry_key": "relaxamento_dos_ombros_pos_guarda_alta__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Tríceps acima da cabeça",
+    "catalog_entry_key": "triceps_acima_da_cabeca__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Tríceps acima da cabeça com toalha",
+    "catalog_entry_key": "triceps_acima_da_cabeca_com_toalha__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Braço acima da cabeça na parede",
+    "catalog_entry_key": "braco_acima_da_cabeca_na_parede__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Child pose com cotovelos dobrados",
+    "catalog_entry_key": "child_pose_com_cotovelos_dobrados__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Respiração em posição overhead",
+    "catalog_entry_key": "respiracao_em_posicao_overhead__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de tríceps pós-empurrar",
+    "catalog_entry_key": "cooldown_de_triceps_pos_empurrar__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento dos flexores do punho na parede",
+    "catalog_entry_key": "alongamento_dos_flexores_do_punho_na_parede__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Palmas no chão dedos para trás",
+    "catalog_entry_key": "palmas_no_chao_dedos_para_tras__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento dos extensores do punho",
+    "catalog_entry_key": "alongamento_dos_extensores_do_punho__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Dorso da mão no chão leve",
+    "catalog_entry_key": "dorso_da_mao_no_chao_leve__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Relaxamento de rotação do antebraço",
+    "catalog_entry_key": "relaxamento_de_rotacao_do_antebraco__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento de extensão dos dedos",
+    "catalog_entry_key": "alongamento_de_extensao_dos_dedos__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento de flexão dos dedos",
+    "catalog_entry_key": "alongamento_de_flexao_dos_dedos__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Shake out das mãos",
+    "catalog_entry_key": "shake_out_das_maos__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Sequência pós-pega para antebraço",
+    "catalog_entry_key": "sequencia_pos_pega_para_antebraco__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Sphinx pose",
+    "catalog_entry_key": "sphinx_pose__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cobra leve",
+    "catalog_entry_key": "cobra_leve__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cobra baixa com respiração",
+    "catalog_entry_key": "cobra_baixa_com_respiracao__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Inclinação lateral em pé",
+    "catalog_entry_key": "inclinacao_lateral_em_pe__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alcance lateral sentado",
+    "catalog_entry_key": "alcance_lateral_sentado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Respiração em extensão leve",
+    "catalog_entry_key": "respiracao_em_extensao_leve__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown abdominal pós-core",
+    "catalog_entry_key": "cooldown_abdominal_pos_core__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Figura 4 deitado",
+    "catalog_entry_key": "figura_4_deitado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Figura 4 sentado",
+    "catalog_entry_key": "figura_4_sentado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Piriforme deitado joelho ao peito cruzado",
+    "catalog_entry_key": "piriforme_deitado_joelho_ao_peito_cruzado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Pigeon passivo com apoio",
+    "catalog_entry_key": "pigeon_passivo_com_apoio__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "90/90 passivo para glúteo",
+    "catalog_entry_key": "90_90_passivo_para_gluteo__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "PNF leve de glúteo em figura 4",
+    "catalog_entry_key": "pnf_leve_de_gluteo_em_figura_4__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de glúteos pós-pernas",
+    "catalog_entry_key": "cooldown_de_gluteos_pos_pernas__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Flexor da anca em meio ajoelhado",
+    "catalog_entry_key": "flexor_da_anca_em_meio_ajoelhado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Flexor da anca com braço acima da cabeça",
+    "catalog_entry_key": "flexor_da_anca_com_braco_acima_da_cabeca__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Couch stretch leve",
+    "catalog_entry_key": "couch_stretch_leve__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Couch stretch com glúteo contraído",
+    "catalog_entry_key": "couch_stretch_com_gluteo_contraido__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Quadríceps em pé",
+    "catalog_entry_key": "quadriceps_em_pe__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Quadríceps deitado de lado",
+    "catalog_entry_key": "quadriceps_deitado_de_lado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Reto femoral em meio ajoelhado com pé elevado",
+    "catalog_entry_key": "reto_femoral_em_meio_ajoelhado_com_pe_elevado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Lunge dinâmico de flexores da anca",
+    "catalog_entry_key": "lunge_dinamico_de_flexores_da_anca__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "PNF leve dos flexores da anca",
+    "catalog_entry_key": "pnf_leve_dos_flexores_da_anca__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de quadríceps pós-pernas",
+    "catalog_entry_key": "cooldown_de_quadriceps_pos_pernas__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Posterior de coxa deitado com toalha",
+    "catalog_entry_key": "posterior_de_coxa_deitado_com_toalha__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Posterior de coxa deitado unilateral",
+    "catalog_entry_key": "posterior_de_coxa_deitado_unilateral__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Posterior de coxa sentado",
+    "catalog_entry_key": "posterior_de_coxa_sentado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento em pé com dobradiça de anca",
+    "catalog_entry_key": "alongamento_em_pe_com_dobradica_de_anca__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Perna elevada em banco",
+    "catalog_entry_key": "perna_elevada_em_banco__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Leg swings frontais controlados",
+    "catalog_entry_key": "leg_swings_frontais_controlados__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "PNF posterior de coxa deitado",
+    "catalog_entry_key": "pnf_posterior_de_coxa_deitado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Posterior de coxa para pontapé frontal",
+    "catalog_entry_key": "posterior_de_coxa_para_pontape_frontal__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de posterior pós-peso morto",
+    "catalog_entry_key": "cooldown_de_posterior_pos_peso_morto__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Borboleta sentada",
+    "catalog_entry_key": "borboleta_sentada__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Borboleta com inclinação do tronco",
+    "catalog_entry_key": "borboleta_com_inclinacao_do_tronco__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Frog stretch",
+    "catalog_entry_key": "frog_stretch__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento lateral de adutores",
+    "catalog_entry_key": "alongamento_lateral_de_adutores__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cossack passivo",
+    "catalog_entry_key": "cossack_passivo__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Rock back de adutores dinâmico",
+    "catalog_entry_key": "rock_back_de_adutores_dinamico__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "PNF de adutores em borboleta",
+    "catalog_entry_key": "pnf_de_adutores_em_borboleta__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Abertura lateral assistida",
+    "catalog_entry_key": "abertura_lateral_assistida__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de adutores pós-artes marciais",
+    "catalog_entry_key": "cooldown_de_adutores_pos_artes_marciais__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "TFL em pé com perna cruzada",
+    "catalog_entry_key": "tfl_em_pe_com_perna_cruzada__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "TFL contra parede",
+    "catalog_entry_key": "tfl_contra_parede__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento lateral da anca deitado",
+    "catalog_entry_key": "alongamento_lateral_da_anca_deitado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Glúteo médio joelho cruzado ao peito",
+    "catalog_entry_key": "gluteo_medio_joelho_cruzado_ao_peito__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cadeia lateral da coxa com perna cruzada",
+    "catalog_entry_key": "cadeia_lateral_da_coxa_com_perna_cruzada__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown lateral da anca pós-corrida",
+    "catalog_entry_key": "cooldown_lateral_da_anca_pos_corrida__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Gémeos na parede com joelho estendido",
+    "catalog_entry_key": "gemeos_na_parede_com_joelho_estendido__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Gémeos com apoio em degrau baixo",
+    "catalog_entry_key": "gemeos_com_apoio_em_degrau_baixo__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Sóleo na parede com joelho fletido",
+    "catalog_entry_key": "soleo_na_parede_com_joelho_fletido__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento de gémeos em degrau",
+    "catalog_entry_key": "alongamento_de_gemeos_em_degrau__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Rocking dinâmico de tornozelo e gémeos",
+    "catalog_entry_key": "rocking_dinamico_de_tornozelo_e_gemeos__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento leve do Aquiles",
+    "catalog_entry_key": "alongamento_leve_do_aquiles__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown de gémeos pós-corrida",
+    "catalog_entry_key": "cooldown_de_gemeos_pos_corrida__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Tibial anterior ajoelhado",
+    "catalog_entry_key": "tibial_anterior_ajoelhado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Peito do pé sentado sobre os pés",
+    "catalog_entry_key": "peito_do_pe_sentado_sobre_os_pes__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Peito do pé em pé com apoio",
+    "catalog_entry_key": "peito_do_pe_em_pe_com_apoio__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento dos extensores dos dedos do pé",
+    "catalog_entry_key": "alongamento_dos_extensores_dos_dedos_do_pe__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cooldown leve da canela pós-corrida",
+    "catalog_entry_key": "cooldown_leve_da_canela_pos_corrida__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Peito do pé para pontapés",
+    "catalog_entry_key": "peito_do_pe_para_pontapes__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Dedos contra parede",
+    "catalog_entry_key": "dedos_contra_parede__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento da planta do pé ajoelhado",
+    "catalog_entry_key": "alongamento_da_planta_do_pe_ajoelhado__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento do dedo grande na parede",
+    "catalog_entry_key": "alongamento_do_dedo_grande_na_parede__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Alongamento dos flexores dos dedos",
+    "catalog_entry_key": "alongamento_dos_flexores_dos_dedos__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Bola de massagem na planta do pé",
+    "catalog_entry_key": "bola_de_massagem_na_planta_do_pe__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Sequência de pés pós-dia em pé",
+    "catalog_entry_key": "sequencia_de_pes_pos_dia_em_pe__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Half split",
+    "catalog_entry_key": "half_split__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Half split com pé fletido",
+    "catalog_entry_key": "half_split_com_pe_fletido__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Lunge profundo para abertura frontal",
+    "catalog_entry_key": "lunge_profundo_para_abertura_frontal__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Abertura frontal assistida com apoios",
+    "catalog_entry_key": "abertura_frontal_assistida_com_apoios__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "PNF em half split",
+    "catalog_entry_key": "pnf_em_half_split__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Perna elevada em banco para pontapé frontal",
+    "catalog_entry_key": "perna_elevada_em_banco_para_pontape_frontal__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Pontapé frontal lento com amplitude progressiva",
+    "catalog_entry_key": "pontape_frontal_lento_com_amplitude_progressiva__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Abertura lateral em pé assistida",
+    "catalog_entry_key": "abertura_lateral_em_pe_assistida__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Abertura lateral com apoios",
+    "catalog_entry_key": "abertura_lateral_com_apoios__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Frog stretch para side split",
+    "catalog_entry_key": "frog_stretch_para_side_split__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Cossack passivo para side split",
+    "catalog_entry_key": "cossack_passivo_para_side_split__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "PNF de adutores para side split",
+    "catalog_entry_key": "pnf_de_adutores_para_side_split__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Adutor em banco para pontapé circular",
+    "catalog_entry_key": "adutor_em_banco_para_pontape_circular__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Pontapé circular lento com amplitude progressiva",
+    "catalog_entry_key": "pontape_circular_lento_com_amplitude_progressiva__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "elasticidade",
+    "catalog_entry_key": "elasticidade__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "mobilidade",
+    "catalog_entry_key": "mobilidade__elasticidade",
+    "primary_type": "elasticidade"
+  },
+  {
+    "name": "Caminhada leve de recuperação",
+    "catalog_entry_key": "caminhada_leve_de_recuperacao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Caminhada nasal leve",
+    "catalog_entry_key": "caminhada_nasal_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Passeio leve pós-refeição",
+    "catalog_entry_key": "passeio_leve_pos_refeicao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bicicleta muito leve de recuperação",
+    "catalog_entry_key": "bicicleta_muito_leve_de_recuperacao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bicicleta leve pós-treino de pernas",
+    "catalog_entry_key": "bicicleta_leve_pos_treino_de_pernas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Elíptica muito leve de recuperação",
+    "catalog_entry_key": "eliptica_muito_leve_de_recuperacao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Air bike muito leve de recuperação",
+    "catalog_entry_key": "air_bike_muito_leve_de_recuperacao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Remo ergómetro muito leve",
+    "catalog_entry_key": "remo_ergometro_muito_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cardio zona 1 em máquina",
+    "catalog_entry_key": "cardio_zona_1_em_maquina__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Flush pós-pernas",
+    "catalog_entry_key": "flush_pos_pernas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sombra técnica muito leve",
+    "catalog_entry_key": "sombra_tecnica_muito_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Footwork leve de recuperação",
+    "catalog_entry_key": "footwork_leve_de_recuperacao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown na passadeira",
+    "catalog_entry_key": "cooldown_na_passadeira__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown caminhada exterior",
+    "catalog_entry_key": "cooldown_caminhada_exterior__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-musculação geral",
+    "catalog_entry_key": "cooldown_pos_musculacao_geral__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-treino superior",
+    "catalog_entry_key": "cooldown_pos_treino_superior__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-treino inferior",
+    "catalog_entry_key": "cooldown_pos_treino_inferior__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-corrida",
+    "catalog_entry_key": "cooldown_pos_corrida__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-intervalos intensos",
+    "catalog_entry_key": "cooldown_pos_intervalos_intensos__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-Karate",
+    "catalog_entry_key": "cooldown_pos_karate__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-BJJ",
+    "catalog_entry_key": "cooldown_pos_bjj__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cooldown pós-saco",
+    "catalog_entry_key": "cooldown_pos_saco__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset respiratório sentado",
+    "catalog_entry_key": "reset_respiratorio_sentado__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset articular pós-treino",
+    "catalog_entry_key": "reset_articular_pos_treino__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Respiração com expiração longa deitado",
+    "catalog_entry_key": "respiracao_com_expiracao_longa_deitado__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Respiração 4 entra, 6 sai",
+    "catalog_entry_key": "respiracao_4_entra_6_sai__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Respiração 90/90 na parede",
+    "catalog_entry_key": "respiracao_90_90_na_parede__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Respiração 90/90 com pés no sofá",
+    "catalog_entry_key": "respiracao_90_90_com_pes_no_sofa__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Box breathing leve",
+    "catalog_entry_key": "box_breathing_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Caminhada leve com respiração nasal",
+    "catalog_entry_key": "caminhada_leve_com_respiracao_nasal__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Respiração costal lateral",
+    "catalog_entry_key": "respiracao_costal_lateral__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência desligar pós-treino",
+    "catalog_entry_key": "sequencia_desligar_pos_treino__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "CARs leves de corpo inteiro",
+    "catalog_entry_key": "cars_leves_de_corpo_inteiro__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "CARs leves de ombros e anca",
+    "catalog_entry_key": "cars_leves_de_ombros_e_anca__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Flow leve de mobilidade",
+    "catalog_entry_key": "flow_leve_de_mobilidade__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset articular matinal",
+    "catalog_entry_key": "reset_articular_matinal__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset articular ao fim do dia",
+    "catalog_entry_key": "reset_articular_ao_fim_do_dia__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Flow leve coluna e anca",
+    "catalog_entry_key": "flow_leve_coluna_e_anca__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cat cow e 90/90 leve",
+    "catalog_entry_key": "cat_cow_e_90_90_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Flow leve de ombros",
+    "catalog_entry_key": "flow_leve_de_ombros__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Alongamento estático leve geral",
+    "catalog_entry_key": "alongamento_estatico_leve_geral__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência leve pós-treino superior",
+    "catalog_entry_key": "sequencia_leve_pos_treino_superior__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência leve pós-treino inferior",
+    "catalog_entry_key": "sequencia_leve_pos_treino_inferior__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Alongamentos leves à noite",
+    "catalog_entry_key": "alongamentos_leves_a_noite__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Pescoço e peito pós-computador",
+    "catalog_entry_key": "pescoco_e_peito_pos_computador__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Anca e posterior leve",
+    "catalog_entry_key": "anca_e_posterior_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Alongamento leve pós-pontapés",
+    "catalog_entry_key": "alongamento_leve_pos_pontapes__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Foam roller nos quadríceps",
+    "catalog_entry_key": "foam_roller_nos_quadriceps__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Foam roller nos gémeos",
+    "catalog_entry_key": "foam_roller_nos_gemeos__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Foam roller nos glúteos",
+    "catalog_entry_key": "foam_roller_nos_gluteos__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Foam roller no dorsal",
+    "catalog_entry_key": "foam_roller_no_dorsal__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Foam roller na parte alta das costas",
+    "catalog_entry_key": "foam_roller_na_parte_alta_das_costas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Foam roller nos adutores",
+    "catalog_entry_key": "foam_roller_nos_adutores__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência foam roller pós-pernas",
+    "catalog_entry_key": "sequencia_foam_roller_pos_pernas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Foam roller pós-artes marciais",
+    "catalog_entry_key": "foam_roller_pos_artes_marciais__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bola de massagem na planta do pé",
+    "catalog_entry_key": "bola_de_massagem_na_planta_do_pe__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bola de massagem nos glúteos",
+    "catalog_entry_key": "bola_de_massagem_nos_gluteos__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bola de massagem no peitoral contra parede",
+    "catalog_entry_key": "bola_de_massagem_no_peitoral_contra_parede__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bola no trapézio contra parede",
+    "catalog_entry_key": "bola_no_trapezio_contra_parede__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bola de massagem no antebraço",
+    "catalog_entry_key": "bola_de_massagem_no_antebraco__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Bola nas costas altas contra parede",
+    "catalog_entry_key": "bola_nas_costas_altas_contra_parede__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Pistola de massagem nos quadríceps",
+    "catalog_entry_key": "pistola_de_massagem_nos_quadriceps__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Pistola de massagem nos glúteos",
+    "catalog_entry_key": "pistola_de_massagem_nos_gluteos__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Pistola de massagem nos gémeos",
+    "catalog_entry_key": "pistola_de_massagem_nos_gemeos__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Pistola de massagem no dorsal",
+    "catalog_entry_key": "pistola_de_massagem_no_dorsal__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Pistola de massagem no deltoide",
+    "catalog_entry_key": "pistola_de_massagem_no_deltoide__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Protocolo seguro de pistola de massagem",
+    "catalog_entry_key": "protocolo_seguro_de_pistola_de_massagem__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Calor leve para relaxamento muscular",
+    "catalog_entry_key": "calor_leve_para_relaxamento_muscular__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Duche quente pós-treino leve",
+    "catalog_entry_key": "duche_quente_pos_treino_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Frio local curto",
+    "catalog_entry_key": "frio_local_curto__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Contraste simples no duche",
+    "catalog_entry_key": "contraste_simples_no_duche__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Calor para rigidez matinal",
+    "catalog_entry_key": "calor_para_rigidez_matinal__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Checklist de segurança para temperatura",
+    "catalog_entry_key": "checklist_de_seguranca_para_temperatura__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Shake out de mãos entre rounds",
+    "catalog_entry_key": "shake_out_de_maos_entre_rounds__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Shake out pós-barras",
+    "catalog_entry_key": "shake_out_pos_barras__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Alongamento leve de flexores do punho",
+    "catalog_entry_key": "alongamento_leve_de_flexores_do_punho__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Alongamento leve de extensores do punho",
+    "catalog_entry_key": "alongamento_leve_de_extensores_do_punho__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Extensão dos dedos com elástico leve",
+    "catalog_entry_key": "extensao_dos_dedos_com_elastico_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência pós-BJJ para pega",
+    "catalog_entry_key": "sequencia_pos_bjj_para_pega__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência pós-barras e farmer walks",
+    "catalog_entry_key": "sequencia_pos_barras_e_farmer_walks__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset de punhos após apoios",
+    "catalog_entry_key": "reset_de_punhos_apos_apoios__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Recuperação dos pés após dia em pé",
+    "catalog_entry_key": "recuperacao_dos_pes_apos_dia_em_pe__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Libertação leve da planta do pé",
+    "catalog_entry_key": "libertacao_leve_da_planta_do_pe__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Mobilidade leve de tornozelo pós-treino",
+    "catalog_entry_key": "mobilidade_leve_de_tornozelo_pos_treino__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Recuperação de gémeos pós-corrida",
+    "catalog_entry_key": "recuperacao_de_gemeos_pos_corrida__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Recuperação de tibial anterior pós-passadeira",
+    "catalog_entry_key": "recuperacao_de_tibial_anterior_pos_passadeira__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Elevação leve de pernas",
+    "catalog_entry_key": "elevacao_leve_de_pernas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência pós-trabalho físico de pernas",
+    "catalog_entry_key": "sequencia_pos_trabalho_fisico_de_pernas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Posição de descarga lombar com pernas elevadas",
+    "catalog_entry_key": "posicao_de_descarga_lombar_com_pernas_elevadas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Child pose leve para lombar",
+    "catalog_entry_key": "child_pose_leve_para_lombar__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cat cow leve de recuperação",
+    "catalog_entry_key": "cat_cow_leve_de_recuperacao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset coluna pós-computador",
+    "catalog_entry_key": "reset_coluna_pos_computador__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset de costas altas e escápulas",
+    "catalog_entry_key": "reset_de_costas_altas_e_escapulas__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Recuperação lombar pós-dobradiça",
+    "catalog_entry_key": "recuperacao_lombar_pos_dobradica__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Checklist de alerta para lombar",
+    "catalog_entry_key": "checklist_de_alerta_para_lombar__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência pós-Karate",
+    "catalog_entry_key": "sequencia_pos_karate__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência pós-BJJ",
+    "catalog_entry_key": "sequencia_pos_bjj__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sequência pós-saco",
+    "catalog_entry_key": "sequencia_pos_saco__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Pescoço e ombros pós-grappling",
+    "catalog_entry_key": "pescoco_e_ombros_pos_grappling__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Adutores e anca pós-artes marciais",
+    "catalog_entry_key": "adutores_e_anca_pos_artes_marciais__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Desligar sistema nervoso pós-treino marcial",
+    "catalog_entry_key": "desligar_sistema_nervoso_pos_treino_marcial__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Reset leve pós-sparring técnico",
+    "catalog_entry_key": "reset_leve_pos_sparring_tecnico__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Check-in de carga do dia",
+    "catalog_entry_key": "check_in_de_carga_do_dia__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Semana de deload por volume",
+    "catalog_entry_key": "semana_de_deload_por_volume__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Semana de deload por intensidade",
+    "catalog_entry_key": "semana_de_deload_por_intensidade__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Trocar sessão pesada por sessão leve",
+    "catalog_entry_key": "trocar_sessao_pesada_por_sessao_leve__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Regra entre treinos do mesmo músculo",
+    "catalog_entry_key": "regra_entre_treinos_do_mesmo_musculo__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Regra entre treinos de artes marciais",
+    "catalog_entry_key": "regra_entre_treinos_de_artes_marciais__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Escala simples de prontidão",
+    "catalog_entry_key": "escala_simples_de_prontidao__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Checklist de sinais de sobrecarga",
+    "catalog_entry_key": "checklist_de_sinais_de_sobrecarga__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Rotina básica pré-sono",
+    "catalog_entry_key": "rotina_basica_pre_sono__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Desaceleração ao fim do dia",
+    "catalog_entry_key": "desaceleracao_ao_fim_do_dia__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Mobilidade leve antes de dormir",
+    "catalog_entry_key": "mobilidade_leve_antes_de_dormir__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Respiração para pré-sono",
+    "catalog_entry_key": "respiracao_para_pre_sono__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Recuperação após treino tardio",
+    "catalog_entry_key": "recuperacao_apos_treino_tardio__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Dia de descanso estruturado",
+    "catalog_entry_key": "dia_de_descanso_estruturado__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Triagem de dor muscular tardia",
+    "catalog_entry_key": "triagem_de_dor_muscular_tardia__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Regra para dor articular",
+    "catalog_entry_key": "regra_para_dor_articular__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Regra para tendão irritado",
+    "catalog_entry_key": "regra_para_tendao_irritado__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Regra para formigueiro ou dormência",
+    "catalog_entry_key": "regra_para_formigueiro_ou_dormencia__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Regra de parar em lesão aguda",
+    "catalog_entry_key": "regra_de_parar_em_lesao_aguda__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Sinais para avaliação profissional",
+    "catalog_entry_key": "sinais_para_avaliacao_profissional__recuperacao",
+    "primary_type": "recuperacao"
+  },
+  {
+    "name": "Cardio leve geral",
+    "catalog_entry_key": "cardio_leve_geral__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Marcha no lugar progressiva",
+    "catalog_entry_key": "marcha_no_lugar_progressiva__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Caminhada leve pré-treino",
+    "catalog_entry_key": "caminhada_leve_pre_treino__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Bicicleta leve pré-treino",
+    "catalog_entry_key": "bicicleta_leve_pre_treino__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Passadeira caminhada progressiva",
+    "catalog_entry_key": "passadeira_caminhada_progressiva__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Passadeira corrida muito leve",
+    "catalog_entry_key": "passadeira_corrida_muito_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Corda leve de aquecimento",
+    "catalog_entry_key": "corda_leve_de_aquecimento__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Corda boxer step leve",
+    "catalog_entry_key": "corda_boxer_step_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Sombra leve geral",
+    "catalog_entry_key": "sombra_leve_geral__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Sombra com guarda e passos curtos",
+    "catalog_entry_key": "sombra_com_guarda_e_passos_curtos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Respiração em rampa leve",
+    "catalog_entry_key": "respiracao_em_rampa_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Caminhada com respiração progressiva",
+    "catalog_entry_key": "caminhada_com_respiracao_progressiva__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "CARs gerais de corpo inteiro",
+    "catalog_entry_key": "cars_gerais_de_corpo_inteiro__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Sequência pescoço, ombros, anca e tornozelos",
+    "catalog_entry_key": "sequencia_pescoco_ombros_anca_e_tornozelos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Pescoço suave de aquecimento",
+    "catalog_entry_key": "pescoco_suave_de_aquecimento__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Círculos de ombros",
+    "catalog_entry_key": "circulos_de_ombros__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Shoulder CARs leves",
+    "catalog_entry_key": "shoulder_cars_leves__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Círculos de punho e abrir dedos",
+    "catalog_entry_key": "circulos_de_punho_e_abrir_dedos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Rocking leve de punhos",
+    "catalog_entry_key": "rocking_leve_de_punhos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Cat cow leve pré-treino",
+    "catalog_entry_key": "cat_cow_leve_pre_treino__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Rotação torácica em quadrupedia",
+    "catalog_entry_key": "rotacao_toracica_em_quadrupedia__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Círculos de anca com apoio",
+    "catalog_entry_key": "circulos_de_anca_com_apoio__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Flexão e extensão leve do joelho",
+    "catalog_entry_key": "flexao_e_extensao_leve_do_joelho__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Círculos de tornozelo e dedos",
+    "catalog_entry_key": "circulos_de_tornozelo_e_dedos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "World greatest stretch dinâmico",
+    "catalog_entry_key": "world_greatest_stretch_dinamico__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Flow dinâmico curto",
+    "catalog_entry_key": "flow_dinamico_curto__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Shin box switches dinâmicos",
+    "catalog_entry_key": "shin_box_switches_dinamicos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "90/90 switches leves",
+    "catalog_entry_key": "90_90_switches_leves__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Open book dinâmico",
+    "catalog_entry_key": "open_book_dinamico__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Rotação torácica com alcance",
+    "catalog_entry_key": "rotacao_toracica_com_alcance__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Knee to wall dinâmico",
+    "catalog_entry_key": "knee_to_wall_dinamico__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Rocking de tornozelo em avanço",
+    "catalog_entry_key": "rocking_de_tornozelo_em_avanco__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Leg swings frontais controlados",
+    "catalog_entry_key": "leg_swings_frontais_controlados__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Walkouts de posterior leves",
+    "catalog_entry_key": "walkouts_de_posterior_leves__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Rock back de adutores dinâmico",
+    "catalog_entry_key": "rock_back_de_adutores_dinamico__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Cossack parcial dinâmico",
+    "catalog_entry_key": "cossack_parcial_dinamico__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Wall slides dinâmicos",
+    "catalog_entry_key": "wall_slides_dinamicos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Agachamento assistido dinâmico",
+    "catalog_entry_key": "agachamento_assistido_dinamico__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Glute bridge de ativação",
+    "catalog_entry_key": "glute_bridge_de_ativacao__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Glute bridge com pausa no topo",
+    "catalog_entry_key": "glute_bridge_com_pausa_no_topo__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Clam shell leve",
+    "catalog_entry_key": "clam_shell_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Lateral band walk",
+    "catalog_entry_key": "lateral_band_walk__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Monster walk leve",
+    "catalog_entry_key": "monster_walk_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Rotação externa de anca com mini band",
+    "catalog_entry_key": "rotacao_externa_de_anca_com_mini_band__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Hip airplane assistido",
+    "catalog_entry_key": "hip_airplane_assistido__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Marcha de joelho alto controlada",
+    "catalog_entry_key": "marcha_de_joelho_alto_controlada__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Câmara de pontapé frontal ativa",
+    "catalog_entry_key": "camara_de_pontape_frontal_ativa__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Adductor squeeze leve",
+    "catalog_entry_key": "adductor_squeeze_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Copenhagen regressão curta",
+    "catalog_entry_key": "copenhagen_regressao_curta__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Equilíbrio unipodal com joelho alto",
+    "catalog_entry_key": "equilibrio_unipodal_com_joelho_alto__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Agachamento com pausa leve",
+    "catalog_entry_key": "agachamento_com_pausa_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Squat to stand leve",
+    "catalog_entry_key": "squat_to_stand_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Câmara de pontapé circular ativa",
+    "catalog_entry_key": "camara_de_pontape_circular_ativa__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Respiração com bracing leve",
+    "catalog_entry_key": "respiracao_com_bracing_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Brace em pé antes de carga",
+    "catalog_entry_key": "brace_em_pe_antes_de_carga__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Prancha curta de ativação",
+    "catalog_entry_key": "prancha_curta_de_ativacao__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Hollow hold leve",
+    "catalog_entry_key": "hollow_hold_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Pallof press leve",
+    "catalog_entry_key": "pallof_press_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Dead bug de ativação",
+    "catalog_entry_key": "dead_bug_de_ativacao__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Dead bug com expiração",
+    "catalog_entry_key": "dead_bug_com_expiracao__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Bird dog de ativação",
+    "catalog_entry_key": "bird_dog_de_ativacao__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Side plank curta",
+    "catalog_entry_key": "side_plank_curta__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Side plank com joelhos apoiados",
+    "catalog_entry_key": "side_plank_com_joelhos_apoiados__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "McGill curl-up leve",
+    "catalog_entry_key": "mcgill_curl_up_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Rotação torácica com core ativo",
+    "catalog_entry_key": "rotacao_toracica_com_core_ativo__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Bear hold curto",
+    "catalog_entry_key": "bear_hold_curto__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Scapular push-up leve",
+    "catalog_entry_key": "scapular_push_up_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Prancha com protração escapular",
+    "catalog_entry_key": "prancha_com_protracao_escapular__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Band pull-apart leve",
+    "catalog_entry_key": "band_pull_apart_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Retração escapular em pé",
+    "catalog_entry_key": "retracao_escapular_em_pe__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Scapular pull-up leve",
+    "catalog_entry_key": "scapular_pull_up_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Depressão escapular com elástico",
+    "catalog_entry_key": "depressao_escapular_com_elastico__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Wall slides com foco em escápula",
+    "catalog_entry_key": "wall_slides_com_foco_em_escapula__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Y raise leve",
+    "catalog_entry_key": "y_raise_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Prone Y T W leve",
+    "catalog_entry_key": "prone_y_t_w_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Serratus wall slide",
+    "catalog_entry_key": "serratus_wall_slide__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Face pull leve de ativação",
+    "catalog_entry_key": "face_pull_leve_de_ativacao__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Guarda alta com serrátil ativo",
+    "catalog_entry_key": "guarda_alta_com_serratil_ativo__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Rotação externa com elástico leve",
+    "catalog_entry_key": "rotacao_externa_com_elastico_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Rotação externa deitado de lado leve",
+    "catalog_entry_key": "rotacao_externa_deitado_de_lado_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Rotação interna com elástico leve",
+    "catalog_entry_key": "rotacao_interna_com_elastico_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Isometria de rotação externa na parede",
+    "catalog_entry_key": "isometria_de_rotacao_externa_na_parede__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Isometria de rotação interna na parede",
+    "catalog_entry_key": "isometria_de_rotacao_interna_na_parede__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Overhead hold leve",
+    "catalog_entry_key": "overhead_hold_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Bottoms-up carry leve",
+    "catalog_entry_key": "bottoms_up_carry_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Push-up plus regressivo",
+    "catalog_entry_key": "push_up_plus_regressivo__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Straight arm pulldown leve",
+    "catalog_entry_key": "straight_arm_pulldown_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Jab leve no ar com guarda",
+    "catalog_entry_key": "jab_leve_no_ar_com_guarda__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Sombra só de mãos leve",
+    "catalog_entry_key": "sombra_so_de_maos_leve__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Frames leves em quadrupedia",
+    "catalog_entry_key": "frames_leves_em_quadrupedia__ativacao",
+    "primary_type": "ativacao"
+  },
+  {
+    "name": "Rocking de punhos para apoio",
+    "catalog_entry_key": "rocking_de_punhos_para_apoio__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Punhos para flexões na parede",
+    "catalog_entry_key": "punhos_para_flexoes_na_parede__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Punhos e dedos para grappling",
+    "catalog_entry_key": "punhos_e_dedos_para_grappling__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento de pega com kimono",
+    "catalog_entry_key": "aquecimento_de_pega_com_kimono__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Pega leve em toalha",
+    "catalog_entry_key": "pega_leve_em_toalha__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento de pega para barras",
+    "catalog_entry_key": "aquecimento_de_pega_para_barras__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Extensão de dedos com elástico leve",
+    "catalog_entry_key": "extensao_de_dedos_com_elastico_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Pronação e supinação ativa",
+    "catalog_entry_key": "pronacao_e_supinacao_ativa__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Pronação e supinação com halter leve",
+    "catalog_entry_key": "pronacao_e_supinacao_com_halter_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Alinhamento de punho na parede",
+    "catalog_entry_key": "alinhamento_de_punho_na_parede__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Toques leves no saco para punhos",
+    "catalog_entry_key": "toques_leves_no_saco_para_punhos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Checklist de mãos antes de contacto",
+    "catalog_entry_key": "checklist_de_maos_antes_de_contacto__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Short foot de aquecimento",
+    "catalog_entry_key": "short_foot_de_aquecimento__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Doming do pé",
+    "catalog_entry_key": "doming_do_pe__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Toe yoga",
+    "catalog_entry_key": "toe_yoga__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Knee to wall pré-agachamento",
+    "catalog_entry_key": "knee_to_wall_pre_agachamento__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Equilíbrio unipodal",
+    "catalog_entry_key": "equilibrio_unipodal__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Elevação de tibial na parede",
+    "catalog_entry_key": "elevacao_de_tibial_na_parede__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Toe raises em pé",
+    "catalog_entry_key": "toe_raises_em_pe__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Calf raises leves",
+    "catalog_entry_key": "calf_raises_leves__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Soleus raises leves",
+    "catalog_entry_key": "soleus_raises_leves__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Pogo prep baixo",
+    "catalog_entry_key": "pogo_prep_baixo__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Pivots controlados",
+    "catalog_entry_key": "pivots_controlados__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Base marcial com troca de peso",
+    "catalog_entry_key": "base_marcial_com_troca_de_peso__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Circuito leve de ombro preventivo",
+    "catalog_entry_key": "circuito_leve_de_ombro_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Rotação externa progressiva leve",
+    "catalog_entry_key": "rotacao_externa_progressiva_leve__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Face pull preventivo leve",
+    "catalog_entry_key": "face_pull_preventivo_leve__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Y T W preventivo",
+    "catalog_entry_key": "y_t_w_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Isometria leve de flexão do cotovelo",
+    "catalog_entry_key": "isometria_leve_de_flexao_do_cotovelo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Isometria leve de extensão do cotovelo",
+    "catalog_entry_key": "isometria_leve_de_extensao_do_cotovelo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Circuito punho-cotovelo leve",
+    "catalog_entry_key": "circuito_punho_cotovelo_leve__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Sequência preventiva para striking",
+    "catalog_entry_key": "sequencia_preventiva_para_striking__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Sequência preventiva para grappling",
+    "catalog_entry_key": "sequencia_preventiva_para_grappling__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Wall slide e rotação externa",
+    "catalog_entry_key": "wall_slide_e_rotacao_externa__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Scapular push-up preventivo",
+    "catalog_entry_key": "scapular_push_up_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Rotação externa isométrica semanal",
+    "catalog_entry_key": "rotacao_externa_isometrica_semanal__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Hinge drill com cabo de vassoura",
+    "catalog_entry_key": "hinge_drill_com_cabo_de_vassoura__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Dead bug preventivo",
+    "catalog_entry_key": "dead_bug_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Hip airplane assistido preventivo",
+    "catalog_entry_key": "hip_airplane_assistido_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Step down controlado",
+    "catalog_entry_key": "step_down_controlado__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Agachamento para caixa controlado",
+    "catalog_entry_key": "agachamento_para_caixa_controlado__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Copenhagen regressão de joelho apoiado",
+    "catalog_entry_key": "copenhagen_regressao_de_joelho_apoiado__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Adductor squeeze preventivo",
+    "catalog_entry_key": "adductor_squeeze_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Hip hinge unilateral assistido",
+    "catalog_entry_key": "hip_hinge_unilateral_assistido__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Nordic regressão isométrica",
+    "catalog_entry_key": "nordic_regressao_isometrica__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Monster walk preventivo",
+    "catalog_entry_key": "monster_walk_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Split squat controlado",
+    "catalog_entry_key": "split_squat_controlado__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Bird dog e shrimp leve",
+    "catalog_entry_key": "bird_dog_e_shrimp_leve__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Equilíbrio unipodal preventivo",
+    "catalog_entry_key": "equilibrio_unipodal_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Short foot preventivo",
+    "catalog_entry_key": "short_foot_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Toe yoga preventivo",
+    "catalog_entry_key": "toe_yoga_preventivo__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Elevação de tibial progressiva",
+    "catalog_entry_key": "elevacao_de_tibial_progressiva__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Calf raise controlado",
+    "catalog_entry_key": "calf_raise_controlado__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Soleus raise controlado",
+    "catalog_entry_key": "soleus_raise_controlado__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Isometria de gémeos em meia ponta",
+    "catalog_entry_key": "isometria_de_gemeos_em_meia_ponta__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Aterragem suave de baixa altura",
+    "catalog_entry_key": "aterragem_suave_de_baixa_altura__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Circuito perna inferior para corrida",
+    "catalog_entry_key": "circuito_perna_inferior_para_corrida__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Circuito tornozelo para footwork marcial",
+    "catalog_entry_key": "circuito_tornozelo_para_footwork_marcial__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Aquecimento específico para agachamento",
+    "catalog_entry_key": "aquecimento_especifico_para_agachamento__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Squat sem carga com pausa",
+    "catalog_entry_key": "squat_sem_carga_com_pausa__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento específico para hinge",
+    "catalog_entry_key": "aquecimento_especifico_para_hinge__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Good morning sem carga",
+    "catalog_entry_key": "good_morning_sem_carga__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento específico para empurrar",
+    "catalog_entry_key": "aquecimento_especifico_para_empurrar__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Flexão inclinada leve",
+    "catalog_entry_key": "flexao_inclinada_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento específico para puxar",
+    "catalog_entry_key": "aquecimento_especifico_para_puxar__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Remada elástico leve",
+    "catalog_entry_key": "remada_elastico_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento específico para lunge",
+    "catalog_entry_key": "aquecimento_especifico_para_lunge__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento específico para carries",
+    "catalog_entry_key": "aquecimento_especifico_para_carries__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento específico para rotação",
+    "catalog_entry_key": "aquecimento_especifico_para_rotacao__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aterragem e pogo prep",
+    "catalog_entry_key": "aterragem_e_pogo_prep__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Séries de aproximação",
+    "catalog_entry_key": "series_de_aproximacao__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Série técnica com 40 a 60 por cento da carga",
+    "catalog_entry_key": "serie_tecnica_com_40_a_60_por_cento_da_carga__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para supino",
+    "catalog_entry_key": "aquecimento_para_supino__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para flexões",
+    "catalog_entry_key": "aquecimento_para_flexoes__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para remadas",
+    "catalog_entry_key": "aquecimento_para_remadas__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para barras",
+    "catalog_entry_key": "aquecimento_para_barras__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para ombro",
+    "catalog_entry_key": "aquecimento_para_ombro__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para braços",
+    "catalog_entry_key": "aquecimento_para_bracos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para dia de squat",
+    "catalog_entry_key": "aquecimento_para_dia_de_squat__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para dia de deadlift",
+    "catalog_entry_key": "aquecimento_para_dia_de_deadlift__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para treino de core",
+    "catalog_entry_key": "aquecimento_para_treino_de_core__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Ramp-up para press vertical",
+    "catalog_entry_key": "ramp_up_para_press_vertical__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Entrada progressiva no cardio",
+    "catalog_entry_key": "entrada_progressiva_no_cardio__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para corrida exterior",
+    "catalog_entry_key": "aquecimento_para_corrida_exterior__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para passadeira",
+    "catalog_entry_key": "aquecimento_para_passadeira__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para corda",
+    "catalog_entry_key": "aquecimento_para_corda__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Corda progressiva por blocos",
+    "catalog_entry_key": "corda_progressiva_por_blocos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para HIIT peso corporal",
+    "catalog_entry_key": "aquecimento_para_hiit_peso_corporal__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Ramp-up de HIIT em máquina",
+    "catalog_entry_key": "ramp_up_de_hiit_em_maquina__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para sprints",
+    "catalog_entry_key": "aquecimento_para_sprints__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Acelerações progressivas",
+    "catalog_entry_key": "aceleracoes_progressivas__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para mudanças de direção",
+    "catalog_entry_key": "aquecimento_para_mudancas_de_direcao__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para bicicleta ou elíptica",
+    "catalog_entry_key": "aquecimento_para_bicicleta_ou_eliptica__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para remo ergómetro",
+    "catalog_entry_key": "aquecimento_para_remo_ergometro__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento marcial geral",
+    "catalog_entry_key": "aquecimento_marcial_geral__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para Karate",
+    "catalog_entry_key": "aquecimento_para_karate__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Bases de Karate progressivas",
+    "catalog_entry_key": "bases_de_karate_progressivas__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para BJJ",
+    "catalog_entry_key": "aquecimento_para_bjj__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Solo leve de BJJ",
+    "catalog_entry_key": "solo_leve_de_bjj__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para Boxe",
+    "catalog_entry_key": "aquecimento_para_boxe__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Footwork de Boxe progressivo",
+    "catalog_entry_key": "footwork_de_boxe_progressivo__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para Kickboxing e Muay Thai",
+    "catalog_entry_key": "aquecimento_para_kickboxing_e_muay_thai__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Checks e teeps leves",
+    "catalog_entry_key": "checks_e_teeps_leves__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para Judo",
+    "catalog_entry_key": "aquecimento_para_judo__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Ukemi progressivo",
+    "catalog_entry_key": "ukemi_progressivo__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para Taekwondo",
+    "catalog_entry_key": "aquecimento_para_taekwondo__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Câmaras de pontapé progressivas",
+    "catalog_entry_key": "camaras_de_pontape_progressivas__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aquecimento para defesa pessoal funcional",
+    "catalog_entry_key": "aquecimento_para_defesa_pessoal_funcional__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Guarda, saída e levantar do chão",
+    "catalog_entry_key": "guarda_saida_e_levantar_do_chao__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Primer neural geral curto",
+    "catalog_entry_key": "primer_neural_geral_curto__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Repetições rápidas submáximas",
+    "catalog_entry_key": "repeticoes_rapidas_submaximas__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Equilíbrio unilateral como primer",
+    "catalog_entry_key": "equilibrio_unilateral_como_primer__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Reação leve com comandos",
+    "catalog_entry_key": "reacao_leve_com_comandos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Ensaio técnico do exercício principal",
+    "catalog_entry_key": "ensaio_tecnico_do_exercicio_principal__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Potenciação leve para força",
+    "catalog_entry_key": "potenciacao_leve_para_forca__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Timing marcial leve",
+    "catalog_entry_key": "timing_marcial_leve__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Agilidade progressiva com cones",
+    "catalog_entry_key": "agilidade_progressiva_com_cones__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Passos laterais progressivos",
+    "catalog_entry_key": "passos_laterais_progressivos__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Aceleração técnica curta",
+    "catalog_entry_key": "aceleracao_tecnica_curta__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Preparação para ombros rígidos",
+    "catalog_entry_key": "preparacao_para_ombros_rigidos__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Preparação para lombar rígida",
+    "catalog_entry_key": "preparacao_para_lombar_rigida__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Preparação para joelho sensível",
+    "catalog_entry_key": "preparacao_para_joelho_sensivel__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Preparação para anca rígida",
+    "catalog_entry_key": "preparacao_para_anca_rigida__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Preparação para gémeos tensos",
+    "catalog_entry_key": "preparacao_para_gemeos_tensos__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Preparação quando a pega está cansada",
+    "catalog_entry_key": "preparacao_quando_a_pega_esta_cansada__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Preparação pós-computador antes de treinar",
+    "catalog_entry_key": "preparacao_pos_computador_antes_de_treinar__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Aquecimento adaptado a dias de calor",
+    "catalog_entry_key": "aquecimento_adaptado_a_dias_de_calor__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Wall slides pós-computador pré-treino",
+    "catalog_entry_key": "wall_slides_pos_computador_pre_treino__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Respiração e pelvic tilts pré-treino",
+    "catalog_entry_key": "respiracao_e_pelvic_tilts_pre_treino__prevencao",
+    "primary_type": "prevencao"
+  },
+  {
+    "name": "Check-in geral antes do treino",
+    "catalog_entry_key": "check_in_geral_antes_do_treino__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Check de dor articular",
+    "catalog_entry_key": "check_de_dor_articular__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Check de tendões",
+    "catalog_entry_key": "check_de_tendoes__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Check antes de contacto marcial",
+    "catalog_entry_key": "check_antes_de_contacto_marcial__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Check antes de HIIT ou sprints",
+    "catalog_entry_key": "check_antes_de_hiit_ou_sprints__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Check antes de força pesada",
+    "catalog_entry_key": "check_antes_de_forca_pesada__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Check do intervalo desde o último treino",
+    "catalog_entry_key": "check_do_intervalo_desde_o_ultimo_treino__aquecimento",
+    "primary_type": "aquecimento"
+  },
+  {
+    "name": "Ajuste do plano pelo estado do dia",
+    "catalog_entry_key": "ajuste_do_plano_pelo_estado_do_dia__aquecimento",
+    "primary_type": "aquecimento"
+  }
+]

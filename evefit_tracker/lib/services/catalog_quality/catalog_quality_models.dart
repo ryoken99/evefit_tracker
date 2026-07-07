@@ -67,11 +67,13 @@ class CatalogAuditResult {
     required this.exercises,
     required this.issues,
     required this.scenarios,
+    this.totalMatrix,
   });
 
   final List<Exercise> exercises;
   final List<CatalogIssue> issues;
   final List<CatalogScenarioResult> scenarios;
+  final Object? totalMatrix;
 
   int get totalExercises => exercises.length;
   int get uniqueCanonicalIds =>
@@ -102,5 +104,6 @@ class CatalogAuditResult {
     'counts_by_primary_type': countsByPrimaryType,
     'issues': issues.map((issue) => issue.toJson()).toList(),
     'scenarios': scenarios.map((scenario) => scenario.toJson()).toList(),
+    if (totalMatrix != null) 'total_matrix': totalMatrix,
   };
 }
