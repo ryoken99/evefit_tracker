@@ -1,3 +1,12 @@
+# v0.9.4
+
+- Criada alfandega permanente dos catalogos com `dart run tool/catalog_audit_report.dart --strict`.
+- Corrigida passadeira em `Cardio - Passadeira - Resistencia aerobica` e adicionadas/corrigidas entradas essenciais de passadeira.
+- Corrigido `Adductor squeeze leve` com explicacao real para iniciantes e musculos corretos.
+- Adicionados inventario, gap analysis, docs de qualidade e guia para adicionar exercicio novo.
+- Validadores agora falham em problemas criticos de IDs, filtros, linguagem, conteudo, seguranca, equipamento e local.
+- Atualizada versao da app para v0.9.4.
+
 # v0.9.3
 
 - Reconstrucao canonica do catalogo de exercicios, separando `canonical_id` de `catalog_entry_key`.

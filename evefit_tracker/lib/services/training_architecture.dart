@@ -2836,6 +2836,47 @@ class TrainingArchitecture {
       add(region: 'cardio', group: 'cardio_machine', subgroup: 'treadmill');
       if (_has(name, ['hiit'])) {
         add(region: 'cardio', group: 'hiit_group', subgroup: 'hiit');
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_intervals', 'hiit'],
+        );
+      } else if (_has(name, ['interval', 'sprint'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_intervals'],
+        );
+      } else if (_has(name, ['aquecimento', 'caminhada na passadeira'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_warmup', 'treadmill_easy'],
+        );
+      } else if (_has(name, ['ritmo leve', 'cooldown', 'arrefecimento'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_easy'],
+        );
+      } else if (_has(name, ['ritmo moderado', 'resistencia', 'resistência'])) {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_moderate', 'treadmill_aerobic'],
+        );
+      } else {
+        add(
+          region: 'cardio',
+          group: 'cardio_machine',
+          subgroup: 'treadmill',
+          muscles: ['treadmill_aerobic'],
+        );
       }
     } else if (_has(name, ['bicicleta'])) {
       add(region: 'cardio', group: 'cardio_general', subgroup: 'bike');

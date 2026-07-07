@@ -1,3 +1,14 @@
+# v0.9.4
+
+- Criada alfandega permanente dos catalogos com auditoria reutilizavel, modo relatorio e modo `--strict`.
+- Adicionados validadores permanentes para identidade canonica, taxonomia, equipamento/local, filtros, conteudo, seguranca e linguagem.
+- Gerados inventario completo e gap analysis do catalogo em `build/reports/`.
+- Corrigido bug de `Cardio - Passadeira - Resistencia aerobica`, incluindo exercicios essenciais de passadeira.
+- Corrigidas descricoes genericas e musculos de `Adductor squeeze leve` e variantes relacionadas.
+- Criado comando unico de QA em `tool/run_quality_gate.ps1` e workflow de quality gate para PRs.
+- QA, testes e build Android validados para versao testavel v0.9.4.
+- Atualizada versao da app para v0.9.4.
+
 # v0.9.3
 
 - Reconstrucao canonica do catalogo de exercicios, separando `canonical_id` de `catalog_entry_key`.

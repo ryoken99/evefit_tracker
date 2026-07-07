@@ -453,6 +453,9 @@ class TrainingFlow {
     'outdoor_run': 'Corrida exterior',
     'hiit': 'HIIT',
     'aerobic_endurance': 'Resistência aeróbia',
+    'treadmill_warmup': 'Aquecimento',
+    'treadmill_easy_pace': 'Ritmo leve',
+    'treadmill_moderate_pace': 'Ritmo moderado',
     'treadmill_intervals': 'Intervalos / HIIT',
   };
 
@@ -658,7 +661,13 @@ class TrainingFlow {
     String equipmentKey,
   ) {
     final keys = switch (equipmentKey) {
-      'treadmill' => ['aerobic_endurance', 'treadmill_intervals'],
+      'treadmill' => [
+        'aerobic_endurance',
+        'treadmill_warmup',
+        'treadmill_easy_pace',
+        'treadmill_moderate_pace',
+        'treadmill_intervals',
+      ],
       'bike' => ['aerobic_endurance', 'hiit'],
       'elliptical' => ['aerobic_endurance'],
       'jump_rope' => ['jump_rope', 'hiit'],
@@ -850,6 +859,9 @@ class TrainingFlow {
         subgroupKey: 'treadmill',
         specificMuscleKey: switch (focusKey) {
           'aerobic_endurance' => 'treadmill_aerobic',
+          'treadmill_warmup' => 'treadmill_warmup',
+          'treadmill_easy_pace' => 'treadmill_easy',
+          'treadmill_moderate_pace' => 'treadmill_moderate',
           'treadmill_intervals' || 'hiit' => 'treadmill_intervals',
           _ => '',
         },

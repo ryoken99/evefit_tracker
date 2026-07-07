@@ -99,5 +99,65 @@ class CanonicalExerciseIdentityService {
       primaryType: 'artes_marciais',
       secondaryTypes: {'mobilidade', 'defesa_pessoal'},
     ),
+    'passadeira_aquecimento': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_warmup',
+      aliases: {'passadeira_aquecimento'},
+      primaryType: 'cardio',
+      secondaryTypes: {'aquecimento'},
+    ),
+    'passadeira_cooldown': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_cooldown',
+      aliases: {'passadeira_cooldown', 'treadmill_cooldown'},
+      primaryType: 'cardio',
+      secondaryTypes: {'recuperacao'},
+    ),
+    'passadeira_resistencia_aerobia': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_aerobic_endurance',
+      aliases: {'passadeira_resistencia_aerobia'},
+      primaryType: 'cardio',
+      secondaryTypes: {'resistencia_aerobia'},
+    ),
+    'passadeira_ritmo_leve': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_easy_pace',
+      aliases: {'passadeira_ritmo_leve'},
+      primaryType: 'cardio',
+      secondaryTypes: {'aquecimento', 'recuperacao'},
+    ),
+    'passadeira_ritmo_moderado': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_moderate_pace',
+      aliases: {'passadeira_ritmo_moderado'},
+      primaryType: 'cardio',
+      secondaryTypes: {'resistencia_aerobia'},
+    ),
+    'passadeira_intervalos': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_intervals',
+      aliases: {'passadeira_intervalos'},
+      primaryType: 'cardio',
+      secondaryTypes: {'intervalos'},
+    ),
+    'hiit_passadeira': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_hiit',
+      aliases: {'hiit_passadeira'},
+      primaryType: 'cardio',
+      secondaryTypes: {'hiit', 'intervalos'},
+    ),
+    'caminhada_na_passadeira': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_walk',
+      aliases: {'caminhada_na_passadeira'},
+      primaryType: 'cardio',
+      secondaryTypes: {'aquecimento', 'recuperacao'},
+    ),
+    'corrida_na_passadeira': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_run',
+      aliases: {'corrida_na_passadeira'},
+      primaryType: 'cardio',
+      secondaryTypes: {'resistencia_aerobia'},
+    ),
+    'passadeira_caminhada_com_inclinacao': CanonicalExerciseIdentity(
+      canonicalId: 'treadmill_incline_walk',
+      aliases: {'passadeira_caminhada_com_inclinacao'},
+      primaryType: 'cardio',
+      secondaryTypes: {'resistencia_aerobia'},
+    ),
   };
 }

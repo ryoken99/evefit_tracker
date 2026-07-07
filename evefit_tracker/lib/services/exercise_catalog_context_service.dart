@@ -151,7 +151,7 @@ class ExerciseCatalogContextService {
         ExerciseCatalogEntry(
           id: 'E${index.toString().padLeft(3, '0')}',
           name: data.name,
-          group: _displayGroupForContext(contextKey),
+          group: _displayGroupForDomainData(data),
           exerciseKey: exerciseKey,
           contextKey: contextKey,
           catalogEntryKey: catalogEntryKey,
@@ -199,10 +199,52 @@ class ExerciseCatalogContextService {
         _ => 'Artes marciais',
       };
 
+  static String _displayGroupForDomainData(V100CatalogDomainEntryData data) {
+    final name = _n(data.name);
+    final section = _n(data.section);
+    final base = () {
+      if (name.contains('adductor') || section.contains('adutor')) {
+        return 'Adutores';
+      }
+      if (section.contains('glute')) return 'Gluteos';
+      if (section.contains('anca') || section.contains('hip')) return 'Anca';
+      if (section.contains('core') || section.contains('lombar')) return 'Core';
+      if (section.contains('escap') ||
+          section.contains('ombro') ||
+          section.contains('rotator')) {
+        return 'Ombros e escapulas';
+      }
+      if (section.contains('joelho')) return 'Joelhos';
+      if (section.contains('tornozelo')) return 'Tornozelos';
+      if (_isMartialContext(data.contextKey)) {
+        return _displayGroupForContext(data.contextKey);
+      }
+      return switch (data.contextKey) {
+        'mobilidade' => 'Mobilidade geral',
+        'elasticidade' => 'Alongamentos',
+        'recuperacao' => 'Regeneracao ativa',
+        'aquecimento' => 'Preparacao geral',
+        'ativacao' => 'Controlo neuromuscular',
+        'prevencao' => 'Controlo e tolerancia',
+        _ => _displayGroupForContext(data.contextKey),
+      };
+    }();
+    return switch (data.contextKey) {
+      'ativacao' when base != 'Controlo neuromuscular' => '$base - preparacao',
+      'aquecimento' when base != 'Preparacao geral' => '$base - preparacao',
+      'prevencao' when base != 'Controlo e tolerancia' => '$base - tolerancia',
+      'recuperacao' when base != 'Regeneracao ativa' => '$base - regeneracao',
+      _ => base,
+    };
+  }
+
   static ExerciseCatalogDetails _derivedDomainDetails(
     V100CatalogDomainEntryData data,
   ) {
-    final group = _displayGroupForContext(data.contextKey);
+    if (_n(data.name).contains('adductor squeeze')) {
+      return _adductorSqueezeDetails(data);
+    }
+    final group = _displayGroupForDomainData(data);
     final action = data.primaryType == 'recuperacao'
         ? 'reduzir fadiga e recuperar sem acrescentar esforco relevante'
         : data.primaryType == 'elasticidade'
@@ -212,21 +254,21 @@ class ExerciseCatalogContextService {
         : data.primaryType == 'aquecimento'
         ? 'preparar o corpo para treinar sem cansar'
         : data.primaryType == 'ativacao'
-        ? 'acordar o padrao alvo com baixa fadiga'
+        ? 'preparar a musculatura principal com baixa fadiga'
         : data.primaryType == 'prevencao'
         ? 'melhorar controlo e tolerancia sem prometer evitar lesoes'
         : 'praticar tecnica, base, distancia e controlo antes da velocidade';
     final equipment = _derivedEquipmentLabel(data);
     final section = _safeLoadLanguage(data.section, equipment);
-    final signature = _signatureFor(data, equipment);
+    final focus = _readableDomainFocus(data, equipment);
     final description =
-        'Entrada para $action. Trabalha $section '
-        'com referencia tecnica $signature, intensidade conservadora e nivel ajustado ao praticante.';
+        'Exercicio para $action. O foco e $section, com orientacao pratica em $focus. '
+        'Usa ritmo controlado para perceber onde sentes esforco util sem dor nem compensacoes.';
     final safety = _derivedSafetyText(data);
     final regressionName = _safeLoadLanguage(data.name, equipment);
     return ExerciseCatalogDetails(
       equipment: equipment,
-      secondaryGroups: data.section.trim().isEmpty ? group : data.section,
+      secondaryGroups: _secondaryGroupsForDomain(data, group),
       description: description.length <= 280
           ? description
           : '${description.substring(0, 277).trimRight()}...',
@@ -247,6 +289,76 @@ class ExerciseCatalogContextService {
       adaptationNotes:
           'Evita ou adapta quando houver dor aguda, tontura, instabilidade ou quando o local/equipamento necessario nao estiver disponivel.',
     );
+  }
+
+  static ExerciseCatalogDetails _adductorSqueezeDetails(
+    V100CatalogDomainEntryData data,
+  ) {
+    final equipment = _derivedEquipmentLabel(data);
+    final isPrevention = data.contextKey == 'prevencao';
+    return ExerciseCatalogDetails(
+      equipment: equipment,
+      secondaryGroups: 'Adutores; core leve; gluteos estabilizadores',
+      description: isPrevention
+          ? 'Exercicio de controlo para melhorar tolerancia dos adutores sem forca maxima. Usa bola, almofada ou toalha entre os joelhos e aperta de forma progressiva, mantendo lombar neutra e respiracao continua.'
+          : 'Exercicio leve para aprender a contrair a parte interna das coxas com controlo. Usa uma bola, almofada ou toalha entre os joelhos e aperta suavemente sem arquear a lombar nem prender a respiracao.',
+      executionSteps: [
+        '1. Deita-te de barriga para cima com joelhos dobrados e pes apoiados no chao.',
+        '2. Coloca uma bola pequena, almofada ou toalha dobrada entre os joelhos.',
+        '3. Mantem a bacia pesada no chao, costelas baixas e lombar sem arquear.',
+        '4. Aperta suavemente o objeto entre os joelhos durante 2 a 5 segundos.',
+        '5. Sente a parte interna das coxas a trabalhar sem usar forca maxima.',
+        isPrevention
+            ? '6. Solta metade da pressao antes de relaxar para treinar controlo, nao apenas apertar e largar.'
+            : '6. Relaxa devagar sem deixar os joelhos cair para fora.',
+        '7. Repete com respiracao continua e para se aparecer dor na anca, joelho ou virilha.',
+      ].join('\n'),
+      commonMistakes:
+          'Apertar com forca maxima.\nArquear a lombar ou levantar a bacia.\nPrender a respiracao.\nDeixar os pes escorregar ou os joelhos rodarem para fora.\nContinuar se houver dor na virilha, anca ou joelho.',
+      safetyNotes:
+          'Para se houver dor aguda, sensacao de estalo, caibra forte ou pressao na lombar. Usa apenas contracao leve a moderada.',
+      regression:
+          'Usa uma toalha mais macia, aperta menos, segura apenas 1 a 2 segundos ou faz menos repeticoes.',
+      progression: isPrevention
+          ? 'Aumenta para mais repeticoes submaximas ou combina com ponte de gluteo apenas quando consegues controlar a pressao sem dor.'
+          : 'Aumenta para 5 segundos por repeticao, usa uma bola ligeiramente mais firme ou combina com ponte de gluteo so quando a contracao leve estiver facil.',
+      breathingTips:
+          'Inspira antes de apertar, expira devagar enquanto aproximas os joelhos e continua a respirar durante a pausa.',
+      postureTips:
+          'Mantem pes paralelos, joelhos alinhados com a anca, bacia estavel e ombros relaxados.',
+      adaptationNotes:
+          'Evita em dor aguda na virilha, lesao recente de adutores sem autorizacao clinica, dor no joelho com compressao ou desconforto lombar que aumenta ao apertar.',
+    );
+  }
+
+  static String _secondaryGroupsForDomain(
+    V100CatalogDomainEntryData data,
+    String fallback,
+  ) {
+    final section = data.section.trim();
+    if (section.isEmpty) return fallback;
+    return section
+        .replaceAll(RegExp(r'\bAtivacao\b', caseSensitive: false), 'Controlo')
+        .replaceAll(
+          RegExp(r'\bAquecimento\b', caseSensitive: false),
+          'Preparacao',
+        )
+        .replaceAll(
+          RegExp(r'\bRecuperacao\b', caseSensitive: false),
+          'Regeneracao',
+        )
+        .replaceAll(RegExp(r'\bPrevencao\b', caseSensitive: false), 'Controlo');
+  }
+
+  static String _readableDomainFocus(
+    V100CatalogDomainEntryData data,
+    String equipment,
+  ) {
+    final raw = '${data.section} ${data.name}'
+        .replaceAll('_', ' ')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+    return _safeLoadLanguage(raw, equipment);
   }
 
   static String _derivedEquipmentLabel(V100CatalogDomainEntryData data) {
@@ -270,7 +382,7 @@ class ExerciseCatalogContextService {
   }
 
   static String _derivedDomainSteps(V100CatalogDomainEntryData data) {
-    final group = _displayGroupForContext(data.contextKey).toLowerCase();
+    final group = _displayGroupForDomainData(data).toLowerCase();
     final equipment = _derivedEquipmentLabel(data);
     final equipmentCue = _derivedEquipmentCue(equipment);
     final movementCue = _derivedMovementCue(data);
@@ -279,15 +391,15 @@ class ExerciseCatalogContextService {
         ? ' Usa 20 a 40 segundos, 3 a 6 ciclos ou 5 a 10 repeticoes por lado.'
         : '';
     final sectionCue = stableKey(data.section).replaceAll('_', ' ');
-    final conceptCue = _signatureFor(data, equipment);
+    final conceptCue = _readableDomainFocus(data, equipment);
     final specificCue = [
       movementCue,
       familyCue,
     ].where((cue) => cue.trim().isNotEmpty).join(' ');
     return [
       '1. Escolhe um local seguro para $group e confirma que tens $equipment antes de comecar.',
-      '2. Usa ${_stepCue(_safeLoadLanguage(sectionCue, equipment), 48)} com referencia ${_stepCue(_safeLoadLanguage(conceptCue, equipment), 86)}.',
-      '3. Leva a zona trabalhada por uma trajetoria curta, controlavel e com respiracao continua.$dosingCue',
+      '2. Organiza ${_stepCue(_safeLoadLanguage(sectionCue, equipment), 48)} e confirma que percebes o foco: ${_stepCue(_safeLoadLanguage(conceptCue, equipment), 86)}.',
+      '3. Leva o corpo ou a articulacao pelo caminho mais simples, com amplitude confortavel e respiracao continua.$dosingCue',
       '4. $equipmentCue',
       if (specificCue.isNotEmpty) '5. $specificCue',
       '${specificCue.isNotEmpty ? 6 : 5}. Regressa a posicao inicial com controlo e faz uma pausa curta se a tecnica piorar.',
@@ -338,18 +450,6 @@ class ExerciseCatalogContextService {
     'taekwondo',
     'defesa_pessoal',
   }.contains(contextKey);
-
-  static String _signatureFor(
-    V100CatalogDomainEntryData data,
-    String equipment,
-  ) {
-    final base = stableKey(
-      '${data.section} ${data.conceptId}',
-    ).replaceAll('_', ' ');
-    final name = stableKey(data.name).replaceAll('_', ' ');
-    final signature = base.contains(name) ? base : '$base $name';
-    return _safeLoadLanguage(signature, equipment);
-  }
 
   static String _safeLoadLanguage(String text, String equipment) {
     if (!_isBodyweightLike(equipment)) return text;
@@ -488,6 +588,9 @@ class ExerciseCatalogContextService {
   }) {
     final equipment = _equipmentOverride(name, group, base.equipment);
     final secondary = _secondaryFor(name, group, base.secondaryGroups);
+    if (group == 'Cardio' && _n(name).contains('passadeira')) {
+      return _treadmillDetails(name, equipment, secondary);
+    }
     final regression = _regressionFor(name, group, equipment);
     final progression = _progressionFor(name, group, equipment);
     return ExerciseCatalogDetails(
@@ -502,6 +605,316 @@ class ExerciseCatalogContextService {
       breathingTips: _breathingFor(name, group),
       postureTips: _postureFor(name, group),
       adaptationNotes: _adaptationFor(name, group),
+    );
+  }
+
+  static ExerciseCatalogDetails _treadmillDetails(
+    String name,
+    String equipment,
+    String secondary,
+  ) {
+    final n = _n(name);
+    final profile = _treadmillProfile(n);
+    return ExerciseCatalogDetails(
+      equipment: equipment,
+      secondaryGroups: secondary,
+      description: profile.description,
+      executionSteps:
+          '${profile.steps}\n'
+          '6. Regista a duracao em minutos ou segundos e ajusta a velocidade da passadeira antes do proximo bloco.',
+      commonMistakes:
+          'Aumentar velocidade antes de estabilizar a passada.\n'
+          'Segurar nos apoios laterais para aguentar ritmo alto.\n'
+          'Olhar para os pes, prender a respiracao ou ignorar dor no peito, tontura ou joelho.',
+      safetyNotes:
+          'Para ou abranda se houver dor no peito, tontura, falta de ar anormal, dor no joelho, dor na anca ou perda de equilibrio.',
+      regression:
+          'Reduz velocidade, inclinacao, duracao ou usa caminhada simples ate conseguires falar em frases curtas sem perder postura.',
+      progression: profile.progression,
+      breathingTips:
+          'Respira de forma continua; inspira pelo nariz ou boca e expira sem prender o ar, ajustando o ritmo se ficares ofegante cedo demais.',
+      postureTips:
+          'Mantem olhar em frente, tronco alto, ombros relaxados, passada curta e pe no centro da passadeira.',
+      adaptationNotes:
+          'Evita ou adapta quando houver dor aguda, tontura, falta de ar fora do normal, lesao recente sem liberacao ou inseguranca na passadeira.',
+    );
+  }
+
+  static _TreadmillProfile _treadmillProfile(String n) {
+    if (n.contains('aquecimento')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada inicial para elevar temperatura e preparar tornozelos, joelhos e anca antes do treino. O ritmo deve permitir falar sem ficar ofegante.',
+        steps:
+            '1. Sobe para a passadeira parada e prende a mola de seguranca se existir.\n'
+            '2. Comeca a caminhar muito leve durante o primeiro minuto.\n'
+            '3. Leva a passada para um ritmo natural, com bracos soltos e olhar em frente.\n'
+            '4. Aumenta ligeiramente a velocidade apenas se a respiracao continuar calma.\n'
+            '5. Mantem 3 a 8 minutos e termina baixando a velocidade antes de sair.',
+        progression:
+            'Aumenta 1 a 2 minutos ou acrescenta inclinacao muito baixa quando o aquecimento leve estiver confortavel.',
+      );
+    }
+    if (n.contains('cooldown')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada final para baixar gradualmente a intensidade depois de corrida, musculacao ou cardio. Serve para recuperar o ritmo respiratorio sem parar de repente.',
+        steps:
+            '1. Comeca por reduzir a velocidade ate uma caminhada facil antes de terminar a sessao.\n'
+            '2. Mantem tronco alto e deixa os ombros relaxar.\n'
+            '3. Caminha com passos curtos enquanto a respiracao volta ao normal.\n'
+            '4. Baixa a velocidade mais uma vez se ainda estiveres ofegante.\n'
+            '5. Termina so quando consegues sair da passadeira com equilibrio.',
+        progression:
+            'Prolonga para 5 a 10 minutos em dias de treino mais intenso, mantendo sempre ritmo facil.',
+      );
+    }
+    if (n.contains('corrida intervalada')) {
+      return const _TreadmillProfile(
+        description:
+            'Corrida intervalada na passadeira para praticar alternancia entre trote firme e recuperacao. Serve para treinar mudanca de ritmo sem sprint maximo.',
+        steps:
+            '1. Comeca depois de aquecer em caminhada e trote leve.\n'
+            '2. Ajusta uma velocidade de corrida firme que ainda controlas.\n'
+            '3. Corre o bloco rapido com passada curta e tronco alto.\n'
+            '4. Volta para trote leve ou caminhada durante a recuperacao.\n'
+            '5. Alterna os blocos e termina com cooldown gradual.',
+        progression:
+            'Aumenta primeiro o numero de blocos e depois a duracao da corrida firme.',
+      );
+    }
+    if (n.contains('sprints intervalados')) {
+      return const _TreadmillProfile(
+        description:
+            'Sprints intervalados na passadeira para praticantes que ja dominam a corrida. Serve para esforcos curtos, com recuperacao clara entre blocos.',
+        steps:
+            '1. Comeca com aquecimento completo e confirma espaco seguro na passadeira.\n'
+            '2. Sobe a velocidade apenas para o bloco curto de sprint controlado.\n'
+            '3. Corre forte mantendo pe no centro e sem agarrar os apoios.\n'
+            '4. Reduz para caminhada ate recuperar a respiracao.\n'
+            '5. Para a serie antes de perder passada ou equilibrio.',
+        progression:
+            'Aumenta no maximo um sprint por sessao antes de mexer na velocidade.',
+      );
+    }
+    if (n.contains('passadeira intervalos')) {
+      return const _TreadmillProfile(
+        description:
+            'Intervalos simples na passadeira para alternar trabalho e descanso ativo. Serve para aprender a controlar velocidade, recuperacao e respiracao.',
+        steps:
+            '1. Aquece primeiro em caminhada ou trote leve.\n'
+            '2. Escolhe velocidade moderada para o bloco de trabalho.\n'
+            '3. Leva o ritmo acima do confortavel sem chegar ao maximo.\n'
+            '4. Reduz para caminhada clara na recuperacao.\n'
+            '5. Alterna blocos e termina com cooldown antes de sair.',
+        progression:
+            'Aumenta primeiro o numero de blocos, depois a duracao do bloco rapido, e so no fim a velocidade.',
+      );
+    }
+    if (n.contains('hiit')) {
+      return const _TreadmillProfile(
+        description:
+            'Intervalos curtos e exigentes na passadeira para contexto de HIIT, apenas quando ja ha aquecimento e tecnica segura. Nao e indicado para recuperacao.',
+        steps:
+            '1. Faz aquecimento completo antes de iniciar o HIIT.\n'
+            '2. Define uma velocidade desafiante que ainda permite passada segura.\n'
+            '3. Corre o bloco curto mantendo tronco alto e pe no centro da passadeira.\n'
+            '4. Baixa para caminhada na recuperacao e deixa a respiracao descer.\n'
+            '5. Termina a serie antes de perder controlo e faz cooldown.',
+        progression:
+            'Aumenta blocos apenas quando todos terminam com passada estavel e recuperacao suficiente.',
+      );
+    }
+    if (n.contains('caminhada com inclina')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada com inclinacao na passadeira para cardio de baixo impacto. Serve para trabalhar subida, pernas e respiracao sem sair do ritmo de caminhada segura.',
+        steps:
+            '1. Comeca em piso plano com caminhada leve.\n'
+            '2. Sobe a inclinacao gradualmente ate sentires mais trabalho nas pernas.\n'
+            '3. Caminha sem agarrar os apoios e mantem passada curta.\n'
+            '4. Leva o esforco para uma subida controlada, nao para corrida.\n'
+            '5. Baixa a inclinacao antes de sair.',
+        progression: 'Aumenta primeiro duracao da subida e depois inclinacao.',
+      );
+    }
+    if (n.contains('passadeira caminhada rapida')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada rapida na passadeira para cardio sem corrida. Serve para elevar a frequencia cardiaca mantendo impacto baixo e passada controlada.',
+        steps:
+            '1. Comeca em caminhada facil durante alguns minutos.\n'
+            '2. Sobe a velocidade ate um passo vivo, sem precisar correr.\n'
+            '3. Caminha com bracos naturais, olhar em frente e tronco alto.\n'
+            '4. Mantem ritmo em que falas apenas frases curtas.\n'
+            '5. Baixa gradualmente antes de parar.',
+        progression:
+            'Aumenta duracao ou pequenos blocos de inclinacao antes de correr.',
+      );
+    }
+    if (n.contains('passadeira caminhada')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada basica na passadeira para cardio acessivel e baixo impacto. Serve para criar habito, aquecer ou acumular minutos faceis.',
+        steps:
+            '1. Comeca com velocidade baixa e confirma que caminhas no centro.\n'
+            '2. Mantem passos confortaveis, sem olhar constantemente para os pes.\n'
+            '3. Caminha com respiracao calma e bracos soltos.\n'
+            '4. Leva o ritmo para uma intensidade em que consegues conversar.\n'
+            '5. Reduz a velocidade antes de sair da passadeira.',
+        progression: 'Aumenta minutos totais antes de aumentar velocidade.',
+      );
+    }
+    if (n.contains('corrida leve')) {
+      return const _TreadmillProfile(
+        description:
+            'Corrida leve na passadeira para resistencia facil e tecnica relaxada. Serve para correr sem sprint, mantendo impacto, passada e respiracao sob controlo.',
+        steps:
+            '1. Comeca com caminhada e passa para trote suave.\n'
+            '2. Ajusta a velocidade ate a corrida ficar leve e estavel.\n'
+            '3. Corre com passada curta, ombros relaxados e olhar em frente.\n'
+            '4. Mantem ritmo em que ainda consegues falar algumas palavras.\n'
+            '5. Volta para caminhada antes de terminar.',
+        progression:
+            'Aumenta o tempo de corrida continua antes de subir velocidade.',
+      );
+    }
+    if (n.contains('passadeira sprints')) {
+      return const _TreadmillProfile(
+        description:
+            'Sprints curtos na passadeira para trabalho rapido e avancado com recuperacao completa. Serve para velocidade, nao para aquecimento nem recuperacao.',
+        steps:
+            '1. Comeca apenas depois de aquecimento completo fora ou na passadeira.\n'
+            '2. Sobe para velocidade alta por poucos segundos.\n'
+            '3. Corre forte com passada segura e corpo centrado.\n'
+            '4. Reduz para caminhada longa de recuperacao.\n'
+            '5. Termina se a passada ficar pesada ou descontrolada.',
+        progression:
+            'Aumenta primeiro recuperacao e controlo; depois acrescenta um sprint curto.',
+      );
+    }
+    if (n.contains('caminhada na passadeira')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada na passadeira para iniciar cardio com controlo de velocidade. Serve para aprender a usar a passadeira com seguranca e ritmo facil.',
+        steps:
+            '1. Comeca com a passadeira lenta e segura no centro do tapete.\n'
+            '2. Caminha sem agarrar os apoios, deixando os bracos acompanhar a passada.\n'
+            '3. Leva o ritmo para uma caminhada confortavel e regular.\n'
+            '4. Mantem olhar em frente e respiracao calma durante o bloco.\n'
+            '5. Baixa a velocidade antes de sair.',
+        progression:
+            'Aumenta duracao da caminhada ou pequenas inclinacoes antes de acelerar.',
+      );
+    }
+    if (n.contains('ritmo leve')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada leve na passadeira para cardio facil, aquecimento prolongado ou retorno ao movimento. Deve sentir-se confortavel e sustentavel.',
+        steps:
+            '1. Comeca com a passadeira lenta e confirma que a passada fica centrada.\n'
+            '2. Caminha com passos curtos, tronco alto e maos livres sempre que possivel.\n'
+            '3. Leva o ritmo ate uma intensidade em que consegues conversar.\n'
+            '4. Mantem a velocidade estavel sem agarrar os apoios laterais.\n'
+            '5. Reduz gradualmente antes de parar ou sair.',
+        progression:
+            'Aumenta duracao ou inclinacao baixa antes de aumentar muito a velocidade.',
+      );
+    }
+    if (n.contains('resistencia')) {
+      return const _TreadmillProfile(
+        description:
+            'Sessao continua de resistencia aerobica na passadeira. Serve para sustentar esforco moderado durante mais tempo sem acelerar como sprint.',
+        steps:
+            '1. Comeca com caminhada leve e aumenta para ritmo continuo.\n'
+            '2. Escolhe velocidade que consegues manter sem agarrar os apoios.\n'
+            '3. Leva a respiracao para um ritmo firme mas regular.\n'
+            '4. Mantem passada economica durante o tempo planeado.\n'
+            '5. Baixa a velocidade por etapas antes do cooldown.',
+        progression:
+            'Aumenta o tempo total em blocos pequenos antes de subir velocidade.',
+      );
+    }
+    if (n.contains('ritmo moderado')) {
+      return const _TreadmillProfile(
+        description:
+            'Ritmo moderado na passadeira para cardio sustentado e previsivel. Serve para trabalhar acima do facil mantendo controlo, postura e boa tecnica.',
+        steps:
+            '1. Comeca depois de alguns minutos em ritmo leve.\n'
+            '2. Ajusta velocidade para caminhada rapida ou trote conforme o teu nivel.\n'
+            '3. Mantem passada curta, tronco alto e respiracao ritmada.\n'
+            '4. Leva o esforco para moderado sem prender a respiracao.\n'
+            '5. Reduz gradualmente para ritmo leve antes de parar.',
+        progression:
+            'Aumenta a duracao do bloco moderado antes de mexer na velocidade.',
+      );
+    }
+    if (n.contains('corrida na passadeira')) {
+      return const _TreadmillProfile(
+        description:
+            'Corrida continua na passadeira para praticar passada e resistencia. Serve para correr em ambiente controlado com velocidade estavel.',
+        steps:
+            '1. Comeca depois de alguns minutos de caminhada leve.\n'
+            '2. Ajusta velocidade ate corrida confortavel e sem saltitar.\n'
+            '3. Corre com pe no centro da passadeira e bracos soltos.\n'
+            '4. Mantem respiracao ritmada durante o bloco planeado.\n'
+            '5. Volta para caminhada antes de terminar.',
+        progression:
+            'Aumenta minutos de corrida continua antes de subir velocidade.',
+      );
+    }
+    if (n.contains('inclina') && n.contains('moderada')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada em inclinacao moderada para aumentar esforco sem correr. Serve para desafiar pernas e cardio com velocidade mais baixa e postura controlada.',
+        steps:
+            '1. Comeca plano e aquece em caminhada facil.\n'
+            '2. Sobe a inclinacao para nivel moderado sem aumentar demasiado a velocidade.\n'
+            '3. Caminha com tronco alto, sem puxar os apoios laterais.\n'
+            '4. Leva o esforco para gluteos e gemeos mantendo respiracao regular.\n'
+            '5. Reduz a inclinacao antes de baixar a velocidade.',
+        progression:
+            'Aumenta inclinacao em passos pequenos ou prolonga o bloco moderado.',
+      );
+    }
+    if (n.contains('caminhada com inclina')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada com inclinacao na passadeira para cardio de baixo impacto e foco em subida controlada. Serve para trabalhar subida sem sair do ritmo de caminhada confortavel e sem correr.',
+        steps:
+            '1. Comeca em piso plano com caminhada leve.\n'
+            '2. Sobe a inclinacao gradualmente ate sentires mais trabalho nas pernas.\n'
+            '3. Caminha sem agarrar os apoios e mantem passada curta.\n'
+            '4. Leva o esforco para uma subida controlada, nao para corrida.\n'
+            '5. Baixa a inclinacao antes de sair.',
+        progression: 'Aumenta primeiro duracao da subida e depois inclinacao.',
+      );
+    }
+    if (n.contains('inclina')) {
+      return const _TreadmillProfile(
+        description:
+            'Caminhada com inclinacao para aumentar trabalho cardiovascular e das pernas sem precisar correr. A inclinacao deve desafiar sem obrigar a agarrar os apoios.',
+        steps:
+            '1. Comeca plano e em velocidade facil.\n'
+            '2. Sobe a inclinacao de forma gradual, mantendo passada curta.\n'
+            '3. Caminha com tronco alto sem puxar pelos apoios laterais.\n'
+            '4. Leva o esforco para gluteos, gemeos e respiracao controlada.\n'
+            '5. Reduz inclinacao antes de reduzir a velocidade e sair.',
+        progression:
+            'Aumenta inclinacao em pequenos passos ou prolonga o bloco mantendo a mesma velocidade.',
+      );
+    }
+    return const _TreadmillProfile(
+      description:
+          'Trabalho de passadeira para cardio controlado com velocidade ajustada ao objetivo da sessao. Mantem ritmo seguro e postura estavel.',
+      steps:
+          '1. Sobe para a passadeira e inicia em velocidade baixa.\n'
+          '2. Ajusta ritmo ou inclinacao de acordo com o objetivo.\n'
+          '3. Caminha ou corre com passada curta, olhar em frente e respiracao continua.\n'
+          '4. Mantem controlo sem agarrar os apoios laterais.\n'
+          '5. Reduz velocidade gradualmente antes de sair.',
+      progression:
+          'Aumenta uma variavel de cada vez: duracao, velocidade ou inclinacao.',
     );
   }
 
@@ -5404,4 +5817,16 @@ class _NamedSummary {
 
   final String text;
   final String? contextGroup;
+}
+
+class _TreadmillProfile {
+  const _TreadmillProfile({
+    required this.description,
+    required this.steps,
+    required this.progression,
+  });
+
+  final String description;
+  final String steps;
+  final String progression;
 }

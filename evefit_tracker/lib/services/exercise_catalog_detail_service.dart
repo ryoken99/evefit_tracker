@@ -700,7 +700,7 @@ class ExerciseCatalogDetailService {
     if (_has(n, ['extensao lombar quadrupede'])) {
       return 'Abrir a bacia para o lado, afundar entre as omoplatas, atirar o pé para cima, mexer o tronco a cada repetição, perder pressão nas mãos ou procurar altura em vez de estabilidade.';
     }
-    return 'Executar $name depressa demais, perder alinhamento da zona trabalhada, prender a respiração, encurtar o alcance útil e continuar depois de perder controlo.';
+    return 'Executar $name depressa demais, perder alinhamento das articulações envolvidas, prender a respiração, encurtar o alcance útil e continuar depois de perder controlo.';
   }
 
   static String safetyNotesFor(String name, String group) {
@@ -808,7 +808,7 @@ class ExerciseCatalogDetailService {
       '1. Ajusta a polia à altura de trabalho de $name (alta, média ou baixa). 2. Escolhe uma pega que permita punhos alinhados e ombros relaxados. 3. Dá um passo para criar tensão no cabo antes da primeira repetição. 4. Move a pega até ao ponto em que a articulação alvo continua estável, dobrando ou estendendo os cotovelos conforme o exercício, sem puxar com balanço do tronco. 5. Pausa brevemente no ponto de contração. 6. Deixa o cabo regressar devagar, mantendo tensão. 7. Inspira no retorno e expira quando puxas ou empurras.';
 
   static String _machineSteps(String name) =>
-      '1. Ajusta banco, encosto e pegas para a zona que vai mover ficar alinhada com o eixo da máquina. 2. Seleciona carga leve para testar o caminho da máquina. 3. Segura as pegas com punhos alinhados ou apoia os pés no local indicado. 4. Empurra ou puxa enquanto dobras ou estendes a zona trabalhada, parando antes de a máquina causar dor ou tirar as costas do apoio. 5. Regressa devagar até sentires alongamento ou flexão segura. 6. Inspira no retorno e expira no esforço. 7. Mantém costas e cabeça apoiadas quando a máquina tiver apoio.';
+      '1. Ajusta banco, encosto e pegas para a articulação principal ficar alinhada com o eixo da máquina. 2. Seleciona carga leve para testar o caminho da máquina. 3. Segura as pegas com punhos alinhados ou apoia os pés no local indicado. 4. Empurra ou puxa enquanto dobras ou estendes a articulação principal, parando antes de a máquina causar dor ou tirar as costas do apoio. 5. Regressa devagar até sentires alongamento ou flexão segura. 6. Inspira no retorno e expira no esforço. 7. Mantém costas e cabeça apoiadas quando a máquina tiver apoio.';
 
   static String _pullupBarSteps(String name) =>
       '1. Segura a barra fixa com a pega indicada por $name e mãos firmes. 2. Começa pendurado com ombros ativos, sem deixar o pescoço encolher. 3. Organiza costelas e abdómen para evitar balanço excessivo. 4. Puxa, sustenta ou eleva as pernas conforme o exercício, respeitando a amplitude que controlas. 5. Desce ou relaxa devagar sem soltar a barra de repente. 6. Inspira antes da fase difícil e expira durante o esforço. 7. Usa apoio dos pés ou elástico se ainda não controlas o peso corporal.';

@@ -538,6 +538,15 @@ class ExerciseFilterService {
     if (focus.isEmpty) return true;
 
     final tags = TrainingArchitecture.tagsForExercise(exercise);
+    final normalizedName = WorkoutTaxonomy.normalize(exercise.name);
+    if (focus == 'treadmill_aerobic' &&
+        _textHas(normalizedName, const ['hiit', 'sprint', 'interval'])) {
+      return false;
+    }
+    if (focus == 'treadmill_intervals' &&
+        !_textHas(normalizedName, const ['hiit', 'sprint', 'interval'])) {
+      return false;
+    }
 
     // Complete options must aggregate their explicit children instead of
     // depending on broad text matching.
@@ -1004,6 +1013,11 @@ class ExerciseFilterService {
     'ankle': ['ankle'],
     'feet': ['feet'],
     'ankle_stability': ['ankle_stability', 'ankle'],
+    'treadmill_aerobic': ['treadmill_aerobic', 'aerobic_endurance'],
+    'treadmill_warmup': ['treadmill_warmup'],
+    'treadmill_easy': ['treadmill_easy'],
+    'treadmill_moderate': ['treadmill_moderate', 'treadmill_aerobic'],
+    'treadmill_intervals': ['treadmill_intervals', 'hiit'],
   };
 
   static const _hierarchyFocusKeywords = {
@@ -1088,9 +1102,28 @@ class ExerciseFilterService {
       'corrida leve',
       'inclinação',
       'inclinacao',
-      'aquecimento',
+      'arrefecimento',
+      'resistencia aerobia',
+      'resistência aeróbia',
+      'ritmo moderado',
+      'corrida na passadeira',
+      'caminhada com inclinacao',
+      'caminhada com inclinação',
+    ],
+    'treadmill_warmup': ['passadeira aquecimento', 'caminhada na passadeira'],
+    'treadmill_easy': [
+      'passadeira ritmo leve',
+      'caminhada na passadeira',
+      'passadeira caminhada',
       'cooldown',
       'arrefecimento',
+    ],
+    'treadmill_moderate': [
+      'passadeira ritmo moderado',
+      'passadeira resistencia aerobia',
+      'passadeira resistência aeróbia',
+      'corrida na passadeira',
+      'corrida leve',
     ],
     'treadmill_intervals': [
       'corrida intervalada',
@@ -1099,6 +1132,7 @@ class ExerciseFilterService {
       'hiit passadeira',
       'intervalados',
       'intervalada',
+      'passadeira intervalos',
     ],
     'kihon': ['kihon'],
     'kata': ['kata'],

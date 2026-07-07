@@ -9,7 +9,7 @@ on:
       version:
         description: 'Versão do release (v0.9.1)'
         required: true
-        default: 'v0.9.3'
+        default: 'v0.9.4'
 
 permissions:
   contents: write
@@ -62,6 +62,13 @@ jobs:
           generate_release_notes: false
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
+
+            ### Novidades v0.9.4
+            - Alfandega permanente dos catalogos com auditoria strict, inventario e gap analysis.
+            - Passadeira corrigida nos filtros de cardio, com entradas essenciais para resistencia, ritmos, intervalos, HIIT e inclinacao.
+            - Adductor squeeze leve revisto com instrucao real para iniciantes e musculos corretos.
+            - Quality gates passam a bloquear IDs, filtros, linguagem, conteudo, seguranca, equipamento e locais invalidos.
+            - Atualizada versao da app para v0.9.4.
 
             ### Novidades v0.9.3
             - Catálogo expandido de 315 para 353 exercícios: coifa do ombro, pescoço, core anti-rotação, glúteo médio, isquiotibiais excêntricos e equilíbrio unilateral.
