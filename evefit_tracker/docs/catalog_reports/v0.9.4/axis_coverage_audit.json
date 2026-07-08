@@ -1,0 +1,1658 @@
+[
+  {
+    "axis": "training_type",
+    "key": "strength",
+    "label": "Musculação",
+    "count": 207,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "cardio",
+    "label": "Cardio",
+    "count": 65,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "martial_arts",
+    "label": "Artes marciais",
+    "count": 232,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "mobility",
+    "label": "Mobilidade",
+    "count": 193,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "elasticity",
+    "label": "Elasticidade",
+    "count": 132,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "recovery",
+    "label": "Recuperação",
+    "count": 122,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "warmup",
+    "label": "Aquecimento",
+    "count": 131,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "activation",
+    "label": "Ativação",
+    "count": 52,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "training_type",
+    "key": "prevention",
+    "label": "Prevenção",
+    "count": 44,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_home_no_equipment",
+    "label": "Casa sem equipamento",
+    "count": 69,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_home_equipped",
+    "label": "Casa equipada",
+    "count": 71,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_gym",
+    "label": "Ginasio",
+    "count": 90,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_dojo",
+    "label": "Dojo",
+    "count": 71,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_tatami",
+    "label": "Tatami",
+    "count": 71,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_outdoor",
+    "label": "Exterior",
+    "count": 73,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_work_travel",
+    "label": "Trabalho ou viagem",
+    "count": 69,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "location",
+    "key": "place_clinic",
+    "label": "Clinica ou fisioterapia",
+    "count": 69,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "bodyweight",
+    "label": "Peso corporal",
+    "count": 610,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "floor",
+    "label": "Chão livre",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "wall",
+    "label": "Parede estável",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "free_space",
+    "label": "Espaço livre",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "mat",
+    "label": "Tapete / colchonete",
+    "count": 146,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "chair_support",
+    "label": "Banco / cadeira / apoio",
+    "count": 77,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "bench",
+    "label": "Banco estável",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "weighted_backpack",
+    "label": "Mochila com peso",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "water_bottles",
+    "label": "Garrafas de água",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "water_jug",
+    "label": "Garrafão de água",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "stable_step",
+    "label": "Degrau / escada estável",
+    "count": 7,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "sturdy_table",
+    "label": "Mesa resistente",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "broomstick",
+    "label": "Cabo de vassoura",
+    "count": 9,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "towel",
+    "label": "Toalha",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "none",
+    "label": "Nenhum equipamento",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "other",
+    "label": "Outro",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "dumbbells",
+    "label": "Halteres",
+    "count": 75,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "barbell",
+    "label": "Barra",
+    "count": 26,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "plates",
+    "label": "Discos",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "kettlebell",
+    "label": "Kettlebell",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "medicine_ball",
+    "label": "Medicine ball",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "sandbag",
+    "label": "Saco de areia",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "weighted_vest",
+    "label": "Colete com peso",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "ankle_weights",
+    "label": "Tornozeleiras com peso",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "pullup_bar",
+    "label": "Barra fixa",
+    "count": 13,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "parallel_bars",
+    "label": "Paralelas",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "rings",
+    "label": "Argolas",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "trx",
+    "label": "TRX / suspensão",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "bands",
+    "label": "Elásticos",
+    "count": 55,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "mini_bands",
+    "label": "Mini bands",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "ab_wheel",
+    "label": "Roda abdominal",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "jump_rope",
+    "label": "Corda de saltar",
+    "count": 12,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "machine",
+    "label": "Máquina multifunções",
+    "count": 17,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "high_cable",
+    "label": "Cabo alto",
+    "count": 23,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "low_cable",
+    "label": "Cabo baixo",
+    "count": 20,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "adjustable_cable",
+    "label": "Polia ajustável",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "lat_pulldown",
+    "label": "Lat pulldown",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "seated_row_machine",
+    "label": "Remo sentado",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "chest_press_machine",
+    "label": "Chest press",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "shoulder_press_machine",
+    "label": "Shoulder press machine",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "leg_press",
+    "label": "Leg press",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "leg_extension",
+    "label": "Extensão de perna",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "leg_curl",
+    "label": "Curl de perna",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "abductor_machine",
+    "label": "Máquina abdutora",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "adductor_machine",
+    "label": "Máquina adutora",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "smith_machine",
+    "label": "Smith machine",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "squat_rack",
+    "label": "Rack / suporte de agachamento",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "adjustable_bench",
+    "label": "Banco regulável",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "flat_bench",
+    "label": "Banco plano",
+    "count": 38,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "incline_bench",
+    "label": "Banco inclinado",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "decline_bench",
+    "label": "Banco declinado",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "treadmill",
+    "label": "Passadeira",
+    "count": 24,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "bike",
+    "label": "Bicicleta",
+    "count": 15,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "elliptical",
+    "label": "Elíptica",
+    "count": 10,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "rower",
+    "label": "Remo ergómetro",
+    "count": 4,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "stepper",
+    "label": "Stepper / escadas",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "air_bike",
+    "label": "Air bike",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "outdoor_space",
+    "label": "Espaço exterior para caminhar/correr",
+    "count": 10,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "tatami",
+    "label": "Tatami / espaço de artes marciais",
+    "count": 55,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "heavy_bag",
+    "label": "Saco de pancada",
+    "count": 23,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "gloves",
+    "label": "Luvas",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "shin_guards",
+    "label": "Caneleiras",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "pads",
+    "label": "Paos / aparadores",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "gi",
+    "label": "Kimono",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "belt",
+    "label": "Cinto / faixa",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "grappling_dummy",
+    "label": "Boneco de grappling",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "grip_trainer",
+    "label": "Grip trainer",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "foam_roller",
+    "label": "Foam roller",
+    "count": 13,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "massage_ball",
+    "label": "Bola de massagem",
+    "count": 9,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "equipment",
+    "key": "mobility_band",
+    "label": "Elástico de mobilidade",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "yoga_block",
+    "label": "Bloco de yoga",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "mobility_roller",
+    "label": "Rolo de mobilidade",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "equipment",
+    "key": "massage_gun",
+    "label": "Pistola de massagem",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "muscle",
+    "key": "cervical_stabilizers",
+    "label": "cervical stabilizers",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "anterior_neck",
+    "label": "anterior neck",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "lateral_neck",
+    "label": "lateral neck",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "posterior_neck",
+    "label": "posterior neck",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "upper_traps",
+    "label": "upper traps",
+    "count": 4,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "mid_traps",
+    "label": "mid traps",
+    "count": 16,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "lateral_deltoid",
+    "label": "lateral deltoid",
+    "count": 8,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "lower_traps",
+    "label": "lower traps",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "rhomboids",
+    "label": "rhomboids",
+    "count": 16,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "posterior_deltoid",
+    "label": "posterior deltoid",
+    "count": 7,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "anterior_deltoid",
+    "label": "anterior deltoid",
+    "count": 6,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "deltoid_lateral",
+    "label": "deltoid lateral",
+    "count": 6,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "scapular_stabilizers",
+    "label": "scapular stabilizers",
+    "count": 17,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "teres_minor",
+    "label": "teres minor",
+    "count": 15,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "external_rotators",
+    "label": "external rotators",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "serratus_anterior",
+    "label": "serratus anterior",
+    "count": 12,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "internal_rotators",
+    "label": "internal rotators",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "upper_chest",
+    "label": "upper chest",
+    "count": 15,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "mid_chest",
+    "label": "mid chest",
+    "count": 15,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "lower_chest",
+    "label": "lower chest",
+    "count": 19,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "pectoralis_minor",
+    "label": "pectoralis minor",
+    "count": 23,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "lats",
+    "label": "lats",
+    "count": 18,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "teres_major",
+    "label": "teres major",
+    "count": 19,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "vertical_pulls",
+    "label": "vertical pulls",
+    "count": 6,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "horizontal_rows",
+    "label": "horizontal rows",
+    "count": 7,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "erectors",
+    "label": "erectors",
+    "count": 11,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "quadratus_lumborum",
+    "label": "quadratus lumborum",
+    "count": 8,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "biceps",
+    "label": "biceps",
+    "count": 15,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "brachialis",
+    "label": "brachialis",
+    "count": 17,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "brachioradialis",
+    "label": "brachioradialis",
+    "count": 6,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "triceps_lateral",
+    "label": "triceps lateral",
+    "count": 13,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "triceps_medial",
+    "label": "triceps medial",
+    "count": 20,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "triceps_long",
+    "label": "triceps long",
+    "count": 15,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "forearm_flexors",
+    "label": "forearm flexors",
+    "count": 9,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "wrist",
+    "label": "wrist",
+    "count": 10,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "general_grip",
+    "label": "general grip",
+    "count": 19,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "forearm_extensors",
+    "label": "forearm extensors",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "grip_support",
+    "label": "grip support",
+    "count": 7,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "fingers",
+    "label": "fingers",
+    "count": 6,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "pronators",
+    "label": "pronators",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "supinators",
+    "label": "supinators",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "pinch_grip",
+    "label": "pinch grip",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "anti_lateral_flexion",
+    "label": "anti lateral flexion",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "deep_stability",
+    "label": "deep stability",
+    "count": 11,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "anti_extension",
+    "label": "anti extension",
+    "count": 4,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "transverse_abdominis",
+    "label": "transverse abdominis",
+    "count": 11,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "mid_abs",
+    "label": "mid abs",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "external_obliques",
+    "label": "external obliques",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "internal_obliques",
+    "label": "internal obliques",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "rectus_abdominis",
+    "label": "rectus abdominis",
+    "count": 9,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "upper_abs",
+    "label": "upper abs",
+    "count": 4,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "lower_abs",
+    "label": "lower abs",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "hip_flexors",
+    "label": "hip flexors",
+    "count": 14,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "anti_rotation",
+    "label": "anti rotation",
+    "count": 4,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "glute_max",
+    "label": "glute max",
+    "count": 29,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "rectus_femoris",
+    "label": "rectus femoris",
+    "count": 21,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "vastus_lateralis",
+    "label": "vastus lateralis",
+    "count": 19,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "vastus_medialis",
+    "label": "vastus medialis",
+    "count": 20,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "vastus_intermedius",
+    "label": "vastus intermedius",
+    "count": 19,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "adductors",
+    "label": "adductors",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "glute_med",
+    "label": "glute med",
+    "count": 14,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "biceps_femoris",
+    "label": "biceps femoris",
+    "count": 11,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "semitendinosus",
+    "label": "semitendinosus",
+    "count": 7,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "semimembranosus",
+    "label": "semimembranosus",
+    "count": 7,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "abductors",
+    "label": "abductors",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "glute_min",
+    "label": "glute min",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "calves",
+    "label": "calves",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "ankle",
+    "label": "ankle",
+    "count": 43,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "feet",
+    "label": "feet",
+    "count": 51,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "soleus",
+    "label": "soleus",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "ankle_stability",
+    "label": "ankle stability",
+    "count": 3,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "tibialis_anterior",
+    "label": "tibialis anterior",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "obliques",
+    "label": "obliques",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "quadriceps",
+    "label": "quadriceps",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "hip_external_rotators",
+    "label": "hip external rotators",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "cardiovascular",
+    "label": "cardiovascular",
+    "count": 65,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "treadmill_aerobic",
+    "label": "treadmill aerobic",
+    "count": 9,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "treadmill_intervals",
+    "label": "treadmill intervals",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "treadmill_warmup",
+    "label": "treadmill warmup",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "treadmill_easy",
+    "label": "treadmill easy",
+    "count": 4,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "treadmill_moderate",
+    "label": "treadmill moderate",
+    "count": 2,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "hiit",
+    "label": "hiit",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "karate_technical",
+    "label": "karate technical",
+    "count": 50,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "jiu_jitsu_technical",
+    "label": "jiu jitsu technical",
+    "count": 53,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "mobility",
+    "label": "mobility",
+    "count": 195,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "boxe",
+    "label": "boxe",
+    "count": 24,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "kickboxing",
+    "label": "kickboxing",
+    "count": 19,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "muay_thai",
+    "label": "muay thai",
+    "count": 20,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "judo",
+    "label": "judo",
+    "count": 19,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "taekwondo",
+    "label": "taekwondo",
+    "count": 17,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "defesa_pessoal",
+    "label": "defesa pessoal",
+    "count": 24,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "artes_marciais",
+    "label": "artes marciais",
+    "count": 4,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "elasticidade",
+    "label": "elasticidade",
+    "count": 132,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "recuperacao",
+    "label": "recuperacao",
+    "count": 122,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "aquecimento",
+    "label": "aquecimento",
+    "count": 131,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "ativacao",
+    "label": "ativacao",
+    "count": 52,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "muscle",
+    "key": "prevencao",
+    "label": "prevencao",
+    "count": 44,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "joint",
+    "key": "cervical_stabilizers",
+    "label": "cervical stabilizers",
+    "count": 5,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "joint",
+    "key": "wrist",
+    "label": "wrist",
+    "count": 10,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "joint",
+    "key": "fingers",
+    "label": "fingers",
+    "count": 6,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "joint",
+    "key": "hip_flexors",
+    "label": "hip flexors",
+    "count": 14,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "joint",
+    "key": "ankle",
+    "label": "ankle",
+    "count": 43,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "joint",
+    "key": "feet",
+    "label": "feet",
+    "count": 51,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "joint",
+    "key": "hip_external_rotators",
+    "label": "hip external rotators",
+    "count": 1,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "strength",
+    "label": "Musculacao",
+    "count": 207,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "cardio",
+    "label": "Cardio",
+    "count": 65,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "martial_arts",
+    "label": "Artes marciais",
+    "count": 232,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "mobility",
+    "label": "Mobilidade",
+    "count": 193,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "elasticity",
+    "label": "Elasticidade",
+    "count": 132,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "recovery",
+    "label": "Recuperacao",
+    "count": 122,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "warmup",
+    "label": "Aquecimento",
+    "count": 131,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "activation",
+    "label": "Ativacao",
+    "count": 52,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "modality",
+    "key": "prevention",
+    "label": "Prevencao",
+    "count": 44,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "martial_art",
+    "key": "karate",
+    "label": "Karate",
+    "count": 50,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "martial_art",
+    "key": "jiu_jitsu",
+    "label": "Jiu-Jitsu",
+    "count": 53,
+    "status": "okWithResults",
+    "notice": "Eixo coberto por exercicios."
+  },
+  {
+    "axis": "martial_art",
+    "key": "martial_conditioning",
+    "label": "Condicionamento para artes marciais",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  },
+  {
+    "axis": "martial_art",
+    "key": "martial_mobility",
+    "label": "Mobilidade para artes marciais",
+    "count": 0,
+    "status": "okEmptyWithExplicitNotice",
+    "notice": "Sem conteudo especifico; a UI deve mostrar aviso/fallback."
+  }
+]

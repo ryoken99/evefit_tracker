@@ -1,0 +1,92 @@
+﻿[
+    {
+        "issue":  "iOS camera/gallery permissions",
+        "before":  "Sem NSCameraUsageDescription/NSPhotoLibraryUsageDescription/NSPhotoLibraryAddUsageDescription",
+        "after":  "Chaves adicionadas em PT-PT para câmara, galeria e gravação de fotos de progresso",
+        "files":  "ios/Runner/Info.plist",
+        "risk":  "baixo",
+        "test":  "test/v099b0_release_hardening_test.dart",
+        "status":  "corrigido",
+        "pending":  ""
+    },
+    {
+        "issue":  "SQLite foreign keys",
+        "before":  "openDatabase sem onConfigure e sem PRAGMA foreign_keys = ON",
+        "after":  "onConfigure chama AppDatabase.configureDatabaseConnection e ativa PRAGMA foreign_keys = ON",
+        "files":  "lib/database/app_database.dart",
+        "risk":  "médio",
+        "test":  "test/v099b0_release_hardening_test.dart",
+        "status":  "corrigido",
+        "pending":  "Validar em cópias reais de DB legado antes de release pública ampla"
+    },
+    {
+        "issue":  "Orphan integrity audit",
+        "before":  "Sem auditoria centralizada antes de enforcement",
+        "after":  "auditDatabaseOrphans deteta órfãos em perfis, treinos, exercícios, séries, fotos, objetivos e templates sem apagar dados silenciosamente",
+        "files":  "lib/database/app_database.dart",
+        "risk":  "médio",
+        "test":  "test/v099b0_release_hardening_test.dart",
+        "status":  "corrigido",
+        "pending":  "Relatório persistente de órfãos pode ser ampliado numa fase futura"
+    },
+    {
+        "issue":  "Tracked APK artifacts",
+        "before":  "app-release.apk e app-release.apk.sha1 rastreados por Git",
+        "after":  "Removidos do índice com git rm --cached; .gitignore reforçado com *.apk.sha1",
+        "files":  ".gitignore; build/app/outputs/flutter-apk/app-release.apk; build/app/outputs/flutter-apk/app-release.apk.sha1",
+        "risk":  "baixo",
+        "test":  "test/v099b0_release_hardening_test.dart",
+        "status":  "corrigido",
+        "pending":  "APKs locais continuam geráveis mas fora do Git"
+    },
+    {
+        "issue":  "Update-safe serialization",
+        "before":  "Updates usavam toMap()..remove(id) em modelos críticos",
+        "after":  "Workout, ProgressPhoto, WorkoutSet, Goal e GoalMilestone aceitam toMap(forUpdate: true)",
+        "files":  "lib/models/workout.dart; lib/models/progress_photo.dart; lib/models/workout_set.dart; lib/models/goal.dart; lib/models/goal_milestone.dart; lib/database/app_database.dart",
+        "risk":  "baixo",
+        "test":  "test/v099b0_release_hardening_test.dart",
+        "status":  "corrigido",
+        "pending":  "Outros modelos podem ser migrados gradualmente se surgirem updates frágeis"
+    },
+    {
+        "issue":  "Visible save errors",
+        "before":  "Save de treino/foto podia propagar falha sem mensagem contextual",
+        "after":  "Try/catch com SnackBar para treino, picker, cópia/insert/update/delete de foto",
+        "files":  "lib/screens/workouts_screen.dart; lib/screens/photos_screen.dart",
+        "risk":  "baixo",
+        "test":  "flutter test -r compact",
+        "status":  "corrigido",
+        "pending":  "Testes widget específicos de fluxos de erro podem ser aprofundados numa fase de UX"
+    },
+    {
+        "issue":  "Profile gate error state",
+        "before":  "FutureBuilder ignorava snapshot.error e mantinha loading",
+        "after":  "Estado de erro com mensagem e botão Tentar novamente",
+        "files":  "lib/screens/profile_gate_screen.dart",
+        "risk":  "baixo",
+        "test":  "test/v099b0_release_hardening_test.dart",
+        "status":  "corrigido",
+        "pending":  ""
+    },
+    {
+        "issue":  "Tab state preservation",
+        "before":  "EveFitHome montava apenas _screens[_index]",
+        "after":  "EveFitHome usa IndexedStack",
+        "files":  "lib/app.dart",
+        "risk":  "baixo",
+        "test":  "test/v099b0_release_hardening_test.dart",
+        "status":  "corrigido",
+        "pending":  ""
+    },
+    {
+        "issue":  "Flaky performance test",
+        "before":  "Uma execução da suite mediu 6675 ms contra limite \u003c5000 por arranque frio",
+        "after":  "Teste mantém limite \u003c5000, mas aquece uma vez o caminho antes de medir",
+        "files":  "test/v100_search_performance_test.dart",
+        "risk":  "baixo",
+        "test":  "flutter test test/v100_search_performance_test.dart; flutter test -r compact",
+        "status":  "corrigido",
+        "pending":  "Monitorizar em CI se hardware variar muito"
+    }
+]

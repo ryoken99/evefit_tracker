@@ -1,0 +1,86 @@
+﻿[
+    {
+        "area":  "iOS camera/gallery permissions",
+        "status":  "fail",
+        "severity":  "critical",
+        "evidence":  "ios/Runner/Info.plist has no NSCameraUsageDescription, NSPhotoLibraryUsageDescription or NSPhotoLibraryAddUsageDescription while image_picker is used",
+        "recommendation":  "Add explicit iOS permission strings before iOS release/testing with photos"
+    },
+    {
+        "area":  "SQLite foreign keys",
+        "status":  "fail",
+        "severity":  "critical",
+        "evidence":  "AppDatabase.openDatabase has no onConfigure PRAGMA foreign_keys = ON in the inspected openDatabase call",
+        "recommendation":  "Enable PRAGMA foreign_keys = ON in onConfigure and validate migrations"
+    },
+    {
+        "area":  "Orphan cleanup before FK enforcement",
+        "status":  "needs_review",
+        "severity":  "high",
+        "evidence":  "No dedicated pre-FK orphan cleanup was identified in the database opening path",
+        "recommendation":  "Add audit/cleanup migration before enforcing foreign keys"
+    },
+    {
+        "area":  "toMap(forUpdate: true)",
+        "status":  "fail",
+        "severity":  "high",
+        "evidence":  "Model toMap methods do not expose forUpdate; updates use toMap()..remove(id) patterns",
+        "recommendation":  "Introduce update-safe serialization for records with create/update-only fields"
+    },
+    {
+        "area":  "Workout save error handling",
+        "status":  "needs_review",
+        "severity":  "high",
+        "evidence":  "Workout creation awaits DB writes directly in UI path; no local try/catch around the main save path was visible in sampled code",
+        "recommendation":  "Wrap save flows with user-visible error state and retry-safe behavior"
+    },
+    {
+        "area":  "Photo save error handling",
+        "status":  "needs_review",
+        "severity":  "high",
+        "evidence":  "Photo save path awaits picker, file copy and DB insert without visible try/catch in sampled code",
+        "recommendation":  "Handle permission denial, missing file, copy failure and DB failure with visible messages"
+    },
+    {
+        "area":  "Profile gate error state",
+        "status":  "fail",
+        "severity":  "medium",
+        "evidence":  "FutureBuilder waits for hasData and does not render snapshot.error explicitly",
+        "recommendation":  "Render retryable error state when profiles cannot load"
+    },
+    {
+        "area":  "Tab state preservation",
+        "status":  "fail",
+        "severity":  "medium",
+        "evidence":  "EveFitHome uses body: SafeArea(child: _screens[_index]) instead of IndexedStack",
+        "recommendation":  "Use IndexedStack to preserve tab state during navigation"
+    },
+    {
+        "area":  "APKs outside git",
+        "status":  "fail",
+        "severity":  "critical",
+        "evidence":  "git ls-files lists build/app/outputs/flutter-apk/app-release.apk and app-release.apk.sha1",
+        "recommendation":  "Remove tracked build artefacts in a dedicated cleanup commit; keep .gitignore protections"
+    },
+    {
+        "area":  "Local data and migrations",
+        "status":  "needs_review",
+        "severity":  "high",
+        "evidence":  "Database version is 21 with many historical migrations; FK enforcement change needs migration rehearsal on real data copies",
+        "recommendation":  "Create migration rehearsal test with legacy DB snapshots before enabling hard constraints"
+    },
+    {
+        "area":  "Export/backup",
+        "status":  "partial",
+        "severity":  "medium",
+        "evidence":  "CsvExportService exists and database.exportData() exports local tables to CSV",
+        "recommendation":  "Audit scope, file location, user feedback and restore/backup expectations"
+    },
+    {
+        "area":  "Release artifacts policy",
+        "status":  "partial",
+        "severity":  "medium",
+        "evidence":  ".gitignore includes /build/, *.apk, *.sha1 and SDK paths, but existing tracked artifacts remain",
+        "recommendation":  "Keep generated APKs uncommitted and remove previously tracked ones after approval"
+    }
+]

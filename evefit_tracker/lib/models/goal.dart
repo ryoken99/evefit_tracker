@@ -80,26 +80,30 @@ class Goal {
         : DateTime.parse(map['completed_at'] as String),
   );
 
-  Map<String, Object?> toMap() => {
-    'id': id,
-    'profile_id': profileId,
-    'title': title,
-    'description': description,
-    'phase': phase,
-    'category': category,
-    'metric_key': metricKey,
-    'initial_value': initialValue,
-    'current_value': currentValue,
-    'target_value': targetValue,
-    'unit': unit,
-    'start_date': startDate?.toIso8601String(),
-    'target_date': targetDate?.toIso8601String(),
-    'periodicity': periodicity,
-    'frequency_target': frequencyTarget,
-    'manual_progress': manualProgress,
-    'notes': notes,
-    'is_active': isActive ? 1 : 0,
-    'created_at': createdAt.toIso8601String(),
-    'completed_at': completedAt?.toIso8601String(),
-  };
+  Map<String, Object?> toMap({bool forUpdate = false}) {
+    final data = {
+      'id': id,
+      'profile_id': profileId,
+      'title': title,
+      'description': description,
+      'phase': phase,
+      'category': category,
+      'metric_key': metricKey,
+      'initial_value': initialValue,
+      'current_value': currentValue,
+      'target_value': targetValue,
+      'unit': unit,
+      'start_date': startDate?.toIso8601String(),
+      'target_date': targetDate?.toIso8601String(),
+      'periodicity': periodicity,
+      'frequency_target': frequencyTarget,
+      'manual_progress': manualProgress,
+      'notes': notes,
+      'is_active': isActive ? 1 : 0,
+      'created_at': createdAt.toIso8601String(),
+      'completed_at': completedAt?.toIso8601String(),
+    };
+    if (forUpdate) data.remove('id');
+    return data;
+  }
 }

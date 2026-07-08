@@ -52,6 +52,18 @@ class WorkoutEntry {
   int get totalSetCount => sets.length;
 }
 
+class DatabaseIntegrityIssue {
+  const DatabaseIntegrityIssue({
+    required this.table,
+    required this.description,
+    required this.count,
+  });
+
+  final String table;
+  final String description;
+  final int count;
+}
+
 class AppDatabase {
   AppDatabase._();
   factory AppDatabase.forTesting(Database database, {Profile? activeProfile}) =>
@@ -73,6 +85,9 @@ class AppDatabase {
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
       version: 21,
+      onConfigure: (db) async {
+        await configureDatabaseConnection(db);
+      },
       onCreate: (db, version) async {
         await _createTables(db);
         await _migrateV5(db);
@@ -157,6 +172,152 @@ class AppDatabase {
         }
       },
     );
+  }
+
+  static Future<List<DatabaseIntegrityIssue>> configureDatabaseConnection(
+    Database db,
+  ) async {
+    final issues = await auditDatabaseOrphans(db);
+    await db.execute('PRAGMA foreign_keys = ON');
+    return issues;
+  }
+
+  static Future<List<DatabaseIntegrityIssue>> auditDatabaseOrphans(
+    DatabaseExecutor db,
+  ) async {
+    final checks = <({String table, String column, String parent, String key})>[
+      (
+        table: 'user_profile',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (
+        table: 'body_measurements',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (table: 'workouts', column: 'profile_id', parent: 'profiles', key: 'id'),
+      (
+        table: 'workout_sets',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (
+        table: 'workout_sets',
+        column: 'workout_id',
+        parent: 'workouts',
+        key: 'id',
+      ),
+      (
+        table: 'workout_sets',
+        column: 'exercise_id',
+        parent: 'exercises',
+        key: 'id',
+      ),
+      (
+        table: 'workout_exercises',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (
+        table: 'workout_exercises',
+        column: 'workout_id',
+        parent: 'workouts',
+        key: 'id',
+      ),
+      (
+        table: 'workout_exercises',
+        column: 'exercise_id',
+        parent: 'exercises',
+        key: 'id',
+      ),
+      (
+        table: 'progress_photos',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (table: 'goals', column: 'profile_id', parent: 'profiles', key: 'id'),
+      (table: 'goal_milestones', column: 'goal_id', parent: 'goals', key: 'id'),
+      (
+        table: 'profile_equipment',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (
+        table: 'profile_training_locations',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (
+        table: 'dashboard_widgets',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (
+        table: 'workout_types',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+      (
+        table: 'workout_templates',
+        column: 'profile_id',
+        parent: 'profiles',
+        key: 'id',
+      ),
+    ];
+    final issues = <DatabaseIntegrityIssue>[];
+    for (final check in checks) {
+      if (!await _tableExists(db, check.table) ||
+          !await _tableExists(db, check.parent) ||
+          !await _executorTableHasColumn(db, check.table, check.column) ||
+          !await _executorTableHasColumn(db, check.parent, check.key)) {
+        continue;
+      }
+      final rows = await db.rawQuery(
+        'SELECT COUNT(*) AS total FROM ${check.table} '
+        'LEFT JOIN ${check.parent} ON ${check.table}.${check.column} = '
+        '${check.parent}.${check.key} '
+        'WHERE ${check.table}.${check.column} IS NOT NULL '
+        'AND ${check.parent}.${check.key} IS NULL',
+      );
+      final total = rows.single['total'] as int;
+      if (total > 0) {
+        issues.add(
+          DatabaseIntegrityIssue(
+            table: check.table,
+            description: '${check.column} -> ${check.parent}.${check.key}',
+            count: total,
+          ),
+        );
+      }
+    }
+    return issues;
+  }
+
+  static Future<bool> _tableExists(DatabaseExecutor db, String table) async {
+    final rows = await db.rawQuery(
+      "SELECT name FROM sqlite_master WHERE type = 'table' AND name = ?",
+      [table],
+    );
+    return rows.isNotEmpty;
+  }
+
+  static Future<bool> _executorTableHasColumn(
+    DatabaseExecutor db,
+    String table,
+    String column,
+  ) async {
+    final rows = await db.rawQuery('PRAGMA table_info($table)');
+    return rows.any((row) => row['name'] == column);
   }
 
   Future<void> _createTables(Database db) async {
@@ -1700,7 +1861,7 @@ class AppDatabase {
   Future<void> updateWorkout(Workout workout) async {
     await (await database).update(
       'workouts',
-      (workout.toMap()..remove('id'))..['profile_id'] = _requireProfileId(),
+      workout.toMap(forUpdate: true)..['profile_id'] = _requireProfileId(),
       where: 'id = ? AND profile_id = ?',
       whereArgs: [workout.id, _requireProfileId()],
     );
@@ -1840,7 +2001,7 @@ class AppDatabase {
   Future<void> updateWorkoutSet(WorkoutSet set) async {
     await (await database).update(
       'workout_sets',
-      (set.toMap()..remove('id'))..['profile_id'] = _requireProfileId(),
+      set.toMap(forUpdate: true)..['profile_id'] = _requireProfileId(),
       where: 'id = ? AND profile_id = ?',
       whereArgs: [set.id, _requireProfileId()],
     );
@@ -1931,7 +2092,7 @@ class AppDatabase {
   Future<void> updatePhoto(ProgressPhoto photo) async {
     await (await database).update(
       'progress_photos',
-      (photo.toMap()..remove('id'))..['profile_id'] = _requireProfileId(),
+      photo.toMap(forUpdate: true)..['profile_id'] = _requireProfileId(),
       where: 'id = ? AND profile_id = ?',
       whereArgs: [photo.id, _requireProfileId()],
     );
@@ -1975,7 +2136,7 @@ class AppDatabase {
   Future<void> updateGoal(Goal goal) async {
     await (await database).update(
       'goals',
-      (goal.toMap()..remove('id'))..['profile_id'] = _requireProfileId(),
+      goal.toMap(forUpdate: true)..['profile_id'] = _requireProfileId(),
       where: 'id = ? AND profile_id = ?',
       whereArgs: [goal.id, _requireProfileId()],
     );
@@ -2014,7 +2175,7 @@ class AppDatabase {
     if (!await _activeProfileOwnsGoal(db, milestone.goalId)) return;
     await db.update(
       'goal_milestones',
-      milestone.toMap()..remove('id'),
+      milestone.toMap(forUpdate: true),
       where:
           'id = ? AND EXISTS ('
           'SELECT 1 FROM goals '

@@ -12,6 +12,7 @@ import 'filter_reachability_validator.dart';
 import 'language_validator.dart';
 import 'safety_validator.dart';
 import 'scenario_matrix_validator.dart';
+import 'catalog_total_matrix_audit.dart';
 import 'taxonomy_validator.dart';
 
 class CatalogQualityAudit {
@@ -25,6 +26,7 @@ class CatalogQualityAudit {
   static CatalogAuditResult run({bool writeReports = false}) {
     final exercises = currentExercises();
     final scenarioValidator = ScenarioMatrixValidator();
+    final totalMatrix = CatalogTotalMatrixAudit.run();
     final issues = <CatalogIssue>[
       ...const CanonicalIdentityValidator().validate(exercises),
       ...const TaxonomyValidator().validate(exercises),
@@ -39,6 +41,7 @@ class CatalogQualityAudit {
       exercises: exercises,
       issues: issues,
       scenarios: scenarioValidator.run(exercises),
+      totalMatrix: totalMatrix.toJson(),
     );
     if (writeReports) writeAllReports(result);
     return result;
@@ -68,6 +71,7 @@ class CatalogQualityAudit {
     File(
       '${reportsDir.path}/catalog_gap_analysis.md',
     ).writeAsStringSync(_gapAnalysisMarkdown(result));
+    CatalogTotalMatrixAudit.writeReportsFor(CatalogTotalMatrixAudit.run());
   }
 
   static String _auditMarkdown(CatalogAuditResult result) {
@@ -94,6 +98,27 @@ class CatalogQualityAudit {
       );
     }
     buffer
+      ..writeln()
+      ..writeln('## Axis Inventory')
+      ..writeln('- See build/reports/catalog_axis_inventory.md')
+      ..writeln()
+      ..writeln('## Axis Coverage Audit')
+      ..writeln('- See build/reports/axis_coverage_audit.md')
+      ..writeln()
+      ..writeln('## Full Menu Matrix Audit')
+      ..writeln('- See build/reports/full_menu_matrix_audit.md')
+      ..writeln()
+      ..writeln('## Empty Menu Paths Audit')
+      ..writeln('- See build/reports/empty_menu_paths_audit.md')
+      ..writeln()
+      ..writeln('## Unreachable Exercises Audit')
+      ..writeln('- See build/reports/unreachable_exercises_audit.md')
+      ..writeln()
+      ..writeln('## Wrong Results Audit')
+      ..writeln('- Critical wrong-result paths are included in Issues.')
+      ..writeln()
+      ..writeln('## Fallback and Notices Audit')
+      ..writeln('- Empty paths with explicit notices are reported separately.')
       ..writeln()
       ..writeln('## Issues');
     if (result.issues.isEmpty) {

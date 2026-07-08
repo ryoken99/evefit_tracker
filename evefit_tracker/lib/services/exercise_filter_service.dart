@@ -340,6 +340,11 @@ class ExerciseFilterService {
         _isHighIntensityOrContact(exercise)) {
       return false;
     }
+    if (!_matchesRecoveryFocus(exercise, selection)) return false;
+    if (_isGeneralMobilitySelection(selection) &&
+        exercise.primaryType == 'artes_marciais') {
+      return false;
+    }
     if (_isActiveMobilitySelection(selection) && _isPassiveStretch(exercise)) {
       return false;
     }
@@ -422,11 +427,38 @@ class ExerciseFilterService {
       selection.specificMuscleKey == 'recovery' ||
       selection.subgroupKey == 'recovery';
 
+  static bool _matchesRecoveryFocus(
+    Exercise exercise,
+    TrainingSelection selection,
+  ) {
+    if (!_isRecoverySelection(selection)) return true;
+    final text = _visibilityText(exercise);
+    if (selection.groupKey == 'breathing') {
+      return _textHas(text, [
+            'respiracao',
+            'respira',
+            'breathing',
+            'relaxamento',
+            'downshift',
+            'nervous system',
+          ]) &&
+          !_textHas(text, ['caminhada', 'walk']);
+    }
+    if (selection.groupKey == 'active_recovery') {
+      return !_textHas(text, ['hiit', 'sprint', 'pesado', 'sparring']);
+    }
+    return true;
+  }
+
   static bool _isActiveMobilitySelection(TrainingSelection selection) =>
       selection.regionKey == 'mobility_recovery' &&
       (selection.groupKey.isEmpty ||
           selection.groupKey == 'general_mobility' ||
           selection.groupKey.endsWith('_mobility'));
+
+  static bool _isGeneralMobilitySelection(TrainingSelection selection) =>
+      selection.regionKey == 'mobility_recovery' &&
+      (selection.groupKey.isEmpty || selection.groupKey == 'general_mobility');
 
   static bool _isStretchingSelection(TrainingSelection selection) =>
       selection.groupKey == 'stretching' ||

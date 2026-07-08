@@ -798,50 +798,61 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
               const SizedBox(height: 12),
               FilledButton(
                 onPressed: () async {
-                  final workout = Workout(
-                    date: date,
-                    workoutType: workoutName.text.trim().isEmpty
-                        ? type
-                        : workoutName.text.trim(),
-                    workoutTypeId: workoutTypeId,
-                    muscleGroups: selectedGroups.isEmpty
-                        ? _groupsForSelection(selection, types, type)
-                        : selectedGroups.join(', '),
-                    regionKey: selection.regionKey,
-                    groupKey: selection.groupKey,
-                    subgroupKey: selection.subgroupKey,
-                    specificMuscleKey: selection.specificMuscleKey,
-                    equipmentKey: selection.equipmentKey,
-                    durationMinutes: int.tryParse(duration.text),
-                    notes: notes.text.trim(),
-                  );
-                  final id = template == null
-                      ? await widget.database.insertWorkout(workout)
-                      : await widget.database.insertWorkoutFromTemplate(
-                          workout: workout,
-                          exerciseReferences: template.exercises,
-                        );
-                  final entries = await widget.database.workouts();
-                  final entry = entries.firstWhere(
-                    (item) => item.workout.id == id,
-                    orElse: () => WorkoutEntry(
-                      workout: Workout(
-                        id: id,
-                        date: workout.date,
-                        workoutType: workout.workoutType,
-                        muscleGroups: workout.muscleGroups,
-                        regionKey: workout.regionKey,
-                        groupKey: workout.groupKey,
-                        subgroupKey: workout.subgroupKey,
-                        specificMuscleKey: workout.specificMuscleKey,
-                        equipmentKey: workout.equipmentKey,
-                        durationMinutes: workout.durationMinutes,
-                        notes: workout.notes,
+                  try {
+                    final workout = Workout(
+                      date: date,
+                      workoutType: workoutName.text.trim().isEmpty
+                          ? type
+                          : workoutName.text.trim(),
+                      workoutTypeId: workoutTypeId,
+                      muscleGroups: selectedGroups.isEmpty
+                          ? _groupsForSelection(selection, types, type)
+                          : selectedGroups.join(', '),
+                      regionKey: selection.regionKey,
+                      groupKey: selection.groupKey,
+                      subgroupKey: selection.subgroupKey,
+                      specificMuscleKey: selection.specificMuscleKey,
+                      equipmentKey: selection.equipmentKey,
+                      durationMinutes: int.tryParse(duration.text),
+                      notes: notes.text.trim(),
+                    );
+                    final id = template == null
+                        ? await widget.database.insertWorkout(workout)
+                        : await widget.database.insertWorkoutFromTemplate(
+                            workout: workout,
+                            exerciseReferences: template.exercises,
+                          );
+                    final entries = await widget.database.workouts();
+                    final entry = entries.firstWhere(
+                      (item) => item.workout.id == id,
+                      orElse: () => WorkoutEntry(
+                        workout: Workout(
+                          id: id,
+                          date: workout.date,
+                          workoutType: workout.workoutType,
+                          muscleGroups: workout.muscleGroups,
+                          regionKey: workout.regionKey,
+                          groupKey: workout.groupKey,
+                          subgroupKey: workout.subgroupKey,
+                          specificMuscleKey: workout.specificMuscleKey,
+                          equipmentKey: workout.equipmentKey,
+                          durationMinutes: workout.durationMinutes,
+                          notes: workout.notes,
+                        ),
+                        sets: const [],
                       ),
-                      sets: const [],
-                    ),
-                  );
-                  if (context.mounted) Navigator.pop(context, entry);
+                    );
+                    if (context.mounted) Navigator.pop(context, entry);
+                  } catch (_) {
+                    if (!context.mounted) return;
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Não foi possível guardar o treino. Tenta novamente.',
+                        ),
+                      ),
+                    );
+                  }
                 },
                 child: const Text('Guardar treino'),
               ),
