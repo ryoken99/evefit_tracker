@@ -2300,6 +2300,14 @@ class TrainingArchitecture {
         _addLowerCatalogTags(name, add);
         groupKeys.add('legs');
         break;
+      case 'gluteos':
+        add(
+          region: 'lower',
+          group: 'hips_glutes',
+          subgroup: 'glutes',
+          muscles: ['glute_max', 'glute_med', 'biceps_femoris'],
+        );
+        break;
       case 'cardio':
         _addCardioCatalogTags(name, add);
         break;

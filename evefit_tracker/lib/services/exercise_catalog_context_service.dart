@@ -211,6 +211,8 @@ class ExerciseCatalogContextService {
         if (section.contains('peito')) return 'Peito';
         if (section.contains('costa')) return 'Costas';
         if (section.contains('ombro')) return 'Ombros';
+        if (section.contains('biceps')) return 'Bíceps';
+        if (section.contains('triceps')) return 'Tríceps';
         if (section.contains('quadr')) return 'Quadriceps';
         if (section.contains('posterior') || section.contains('isquio')) {
           return 'Isquiotibiais';
@@ -273,7 +275,10 @@ class ExerciseCatalogContextService {
         ? 'desenvolver forca, controlo muscular e hipertrofia de forma progressiva'
         : 'praticar tecnica, base, distancia e controlo antes da velocidade';
     final equipment = _derivedEquipmentLabel(data);
-    final section = _safeLoadLanguage(data.section, equipment);
+    final section = _safeLoadLanguage(
+      data.section.replaceAll('_', ' '),
+      equipment,
+    );
     final focus = _readableDomainFocus(data, equipment);
     final description =
         'Exercicio para $action. O foco e $section, com orientacao pratica em $focus. '
@@ -388,6 +393,7 @@ class ExerciseCatalogContextService {
 
   static String _derivedSafetyText(V100CatalogDomainEntryData data) {
     final equipment = _derivedEquipmentLabel(data);
+    final exerciseName = _safeLoadLanguage(data.name, equipment);
     final source = data.safety.trim();
     final prefix = _safeLoadLanguage(
       source.isEmpty
@@ -395,7 +401,7 @@ class ExerciseCatalogContextService {
           : source,
       equipment,
     );
-    return '$prefix Para, interrompe ou abranda se houver dor aguda, tontura, formigueiro, falta de ar anormal, instabilidade ou perda de controlo.';
+    return '$prefix Em $exerciseName, confirma alinhamento, pega e amplitude antes de aumentar esforco. Para, interrompe ou abranda se houver dor aguda, tontura, formigueiro, falta de ar anormal, instabilidade ou perda de controlo.';
   }
 
   static String _derivedDomainSteps(V100CatalogDomainEntryData data) {
