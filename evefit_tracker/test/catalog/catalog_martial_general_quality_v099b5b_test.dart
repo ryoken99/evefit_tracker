@@ -7,7 +7,7 @@ void main() {
     final audit = CatalogQualityAudit.run();
 
     expect(v099b5bMartialGeneralDomainEntries, hasLength(56));
-    expect(audit.totalExercises, greaterThanOrEqualTo(1608));
+    expect(audit.totalExercises, greaterThanOrEqualTo(1687));
     expect(audit.criticalCount, 0);
     expect(audit.warningCount, 0);
   });

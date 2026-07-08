@@ -12,7 +12,7 @@ void main() {
 
     expect(v099b5aKarateDomainEntries, hasLength(72));
     expect(karateEntries.length, greaterThanOrEqualTo(72));
-    expect(audit.totalExercises, greaterThanOrEqualTo(1608));
+    expect(audit.totalExercises, greaterThanOrEqualTo(1687));
     expect(audit.criticalCount, 0);
     expect(audit.warningCount, 0);
   });
