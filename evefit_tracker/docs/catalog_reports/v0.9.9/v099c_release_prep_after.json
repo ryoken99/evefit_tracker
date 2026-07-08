@@ -1,0 +1,14 @@
+﻿{
+    "phase":  "v0.9.9C",
+    "branch":  "release-prep-v099c",
+    "catalog_changes":  0,
+    "exercises_added":  0,
+    "exercises_deleted":  0,
+    "menus_hidden":  0,
+    "version_changed":  0,
+    "total_exercises":  1762,
+    "critical_issues":  0,
+    "warnings":  0,
+    "manual_pixel_checklist":  "docs/catalog_reports/v0.9.9/v099c_manual_pixel_checklist.md",
+    "notes":  "Release prep created manual Pixel checklist and did not change catalog behavior."
+}
