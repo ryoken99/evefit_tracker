@@ -65,16 +65,16 @@ const _expectedB4AActivationNames = <String>[
 
 void main() {
   test('v0.9.9B4A adds 58 GOOD_V1 activation exercises with routes', () {
-    final entriesByName = {
+    final entriesByNameAndContext = {
       for (final entry in ExerciseCatalogContextService.entries)
-        entry.name: entry,
+        '${entry.name}__${entry.contextKey}': entry,
     };
     final registry = CatalogRouteRegistry.build();
 
     expect(_expectedB4AActivationNames, hasLength(58));
 
     for (final name in _expectedB4AActivationNames) {
-      final entry = entriesByName[name];
+      final entry = entriesByNameAndContext['${name}__ativacao'];
       expect(entry, isNotNull, reason: '$name must exist in B4A lot');
       final exercise = entry!.toExercise();
       expect(exercise.primaryType, 'ativacao', reason: name);
