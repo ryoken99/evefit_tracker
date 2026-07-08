@@ -600,11 +600,7 @@ class EquipmentCatalogService {
       ...selectedEquipmentKeys.where(definitions.containsKey),
       ...normalizeEquipmentTokens(selectedEquipmentKeys),
     };
-    final result = <String>{
-      'bodyweight',
-      'floor',
-      ...selected,
-    };
+    final result = <String>{'bodyweight', 'floor', ...selected};
     if (places.isEmpty || places.contains(placeHomeNoEquipment)) {
       result.add('wall');
     }

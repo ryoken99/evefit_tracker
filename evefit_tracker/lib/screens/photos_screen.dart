@@ -202,11 +202,22 @@ class _PhotosScreenState extends State<PhotosScreen> {
       ),
     );
     if (source == null) return;
-    final picked = await ImagePicker().pickImage(
-      source: source,
-      imageQuality: 85,
-    );
+    final XFile? picked;
+    try {
+      picked = await ImagePicker().pickImage(source: source, imageQuality: 85);
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Não foi possível aceder à câmara ou galeria. Verifica as permissões.',
+          ),
+        ),
+      );
+      return;
+    }
     if (picked == null || !mounted) return;
+    final selectedImage = picked;
     final saved = await showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
@@ -256,21 +267,32 @@ class _PhotosScreenState extends State<PhotosScreen> {
               const SizedBox(height: 12),
               FilledButton(
                 onPressed: () async {
-                  final path = await PhotoStorageService().copyIntoAppStorage(
-                    picked.path,
-                  );
-                  await widget.database.insertPhoto(
-                    ProgressPhoto(
-                      date: DateTime.now(),
-                      photoType: type,
-                      filePath: path,
-                      weightKg: double.tryParse(
-                        weight.text.replaceAll(',', '.'),
+                  try {
+                    final path = await PhotoStorageService().copyIntoAppStorage(
+                      selectedImage.path,
+                    );
+                    await widget.database.insertPhoto(
+                      ProgressPhoto(
+                        date: DateTime.now(),
+                        photoType: type,
+                        filePath: path,
+                        weightKg: double.tryParse(
+                          weight.text.replaceAll(',', '.'),
+                        ),
+                        notes: notes.text.trim(),
                       ),
-                      notes: notes.text.trim(),
-                    ),
-                  );
-                  if (context.mounted) Navigator.pop(context, true);
+                    );
+                    if (context.mounted) Navigator.pop(context, true);
+                  } catch (_) {
+                    if (!context.mounted) return;
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Não foi possível guardar a foto. Tenta novamente.',
+                        ),
+                      ),
+                    );
+                  }
                 },
                 child: const Text('Guardar foto'),
               ),
@@ -368,17 +390,28 @@ class _PhotoDetailScreenState extends State<_PhotoDetailScreen> {
             const SizedBox(height: 12),
             FilledButton(
               onPressed: () async {
-                final updated = ProgressPhoto(
-                  id: _photo.id,
-                  date: _photo.date,
-                  photoType: _photo.photoType,
-                  filePath: _photo.filePath,
-                  weightKg: _photo.weightKg,
-                  notes: notes.text.trim(),
-                );
-                await widget.database.updatePhoto(updated);
-                if (context.mounted) Navigator.pop(context, true);
-                setState(() => _photo = updated);
+                try {
+                  final updated = ProgressPhoto(
+                    id: _photo.id,
+                    date: _photo.date,
+                    photoType: _photo.photoType,
+                    filePath: _photo.filePath,
+                    weightKg: _photo.weightKg,
+                    notes: notes.text.trim(),
+                  );
+                  await widget.database.updatePhoto(updated);
+                  if (context.mounted) Navigator.pop(context, true);
+                  setState(() => _photo = updated);
+                } catch (_) {
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text(
+                        'Não foi possível guardar as notas da foto.',
+                      ),
+                    ),
+                  );
+                }
               },
               child: const Text('Guardar notas'),
             ),
@@ -411,12 +444,21 @@ class _PhotoDetailScreenState extends State<_PhotoDetailScreen> {
       ),
     );
     if (confirmed == true) {
-      await widget.database.deletePhoto(_photo.id!);
-      final file = File(_photo.filePath);
-      if (await file.exists()) {
-        await file.delete();
+      try {
+        await widget.database.deletePhoto(_photo.id!);
+        final file = File(_photo.filePath);
+        if (await file.exists()) {
+          await file.delete();
+        }
+        if (mounted) Navigator.pop(context, true);
+      } catch (_) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Não foi possível apagar a foto. Tenta novamente.'),
+          ),
+        );
       }
-      if (mounted) Navigator.pop(context, true);
     }
   }
 }

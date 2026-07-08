@@ -71,21 +71,27 @@ void main() {
       );
     });
 
-    test('clearFilters returns a stable default without losing the objective', () {
-      const flow = TrainingFlowSelection(
-        typeKey: 'cardio',
-        locationKey: EquipmentCatalogService.placeOutdoor,
-        equipmentKey: 'jump_rope',
-        cardioFocusKey: 'hiit',
-      );
+    test(
+      'clearFilters returns a stable default without losing the objective',
+      () {
+        const flow = TrainingFlowSelection(
+          typeKey: 'cardio',
+          locationKey: EquipmentCatalogService.placeOutdoor,
+          equipmentKey: 'jump_rope',
+          cardioFocusKey: 'hiit',
+        );
 
-      final cleared = TrainingFlow.clearFilters(flow);
+        final cleared = TrainingFlow.clearFilters(flow);
 
-      expect(cleared.typeKey, 'cardio');
-      expect(cleared.locationKey, EquipmentCatalogService.placeHomeNoEquipment);
-      expect(cleared.equipmentKey, 'bodyweight');
-      expect(cleared.cardioFocusKey, 'no_equipment');
-    });
+        expect(cleared.typeKey, 'cardio');
+        expect(
+          cleared.locationKey,
+          EquipmentCatalogService.placeHomeNoEquipment,
+        );
+        expect(cleared.equipmentKey, 'bodyweight');
+        expect(cleared.cardioFocusKey, 'no_equipment');
+      },
+    );
 
     test('exercise search matches name, alias and canonical identity', () {
       final exercise = Exercise(
@@ -97,9 +103,18 @@ void main() {
         catalogEntryKey: 'flexao_classica__peito',
       );
 
-      expect(ExerciseFilterService.matchesSearchQuery(exercise, 'flexao'), isTrue);
-      expect(ExerciseFilterService.matchesSearchQuery(exercise, 'pushup'), isTrue);
-      expect(ExerciseFilterService.matchesSearchQuery(exercise, 'push_up'), isTrue);
+      expect(
+        ExerciseFilterService.matchesSearchQuery(exercise, 'flexao'),
+        isTrue,
+      );
+      expect(
+        ExerciseFilterService.matchesSearchQuery(exercise, 'pushup'),
+        isTrue,
+      );
+      expect(
+        ExerciseFilterService.matchesSearchQuery(exercise, 'push_up'),
+        isTrue,
+      );
       expect(
         ExerciseFilterService.matchesSearchQuery(exercise, 'agachamento'),
         isFalse,

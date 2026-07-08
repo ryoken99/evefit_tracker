@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 /coverage/
 *.apk
+*.apk.sha1
 *.sha1
 .codex-remote-attachments/
 **/.codex-remote-attachments/

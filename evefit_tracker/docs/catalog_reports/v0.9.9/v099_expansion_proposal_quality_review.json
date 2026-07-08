@@ -1,0 +1,2818 @@
+﻿[
+    {
+        "nome_anterior":  "leg press - quadríceps/joelho - proposta 001",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - isquiotibiais/joelho - proposta 002",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - glúteos/anca - proposta 003",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - dorsais/escápulas - proposta 004",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - peitoral/ombro - proposta 005",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - deltoides/ombro - proposta 006",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - core/coluna - proposta 007",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - antebraço/pegada - proposta 008",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "barbell hinge - quadríceps/joelho - proposta 009",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "pull up progression - isquiotibiais/joelho - proposta 010",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ab wheel - glúteos/anca - proposta 011",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "trx row - dorsais/escápulas - proposta 012",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "rings support - peitoral/ombro - proposta 013",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "medicine ball core - deltoides/ombro - proposta 014",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "sandbag carry - core/coluna - proposta 015",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg press - antebraço/pegada - proposta 016",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - quadríceps/joelho - proposta 017",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - isquiotibiais/joelho - proposta 018",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - glúteos/anca - proposta 019",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - dorsais/escápulas - proposta 020",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - peitoral/ombro - proposta 021",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - deltoides/ombro - proposta 022",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - core/coluna - proposta 023",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "barbell hinge - antebraço/pegada - proposta 024",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "pull up progression - quadríceps/joelho - proposta 025",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ab wheel - isquiotibiais/joelho - proposta 026",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "trx row - glúteos/anca - proposta 027",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "rings support - dorsais/escápulas - proposta 028",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "medicine ball core - peitoral/ombro - proposta 029",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "sandbag carry - deltoides/ombro - proposta 030",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg press - core/coluna - proposta 031",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - antebraço/pegada - proposta 032",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - quadríceps/joelho - proposta 033",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - isquiotibiais/joelho - proposta 034",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - glúteos/anca - proposta 035",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - dorsais/escápulas - proposta 036",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - peitoral/ombro - proposta 037",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - deltoides/ombro - proposta 038",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "barbell hinge - core/coluna - proposta 039",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "pull up progression - antebraço/pegada - proposta 040",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ab wheel - quadríceps/joelho - proposta 041",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "trx row - isquiotibiais/joelho - proposta 042",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "rings support - glúteos/anca - proposta 043",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "medicine ball core - dorsais/escápulas - proposta 044",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "sandbag carry - peitoral/ombro - proposta 045",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg press - deltoides/ombro - proposta 046",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - core/coluna - proposta 047",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - antebraço/pegada - proposta 048",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - quadríceps/joelho - proposta 049",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - isquiotibiais/joelho - proposta 050",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - glúteos/anca - proposta 051",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - dorsais/escápulas - proposta 052",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - peitoral/ombro - proposta 053",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "barbell hinge - deltoides/ombro - proposta 054",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "pull up progression - core/coluna - proposta 055",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ab wheel - antebraço/pegada - proposta 056",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "trx row - quadríceps/joelho - proposta 057",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "rings support - isquiotibiais/joelho - proposta 058",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "medicine ball core - glúteos/anca - proposta 059",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "sandbag carry - dorsais/escápulas - proposta 060",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg press - peitoral/ombro - proposta 061",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - deltoides/ombro - proposta 062",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - core/coluna - proposta 063",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - antebraço/pegada - proposta 064",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - quadríceps/joelho - proposta 065",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - isquiotibiais/joelho - proposta 066",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - glúteos/anca - proposta 067",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - dorsais/escápulas - proposta 068",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "barbell hinge - peitoral/ombro - proposta 069",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "pull up progression - deltoides/ombro - proposta 070",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ab wheel - core/coluna - proposta 071",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "trx row - antebraço/pegada - proposta 072",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "rings support - quadríceps/joelho - proposta 073",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "medicine ball core - isquiotibiais/joelho - proposta 074",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "sandbag carry - glúteos/anca - proposta 075",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg press - dorsais/escápulas - proposta 076",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - peitoral/ombro - proposta 077",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - deltoides/ombro - proposta 078",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - core/coluna - proposta 079",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - antebraço/pegada - proposta 080",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - quadríceps/joelho - proposta 081",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - isquiotibiais/joelho - proposta 082",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - glúteos/anca - proposta 083",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "barbell hinge - dorsais/escápulas - proposta 084",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "pull up progression - peitoral/ombro - proposta 085",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ab wheel - deltoides/ombro - proposta 086",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "trx row - core/coluna - proposta 087",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "rings support - antebraço/pegada - proposta 088",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "medicine ball core - quadríceps/joelho - proposta 089",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "sandbag carry - isquiotibiais/joelho - proposta 090",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg press - glúteos/anca - proposta 091",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - dorsais/escápulas - proposta 092",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - peitoral/ombro - proposta 093",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - deltoides/ombro - proposta 094",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - core/coluna - proposta 095",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - antebraço/pegada - proposta 096",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - quadríceps/joelho - proposta 097",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - isquiotibiais/joelho - proposta 098",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "barbell hinge - glúteos/anca - proposta 099",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "pull up progression - dorsais/escápulas - proposta 100",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ab wheel - peitoral/ombro - proposta 101",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "trx row - deltoides/ombro - proposta 102",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "rings support - core/coluna - proposta 103",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "medicine ball core - antebraço/pegada - proposta 104",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "sandbag carry - quadríceps/joelho - proposta 105",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg press - isquiotibiais/joelho - proposta 106",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg extension - glúteos/anca - proposta 107",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "leg curl - dorsais/escápulas - proposta 108",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "smith machine squat - peitoral/ombro - proposta 109",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "lat pulldown - deltoides/ombro - proposta 110",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "cable row - core/coluna - proposta 111",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bench press variation - antebraço/pegada - proposta 112",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "dumbbell unilateral - quadríceps/joelho - proposta 113",
+        "categoria":  "musculacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "passadeira técnica - cardiorrespiratório/joelho - proposta 001",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bicicleta ritmo controlado - cardiorrespiratório/anca - proposta 002",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "elíptica base - cardiorrespiratório/tornozelo - proposta 003",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "remo ergómetro - cardiorrespiratório/joelho - proposta 004",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "corda leve - cardiorrespiratório/anca - proposta 005",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "passadeira técnica - cardiorrespiratório/tornozelo - proposta 006",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bicicleta ritmo controlado - cardiorrespiratório/joelho - proposta 007",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "elíptica base - cardiorrespiratório/anca - proposta 008",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "remo ergómetro - cardiorrespiratório/tornozelo - proposta 009",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "corda leve - cardiorrespiratório/joelho - proposta 010",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "passadeira técnica - cardiorrespiratório/anca - proposta 011",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bicicleta ritmo controlado - cardiorrespiratório/tornozelo - proposta 012",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "elíptica base - cardiorrespiratório/joelho - proposta 013",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "remo ergómetro - cardiorrespiratório/anca - proposta 014",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "corda leve - cardiorrespiratório/tornozelo - proposta 015",
+        "categoria":  "cardio",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kihon - técnica de base - proposta 001",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kata base - ancas/joelhos - proposta 002",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "kumite técnico - ombros/escápulas - proposta 003",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bunkai básico - core/rotação - proposta 004",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ solo - equilíbrio/deslocamento - proposta 005",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ tatami - técnica de base - proposta 006",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "defesa pessoal - ancas/joelhos - proposta 007",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "saco e aparadores - ombros/escápulas - proposta 008",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "condicionamento marcial - core/rotação - proposta 009",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade marcial - equilíbrio/deslocamento - proposta 010",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kihon - técnica de base - proposta 011",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kata base - ancas/joelhos - proposta 012",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "kumite técnico - ombros/escápulas - proposta 013",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bunkai básico - core/rotação - proposta 014",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ solo - equilíbrio/deslocamento - proposta 015",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ tatami - técnica de base - proposta 016",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "defesa pessoal - ancas/joelhos - proposta 017",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "saco e aparadores - ombros/escápulas - proposta 018",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "condicionamento marcial - core/rotação - proposta 019",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade marcial - equilíbrio/deslocamento - proposta 020",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kihon - técnica de base - proposta 021",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kata base - ancas/joelhos - proposta 022",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "kumite técnico - ombros/escápulas - proposta 023",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bunkai básico - core/rotação - proposta 024",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ solo - equilíbrio/deslocamento - proposta 025",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ tatami - técnica de base - proposta 026",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "defesa pessoal - ancas/joelhos - proposta 027",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "saco e aparadores - ombros/escápulas - proposta 028",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "condicionamento marcial - core/rotação - proposta 029",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade marcial - equilíbrio/deslocamento - proposta 030",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kihon - técnica de base - proposta 031",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kata base - ancas/joelhos - proposta 032",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "kumite técnico - ombros/escápulas - proposta 033",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bunkai básico - core/rotação - proposta 034",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ solo - equilíbrio/deslocamento - proposta 035",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ tatami - técnica de base - proposta 036",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "defesa pessoal - ancas/joelhos - proposta 037",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "saco e aparadores - ombros/escápulas - proposta 038",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "condicionamento marcial - core/rotação - proposta 039",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade marcial - equilíbrio/deslocamento - proposta 040",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kihon - técnica de base - proposta 041",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kata base - ancas/joelhos - proposta 042",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "kumite técnico - ombros/escápulas - proposta 043",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bunkai básico - core/rotação - proposta 044",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ solo - equilíbrio/deslocamento - proposta 045",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ tatami - técnica de base - proposta 046",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "defesa pessoal - ancas/joelhos - proposta 047",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "saco e aparadores - ombros/escápulas - proposta 048",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "condicionamento marcial - core/rotação - proposta 049",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade marcial - equilíbrio/deslocamento - proposta 050",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kihon - técnica de base - proposta 051",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kata base - ancas/joelhos - proposta 052",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "kumite técnico - ombros/escápulas - proposta 053",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bunkai básico - core/rotação - proposta 054",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ solo - equilíbrio/deslocamento - proposta 055",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ tatami - técnica de base - proposta 056",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "defesa pessoal - ancas/joelhos - proposta 057",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "saco e aparadores - ombros/escápulas - proposta 058",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "condicionamento marcial - core/rotação - proposta 059",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade marcial - equilíbrio/deslocamento - proposta 060",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kihon - técnica de base - proposta 061",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "karate kata base - ancas/joelhos - proposta 062",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "kumite técnico - ombros/escápulas - proposta 063",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "bunkai básico - core/rotação - proposta 064",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ solo - equilíbrio/deslocamento - proposta 065",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "BJJ tatami - técnica de base - proposta 066",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "defesa pessoal - ancas/joelhos - proposta 067",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "saco e aparadores - ombros/escápulas - proposta 068",
+        "categoria":  "artes_marciais",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade torácica - coluna torácica - proposta 001",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade anca - anca - proposta 002",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade tornozelo - tornozelo - proposta 003",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade ombro - ombro - proposta 004",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade punho - punho - proposta 005",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade cervical - pescoço - proposta 006",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade torácica - coluna torácica - proposta 007",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade anca - anca - proposta 008",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade tornozelo - tornozelo - proposta 009",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade ombro - ombro - proposta 010",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade punho - punho - proposta 011",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade cervical - pescoço - proposta 012",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade torácica - coluna torácica - proposta 013",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade anca - anca - proposta 014",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade tornozelo - tornozelo - proposta 015",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade ombro - ombro - proposta 016",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade punho - punho - proposta 017",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade cervical - pescoço - proposta 018",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade torácica - coluna torácica - proposta 019",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade anca - anca - proposta 020",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade tornozelo - tornozelo - proposta 021",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade ombro - ombro - proposta 022",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade punho - punho - proposta 023",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade cervical - pescoço - proposta 024",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade torácica - coluna torácica - proposta 025",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade anca - anca - proposta 026",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "mobilidade tornozelo - tornozelo - proposta 027",
+        "categoria":  "mobilidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento cadeia posterior - isquiotibiais - proposta 001",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento flexores da anca - flexores da anca - proposta 002",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento peitoral - peitoral - proposta 003",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento gémeos - gémeos - proposta 004",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento adutores - adutores - proposta 005",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento ombro - ombro - proposta 006",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento cadeia posterior - isquiotibiais - proposta 007",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento flexores da anca - flexores da anca - proposta 008",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento peitoral - peitoral - proposta 009",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento gémeos - gémeos - proposta 010",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento adutores - adutores - proposta 011",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento ombro - ombro - proposta 012",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento cadeia posterior - isquiotibiais - proposta 013",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento flexores da anca - flexores da anca - proposta 014",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento peitoral - peitoral - proposta 015",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento gémeos - gémeos - proposta 016",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento adutores - adutores - proposta 017",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento ombro - ombro - proposta 018",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento cadeia posterior - isquiotibiais - proposta 019",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento flexores da anca - flexores da anca - proposta 020",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento peitoral - peitoral - proposta 021",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento gémeos - gémeos - proposta 022",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento adutores - adutores - proposta 023",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento ombro - ombro - proposta 024",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento cadeia posterior - isquiotibiais - proposta 025",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento flexores da anca - flexores da anca - proposta 026",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento peitoral - peitoral - proposta 027",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "alongamento gémeos - gémeos - proposta 028",
+        "categoria":  "elasticidade",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "respiração recuperação - respiração/diafragma - proposta 001",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "libertação miofascial - lombar - proposta 002",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "descarga lombar - quadríceps - proposta 003",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "recuperação pernas - gémeos - proposta 004",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "recuperação ombros - ombros - proposta 005",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "respiração recuperação - respiração/diafragma - proposta 006",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "libertação miofascial - lombar - proposta 007",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "descarga lombar - quadríceps - proposta 008",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "recuperação pernas - gémeos - proposta 009",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "recuperação ombros - ombros - proposta 010",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "respiração recuperação - respiração/diafragma - proposta 011",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "libertação miofascial - lombar - proposta 012",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "descarga lombar - quadríceps - proposta 013",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "recuperação pernas - gémeos - proposta 014",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "recuperação ombros - ombros - proposta 015",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "respiração recuperação - respiração/diafragma - proposta 016",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "libertação miofascial - lombar - proposta 017",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "descarga lombar - quadríceps - proposta 018",
+        "categoria":  "recuperacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento geral - corpo inteiro - proposta 001",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento ombro - ombro - proposta 002",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento anca - anca - proposta 003",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento joelho - joelho - proposta 004",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento marcial - deslocamento - proposta 005",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento geral - corpo inteiro - proposta 006",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento ombro - ombro - proposta 007",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento anca - anca - proposta 008",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "aquecimento joelho - joelho - proposta 009",
+        "categoria":  "aquecimento",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação glúteos - glúteos/anca - proposta 001",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação core - core/coluna - proposta 002",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação escápulas - escápulas/ombro - proposta 003",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação adutores - adutores - proposta 004",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação anca - tornozelo - proposta 005",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação tornozelo - punho - proposta 006",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação punho - pescoço - proposta 007",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação pescoço - glúteos/anca - proposta 008",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação glúteos - core/coluna - proposta 009",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação core - escápulas/ombro - proposta 010",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação escápulas - adutores - proposta 011",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação adutores - tornozelo - proposta 012",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação anca - punho - proposta 013",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação tornozelo - pescoço - proposta 014",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação punho - glúteos/anca - proposta 015",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação pescoço - core/coluna - proposta 016",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação glúteos - escápulas/ombro - proposta 017",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação core - adutores - proposta 018",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação escápulas - tornozelo - proposta 019",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação adutores - punho - proposta 020",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação anca - pescoço - proposta 021",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação tornozelo - glúteos/anca - proposta 022",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação punho - core/coluna - proposta 023",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação pescoço - escápulas/ombro - proposta 024",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação glúteos - adutores - proposta 025",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação core - tornozelo - proposta 026",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação escápulas - punho - proposta 027",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação adutores - pescoço - proposta 028",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação anca - glúteos/anca - proposta 029",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação tornozelo - core/coluna - proposta 030",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação punho - escápulas/ombro - proposta 031",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação pescoço - adutores - proposta 032",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação glúteos - tornozelo - proposta 033",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação core - punho - proposta 034",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação escápulas - pescoço - proposta 035",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação adutores - glúteos/anca - proposta 036",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação anca - core/coluna - proposta 037",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "ativação tornozelo - escápulas/ombro - proposta 038",
+        "categoria":  "ativacao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção joelho - joelho - proposta 001",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção ombro - ombro - proposta 002",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção lombar - lombar - proposta 003",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção tornozelo - tornozelo - proposta 004",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção punho - punho - proposta 005",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção pescoço - pescoço - proposta 006",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção anca - anca - proposta 007",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção cotovelo - cotovelo - proposta 008",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção joelho - joelho - proposta 009",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção ombro - ombro - proposta 010",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção lombar - lombar - proposta 011",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção tornozelo - tornozelo - proposta 012",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção punho - punho - proposta 013",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção pescoço - pescoço - proposta 014",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção anca - anca - proposta 015",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção cotovelo - cotovelo - proposta 016",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção joelho - joelho - proposta 017",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção ombro - ombro - proposta 018",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção lombar - lombar - proposta 019",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção tornozelo - tornozelo - proposta 020",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção punho - punho - proposta 021",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção pescoço - pescoço - proposta 022",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção anca - anca - proposta 023",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção cotovelo - cotovelo - proposta 024",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção joelho - joelho - proposta 025",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção ombro - ombro - proposta 026",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção lombar - lombar - proposta 027",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção tornozelo - tornozelo - proposta 028",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção punho - punho - proposta 029",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção pescoço - pescoço - proposta 030",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção anca - anca - proposta 031",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção cotovelo - cotovelo - proposta 032",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção joelho - joelho - proposta 033",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção ombro - ombro - proposta 034",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção lombar - lombar - proposta 035",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    },
+    {
+        "nome_anterior":  "prevenção tornozelo - tornozelo - proposta 036",
+        "categoria":  "prevencao",
+        "estado_revisao":  "REJECT_TOO_GENERIC",
+        "motivo":  "Nome com padrÃ£o proposta NNN e mapeamento rotativo; nÃ£o cumpre GOOD_V1.",
+        "pode_ser_reaproveitado":  "nao",
+        "acao":  "substituir por exercÃ­cio especÃ­fico com nome real, mÃºsculo, equipamento, local e menu coerentes"
+    }
+]

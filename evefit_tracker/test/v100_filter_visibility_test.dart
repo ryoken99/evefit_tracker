@@ -121,93 +121,99 @@ void main() {
       expect(names, isNot(contains('Kumite técnico')));
     });
 
-    test('mobility, elasticity, warm-up, activation and prevention stay separated', () {
-      final activeMobility = _visibleNames(
-        location: 'Casa sem equipamento',
-        selectedEquipment: const {},
-        selection: const TrainingSelection(
-          regionKey: 'mobility_recovery',
-          groupKey: 'general_mobility',
-        ),
-      );
-      expect(activeMobility, contains('Mobilidade 90/90'));
-
-      final passiveStretch = _visibleNames(
-        location: 'Casa sem equipamento',
-        selectedEquipment: const {},
-        selection: const TrainingSelection(
-          regionKey: 'mobility_recovery',
-          groupKey: 'stretching',
-        ),
-      );
-      expect(passiveStretch, contains('Alongamento posterior sentado'));
-      expect(passiveStretch, isNot(contains('Mountain climbers')));
-
-      final typedMobility = ExerciseFilterService.getAvailableExercises(
-        exercises: [
-          _fixture(
-            name: 'Controlo articular ativo',
-            group: 'Mobilidade',
-            primaryType: 'mobilidade',
-            equipmentKeys: const {'bodyweight', 'floor'},
+    test(
+      'mobility, elasticity, warm-up, activation and prevention stay separated',
+      () {
+        final activeMobility = _visibleNames(
+          location: 'Casa sem equipamento',
+          selectedEquipment: const {},
+          selection: const TrainingSelection(
+            regionKey: 'mobility_recovery',
+            groupKey: 'general_mobility',
           ),
-          _fixture(
-            name: 'Alongamento passivo longo',
-            group: 'Elasticidade',
-            primaryType: 'elasticidade',
-            equipmentKeys: const {'bodyweight', 'floor'},
-          ),
-        ],
-        trainingLocation: 'Casa sem equipamento',
-        availableEquipmentKeys: const {},
-        selection: const TrainingSelection(
-          regionKey: 'mobility_recovery',
-          groupKey: 'general_mobility',
-        ),
-        showAllExercises: false,
-      ).map((item) => item.exercise.name).toSet();
+        );
+        expect(activeMobility, contains('Mobilidade 90/90'));
 
-      expect(typedMobility, contains('Controlo articular ativo'));
-      expect(typedMobility, isNot(contains('Alongamento passivo longo')));
-    });
+        final passiveStretch = _visibleNames(
+          location: 'Casa sem equipamento',
+          selectedEquipment: const {},
+          selection: const TrainingSelection(
+            regionKey: 'mobility_recovery',
+            groupKey: 'stretching',
+          ),
+        );
+        expect(passiveStretch, contains('Alongamento posterior sentado'));
+        expect(passiveStretch, isNot(contains('Mountain climbers')));
 
-    test('solo martial arts hides partner-only and impact ukemi without tatami', () {
-      final names = ExerciseFilterService.getAvailableExercises(
-        exercises: [
-          _fixture(
-            name: 'Sparring leve',
-            group: 'Karate',
-            primaryType: 'artes_marciais',
-            equipmentKeys: const {'bodyweight', 'partner'},
-            contextKey: 'karate',
+        final typedMobility = ExerciseFilterService.getAvailableExercises(
+          exercises: [
+            _fixture(
+              name: 'Controlo articular ativo',
+              group: 'Mobilidade',
+              primaryType: 'mobilidade',
+              equipmentKeys: const {'bodyweight', 'floor'},
+            ),
+            _fixture(
+              name: 'Alongamento passivo longo',
+              group: 'Elasticidade',
+              primaryType: 'elasticidade',
+              equipmentKeys: const {'bodyweight', 'floor'},
+            ),
+          ],
+          trainingLocation: 'Casa sem equipamento',
+          availableEquipmentKeys: const {},
+          selection: const TrainingSelection(
+            regionKey: 'mobility_recovery',
+            groupKey: 'general_mobility',
           ),
-          _fixture(
-            name: 'Breakfalls (ukemi)',
-            group: 'Jiu-Jitsu',
-            primaryType: 'artes_marciais',
-            equipmentKeys: const {'tatami'},
-            contextKey: 'jiu_jitsu',
-          ),
-          _fixture(
-            name: 'Technical stand-up',
-            group: 'Jiu-Jitsu',
-            canonicalId: 'technical_stand_up_lento',
-            primaryType: 'artes_marciais',
-            secondaryTypes: const {'mobilidade', 'defesa_pessoal'},
-            equipmentKeys: const {'bodyweight', 'floor'},
-            contextKey: 'jiu_jitsu',
-          ),
-        ],
-        trainingLocation: 'Casa sem equipamento',
-        availableEquipmentKeys: const {},
-        selection: const TrainingSelection(regionKey: 'martial_arts'),
-        showAllExercises: false,
-      ).map((item) => item.exercise.name).toSet();
+          showAllExercises: false,
+        ).map((item) => item.exercise.name).toSet();
 
-      expect(names, contains('Technical stand-up'));
-      expect(names, isNot(contains('Sparring leve')));
-      expect(names, isNot(contains('Breakfalls (ukemi)')));
-    });
+        expect(typedMobility, contains('Controlo articular ativo'));
+        expect(typedMobility, isNot(contains('Alongamento passivo longo')));
+      },
+    );
+
+    test(
+      'solo martial arts hides partner-only and impact ukemi without tatami',
+      () {
+        final names = ExerciseFilterService.getAvailableExercises(
+          exercises: [
+            _fixture(
+              name: 'Sparring leve',
+              group: 'Karate',
+              primaryType: 'artes_marciais',
+              equipmentKeys: const {'bodyweight', 'partner'},
+              contextKey: 'karate',
+            ),
+            _fixture(
+              name: 'Breakfalls (ukemi)',
+              group: 'Jiu-Jitsu',
+              primaryType: 'artes_marciais',
+              equipmentKeys: const {'tatami'},
+              contextKey: 'jiu_jitsu',
+            ),
+            _fixture(
+              name: 'Technical stand-up',
+              group: 'Jiu-Jitsu',
+              canonicalId: 'technical_stand_up_lento',
+              primaryType: 'artes_marciais',
+              secondaryTypes: const {'mobilidade', 'defesa_pessoal'},
+              equipmentKeys: const {'bodyweight', 'floor'},
+              contextKey: 'jiu_jitsu',
+            ),
+          ],
+          trainingLocation: 'Casa sem equipamento',
+          availableEquipmentKeys: const {},
+          selection: const TrainingSelection(regionKey: 'martial_arts'),
+          showAllExercises: false,
+        ).map((item) => item.exercise.name).toSet();
+
+        expect(names, contains('Technical stand-up'));
+        expect(names, isNot(contains('Sparring leve')));
+        expect(names, isNot(contains('Breakfalls (ukemi)')));
+      },
+    );
 
     test('canonical examples respect domain visibility', () {
       final homeStrength = _visibleNames(

@@ -38,15 +38,19 @@ class WorkoutSet {
     exerciseName: map['exercise_name'] as String?,
   );
 
-  Map<String, Object?> toMap() => {
-    'id': id,
-    'profile_id': profileId,
-    'workout_id': workoutId,
-    'exercise_id': exerciseId,
-    'set_number': setNumber,
-    'weight_kg': weightKg,
-    'reps': reps,
-    'rpe': rpe,
-    'notes': notes,
-  };
+  Map<String, Object?> toMap({bool forUpdate = false}) {
+    final data = {
+      'id': id,
+      'profile_id': profileId,
+      'workout_id': workoutId,
+      'exercise_id': exerciseId,
+      'set_number': setNumber,
+      'weight_kg': weightKg,
+      'reps': reps,
+      'rpe': rpe,
+      'notes': notes,
+    };
+    if (forUpdate) data.remove('id');
+    return data;
+  }
 }

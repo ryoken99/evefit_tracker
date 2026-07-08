@@ -1,0 +1,209 @@
+# Axis coverage audit
+
+- training_type.strength: okWithResults (207) Eixo coberto por exercicios.
+- training_type.cardio: okWithResults (65) Eixo coberto por exercicios.
+- training_type.martial_arts: okWithResults (232) Eixo coberto por exercicios.
+- training_type.mobility: okWithResults (193) Eixo coberto por exercicios.
+- training_type.elasticity: okWithResults (132) Eixo coberto por exercicios.
+- training_type.recovery: okWithResults (122) Eixo coberto por exercicios.
+- training_type.warmup: okWithResults (131) Eixo coberto por exercicios.
+- training_type.activation: okWithResults (52) Eixo coberto por exercicios.
+- training_type.prevention: okWithResults (44) Eixo coberto por exercicios.
+- location.place_home_no_equipment: okWithResults (69) Eixo coberto por exercicios.
+- location.place_home_equipped: okWithResults (71) Eixo coberto por exercicios.
+- location.place_gym: okWithResults (90) Eixo coberto por exercicios.
+- location.place_dojo: okWithResults (71) Eixo coberto por exercicios.
+- location.place_tatami: okWithResults (71) Eixo coberto por exercicios.
+- location.place_outdoor: okWithResults (73) Eixo coberto por exercicios.
+- location.place_work_travel: okWithResults (69) Eixo coberto por exercicios.
+- location.place_clinic: okWithResults (69) Eixo coberto por exercicios.
+- equipment.bodyweight: okWithResults (610) Eixo coberto por exercicios.
+- equipment.floor: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.wall: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.free_space: okWithResults (2) Eixo coberto por exercicios.
+- equipment.mat: okWithResults (146) Eixo coberto por exercicios.
+- equipment.chair_support: okWithResults (77) Eixo coberto por exercicios.
+- equipment.bench: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.weighted_backpack: okWithResults (2) Eixo coberto por exercicios.
+- equipment.water_bottles: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.water_jug: okWithResults (1) Eixo coberto por exercicios.
+- equipment.stable_step: okWithResults (7) Eixo coberto por exercicios.
+- equipment.sturdy_table: okWithResults (1) Eixo coberto por exercicios.
+- equipment.broomstick: okWithResults (9) Eixo coberto por exercicios.
+- equipment.towel: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.none: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.other: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.dumbbells: okWithResults (75) Eixo coberto por exercicios.
+- equipment.barbell: okWithResults (26) Eixo coberto por exercicios.
+- equipment.plates: okWithResults (2) Eixo coberto por exercicios.
+- equipment.kettlebell: okWithResults (2) Eixo coberto por exercicios.
+- equipment.medicine_ball: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.sandbag: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.weighted_vest: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.ankle_weights: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.pullup_bar: okWithResults (13) Eixo coberto por exercicios.
+- equipment.parallel_bars: okWithResults (2) Eixo coberto por exercicios.
+- equipment.rings: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.trx: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.bands: okWithResults (55) Eixo coberto por exercicios.
+- equipment.mini_bands: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.ab_wheel: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.jump_rope: okWithResults (12) Eixo coberto por exercicios.
+- equipment.machine: okWithResults (17) Eixo coberto por exercicios.
+- equipment.high_cable: okWithResults (23) Eixo coberto por exercicios.
+- equipment.low_cable: okWithResults (20) Eixo coberto por exercicios.
+- equipment.adjustable_cable: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.lat_pulldown: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.seated_row_machine: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.chest_press_machine: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.shoulder_press_machine: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.leg_press: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.leg_extension: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.leg_curl: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.abductor_machine: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.adductor_machine: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.smith_machine: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.squat_rack: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.adjustable_bench: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.flat_bench: okWithResults (38) Eixo coberto por exercicios.
+- equipment.incline_bench: okWithResults (3) Eixo coberto por exercicios.
+- equipment.decline_bench: okWithResults (2) Eixo coberto por exercicios.
+- equipment.treadmill: okWithResults (24) Eixo coberto por exercicios.
+- equipment.bike: okWithResults (15) Eixo coberto por exercicios.
+- equipment.elliptical: okWithResults (10) Eixo coberto por exercicios.
+- equipment.rower: okWithResults (4) Eixo coberto por exercicios.
+- equipment.stepper: okWithResults (2) Eixo coberto por exercicios.
+- equipment.air_bike: okWithResults (5) Eixo coberto por exercicios.
+- equipment.outdoor_space: okWithResults (10) Eixo coberto por exercicios.
+- equipment.tatami: okWithResults (55) Eixo coberto por exercicios.
+- equipment.heavy_bag: okWithResults (23) Eixo coberto por exercicios.
+- equipment.gloves: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.shin_guards: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.pads: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.gi: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.belt: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.grappling_dummy: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.grip_trainer: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.foam_roller: okWithResults (13) Eixo coberto por exercicios.
+- equipment.massage_ball: okWithResults (9) Eixo coberto por exercicios.
+- equipment.mobility_band: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.yoga_block: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.mobility_roller: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- equipment.massage_gun: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- muscle.cervical_stabilizers: okWithResults (5) Eixo coberto por exercicios.
+- muscle.anterior_neck: okWithResults (2) Eixo coberto por exercicios.
+- muscle.lateral_neck: okWithResults (2) Eixo coberto por exercicios.
+- muscle.posterior_neck: okWithResults (3) Eixo coberto por exercicios.
+- muscle.upper_traps: okWithResults (4) Eixo coberto por exercicios.
+- muscle.mid_traps: okWithResults (16) Eixo coberto por exercicios.
+- muscle.lateral_deltoid: okWithResults (8) Eixo coberto por exercicios.
+- muscle.lower_traps: okWithResults (5) Eixo coberto por exercicios.
+- muscle.rhomboids: okWithResults (16) Eixo coberto por exercicios.
+- muscle.posterior_deltoid: okWithResults (7) Eixo coberto por exercicios.
+- muscle.anterior_deltoid: okWithResults (6) Eixo coberto por exercicios.
+- muscle.deltoid_lateral: okWithResults (6) Eixo coberto por exercicios.
+- muscle.scapular_stabilizers: okWithResults (17) Eixo coberto por exercicios.
+- muscle.teres_minor: okWithResults (15) Eixo coberto por exercicios.
+- muscle.external_rotators: okWithResults (5) Eixo coberto por exercicios.
+- muscle.serratus_anterior: okWithResults (12) Eixo coberto por exercicios.
+- muscle.internal_rotators: okWithResults (2) Eixo coberto por exercicios.
+- muscle.upper_chest: okWithResults (15) Eixo coberto por exercicios.
+- muscle.mid_chest: okWithResults (15) Eixo coberto por exercicios.
+- muscle.lower_chest: okWithResults (19) Eixo coberto por exercicios.
+- muscle.pectoralis_minor: okWithResults (23) Eixo coberto por exercicios.
+- muscle.lats: okWithResults (18) Eixo coberto por exercicios.
+- muscle.teres_major: okWithResults (19) Eixo coberto por exercicios.
+- muscle.vertical_pulls: okWithResults (6) Eixo coberto por exercicios.
+- muscle.horizontal_rows: okWithResults (7) Eixo coberto por exercicios.
+- muscle.erectors: okWithResults (11) Eixo coberto por exercicios.
+- muscle.quadratus_lumborum: okWithResults (8) Eixo coberto por exercicios.
+- muscle.biceps: okWithResults (15) Eixo coberto por exercicios.
+- muscle.brachialis: okWithResults (17) Eixo coberto por exercicios.
+- muscle.brachioradialis: okWithResults (6) Eixo coberto por exercicios.
+- muscle.triceps_lateral: okWithResults (13) Eixo coberto por exercicios.
+- muscle.triceps_medial: okWithResults (20) Eixo coberto por exercicios.
+- muscle.triceps_long: okWithResults (15) Eixo coberto por exercicios.
+- muscle.forearm_flexors: okWithResults (9) Eixo coberto por exercicios.
+- muscle.wrist: okWithResults (10) Eixo coberto por exercicios.
+- muscle.general_grip: okWithResults (19) Eixo coberto por exercicios.
+- muscle.forearm_extensors: okWithResults (3) Eixo coberto por exercicios.
+- muscle.grip_support: okWithResults (7) Eixo coberto por exercicios.
+- muscle.fingers: okWithResults (6) Eixo coberto por exercicios.
+- muscle.pronators: okWithResults (1) Eixo coberto por exercicios.
+- muscle.supinators: okWithResults (1) Eixo coberto por exercicios.
+- muscle.pinch_grip: okWithResults (2) Eixo coberto por exercicios.
+- muscle.anti_lateral_flexion: okWithResults (3) Eixo coberto por exercicios.
+- muscle.deep_stability: okWithResults (11) Eixo coberto por exercicios.
+- muscle.anti_extension: okWithResults (4) Eixo coberto por exercicios.
+- muscle.transverse_abdominis: okWithResults (11) Eixo coberto por exercicios.
+- muscle.mid_abs: okWithResults (5) Eixo coberto por exercicios.
+- muscle.external_obliques: okWithResults (5) Eixo coberto por exercicios.
+- muscle.internal_obliques: okWithResults (5) Eixo coberto por exercicios.
+- muscle.rectus_abdominis: okWithResults (9) Eixo coberto por exercicios.
+- muscle.upper_abs: okWithResults (4) Eixo coberto por exercicios.
+- muscle.lower_abs: okWithResults (3) Eixo coberto por exercicios.
+- muscle.hip_flexors: okWithResults (14) Eixo coberto por exercicios.
+- muscle.anti_rotation: okWithResults (4) Eixo coberto por exercicios.
+- muscle.glute_max: okWithResults (29) Eixo coberto por exercicios.
+- muscle.rectus_femoris: okWithResults (21) Eixo coberto por exercicios.
+- muscle.vastus_lateralis: okWithResults (19) Eixo coberto por exercicios.
+- muscle.vastus_medialis: okWithResults (20) Eixo coberto por exercicios.
+- muscle.vastus_intermedius: okWithResults (19) Eixo coberto por exercicios.
+- muscle.adductors: okWithResults (3) Eixo coberto por exercicios.
+- muscle.glute_med: okWithResults (14) Eixo coberto por exercicios.
+- muscle.biceps_femoris: okWithResults (11) Eixo coberto por exercicios.
+- muscle.semitendinosus: okWithResults (7) Eixo coberto por exercicios.
+- muscle.semimembranosus: okWithResults (7) Eixo coberto por exercicios.
+- muscle.abductors: okWithResults (3) Eixo coberto por exercicios.
+- muscle.glute_min: okWithResults (3) Eixo coberto por exercicios.
+- muscle.calves: okWithResults (5) Eixo coberto por exercicios.
+- muscle.ankle: okWithResults (43) Eixo coberto por exercicios.
+- muscle.feet: okWithResults (51) Eixo coberto por exercicios.
+- muscle.soleus: okWithResults (3) Eixo coberto por exercicios.
+- muscle.ankle_stability: okWithResults (3) Eixo coberto por exercicios.
+- muscle.tibialis_anterior: okWithResults (2) Eixo coberto por exercicios.
+- muscle.obliques: okWithResults (1) Eixo coberto por exercicios.
+- muscle.quadriceps: okWithResults (1) Eixo coberto por exercicios.
+- muscle.hip_external_rotators: okWithResults (1) Eixo coberto por exercicios.
+- muscle.cardiovascular: okWithResults (65) Eixo coberto por exercicios.
+- muscle.treadmill_aerobic: okWithResults (9) Eixo coberto por exercicios.
+- muscle.treadmill_intervals: okWithResults (5) Eixo coberto por exercicios.
+- muscle.treadmill_warmup: okWithResults (2) Eixo coberto por exercicios.
+- muscle.treadmill_easy: okWithResults (4) Eixo coberto por exercicios.
+- muscle.treadmill_moderate: okWithResults (2) Eixo coberto por exercicios.
+- muscle.hiit: okWithResults (1) Eixo coberto por exercicios.
+- muscle.karate_technical: okWithResults (50) Eixo coberto por exercicios.
+- muscle.jiu_jitsu_technical: okWithResults (53) Eixo coberto por exercicios.
+- muscle.mobility: okWithResults (195) Eixo coberto por exercicios.
+- muscle.boxe: okWithResults (24) Eixo coberto por exercicios.
+- muscle.kickboxing: okWithResults (19) Eixo coberto por exercicios.
+- muscle.muay_thai: okWithResults (20) Eixo coberto por exercicios.
+- muscle.judo: okWithResults (19) Eixo coberto por exercicios.
+- muscle.taekwondo: okWithResults (17) Eixo coberto por exercicios.
+- muscle.defesa_pessoal: okWithResults (24) Eixo coberto por exercicios.
+- muscle.artes_marciais: okWithResults (4) Eixo coberto por exercicios.
+- muscle.elasticidade: okWithResults (132) Eixo coberto por exercicios.
+- muscle.recuperacao: okWithResults (122) Eixo coberto por exercicios.
+- muscle.aquecimento: okWithResults (131) Eixo coberto por exercicios.
+- muscle.ativacao: okWithResults (52) Eixo coberto por exercicios.
+- muscle.prevencao: okWithResults (44) Eixo coberto por exercicios.
+- joint.cervical_stabilizers: okWithResults (5) Eixo coberto por exercicios.
+- joint.wrist: okWithResults (10) Eixo coberto por exercicios.
+- joint.fingers: okWithResults (6) Eixo coberto por exercicios.
+- joint.hip_flexors: okWithResults (14) Eixo coberto por exercicios.
+- joint.ankle: okWithResults (43) Eixo coberto por exercicios.
+- joint.feet: okWithResults (51) Eixo coberto por exercicios.
+- joint.hip_external_rotators: okWithResults (1) Eixo coberto por exercicios.
+- modality.strength: okWithResults (207) Eixo coberto por exercicios.
+- modality.cardio: okWithResults (65) Eixo coberto por exercicios.
+- modality.martial_arts: okWithResults (232) Eixo coberto por exercicios.
+- modality.mobility: okWithResults (193) Eixo coberto por exercicios.
+- modality.elasticity: okWithResults (132) Eixo coberto por exercicios.
+- modality.recovery: okWithResults (122) Eixo coberto por exercicios.
+- modality.warmup: okWithResults (131) Eixo coberto por exercicios.
+- modality.activation: okWithResults (52) Eixo coberto por exercicios.
+- modality.prevention: okWithResults (44) Eixo coberto por exercicios.
+- martial_art.karate: okWithResults (50) Eixo coberto por exercicios.
+- martial_art.jiu_jitsu: okWithResults (53) Eixo coberto por exercicios.
+- martial_art.martial_conditioning: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.
+- martial_art.martial_mobility: okEmptyWithExplicitNotice (0) Sem conteudo especifico; a UI deve mostrar aviso/fallback.

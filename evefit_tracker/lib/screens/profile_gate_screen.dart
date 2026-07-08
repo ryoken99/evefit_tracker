@@ -12,17 +12,29 @@ class ProfileGateScreen extends StatefulWidget {
     super.key,
     required this.database,
     required this.onUnlocked,
+    this.profilesLoader,
   });
 
   final AppDatabase database;
   final ValueChanged<Profile> onUnlocked;
+  final Future<List<Profile>> Function()? profilesLoader;
 
   @override
   State<ProfileGateScreen> createState() => _ProfileGateScreenState();
 }
 
 class _ProfileGateScreenState extends State<ProfileGateScreen> {
-  late Future<List<Profile>> _profilesFuture = widget.database.profiles();
+  late Future<List<Profile>> _profilesFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _profilesFuture = _loadProfiles();
+  }
+
+  Future<List<Profile>> _loadProfiles() {
+    return widget.profilesLoader?.call() ?? widget.database.profiles();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +43,40 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
         child: FutureBuilder<List<Profile>>(
           future: _profilesFuture,
           builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.error_outline, size: 40),
+                      const SizedBox(height: 12),
+                      Text(
+                        'Não foi possível carregar os perfis.',
+                        style: Theme.of(context).textTheme.titleMedium,
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'Verifica a base de dados local e tenta novamente.',
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 16),
+                      FilledButton.icon(
+                        onPressed: () {
+                          setState(() {
+                            _profilesFuture = _loadProfiles();
+                          });
+                        },
+                        icon: const Icon(Icons.refresh),
+                        label: const Text('Tentar novamente'),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }
             if (!snapshot.hasData) {
               return const Center(child: CircularProgressIndicator());
             }
@@ -79,7 +125,7 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
                       widget.onUnlocked(created);
                     } else {
                       setState(() {
-                        _profilesFuture = widget.database.profiles();
+                        _profilesFuture = _loadProfiles();
                       });
                     }
                   },

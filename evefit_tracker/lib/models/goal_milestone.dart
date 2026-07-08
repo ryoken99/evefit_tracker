@@ -37,15 +37,19 @@ class GoalMilestone {
         : DateTime.parse(map['completed_at'] as String),
   );
 
-  Map<String, Object?> toMap() => {
-    'id': id,
-    'goal_id': goalId,
-    'title': title,
-    'target_value': targetValue,
-    'unit': unit,
-    'status': status,
-    'sort_order': sortOrder,
-    'created_at': createdAt.toIso8601String(),
-    'completed_at': completedAt?.toIso8601String(),
-  };
+  Map<String, Object?> toMap({bool forUpdate = false}) {
+    final data = {
+      'id': id,
+      'goal_id': goalId,
+      'title': title,
+      'target_value': targetValue,
+      'unit': unit,
+      'status': status,
+      'sort_order': sortOrder,
+      'created_at': createdAt.toIso8601String(),
+      'completed_at': completedAt?.toIso8601String(),
+    };
+    if (forUpdate) data.remove('id');
+    return data;
+  }
 }
