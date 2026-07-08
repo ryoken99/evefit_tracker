@@ -1,6 +1,7 @@
 import 'v099b1_strength_domain_data.dart';
 import 'v099b2_strength_domain_data.dart';
 import 'v099b3_strength_domain_data.dart';
+import 'v099b4a_activation_domain_data.dart';
 
 class V100CatalogDomainEntryData {
   const V100CatalogDomainEntryData({
@@ -37,6 +38,7 @@ final v100CatalogDomainEntries = <V100CatalogDomainEntryData>[
   ...v099b1StrengthDomainEntries,
   ...v099b2StrengthDomainEntries,
   ...v099b3StrengthDomainEntries,
+  ...v099b4aActivationDomainEntries,
   V100CatalogDomainEntryData(
     source: '15',
     section: 'Karate',
