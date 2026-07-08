@@ -12,7 +12,7 @@ void main() {
         .toList();
 
     expect(strengthEntries, hasLength(400));
-    expect(audit.totalExercises, greaterThanOrEqualTo(1480));
+    expect(audit.totalExercises, greaterThanOrEqualTo(1552));
     expect(audit.criticalCount, 0);
     expect(audit.warningCount, 0);
     expect(v099b3StrengthDomainEntries, hasLength(71));

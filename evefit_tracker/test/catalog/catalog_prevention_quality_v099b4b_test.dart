@@ -13,7 +13,7 @@ void main() {
 
     expect(v099b4bPreventionDomainEntries, hasLength(51));
     expect(preventionEntries, hasLength(95));
-    expect(audit.totalExercises, greaterThanOrEqualTo(1480));
+    expect(audit.totalExercises, greaterThanOrEqualTo(1552));
     expect(audit.criticalCount, 0);
     expect(audit.warningCount, 0);
   });
