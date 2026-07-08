@@ -207,6 +207,18 @@ class ExerciseCatalogContextService {
         return 'Adutores';
       }
       if (section.contains('glute')) return 'Gluteos';
+      if (data.primaryType == 'musculacao') {
+        if (section.contains('peito')) return 'Peito';
+        if (section.contains('costa')) return 'Costas';
+        if (section.contains('ombro')) return 'Ombros';
+        if (section.contains('quadr')) return 'Quadriceps';
+        if (section.contains('posterior') || section.contains('isquio')) {
+          return 'Isquiotibiais';
+        }
+        if (section.contains('antebraco') || section.contains('pegada')) {
+          return 'Antebraco e pegada';
+        }
+      }
       if (section.contains('anca') || section.contains('hip')) return 'Anca';
       if (section.contains('core') || section.contains('lombar')) return 'Core';
       if (section.contains('escap') ||
@@ -257,6 +269,8 @@ class ExerciseCatalogContextService {
         ? 'preparar a musculatura principal com baixa fadiga'
         : data.primaryType == 'prevencao'
         ? 'melhorar controlo e tolerancia sem prometer evitar lesoes'
+        : data.primaryType == 'musculacao'
+        ? 'desenvolver forca, controlo muscular e hipertrofia de forma progressiva'
         : 'praticar tecnica, base, distancia e controlo antes da velocidade';
     final equipment = _derivedEquipmentLabel(data);
     final section = _safeLoadLanguage(data.section, equipment);
@@ -335,6 +349,9 @@ class ExerciseCatalogContextService {
     V100CatalogDomainEntryData data,
     String fallback,
   ) {
+    if (data.secondaryMuscles.trim().isNotEmpty) {
+      return data.secondaryMuscles.trim();
+    }
     final section = data.section.trim();
     if (section.isEmpty) return fallback;
     return section
@@ -417,6 +434,9 @@ class ExerciseCatalogContextService {
 
   static String _derivedFamilyCue(V100CatalogDomainEntryData data) {
     final name = _n(data.name);
+    if (_has(name, ['agachamento', 'lunges', 'leg press', 'step-up'])) {
+      return 'Mantem pes firmes, joelhos alinhados, anca livre e tronco estavel enquanto desce.';
+    }
     if (_has(name, ['supino', 'press', 'flexao', 'dips'])) {
       return 'Organiza pes, ombros e cotovelos; empurra sem perder a respiracao.';
     }
@@ -429,9 +449,6 @@ class ExerciseCatalogContextService {
     }
     if (_has(name, ['remo', 'puxada', 'pull-up', 'chin-up', 'face pull'])) {
       return 'Confirma a pega, estabiliza tronco e lombar, aproxima escapulas e puxa pelos cotovelos.';
-    }
-    if (_has(name, ['agachamento', 'lunges', 'leg press', 'step-up'])) {
-      return 'Mantem pes firmes, joelhos alinhados, anca livre e tronco estavel enquanto desce.';
     }
     if (_has(name, ['peso morto', 'good morning'])) {
       return 'Dobra pela anca com coluna e lombar neutras, joelhos suaves e respiracao continua.';

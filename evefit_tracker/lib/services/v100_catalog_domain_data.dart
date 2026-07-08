@@ -1,3 +1,5 @@
+import 'v099b1_strength_domain_data.dart';
+
 class V100CatalogDomainEntryData {
   const V100CatalogDomainEntryData({
     required this.source,
@@ -8,6 +10,11 @@ class V100CatalogDomainEntryData {
     required this.primaryType,
     required this.equipment,
     required this.safety,
+    this.primaryMuscle = '',
+    this.secondaryMuscles = '',
+    this.joint = '',
+    this.goal = '',
+    this.priority = '',
   });
   final String source;
   final String section;
@@ -17,9 +24,15 @@ class V100CatalogDomainEntryData {
   final String primaryType;
   final String equipment;
   final String safety;
+  final String primaryMuscle;
+  final String secondaryMuscles;
+  final String joint;
+  final String goal;
+  final String priority;
 }
 
 const v100CatalogDomainEntries = <V100CatalogDomainEntryData>[
+  ...v099b1StrengthDomainEntries,
   V100CatalogDomainEntryData(
     source: '15',
     section: 'Karate',

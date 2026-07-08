@@ -117,6 +117,9 @@ void main() {
         'Adutores',
         'Adutores - preparacao',
         'Adutores - tolerancia',
+        'Quadriceps',
+        'Isquiotibiais',
+        'Antebraco e pegada',
       };
       for (final entry in entries) {
         expect(entry.group.trim(), isNotEmpty, reason: entry.id);
@@ -180,6 +183,9 @@ void main() {
         'Adutores': 'preparação',
         'Adutores - preparacao': 'preparação',
         'Adutores - tolerancia': 'prevenção',
+        'Quadriceps': 'musculação',
+        'Isquiotibiais': 'musculação',
+        'Antebraco e pegada': 'musculação',
       };
       for (final entry in entries) {
         expect(areaByGroup[entry.group], isNotNull, reason: entry.id);
@@ -221,6 +227,13 @@ void main() {
         'air_bike',
         'jump_rope',
         'towel',
+        'lat_pulldown',
+        'low_cable',
+        'leg_press',
+        'leg_extension',
+        'leg_curl',
+        'smith_machine',
+        'ab_wheel',
       };
       for (final scenario in [
         ('Casa', <String>{}),
