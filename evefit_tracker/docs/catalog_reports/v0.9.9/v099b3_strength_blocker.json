@@ -1,0 +1,79 @@
+{
+  "phase": "v0.9.9B3-FIX",
+  "expected_strength": 400,
+  "observed_strength_before_addendum": 393,
+  "difference": 7,
+  "collisions": [
+    {
+      "name": "Supino inclinado com barra",
+      "canonical_id": "supino_inclinado_com_barra",
+      "existing_source": "catalogo base",
+      "expected_strength": 400,
+      "observed_strength_before_addendum": 393,
+      "difference": 7,
+      "reason_not_duplicated": "Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.",
+      "decision": "Emenda controlada GOOD_V1 de 7 exercicios unicos."
+    },
+    {
+      "name": "Supino declinado com barra",
+      "canonical_id": "supino_declinado_com_barra",
+      "existing_source": "catalogo base",
+      "expected_strength": 400,
+      "observed_strength_before_addendum": 393,
+      "difference": 7,
+      "reason_not_duplicated": "Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.",
+      "decision": "Emenda controlada GOOD_V1 de 7 exercicios unicos."
+    },
+    {
+      "name": "Supino inclinado com halteres",
+      "canonical_id": "supino_inclinado_com_halteres",
+      "existing_source": "catalogo base",
+      "expected_strength": 400,
+      "observed_strength_before_addendum": 393,
+      "difference": 7,
+      "reason_not_duplicated": "Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.",
+      "decision": "Emenda controlada GOOD_V1 de 7 exercicios unicos."
+    },
+    {
+      "name": "Press militar com barra",
+      "canonical_id": "press_militar_com_barra",
+      "existing_source": "catalogo base",
+      "expected_strength": 400,
+      "observed_strength_before_addendum": 393,
+      "difference": 7,
+      "reason_not_duplicated": "Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.",
+      "decision": "Emenda controlada GOOD_V1 de 7 exercicios unicos."
+    },
+    {
+      "name": "Curl martelo",
+      "canonical_id": "curl_martelo",
+      "existing_source": "catalogo base",
+      "expected_strength": 400,
+      "observed_strength_before_addendum": 393,
+      "difference": 7,
+      "reason_not_duplicated": "Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.",
+      "decision": "Emenda controlada GOOD_V1 de 7 exercicios unicos."
+    },
+    {
+      "name": "Pallof press no cabo",
+      "canonical_id": "pallof_press_no_cabo",
+      "existing_source": "catalogo base",
+      "expected_strength": 400,
+      "observed_strength_before_addendum": 393,
+      "difference": 7,
+      "reason_not_duplicated": "Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.",
+      "decision": "Emenda controlada GOOD_V1 de 7 exercicios unicos."
+    },
+    {
+      "name": "Peso morto romeno com halteres",
+      "canonical_id": "peso_morto_romeno_com_halteres",
+      "existing_source": "catalogo base",
+      "expected_strength": 400,
+      "observed_strength_before_addendum": 393,
+      "difference": 7,
+      "reason_not_duplicated": "Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.",
+      "decision": "Emenda controlada GOOD_V1 de 7 exercicios unicos."
+    }
+  ],
+  "decision": "Nao duplicar; criar addendum GOOD_V1 aprovado com 7 exercicios unicos de musculacao."
+}
