@@ -45,19 +45,23 @@ class Workout {
     notes: map['notes'] as String? ?? '',
   );
 
-  Map<String, Object?> toMap() => {
-    'id': id,
-    'profile_id': profileId,
-    'date': date.toIso8601String(),
-    'workout_type': workoutType,
-    'workout_type_id': workoutTypeId,
-    'muscle_groups': muscleGroups,
-    'workout_region_key': regionKey,
-    'workout_group_key': groupKey,
-    'workout_subgroup_key': subgroupKey,
-    'workout_specific_muscle_key': specificMuscleKey,
-    'workout_equipment_key': equipmentKey,
-    'duration_minutes': durationMinutes,
-    'notes': notes,
-  };
+  Map<String, Object?> toMap({bool forUpdate = false}) {
+    final data = {
+      'id': id,
+      'profile_id': profileId,
+      'date': date.toIso8601String(),
+      'workout_type': workoutType,
+      'workout_type_id': workoutTypeId,
+      'muscle_groups': muscleGroups,
+      'workout_region_key': regionKey,
+      'workout_group_key': groupKey,
+      'workout_subgroup_key': subgroupKey,
+      'workout_specific_muscle_key': specificMuscleKey,
+      'workout_equipment_key': equipmentKey,
+      'duration_minutes': durationMinutes,
+      'notes': notes,
+    };
+    if (forUpdate) data.remove('id');
+    return data;
+  }
 }

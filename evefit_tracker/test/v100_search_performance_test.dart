@@ -109,6 +109,16 @@ void main() {
       'large catalog filtering and search stay below the smoke threshold',
       () {
         final catalog = _catalogExercises();
+        _available(
+          catalog,
+          location: EquipmentCatalogService.placeGym,
+          selectedEquipment: const {'dumbbells', 'barbell', 'machine'},
+          selection: const TrainingSelection(
+            regionKey: 'upper',
+            groupKey: 'chest',
+            specificMuscleKey: 'chest_complete',
+          ),
+        );
         final stopwatch = Stopwatch()..start();
 
         for (var i = 0; i < 25; i++) {

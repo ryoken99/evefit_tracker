@@ -26,6 +26,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>A EveFit usa a câmara para registar fotos de progresso escolhidas por ti.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>A EveFit usa a galeria para escolher fotos de progresso guardadas por ti.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>A EveFit pode guardar fotos de progresso na biblioteca quando escolheres essa opção.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

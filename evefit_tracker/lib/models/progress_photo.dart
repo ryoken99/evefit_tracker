@@ -29,13 +29,17 @@ class ProgressPhoto {
     notes: map['notes'] as String? ?? '',
   );
 
-  Map<String, Object?> toMap() => {
-    'id': id,
-    'profile_id': profileId,
-    'date': date.toIso8601String(),
-    'photo_type': photoType,
-    'file_path': filePath,
-    'weight_kg': weightKg,
-    'notes': notes,
-  };
+  Map<String, Object?> toMap({bool forUpdate = false}) {
+    final data = {
+      'id': id,
+      'profile_id': profileId,
+      'date': date.toIso8601String(),
+      'photo_type': photoType,
+      'file_path': filePath,
+      'weight_kg': weightKg,
+      'notes': notes,
+    };
+    if (forUpdate) data.remove('id');
+    return data;
+  }
 }
