@@ -21,7 +21,7 @@ void main() {
     expect(result.routeSummary.unreachableExerciseCount, 0);
     expect(
       result.routeSummary.usableCleanExerciseCount,
-      greaterThanOrEqualTo(1687),
+      greaterThanOrEqualTo(1762),
     );
   });
 }

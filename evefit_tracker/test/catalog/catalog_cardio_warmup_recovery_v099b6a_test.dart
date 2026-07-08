@@ -59,7 +59,7 @@ void main() {
       exercises.where((exercise) => exercise.primaryType == 'recuperacao'),
       hasLength(147),
     );
-    expect(audit.totalExercises, greaterThanOrEqualTo(1687));
+    expect(audit.totalExercises, greaterThanOrEqualTo(1762));
     expect(audit.criticalCount, 0);
     expect(audit.warningCount, 0);
   });
