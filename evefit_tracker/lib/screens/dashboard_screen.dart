@@ -8,6 +8,7 @@ import '../services/csv_export_service.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/profile_display_service.dart';
 import '../services/dashboard_widget_draft_service.dart';
+import '../services/profile_preferences_service.dart';
 import '../widgets/progress_chart.dart';
 import '../widgets/stat_card.dart';
 import 'settings_screen.dart';
@@ -88,6 +89,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
             .where((item) => item.isVisible)
             .take(12)
             .toList();
+        final selectedGoals = ProfilePreferencesService.parseGeneralGoals(
+          widget.database.activeProfile?.initialGoals ?? profile.mainGoal,
+        );
 
         return RefreshIndicator(
           onRefresh: () async => _refresh(),
@@ -127,33 +131,41 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               const SizedBox(height: 4),
               Text(
-                '${profile.name} · ${ProfileDisplayService.heightLabel(profile.heightCm)} · objetivo ${profile.mainGoal}',
+                [
+                  profile.name,
+                  ProfileDisplayService.heightLabel(profile.heightCm),
+                  if (selectedGoals.isNotEmpty)
+                    'objetivos ${selectedGoals.join(', ')}',
+                ].join(' - '),
                 style: Theme.of(
                   context,
                 ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
               ),
-              const SizedBox(height: 16),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.flag,
-                        color: Theme.of(context).colorScheme.primary,
+              if (selectedGoals.isNotEmpty) ...[
+                const SizedBox(height: 16),
+                for (final goal in selectedGoals)
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.flag,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Text(
+                              goal,
+                              style: Theme.of(context).textTheme.titleMedium
+                                  ?.copyWith(fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          'Fase 1: Construção de V-shape',
-                          style: Theme.of(context).textTheme.titleMedium
-                              ?.copyWith(fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
+              ],
               const SizedBox(height: 12),
               GridView.count(
                 crossAxisCount: MediaQuery.sizeOf(context).width > 620 ? 3 : 2,

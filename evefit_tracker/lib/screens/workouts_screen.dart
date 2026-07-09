@@ -4,6 +4,7 @@ import '../database/app_database.dart';
 import '../models/workout.dart';
 import '../models/workout_template.dart';
 import '../models/workout_type.dart';
+import '../services/clean_base_config.dart';
 import '../services/training_architecture.dart';
 import '../services/training_flow.dart';
 import '../services/workout_taxonomy.dart';
@@ -83,14 +84,16 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       label: const Text('Criar treino'),
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: OutlinedButton.icon(
-                      onPressed: _createFromTemplate,
-                      icon: const Icon(Icons.bolt_outlined),
-                      label: const Text('Criar a partir de template'),
+                  if (CleanBaseConfig.legacyFiltersVisible) ...[
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        onPressed: _createFromTemplate,
+                        icon: const Icon(Icons.bolt_outlined),
+                        label: const Text('Criar a partir de template'),
+                      ),
                     ),
-                  ),
+                  ],
                 ],
               ),
               const SizedBox(height: 16),
@@ -134,6 +137,10 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   }
 
   Future<void> _createFromTemplate() async {
+    if (!CleanBaseConfig.legacyFiltersVisible) {
+      await _openWorkoutForm();
+      return;
+    }
     final template = await showModalBottomSheet<WorkoutTemplate>(
       context: context,
       showDragHandle: true,
@@ -165,6 +172,10 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   }
 
   Future<void> _openWorkoutForm({WorkoutTemplate? template}) async {
+    if (!CleanBaseConfig.legacyFiltersVisible) {
+      await _openCleanBaseWorkoutForm();
+      return;
+    }
     final types = await widget.database.workoutTypes();
     final customTemplates = await widget.database.workoutTemplates();
     final profileEquipment = await widget.database.availableEquipmentKeys();
@@ -853,6 +864,137 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       ),
                     );
                   }
+                },
+                child: const Text('Guardar treino'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    workoutName.dispose();
+    duration.dispose();
+    notes.dispose();
+    if (savedEntry != null && mounted) {
+      _refresh();
+      await Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) =>
+              WorkoutDetailScreen(database: widget.database, entry: savedEntry),
+        ),
+      );
+      _refresh();
+    }
+  }
+
+  Future<void> _openCleanBaseWorkoutForm() async {
+    var date = DateTime.now();
+    final workoutName = TextEditingController(text: 'Treino livre');
+    final duration = TextEditingController();
+    final notes = TextEditingController();
+    final savedEntry = await showModalBottomSheet<WorkoutEntry>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setSheetState) => Padding(
+          padding: EdgeInsets.fromLTRB(
+            16,
+            0,
+            16,
+            MediaQuery.viewInsetsOf(context).bottom + 16,
+          ),
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              Text(
+                'Novo treino',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: 12),
+              const Card(
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(CleanBaseConfig.filtersRebuildTitle),
+                      SizedBox(height: 6),
+                      Text(CleanBaseConfig.filtersRebuildMessage),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              OutlinedButton.icon(
+                onPressed: () async {
+                  final picked = await showDatePicker(
+                    context: context,
+                    initialDate: date,
+                    firstDate: DateTime(2020),
+                    lastDate: DateTime.now().add(const Duration(days: 1)),
+                  );
+                  if (picked != null) {
+                    setSheetState(() => date = picked);
+                  }
+                },
+                icon: const Icon(Icons.calendar_today_outlined),
+                label: Text(
+                  '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}',
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: workoutName,
+                decoration: const InputDecoration(
+                  labelText: 'Nome do treino',
+                  prefixIcon: Icon(Icons.edit_outlined),
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: duration,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Duracao em minutos',
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: notes,
+                minLines: 2,
+                maxLines: 4,
+                decoration: const InputDecoration(labelText: 'Notas'),
+              ),
+              const SizedBox(height: 12),
+              FilledButton(
+                onPressed: () async {
+                  final workout = Workout(
+                    date: date,
+                    workoutType: workoutName.text.trim().isEmpty
+                        ? 'Treino livre'
+                        : workoutName.text.trim(),
+                    muscleGroups: '',
+                    durationMinutes: int.tryParse(duration.text),
+                    notes: notes.text.trim(),
+                  );
+                  final id = await widget.database.insertWorkout(workout);
+                  final entries = await widget.database.workouts();
+                  final entry = entries.firstWhere(
+                    (item) => item.workout.id == id,
+                    orElse: () => WorkoutEntry(
+                      workout: Workout(
+                        id: id,
+                        date: workout.date,
+                        workoutType: workout.workoutType,
+                        muscleGroups: workout.muscleGroups,
+                        durationMinutes: workout.durationMinutes,
+                        notes: workout.notes,
+                      ),
+                      sets: const [],
+                    ),
+                  );
+                  if (context.mounted) Navigator.pop(context, entry);
                 },
                 child: const Text('Guardar treino'),
               ),

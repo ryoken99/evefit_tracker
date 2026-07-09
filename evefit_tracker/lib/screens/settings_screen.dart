@@ -4,12 +4,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../database/app_database.dart';
 import '../models/profile.dart';
+import '../services/clean_base_config.dart';
 import '../services/pin_service.dart';
 import '../services/profile_preferences_service.dart';
 import '../services/training_location_service.dart';
 import 'profile_gate_screen.dart';
 
-const appVersionLabel = 'v1.0.0-rc.1';
+const appVersionLabel = CleanBaseConfig.versionLabel;
 const githubRepoUrl = 'https://github.com/ryoken99/evefit_tracker';
 const githubLatestReleaseUrl = '$githubRepoUrl/releases/latest';
 
@@ -45,7 +46,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           FilledButton.icon(
             onPressed: () => _openUrl(githubLatestReleaseUrl),
             icon: const Icon(Icons.system_update_alt),
-            label: const Text('Ver atualizações v1.0.0 RC'),
+            label: const Text('Ver atualizações v1.0 Clean Base'),
           ),
           TextButton.icon(
             onPressed: () => _openUrl(githubRepoUrl),

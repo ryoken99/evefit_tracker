@@ -1387,9 +1387,9 @@ class AppDatabase {
         'name': profile.name,
         'height_cm': heightCm ?? 0,
         'start_date': now.toIso8601String(),
-        'main_goal': initialGoals.isEmpty
-            ? 'Objetivo livre'
-            : initialGoals.first,
+        'main_goal': ProfilePreferencesService.serializeGeneralGoals(
+          initialGoals,
+        ),
         'notes': notes.trim(),
       });
       await _insertDefaultGoals(txn, profileId, selectedGoals: initialGoals);
@@ -1428,6 +1428,34 @@ class AppDatabase {
           updated.trainingLocation,
         ),
       );
+      final selectedGoals = ProfilePreferencesService.serializeGeneralGoals(
+        ProfilePreferencesService.parseGeneralGoals(updated.initialGoals),
+      );
+      final existingUserProfile = await txn.query(
+        'user_profile',
+        columns: ['id'],
+        where: 'profile_id = ?',
+        whereArgs: [profile.id],
+        limit: 1,
+      );
+      final userProfileData = {
+        'profile_id': profile.id,
+        'name': updated.name,
+        'height_cm': updated.heightCm ?? 0,
+        'start_date': updated.createdAt.toIso8601String(),
+        'main_goal': selectedGoals,
+        'notes': updated.notes,
+      };
+      if (existingUserProfile.isEmpty) {
+        await txn.insert('user_profile', userProfileData);
+      } else {
+        await txn.update(
+          'user_profile',
+          userProfileData,
+          where: 'profile_id = ?',
+          whereArgs: [profile.id],
+        );
+      }
     });
     _activeProfile = updated;
   }
@@ -1437,9 +1465,9 @@ class AppDatabase {
     int profileId, {
     List<String> selectedGoals = const [],
   }) async {
-    final goals = selectedGoals.isEmpty
-        ? SeedData.goals.take(4)
-        : SeedData.goals.where((goal) => selectedGoals.contains(goal.title));
+    final goals = SeedData.goals.where(
+      (goal) => selectedGoals.contains(goal.title),
+    );
     for (final goal in goals) {
       await txn.insert(
         'goals',
@@ -1539,15 +1567,24 @@ class AppDatabase {
       whereArgs: [id],
       limit: 1,
     );
-    if (rows.isNotEmpty) return UserProfile.fromMap(rows.first);
+    if (rows.isNotEmpty) {
+      final stored = UserProfile.fromMap(rows.first);
+      final active = _activeProfile;
+      return UserProfile(
+        id: stored.id,
+        name: active?.name ?? stored.name,
+        heightCm: active?.heightCm ?? stored.heightCm,
+        startDate: active?.createdAt ?? stored.startDate,
+        mainGoal: active?.initialGoals ?? stored.mainGoal,
+        notes: active?.notes ?? stored.notes,
+      );
+    }
     final active = _activeProfile;
     return UserProfile(
       name: active?.name ?? 'Perfil',
       heightCm: active?.heightCm ?? 0,
       startDate: active?.createdAt ?? DateTime.now(),
-      mainGoal: active?.initialGoals.isNotEmpty == true
-          ? active!.initialGoals
-          : 'Objetivo livre',
+      mainGoal: active?.initialGoals ?? '',
       notes: active?.notes ?? '',
     );
   }

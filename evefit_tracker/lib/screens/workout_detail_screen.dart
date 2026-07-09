@@ -7,6 +7,7 @@ import '../models/exercise.dart';
 import '../models/workout.dart';
 import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
+import '../services/clean_base_config.dart';
 import '../services/exercise_display_service.dart';
 import '../services/exercise_filter_service.dart';
 import '../services/training_architecture.dart';
@@ -342,6 +343,27 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
   }
 
   Future<Exercise?> _pickExercise() async {
+    if (!CleanBaseConfig.legacyCatalogueVisible) {
+      await showModalBottomSheet<void>(
+        context: context,
+        showDragHandle: true,
+        builder: (context) => const SafeArea(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(CleanBaseConfig.catalogueRebuildTitle),
+                SizedBox(height: 8),
+                Text(CleanBaseConfig.catalogueRebuildMessage),
+              ],
+            ),
+          ),
+        ),
+      );
+      return null;
+    }
     final exercises = await widget.database.exercises();
     final profile = widget.database.activeProfile;
     final equipment = await widget.database.availableEquipmentKeys();
