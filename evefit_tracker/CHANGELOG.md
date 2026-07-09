@@ -1,3 +1,17 @@
+# EveFit v1.0 Clean Base
+
+- App limpa para reconstrucao futura do catalogo canonico.
+- Catalogo antigo de exercicios escondido por configuracao reversivel.
+- Filtros antigos escondidos por configuracao reversivel.
+- Dados legacy preservados.
+- Corrigido bug dos objetivos: o dashboard mostra apenas objetivos selecionados pelo utilizador.
+- Utilizadores sem objetivos selecionados nao recebem objetivos default.
+- V-shape so aparece se for selecionado.
+- Nenhum exercicio novo foi gerado.
+- Nenhum filtro novo foi gerado.
+- Nenhuma migracao de catalogo foi feita.
+- Nenhum schema canonico novo foi implementado.
+
 # v1.0.0 RC
 
 - Congelada a expansao GOOD_V1 do catalogo com 1762 entradas auditadas.
