@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0-rc.1",
+  "branch": "release-v100-rc",
+  "catalog": {
+    "total_exercises": 1762,
+    "unique_canonical_ids": 1725,
+    "critical_issues": 0,
+    "warnings": 0,
+    "wrong_results": 0,
+    "unreachable_exercises": 0,
+    "quality_d_or_e": 0,
+    "tracked_apks": 0
+  },
+  "counts_by_primary_type": {
+    "musculacao": 400,
+    "cardio": 100,
+    "artes_marciais": 360,
+    "mobilidade": 230,
+    "elasticidade": 170,
+    "recuperacao": 147,
+    "aquecimento": 150,
+    "ativacao": 110,
+    "prevencao": 95
+  },
+  "menu_matrix": {
+    "total": 1785,
+    "ok_with_results": 756,
+    "ok_with_fallback": 3,
+    "ok_empty_with_explicit_notice": 1026,
+    "fail_empty_silent": 0,
+    "fail_wrong_results": 0,
+    "fail_incompatible_menu": 0,
+    "fail_unreachable_content": 0,
+    "fail_axis_without_coverage": 0
+  },
+  "axis_coverage": {
+    "total": 207,
+    "ok_with_results": 172,
+    "ok_empty_with_explicit_notice": 35,
+    "fail_axis_without_coverage": 0
+  },
+  "validation": {
+    "flutter_clean": "passed",
+    "flutter_pub_get": "passed",
+    "dart_format_set_exit_if_changed": "passed_after_formatting_settings_screen",
+    "flutter_analyze": "passed_no_issues",
+    "flutter_test": "passed_535_tests",
+    "catalog_audit_strict": "passed_1762_entries_0_critical_0_warnings",
+    "flutter_build_apk_debug": "passed",
+    "flutter_build_apk_release": "passed_54_6_mb"
+  },
+  "release_candidate": {
+    "catalog_changes_in_phase": false,
+    "pixel_manual_test": "pending",
+    "final_release_blocked_until_pixel_approval": true
+  }
+}

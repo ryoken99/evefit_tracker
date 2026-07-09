@@ -1,0 +1,521 @@
+﻿{
+    "phase":  "v0.9.9B5B",
+    "branch":  "catalog-martial-bjj-defense-v099b5b",
+    "total_before":  1552,
+    "total_added":  56,
+    "total_after":  1608,
+    "bjj_added":  32,
+    "defense_conditioning_added":  24,
+    "shukokai_added":  0,
+    "karate_added":  0,
+    "wrong_results_after":  0,
+    "unreachable_after":  0,
+    "critical_after":  0,
+    "warnings_after":  0,
+    "added":  [
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Shrimp basico no tatami",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Shrimp basico no tatami com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Shrimp alternado",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Shrimp alternado com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Ponte de anca para BJJ",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Ponte de anca para BJJ com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Ponte e rotacao para saida",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Ponte e rotacao para saida com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Technical stand up para BJJ",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Technical stand up para BJJ com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Granby roll regressivo",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Granby roll regressivo com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Hip escape em linha",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Hip escape em linha com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Sit through controlado",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Sit through controlado com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Base sentada para levantamento tecnico",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Base sentada para levantamento tecnico com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Mobilidade de guarda sentada",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Mobilidade de guarda sentada com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Retencao de guarda com deslocamento da anca",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Retencao de guarda com deslocamento da anca com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Sprawl controlado",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Sprawl controlado com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Queda tecnica lateral regressiva",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Queda tecnica lateral regressiva com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Rolamento para tras regressivo",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Rolamento para tras regressivo com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Rolamento para frente regressivo",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Rolamento para frente regressivo com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Entrada de double leg sem parceiro",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Entrada de double leg sem parceiro com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "jiu_jitsu",
+                      "section":  "BJJ solo e tatami",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Jab no saco com guarda alta",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Jab no saco com guarda alta controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Direto no saco com rotacao da anca",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Direto no saco com rotacao da anca controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Sequencia jab-direto no saco",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Sequencia jab-direto no saco controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Low kick leve no saco",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Low kick leve no saco controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Mae geri no aparador",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Mae geri no aparador controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Mawashi geri baixo no aparador",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Mawashi geri baixo no aparador controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Joelhada frontal no saco",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Joelhada frontal no saco controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Cotovelada tecnica no aparador",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Cotovelada tecnica no aparador controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Saida de linha contra avanco simples",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Saida de linha contra avanco simples controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Guarda de protecao pessoal",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Guarda de protecao pessoal controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Recuo com maos ativas",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Recuo com maos ativas controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Libertacao basica de punho com baixa forca",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5B",
+                      "name":  "Libertacao basica de punho com baixa forca controlado",
+                      "category":  "artes_marciais",
+                      "context":  "defesa_pessoal",
+                      "section":  "saco, defesa e condicionamento",
+                      "source":  "GOOD_V1_B5B",
+                      "status":  "planned_and_implemented"
+                  }
+              ]
+}

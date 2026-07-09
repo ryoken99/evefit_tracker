@@ -1,0 +1,66 @@
+﻿[
+    {
+        "metric":  "total_before_b1",
+        "value":  1178
+    },
+    {
+        "metric":  "total_after_b1",
+        "value":  1242
+    },
+    {
+        "metric":  "total_after_b2",
+        "value":  1307
+    },
+    {
+        "metric":  "total_after_b3",
+        "value":  1371
+    },
+    {
+        "metric":  "strength_before_good_v1",
+        "value":  207
+    },
+    {
+        "metric":  "strength_after_b1",
+        "value":  271
+    },
+    {
+        "metric":  "strength_after_b2",
+        "value":  336
+    },
+    {
+        "metric":  "strength_candidate_before_addendum",
+        "value":  393
+    },
+    {
+        "metric":  "strength_after_b3",
+        "value":  400
+    },
+    {
+        "metric":  "wrong_results",
+        "value":  0
+    },
+    {
+        "metric":  "unreachable_exercises",
+        "value":  0
+    },
+    {
+        "metric":  "quality_d_or_e",
+        "value":  0
+    },
+    {
+        "metric":  "validation_flutter_test",
+        "value":  "passed_506_tests"
+    },
+    {
+        "metric":  "validation_catalog_audit_strict",
+        "value":  "passed_1371_entries_0_critical_0_warnings"
+    },
+    {
+        "metric":  "validation_build_debug",
+        "value":  "passed"
+    },
+    {
+        "metric":  "validation_build_release",
+        "value":  "passed_54_4MB"
+    }
+]

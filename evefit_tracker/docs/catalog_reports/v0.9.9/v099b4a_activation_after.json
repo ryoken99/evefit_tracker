@@ -1,0 +1,539 @@
+﻿{
+    "phase":  "v0.9.9B4A",
+    "branch":  "catalog-activation-expansion-v099b4a",
+    "total_before":  1371,
+    "total_added":  58,
+    "total_after":  1429,
+    "activation_before":  52,
+    "activation_added":  58,
+    "activation_after":  110,
+    "wrong_results_after":  0,
+    "unreachable_after":  0,
+    "critical_after":  0,
+    "warnings_after":  0,
+    "collision_handled":  "Dead bug com expiracao collided with existing Dead bug com expiracao; B4A uses Dead bug com expiracao guiada.",
+    "added":  [
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Clamshell com mini band",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Clamshell com mini band regressivo",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Clamshell com mini band com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Clamshell com mini band em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Abducao lateral de anca deitado",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Abducao lateral de anca deitado regressivo",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Abducao lateral de anca deitado com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Abducao lateral de anca deitado em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte de gluteos com mini band",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte de gluteos com mini band regressivo",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte de gluteos com mini band com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte de gluteos com mini band em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte unilateral regressiva",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte unilateral regressiva regressivo",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte unilateral regressiva com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Ponte unilateral regressiva em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Monster walk curto",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Monster walk curto regressivo",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Monster walk curto com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Monster walk curto em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Lateral band walk controlado",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Lateral band walk regressivo",
+                      "category":  "ativacao",
+                      "section":  "gluteos e anca",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Dead bug com expiracao guiada",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Dead bug com expiracao regressivo",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Dead bug com expiracao com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Dead bug com expiracao em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Bird dog com pausa",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Bird dog com pausa regressivo",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Bird dog com pausa com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Bird dog com pausa em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Pallof press leve com elastico",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Pallof press leve com elastico regressivo",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Pallof press leve com elastico com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Pallof press leve com elastico em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Prancha curta com joelhos",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Prancha curta com joelhos regressivo",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Prancha curta com joelhos com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Prancha curta com joelhos em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Scapular push-up regressivo",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Scapular push-up regressivo nivel inicial",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Scapular push-up regressivo com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Scapular push-up regressivo em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "core, ombros e escapulas",
+                      "priority":  "P0",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Tibial raise na parede leve",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Tibial raise na parede leve regressivo",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Tibial raise na parede leve com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Tibial raise na parede leve em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Short foot controlado",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Short foot controlado regressivo",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Short foot controlado com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Short foot controlado em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Elevacao de calcanhar isometrica baixa",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Elevacao de calcanhar isometrica baixa regressivo",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Elevacao de calcanhar isometrica baixa com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Elevacao de calcanhar isometrica baixa em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Inversao de tornozelo com elastico leve",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Inversao de tornozelo com elastico leve regressivo",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Inversao de tornozelo com elastico leve com pausa curta",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B4A",
+                      "name":  "Inversao de tornozelo com elastico leve em ritmo lento",
+                      "category":  "ativacao",
+                      "section":  "tornozelo e pe",
+                      "priority":  "P1",
+                      "source":  "GOOD_V1_B4A",
+                      "status":  "planned_and_implemented"
+                  }
+              ]
+}

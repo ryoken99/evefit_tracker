@@ -1,0 +1,890 @@
+﻿{
+    "phase":  "v0.9.9B1",
+    "total_before":  1178,
+    "total_after":  1242,
+    "exercises_added":  64,
+    "wrong_results_after":  0,
+    "unreachable_after":  0,
+    "critical_issues_after":  0,
+    "warnings_after":  0,
+    "quality_after":  {
+                          "C":  0,
+                          "E":  0,
+                          "D":  0,
+                          "A_or_B":  1242
+                      },
+    "by_equipment":  [
+                         {
+                             "key":  "leg_press",
+                             "count":  8
+                         },
+                         {
+                             "key":  "dumbbells",
+                             "count":  8
+                         },
+                         {
+                             "key":  "low_cable",
+                             "count":  8
+                         },
+                         {
+                             "key":  "leg_curl",
+                             "count":  8
+                         },
+                         {
+                             "key":  "machine",
+                             "count":  8
+                         },
+                         {
+                             "key":  "leg_extension",
+                             "count":  8
+                         },
+                         {
+                             "key":  "barbell",
+                             "count":  8
+                         },
+                         {
+                             "key":  "lat_pulldown",
+                             "count":  8
+                         },
+                         {
+                             "key":  "high_cable",
+                             "count":  8
+                         },
+                         {
+                             "key":  "mat",
+                             "count":  4
+                         },
+                         {
+                             "key":  "ab_wheel",
+                             "count":  4
+                         },
+                         {
+                             "key":  "flat_bench",
+                             "count":  4
+                         },
+                         {
+                             "key":  "smith_machine",
+                             "count":  4
+                         },
+                         {
+                             "key":  "free_space",
+                             "count":  4
+                         },
+                         {
+                             "key":  "incline_bench",
+                             "count":  3
+                         },
+                         {
+                             "key":  "decline_bench",
+                             "count":  1
+                         }
+                     ],
+    "by_primary_muscle":  [
+                              {
+                                  "key":  "quadriceps e gluteos",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "quadriceps",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "isquiotibiais",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "deltoides",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "peitoral maior",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "grande dorsal",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "costas medias e dorsais",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "flexores do antebraco",
+                                  "count":  4
+                              },
+                              {
+                                  "key":  "core anterior",
+                                  "count":  4
+                              }
+                          ],
+    "exercises":  [
+                      {
+                          "exercise_name":  "Supino reto com barra",
+                          "canonical_id":  "supino_reto_com_barra",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;flat_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Supino reto com barra controlado",
+                          "canonical_id":  "supino_reto_com_barra_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;flat_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Supino reto com barra com pausa",
+                          "canonical_id":  "supino_reto_com_barra_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;flat_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Supino reto com barra em tempo lento",
+                          "canonical_id":  "supino_reto_com_barra_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;flat_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Supino declinado com barra controlado",
+                          "canonical_id":  "supino_declinado_com_barra_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;decline_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Supino inclinado com barra controlado",
+                          "canonical_id":  "supino_inclinado_com_barra_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;incline_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Supino inclinado com barra com pausa",
+                          "canonical_id":  "supino_inclinado_com_barra_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;incline_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Supino inclinado com barra em tempo lento",
+                          "canonical_id":  "supino_inclinado_com_barra_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "peito",
+                          "equipment":  "barbell;incline_bench",
+                          "filters":  "upper;chest;chest_primary",
+                          "primary_muscle":  "peitoral maior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta a frente",
+                          "canonical_id":  "puxada_alta_a_frente",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta a frente controlado",
+                          "canonical_id":  "puxada_alta_a_frente_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta a frente com pausa",
+                          "canonical_id":  "puxada_alta_a_frente_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta a frente em tempo lento",
+                          "canonical_id":  "puxada_alta_a_frente_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta com pegada neutra",
+                          "canonical_id":  "puxada_alta_com_pegada_neutra",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta com pegada neutra controlado",
+                          "canonical_id":  "puxada_alta_com_pegada_neutra_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta com pegada neutra com pausa",
+                          "canonical_id":  "puxada_alta_com_pegada_neutra_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Puxada alta com pegada neutra em tempo lento",
+                          "canonical_id":  "puxada_alta_com_pegada_neutra_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "lat_pulldown",
+                          "filters":  "upper;back;back_width",
+                          "primary_muscle":  "grande dorsal",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada sentada no cabo",
+                          "canonical_id":  "remada_sentada_no_cabo",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada sentada no cabo controlado",
+                          "canonical_id":  "remada_sentada_no_cabo_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada sentada no cabo com pausa",
+                          "canonical_id":  "remada_sentada_no_cabo_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada sentada no cabo em tempo lento",
+                          "canonical_id":  "remada_sentada_no_cabo_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada baixa unilateral",
+                          "canonical_id":  "remada_baixa_unilateral",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada baixa unilateral controlado",
+                          "canonical_id":  "remada_baixa_unilateral_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada baixa unilateral com pausa",
+                          "canonical_id":  "remada_baixa_unilateral_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Remada baixa unilateral em tempo lento",
+                          "canonical_id":  "remada_baixa_unilateral_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "costas",
+                          "equipment":  "high_cable;low_cable",
+                          "filters":  "upper;back;back_thickness",
+                          "primary_muscle":  "costas medias e dorsais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press de ombro com halteres",
+                          "canonical_id":  "press_de_ombro_com_halteres",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "dumbbells",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press de ombro com halteres controlado",
+                          "canonical_id":  "press_de_ombro_com_halteres_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "dumbbells",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press de ombro com halteres com pausa",
+                          "canonical_id":  "press_de_ombro_com_halteres_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "dumbbells",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press de ombro com halteres em tempo lento",
+                          "canonical_id":  "press_de_ombro_com_halteres_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "dumbbells",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press na Smith machine",
+                          "canonical_id":  "press_na_smith_machine",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "smith_machine",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press na Smith machine controlado",
+                          "canonical_id":  "press_na_smith_machine_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "smith_machine",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press na Smith machine com pausa",
+                          "canonical_id":  "press_na_smith_machine_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "smith_machine",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Press na Smith machine em tempo lento",
+                          "canonical_id":  "press_na_smith_machine_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "ombros",
+                          "equipment":  "smith_machine",
+                          "filters":  "upper;shoulders;deltoids",
+                          "primary_muscle":  "deltoides",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press 45 graus",
+                          "canonical_id":  "leg_press_45_graus",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press 45 graus controlado",
+                          "canonical_id":  "leg_press_45_graus_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press 45 graus com pausa",
+                          "canonical_id":  "leg_press_45_graus_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press 45 graus em tempo lento",
+                          "canonical_id":  "leg_press_45_graus_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press horizontal",
+                          "canonical_id":  "leg_press_horizontal",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press horizontal controlado",
+                          "canonical_id":  "leg_press_horizontal_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press horizontal com pausa",
+                          "canonical_id":  "leg_press_horizontal_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg press horizontal em tempo lento",
+                          "canonical_id":  "leg_press_horizontal_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_press",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps e gluteos",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas na maquina",
+                          "canonical_id":  "extensao_de_pernas_na_maquina",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas na maquina controlado",
+                          "canonical_id":  "extensao_de_pernas_na_maquina_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas na maquina com pausa",
+                          "canonical_id":  "extensao_de_pernas_na_maquina_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas na maquina em tempo lento",
+                          "canonical_id":  "extensao_de_pernas_na_maquina_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas unilateral",
+                          "canonical_id":  "extensao_de_pernas_unilateral",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas unilateral controlado",
+                          "canonical_id":  "extensao_de_pernas_unilateral_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas unilateral com pausa",
+                          "canonical_id":  "extensao_de_pernas_unilateral_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Extensao de pernas unilateral em tempo lento",
+                          "canonical_id":  "extensao_de_pernas_unilateral_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_extension;machine",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "quadriceps",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl sentado",
+                          "canonical_id":  "leg_curl_sentado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl sentado controlado",
+                          "canonical_id":  "leg_curl_sentado_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl sentado com pausa",
+                          "canonical_id":  "leg_curl_sentado_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl sentado em tempo lento",
+                          "canonical_id":  "leg_curl_sentado_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl deitado",
+                          "canonical_id":  "leg_curl_deitado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl deitado controlado",
+                          "canonical_id":  "leg_curl_deitado_controlado",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl deitado com pausa",
+                          "canonical_id":  "leg_curl_deitado_com_pausa",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Leg curl deitado em tempo lento",
+                          "canonical_id":  "leg_curl_deitado_em_tempo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "pernas",
+                          "equipment":  "leg_curl",
+                          "filters":  "lower;quadriceps;legs;quadriceps",
+                          "primary_muscle":  "isquiotibiais",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Ab wheel a partir dos joelhos",
+                          "canonical_id":  "ab_wheel_a_partir_dos_joelhos",
+                          "category":  "musculacao",
+                          "subcategory":  "core",
+                          "equipment":  "ab_wheel;mat",
+                          "filters":  "core;core_stability;core_general",
+                          "primary_muscle":  "core anterior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Ab wheel a partir dos joelhos regressivo",
+                          "canonical_id":  "ab_wheel_a_partir_dos_joelhos_regressivo",
+                          "category":  "musculacao",
+                          "subcategory":  "core",
+                          "equipment":  "ab_wheel;mat",
+                          "filters":  "core;core_stability;core_general",
+                          "primary_muscle":  "core anterior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Ab wheel a partir dos joelhos com pausa curta",
+                          "canonical_id":  "ab_wheel_a_partir_dos_joelhos_com_pausa_curta",
+                          "category":  "musculacao",
+                          "subcategory":  "core",
+                          "equipment":  "ab_wheel;mat",
+                          "filters":  "core;core_stability;core_general",
+                          "primary_muscle":  "core anterior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Ab wheel a partir dos joelhos em ritmo lento",
+                          "canonical_id":  "ab_wheel_a_partir_dos_joelhos_em_ritmo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "core",
+                          "equipment":  "ab_wheel;mat",
+                          "filters":  "core;core_stability;core_general",
+                          "primary_muscle":  "core anterior",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Farmer walk com halteres",
+                          "canonical_id":  "farmer_walk_com_halteres",
+                          "category":  "musculacao",
+                          "subcategory":  "antebraco_pega",
+                          "equipment":  "dumbbells;free_space",
+                          "filters":  "upper;forearm_hand;arms;grip_strength",
+                          "primary_muscle":  "flexores do antebraco",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Farmer walk com halteres regressivo",
+                          "canonical_id":  "farmer_walk_com_halteres_regressivo",
+                          "category":  "musculacao",
+                          "subcategory":  "antebraco_pega",
+                          "equipment":  "dumbbells;free_space",
+                          "filters":  "upper;forearm_hand;arms;grip_strength",
+                          "primary_muscle":  "flexores do antebraco",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Farmer walk com halteres com pausa curta",
+                          "canonical_id":  "farmer_walk_com_halteres_com_pausa_curta",
+                          "category":  "musculacao",
+                          "subcategory":  "antebraco_pega",
+                          "equipment":  "dumbbells;free_space",
+                          "filters":  "upper;forearm_hand;arms;grip_strength",
+                          "primary_muscle":  "flexores do antebraco",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      },
+                      {
+                          "exercise_name":  "Farmer walk com halteres em ritmo lento",
+                          "canonical_id":  "farmer_walk_com_halteres_em_ritmo_lento",
+                          "category":  "musculacao",
+                          "subcategory":  "antebraco_pega",
+                          "equipment":  "dumbbells;free_space",
+                          "filters":  "upper;forearm_hand;arms;grip_strength",
+                          "primary_muscle":  "flexores do antebraco",
+                          "quality":  "A_or_B_strict_passed",
+                          "reachable":  "yes",
+                          "duplicate":  "no"
+                      }
+                  ]
+}

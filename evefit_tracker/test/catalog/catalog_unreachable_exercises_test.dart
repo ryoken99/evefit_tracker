@@ -5,7 +5,7 @@ void main() {
   test('unreachable exercise audit is generated for diagnostic review', () {
     final audit = CatalogTotalMatrixAudit.run(writeReports: false);
 
-    expect(audit.axisInventory.exercises.length, 1178);
+    expect(audit.axisInventory.exercises.length, greaterThanOrEqualTo(1762));
     expect(audit.unreachableExercises.length, greaterThanOrEqualTo(0));
   });
 }

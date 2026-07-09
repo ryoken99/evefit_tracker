@@ -1,0 +1,996 @@
+{
+    "phase":  "v0.9.9B2",
+    "branch":  "catalog-strength-expansion-v099b2",
+    "objective":  "Musculacao lote 2: pesos livres, puxadas e variacoes uteis.",
+    "total_before":  1242,
+    "total_after":  1307,
+    "exercises_added":  65,
+    "wrong_results":  0,
+    "unreachable_exercises":  0,
+    "duplicates_added":  0,
+    "quality":  {
+                    "A_or_B":  1307,
+                    "C":  0,
+                    "D":  0,
+                    "E":  0
+                },
+    "by_category":  {
+                        "key":  "musculacao",
+                        "count":  65
+                    },
+    "by_subcategory":  [
+                           {
+                               "key":  "antebraco_pegada",
+                               "count":  8
+                           },
+                           {
+                               "key":  "biceps",
+                               "count":  15
+                           },
+                           {
+                               "key":  "core",
+                               "count":  15
+                           },
+                           {
+                               "key":  "costas",
+                               "count":  8
+                           },
+                           {
+                               "key":  "gluteos",
+                               "count":  3
+                           },
+                           {
+                               "key":  "ombros",
+                               "count":  7
+                           },
+                           {
+                               "key":  "peito",
+                               "count":  9
+                           }
+                       ],
+    "by_equipment":  [
+                         {
+                             "key":  "Barra",
+                             "count":  11
+                         },
+                         {
+                             "key":  "Barra e banco",
+                             "count":  3
+                         },
+                         {
+                             "key":  "Barra e banco declinado",
+                             "count":  2
+                         },
+                         {
+                             "key":  "Barra fixa",
+                             "count":  4
+                         },
+                         {
+                             "key":  "Cabo alto",
+                             "count":  4
+                         },
+                         {
+                             "key":  "Cabo baixo",
+                             "count":  7
+                         },
+                         {
+                             "key":  "Halter e banco",
+                             "count":  4
+                         },
+                         {
+                             "key":  "Halter leve e tapete",
+                             "count":  4
+                         },
+                         {
+                             "key":  "Halteres",
+                             "count":  11
+                         },
+                         {
+                             "key":  "Halteres e banco inclinado",
+                             "count":  7
+                         },
+                         {
+                             "key":  "Halteres e banco plano",
+                             "count":  4
+                         },
+                         {
+                             "key":  "Halteres e espaco livre",
+                             "count":  4
+                         }
+                     ],
+    "by_primary_muscle":  [
+                              {
+                                  "key":  "biceps braquial",
+                                  "count":  15
+                              },
+                              {
+                                  "key":  "core anterior",
+                                  "count":  15
+                              },
+                              {
+                                  "key":  "costas medias e dorsais",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "deltoides",
+                                  "count":  7
+                              },
+                              {
+                                  "key":  "flexores do antebraco",
+                                  "count":  8
+                              },
+                              {
+                                  "key":  "gluteo maximo",
+                                  "count":  3
+                              },
+                              {
+                                  "key":  "peitoral maior",
+                                  "count":  9
+                              }
+                          ],
+    "validation_required":  [
+                                "flutter pub get",
+                                "dart format --set-exit-if-changed .",
+                                "flutter analyze",
+                                "flutter test -r compact",
+                                "dart run tool/catalog_audit_report.dart --strict",
+                                "flutter build apk --debug",
+                                "flutter build apk --release"
+                            ],
+    "added":  [
+                  {
+                      "name":  "Supino declinado com barra com pausa",
+                      "canonical_id":  "supino_declinado_com_barra_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Barra e banco declinado",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino declinado com barra em tempo lento",
+                      "canonical_id":  "supino_declinado_com_barra_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Barra e banco declinado",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino reto com halteres",
+                      "canonical_id":  "supino_reto_com_halteres",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Halteres e banco plano",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino reto com halteres controlado",
+                      "canonical_id":  "supino_reto_com_halteres_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Halteres e banco plano",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino reto com halteres com pausa",
+                      "canonical_id":  "supino_reto_com_halteres_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Halteres e banco plano",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino reto com halteres em tempo lento",
+                      "canonical_id":  "supino_reto_com_halteres_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Halteres e banco plano",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino inclinado com halteres controlado",
+                      "canonical_id":  "supino_inclinado_com_halteres_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Halteres e banco inclinado",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino inclinado com halteres com pausa",
+                      "canonical_id":  "supino_inclinado_com_halteres_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Halteres e banco inclinado",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Supino inclinado com halteres em tempo lento",
+                      "canonical_id":  "supino_inclinado_com_halteres_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "peito",
+                      "equipment":  "Halteres e banco inclinado",
+                      "primary_muscle":  "peitoral maior",
+                      "secondary_muscles":  "triceps; deltoide anterior; serratil anterior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada curvada com barra",
+                      "canonical_id":  "remada_curvada_com_barra",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; trapezio medio; biceps; lombar",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada curvada com barra controlado",
+                      "canonical_id":  "remada_curvada_com_barra_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; trapezio medio; biceps; lombar",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada curvada com barra com pausa",
+                      "canonical_id":  "remada_curvada_com_barra_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; trapezio medio; biceps; lombar",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada curvada com barra em tempo lento",
+                      "canonical_id":  "remada_curvada_com_barra_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; trapezio medio; biceps; lombar",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada unilateral com halter",
+                      "canonical_id":  "remada_unilateral_com_halter",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Halter e banco",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; biceps; core anti-rotacao",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada unilateral com halter controlado",
+                      "canonical_id":  "remada_unilateral_com_halter_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Halter e banco",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; biceps; core anti-rotacao",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada unilateral com halter com pausa",
+                      "canonical_id":  "remada_unilateral_com_halter_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Halter e banco",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; biceps; core anti-rotacao",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Remada unilateral com halter em tempo lento",
+                      "canonical_id":  "remada_unilateral_com_halter_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "costas",
+                      "equipment":  "Halter e banco",
+                      "primary_muscle":  "costas medias e dorsais",
+                      "secondary_muscles":  "romboides; biceps; core anti-rotacao",
+                      "joint":  "ombro; cotovelo; escapula; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Press militar com barra controlado",
+                      "canonical_id":  "press_militar_com_barra_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "ombros",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "deltoides",
+                      "secondary_muscles":  "triceps; trapezio superior; core",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Press militar com barra com pausa",
+                      "canonical_id":  "press_militar_com_barra_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "ombros",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "deltoides",
+                      "secondary_muscles":  "triceps; trapezio superior; core",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Press militar com barra em tempo lento",
+                      "canonical_id":  "press_militar_com_barra_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "ombros",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "deltoides",
+                      "secondary_muscles":  "triceps; trapezio superior; core",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Press Arnold",
+                      "canonical_id":  "press_arnold",
+                      "category":  "musculacao",
+                      "subcategory":  "ombros",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "deltoides",
+                      "secondary_muscles":  "triceps; rotadores externos; trapezio superior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Press Arnold controlado",
+                      "canonical_id":  "press_arnold_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "ombros",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "deltoides",
+                      "secondary_muscles":  "triceps; rotadores externos; trapezio superior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Press Arnold com pausa",
+                      "canonical_id":  "press_arnold_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "ombros",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "deltoides",
+                      "secondary_muscles":  "triceps; rotadores externos; trapezio superior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Press Arnold em tempo lento",
+                      "canonical_id":  "press_arnold_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "ombros",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "deltoides",
+                      "secondary_muscles":  "triceps; rotadores externos; trapezio superior",
+                      "joint":  "ombro; cotovelo; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl biceps com barra",
+                      "canonical_id":  "curl_biceps_com_barra",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl biceps com barra controlado",
+                      "canonical_id":  "curl_biceps_com_barra_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl biceps com barra com pausa",
+                      "canonical_id":  "curl_biceps_com_barra_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl biceps com barra em tempo lento",
+                      "canonical_id":  "curl_biceps_com_barra_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Barra",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl alternado com halteres",
+                      "canonical_id":  "curl_alternado_com_halteres",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl alternado com halteres controlado",
+                      "canonical_id":  "curl_alternado_com_halteres_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl alternado com halteres com pausa",
+                      "canonical_id":  "curl_alternado_com_halteres_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl alternado com halteres em tempo lento",
+                      "canonical_id":  "curl_alternado_com_halteres_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl martelo controlado",
+                      "canonical_id":  "curl_martelo_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl martelo com pausa",
+                      "canonical_id":  "curl_martelo_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl martelo em tempo lento",
+                      "canonical_id":  "curl_martelo_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl inclinado no banco",
+                      "canonical_id":  "curl_inclinado_no_banco",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres e banco inclinado",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl inclinado no banco controlado",
+                      "canonical_id":  "curl_inclinado_no_banco_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres e banco inclinado",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl inclinado no banco com pausa",
+                      "canonical_id":  "curl_inclinado_no_banco_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres e banco inclinado",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Curl inclinado no banco em tempo lento",
+                      "canonical_id":  "curl_inclinado_no_banco_em_tempo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "biceps",
+                      "equipment":  "Halteres e banco inclinado",
+                      "primary_muscle":  "biceps braquial",
+                      "secondary_muscles":  "braquial; braquiorradial; antebraco",
+                      "joint":  "cotovelo; punho; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Suitcase carry unilateral",
+                      "canonical_id":  "suitcase_carry_unilateral",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Halteres e espaco livre",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "trapezio; core lateral; gluteos estabilizadores",
+                      "joint":  "punho; ombro; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Suitcase carry unilateral regressivo",
+                      "canonical_id":  "suitcase_carry_unilateral_regressivo",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Halteres e espaco livre",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "trapezio; core lateral; gluteos estabilizadores",
+                      "joint":  "punho; ombro; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Suitcase carry unilateral com pausa curta",
+                      "canonical_id":  "suitcase_carry_unilateral_com_pausa_curta",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Halteres e espaco livre",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "trapezio; core lateral; gluteos estabilizadores",
+                      "joint":  "punho; ombro; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Suitcase carry unilateral em ritmo lento",
+                      "canonical_id":  "suitcase_carry_unilateral_em_ritmo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Halteres e espaco livre",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "trapezio; core lateral; gluteos estabilizadores",
+                      "joint":  "punho; ombro; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead hang na barra",
+                      "canonical_id":  "dead_hang_na_barra",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Barra fixa",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "escapulas; grande dorsal; core",
+                      "joint":  "punho; ombro; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead hang na barra regressivo",
+                      "canonical_id":  "dead_hang_na_barra_regressivo",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Barra fixa",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "escapulas; grande dorsal; core",
+                      "joint":  "punho; ombro; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead hang na barra com pausa curta",
+                      "canonical_id":  "dead_hang_na_barra_com_pausa_curta",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Barra fixa",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "escapulas; grande dorsal; core",
+                      "joint":  "punho; ombro; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead hang na barra em ritmo lento",
+                      "canonical_id":  "dead_hang_na_barra_em_ritmo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "antebraco_pegada",
+                      "equipment":  "Barra fixa",
+                      "primary_muscle":  "flexores do antebraco",
+                      "secondary_muscles":  "escapulas; grande dorsal; core",
+                      "joint":  "punho; ombro; escapula",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Pallof press no cabo regressivo",
+                      "canonical_id":  "pallof_press_no_cabo_regressivo",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo baixo",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; transverso abdominal; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Pallof press no cabo com pausa curta",
+                      "canonical_id":  "pallof_press_no_cabo_com_pausa_curta",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo baixo",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; transverso abdominal; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Pallof press no cabo em ritmo lento",
+                      "canonical_id":  "pallof_press_no_cabo_em_ritmo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo baixo",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; transverso abdominal; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo alto",
+                      "canonical_id":  "lenhador_no_cabo_alto",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo alto",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo alto regressivo",
+                      "canonical_id":  "lenhador_no_cabo_alto_regressivo",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo alto",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo alto com pausa curta",
+                      "canonical_id":  "lenhador_no_cabo_alto_com_pausa_curta",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo alto",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo alto em ritmo lento",
+                      "canonical_id":  "lenhador_no_cabo_alto_em_ritmo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo alto",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo baixo",
+                      "canonical_id":  "lenhador_no_cabo_baixo",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo baixo",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo baixo regressivo",
+                      "canonical_id":  "lenhador_no_cabo_baixo_regressivo",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo baixo",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo baixo com pausa curta",
+                      "canonical_id":  "lenhador_no_cabo_baixo_com_pausa_curta",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo baixo",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Lenhador no cabo baixo em ritmo lento",
+                      "canonical_id":  "lenhador_no_cabo_baixo_em_ritmo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Cabo baixo",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "obliquos; dorsais; gluteos",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead bug com carga leve",
+                      "canonical_id":  "dead_bug_com_carga_leve",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Halter leve e tapete",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "transverso abdominal; flexores da anca; ombros",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead bug com carga leve regressivo",
+                      "canonical_id":  "dead_bug_com_carga_leve_regressivo",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Halter leve e tapete",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "transverso abdominal; flexores da anca; ombros",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead bug com carga leve com pausa curta",
+                      "canonical_id":  "dead_bug_com_carga_leve_com_pausa_curta",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Halter leve e tapete",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "transverso abdominal; flexores da anca; ombros",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Dead bug com carga leve em ritmo lento",
+                      "canonical_id":  "dead_bug_com_carga_leve_em_ritmo_lento",
+                      "category":  "musculacao",
+                      "subcategory":  "core",
+                      "equipment":  "Halter leve e tapete",
+                      "primary_muscle":  "core anterior",
+                      "secondary_muscles":  "transverso abdominal; flexores da anca; ombros",
+                      "joint":  "coluna; anca; ombro",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Hip thrust com barra",
+                      "canonical_id":  "hip_thrust_com_barra",
+                      "category":  "musculacao",
+                      "subcategory":  "gluteos",
+                      "equipment":  "Barra e banco",
+                      "primary_muscle":  "gluteo maximo",
+                      "secondary_muscles":  "gluteo medio; isquiotibiais; core; quadriceps",
+                      "joint":  "anca; joelho; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Hip thrust com barra controlado",
+                      "canonical_id":  "hip_thrust_com_barra_controlado",
+                      "category":  "musculacao",
+                      "subcategory":  "gluteos",
+                      "equipment":  "Barra e banco",
+                      "primary_muscle":  "gluteo maximo",
+                      "secondary_muscles":  "gluteo medio; isquiotibiais; core; quadriceps",
+                      "joint":  "anca; joelho; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  },
+                  {
+                      "name":  "Hip thrust com barra com pausa",
+                      "canonical_id":  "hip_thrust_com_barra_com_pausa",
+                      "category":  "musculacao",
+                      "subcategory":  "gluteos",
+                      "equipment":  "Barra e banco",
+                      "primary_muscle":  "gluteo maximo",
+                      "secondary_muscles":  "gluteo medio; isquiotibiais; core; quadriceps",
+                      "joint":  "anca; joelho; coluna",
+                      "priority":  "B2",
+                      "duplicate_risk":  "baixo",
+                      "quality":  "A/B"
+                  }
+              ],
+    "validation_results":  {
+                               "flutter_pub_get":  "passed",
+                               "dart_format_set_exit_if_changed":  "passed",
+                               "flutter_analyze":  "passed_no_issues",
+                               "flutter_test":  "passed_501_tests",
+                               "catalog_audit_strict":  "passed_1307_entries_0_critical_0_warnings",
+                               "flutter_build_apk_debug":  "passed",
+                               "flutter_build_apk_release":  "passed"
+                           }
+}

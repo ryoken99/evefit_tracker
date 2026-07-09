@@ -1,0 +1,355 @@
+﻿{
+    "phase":  "v0.9.9B7",
+    "summary":  [
+                    {
+                        "metric":  "total_exercises",
+                        "value":  1762,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "unique_canonical_ids",
+                        "value":  1725,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "critical_issues",
+                        "value":  0,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "warnings",
+                        "value":  0,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "unreachable_exercises",
+                        "value":  0,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "fail_wrong_results",
+                        "value":  0,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "fail_empty_silent",
+                        "value":  0,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "fail_incompatible_menu",
+                        "value":  0,
+                        "status":  "OK"
+                    },
+                    {
+                        "metric":  "axis_critical_failures",
+                        "value":  0,
+                        "status":  "OK"
+                    }
+                ],
+    "categories":  [
+                       {
+                           "category":  "musculacao",
+                           "expected":  400,
+                           "actual":  400,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       },
+                       {
+                           "category":  "cardio",
+                           "expected":  100,
+                           "actual":  100,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       },
+                       {
+                           "category":  "artes_marciais",
+                           "expected":  360,
+                           "actual":  360,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       },
+                       {
+                           "category":  "mobilidade",
+                           "expected":  230,
+                           "actual":  230,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       },
+                       {
+                           "category":  "elasticidade",
+                           "expected":  170,
+                           "actual":  170,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       },
+                       {
+                           "category":  "recuperacao",
+                           "expected":  150,
+                           "actual":  147,
+                           "delta":  -3,
+                           "status":  "OK_WITHIN_B7_TOLERANCE"
+                       },
+                       {
+                           "category":  "aquecimento",
+                           "expected":  150,
+                           "actual":  150,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       },
+                       {
+                           "category":  "ativacao",
+                           "expected":  110,
+                           "actual":  110,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       },
+                       {
+                           "category":  "prevencao",
+                           "expected":  95,
+                           "actual":  95,
+                           "delta":  0,
+                           "status":  "OK_EXACT"
+                       }
+                   ],
+    "matrix_status_counts":  [
+                                 {
+                                     "status":  "okEmptyWithExplicitNotice",
+                                     "count":  1026
+                                 },
+                                 {
+                                     "status":  "okWithResults",
+                                     "count":  756
+                                 },
+                                 {
+                                     "status":  "okWithFallback",
+                                     "count":  3
+                                 }
+                             ],
+    "top_equipment":  [
+                          {
+                              "equipment":  "bodyweight",
+                              "Count":  936
+                          },
+                          {
+                              "equipment":  "mat",
+                              "Count":  217
+                          },
+                          {
+                              "equipment":  "bands",
+                              "Count":  183
+                          },
+                          {
+                              "equipment":  "dumbbells",
+                              "Count":  125
+                          },
+                          {
+                              "equipment":  "flat_bench",
+                              "Count":  107
+                          },
+                          {
+                              "equipment":  "chair_support",
+                              "Count":  96
+                          },
+                          {
+                              "equipment":  "tatami",
+                              "Count":  87
+                          },
+                          {
+                              "equipment":  "barbell",
+                              "Count":  61
+                          },
+                          {
+                              "equipment":  "jump_rope",
+                              "Count":  55
+                          },
+                          {
+                              "equipment":  "bike",
+                              "Count":  54
+                          },
+                          {
+                              "equipment":  "treadmill",
+                              "Count":  52
+                          },
+                          {
+                              "equipment":  "low_cable",
+                              "Count":  51
+                          },
+                          {
+                              "equipment":  "heavy_bag",
+                              "Count":  39
+                          },
+                          {
+                              "equipment":  "machine",
+                              "Count":  39
+                          },
+                          {
+                              "equipment":  "high_cable",
+                              "Count":  37
+                          },
+                          {
+                              "equipment":  "elliptical",
+                              "Count":  33
+                          },
+                          {
+                              "equipment":  "stable_step",
+                              "Count":  31
+                          },
+                          {
+                              "equipment":  "foam_roller",
+                              "Count":  22
+                          },
+                          {
+                              "equipment":  "massage_ball",
+                              "Count":  21
+                          },
+                          {
+                              "equipment":  "pullup_bar",
+                              "Count":  17
+                          }
+                      ],
+    "top_locations":  [
+                          {
+                              "location":  "ginasio",
+                              "Count":  1752
+                          },
+                          {
+                              "location":  "casa",
+                              "Count":  1258
+                          },
+                          {
+                              "location":  "dojo",
+                              "Count":  360
+                          },
+                          {
+                              "location":  "casa_equipada",
+                              "Count":  134
+                          },
+                          {
+                              "location":  "exterior",
+                              "Count":  10
+                          }
+                      ],
+    "top_muscles":  [
+                        {
+                            "muscle":  "mobility",
+                            "Count":  232
+                        },
+                        {
+                            "muscle":  "elasticidade",
+                            "Count":  170
+                        },
+                        {
+                            "muscle":  "aquecimento",
+                            "Count":  150
+                        },
+                        {
+                            "muscle":  "recuperacao",
+                            "Count":  147
+                        },
+                        {
+                            "muscle":  "karate_technical",
+                            "Count":  122
+                        },
+                        {
+                            "muscle":  "ativacao",
+                            "Count":  110
+                        },
+                        {
+                            "muscle":  "cardiovascular",
+                            "Count":  100
+                        },
+                        {
+                            "muscle":  "prevencao",
+                            "Count":  95
+                        },
+                        {
+                            "muscle":  "glute_max",
+                            "Count":  86
+                        },
+                        {
+                            "muscle":  "jiu_jitsu_technical",
+                            "Count":  85
+                        },
+                        {
+                            "muscle":  "feet",
+                            "Count":  71
+                        },
+                        {
+                            "muscle":  "ankle",
+                            "Count":  59
+                        },
+                        {
+                            "muscle":  "rectus_femoris",
+                            "Count":  55
+                        },
+                        {
+                            "muscle":  "vastus_medialis",
+                            "Count":  54
+                        },
+                        {
+                            "muscle":  "vastus_intermedius",
+                            "Count":  53
+                        },
+                        {
+                            "muscle":  "vastus_lateralis",
+                            "Count":  53
+                        },
+                        {
+                            "muscle":  "defesa_pessoal",
+                            "Count":  48
+                        },
+                        {
+                            "muscle":  "teres_major",
+                            "Count":  45
+                        },
+                        {
+                            "muscle":  "lats",
+                            "Count":  44
+                        },
+                        {
+                            "muscle":  "rhomboids",
+                            "Count":  41
+                        },
+                        {
+                            "muscle":  "pectoralis_minor",
+                            "Count":  40
+                        },
+                        {
+                            "muscle":  "glute_med",
+                            "Count":  38
+                        },
+                        {
+                            "muscle":  "brachialis",
+                            "Count":  36
+                        },
+                        {
+                            "muscle":  "general_grip",
+                            "Count":  35
+                        },
+                        {
+                            "muscle":  "biceps",
+                            "Count":  34
+                        },
+                        {
+                            "muscle":  "biceps_femoris",
+                            "Count":  34
+                        },
+                        {
+                            "muscle":  "lower_chest",
+                            "Count":  30
+                        },
+                        {
+                            "muscle":  "lateral_deltoid",
+                            "Count":  29
+                        },
+                        {
+                            "muscle":  "upper_chest",
+                            "Count":  29
+                        },
+                        {
+                            "muscle":  "hip_flexors",
+                            "Count":  28
+                        }
+                    ]
+}

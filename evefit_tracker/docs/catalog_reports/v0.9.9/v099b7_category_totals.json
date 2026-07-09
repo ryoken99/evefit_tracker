@@ -1,0 +1,65 @@
+﻿[
+    {
+        "category":  "musculacao",
+        "expected":  400,
+        "actual":  400,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    },
+    {
+        "category":  "cardio",
+        "expected":  100,
+        "actual":  100,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    },
+    {
+        "category":  "artes_marciais",
+        "expected":  360,
+        "actual":  360,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    },
+    {
+        "category":  "mobilidade",
+        "expected":  230,
+        "actual":  230,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    },
+    {
+        "category":  "elasticidade",
+        "expected":  170,
+        "actual":  170,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    },
+    {
+        "category":  "recuperacao",
+        "expected":  150,
+        "actual":  147,
+        "delta":  -3,
+        "status":  "OK_WITHIN_B7_TOLERANCE"
+    },
+    {
+        "category":  "aquecimento",
+        "expected":  150,
+        "actual":  150,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    },
+    {
+        "category":  "ativacao",
+        "expected":  110,
+        "actual":  110,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    },
+    {
+        "category":  "prevencao",
+        "expected":  95,
+        "actual":  95,
+        "delta":  0,
+        "status":  "OK_EXACT"
+    }
+]

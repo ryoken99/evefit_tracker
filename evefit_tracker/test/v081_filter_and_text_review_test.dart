@@ -148,6 +148,14 @@ void main() {
         'Agachamento sumo',
         'Adução de anca',
         'Copenhagen plank com apoio',
+        'Maquina adutora',
+        'Maquina adutora regressivo',
+        'Maquina adutora com pausa curta',
+        'Maquina adutora em ritmo lento',
+        'Aducao de anca no cabo',
+        'Aducao de anca no cabo regressivo',
+        'Aducao de anca no cabo com pausa curta',
+        'Aducao de anca no cabo em ritmo lento',
       });
     });
 

@@ -1,0 +1,663 @@
+﻿{
+    "phase":  "v0.9.9B5A",
+    "branch":  "catalog-martial-karate-v099b5a",
+    "total_before":  1480,
+    "total_added":  72,
+    "total_after":  1552,
+    "karate_added":  72,
+    "shukokai_added":  0,
+    "wrong_results_after":  0,
+    "unreachable_after":  0,
+    "critical_after":  0,
+    "warnings_after":  0,
+    "added":  [
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon oi zuki em avanco",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon oi zuki em avanco em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon oi zuki em avanco com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon gyaku zuki parado",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon gyaku zuki parado em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon gyaku zuki parado com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon gedan barai",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon gedan barai em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon gedan barai com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon age uke",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon age uke em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon age uke com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon soto uke",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon soto uke em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon soto uke com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon uchi uke",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon uchi uke em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon uchi uke com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon mae geri",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon mae geri em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon mae geri com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon mawashi geri baixo",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon mawashi geri baixo em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon mawashi geri baixo com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon yoko geri keage",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon yoko geri keage em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kihon yoko geri keage com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Combinacao defesa e contra-ataque",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Combinacao defesa e contra-ataque em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Combinacao defesa e contra-ataque com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Deslocamento zenkutsu dachi",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Deslocamento zenkutsu dachi em linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Deslocamento zenkutsu dachi com pausa tecnica",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Deslocamento kokutsu dachi",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "Karate geral e kihon",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco inicial de kata",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco inicial de kata com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco de mudanca de direcao em kata",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco de mudanca de direcao em kata com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco de defesa dupla em kata",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco de defesa dupla em kata com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco de avanco e contra-ataque em kata",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bloco de avanco e contra-ataque em kata com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Transicao lenta entre posturas de kata",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Transicao lenta entre posturas de kata com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kata por seccoes com pausa",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kata por seccoes com pausa com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bunkai gedan barai contra agarre simples",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bunkai gedan barai contra agarre simples com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bunkai age uke com saida de linha",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bunkai age uke com saida de linha com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bunkai soto uke e contra-ataque",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Bunkai soto uke e contra-ataque com contagem lenta",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kata e bunkai geral",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Entrada e saida em guarda",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Entrada e saida em guarda em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Passo deslizante para frente",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Passo deslizante para frente em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Passo deslizante para tras",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Passo deslizante para tras em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Mudanca de angulo apos ataque",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Mudanca de angulo apos ataque em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Entrada gyaku zuki sem contacto",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Entrada gyaku zuki sem contacto em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Finta de ombro e saida lateral",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Finta de ombro e saida lateral em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Controlo de distancia com marca no chao",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Controlo de distancia com marca no chao em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Reacao visual a comando",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Reacao visual a comando em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kumite sombra com um ataque",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kumite sombra com um ataque em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kumite sombra com defesa e contra",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  },
+                  {
+                      "phase":  "v0.9.9B5A",
+                      "name":  "Kumite sombra com defesa e contra em ritmo leve",
+                      "category":  "artes_marciais",
+                      "context":  "karate",
+                      "section":  "kumite tecnico",
+                      "source":  "GOOD_V1_B5A",
+                      "status":  "planned_and_implemented"
+                  }
+              ]
+}

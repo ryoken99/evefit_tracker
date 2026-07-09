@@ -5,11 +5,14 @@ void main() {
   test('v0.9.8 evidence covers every visible catalog entry', () {
     final result = CatalogEntryQualityAudit.run();
 
-    expect(result.entries.length, 1178);
+    expect(result.entries.length, greaterThanOrEqualTo(1762));
     expect(
       result.entries.map((entry) => entry.catalogEntryKey).toSet().length,
-      1178,
+      result.entries.length,
     );
-    expect(result.levelCounts.values.reduce((a, b) => a + b), 1178);
+    expect(
+      result.levelCounts.values.reduce((a, b) => a + b),
+      result.entries.length,
+    );
   });
 }

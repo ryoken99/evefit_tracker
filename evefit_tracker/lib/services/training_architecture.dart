@@ -2300,6 +2300,14 @@ class TrainingArchitecture {
         _addLowerCatalogTags(name, add);
         groupKeys.add('legs');
         break;
+      case 'gluteos':
+        add(
+          region: 'lower',
+          group: 'hips_glutes',
+          subgroup: 'glutes',
+          muscles: ['glute_max', 'glute_med', 'biceps_femoris'],
+        );
+        break;
       case 'cardio':
         _addCardioCatalogTags(name, add);
         break;
@@ -3035,6 +3043,12 @@ class TrainingArchitecture {
     addIf('decline_bench', ['banco declinado']);
     addIf('parallel_bars', ['paralelas']);
     addIf('machine', ['maquina', 'máquina', 'multifuncoes']);
+    addIf('lat_pulldown', ['lat pulldown', 'puxada alta']);
+    addIf('leg_press', ['leg press']);
+    addIf('leg_extension', ['extensao de pernas', 'extensao de perna']);
+    addIf('leg_curl', ['leg curl']);
+    addIf('smith_machine', ['smith machine']);
+    addIf('ab_wheel', ['ab wheel', 'roda abdominal']);
     addIf('high_cable', ['cabo alto']);
     addIf('low_cable', ['cabo baixo']);
     if (text.contains('cabo') &&

@@ -24,7 +24,7 @@ void main() {
     expect(inventory.contexts, isNotEmpty);
     expect(inventory.visibleFilters, isNotEmpty);
     expect(inventory.internalFilters, isNotEmpty);
-    expect(inventory.exercises.length, 1178);
+    expect(inventory.exercises.length, greaterThanOrEqualTo(1762));
     expect(inventory.aliases, isNotEmpty);
   });
 

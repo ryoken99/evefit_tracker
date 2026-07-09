@@ -1,0 +1,461 @@
+﻿[
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Step-down baixo controlado",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Step-down baixo controlado regressivo",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Step-down baixo controlado com pausa curta",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Step-down baixo controlado em ritmo lento",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Agachamento a caixa com amplitude confortavel",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Agachamento a caixa com amplitude confortavel regressivo",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Agachamento a caixa com amplitude confortavel com pausa curta",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Agachamento a caixa com amplitude confortavel em ritmo lento",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Split squat curto assistido",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Split squat curto assistido regressivo",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Split squat curto assistido com pausa curta",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Split squat curto assistido em ritmo lento",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Terminal knee extension com elastico",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Terminal knee extension com elastico regressivo",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Terminal knee extension com elastico com pausa curta",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Terminal knee extension com elastico em ritmo lento",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall sit curto",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall sit curto regressivo",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall sit curto com pausa curta",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall sit curto em ritmo lento",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Ponte de gluteos para suporte do joelho",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Ponte de gluteos para suporte do joelho regressivo",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Ponte de gluteos para suporte do joelho com pausa curta",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Ponte de gluteos para suporte do joelho em ritmo lento",
+        "category":  "prevencao",
+        "section":  "joelho, anca e lombar",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao externa com elastico junto ao corpo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao externa com elastico junto ao corpo regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao externa com elastico junto ao corpo com pausa curta",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao externa com elastico junto ao corpo em ritmo lento",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao interna com elastico leve",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao interna com elastico leve regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao interna com elastico leve com pausa curta",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Rotacao interna com elastico leve em ritmo lento",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall slide com elastico",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall slide com elastico regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall slide com elastico com pausa curta",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Wall slide com elastico em ritmo lento",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Face pull leve",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Face pull leve regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Face pull leve com pausa curta",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Face pull leve em ritmo lento",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Serratus wall slide",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Serratus wall slide regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Serratus wall slide com pausa curta",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Serratus wall slide em ritmo lento",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Scapular push-up regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Scapular push-up regressivo regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Scapular push-up regressivo com pausa curta",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Scapular push-up regressivo em ritmo lento",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Y-T-W no banco sem carga",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Y-T-W no banco sem carga regressivo",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    },
+    {
+        "phase":  "v0.9.9B4B",
+        "name":  "Y-T-W no banco sem carga com pausa curta",
+        "category":  "prevencao",
+        "section":  "ombro, escapulas e articulacoes pequenas",
+        "priority":  "P0",
+        "source":  "GOOD_V1_B4B",
+        "status":  "planned_and_implemented"
+    }
+]

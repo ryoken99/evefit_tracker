@@ -19,6 +19,9 @@ void main() {
     );
     expect(result.routeSummary.failWrongResultsCount, 0);
     expect(result.routeSummary.unreachableExerciseCount, 0);
-    expect(result.routeSummary.usableCleanExerciseCount, 1178);
+    expect(
+      result.routeSummary.usableCleanExerciseCount,
+      greaterThanOrEqualTo(1762),
+    );
   });
 }

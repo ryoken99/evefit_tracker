@@ -1,3 +1,13 @@
+import 'v099b1_strength_domain_data.dart';
+import 'v099b2_strength_domain_data.dart';
+import 'v099b3_strength_domain_data.dart';
+import 'v099b4a_activation_domain_data.dart';
+import 'v099b4b_prevention_domain_data.dart';
+import 'v099b5a_karate_domain_data.dart';
+import 'v099b5b_martial_general_domain_data.dart';
+import 'v099b6a_cardio_warmup_recovery_domain_data.dart';
+import 'v099b6b_mobility_flexibility_domain_data.dart';
+
 class V100CatalogDomainEntryData {
   const V100CatalogDomainEntryData({
     required this.source,
@@ -8,6 +18,11 @@ class V100CatalogDomainEntryData {
     required this.primaryType,
     required this.equipment,
     required this.safety,
+    this.primaryMuscle = '',
+    this.secondaryMuscles = '',
+    this.joint = '',
+    this.goal = '',
+    this.priority = '',
   });
   final String source;
   final String section;
@@ -17,9 +32,23 @@ class V100CatalogDomainEntryData {
   final String primaryType;
   final String equipment;
   final String safety;
+  final String primaryMuscle;
+  final String secondaryMuscles;
+  final String joint;
+  final String goal;
+  final String priority;
 }
 
-const v100CatalogDomainEntries = <V100CatalogDomainEntryData>[
+final v100CatalogDomainEntries = <V100CatalogDomainEntryData>[
+  ...v099b1StrengthDomainEntries,
+  ...v099b2StrengthDomainEntries,
+  ...v099b3StrengthDomainEntries,
+  ...v099b4aActivationDomainEntries,
+  ...v099b4bPreventionDomainEntries,
+  ...v099b5aKarateDomainEntries,
+  ...v099b5bMartialGeneralDomainEntries,
+  ...v099b6aCardioWarmupRecoveryDomainEntries,
+  ...v099b6bMobilityFlexibilityDomainEntries,
   V100CatalogDomainEntryData(
     source: '15',
     section: 'Karate',

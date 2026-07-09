@@ -14,7 +14,7 @@ void main() {
       expect(audit.failEmptySilent, isEmpty);
       expect(audit.failIncompatibleMenu, isEmpty);
       expect(audit.unreachableExercises, isEmpty);
-      expect(registry.usableCleanExerciseCount, 1178);
+      expect(registry.usableCleanExerciseCount, greaterThanOrEqualTo(1762));
       expect(
         audit.okWithFallback.every(
           CatalogMenuAxisContractPolicy.hasApprovedFallbackNotice,

@@ -1,0 +1,8 @@
+"name","canonical_id","existing_source","expected_strength","observed_strength_before_addendum","difference","reason_not_duplicated","decision"
+"Supino inclinado com barra","supino_inclinado_com_barra","catalogo base","400","393","7","Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.","Emenda controlada GOOD_V1 de 7 exercicios unicos."
+"Supino declinado com barra","supino_declinado_com_barra","catalogo base","400","393","7","Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.","Emenda controlada GOOD_V1 de 7 exercicios unicos."
+"Supino inclinado com halteres","supino_inclinado_com_halteres","catalogo base","400","393","7","Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.","Emenda controlada GOOD_V1 de 7 exercicios unicos."
+"Press militar com barra","press_militar_com_barra","catalogo base","400","393","7","Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.","Emenda controlada GOOD_V1 de 7 exercicios unicos."
+"Curl martelo","curl_martelo","catalogo base","400","393","7","Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.","Emenda controlada GOOD_V1 de 7 exercicios unicos."
+"Pallof press no cabo","pallof_press_no_cabo","catalogo base","400","393","7","Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.","Emenda controlada GOOD_V1 de 7 exercicios unicos."
+"Peso morto romeno com halteres","peso_morto_romeno_com_halteres","catalogo base","400","393","7","Ja existe canonical_id equivalente; duplicar criaria historico e filtros ambiguos.","Emenda controlada GOOD_V1 de 7 exercicios unicos."

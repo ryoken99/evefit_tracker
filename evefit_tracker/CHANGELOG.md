@@ -1,3 +1,12 @@
+# v1.0.0 RC
+
+- Congelada a expansao GOOD_V1 do catalogo com 1762 entradas auditadas.
+- Totais principais: musculacao 400, cardio 100, artes marciais 360, mobilidade 230, elasticidade 170, recuperacao 147, aquecimento 150, ativacao 110 e prevencao 95.
+- Auditoria strict sem critical issues, warnings, wrong-results ou exercicios inacessiveis.
+- Checklist manual Pixel criado para validacao antes da release final.
+- Builds Android debug/release validados para release candidate.
+- Atualizada versao da app para v1.0.0-rc.1.
+
 # v0.9.4
 
 - Criada alfandega permanente dos catalogos com auditoria reutilizavel, modo relatorio e modo `--strict`.
