@@ -5,6 +5,7 @@ import '../models/body_measurement.dart';
 import '../models/dashboard_widget_config.dart';
 import '../models/user_profile.dart';
 import '../services/csv_export_service.dart';
+import '../services/dashboard_goal_metric_service.dart';
 import '../services/dashboard_metric_service.dart';
 import '../services/profile_display_service.dart';
 import '../services/dashboard_widget_draft_service.dart';
@@ -85,12 +86,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
             snapshot.data![3] as List<DashboardWidgetConfig>;
         final latest = measurements.isEmpty ? null : measurements.first;
         final days = DateTime.now().difference(profile.startDate).inDays;
-        final visibleWidgets = dashboardWidgets
-            .where((item) => item.isVisible)
-            .take(12)
-            .toList();
         final selectedGoals = ProfilePreferencesService.parseGeneralGoals(
           widget.database.activeProfile?.initialGoals ?? profile.mainGoal,
+        );
+        final displayedMetrics = DashboardGoalMetricService.metricsForGoals(
+          selectedGoals,
         );
 
         return RefreshIndicator(
@@ -175,11 +175,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: [
-                  for (final item in visibleWidgets)
+                  for (final metric in displayedMetrics)
                     StatCard(
-                      label: item.title,
+                      label: metric.title,
                       value: DashboardMetricService.valueFor(
-                        item.metricKey,
+                        metric.key,
                         latest,
                         workoutsThisWeek: workoutsThisWeek,
                         daysSinceStart: days,
