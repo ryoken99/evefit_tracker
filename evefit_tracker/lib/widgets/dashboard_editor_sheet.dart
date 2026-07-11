@@ -49,6 +49,7 @@ class _DashboardEditorSheetState extends State<DashboardEditorSheet> {
                   ),
                 ),
                 TextButton(
+                  key: const ValueKey('dashboard_editor_cancel'),
                   onPressed: _saving
                       ? null
                       : () => Navigator.pop(context, false),
@@ -72,6 +73,9 @@ class _DashboardEditorSheetState extends State<DashboardEditorSheet> {
                     children: [
                       for (var index = 0; index < _options.length; index++)
                         SwitchListTile(
+                          key: ValueKey(
+                            'dashboard_metric_switch_${_options[index].metricKey}',
+                          ),
                           value: _options[index].isEnabled,
                           title: Text(_options[index].title),
                           subtitle: Text(_options[index].metricKey),
@@ -92,6 +96,7 @@ class _DashboardEditorSheetState extends State<DashboardEditorSheet> {
               children: [
                 Expanded(
                   child: OutlinedButton(
+                    key: const ValueKey('dashboard_editor_enable_all'),
                     onPressed: _saving || _options.isEmpty
                         ? null
                         : () => setState(() {
@@ -106,6 +111,7 @@ class _DashboardEditorSheetState extends State<DashboardEditorSheet> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: OutlinedButton(
+                    key: const ValueKey('dashboard_editor_disable_all'),
                     onPressed: _saving || _options.isEmpty
                         ? null
                         : () => setState(() {
@@ -120,6 +126,7 @@ class _DashboardEditorSheetState extends State<DashboardEditorSheet> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: FilledButton(
+                    key: const ValueKey('dashboard_editor_save'),
                     onPressed: _saving || _options.isEmpty ? null : _save,
                     child: const Text('Guardar'),
                   ),

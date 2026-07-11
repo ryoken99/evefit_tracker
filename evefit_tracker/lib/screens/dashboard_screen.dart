@@ -116,13 +116,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             const SizedBox(height: 16),
             OutlinedButton.icon(
+              key: const ValueKey('dashboard_edit_button'),
               onPressed: () => _editDashboard(data, viewModel),
               icon: const Icon(Icons.tune_outlined),
               label: const Text('Editar Dashboard'),
             ),
             const SizedBox(height: 12),
             if (viewModel.emptyState != DashboardEmptyState.none)
-              DashboardEmptyStatePanel(state: viewModel.emptyState),
+              DashboardEmptyStatePanel(
+                key: ValueKey(
+                  viewModel.emptyState == DashboardEmptyState.noGoals
+                      ? 'dashboard_empty_no_goals'
+                      : 'dashboard_empty_no_metrics',
+                ),
+                state: viewModel.emptyState,
+              ),
             if (viewModel.visibleMetricItems
                 .where((item) => item.supportsCard)
                 .isNotEmpty)
@@ -138,6 +146,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     (item) => item.supportsCard,
                   ))
                     StatCard(
+                      key: ValueKey('dashboard_card_${item.metricKey}'),
                       label: item.title,
                       value: item.formattedCurrentValue,
                     ),
@@ -148,6 +157,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             )) ...[
               const SizedBox(height: 10),
               ProgressChart(
+                key: ValueKey('dashboard_chart_${item.metricKey}'),
                 title: item.chartTitle,
                 values: item.chartValues,
                 emptyMessage:

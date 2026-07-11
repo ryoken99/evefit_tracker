@@ -104,6 +104,7 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
                     padding: const EdgeInsets.only(bottom: 10),
                     child: Card(
                       child: ListTile(
+                        key: ValueKey('profile_option_${profile.id}'),
                         leading: const Icon(Icons.person_outline),
                         title: Text(profile.name),
                         subtitle: profile.trainingLocation.isEmpty
@@ -147,6 +148,7 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
       builder: (context) => AlertDialog(
         title: Text(profile.name),
         content: TextField(
+          key: const ValueKey('profile_unlock_pin'),
           onChanged: (value) => enteredPin = value,
           autofocus: true,
           obscureText: true,
@@ -164,6 +166,7 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
             child: const Text('Cancelar'),
           ),
           FilledButton(
+            key: const ValueKey('profile_unlock_submit'),
             onPressed: () async {
               final valid = await widget.database.verifyProfilePin(
                 profile,
