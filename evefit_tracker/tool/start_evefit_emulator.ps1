@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
   [string]$AvdName = 'EveFit_Test_Device',
+  [string]$DeviceId,
   [int]$BootTimeoutSeconds = 300
 )
 
@@ -9,45 +10,41 @@ param(
 try {
   $adb = Get-EveFitAndroidTool 'adb'
   $emulator = Get-EveFitAndroidTool 'emulator'
-  $artifactDirectory = Get-EveFitArtifactDirectory 'emulator_start'
-  $timestamp = Get-EveFitTimestamp
-  $log = Join-Path $artifactDirectory "$timestamp`_emulator.log"
+  $runDirectory = New-EveFitRunDirectory 'emulator_start' $AvdName
+  $stdout = Join-Path $runDirectory 'emulator.stdout.log'
+  $stderr = Join-Path $runDirectory 'emulator.stderr.log'
 
-  $deviceId = $null
-  foreach ($candidate in Get-EveFitActiveDeviceId) {
-    $name = (& $adb -s $candidate emu avd name 2>$null).Trim()
-    if ($name -eq $AvdName) {
-      $deviceId = $candidate
-      break
-    }
+  $resolvedDevice = Get-EveFitActiveDeviceId -PreferredDeviceId $DeviceId -AvdName $AvdName
+  if (-not $resolvedDevice) {
+    $resolvedDevice = Get-EveFitActiveDeviceId -AvdName $AvdName
   }
 
-  if (-not $deviceId) {
-    $available = & $emulator -list-avds
-    if ($available -notcontains $AvdName) {
-      throw "AVD '$AvdName' was not found. Create it with avdmanager before starting the emulator."
+  if (-not $resolvedDevice) {
+    if ($AvdName -notin (Get-EveFitAvdNames)) {
+      throw "AVD '$AvdName' was not found. Available AVDs: $((Get-EveFitAvdNames) -join ', ')"
     }
-    $process = Start-Process -FilePath $emulator -ArgumentList @('-avd', $AvdName, '-no-boot-anim') -RedirectStandardOutput $log -RedirectStandardError "$log.stderr" -PassThru -WindowStyle Hidden
+    $process = Start-Process -FilePath $emulator -ArgumentList @('-avd', $AvdName, '-no-boot-anim') -RedirectStandardOutput $stdout -RedirectStandardError $stderr -PassThru -WindowStyle Hidden
     "EMULATOR_PID=$($process.Id)"
+
+    $deadline = (Get-Date).AddSeconds($BootTimeoutSeconds)
+    while (-not $resolvedDevice -and (Get-Date) -lt $deadline) {
+      Start-Sleep -Seconds 2
+      $resolvedDevice = Get-EveFitActiveDeviceId -AvdName $AvdName
+    }
+    if (-not $resolvedDevice) {
+      throw "AVD '$AvdName' did not register with ADB within $BootTimeoutSeconds seconds."
+    }
   }
 
-  $deadline = (Get-Date).AddSeconds($BootTimeoutSeconds)
-  while ((Get-Date) -lt $deadline) {
-    foreach ($candidate in Get-EveFitActiveDeviceId) {
-      $name = (& $adb -s $candidate emu avd name 2>$null).Trim()
-      if ($name -eq $AvdName) {
-        $booted = (& $adb -s $candidate shell getprop sys.boot_completed 2>$null).Trim()
-        if ($booted -eq '1') {
-          & $adb -s $candidate shell pm list packages | Out-Null
-          "DEVICE_ID=$candidate"
-          "STARTUP_LOG=$log"
-          exit 0
-        }
-      }
-    }
-    Start-Sleep -Seconds 3
-  }
-  throw "Emulator '$AvdName' did not complete boot within $BootTimeoutSeconds seconds. See $log."
+  Wait-EveFitAndroidBoot -DeviceId $resolvedDevice -TimeoutSeconds $BootTimeoutSeconds | Out-Null
+  $metadata = Join-Path $runDirectory 'metadata.json'
+  Write-EveFitMetadata -Path $metadata -DeviceId $resolvedDevice
+  "DEVICE_ID=$resolvedDevice"
+  "AVD_NAME=$AvdName"
+  "STARTUP_DIRECTORY=$runDirectory"
+  "STARTUP_LOG=$stdout"
+  "METADATA=$metadata"
+  exit 0
 } catch {
   Write-Error $_
   exit 1

@@ -1,7 +1,11 @@
 [CmdletBinding()]
 param(
   [string]$DeviceId,
+  [string]$AvdName = 'EveFit_Test_Device',
   [int]$BootTimeoutSeconds = 300,
+  [string]$ExpectedBranch,
+  [string]$ExpectedCommit,
+  [switch]$ForcePubGet,
   [switch]$NoResident
 )
 
@@ -9,35 +13,31 @@ param(
 
 try {
   $repository = Get-EveFitRepositoryRoot
-  $expectedBranch = 'dashboard-rebuild-v1'
-  $expectedCommit = 'e80b6155ec3c41ee3383fd9639872450ccac9fc8'
-  if ((git -C $repository branch --show-current) -ne $expectedBranch) { throw "Expected branch $expectedBranch." }
-  if ((git -C $repository rev-parse HEAD) -ne $expectedCommit) { throw "Expected commit $expectedCommit." }
-  $allowedInfrastructureChanges = @(
-    '.gitignore',
-    'pubspec.yaml',
-    'pubspec.lock',
-    'evefit_tracker/.gitignore',
-    'evefit_tracker/pubspec.yaml',
-    'evefit_tracker/pubspec.lock'
-  )
-  $trackedChanges = git -C $repository diff --name-only | Where-Object { $_ -notin $allowedInfrastructureChanges }
-  if ($trackedChanges) { throw "Tracked Git changes are present:`n$($trackedChanges -join "`n")" }
+  $gitState = Assert-EveFitGitExpectation -ExpectedBranch $ExpectedBranch -ExpectedCommit $ExpectedCommit
+  "BRANCH=$($gitState.Branch)"
+  "COMMIT=$($gitState.Commit)"
+  foreach ($line in $gitState.Status) { "GIT_STATUS=$line" }
 
-  if (-not $DeviceId) {
-    $startOutput = & (Join-Path $PSScriptRoot 'start_evefit_emulator.ps1') -BootTimeoutSeconds $BootTimeoutSeconds
-    $startOutput | Write-Output
-    $deviceLine = $startOutput | Where-Object { $_ -match '^DEVICE_ID=' } | Select-Object -Last 1
-    if (-not $deviceLine) { throw 'The emulator start script did not return a device id.' }
-    $DeviceId = $deviceLine.Substring('DEVICE_ID='.Length)
-  }
+  $startOutput = & (Join-Path $PSScriptRoot 'start_evefit_emulator.ps1') -AvdName $AvdName -DeviceId $DeviceId -BootTimeoutSeconds $BootTimeoutSeconds
+  if ($LASTEXITCODE -ne 0) { throw 'The emulator start script failed.' }
+  $startOutput | Write-Output
+  $deviceLine = $startOutput | Where-Object { $_ -match '^DEVICE_ID=' } | Select-Object -Last 1
+  if (-not $deviceLine) { throw 'The emulator start script did not return a device id.' }
+  $DeviceId = $deviceLine.Substring('DEVICE_ID='.Length)
 
   $flutter = Get-EveFitFlutterTool
-  $artifactDirectory = Get-EveFitArtifactDirectory 'runs'
-  $log = Join-Path $artifactDirectory "$(Get-EveFitTimestamp)_flutter_run.log"
-  if (-not (Test-Path (Join-Path $repository '.dart_tool\package_config.json'))) {
-    & $flutter pub get | Tee-Object -FilePath $log
-    if ($LASTEXITCODE -ne 0) { throw 'flutter pub get failed.' }
+  $runDirectory = New-EveFitRunDirectory 'runs' 'flutter_run'
+  $log = Join-Path $runDirectory 'flutter_run.log'
+  $packageConfig = Join-Path $repository '.dart_tool\package_config.json'
+  $needsPubGet = $ForcePubGet -or -not (Test-Path $packageConfig)
+  if ($needsPubGet) {
+    Push-Location $repository
+    try {
+      & $flutter pub get 2>&1 | Tee-Object -FilePath $log
+      if ($LASTEXITCODE -ne 0) { throw 'flutter pub get failed.' }
+    } finally {
+      Pop-Location
+    }
   }
 
   "DEVICE_ID=$DeviceId"
@@ -48,10 +48,11 @@ try {
     $arguments = @('run', '-d', $DeviceId)
     if ($NoResident) { $arguments += '--no-resident' }
     & $flutter @arguments 2>&1 | Tee-Object -FilePath $log -Append
-    exit $LASTEXITCODE
+    $result = $LASTEXITCODE
   } finally {
     Pop-Location
   }
+  exit $result
 } catch {
   Write-Error $_
   exit 1
