@@ -8,6 +8,7 @@ class DashboardWidgetConfig {
     required this.sortOrder,
     required this.createdAt,
     required this.updatedAt,
+    this.explicitlyConfiguredAt,
   });
 
   final int? id;
@@ -18,6 +19,7 @@ class DashboardWidgetConfig {
   final int sortOrder;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final DateTime? explicitlyConfiguredAt;
 
   factory DashboardWidgetConfig.fromMap(Map<String, Object?> map) =>
       DashboardWidgetConfig(
@@ -29,6 +31,9 @@ class DashboardWidgetConfig {
         sortOrder: map['sort_order'] as int,
         createdAt: DateTime.parse(map['created_at'] as String),
         updatedAt: DateTime.parse(map['updated_at'] as String),
+        explicitlyConfiguredAt: map['explicitly_configured_at'] == null
+            ? null
+            : DateTime.parse(map['explicitly_configured_at'] as String),
       );
 
   Map<String, Object?> toMap() => {
@@ -40,5 +45,6 @@ class DashboardWidgetConfig {
     'sort_order': sortOrder,
     'created_at': createdAt.toIso8601String(),
     'updated_at': updatedAt.toIso8601String(),
+    'explicitly_configured_at': explicitlyConfiguredAt?.toIso8601String(),
   };
 }

@@ -84,7 +84,7 @@ class AppDatabase {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
-      version: 21,
+      version: 22,
       onConfigure: (db) async {
         await configureDatabaseConnection(db);
       },
@@ -108,6 +108,7 @@ class AppDatabase {
         await _migrateV091(db);
         await _migrateV092(db);
         await _migrateV100(db);
+        await _migrateV101(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -169,6 +170,9 @@ class AppDatabase {
         }
         if (oldVersion < 21) {
           await _migrateV100(db);
+        }
+        if (oldVersion < 22) {
+          await _migrateV101(db);
         }
       },
     );
@@ -423,6 +427,20 @@ class AppDatabase {
   /// A chave catalog_entry_key continua a identificar contexto e historico.
   Future<void> _migrateV100(Database db) async {
     await refreshCatalogExercises(db);
+  }
+
+  /// Preserves legacy dashboard rows while marking only post-rebuild saves as explicit.
+  Future<void> _migrateV101(Database db) async {
+    await _addColumnIfMissing(
+      db,
+      'dashboard_widgets',
+      'explicitly_configured_at',
+      'TEXT',
+    );
+  }
+
+  Future<void> migrateDashboardWidgetExplicitPreferenceMarker() async {
+    await _migrateV101(await database);
   }
 
   /// Reaplica os textos do catálogo às linhas de sistema (is_default = 1),
@@ -804,7 +822,7 @@ class AppDatabase {
 
   Future<void> _createDashboardWidgetsTable(Database db) async {
     await db.execute(
-      'CREATE TABLE IF NOT EXISTS dashboard_widgets(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER NOT NULL, metric_key TEXT NOT NULL, title TEXT NOT NULL, is_visible INTEGER NOT NULL, sort_order INTEGER NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(profile_id, metric_key))',
+      'CREATE TABLE IF NOT EXISTS dashboard_widgets(id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER NOT NULL, metric_key TEXT NOT NULL, title TEXT NOT NULL, is_visible INTEGER NOT NULL, sort_order INTEGER NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, explicitly_configured_at TEXT, UNIQUE(profile_id, metric_key))',
     );
   }
 
@@ -1539,9 +1557,7 @@ class AppDatabase {
           profileId: profileId,
           metricKey: definition.key,
           title: definition.title,
-          isVisible: DashboardMetricService.defaultKeys.contains(
-            definition.key,
-          ),
+          isVisible: false,
           sortOrder: i,
           createdAt: now,
           updatedAt: now,
@@ -1747,6 +1763,36 @@ class AppDatabase {
         );
         if (updated != 1) {
           throw StateError('Dashboard widget inválido: ${widget.id}');
+        }
+      }
+    });
+  }
+
+  Future<void> saveExplicitDashboardWidgets(
+    List<DashboardWidgetConfig> widgets,
+  ) async {
+    final db = await database;
+    final profileId = _requireProfileId();
+    final now = DateTime.now();
+    await db.transaction((txn) async {
+      for (final widget in widgets) {
+        final values = widget.toMap()
+          ..remove('id')
+          ..['profile_id'] = profileId
+          ..['updated_at'] = now.toIso8601String()
+          ..['explicitly_configured_at'] = now.toIso8601String();
+        final updated = await txn.update(
+          'dashboard_widgets',
+          values,
+          where: 'profile_id = ? AND metric_key = ?',
+          whereArgs: [profileId, widget.metricKey],
+        );
+        if (updated == 0) {
+          await txn.insert(
+            'dashboard_widgets',
+            values,
+            conflictAlgorithm: ConflictAlgorithm.abort,
+          );
         }
       }
     });

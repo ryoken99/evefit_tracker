@@ -267,6 +267,7 @@ class DashboardMetricService {
     ),
   ];
 
+  @Deprecated('Dashboard defaults no longer control metric visibility.')
   static const defaultKeys = [
     'weight',
     'avg_biceps_flexed',

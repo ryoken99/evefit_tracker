@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../database/app_database.dart';
-import '../models/body_measurement.dart';
+import '../models/dashboard_data_snapshot.dart';
 import '../models/dashboard_widget_config.dart';
-import '../models/user_profile.dart';
+import '../models/dashboard_view_model.dart';
 import '../services/csv_export_service.dart';
-import '../services/dashboard_goal_metric_service.dart';
-import '../services/dashboard_metric_service.dart';
-import '../services/profile_display_service.dart';
-import '../services/dashboard_widget_draft_service.dart';
+import '../services/dashboard_composition_service.dart';
 import '../services/profile_preferences_service.dart';
+import '../widgets/dashboard_editor_sheet.dart';
+import '../widgets/dashboard_empty_state.dart';
 import '../widgets/progress_chart.dart';
 import '../widgets/stat_card.dart';
 import 'settings_screen.dart';
@@ -29,7 +28,7 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  late Future<List<Object>> _dataFuture;
+  late Future<DashboardDataSnapshot> _dataFuture;
 
   @override
   void initState() {
@@ -37,136 +36,104 @@ class _DashboardScreenState extends State<DashboardScreen> {
     _dataFuture = _loadData();
   }
 
-  Future<List<Object>> _loadData() => Future.wait<Object>([
-    widget.database.profile(),
-    widget.database.measurements(),
-    widget.database.workoutsThisWeek(),
-    widget.database.dashboardWidgets(),
-  ]);
+  Future<DashboardDataSnapshot> _loadData() async {
+    final profile = await widget.database.profile();
+    final measurements = await widget.database.measurements();
+    final preferences = await widget.database.dashboardWidgets();
+    return DashboardDataSnapshot(
+      profile: profile,
+      selectedGoals: ProfilePreferencesService.parseGeneralGoals(
+        widget.database.activeProfile?.initialGoals ?? profile.mainGoal,
+      ),
+      measurements: measurements,
+      workoutsThisWeek: await widget.database.workoutsThisWeek(),
+      dashboardPreferences: preferences,
+    );
+  }
 
-  void _refresh() {
+  Future<void> _refresh() async {
+    final next = _loadData();
     setState(() {
-      _dataFuture = _loadData();
+      _dataFuture = next;
     });
+    await next;
   }
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<List<Object>>(
-      future: _dataFuture,
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.error_outline, size: 48),
-                  const SizedBox(height: 12),
-                  const Text('Erro ao carregar dados. Tenta novamente.'),
-                  const SizedBox(height: 12),
-                  FilledButton(
-                    onPressed: _refresh,
-                    child: const Text('Tentar novamente'),
-                  ),
-                ],
-              ),
-            ),
-          );
-        }
-        if (!snapshot.hasData) {
-          return const Center(child: CircularProgressIndicator());
-        }
-
-        final profile = snapshot.data![0] as UserProfile;
-        final measurements = snapshot.data![1] as List<BodyMeasurement>;
-        final workoutsThisWeek = snapshot.data![2] as int;
-        final dashboardWidgets =
-            snapshot.data![3] as List<DashboardWidgetConfig>;
-        final latest = measurements.isEmpty ? null : measurements.first;
-        final days = DateTime.now().difference(profile.startDate).inDays;
-        final selectedGoals = ProfilePreferencesService.parseGeneralGoals(
-          widget.database.activeProfile?.initialGoals ?? profile.mainGoal,
+  Widget build(BuildContext context) => FutureBuilder<DashboardDataSnapshot>(
+    future: _dataFuture,
+    builder: (context, snapshot) {
+      if (snapshot.hasError) {
+        return Center(
+          child: FilledButton(
+            onPressed: _refresh,
+            child: const Text('Tentar novamente'),
+          ),
         );
-        final displayedMetrics = DashboardGoalMetricService.metricsForGoals(
-          selectedGoals,
-        );
-
-        return RefreshIndicator(
-          onRefresh: () async => _refresh(),
-          child: ListView(
-            padding: const EdgeInsets.all(16),
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      'EveFit Tracker',
-                      style: Theme.of(context).textTheme.headlineSmall
-                          ?.copyWith(fontWeight: FontWeight.bold),
+      }
+      if (!snapshot.hasData) {
+        return const Center(child: CircularProgressIndicator());
+      }
+      final data = snapshot.data!;
+      final viewModel = DashboardCompositionService.compose(data);
+      return RefreshIndicator(
+        onRefresh: _refresh,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'EveFit Tracker',
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  IconButton(
-                    tooltip: 'Definições',
-                    onPressed: () async {
-                      await Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => SettingsScreen(
-                            database: widget.database,
-                            onProfileLocked: widget.onProfileLocked,
-                            onProfileChanged: (_) => setState(() {}),
-                          ),
+                ),
+                IconButton(
+                  tooltip: 'Definições',
+                  icon: const Icon(Icons.settings_outlined),
+                  onPressed: () async {
+                    await Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => SettingsScreen(
+                          database: widget.database,
+                          onProfileLocked: widget.onProfileLocked,
+                          onProfileChanged: (_) {
+                            _refresh();
+                          },
                         ),
-                      );
-                      setState(() {});
-                    },
-                    icon: const Icon(Icons.settings_outlined),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 4),
-              Text(
-                'Perfil: ${widget.database.activeProfile?.name ?? profile.name}',
-              ),
-              const SizedBox(height: 4),
-              Text(
-                [
-                  profile.name,
-                  ProfileDisplayService.heightLabel(profile.heightCm),
-                  if (selectedGoals.isNotEmpty)
-                    'objetivos ${selectedGoals.join(', ')}',
-                ].join(' - '),
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
-              ),
-              if (selectedGoals.isNotEmpty) ...[
-                const SizedBox(height: 16),
-                for (final goal in selectedGoals)
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.flag,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: Text(
-                              goal,
-                              style: Theme.of(context).textTheme.titleMedium
-                                  ?.copyWith(fontWeight: FontWeight.w700),
-                            ),
-                          ),
-                        ],
                       ),
-                    ),
-                  ),
+                    );
+                    await _refresh();
+                  },
+                ),
               ],
-              const SizedBox(height: 12),
+            ),
+            Text(
+              'Perfil: ${widget.database.activeProfile?.name ?? data.profile.name}',
+            ),
+            const SizedBox(height: 16),
+            OutlinedButton.icon(
+              key: const ValueKey('dashboard_edit_button'),
+              onPressed: () => _editDashboard(data, viewModel),
+              icon: const Icon(Icons.tune_outlined),
+              label: const Text('Editar Dashboard'),
+            ),
+            const SizedBox(height: 12),
+            if (viewModel.emptyState != DashboardEmptyState.none)
+              DashboardEmptyStatePanel(
+                key: ValueKey(
+                  viewModel.emptyState == DashboardEmptyState.noGoals
+                      ? 'dashboard_empty_no_goals'
+                      : 'dashboard_empty_no_metrics',
+                ),
+                state: viewModel.emptyState,
+              ),
+            if (viewModel.visibleMetricItems
+                .where((item) => item.supportsCard)
+                .isNotEmpty)
               GridView.count(
                 crossAxisCount: MediaQuery.sizeOf(context).width > 620 ? 3 : 2,
                 childAspectRatio: 1.45,
@@ -175,196 +142,88 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: [
-                  for (final metric in displayedMetrics)
+                  for (final item in viewModel.visibleMetricItems.where(
+                    (item) => item.supportsCard,
+                  ))
                     StatCard(
-                      label: metric.title,
-                      value: DashboardMetricService.valueFor(
-                        metric.key,
-                        latest,
-                        workoutsThisWeek: workoutsThisWeek,
-                        daysSinceStart: days,
-                      ),
+                      key: ValueKey('dashboard_card_${item.metricKey}'),
+                      label: item.title,
+                      value: item.formattedCurrentValue,
                     ),
                 ],
               ),
-              const SizedBox(height: 16),
-              FilledButton.icon(
-                onPressed: () async {
-                  final path = await CsvExportService().exportAll(
-                    widget.database,
-                  );
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Dados exportados: $path')),
-                    );
-                  }
-                },
-                icon: const Icon(Icons.file_download_outlined),
-                label: const Text('Exportar dados'),
-              ),
+            for (final item in viewModel.visibleMetricItems.where(
+              (item) => item.supportsChart,
+            )) ...[
               const SizedBox(height: 10),
-              OutlinedButton.icon(
-                onPressed: () => _editDashboard(dashboardWidgets),
-                icon: const Icon(Icons.tune_outlined),
-                label: const Text('Editar Dashboard'),
-              ),
-              const SizedBox(height: 16),
-              _metricChart('Peso ao longo do tempo', 'weight', measurements),
-              const SizedBox(height: 10),
-              _metricChart('IMC ao longo do tempo', 'bmi', measurements),
-              const SizedBox(height: 10),
-              _metricChart(
-                'Gordura corporal ao longo do tempo',
-                'body_fat',
-                measurements,
-              ),
-              const SizedBox(height: 10),
-              _metricChart(
-                'Massa muscular ao longo do tempo',
-                'muscle_mass',
-                measurements,
-              ),
-              const SizedBox(height: 10),
-              _metricChart('Cintura ao longo do tempo', 'waist', measurements),
-              const SizedBox(height: 10),
-              _metricChart('Peito ao longo do tempo', 'chest', measurements),
-              const SizedBox(height: 10),
-              _metricChart(
-                'Gordura visceral ao longo do tempo',
-                'visceral_fat',
-                measurements,
-              ),
-              const SizedBox(height: 10),
-              _metricChart(
-                'BMR ao longo do tempo',
-                'basal_metabolism',
-                measurements,
-              ),
-              const SizedBox(height: 10),
-              _metricChart(
-                'Braço contraído ao longo do tempo',
-                'avg_biceps_flexed',
-                measurements,
-              ),
-              const SizedBox(height: 10),
-              _metricChart(
-                'Zona lateral acima da anca ao longo do tempo',
-                'side_hip_area',
-                measurements,
-              ),
-              const SizedBox(height: 10),
-              _metricChart(
-                'Ombros ao longo do tempo',
-                'shoulders',
-                measurements,
+              ProgressChart(
+                key: ValueKey('dashboard_chart_${item.metricKey}'),
+                title: item.chartTitle,
+                values: item.chartValues,
+                emptyMessage:
+                    'Ainda não existem registos suficientes para apresentar evolução.',
               ),
             ],
-          ),
-        );
-      },
-    );
-  }
+            const SizedBox(height: 16),
+            FilledButton.icon(
+              onPressed: () async {
+                final path = await CsvExportService().exportAll(
+                  widget.database,
+                );
+                if (context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Dados exportados: $path')),
+                  );
+                }
+              },
+              icon: const Icon(Icons.file_download_outlined),
+              label: const Text('Exportar dados'),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 
-  Widget _metricChart(
-    String title,
-    String metricKey,
-    List<BodyMeasurement> measurements,
-  ) {
-    return ProgressChart(
-      title: title,
-      values: DashboardMetricService.valuesFor(metricKey, measurements),
-    );
-  }
-
-  Future<void> _editDashboard(List<DashboardWidgetConfig> widgets) async {
-    var draft = DashboardWidgetDraftService.createDraft(widgets);
+  Future<void> _editDashboard(
+    DashboardDataSnapshot data,
+    DashboardViewModel viewModel,
+  ) async {
     final changed = await showModalBottomSheet<bool>(
       context: context,
       showDragHandle: true,
       isScrollControlled: true,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setSheetState) => SafeArea(
-          child: SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.82,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'Editar Dashboard',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () => Navigator.pop(context, false),
-                        child: const Text('Cancelar'),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: ListView(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    children: [
-                      for (var index = 0; index < draft.length; index++)
-                        SwitchListTile(
-                          value: draft[index].isVisible,
-                          title: Text(draft[index].title),
-                          subtitle: Text(draft[index].metricKey),
-                          onChanged: (value) => setSheetState(() {
-                            draft[index] = DashboardWidgetDraftService.toggle(
-                              draft[index],
-                              value,
-                            );
-                          }),
-                        ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () => setSheetState(() {
-                            draft = [
-                              for (final item in draft)
-                                DashboardWidgetDraftService.toggle(
-                                  item,
-                                  DashboardMetricService.defaultKeys.contains(
-                                    item.metricKey,
-                                  ),
-                                ),
-                            ];
-                          }),
-                          icon: const Icon(Icons.restart_alt),
-                          label: const Text('Restaurar padrão'),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: FilledButton.icon(
-                          onPressed: () async {
-                            await widget.database.updateDashboardWidgets(draft);
-                            if (context.mounted) Navigator.pop(context, true);
-                          },
-                          icon: const Icon(Icons.save_outlined),
-                          label: const Text('Guardar'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+      builder: (_) => DashboardEditorSheet(
+        options: viewModel.editorMetricOptions,
+        onSave: (options) => _savePreferences(data, options),
       ),
     );
-    if (changed == true) setState(() {});
+    if (changed == true) await _refresh();
+  }
+
+  Future<void> _savePreferences(
+    DashboardDataSnapshot data,
+    List<DashboardEditorMetricOption> options,
+  ) async {
+    final byKey = {
+      for (final preference in data.dashboardPreferences)
+        preference.metricKey: preference,
+    };
+    final profileId = widget.database.activeProfileId!;
+    final now = DateTime.now();
+    await widget.database.saveExplicitDashboardWidgets([
+      for (final option in options)
+        DashboardWidgetConfig(
+          id: byKey[option.metricKey]?.id,
+          profileId: profileId,
+          metricKey: option.metricKey,
+          title: option.title,
+          isVisible: option.isEnabled,
+          sortOrder: option.sortOrder,
+          createdAt: byKey[option.metricKey]?.createdAt ?? now,
+          updatedAt: now,
+          explicitlyConfiguredAt: now,
+        ),
+    ]);
   }
 }
