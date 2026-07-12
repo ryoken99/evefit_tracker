@@ -1,7 +1,7 @@
 class CleanBaseConfig {
   const CleanBaseConfig._();
 
-  static const versionLabel = 'EveFit v1.0 Clean Base';
+  static const versionLabel = 'EveFit v1.1.0 - Fundação Canónica';
   static const legacyCatalogueVisible = false;
   static const legacyFiltersVisible = false;
   static const legacySeedEnabled = false;
