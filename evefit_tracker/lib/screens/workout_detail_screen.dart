@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import '../database/app_database.dart';
 import '../database/seed_data.dart';
+import '../features/canonical_search/screens/canonical_search_menu_screen.dart';
 import '../models/exercise.dart';
 import '../models/workout.dart';
 import '../models/workout_exercise.dart';
@@ -64,6 +65,8 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
+        key: const ValueKey('workout_detail_add_exercise'),
+        heroTag: 'workout_detail_add_exercise_fab',
         onPressed: _addExercise,
         icon: const Icon(Icons.add),
         label: const Text('Adicionar exercício'),
@@ -344,6 +347,12 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
 
   Future<Exercise?> _pickExercise() async {
     if (!CleanBaseConfig.legacyCatalogueVisible) {
+      if (CleanBaseConfig.canonicalSearchMenuVisible) {
+        await Navigator.of(context).push<void>(
+          MaterialPageRoute(builder: (_) => const CanonicalSearchMenuScreen()),
+        );
+        return null;
+      }
       await showModalBottomSheet<void>(
         context: context,
         showDragHandle: true,

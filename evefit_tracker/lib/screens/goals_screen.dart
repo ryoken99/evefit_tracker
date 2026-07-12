@@ -61,6 +61,7 @@ class _GoalsScreenState extends State<GoalsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'goals_add_fab',
         onPressed: () => _openGoalForm(),
         icon: const Icon(Icons.add),
         label: const Text('Criar objetivo'),
