@@ -44,6 +44,11 @@ void main() {
       'name TEXT NOT NULL, description TEXT, workout_type_id INTEGER, '
       'muscle_groups TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL)',
     );
+    await db.execute(
+      'CREATE TABLE exercise_identity_aliases('
+      'id INTEGER PRIMARY KEY AUTOINCREMENT, alias_key TEXT NOT NULL, '
+      'canonical_id TEXT NOT NULL, catalog_entry_key TEXT NOT NULL)',
+    );
   });
 
   tearDown(() async {
@@ -93,6 +98,11 @@ void main() {
         'created_at': DateTime(2026, 7, 1).toIso8601String(),
         'updated_at': DateTime(2026, 7, 1).toIso8601String(),
       });
+      await db.insert('exercise_identity_aliases', {
+        'alias_key': 'flexao_bracos',
+        'canonical_id': 'push_up',
+        'catalog_entry_key': legacyEntry.catalogEntryKey,
+      });
 
       final database = AppDatabase.forTesting(db);
       await database.refreshCatalogExercises(db);
@@ -101,8 +111,8 @@ void main() {
 
       final catalog = (await db.query('exercises', where: 'id = 10')).single;
       expect(catalog['catalog_entry_key'], legacyEntry.catalogEntryKey);
-      expect(catalog['canonical_id'], 'push_up');
-      expect(catalog['exercise_key'], 'flexao_classica');
+      expect(catalog['canonical_id'], isNull);
+      expect(catalog['exercise_key'], isNull);
 
       final sets = await db.query('workout_sets');
       expect(sets.single['exercise_id'], 10);
@@ -130,10 +140,7 @@ void main() {
       final defaultRows = await db.rawQuery(
         'SELECT COUNT(*) AS c FROM exercises WHERE is_default = 1',
       );
-      expect(
-        defaultRows.single['c'],
-        ExerciseCatalogContextService.entries.length,
-      );
+      expect(defaultRows.single['c'], 1);
     },
   );
 }

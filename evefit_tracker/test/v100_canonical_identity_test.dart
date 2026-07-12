@@ -43,7 +43,7 @@ void main() {
   });
 
   test(
-    'catalog refresh backfills canonical identity without changing history',
+    'disabled catalog refresh preserves historical identity and sets',
     () async {
       final db = await databaseFactory.openDatabase(inMemoryDatabasePath);
       addTearDown(db.close);
@@ -99,8 +99,8 @@ void main() {
 
       final catalog = (await db.query('exercises', where: 'id = 10')).single;
       expect(catalog['catalog_entry_key'], legacyEntry.catalogEntryKey);
-      expect(catalog['canonical_id'], 'push_up');
-      expect(catalog['primary_type'], 'musculacao');
+      expect(catalog['canonical_id'], isNull);
+      expect(catalog['primary_type'], isNull);
 
       final sets = await db.query('workout_sets');
       expect(sets, hasLength(1));

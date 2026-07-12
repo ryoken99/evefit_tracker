@@ -699,20 +699,12 @@ void main() {
       },
     );
 
-    test('26 seeds e migração inserem os exercícios de catálogo', () async {
+    test('26 runtime legacy seed remains disabled', () async {
       await AppDatabase.forTesting(db).refreshCatalogExercises(db);
       final total = await db.rawQuery(
         'SELECT COUNT(*) AS c FROM exercises WHERE is_default = 1',
       );
-      expect(total.single['c'], entries.length);
-      for (final name in newNames) {
-        final rows = await db.query(
-          'exercises',
-          where: 'name = ? AND is_default = 1',
-          whereArgs: [name],
-        );
-        expect(rows, isNotEmpty, reason: name);
-      }
+      expect(total.single['c'], 0);
     });
   });
 }
