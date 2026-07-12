@@ -1,3 +1,14 @@
+# EveFit v1.1.0 - Fundação Canónica
+
+- Adicionado o menu canónico de pesquisa com 8 capacidades, 4 contextos e 246 nós estruturados.
+- Mantido o catálogo canónico vazio; esta versão não adiciona exercícios.
+- Removido o catálogo legacy do runtime e desativado o seed automático.
+- Preservadas as fontes legacy num arquivo histórico com checksums e instruções de recuperação.
+- Preservadas rows legacy locais necessárias para treinos e históricos existentes.
+- Corrigidas heroTags duplicadas dos FloatingActionButton na navegação full-app.
+- Reduzida a mediana de arranque limpo medida de 181530 ms para 1637 ms no laboratório Android.
+- Validados instalação limpa, atualização sobre uma base legacy, foreign keys, navegação e builds Android.
+
 # EveFit v1.0 Clean Base
 
 - App limpa para reconstrucao futura do catalogo canonico.
