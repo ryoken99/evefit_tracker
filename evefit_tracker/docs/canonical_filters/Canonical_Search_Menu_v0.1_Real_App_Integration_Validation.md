@@ -102,12 +102,16 @@ contract, exercise, or dashboard source was modified during this phase.
 | `flutter test -r compact` | Passed, 571 tests |
 | `run_canonical_search_menu_full_app_test.ps1 -ClearAppData` | Passed, exit code 0 |
 
+## Final Quality Gate
+
+The post-push `Flutter quality gate` passed for commit `36a1c8d` in
+17m26s: https://github.com/ryoken99/evefit_tracker/actions/runs/29193355638/job/86651839208
+
 ## Risks and Recommendation
 
 The legacy seed remains slow and is intentionally unchanged in Phase A. The
 Hero collision found before this repair is covered by both the structural
 contract and the real Android route flow.
 
-Recommendation before the post-push CI result: await the new PR quality gate.
-If it passes, this Phase A change is ready for `APPROVE FOR MERGE` while the
-PR remains draft.
+The slow legacy seed remains a Phase B concern only. Phase A is ready for
+`APPROVE FOR MERGE` while the PR remains draft.

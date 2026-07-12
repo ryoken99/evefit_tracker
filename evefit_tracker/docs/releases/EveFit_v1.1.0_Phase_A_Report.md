@@ -17,6 +17,8 @@ Hero tag collision exposed when canonical search is pushed from workout detail.
 - Focused canonical tests passed.
 - Full Flutter suite passed with 571 tests.
 - A clean-data Android run passed in 2m56s on `EveFit_Test_Device`.
+- The post-push GitHub `Flutter quality gate` passed in 17m26s for the Hero
+  repair commit.
 - The real app flow created a profile and workout, opened canonical search,
   reached the Cardio terminal empty state, returned through navigation, and
   opened Dashboard, profile settings, and goals without a Hero exception.
@@ -31,3 +33,8 @@ Hero tag collision exposed when canonical search is pushed from workout detail.
 
 See `docs/canonical_filters/Canonical_Search_Menu_v0.1_Real_App_Integration_Validation.md`
 for the detailed evidence and runtime artifact paths.
+
+## Recommendation
+
+`APPROVE FOR MERGE` after the final documentation commit receives its GitHub
+quality gate. The PR remains draft and Phase B is not started.
