@@ -1,4 +1,3 @@
-import 'package:evefit_tracker/database/seed_data.dart';
 import 'package:evefit_tracker/services/exercise_v717_migration.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -60,27 +59,35 @@ void main() {
 
   tearDown(() => db.close());
 
-  test('v717 migration adds and backfills muscle node columns', () async {
-    await ExerciseV717Migration.migrate(db);
+  test(
+    'v717 migration adds muscle node columns without mutating rows',
+    () async {
+      await ExerciseV717Migration.migrate(db);
 
-    final columns = await db.rawQuery('PRAGMA table_info(exercises)');
-    final names = columns.map((row) => row['name']).toSet();
-    expect(names, containsAll(['primaryMuscleNodes', 'secondaryMuscleNodes']));
+      final columns = await db.rawQuery('PRAGMA table_info(exercises)');
+      final names = columns.map((row) => row['name']).toSet();
+      expect(
+        names,
+        containsAll(['primaryMuscleNodes', 'secondaryMuscleNodes']),
+      );
 
-    final hammer = await _exercise(db, 'Curl martelo');
-    expect(hammer['primaryMuscleNodes'], contains('Braquial'));
-    expect(hammer['primaryMuscleNodes'], contains('Braquiorradial'));
+      final hammer = await _exercise(db, 'Curl martelo');
+      expect(hammer['primaryMuscleNodes'], isNull);
+      expect(hammer['secondaryMuscleNodes'], isNull);
 
-    final wrist = await _exercise(db, 'Wrist curl');
-    expect(wrist['primaryMuscleNodes'], contains('Flexores do antebraço'));
-    expect(wrist['primaryMuscleNodes'], contains('Punho'));
+      final wrist = await _exercise(db, 'Wrist curl');
+      expect(wrist['primaryMuscleNodes'], isNull);
 
-    final farmer = await _exercise(db, 'Farmer walk');
-    expect(farmer['primaryMuscleNodes'], contains('Força de pega'));
-  });
+      final farmer = await _exercise(db, 'Farmer walk');
+      expect(farmer['primaryMuscleNodes'], isNull);
+
+      await ExerciseV717Migration.migrate(db);
+      expect((await db.query('exercises')).length, 3);
+    },
+  );
 
   test(
-    'v717 migration inserts missing Lombar exercises without deleting history',
+    'v717 migration inserts no catalog rows and preserves history',
     () async {
       await ExerciseV717Migration.migrate(db);
 
@@ -89,7 +96,8 @@ void main() {
         where: 'muscle_group = ?',
         whereArgs: ['Lombar'],
       );
-      expect(lombarRows.length, SeedData.exercisesByGroup['Lombar']!.length);
+      expect(lombarRows, isEmpty);
+      expect((await db.query('exercises')).length, 3);
 
       final workoutCount = await db.rawQuery(
         'SELECT COUNT(*) AS total FROM workouts',

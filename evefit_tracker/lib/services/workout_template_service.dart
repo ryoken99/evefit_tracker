@@ -1,18 +1,8 @@
+import '../models/workout_template_exercise_ref.dart';
+
+export '../models/workout_template_exercise_ref.dart';
+
 import 'exercise_catalog_context_service.dart';
-
-class WorkoutTemplateExerciseRef {
-  const WorkoutTemplateExerciseRef({
-    this.catalogEntryKey = '',
-    this.exerciseKey = '',
-    this.contextKey = '',
-    required this.legacyName,
-  });
-
-  final String catalogEntryKey;
-  final String exerciseKey;
-  final String contextKey;
-  final String legacyName;
-}
 
 class WorkoutTemplate {
   const WorkoutTemplate({required this.name, required this.exercises});

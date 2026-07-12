@@ -15,21 +15,17 @@ import '../models/workout.dart';
 import '../models/workout_exercise.dart';
 import '../models/workout_set.dart';
 import '../models/workout_template.dart';
+import '../models/workout_template_exercise_ref.dart';
 import '../models/workout_type.dart';
 import '../services/dashboard_metric_service.dart';
-import '../services/exercise_catalog_context_service.dart';
-import '../services/exercise_muscle_node_service.dart';
-import '../services/exercise_taxonomy_service.dart';
 import '../services/exercise_v717_migration.dart';
 import '../services/equipment_catalog_service.dart';
 import '../services/pin_service.dart';
 import '../services/profile_preferences_service.dart';
-import '../services/training_architecture.dart';
+import '../services/startup_catalog_diagnostics.dart';
 import '../services/training_location_service.dart';
 import '../services/workout_taxonomy.dart';
-import '../services/workout_template_service.dart';
 import 'migrations/v080_integrity_migration.dart';
-import 'seed_data.dart';
 
 class WorkoutEntry {
   WorkoutEntry({
@@ -81,101 +77,82 @@ class AppDatabase {
   Future<Database> get database async => _database ??= await _open();
 
   Future<Database> _open() async {
+    StartupCatalogDiagnostics.beginDatabaseOpen();
     final dbPath = await getDatabasesPath();
-    return openDatabase(
+    final database = await openDatabase(
       p.join(dbPath, 'evefit_tracker.db'),
       version: 22,
       onConfigure: (db) async {
         await configureDatabaseConnection(db);
       },
-      onCreate: (db, version) async {
-        await _createTables(db);
-        await _migrateV5(db);
-        await _migrateV51(db);
-        await _migrateV52(db);
-        await _migrateV53(db);
-        await _migrateV60(db);
-        await _migrateV70(db);
-        await _migrateV75(db);
-        await _migrateV76(db);
-        await _migrateV77(db);
-        await _migrateV78(db);
-        await _migrateV79(db);
-        await _migrateV710(db);
-        await _migrateV711(db);
-        await _migrateV717(db);
-        await _migrateV080(db);
-        await _migrateV091(db);
-        await _migrateV092(db);
-        await _migrateV100(db);
-        await _migrateV101(db);
-      },
-      onUpgrade: (db, oldVersion, newVersion) async {
-        if (oldVersion < 2) {
-          await _createWorkoutExercisesTable(db);
-        }
-        if (oldVersion < 3) {
-          await _migrateProfiles(db);
-        }
-        if (oldVersion < 4) {
-          await _migrateV5(db);
-        }
-        if (oldVersion < 5) {
-          await _migrateV51(db);
-        }
-        if (oldVersion < 6) {
-          await _migrateV52(db);
-        }
-        if (oldVersion < 7) {
-          await _migrateV53(db);
-        }
-        if (oldVersion < 8) {
-          await _migrateV60(db);
-        }
-        if (oldVersion < 9) {
-          await _migrateV70(db);
-        }
-        if (oldVersion < 10) {
-          await _migrateV75(db);
-        }
-        if (oldVersion < 11) {
-          await _migrateV76(db);
-        }
-        if (oldVersion < 12) {
-          await _migrateV77(db);
-        }
-        if (oldVersion < 13) {
-          await _migrateV78(db);
-        }
-        if (oldVersion < 14) {
-          await _migrateV79(db);
-        }
-        if (oldVersion < 15) {
-          await _migrateV710(db);
-        }
-        if (oldVersion < 16) {
-          await _migrateV711(db);
-        }
-        if (oldVersion < 17) {
-          await _migrateV717(db);
-        }
-        if (oldVersion < 18) {
-          await _migrateV080(db);
-        }
-        if (oldVersion < 19) {
-          await _migrateV091(db);
-        }
-        if (oldVersion < 20) {
-          await _migrateV092(db);
-        }
-        if (oldVersion < 21) {
-          await _migrateV100(db);
-        }
-        if (oldVersion < 22) {
-          await _migrateV101(db);
-        }
-      },
+      onCreate: (db, version) => _initializeSchema(db),
+      onUpgrade: _upgradeSchema,
     );
+    StartupCatalogDiagnostics.completeDatabaseOpen();
+    return database;
+  }
+
+  Future<void> _initializeSchema(Database db) async {
+    await _createTables(db);
+    await _migrateV5(db);
+    await _migrateV51(db);
+    await _migrateV52(db);
+    await _migrateV53(db);
+    await _migrateV60(db);
+    await _migrateV70(db);
+    await _migrateV75(db);
+    await _migrateV76(db);
+    await _migrateV77(db);
+    await _migrateV78(db);
+    await _migrateV79(db);
+    await _migrateV710(db);
+    await _migrateV711(db);
+    await _migrateV717(db);
+    await _migrateV080(db);
+    await _migrateV091(db);
+    await _migrateV092(db);
+    await _migrateV100(db);
+    await _migrateV101(db);
+  }
+
+  Future<void> _upgradeSchema(
+    Database db,
+    int oldVersion,
+    int newVersion,
+  ) async {
+    if (oldVersion < 2) await _createWorkoutExercisesTable(db);
+    if (oldVersion < 3) await _migrateProfiles(db);
+    if (oldVersion < 4) await _migrateV5(db);
+    if (oldVersion < 5) await _migrateV51(db);
+    if (oldVersion < 6) await _migrateV52(db);
+    if (oldVersion < 7) await _migrateV53(db);
+    if (oldVersion < 8) await _migrateV60(db);
+    if (oldVersion < 9) await _migrateV70(db);
+    if (oldVersion < 10) await _migrateV75(db);
+    if (oldVersion < 11) await _migrateV76(db);
+    if (oldVersion < 12) await _migrateV77(db);
+    if (oldVersion < 13) await _migrateV78(db);
+    if (oldVersion < 14) await _migrateV79(db);
+    if (oldVersion < 15) await _migrateV710(db);
+    if (oldVersion < 16) await _migrateV711(db);
+    if (oldVersion < 17) await _migrateV717(db);
+    if (oldVersion < 18) await _migrateV080(db);
+    if (oldVersion < 19) await _migrateV091(db);
+    if (oldVersion < 20) await _migrateV092(db);
+    if (oldVersion < 21) await _migrateV100(db);
+    if (oldVersion < 22) await _migrateV101(db);
+  }
+
+  Future<void> initializeSchemaForTesting() async {
+    StartupCatalogDiagnostics.beginDatabaseOpen();
+    await _initializeSchema(_database!);
+    StartupCatalogDiagnostics.completeDatabaseOpen();
+  }
+
+  Future<void> upgradeSchemaForTesting({required int oldVersion}) async {
+    StartupCatalogDiagnostics.beginDatabaseOpen();
+    await _upgradeSchema(_database!, oldVersion, 22);
+    StartupCatalogDiagnostics.completeDatabaseOpen();
   }
 
   static Future<List<DatabaseIntegrityIssue>> configureDatabaseConnection(
@@ -362,57 +339,12 @@ class AppDatabase {
     );
   }
 
-  Future<void> _seedExercises(Database db) async {
-    await _ensureExerciseCatalogIdentityColumns(db);
-    await _ensureExerciseIdentityAliasTable(db);
-    final storesTaxonomy = await _tableHasColumn(
-      db,
-      'exercises',
-      'region_keys',
-    );
-    final now = DateTime.now().toIso8601String();
-    for (final entry in ExerciseCatalogContextService.entries) {
-      final existing = await db.query(
-        'exercises',
-        columns: ['id'],
-        where:
-            'is_default = 1 AND (catalog_entry_key = ? OR (name = ? AND muscle_group = ?))',
-        whereArgs: [entry.catalogEntryKey, entry.name, entry.group],
-        limit: 1,
-      );
-      final exercise = storesTaxonomy
-          ? ExerciseTaxonomyService.enrichCatalogExercise(entry)
-          : entry.toExercise();
-      final data = exercise.toMap()
-        ..addAll(_muscleNodeMapFor(entry))
-        ..remove('id')
-        ..['created_at'] = now
-        ..['updated_at'] = now;
-      if (existing.isNotEmpty) {
-        await db.update(
-          'exercises',
-          data,
-          where: 'id = ?',
-          whereArgs: [existing.first['id']],
-        );
-        continue;
-      }
-      await db.insert(
-        'exercises',
-        data,
-        conflictAlgorithm: ConflictAlgorithm.ignore,
-      );
-    }
-    await _ensureExerciseCatalogEntryIndex(db);
-    await _refreshExerciseIdentityAliases(db);
-  }
-
   /// v0.9.1: reescreve os textos pedagógicos de todos os exercícios do
   /// catálogo. Atualiza apenas linhas com is_default = 1, identificadas por
   /// catalog_entry_key, preservando exercícios personalizados, histórico de
   /// treinos, séries, medidas, fotos e objetivos.
   Future<void> _migrateV091(Database db) async {
-    await refreshCatalogExercises(db);
+    // Existing catalogue rows are preserved without refresh or mutation.
   }
 
   /// v0.9.2: expansão do catálogo (353 exercícios) e revisão de textos.
@@ -420,13 +352,13 @@ class AppDatabase {
   /// exercícios de sistema e atualiza os textos dos existentes, sem tocar em
   /// exercícios personalizados, histórico, séries, medições ou objetivos.
   Future<void> _migrateV092(Database db) async {
-    await refreshCatalogExercises(db);
+    // Existing catalogue rows are preserved without refresh or mutation.
   }
 
   /// v1.0.0: adiciona identidade canonica separada da entrada de catalogo.
   /// A chave catalog_entry_key continua a identificar contexto e historico.
   Future<void> _migrateV100(Database db) async {
-    await refreshCatalogExercises(db);
+    await _ensureExerciseCatalogIdentityColumns(db);
   }
 
   /// Preserves legacy dashboard rows while marking only post-rebuild saves as explicit.
@@ -446,7 +378,10 @@ class AppDatabase {
   /// Reaplica os textos do catálogo às linhas de sistema (is_default = 1),
   /// sem tocar em exercícios personalizados nem em dados de treino.
   /// Público para permitir testes de migração com bases em memória.
-  Future<void> refreshCatalogExercises(Database db) => _seedExercises(db);
+  @Deprecated(
+    'Legacy catalogue refresh is disabled in the canonical clean base.',
+  )
+  Future<void> refreshCatalogExercises(Database db) async {}
 
   Future<void> _migrateV5(Database db) async {
     await _createDashboardWidgetsTable(db);
@@ -472,7 +407,6 @@ class AppDatabase {
     }
     await _seedMuscleGroups(db);
     await _seedWorkoutTypes(db);
-    await _backfillExerciseDetails(db);
   }
 
   Future<void> _migrateV51(Database db) async {
@@ -490,13 +424,10 @@ class AppDatabase {
     await _seedMuscleGroups(db);
     await _seedExpandedMuscleGroups(db);
     await _seedWorkoutTypes(db);
-    await _seedExercises(db);
-    await _backfillExerciseDetails(db);
   }
 
   Future<void> _migrateV52(Database db) async {
     await _createProfileTrainingLocationsTable(db);
-    await _seedExercises(db);
     await _seedWorkoutTypes(db);
     await _backfillSpecificWorkoutTypes(db);
     final profiles = await db.query('profiles');
@@ -531,10 +462,8 @@ class AppDatabase {
 
   Future<void> _migrateV60(Database db) async {
     await _seedWorkoutTypes(db);
-    await _seedExercises(db);
     await _backfillSpecificWorkoutTypes(db);
     await _refreshDefaultWorkoutTypes(db);
-    await _refreshDefaultExerciseDetails(db);
   }
 
   Future<void> _migrateV70(Database db) async {
@@ -548,73 +477,22 @@ class AppDatabase {
       'TEXT',
     );
     await _addColumnIfMissing(db, 'workouts', 'workout_equipment_key', 'TEXT');
-    await _createTrainingArchitectureTables(db);
-    await _seedTrainingArchitecture(db);
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-    await _backfillWorkoutArchitecture(db);
   }
 
-  Future<void> _migrateV75(Database db) async {
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-    await db.update(
-      'exercises',
-      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
-      where: 'is_default = 1 AND name = ?',
-      whereArgs: ['Face pull'],
-    );
-  }
+  Future<void> _migrateV75(Database db) async {}
 
-  Future<void> _migrateV76(Database db) async {
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-    await db.update(
-      'exercises',
-      {'is_hidden': 1, 'updated_at': DateTime.now().toIso8601String()},
-      where: 'is_default = 1 AND name = ?',
-      whereArgs: ['Face pull'],
-    );
-  }
+  Future<void> _migrateV76(Database db) async {}
 
-  Future<void> _migrateV77(Database db) async {
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-    final now = DateTime.now().toIso8601String();
-    await db.update(
-      'exercises',
-      {'is_hidden': 1, 'updated_at': now},
-      where: 'is_default = 1 AND name IN (?, ?, ?, ?, ?)',
-      whereArgs: [
-        'Face pull',
-        'Aberturas inclinadas',
-        'Supino declinado',
-        'Dips para peito',
-        'Extensão francesa',
-      ],
-    );
-  }
+  Future<void> _migrateV77(Database db) async {}
 
-  Future<void> _migrateV78(Database db) async {
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-  }
+  Future<void> _migrateV78(Database db) async {}
 
-  Future<void> _migrateV79(Database db) async {
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-  }
+  Future<void> _migrateV79(Database db) async {}
 
-  Future<void> _migrateV710(Database db) async {
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-  }
+  Future<void> _migrateV710(Database db) async {}
 
   Future<void> _migrateV711(Database db) async {
     await _ensureExerciseCatalogIdentityColumns(db);
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-    await _ensureExerciseCatalogEntryIndex(db);
   }
 
   Future<void> _migrateV717(Database db) async {
@@ -623,118 +501,6 @@ class AppDatabase {
 
   Future<void> _migrateV080(Database db) async {
     await V080IntegrityMigration.migrate(db);
-    await _seedExercises(db);
-    await _refreshDefaultExerciseDetails(db);
-    await V080IntegrityMigration.migrate(db);
-  }
-
-  Future<void> _createTrainingArchitectureTables(Database db) async {
-    await db.execute(
-      'CREATE TABLE IF NOT EXISTS body_regions(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, name TEXT NOT NULL, description TEXT, sort_order INTEGER NOT NULL, is_default INTEGER NOT NULL)',
-    );
-    await db.execute(
-      'CREATE TABLE IF NOT EXISTS workout_focuses(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, region_key TEXT, group_key TEXT, subgroup_key TEXT, specific_muscle_key TEXT, name TEXT NOT NULL, description TEXT, is_specific INTEGER NOT NULL, sort_order INTEGER NOT NULL, is_default INTEGER NOT NULL)',
-    );
-    await db.execute(
-      'CREATE TABLE IF NOT EXISTS equipment(id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT NOT NULL UNIQUE, name TEXT NOT NULL, category TEXT, description TEXT, is_default INTEGER NOT NULL)',
-    );
-    await db.execute(
-      'CREATE TABLE IF NOT EXISTS exercise_equipment(exercise_id INTEGER NOT NULL, equipment_key TEXT NOT NULL, is_required INTEGER NOT NULL, is_optional INTEGER NOT NULL, UNIQUE(exercise_id, equipment_key))',
-    );
-    await db.execute(
-      'CREATE TABLE IF NOT EXISTS exercise_muscles(exercise_id INTEGER NOT NULL, muscle_key TEXT NOT NULL, role TEXT NOT NULL, UNIQUE(exercise_id, muscle_key, role))',
-    );
-    await db.execute(
-      'CREATE TABLE IF NOT EXISTS exercise_focus_map(exercise_id INTEGER NOT NULL, focus_key TEXT NOT NULL, match_strength TEXT NOT NULL, UNIQUE(exercise_id, focus_key))',
-    );
-  }
-
-  Future<void> _seedTrainingArchitecture(Database db) async {
-    for (final region in TrainingArchitecture.regions) {
-      await db.insert('body_regions', {
-        'key': region.key,
-        'name': region.name,
-        'description': region.description,
-        'sort_order': region.sortOrder,
-        'is_default': 1,
-      }, conflictAlgorithm: ConflictAlgorithm.replace);
-    }
-    for (final equipment in TrainingArchitecture.equipment) {
-      await db.insert('equipment', {
-        'key': equipment.key,
-        'name': equipment.name,
-        'category': equipment.category,
-        'description': equipment.description,
-        'is_default': 1,
-      }, conflictAlgorithm: ConflictAlgorithm.replace);
-    }
-    for (final group in TrainingArchitecture.groups) {
-      await db.insert('workout_focuses', {
-        'key': group.key,
-        'region_key': group.regionKey,
-        'group_key': group.key,
-        'subgroup_key': '',
-        'specific_muscle_key': '',
-        'name': group.name,
-        'description': group.description,
-        'is_specific': 0,
-        'sort_order': group.sortOrder,
-        'is_default': 1,
-      }, conflictAlgorithm: ConflictAlgorithm.replace);
-    }
-    for (final subgroup in TrainingArchitecture.subgroups) {
-      await db.insert('workout_focuses', {
-        'key': subgroup.key,
-        'region_key': subgroup.regionKey,
-        'group_key': subgroup.groupKey,
-        'subgroup_key': subgroup.key,
-        'specific_muscle_key': '',
-        'name': subgroup.name,
-        'description': subgroup.description,
-        'is_specific': 1,
-        'sort_order': subgroup.sortOrder,
-        'is_default': 1,
-      }, conflictAlgorithm: ConflictAlgorithm.replace);
-    }
-    for (final muscle in TrainingArchitecture.muscles) {
-      await db.insert('workout_focuses', {
-        'key': muscle.key,
-        'region_key': muscle.regionKey,
-        'group_key': muscle.groupKey,
-        'subgroup_key': muscle.subgroupKey,
-        'specific_muscle_key': muscle.key,
-        'name': muscle.name,
-        'description': muscle.description,
-        'is_specific': 1,
-        'sort_order': muscle.sortOrder,
-        'is_default': 1,
-      }, conflictAlgorithm: ConflictAlgorithm.replace);
-    }
-  }
-
-  Future<void> _backfillWorkoutArchitecture(Database db) async {
-    final rows = await db.query(
-      'workouts',
-      columns: ['id', 'workout_type'],
-      where: 'workout_region_key IS NULL OR workout_region_key = ""',
-    );
-    for (final row in rows) {
-      final selection = TrainingArchitecture.legacySelectionFor(
-        row['workout_type'] as String? ?? '',
-      );
-      await db.update(
-        'workouts',
-        {
-          'workout_region_key': selection.regionKey,
-          'workout_group_key': selection.groupKey,
-          'workout_subgroup_key': selection.subgroupKey,
-          'workout_specific_muscle_key': selection.specificMuscleKey,
-          'workout_equipment_key': selection.equipmentKey,
-        },
-        where: 'id = ?',
-        whereArgs: [row['id']],
-      );
-    }
   }
 
   Future<void> _createProfileTrainingLocationsTable(Database db) async {
@@ -744,7 +510,7 @@ class AppDatabase {
   }
 
   Future<void> _backfillSpecificWorkoutTypes(Database db) async {
-    for (final name in SeedData.workoutTypes) {
+    for (final name in WorkoutTaxonomy.defaultTypeNames) {
       await db.update(
         'workout_types',
         {'muscle_groups': _defaultGroupsForWorkoutType(name)},
@@ -756,7 +522,7 @@ class AppDatabase {
 
   Future<void> _refreshDefaultWorkoutTypes(Database db) async {
     final now = DateTime.now().toIso8601String();
-    final validNames = SeedData.workoutTypes.toSet();
+    final validNames = WorkoutTaxonomy.defaultTypeNames.toSet();
     for (final name in validNames) {
       await db.update(
         'workout_types',
@@ -777,35 +543,6 @@ class AppDatabase {
           'profile_id IS NULL AND is_default = 1 AND name NOT IN (${List.filled(validNames.length, '?').join(',')})',
       whereArgs: validNames.toList(),
     );
-  }
-
-  Future<void> _refreshDefaultExerciseDetails(Database db) async {
-    await _ensureExerciseCatalogIdentityColumns(db);
-    await _ensureExerciseIdentityAliasTable(db);
-    final storesTaxonomy = await _tableHasColumn(
-      db,
-      'exercises',
-      'region_keys',
-    );
-    final now = DateTime.now().toIso8601String();
-    for (final entry in ExerciseCatalogContextService.entries) {
-      final exercise = storesTaxonomy
-          ? ExerciseTaxonomyService.enrichCatalogExercise(entry)
-          : entry.toExercise();
-      await db.update(
-        'exercises',
-        exercise.toMap()
-          ..addAll(_muscleNodeMapFor(entry))
-          ..remove('id')
-          ..remove('created_at')
-          ..['updated_at'] = now,
-        where:
-            'is_default = 1 AND (catalog_entry_key = ? OR (name = ? AND muscle_group = ?))',
-        whereArgs: [entry.catalogEntryKey, entry.name, entry.group],
-      );
-    }
-    await _ensureExerciseCatalogEntryIndex(db);
-    await _refreshExerciseIdentityAliases(db);
   }
 
   Future<void> _createProfileEquipmentTable(Database db) async {
@@ -1047,7 +784,7 @@ class AppDatabase {
 
   Future<void> _seedWorkoutTypes(Database db) async {
     final now = DateTime.now();
-    for (final name in SeedData.workoutTypes) {
+    for (final name in WorkoutTaxonomy.defaultTypeNames) {
       final existing = await db.query(
         'workout_types',
         columns: ['id'],
@@ -1152,24 +889,6 @@ class AppDatabase {
     return WorkoutTaxonomy.groupsFor(name).join(', ');
   }
 
-  Future<void> _backfillExerciseDetails(Database db) async {
-    await db.rawUpdate(
-      'UPDATE exercises SET primary_muscle_group = muscle_group WHERE primary_muscle_group IS NULL OR primary_muscle_group = ""',
-    );
-    await db.rawUpdate(
-      'UPDATE exercises SET description = "Exercício de força para desenvolver o grupo muscular principal com técnica controlada." WHERE description IS NULL OR description = ""',
-    );
-    await db.rawUpdate(
-      'UPDATE exercises SET execution_steps = "1. Ajusta a posição inicial. 2. Mantém o tronco estável. 3. Executa a repetição com controlo. 4. Regressa sem perder tensão." WHERE execution_steps IS NULL OR execution_steps = ""',
-    );
-    await db.rawUpdate(
-      'UPDATE exercises SET common_mistakes = "Carga excessiva, balanço do corpo e amplitude incompleta." WHERE common_mistakes IS NULL OR common_mistakes = ""',
-    );
-    await db.rawUpdate(
-      'UPDATE exercises SET safety_notes = "Usa carga progressiva e interrompe se surgir dor articular." WHERE safety_notes IS NULL OR safety_notes = ""',
-    );
-  }
-
   Future<void> _ensureExerciseCatalogIdentityColumns(Database db) async {
     await _addColumnIfMissing(db, 'exercises', 'exercise_key', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'context_key', 'TEXT');
@@ -1178,74 +897,6 @@ class AppDatabase {
     await _addColumnIfMissing(db, 'exercises', 'aliases', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'primary_type', 'TEXT');
     await _addColumnIfMissing(db, 'exercises', 'secondary_types', 'TEXT');
-  }
-
-  Future<void> _ensureExerciseIdentityAliasTable(Database db) async {
-    await db.execute(
-      'CREATE TABLE IF NOT EXISTS exercise_identity_aliases('
-      'id INTEGER PRIMARY KEY AUTOINCREMENT, '
-      'alias_key TEXT NOT NULL, '
-      'canonical_id TEXT NOT NULL, '
-      'catalog_entry_key TEXT NOT NULL, '
-      'exercise_key TEXT NOT NULL, '
-      'context_key TEXT NOT NULL, '
-      'source TEXT NOT NULL, '
-      'updated_at TEXT NOT NULL, '
-      'UNIQUE(alias_key, catalog_entry_key))',
-    );
-    await db.execute(
-      'CREATE INDEX IF NOT EXISTS idx_exercise_identity_aliases_alias '
-      'ON exercise_identity_aliases(alias_key)',
-    );
-    await db.execute(
-      'CREATE INDEX IF NOT EXISTS idx_exercise_identity_aliases_canonical '
-      'ON exercise_identity_aliases(canonical_id)',
-    );
-  }
-
-  Future<void> _refreshExerciseIdentityAliases(Database db) async {
-    await _ensureExerciseIdentityAliasTable(db);
-    final now = DateTime.now().toIso8601String();
-    for (final entry in ExerciseCatalogContextService.entries) {
-      final exercise = entry.toExercise();
-      final aliases = <String>{
-        exercise.canonicalId,
-        exercise.exerciseKey,
-        exercise.catalogEntryKey,
-        ...exercise.aliases,
-      }..removeWhere((alias) => alias.trim().isEmpty);
-      for (final alias in aliases) {
-        await db.insert(
-          'exercise_identity_aliases',
-          {
-            'alias_key': alias,
-            'canonical_id': exercise.canonicalId,
-            'catalog_entry_key': exercise.catalogEntryKey,
-            'exercise_key': exercise.exerciseKey,
-            'context_key': exercise.contextKey,
-            'source': 'catalog_v100',
-            'updated_at': now,
-          },
-          conflictAlgorithm: ConflictAlgorithm.replace,
-        );
-      }
-    }
-  }
-
-  Map<String, Object?> _muscleNodeMapFor(ExerciseCatalogEntry entry) {
-    final nodes = ExerciseMuscleNodeService.nodesForCatalogEntry(entry);
-    return {
-      'primaryMuscleNodes': nodes.primary,
-      'secondaryMuscleNodes': nodes.secondary,
-    };
-  }
-
-  Future<void> _ensureExerciseCatalogEntryIndex(Database db) async {
-    await db.execute(
-      // Aspas simples: builds estritos do SQLite (DQS desativado) rejeitam
-      // literais de texto com aspas duplas.
-      "CREATE UNIQUE INDEX IF NOT EXISTS idx_exercises_catalog_entry_key ON exercises(catalog_entry_key) WHERE catalog_entry_key IS NOT NULL AND catalog_entry_key != ''",
-    );
   }
 
   Future<void> _addColumnIfMissing(
@@ -1265,11 +916,6 @@ class AppDatabase {
         // enough; the migration must never drop user data.
       }
     }
-  }
-
-  Future<bool> _tableHasColumn(Database db, String table, String column) async {
-    final info = await db.rawQuery('PRAGMA table_info($table)');
-    return info.any((row) => row['name'] == column);
   }
 
   Future<List<Profile>> profiles() async {
@@ -1483,10 +1129,30 @@ class AppDatabase {
     int profileId, {
     List<String> selectedGoals = const [],
   }) async {
-    final goals = SeedData.goals.where(
-      (goal) => selectedGoals.contains(goal.title),
-    );
-    for (final goal in goals) {
+    const initialGoalTitles = [
+      'Ganhar massa muscular',
+      'Perder gordura',
+      'Construir V-shape',
+      'Definir abdominal',
+      'Ganhar força',
+      'Melhorar cardio',
+      'Melhorar mobilidade',
+      'Melhorar postura',
+      'Melhorar performance no Karate',
+      'Melhorar performance no Jiu-Jitsu',
+      'Recomposição corporal',
+      'Manutenção',
+    ];
+    for (final title in initialGoalTitles.where(selectedGoals.contains)) {
+      final goal = Goal(
+        title: title,
+        description: '',
+        phase: 'Base',
+        category: 'Objetivo inicial',
+        metricKey: 'manual',
+        isActive: true,
+        createdAt: DateTime(2026, 6, 6),
+      );
       await txn.insert(
         'goals',
         goal.toMap()
@@ -2121,7 +1787,7 @@ class AppDatabase {
     );
     final exerciseRows = await db.rawQuery(
       'SELECT workout_exercises.*, exercises.name AS exercise_name, '
-      'COALESCE(NULLIF(exercises.primaryMuscleNodes, ""), exercises.primary_muscle_group) AS muscle_group '
+      "COALESCE(NULLIF(exercises.primaryMuscleNodes, ''), exercises.primary_muscle_group) AS muscle_group "
       'FROM workout_exercises JOIN exercises ON exercises.id = workout_exercises.exercise_id '
       'WHERE workout_id IN ($placeholders) AND workout_exercises.profile_id = ? '
       'ORDER BY workout_id, workout_exercises.id',

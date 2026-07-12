@@ -1,5 +1,4 @@
 import 'package:evefit_tracker/database/app_database.dart';
-import 'package:evefit_tracker/services/exercise_catalog_context_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
@@ -79,19 +78,16 @@ void main() {
 
   tearDown(() => db.close());
 
-  test('v0.9.1 refresh updates catalog rows and preserves user data', () async {
+  test('disabled catalog refresh preserves all historical rows', () async {
     final database = AppDatabase.forTesting(db);
     await database.refreshCatalogExercises(db);
 
     final catalog = (await db.query('exercises', where: 'id = 10')).single;
-    final description = catalog['description']! as String;
-    final steps = catalog['execution_steps']! as String;
-    expect(description.length, inInclusiveRange(60, 280));
-    expect(description, isNot(contains('Texto antigo')));
-    expect(steps, contains('\n'));
-    expect(steps.toLowerCase(), contains('diamante'));
-    expect(steps.toLowerCase(), isNot(contains('desce a carga')));
-    expect(steps.toLowerCase(), isNot(contains('segura peso corporal')));
+    expect(catalog['description'], 'Texto antigo demasiado longo e genérico.');
+    expect(
+      catalog['execution_steps'],
+      '1. Segura Peso corporal. 2. Desce a carga com controlo.',
+    );
 
     final custom = (await db.query('exercises', where: 'id = 11')).single;
     expect(custom['description'], 'Notas pessoais do utilizador.');
@@ -108,6 +104,6 @@ void main() {
     final total = await db.rawQuery(
       'SELECT COUNT(*) AS c FROM exercises WHERE is_default = 1',
     );
-    expect(total.single['c'], ExerciseCatalogContextService.entries.length);
+    expect(total.single['c'], 1);
   });
 }
