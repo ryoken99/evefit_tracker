@@ -36,6 +36,14 @@ void main() {
         workoutDetail,
         contains('if (!CleanBaseConfig.legacyCatalogueVisible)'),
       );
+      expect(
+        workoutDetail,
+        contains('CleanBaseConfig.canonicalSearchMenuVisible'),
+      );
+      expect(
+        workoutDetail,
+        contains('CanonicalSearchMenuScreen'),
+      );
       expect(workoutDetail, contains('CleanBaseConfig.catalogueRebuildTitle'));
     },
   );

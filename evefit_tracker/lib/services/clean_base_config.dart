@@ -4,6 +4,7 @@ class CleanBaseConfig {
   static const versionLabel = 'EveFit v1.0 Clean Base';
   static const legacyCatalogueVisible = false;
   static const legacyFiltersVisible = false;
+  static const canonicalSearchMenuVisible = true;
 
   static const catalogueRebuildTitle =
       'O catalogo de exercicios esta em reconstrucao.';
