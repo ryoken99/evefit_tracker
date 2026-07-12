@@ -1,3 +1,14 @@
+# EveFit v1.1.0 - Fundação Canónica
+
+- Novo menu canónico com 8 capacidades, 4 contextos e 246 nós.
+- Catálogo canónico vazio; esta versão não adiciona exercícios.
+- Catálogo legacy removido do runtime e seed legacy desativado.
+- Fontes legacy preservadas como arquivo histórico.
+- Perfis, medições, objetivos, treinos e históricos preservados.
+- Correção das heroTags dos FloatingActionButton.
+- Instalação limpa e upgrade Android validados.
+- Versionamento atualizado para 1.1.0+2.
+
 # v1.0.0 RC
 
 - Congelada a expansao GOOD_V1 do catalogo com 1762 entradas auditadas.

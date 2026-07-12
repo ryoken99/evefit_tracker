@@ -1,4 +1,4 @@
-# EveFit Tracker v1.0.0 RC
+# EveFit Tracker v1.1.0
 
 Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados corporais, fotos de progresso e objetivos.
 
@@ -10,7 +10,10 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - Formulario Dados para registar balanca, composicao corporal, medidas, dobras cutaneas e notas.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- Release candidate atual: v1.0.0-rc.1.
+- Versão atual: v1.1.0 - Fundação Canónica.
+- Menu canónico com 8 capacidades, 4 contextos e 246 nós.
+- Catálogo canónico vazio; nenhum exercício novo nesta versão.
+- Catálogo legacy fora do runtime, com fontes preservadas em arquivo histórico.
 - Aba Medidas renomeada para Dados.
 - Dados de balanca e composicao corporal expandidos.
 - IMC calculado, idade/altura no perfil e racios cintura/anca e cintura/altura preparados.
@@ -43,12 +46,11 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 ```powershell
 flutter analyze
 flutter test
-flutter build apk --release --build-name 1.0.0-rc.1
+flutter build apk --release
 ```
 
-Android/iOS podem exigir um `--build-number` técnico crescente. Esse número
-não altera a versão pública, o nome da release nem a identificação da app,
-que permanecem `1.0.0-rc.1`/`v1.0.0-rc.1` durante o RC.
+O versionamento oficial desta release é `1.1.0+2`: `1.1.0` é a versão pública
+e `2` é o versionCode Android monotónico.
 
 ## Package Android
 

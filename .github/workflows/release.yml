@@ -9,7 +9,7 @@ on:
       version:
         description: 'Versão do release (v0.9.1)'
         required: true
-        default: 'v1.0.0-rc.1'
+        default: 'v1.1.0'
 
 permissions:
   contents: write
@@ -63,11 +63,11 @@ jobs:
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v1.0.0 RC
-            - Expansao GOOD_V1 congelada com 1762 entradas auditadas.
-            - Auditoria strict sem critical issues, warnings, wrong-results ou exercicios inacessiveis.
-            - Builds Android debug/release validados para release candidate.
-            - Checklist manual Pixel criado antes da release final.
+            ### Novidades v1.1.0
+            - Novo menu canonico com 8 capacidades, 4 contextos e 246 nos.
+            - Catalogo canonico vazio; esta versao nao adiciona exercicios.
+            - Catalogo legacy removido do runtime e seed legacy desativado.
+            - Perfis, medicoes, objetivos, treinos e historicos preservados.
             - Atualizada versao da app para v1.0.0-rc.1.
 
             ### Novidades v0.9.4

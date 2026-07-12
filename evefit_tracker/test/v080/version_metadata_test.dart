@@ -3,41 +3,39 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('v1.0 Clean Base public version metadata', () {
-    test(
-      'app surface identifies v1.0 Clean Base without changing rc build',
-      () {
-        final pubspec = _contents('pubspec.yaml');
-        final settings = _contents('lib/screens/settings_screen.dart');
-        final cleanBaseConfig = _contents(
-          'lib/services/clean_base_config.dart',
-        );
-        final readme = _contents('README.md');
-        final workflow = _contents('../.github/workflows/release.yml');
-        final changelog = _contents('CHANGELOG.md');
-        final releaseNotes = _contents('RELEASE_NOTES.md');
+  group('v1.1.0 Foundation public version metadata', () {
+    test('app surface and release tooling identify v1.1.0 build 2', () {
+      final pubspec = _contents('pubspec.yaml');
+      final settings = _contents('lib/screens/settings_screen.dart');
+      final cleanBaseConfig = _contents('lib/services/clean_base_config.dart');
+      final readme = _contents('README.md');
+      final workflow = _contents('../.github/workflows/release.yml');
+      final changelog = _contents('CHANGELOG.md');
+      final releaseNotes = _contents('RELEASE_NOTES.md');
 
-        expect(
-          pubspec,
-          contains(RegExp(r'^version: 1\.0\.0-rc\.1$', multiLine: true)),
-        );
-        expect(pubspec, isNot(contains('0.9.3+25')));
-        expect(
-          settings,
-          contains('appVersionLabel = CleanBaseConfig.versionLabel'),
-        );
-        expect(cleanBaseConfig, contains('EveFit v1.0 Clean Base'));
-        expect(settings, contains('Ver atualiza'));
-        expect(settings, contains('v1.0 Clean Base'));
-        expect(readme, contains('v1.0.0-rc.1'));
-        expect(workflow, contains("default: 'v1.0.0-rc.1'"));
-        expect(workflow, contains('### Novidades v1.0.0 RC'));
-        expect(changelog, contains('# v1.0.0 RC'));
-        expect(releaseNotes, contains('# v1.0.0 RC'));
-        expect(changelog, contains('# v0.9.4'));
-        expect(releaseNotes, contains('# v0.9.4'));
-      },
-    );
+      expect(
+        pubspec,
+        contains(RegExp(r'^version: 1\.1\.0\+2$', multiLine: true)),
+      );
+      expect(pubspec, isNot(contains('1.0.0-rc.1')));
+      expect(
+        settings,
+        contains('appVersionLabel = CleanBaseConfig.versionLabel'),
+      );
+      expect(cleanBaseConfig, contains('EveFit v1.1.0 - Fundação Canónica'));
+      expect(settings, contains('Ver atualiza'));
+      expect(settings, contains('v1.1.0'));
+      expect(readme, contains('v1.1.0'));
+      expect(readme, contains('1.1.0+2'));
+      expect(workflow, contains("default: 'v1.1.0'"));
+      expect(workflow, contains('### Novidades v1.1.0'));
+      expect(changelog, contains('# EveFit v1.1.0'));
+      expect(releaseNotes, contains('# EveFit v1.1.0'));
+      expect(changelog, contains('# v1.0.0 RC'));
+      expect(releaseNotes, contains('# v1.0.0 RC'));
+      expect(changelog, contains('# v0.9.4'));
+      expect(releaseNotes, contains('# v0.9.4'));
+    });
 
     test('release notes contain the required integrity summary', () {
       final documents = [
