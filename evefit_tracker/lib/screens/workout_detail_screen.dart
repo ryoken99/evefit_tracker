@@ -66,6 +66,7 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         key: const ValueKey('workout_detail_add_exercise'),
+        heroTag: 'workout_detail_add_exercise_fab',
         onPressed: _addExercise,
         icon: const Icon(Icons.add),
         label: const Text('Adicionar exercício'),

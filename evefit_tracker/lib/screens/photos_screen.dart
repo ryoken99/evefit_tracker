@@ -44,6 +44,7 @@ class _PhotosScreenState extends State<PhotosScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        heroTag: 'photos_add_fab',
         onPressed: _addPhoto,
         child: const Icon(Icons.add_a_photo_outlined),
       ),

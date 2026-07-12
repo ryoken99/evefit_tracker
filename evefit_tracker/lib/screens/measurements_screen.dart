@@ -33,6 +33,7 @@ class _MeasurementsScreenState extends State<MeasurementsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        heroTag: 'measurements_add_fab',
         onPressed: () => _openMeasurementForm(),
         child: const Icon(Icons.add),
       ),
