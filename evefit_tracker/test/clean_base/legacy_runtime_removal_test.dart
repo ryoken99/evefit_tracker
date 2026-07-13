@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:evefit_tracker/database/app_database.dart';
-import 'package:evefit_tracker/features/canonical_search/data/canonical_search_menu_data.dart';
+import 'package:evefit_tracker/features/canonical_core/data/canonical_registry.dart';
 import 'package:evefit_tracker/models/profile.dart';
 import 'package:evefit_tracker/services/clean_base_config.dart';
 import 'package:evefit_tracker/services/startup_catalog_diagnostics.dart';
@@ -32,7 +32,7 @@ void main() {
       expect(await _tableExists(db, 'equipment'), isFalse);
       expect(StartupCatalogDiagnostics.snapshot.legacySeedExecuted, isFalse);
       expect(StartupCatalogDiagnostics.snapshot.legacyEntriesProcessed, 0);
-      expect(CanonicalSearchMenuData.nodes, hasLength(246));
+      expect(const CanonicalRegistry().approvedPillarValues, hasLength(12));
       expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isFalse);
     },
   );
@@ -147,7 +147,7 @@ void main() {
       expect(detail, isNot(contains('ExerciseFilterService')));
       expect(detail, isNot(contains('legacyCatalogueVisible')));
       expect(workouts, isNot(contains('legacyFiltersVisible')));
-      expect(detail, contains('CanonicalSearchMenuScreen'));
+      expect(detail, contains('CanonicalCoreSearchScreen'));
     },
   );
 }
