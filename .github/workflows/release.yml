@@ -9,7 +9,7 @@ on:
       version:
         description: 'Versão do release (v0.9.1)'
         required: true
-        default: 'v1.1.0'
+        default: 'v1.1.1'
 
 permissions:
   contents: write
@@ -63,12 +63,12 @@ jobs:
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v1.1.0
-            - Novo menu canonico com 8 capacidades, 4 contextos e 246 nos.
-            - Catalogo canonico vazio; esta versao nao adiciona exercicios.
-            - Catalogo legacy removido do runtime e seed legacy desativado.
+            ### Novidades v1.1.1
+            - Pesquisa canonica alinhada com 4 eixos, 8 capacidades e 4 contextos aprovados.
+            - Removidos do runtime os 234 subniveis ainda nao aprovados.
+            - Pesquisa canonica tipada e vazia; esta versao nao adiciona exercicios.
+            - Catalogo legacy continua fora do runtime.
             - Perfis, medicoes, objetivos, treinos e historicos preservados.
-            - Atualizada versao da app para v1.0.0-rc.1.
 
             ### Novidades v0.9.4
             - Alfandega permanente dos catalogos com auditoria strict, inventario e gap analysis.
