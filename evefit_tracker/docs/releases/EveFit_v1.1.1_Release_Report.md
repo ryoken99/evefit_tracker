@@ -6,7 +6,7 @@
 - Head PR #10: `75951c17fc973a45028fc6549d6d40690b2d02aa`
 - Merge PR #10: `85993339e802706f3d266fbcca08d7aae2c1c79a`
 - Branch de release: `release/v1.1.1-canonical-core`
-- PR de release: por criar
+- PR de release: [#11](https://github.com/ryoken99/evefit_tracker/pull/11)
 - Head de código validado antes da documentação: `461b472`
 - Head final de release: por determinar depois do commit documental
 - Merge de release: por determinar
