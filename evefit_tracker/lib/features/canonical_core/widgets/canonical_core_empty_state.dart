@@ -9,17 +9,23 @@ class CanonicalCoreEmptyState extends StatelessWidget {
     required this.axisDefinition,
     required this.value,
     required this.result,
+    this.rootKey = const ValueKey('canonical_core_empty_state'),
+    this.activeCriterionKey = const ValueKey('canonical_core_active_criterion'),
+    this.resultTotalKey = const ValueKey('canonical_core_result_total'),
   });
 
   final CanonicalPillarAxisDefinition axisDefinition;
   final CanonicalPillarDefinition value;
   final CanonicalSearchResult<Object?> result;
+  final Key rootKey;
+  final Key activeCriterionKey;
+  final Key resultTotalKey;
 
   @override
   Widget build(BuildContext context) {
     final isCapability = value.axis == CanonicalPillarAxis.capabilityRoot;
     return SingleChildScrollView(
-      key: const ValueKey('canonical_core_empty_state'),
+      key: rootKey,
       padding: const EdgeInsets.all(24),
       child: Center(
         child: ConstrainedBox(
@@ -59,13 +65,10 @@ class CanonicalCoreEmptyState extends StatelessWidget {
               ),
               Text(
                 '${axisDefinition.displayNamePtPt}: ${value.displayNamePtPt}',
-                key: const ValueKey('canonical_core_active_criterion'),
+                key: activeCriterionKey,
               ),
               const SizedBox(height: 12),
-              Text(
-                'Resultados: ${result.total}',
-                key: const ValueKey('canonical_core_result_total'),
-              ),
+              Text('Resultados: ${result.total}', key: resultTotalKey),
             ],
           ),
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../database/app_database.dart';
-import '../features/canonical_core/screens/canonical_core_search_screen.dart';
+import '../features/canonical_core/screens/workout_exercise_selector_screen.dart';
 import '../models/workout.dart';
 import '../models/workout_set.dart';
 import '../services/workout_taxonomy.dart';
@@ -314,7 +314,7 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
 
   Future<void> _addExercise() async {
     await Navigator.of(context).push<void>(
-      MaterialPageRoute(builder: (_) => const CanonicalCoreSearchScreen()),
+      MaterialPageRoute(builder: (_) => const WorkoutExerciseSelectorScreen()),
     );
   }
 
