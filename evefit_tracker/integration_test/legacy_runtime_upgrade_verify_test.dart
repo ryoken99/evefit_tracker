@@ -52,7 +52,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('workout_detail_add_exercise')));
     await _pumpUntilFound(
       tester,
-      find.byKey(const ValueKey('canonical_search_root_screen')),
+      find.byKey(const ValueKey('canonical_core_root_screen')),
     );
     expect(find.text('Mostrar todos'), findsNothing);
     expect(find.text('Exerc\u00edcio legacy hist\u00f3rico'), findsNothing);

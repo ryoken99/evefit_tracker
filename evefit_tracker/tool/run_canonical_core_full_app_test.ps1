@@ -30,10 +30,10 @@ try {
   }
 
   & $adb -s $DeviceId shell am force-stop (Get-EveFitPackageId)
-  if ($LASTEXITCODE -ne 0) { throw 'Failed to stop the app before the full app canonical search test.' }
+  if ($LASTEXITCODE -ne 0) { throw 'Failed to stop the app before the canonical core test.' }
 
   $timestamp = Get-EveFitTimestamp
-  $runDirectory = Join-Path $repository "test_artifacts\canonical_search_menu\full_app\$timestamp"
+  $runDirectory = Join-Path $repository "test_artifacts\canonical_core\full_app\$timestamp"
   $screenshotDirectory = Join-Path $runDirectory 'screenshots'
   New-Item -ItemType Directory -Force -Path $screenshotDirectory | Out-Null
   $stdout = Join-Path $runDirectory 'flutter_drive.stdout.log'
@@ -44,7 +44,7 @@ try {
   Write-EveFitMetadata -Path $metadata -DeviceId $DeviceId
 
   & $adb -s $DeviceId logcat -c
-  if ($LASTEXITCODE -ne 0) { throw 'Failed to clear logcat before the full app canonical search test.' }
+  if ($LASTEXITCODE -ne 0) { throw 'Failed to clear logcat before the canonical core test.' }
   $logcatProcess = Start-Process -FilePath $adb -ArgumentList @('-s', $DeviceId, 'logcat') -RedirectStandardOutput $logcat -RedirectStandardError "$logcat.stderr.log" -PassThru -WindowStyle Hidden
 
   $previousScreenshotDir = $env:EVEFIT_SCREENSHOT_DIR
@@ -52,7 +52,7 @@ try {
   try {
     $env:EVEFIT_SCREENSHOT_DIR = $screenshotDirectory
     $env:EVEFIT_SCREENSHOT_PREFIX = $timestamp
-    $command = 'call "{0}" drive --driver "test_driver/integration_test.dart" --target "integration_test/canonical_search_menu_full_app_flow_test.dart" -d {1}' -f $flutter, $DeviceId
+    $command = 'call "{0}" drive --driver "test_driver/integration_test.dart" --target "integration_test/canonical_core_search_full_app_test.dart" -d {1}' -f $flutter, $DeviceId
     $result = Invoke-EveFitCommand -FilePath 'cmd.exe' -ArgumentList @('/d', '/c', $command) -WorkingDirectory $repository -StandardOutputPath $stdout -StandardErrorPath $stderr
   } finally {
     if ($logcatProcess -and -not $logcatProcess.HasExited) {

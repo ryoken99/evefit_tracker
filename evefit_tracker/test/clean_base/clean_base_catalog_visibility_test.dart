@@ -25,6 +25,6 @@ void main() {
     expect(workoutsScreen, isNot(contains('legacyFiltersVisible')));
     expect(workoutDetail, isNot(contains('legacyCatalogueVisible')));
     expect(workoutDetail, isNot(contains('ExerciseFilterService')));
-    expect(workoutDetail, contains('CanonicalSearchMenuScreen'));
+    expect(workoutDetail, contains('CanonicalCoreSearchScreen'));
   });
 }
