@@ -1,3 +1,12 @@
+# EveFit v1.1.1 - Fundação Canónica
+
+- Alinhada a pesquisa de exercícios com os quatro eixos aprovados do Script Canónico EveFit.
+- Mantidas oito raízes de capacidade, quatro contextos e doze valores classificatórios ativos.
+- Removidos do runtime os 234 subníveis ainda não aprovados; a árvore anterior permanece arquivada como rascunho NÃO APROVADO.
+- Mantida a pesquisa tipada e vazia, sem `main_training`, `exercise_ids`, exercícios ou fallback legacy.
+- Preservados perfis, medições, objetivos, treinos, históricos e schema da base de dados.
+- Atualizado o versionamento Android para `1.1.1+3`.
+
 # EveFit v1.1.0 - Fundação Canónica
 
 - Adicionado o menu canónico de pesquisa com 8 capacidades, 4 contextos e 246 nós estruturados.

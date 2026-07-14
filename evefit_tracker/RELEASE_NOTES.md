@@ -1,3 +1,13 @@
+# EveFit v1.1.1 - Fundação Canónica
+
+- Quatro eixos conceptuais preparados: capacidade, intenção, conceito de treino e contexto.
+- Oito raízes de capacidade, quatro contextos e doze valores classificatórios ativos.
+- Os 234 subníveis não aprovados saíram do runtime e foram preservados apenas como rascunho NÃO APROVADO.
+- A pesquisa continua tipada e vazia, sem subfiltros, `main_training`, `exercise_ids` ou resultados legacy.
+- Dados pessoais, treinos e históricos permanecem preservados.
+
+A v1.1.1 não adiciona exercícios, intenções, conceitos ou atributos oficiais. Apenas alinha o runtime com os elementos já aprovados do Script Canónico EveFit.
+
 # EveFit v1.1.0 - Fundação Canónica
 
 - Novo menu canónico com 8 capacidades, 4 contextos e 246 nós.
