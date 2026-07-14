@@ -147,7 +147,7 @@ void main() {
       expect(detail, isNot(contains('ExerciseFilterService')));
       expect(detail, isNot(contains('legacyCatalogueVisible')));
       expect(workouts, isNot(contains('legacyFiltersVisible')));
-      expect(detail, contains('CanonicalCoreSearchScreen'));
+      expect(detail, contains('WorkoutExerciseSelectorScreen'));
     },
   );
 }
