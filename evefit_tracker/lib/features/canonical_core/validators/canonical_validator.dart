@@ -12,9 +12,9 @@ class CanonicalValidator {
     'fixed_results',
     'node_paths',
     'legacy_ids',
+    'parent_id',
     'parent_ids',
     'subcategory_ids',
-    'main_training',
   };
 
   void validateRegistryOrThrow() {
@@ -27,8 +27,8 @@ class CanonicalValidator {
       'The canonical core requires exactly eight capability roots.',
     );
     _expect(
-      CanonicalRegistry.approvedUsageContexts.length == 4,
-      'The canonical core requires exactly four usage contexts.',
+      CanonicalRegistry.approvedUsageContexts.length == 5,
+      'The canonical core requires exactly five usage contexts.',
     );
     _expect(
       CanonicalRegistry.approvedTrainingIntentions.isEmpty,
@@ -43,8 +43,8 @@ class CanonicalValidator {
       'No canonical attributes are approved.',
     );
     _expect(
-      registry.approvedPillarValues.length == 12,
-      'The canonical core requires exactly twelve approved values.',
+      registry.approvedPillarValues.length == 13,
+      'The canonical core requires exactly thirteen approved values.',
     );
 
     final axes = CanonicalRegistry.axisDefinitions;
@@ -110,16 +110,34 @@ class CanonicalValidator {
     if (query.schemaVersion != canonicalCoreSearchNamespace) {
       errors.add('Unexpected canonical query schema version.');
     }
-    if (query.criteria.length != 1) {
-      errors.add('The current UI requires exactly one criterion.');
+    if (query.criteria.isEmpty || query.criteria.length > 4) {
+      errors.add('A canonical query requires between one and four criteria.');
     }
     validateRawQueryData(query.toJson(), errors: errors);
-    for (final criterion in query.criteria) {
-      if (criterion.axis != CanonicalPillarAxis.capabilityRoot &&
-          criterion.axis != CanonicalPillarAxis.usageContext) {
-        errors.add('Axis ${criterion.axis.name} has no approved query values.');
-        continue;
+    final axes = query.criteria.map((criterion) => criterion.axis).toList();
+    if (axes.toSet().length != axes.length) {
+      errors.add('Canonical query axes must be unique.');
+    }
+    if (axes.length > 1) {
+      const progressiveOrder = <CanonicalPillarAxis>[
+        CanonicalPillarAxis.usageContext,
+        CanonicalPillarAxis.capabilityRoot,
+        CanonicalPillarAxis.trainingConcept,
+        CanonicalPillarAxis.trainingIntention,
+      ];
+      final prefixLength = axes.length < progressiveOrder.length
+          ? axes.length
+          : progressiveOrder.length;
+      for (var index = 0; index < prefixLength; index++) {
+        if (axes[index] != progressiveOrder[index]) {
+          errors.add(
+            'Progressive canonical queries must follow usage context, capability root, training concept, and training intention order.',
+          );
+          break;
+        }
       }
+    }
+    for (final criterion in query.criteria) {
       final value = registry.valueById[criterion.valueId];
       if (value == null) {
         errors.add('Unknown canonical value ${criterion.valueId}.');

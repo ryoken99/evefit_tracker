@@ -128,14 +128,16 @@ void main() {
     contextTimer.stop();
     _metric('CONTEXT_OPEN_MS', contextTimer.elapsedMilliseconds);
     for (final id in const [
+      'main_training',
       'warmup',
       'activation',
       'recovery_cooldown',
       'prevention_adaptation_return',
     ]) {
+      await _scrollToValue(tester, id);
       expect(find.byKey(ValueKey('canonical_core_value_$id')), findsOneWidget);
     }
-    await _screenshot(binding, tester, 'canonical_core_four_contexts');
+    await _screenshot(binding, tester, 'canonical_core_five_contexts');
 
     final warmupTimer = Stopwatch()..start();
     await tester.tap(find.byKey(const ValueKey('canonical_core_value_warmup')));

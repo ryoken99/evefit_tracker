@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../data/canonical_registry.dart';
 import '../models/canonical_core_models.dart';
-import '../repositories/canonical_exercise_search_repository.dart';
-import '../services/canonical_core_navigation_controller.dart';
-import '../widgets/canonical_core_empty_state.dart';
+import '../services/hierarchical_canonical_search_controller.dart';
 import '../widgets/canonical_core_icon_resolver.dart';
 
 class WorkoutExerciseSelectorScreen extends StatefulWidget {
-  const WorkoutExerciseSelectorScreen({
-    super.key,
-    this.controller,
-    this.repository = const EmptyCanonicalExerciseSearchRepository<Object?>(),
-  });
+  const WorkoutExerciseSelectorScreen({super.key, this.controller});
 
-  final CanonicalCoreNavigationController? controller;
-  final CanonicalExerciseSearchRepository<Object?> repository;
+  final HierarchicalCanonicalSearchController? controller;
 
   @override
   State<WorkoutExerciseSelectorScreen> createState() =>
@@ -24,90 +16,26 @@ class WorkoutExerciseSelectorScreen extends StatefulWidget {
 
 class _WorkoutExerciseSelectorScreenState
     extends State<WorkoutExerciseSelectorScreen> {
-  late final CanonicalCoreNavigationController _controller =
-      widget.controller ?? CanonicalCoreNavigationController();
-  CanonicalSearchResult<Object?>? _result;
-  bool _searching = false;
-  bool _searchFailed = false;
+  late final HierarchicalCanonicalSearchController _controller =
+      widget.controller ?? HierarchicalCanonicalSearchController();
 
-  bool get _showingContexts =>
-      _controller.selectedAxis?.axis == CanonicalPillarAxis.usageContext &&
-      _controller.selectedValue == null;
+  bool get _atRoot =>
+      _controller.step == HierarchicalCanonicalSearchStep.usageContext;
 
-  bool get _showingResult => _controller.selectedValue != null;
-
-  bool get _atRoot => !_showingContexts && !_showingResult;
-
-  Future<void> _selectCapability(CanonicalPillarDefinition value) async {
-    _controller.selectAxis(CanonicalPillarAxis.capabilityRoot);
-    await _executeSearch(value);
+  void _selectUsageContext(CanonicalPillarDefinition definition) {
+    setState(() => _controller.selectUsageContext(definition.id));
   }
 
-  void _openContexts() {
-    setState(() {
-      _controller.selectAxis(CanonicalPillarAxis.usageContext);
-      _result = null;
-      _searching = false;
-      _searchFailed = false;
-    });
-  }
-
-  Future<void> _selectContext(CanonicalPillarDefinition value) async {
-    if (_controller.selectedAxis?.axis != CanonicalPillarAxis.usageContext) {
-      _controller.selectAxis(CanonicalPillarAxis.usageContext);
-    }
-    await _executeSearch(value);
-  }
-
-  Future<void> _executeSearch(CanonicalPillarDefinition value) async {
-    final query = _controller.selectValue(value.id);
-    setState(() {
-      _searching = true;
-      _searchFailed = false;
-      _result = null;
-    });
-    try {
-      final result = await widget.repository.search(query);
-      if (!mounted) return;
-      setState(() {
-        _result = result;
-        _searching = false;
-      });
-    } catch (_) {
-      if (!mounted) return;
-      setState(() {
-        _searchFailed = true;
-        _searching = false;
-      });
-    }
+  void _selectCapabilityRoot(CanonicalPillarDefinition definition) {
+    setState(() => _controller.selectCapabilityRoot(definition.id));
   }
 
   void _goBack() {
-    final selected = _controller.selectedValue;
-    if (selected != null) {
-      _controller.goBack();
-      if (selected.axis == CanonicalPillarAxis.capabilityRoot) {
-        _controller.goToRoot();
-      }
-    } else if (_showingContexts) {
-      _controller.goToRoot();
-    } else {
-      return;
-    }
-    setState(() {
-      _result = null;
-      _searching = false;
-      _searchFailed = false;
-    });
+    setState(() => _controller.goBack());
   }
 
   void _goHome() {
-    setState(() {
-      _controller.goToRoot();
-      _result = null;
-      _searching = false;
-      _searchFailed = false;
-    });
+    setState(_controller.goToRoot);
   }
 
   @override
@@ -131,127 +59,253 @@ class _WorkoutExerciseSelectorScreenState
           if (!_atRoot)
             IconButton(
               key: const ValueKey('workout_exercise_selector_home'),
-              tooltip: 'Voltar às capacidades',
+              tooltip: 'Regressar ao início',
               onPressed: _goHome,
               icon: const Icon(Icons.home_outlined),
             ),
         ],
       ),
-      body: SafeArea(child: _buildContent()),
+      body: SafeArea(
+        child: Column(
+          key: const ValueKey('workout_exercise_selector_root'),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _WorkoutExerciseSelectorProgress(step: _controller.step),
+            _WorkoutExerciseSelectorBreadcrumb(
+              controller: _controller,
+              onContextPressed: () {
+                setState(_controller.goToUsageContext);
+              },
+              onCapabilityPressed: () {
+                setState(_controller.goToCapabilityRoot);
+              },
+            ),
+            const Divider(height: 1),
+            Expanded(child: _buildCurrentStep()),
+          ],
+        ),
+      ),
     ),
   );
 
-  Widget _buildContent() {
-    if (_showingResult) {
-      if (_searching) {
-        return const Center(
-          child: CircularProgressIndicator(
-            key: ValueKey('workout_exercise_selector_search_loading'),
-          ),
-        );
-      }
-      final result = _result;
-      if (_searchFailed ||
-          result == null ||
-          result.status == CanonicalSearchResultStatus.invalidQuery) {
-        return const _WorkoutExerciseSelectorSearchError();
-      }
-      final value = _controller.selectedValue!;
-      return CanonicalCoreEmptyState(
-        rootKey: const ValueKey('workout_exercise_selector_result_empty'),
-        activeCriterionKey: const ValueKey(
-          'workout_exercise_selector_active_criterion',
-        ),
-        resultTotalKey: const ValueKey(
-          'workout_exercise_selector_result_total',
-        ),
-        axisDefinition: _axisDefinition(value.axis),
-        value: value,
-        result: result,
+  Widget _buildCurrentStep() => switch (_controller.step) {
+    HierarchicalCanonicalSearchStep.usageContext => _buildUsageContexts(),
+    HierarchicalCanonicalSearchStep.capabilityRoot => _buildCapabilities(),
+    HierarchicalCanonicalSearchStep.trainingConcept => _buildTrainingConcepts(),
+    HierarchicalCanonicalSearchStep.trainingIntention =>
+      _buildUnavailableFutureStep(
+        'Que resultado específico procuras?',
+        'Ainda não existem intenções de treino aprovadas.',
+      ),
+    HierarchicalCanonicalSearchStep.results => _buildUnavailableFutureStep(
+      'Exercícios correspondentes',
+      'Ainda não existem exercícios canónicos ativos.',
+    ),
+  };
+
+  Widget _buildUsageContexts() => _WorkoutExerciseSelectorList(
+    key: const ValueKey('workout_exercise_selector_contexts'),
+    title: 'Em que contexto vais utilizar o exercício?',
+    definitions: _controller.activeUsageContexts,
+    selectedId: _controller.path.usageContextId,
+    keyPrefix: 'workout_exercise_selector_context_',
+    onSelected: _selectUsageContext,
+  );
+
+  Widget _buildCapabilities() => _WorkoutExerciseSelectorList(
+    key: const ValueKey('workout_exercise_selector_capabilities'),
+    title: 'Que capacidade queres trabalhar?',
+    definitions: _controller.compatibleCapabilities,
+    selectedId: _controller.path.capabilityRootId,
+    keyPrefix: 'workout_exercise_selector_capability_',
+    onSelected: _selectCapabilityRoot,
+  );
+
+  Widget _buildTrainingConcepts() {
+    final concepts = _controller.compatibleTrainingConcepts;
+    if (concepts.isNotEmpty) {
+      return _WorkoutExerciseSelectorList(
+        key: const ValueKey('workout_exercise_selector_concepts'),
+        title: 'Que tipo de trabalho funcional procuras?',
+        definitions: concepts,
+        selectedId: _controller.path.trainingConceptId,
+        keyPrefix: 'workout_exercise_selector_concept_',
+        onSelected: (definition) {
+          setState(() => _controller.selectTrainingConcept(definition.id));
+        },
       );
     }
-    if (_showingContexts) return _buildContexts();
-    return _buildCapabilities();
-  }
-
-  Widget _buildCapabilities() {
-    final capabilities = [...CanonicalRegistry.approvedCapabilityRoots]
-      ..sort((a, b) => a.displayOrder.compareTo(b.displayOrder));
     return ListView(
-      key: const ValueKey('workout_exercise_selector_root'),
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(24),
       children: [
         Text(
-          'Que capacidade queres trabalhar?',
+          'Que tipo de trabalho funcional procuras?',
           style: Theme.of(context).textTheme.titleLarge,
         ),
-        const SizedBox(height: 12),
-        Column(
-          key: const ValueKey('workout_exercise_selector_capabilities'),
-          children: [
-            for (final capability in capabilities)
-              _WorkoutExerciseSelectorCard(
-                key: ValueKey(
-                  'workout_exercise_selector_capability_${capability.id}',
-                ),
-                definition: capability,
-                onTap: () => _selectCapability(capability),
-              ),
-          ],
+        const SizedBox(height: 32),
+        const Icon(Icons.account_tree_outlined, size: 48),
+        const SizedBox(height: 16),
+        Text(
+          'Ainda não existem conceitos de treino aprovados.',
+          key: const ValueKey('workout_exercise_selector_concept_empty'),
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 8),
-        const Divider(),
-        const SizedBox(height: 8),
-        OutlinedButton.icon(
-          key: const ValueKey('workout_exercise_selector_context_entry'),
-          onPressed: _openContexts,
-          icon: const Icon(Icons.schedule_outlined),
-          label: const Text('Procurar por contexto'),
+        const Text(
+          'Os conceitos compatíveis com esta seleção serão adicionados e validados progressivamente.',
+          textAlign: TextAlign.center,
         ),
+        const SizedBox(height: 24),
+        _WorkoutExerciseSelectorEmptyPath(controller: _controller),
       ],
     );
   }
 
-  Widget _buildContexts() {
-    final contexts = [...CanonicalRegistry.approvedUsageContexts]
-      ..sort((a, b) => a.displayOrder.compareTo(b.displayOrder));
-    return ListView(
-      key: const ValueKey('workout_exercise_selector_contexts'),
-      padding: const EdgeInsets.all(16),
-      children: [
-        Text(
-          'Procurar por contexto',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 4),
-        const Text('Escolhe o momento ou finalidade desta pesquisa.'),
-        const SizedBox(height: 12),
-        for (final usageContext in contexts)
-          _WorkoutExerciseSelectorCard(
-            key: ValueKey(
-              'workout_exercise_selector_context_${usageContext.id}',
-            ),
-            definition: usageContext,
-            onTap: () => _selectContext(usageContext),
-          ),
-      ],
+  Widget _buildUnavailableFutureStep(String title, String message) => Center(
+    child: Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [Text(title), const SizedBox(height: 8), Text(message)],
+      ),
+    ),
+  );
+}
+
+class _WorkoutExerciseSelectorProgress extends StatelessWidget {
+  const _WorkoutExerciseSelectorProgress({required this.step});
+
+  final HierarchicalCanonicalSearchStep step;
+
+  @override
+  Widget build(BuildContext context) {
+    final (number, label) = switch (step) {
+      HierarchicalCanonicalSearchStep.usageContext => (1, 'Contexto'),
+      HierarchicalCanonicalSearchStep.capabilityRoot => (2, 'Capacidade'),
+      HierarchicalCanonicalSearchStep.trainingConcept => (
+        3,
+        'Conceito de treino',
+      ),
+      HierarchicalCanonicalSearchStep.trainingIntention => (4, 'Intenção'),
+      HierarchicalCanonicalSearchStep.results => (5, 'Resultados'),
+    };
+    return Padding(
+      key: const ValueKey('workout_exercise_selector_step'),
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+      child: Text(
+        'Passo $number de 5: $label',
+        style: Theme.of(context).textTheme.labelLarge,
+      ),
     );
   }
+}
 
-  CanonicalPillarAxisDefinition _axisDefinition(CanonicalPillarAxis axis) =>
-      CanonicalRegistry.axisDefinitions.singleWhere(
-        (definition) => definition.axis == axis,
+class _WorkoutExerciseSelectorBreadcrumb extends StatelessWidget {
+  const _WorkoutExerciseSelectorBreadcrumb({
+    required this.controller,
+    required this.onContextPressed,
+    required this.onCapabilityPressed,
+  });
+
+  final HierarchicalCanonicalSearchController controller;
+  final VoidCallback onContextPressed;
+  final VoidCallback onCapabilityPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final contextDefinition = controller.selectedUsageContext;
+    final capabilityDefinition = controller.selectedCapabilityRoot;
+    final children = <Widget>[];
+    if (contextDefinition != null) {
+      children.add(
+        TextButton(
+          key: const ValueKey('workout_exercise_selector_breadcrumb_context'),
+          onPressed: onContextPressed,
+          child: Text(contextDefinition.displayNamePtPt),
+        ),
       );
+    }
+    if (capabilityDefinition != null) {
+      if (children.isNotEmpty) children.add(const Text('>'));
+      children.add(
+        TextButton(
+          key: const ValueKey(
+            'workout_exercise_selector_breadcrumb_capability',
+          ),
+          onPressed: onCapabilityPressed,
+          child: Text(capabilityDefinition.displayNamePtPt),
+        ),
+      );
+    }
+    final currentLabel = switch (controller.step) {
+      HierarchicalCanonicalSearchStep.usageContext => 'A escolher contexto',
+      HierarchicalCanonicalSearchStep.capabilityRoot => 'A escolher capacidade',
+      HierarchicalCanonicalSearchStep.trainingConcept => 'A escolher conceito',
+      HierarchicalCanonicalSearchStep.trainingIntention =>
+        'A escolher intenção',
+      HierarchicalCanonicalSearchStep.results => 'Resultados',
+    };
+    if (children.isNotEmpty) children.add(const Text('>'));
+    children.add(
+      Text(
+        currentLabel,
+        key: const ValueKey('workout_exercise_selector_breadcrumb_current'),
+      ),
+    );
+    return SingleChildScrollView(
+      key: const ValueKey('workout_exercise_selector_breadcrumb'),
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Row(children: children),
+    );
+  }
+}
+
+class _WorkoutExerciseSelectorList extends StatelessWidget {
+  const _WorkoutExerciseSelectorList({
+    super.key,
+    required this.title,
+    required this.definitions,
+    required this.selectedId,
+    required this.keyPrefix,
+    required this.onSelected,
+  });
+
+  final String title;
+  final List<CanonicalPillarDefinition> definitions;
+  final String? selectedId;
+  final String keyPrefix;
+  final ValueChanged<CanonicalPillarDefinition> onSelected;
+
+  @override
+  Widget build(BuildContext context) => ListView(
+    key: key,
+    padding: const EdgeInsets.all(16),
+    children: [
+      Text(title, style: Theme.of(context).textTheme.titleLarge),
+      const SizedBox(height: 12),
+      for (final definition in definitions)
+        _WorkoutExerciseSelectorCard(
+          key: ValueKey('$keyPrefix${definition.id}'),
+          definition: definition,
+          selected: definition.id == selectedId,
+          onTap: () => onSelected(definition),
+        ),
+    ],
+  );
 }
 
 class _WorkoutExerciseSelectorCard extends StatelessWidget {
   const _WorkoutExerciseSelectorCard({
     super.key,
     required this.definition,
+    required this.selected,
     required this.onTap,
   });
 
   final CanonicalPillarDefinition definition;
+  final bool selected;
   final VoidCallback onTap;
 
   @override
@@ -260,8 +314,12 @@ class _WorkoutExerciseSelectorCard extends StatelessWidget {
     child: Semantics(
       button: true,
       enabled: true,
+      selected: selected,
       label: definition.displayNamePtPt,
       child: Card(
+        color: selected
+            ? Theme.of(context).colorScheme.secondaryContainer
+            : null,
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(8),
@@ -286,7 +344,7 @@ class _WorkoutExerciseSelectorCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                const Icon(Icons.chevron_right),
+                Icon(selected ? Icons.check_circle : Icons.chevron_right),
               ],
             ),
           ),
@@ -296,15 +354,26 @@ class _WorkoutExerciseSelectorCard extends StatelessWidget {
   );
 }
 
-class _WorkoutExerciseSelectorSearchError extends StatelessWidget {
-  const _WorkoutExerciseSelectorSearchError();
+class _WorkoutExerciseSelectorEmptyPath extends StatelessWidget {
+  const _WorkoutExerciseSelectorEmptyPath({required this.controller});
+
+  final HierarchicalCanonicalSearchController controller;
 
   @override
-  Widget build(BuildContext context) => const Center(
-    child: Padding(
-      key: ValueKey('workout_exercise_selector_search_error'),
-      padding: EdgeInsets.all(24),
-      child: Text('Não foi possível executar esta pesquisa canónica.'),
+  Widget build(BuildContext context) => Semantics(
+    label: 'Percurso selecionado',
+    child: Container(
+      key: const ValueKey('workout_exercise_selector_empty_path'),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Text(
+        '${controller.selectedUsageContext!.displayNamePtPt}\n'
+        '> ${controller.selectedCapabilityRoot!.displayNamePtPt}',
+        textAlign: TextAlign.center,
+      ),
     ),
   );
 }
