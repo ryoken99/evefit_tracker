@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão do release (v0.9.1)'
+        description: 'Versão do release (v1.1.2)'
         required: true
-        default: 'v1.1.1'
+        default: 'v1.1.2'
 
 permissions:
   contents: write
@@ -63,12 +63,12 @@ jobs:
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v1.1.1
-            - Pesquisa canonica alinhada com 4 eixos, 8 capacidades e 4 contextos aprovados.
-            - Removidos do runtime os 234 subniveis ainda nao aprovados.
-            - Pesquisa canonica tipada e vazia; esta versao nao adiciona exercicios.
-            - Catalogo legacy continua fora do runtime.
-            - Perfis, medicoes, objetivos, treinos e historicos preservados.
+            ### Novidades v1.1.2
+            - Pesquisa canonica hierarquica por Contexto, Capacidade, Conceito, Intencao e Exercicios.
+            - Cinco contextos explicitos, com Treino principal em primeiro, e oito capacidades aprovadas.
+            - Query progressiva e navegacao com breadcrumb ate ao estado vazio de conceitos.
+            - Esta versao nao adiciona conceitos, intencoes ou exercicios canonicos.
+            - Catalogo legacy continua fora do runtime e os dados pessoais e historicos permanecem preservados.
 
             ### Novidades v0.9.4
             - Alfandega permanente dos catalogos com auditoria strict, inventario e gap analysis.

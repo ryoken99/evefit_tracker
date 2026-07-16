@@ -1,3 +1,14 @@
+# EveFit v1.1.2 — Pesquisa Canónica Hierárquica
+
+- Pesquisa de exercícios organizada pelo fluxo Contexto → Capacidade → Conceito → Intenção → Exercícios.
+- Cinco contextos explícitos, com Treino principal como primeiro contexto, e oito capacidades aprovadas.
+- Query progressiva, breadcrumb, Back e Home no seletor de exercícios.
+- Estado vazio explícito para conceitos ainda não aprovados.
+- Catálogo legacy e árvore antiga continuam fora do runtime e invisíveis.
+- Perfis, medições, objetivos, treinos e históricos permanecem preservados na atualização desde a v1.1.1.
+
+Esta versão não adiciona conceitos, intenções ou exercícios canónicos.
+
 # EveFit v1.1.1 - Fundação Canónica
 
 - Quatro eixos conceptuais preparados: capacidade, intenção, conceito de treino e contexto.
