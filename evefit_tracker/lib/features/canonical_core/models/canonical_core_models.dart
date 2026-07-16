@@ -32,6 +32,7 @@ enum CanonicalCoreIconKey {
   motorControlCoordination,
   techniqueSkill,
   breathingRegulation,
+  mainTraining,
   warmup,
   activation,
   recoveryCooldown,

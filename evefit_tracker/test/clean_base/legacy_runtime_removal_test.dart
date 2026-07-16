@@ -32,7 +32,7 @@ void main() {
       expect(await _tableExists(db, 'equipment'), isFalse);
       expect(StartupCatalogDiagnostics.snapshot.legacySeedExecuted, isFalse);
       expect(StartupCatalogDiagnostics.snapshot.legacyEntriesProcessed, 0);
-      expect(const CanonicalRegistry().approvedPillarValues, hasLength(12));
+      expect(const CanonicalRegistry().approvedPillarValues, hasLength(13));
       expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isFalse);
     },
   );

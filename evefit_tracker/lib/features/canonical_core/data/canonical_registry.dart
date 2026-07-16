@@ -124,13 +124,23 @@ class CanonicalRegistry {
 
   static const approvedUsageContexts = <CanonicalPillarDefinition>[
     CanonicalPillarDefinition(
+      id: 'main_training',
+      axis: CanonicalPillarAxis.usageContext,
+      displayNamePtPt: 'Treino principal',
+      descriptionPtPt:
+          'O exercício constitui o estímulo central da sessão para desenvolver uma capacidade ou adaptação.',
+      status: CanonicalDefinitionStatus.approved,
+      displayOrder: 0,
+      iconKey: CanonicalCoreIconKey.mainTraining,
+    ),
+    CanonicalPillarDefinition(
       id: 'warmup',
       axis: CanonicalPillarAxis.usageContext,
       displayNamePtPt: 'Aquecimento',
       descriptionPtPt:
-          'Preparação gradual do corpo, movimento ou técnica para uma atividade posterior.',
+          'O exercício prepara progressivamente o corpo ou a técnica para uma tarefa posterior mais exigente.',
       status: CanonicalDefinitionStatus.approved,
-      displayOrder: 0,
+      displayOrder: 1,
       iconKey: CanonicalCoreIconKey.warmup,
     ),
     CanonicalPillarDefinition(
@@ -138,9 +148,9 @@ class CanonicalRegistry {
       axis: CanonicalPillarAxis.usageContext,
       displayNamePtPt: 'Ativação',
       descriptionPtPt:
-          'Preparação específica de músculos, articulações, padrões ou controlo neuromotor.',
+          'O exercício prepara de forma focalizada músculos, articulações, padrões ou controlo neuromotor antes da tarefa principal.',
       status: CanonicalDefinitionStatus.approved,
-      displayOrder: 1,
+      displayOrder: 2,
       iconKey: CanonicalCoreIconKey.activation,
     ),
     CanonicalPillarDefinition(
@@ -148,9 +158,9 @@ class CanonicalRegistry {
       axis: CanonicalPillarAxis.usageContext,
       displayNamePtPt: 'Recuperação e retorno à calma',
       descriptionPtPt:
-          'Redução progressiva da intensidade e apoio à recuperação após esforço.',
+          'O exercício reduz progressivamente a exigência ou facilita a recuperação através de movimento e regulação leves.',
       status: CanonicalDefinitionStatus.approved,
-      displayOrder: 2,
+      displayOrder: 3,
       iconKey: CanonicalCoreIconKey.recoveryCooldown,
     ),
     CanonicalPillarDefinition(
@@ -158,9 +168,9 @@ class CanonicalRegistry {
       axis: CanonicalPillarAxis.usageContext,
       displayNamePtPt: 'Prevenção, adaptação e retorno à função',
       descriptionPtPt:
-          'Desenvolvimento gradual de controlo, tolerância e capacidade de retorno a uma atividade.',
+          'O exercício desenvolve progressivamente tolerância, controlo e capacidade para regressar a uma atividade.',
       status: CanonicalDefinitionStatus.approved,
-      displayOrder: 3,
+      displayOrder: 4,
       iconKey: CanonicalCoreIconKey.preventionAdaptationReturn,
     ),
   ];

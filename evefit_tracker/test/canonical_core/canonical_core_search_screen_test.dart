@@ -53,21 +53,34 @@ void main() {
     expect(find.text('Sem máquinas'), findsNothing);
   });
 
-  testWidgets('context axis shows exactly the four approved contexts', (
+  testWidgets('context axis shows exactly the five approved contexts', (
     tester,
   ) async {
     await pumpScreen(tester);
     await tester.tap(axis(CanonicalPillarAxis.usageContext));
     await tester.pumpAndSettle();
+    final valuesScroll = find.descendant(
+      of: find.byKey(
+        const ValueKey('canonical_core_axis_values_usage_context'),
+      ),
+      matching: find.byType(Scrollable),
+    );
     for (final id in const [
+      'main_training',
       'warmup',
       'activation',
       'recovery_cooldown',
       'prevention_adaptation_return',
     ]) {
+      await tester.scrollUntilVisible(value(id), 220, scrollable: valuesScroll);
       expect(value(id), findsOneWidget);
     }
-    expect(find.text('Treino principal'), findsNothing);
+    await tester.scrollUntilVisible(
+      value('main_training'),
+      -220,
+      scrollable: valuesScroll,
+    );
+    expect(find.text('Treino principal'), findsOneWidget);
   });
 
   testWidgets('capability selection executes one criterion and goes empty', (

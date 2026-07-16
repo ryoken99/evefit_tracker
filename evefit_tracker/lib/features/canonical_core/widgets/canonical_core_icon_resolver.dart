@@ -16,6 +16,7 @@ abstract final class CanonicalCoreIconResolver {
     CanonicalCoreIconKey.motorControlCoordination => Icons.balance,
     CanonicalCoreIconKey.techniqueSkill => Icons.sports_martial_arts,
     CanonicalCoreIconKey.breathingRegulation => Icons.air,
+    CanonicalCoreIconKey.mainTraining => Icons.sports_gymnastics,
     CanonicalCoreIconKey.warmup => Icons.wb_sunny_outlined,
     CanonicalCoreIconKey.activation => Icons.flash_on_outlined,
     CanonicalCoreIconKey.recoveryCooldown => Icons.spa_outlined,

@@ -16,11 +16,11 @@ void main() {
 
     expect(CanonicalRegistry.axisDefinitions, hasLength(4));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
-    expect(CanonicalRegistry.approvedUsageContexts, hasLength(4));
+    expect(CanonicalRegistry.approvedUsageContexts, hasLength(5));
     expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
     expect(CanonicalRegistry.approvedTrainingConcepts, isEmpty);
     expect(CanonicalRegistry.approvedAttributeDefinitions, isEmpty);
-    expect(registry.approvedPillarValues, hasLength(12));
+    expect(registry.approvedPillarValues, hasLength(13));
     expect(
       CanonicalRegistry.axisDefinitions.map((definition) => definition.axis),
       CanonicalPillarAxis.values,
@@ -39,6 +39,7 @@ void main() {
       'breathing_regulation',
     ]);
     expect(CanonicalRegistry.approvedUsageContexts.map((value) => value.id), [
+      'main_training',
       'warmup',
       'activation',
       'recovery_cooldown',
@@ -83,7 +84,9 @@ void main() {
         expect(query.criteria.single.axis, value.axis);
         expect(query.criteria.single.valueId, value.id);
         expect(query.toJson().toString(), isNot(contains('exercise_ids')));
-        expect(query.toJson().toString(), isNot(contains('main_training')));
+        if (value.id == 'main_training') {
+          expect(query.toJson().toString(), contains('main_training'));
+        }
       }
     },
   );
@@ -134,7 +137,7 @@ void main() {
   );
 
   test(
-    'raw query validation rejects owned results and hidden context tokens',
+    'raw query validation rejects owned results and hierarchy properties',
     () {
       expect(
         () => CanonicalValidator.validateRawQueryData({
@@ -145,7 +148,7 @@ void main() {
       expect(
         () => CanonicalValidator.validateRawQueryData({
           'criteria': [
-            {'value_id': 'main_training'},
+            {'parent_id': 'usage_context'},
           ],
         }),
         throwsStateError,
@@ -200,10 +203,17 @@ void main() {
         reason: file.path,
       );
       expect(source, isNot(contains("services/exercise")), reason: file.path);
-      if (!file.path.contains('validators')) {
-        expect(source, isNot(contains('main_training')), reason: file.path);
-      }
     }
+  });
+
+  test('main training is explicit once and is the first visible context', () {
+    final matches = CanonicalRegistry.approvedUsageContexts
+        .where((value) => value.id == 'main_training')
+        .toList();
+    expect(matches, hasLength(1));
+    expect(CanonicalRegistry.approvedUsageContexts.first, same(matches.single));
+    expect(matches.single.displayOrder, 0);
+    expect(matches.single.displayNamePtPt, 'Treino principal');
   });
 
   test('registry is the sole active value list and draft is not bundled', () {
