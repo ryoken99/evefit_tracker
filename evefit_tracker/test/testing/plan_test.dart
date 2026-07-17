@@ -330,6 +330,7 @@ void main() {
 
     expect(analyzeJob, isNot(contains('gradle/actions/setup-gradle@')));
     expect(androidJob, contains('gradle/actions/setup-gradle@'));
+    expect(androidJob, contains('cache-read-only: false'));
     expect(
       androidJob.indexOf('gradle/actions/setup-gradle@'),
       lessThan(androidJob.indexOf('Run real-app Android smoke')),
