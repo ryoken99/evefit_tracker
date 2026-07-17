@@ -12,7 +12,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('Android smoke reaches the first selector step', (tester) async {
     final capturedErrors = <FlutterErrorDetails>[];
@@ -186,14 +186,6 @@ Future<void> _pumpUntilFound(
     if (finder.evaluate().isNotEmpty) return;
   }
   expect(finder, findsOneWidget);
-}
-
-Future<void> _tapVisibleText(
-  WidgetTester tester,
-  String label, {
-  int maxScrolls = 18,
-}) async {
-  await _tapVisible(tester, find.text(label), maxScrolls: maxScrolls);
 }
 
 Future<void> _advanceProfileStep(
