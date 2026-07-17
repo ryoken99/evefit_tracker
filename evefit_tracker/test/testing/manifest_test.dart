@@ -38,6 +38,11 @@ void main() {
   test(
     'accepts a complete deterministic test universe without integration tests',
     () {
+      final generatedBuildTest = File(
+        '${root.path}${Platform.pathSeparator}build${Platform.pathSeparator}generated${Platform.pathSeparator}generated_test.dart',
+      );
+      generatedBuildTest.parent.createSync(recursive: true);
+      generatedBuildTest.writeAsStringSync('');
       final complete = manifest([
         ['test/one/a_test.dart'],
         ['test/one/b_test.dart'],

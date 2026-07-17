@@ -99,12 +99,16 @@ List<String> validateManifest(TestManifest manifest, Directory root) {
       }
     }
   }
-  final actual = root
+  final testRoot = Directory('${root.path}${Platform.pathSeparator}test');
+  if (!testRoot.existsSync()) {
+    errors.add('Test universe directory does not exist: test/');
+    return errors;
+  }
+  final actual = testRoot
       .listSync(recursive: true)
       .whereType<File>()
       .where((file) => file.path.replaceAll('\\', '/').endsWith('_test.dart'))
       .map((file) => repositoryRelativePath(root, file))
-      .where((path) => path.startsWith('test/') && path.endsWith('_test.dart'))
       .toSet();
   final missing = actual.difference(seen).toList()..sort();
   final stale = seen.difference(actual).toList()..sort();
