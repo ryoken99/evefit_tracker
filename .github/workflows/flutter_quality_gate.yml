@@ -103,6 +103,8 @@ jobs:
         with:
           channel: stable
           cache: true
+      - name: Configure Gradle cache
+        uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5
       - run: flutter pub get
       - run: flutter analyze
 
@@ -216,6 +218,27 @@ jobs:
           else
             echo 'profile=pixel_7_pro' >> "$GITHUB_OUTPUT"
           fi
+      - name: Cache Android virtual device
+        id: avd-cache
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-v1-${{ runner.os }}-api35-google_apis-x86_64-${{ steps.android-profile.outputs.profile }}-1344x2992
+      - name: Create Android virtual device snapshot
+        if: ${{ steps.avd-cache.outputs.cache-hit != 'true' }}
+        uses: ReactiveCircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808 # v2
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          profile: ${{ steps.android-profile.outputs.profile }}
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -skin 1344x2992
+          disable-animations: false
+          working-directory: evefit_tracker
+          script: echo 'Generated clean Pixel 8 Pro-compatible AVD snapshot.'
       - name: Run real-app Android smoke
         uses: ReactiveCircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808 # v2
         with:
@@ -223,8 +246,10 @@ jobs:
           arch: x86_64
           target: google_apis
           profile: ${{ steps.android-profile.outputs.profile }}
-          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -skin 1344x2992
-          script: cd evefit_tracker && flutter test -r compact -d emulator-5554 integration_test/android_smoke_test.dart
+          force-avd-creation: false
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -skin 1344x2992
+          working-directory: evefit_tracker
+          script: flutter test -r compact -d emulator-5554 integration_test/android_smoke_test.dart
 
   quality:
     name: quality
