@@ -1,6 +1,6 @@
 # EveFit Test & CI Performance v0.1
 
-Status: implementation and local validation complete; real Draft PR CI pending.
+Status: implementation, local validation, and real Draft PR CI complete.
 
 ## Authority And Scope
 
@@ -14,6 +14,25 @@ Status: implementation and local validation complete; real Draft PR CI pending.
 
 No product behavior, schema, migration, canonical data, Dashboard, profile,
 goals, measurements, historical data, version, tag, or release is changed.
+
+## Orchestration
+
+The Sol orchestrator retained integration, Git, validation, and PR ownership.
+Four isolated implementation agents worked in parallel from the same base:
+
+| Agent | Model / reasoning | Isolated branch and worktree | Reserved scope |
+|---|---|---|---|
+| Performance A | Luna / xhigh | `agent/perf-a-near-duplicates`, `evefit-perf-a` | Exact near-duplicate audit optimization and equivalence tests |
+| CI B | Terra / high | `agent/perf-b-ci`, `evefit-perf-b` | GitHub Actions decomposition and deterministic shards |
+| Android C | Terra / high | `agent/perf-c-android-smoke`, `evefit-perf-c` | Real-app Android smoke and PowerShell runner |
+| Gates D | Terra / high | `agent/perf-d-local-gates`, `evefit-perf-d` | Fast/PR/Release gate tooling, classifier, profiler, and tests |
+
+The orchestrator audited every diff and accepted the implementations after
+scope and test review. It rejected direct unreviewed integration, corrected
+working-directory/profile assumptions in hosted Android, hardened transient
+output discovery, forced Release full-app data isolation, and moved the Gradle
+cache from the non-building Analyze job to Android smoke. No agent merged,
+tagged, released, or changed `main`.
 
 ## Environment
 
@@ -131,6 +150,19 @@ ordering cases. No approximation or sampling is used.
 
 The top file was `test/v0714_template_and_hierarchy_test.dart` at 626264 ms.
 
+| Top file before | ms |
+|---|---:|
+| `v0714_template_and_hierarchy_test.dart` | 626264 |
+| `catalog_axis_coverage_test.dart` | 50825 |
+| `catalog_cardio_filter_contract_test.dart` | 50754 |
+| `catalog_full_menu_matrix_test.dart` | 49743 |
+| `catalog_recovery_filter_contract_test.dart` | 46542 |
+| `v100_catalog_qa_audit_test.dart` | 36980 |
+| `catalog_cardio_warmup_recovery_v099b6a_test.dart` | 34153 |
+| `catalog_good_v1_category_targets_test.dart` | 31974 |
+| `catalog_integrity_test.dart` | 31846 |
+| `catalog_entry_quality_evidence_test.dart` | 31791 |
+
 ## Top 10 After
 
 | Test | ms |
@@ -149,6 +181,19 @@ The top file was `test/v0714_template_and_hierarchy_test.dart` at 626264 ms.
 The slowest final file is
 `test/catalog/catalog_cardio_filter_contract_test.dart` at 48644 ms. No single
 test now monopolizes the suite.
+
+| Top file after | ms |
+|---|---:|
+| `catalog_cardio_filter_contract_test.dart` | 48644 |
+| `catalog_axis_coverage_test.dart` | 48563 |
+| `catalog_full_menu_matrix_test.dart` | 45279 |
+| `catalog_recovery_filter_contract_test.dart` | 42736 |
+| `v100_catalog_qa_audit_test.dart` | 36865 |
+| `catalog_cardio_warmup_recovery_v099b6a_test.dart` | 33655 |
+| `catalog_activation_quality_v099b4a_test.dart` | 31929 |
+| `catalog_entry_quality_evidence_test.dart` | 31650 |
+| `catalog_integrity_test.dart` | 30818 |
+| `v100_beginner_content_test.dart` | 30038 |
 
 ## Concurrency
 
@@ -213,7 +258,25 @@ Flutter/Pub caching uses the supported Flutter setup action. Concurrency is
 grouped per PR/ref with `cancel-in-progress: true`. The full suite is not rerun
 sequentially after the shards.
 
-Real Draft PR cold/warm timings and final check results: **PENDING_REAL_PR**.
+Real Draft PR: [#15](https://github.com/ryoken99/evefit_tracker/pull/15).
+The implementation head remained mergeable and the PR remained Draft.
+
+| Run | Head | Result | Duration | Evidence / action |
+|---|---|---|---:|---|
+| `29589282491` | `71ccd9d` | fail | 264 s | Hosted SDK lacked the requested `pixel_8_pro` AVD profile |
+| `29589865285` | `0783443` | fail | 247 s | Android action executed outside the Flutter project |
+| `29590199572` | `439d92d` | pass | 498 s | First complete green pipeline; 44.5% reduction was below the requested minimum |
+| `29590973541` attempt 1 | `7f52366` | pass | 481 s | AVD cache fill; 46.4% reduction |
+| `29590973541` attempt 2 | `7f52366` | pass | 492 s | AVD cache hit; 45.2% reduction |
+| `29592516457` | `0cc17b6` | pass | 429 s | Proved Gradle setup was read-only by default on the PR |
+| `29593117295` attempt 1 | `62babf2` | pass | 537 s | Writable Gradle cache fill, including post-job cache upload |
+| `29593117295` attempt 2 | `62babf2` | pass | **392 s** | Flutter, Pub, AVD, and Gradle cache hits; final warm measurement |
+
+Compared with the 898 s baseline, final warm CI removes **506 s (56.3%)**.
+Every required check passed: classifier, Analyze, contracts, manifest, strict
+audit, four shards, real Android smoke, and the stable `quality` aggregator.
+The final documentation-only head is validated by the PR after this report is
+committed; this avoids a circular report commit solely to record its own run.
 
 ## Android, GPU, And Gradle
 
@@ -221,7 +284,7 @@ The new real-app smoke creates/reuses a profile, opens Dashboard and Treinos,
 creates a workout, opens Add Exercise, verifies exactly five contexts, checks
 Back, and captures Flutter/Hero errors. All waits are bounded and observable.
 
-Measured mission-branch runs:
+Measured local mission-branch runs:
 
 - Clean data: 25.722 s
 - Warm profile: 21.220 s
@@ -235,17 +298,23 @@ seconds. The emulator reports WHPX usable and a host OpenGL ES translator on
 RTX 3080 Ti, so it is not software-rendering; no private AVD configuration
 change was justified or retained.
 
-Gradle daemon 9.1.0 was active. Debug builds passed. No aggressive Gradle,
-configuration-cache, memory, Android SDK, signing, or project setting was
-changed because the measured critical path was the test audit, not Gradle.
+Gradle daemon 9.1.0 was active locally. Hosted Android uses the immutable
+`gradle/actions/setup-gradle` action with PR-scoped writable cache state. The
+first writable run saved dependencies, transforms, generated jars, wrapper,
+and Gradle User Home entries. The exact-head warm run restored them and reduced
+`assembleDebug` from 260.5-280.8 s to **129.1 s**. No configuration cache,
+memory, Android SDK, signing, Gradle project setting, or build semantics changed.
 
 ## Results After
 
-- Final complete suite: **629/629 pass**, 141.185 s, 0 skipped
+- Final complete suite: **630/630 pass**, approximately 134 s, 0 skipped
 - Baseline median: 724.542 s
-- Absolute reduction: **583.357 s**
-- Comparable local critical-path reduction: **80.5%**
+- Absolute reduction: approximately **590.5 s**
+- Comparable local critical-path reduction: approximately **81.5%**
 - Required minimum: 45%
+- Baseline CI median: 898 s
+- Final warm CI: 392 s
+- Comparable CI critical-path reduction: **56.3%**
 - Fast Gate final: 18.523 s internal / 19.316 s wall, pass
 - PR Gate final warm: 188.751 / 187.620 s internal, both pass
 - PR Gate final warm wall median: 190.050 s
@@ -265,8 +334,8 @@ changed because the measured critical path was the test audit, not Gradle.
 |---|---:|---:|
 | Unit/widget test files | 151 | 157 |
 | Integration test files | 6 | 7 |
-| Tests | 603 | 629 |
-| `expect`/`expectLater` calls | 2021 | 2079 |
+| Tests | 603 | 630 |
+| `expect`/`expectLater` calls | 2021 | 2122 |
 | Skip markers | 0 | 0 |
 | Retry markers | 0 | 0 |
 | Timeout markers | 3 | 4 |
@@ -289,7 +358,9 @@ and private AVD configuration remain ignored.
 
 ## Risks And Limitations
 
-- Hosted Android cold-start time is external and must be confirmed in real CI.
+- Hosted runner and 2.7 GB AVD-cache transfer times remain externally variable.
+- `actions/checkout` v4 emits GitHub's Node 20 compatibility warning while the
+  hosted runner forces Node 24; the pinned action still completes successfully.
 - Deleted/renamed/unclassified changes intentionally require an explicit gate
   decision instead of guessing.
 - Untracked additions require explicit `--added` so protected local untracked
