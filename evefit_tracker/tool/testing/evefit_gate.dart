@@ -63,6 +63,7 @@ Future<void> main(List<String> argv) async {
       );
       report['mode'] = mode.name;
       report['classification'] = classification.toJson();
+      report['reason'] = plan.reason;
       report['plan'] = plan.commands.map((item) => item.toJson()).toList();
       exitCode = plan.exitCode;
       report['commands'] = plan.commands

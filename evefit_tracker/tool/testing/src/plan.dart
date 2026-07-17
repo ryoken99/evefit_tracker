@@ -5,6 +5,8 @@ import 'models.dart';
 
 enum GateMode { fast, pr, release }
 
+const _androidSmokeScript = 'tool/run_android_smoke.ps1';
+
 class GateOptions {
   const GateOptions({
     this.enableAndroid = false,
@@ -36,6 +38,22 @@ GatePlan composePlan({
   if (classification.failsClosed) {
     return GatePlan(const [], exitPolicy, classification.reason);
   }
+  final requiresAndroidSmoke =
+      mode == GateMode.pr &&
+      classification.classes.contains(ChangeClass.uiNavigation);
+  final missingScripts = _missingRequestedScripts(
+    root,
+    mode,
+    options,
+    requiresAndroidSmoke: requiresAndroidSmoke,
+  );
+  if (missingScripts.isNotEmpty) {
+    return GatePlan(
+      const [],
+      exitEnvironment,
+      'Requested validation script is unavailable: ${missingScripts.join(', ')}',
+    );
+  }
   final flutter = flutterExecutable();
   final dart = Platform.resolvedExecutable;
   final commands = <GateCommand>[];
@@ -43,13 +61,15 @@ GatePlan composePlan({
       changedPaths.where((path) => path.endsWith('.dart')).toList()..sort();
   void add(String name, List<String> args) =>
       commands.add(GateCommand(name, flutter, args));
+  void addDart(String name, List<String> args) =>
+      commands.add(GateCommand(name, dart, args));
   if (mode != GateMode.fast) {
     add('pub-get', const ['pub', 'get']);
-    add('format', const ['format', '--set-exit-if-changed', '.']);
+    addDart('format', const ['format', '--set-exit-if-changed', '.']);
     add('analyze', const ['analyze']);
   } else {
     if (dartChanges.isNotEmpty) {
-      add('format-changed-dart', [
+      addDart('format-changed-dart', [
         'format',
         '--set-exit-if-changed',
         ...dartChanges,
@@ -88,6 +108,12 @@ GatePlan composePlan({
       ]),
     );
   }
+  if (requiresAndroidSmoke) {
+    _addRequestedScript(commands, true, 'android-smoke', 'powershell', const [
+      '-File',
+      _androidSmokeScript,
+    ]);
+  }
   if (mode == GateMode.release) {
     commands.add(
       GateCommand('catalog-audit', dart, const [
@@ -96,25 +122,22 @@ GatePlan composePlan({
         '--strict',
       ]),
     );
-    _optional(
+    _addRequestedScript(
       commands,
-      root,
       options.enableAndroid,
       'android-smoke',
       'powershell',
-      const ['-File', 'tool/run_evefit_on_emulator.ps1'],
+      const ['-File', _androidSmokeScript],
     );
-    _optional(
+    _addRequestedScript(
       commands,
-      root,
       options.enableFullApp,
       'full-app',
       'powershell',
       const ['-File', 'tool/run_canonical_core_full_app_test.ps1'],
     );
-    _optional(
+    _addRequestedScript(
       commands,
-      root,
       options.enableUpgrade,
       'upgrade',
       'powershell',
@@ -147,17 +170,39 @@ String flutterExecutable() {
   return suffix;
 }
 
-void _optional(
-  List<GateCommand> commands,
+List<String> _missingRequestedScripts(
   Directory root,
+  GateMode mode,
+  GateOptions options, {
+  required bool requiresAndroidSmoke,
+}) {
+  if (mode != GateMode.release && !requiresAndroidSmoke) {
+    return const [];
+  }
+  final requested = <String>[
+    if (options.enableAndroid || requiresAndroidSmoke) _androidSmokeScript,
+    if (mode == GateMode.release && options.enableFullApp)
+      'tool/run_canonical_core_full_app_test.ps1',
+    if (mode == GateMode.release && options.enableUpgrade)
+      'tool/run_v112_hierarchical_upgrade_test.ps1',
+  ];
+  return requested
+      .where(
+        (script) =>
+            !File('${root.path}${Platform.pathSeparator}$script').existsSync(),
+      )
+      .toList(growable: false);
+}
+
+void _addRequestedScript(
+  List<GateCommand> commands,
   bool enabled,
   String name,
   String executable,
   List<String> args,
 ) {
-  if (!enabled) return;
-  final script = args.last;
-  if (File('${root.path}${Platform.pathSeparator}$script').existsSync()) {
-    commands.add(GateCommand(name, executable, args));
+  if (!enabled) {
+    return;
   }
+  commands.add(GateCommand(name, executable, args));
 }

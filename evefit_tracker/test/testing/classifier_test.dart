@@ -32,6 +32,24 @@ void main() {
       expect(result.classes, contains(ChangeClass.databaseStartup));
     });
 
+    test(
+      'classifies integration tests and the Android smoke runner as UI navigation',
+      () {
+        final result = classifyChangedFiles(const [
+          ChangedFile('integration_test/workout_flow_test.dart'),
+          ChangedFile('tool/run_android_smoke.ps1'),
+        ]);
+        expect(result.failsClosed, isFalse);
+        expect(result.classes, equals(<ChangeClass>{ChangeClass.uiNavigation}));
+        expect(
+          classifyChangedFiles(const [
+            ChangedFile('tool/unknown_runner.ps1'),
+          ]).failsClosed,
+          isTrue,
+        );
+      },
+    );
+
     test('fails closed for unknown, deleted, and renamed changes', () {
       for (final change in const [
         ChangedFile('assets/unclassified.bin'),

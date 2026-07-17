@@ -49,6 +49,10 @@ ChangeClass _classifyPath(String path) {
       path.contains('test_runner')) {
     return ChangeClass.pipelineTests;
   }
+  if (path == 'tool/run_android_smoke.ps1' ||
+      path.startsWith('integration_test/')) {
+    return ChangeClass.uiNavigation;
+  }
   if (path.startsWith('lib/data/') ||
       path.contains('database') ||
       path.endsWith('main.dart') ||

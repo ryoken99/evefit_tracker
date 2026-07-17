@@ -17,6 +17,12 @@ void main() {
         '${root.path}${Platform.pathSeparator}test${Platform.pathSeparator}one${Platform.pathSeparator}${name}_test.dart',
       ).writeAsStringSync('');
     }
+    Directory(
+      '${root.path}${Platform.pathSeparator}integration_test',
+    ).createSync();
+    File(
+      '${root.path}${Platform.pathSeparator}integration_test${Platform.pathSeparator}android_flow_test.dart',
+    ).writeAsStringSync('');
   });
 
   tearDown(() => root.deleteSync(recursive: true));
@@ -29,16 +35,19 @@ void main() {
         TestShard('shard-4', 1, tests[3]),
       ]);
 
-  test('accepts a complete deterministic shard union', () {
-    final complete = manifest([
-      ['test/one/a_test.dart'],
-      ['test/one/b_test.dart'],
-      ['test/one/c_test.dart'],
-      ['test/one/d_test.dart'],
-    ]);
-    expect(validateManifest(complete, root), isEmpty);
-    expect(complete.tests.toSet().length, 4);
-  });
+  test(
+    'accepts a complete deterministic test universe without integration tests',
+    () {
+      final complete = manifest([
+        ['test/one/a_test.dart'],
+        ['test/one/b_test.dart'],
+        ['test/one/c_test.dart'],
+        ['test/one/d_test.dart'],
+      ]);
+      expect(validateManifest(complete, root), isEmpty);
+      expect(complete.tests.toSet().length, 4);
+    },
+  );
 
   test(
     'reports duplicates, missing files, escaped paths, and unsorted entries',
