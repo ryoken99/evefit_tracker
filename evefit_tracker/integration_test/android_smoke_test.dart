@@ -206,12 +206,15 @@ Future<void> _tapVisible(
     if (target.evaluate().isNotEmpty) {
       await tester.ensureVisible(target.last);
       await tester.pump();
-      final center = tester.getCenter(target.last);
+      final currentTargets = target.evaluate().toList();
+      if (currentTargets.isEmpty) continue;
+      final currentTarget = target.at(currentTargets.length - 1);
+      final center = tester.getCenter(currentTarget);
       if (center.dx.isFinite &&
           center.dy.isFinite &&
           center.dy > 0 &&
           center.dy < viewportHeight) {
-        await tester.tap(target.last);
+        await tester.tap(currentTarget);
         await tester.pump();
         return;
       }

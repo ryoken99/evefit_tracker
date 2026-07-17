@@ -114,8 +114,11 @@ try {
   Write-Error $_
 } finally {
   if ($logcatProcess -and -not $logcatProcess.HasExited) {
-    Stop-Process -Id $logcatProcess.Id -Force
-    $logcatProcess.WaitForExit()
+    Stop-Process -Id $logcatProcess.Id -Force -ErrorAction SilentlyContinue
+    if (-not $logcatProcess.WaitForExit(10000)) {
+      Stop-Process -Id $logcatProcess.Id -Force -ErrorAction SilentlyContinue
+      Write-Warning "Timed out while stopping adb logcat process $($logcatProcess.Id)."
+    }
   }
   $started.Stop()
 

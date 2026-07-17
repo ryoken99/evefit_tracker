@@ -337,6 +337,26 @@ void main() {
     );
   });
 
+  test('Android smoke re-resolves a tap target after pumping', () {
+    final smoke = File(
+      'integration_test/android_smoke_test.dart',
+    ).readAsStringSync();
+
+    expect(
+      smoke,
+      contains('final currentTargets = target.evaluate().toList()'),
+    );
+    expect(smoke, contains('if (currentTargets.isEmpty) continue'));
+    expect(smoke, contains('target.at(currentTargets.length - 1)'));
+  });
+
+  test('Android smoke bounds logcat process cleanup', () {
+    final runner = File('tool/run_android_smoke.ps1').readAsStringSync();
+
+    expect(runner, contains(r'$logcatProcess.WaitForExit(10000)'));
+    expect(runner, isNot(contains(r'$logcatProcess.WaitForExit()')));
+  });
+
   test('policy failures propagate without a runnable command', () {
     final plan = composePlan(
       mode: GateMode.fast,

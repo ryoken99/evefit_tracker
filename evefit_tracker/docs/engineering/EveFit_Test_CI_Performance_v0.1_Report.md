@@ -271,12 +271,17 @@ The implementation head remained mergeable and the PR remained Draft.
 | `29592516457` | `0cc17b6` | pass | 429 s | Proved Gradle setup was read-only by default on the PR |
 | `29593117295` attempt 1 | `62babf2` | pass | 537 s | Writable Gradle cache fill, including post-job cache upload |
 | `29593117295` attempt 2 | `62babf2` | pass | **392 s** | Flutter, Pub, AVD, and Gradle cache hits; final warm measurement |
+| `29601299128` | `24e6a00` | fail | 400 s | Onboarding finder disappeared after a pump; no product exception |
 
 Compared with the 898 s baseline, final warm CI removes **506 s (56.3%)**.
 Every required check passed: classifier, Analyze, contracts, manifest, strict
 audit, four shards, real Android smoke, and the stable `quality` aggregator.
 The final documentation-only head is validated by the PR after this report is
 committed; this avoids a circular report commit solely to record its own run.
+The final hardening re-evaluates the Android tap finder after each pump and
+fails closed if the target cannot be made visible. It adds no retry or timeout.
+The runner also bounds cleanup of the `adb logcat` process to prevent a passed
+smoke test from hanging while redirected log streams are being closed.
 
 ## Android, GPU, And Gradle
 
@@ -307,7 +312,10 @@ memory, Android SDK, signing, Gradle project setting, or build semantics changed
 
 ## Results After
 
-- Final complete suite: **630/630 pass**, approximately 134 s, 0 skipped
+- Final monolithic suite before the last runner hardening: **630/630 pass**,
+  approximately 134 s, 0 skipped
+- Final complete four-shard PR Gate: **632/632 pass**, 198.815 s including
+  dependency resolution, format, analyze, manifest, and Android smoke
 - Baseline median: 724.542 s
 - Absolute reduction: approximately **590.5 s**
 - Comparable local critical-path reduction: approximately **81.5%**
@@ -334,8 +342,8 @@ memory, Android SDK, signing, Gradle project setting, or build semantics changed
 |---|---:|---:|
 | Unit/widget test files | 151 | 157 |
 | Integration test files | 6 | 7 |
-| Tests | 603 | 630 |
-| `expect`/`expectLater` calls | 2021 | 2122 |
+| Tests | 603 | 632 |
+| `expect`/`expectLater` calls | 2021 | 2127 |
 | Skip markers | 0 | 0 |
 | Retry markers | 0 | 0 |
 | Timeout markers | 3 | 4 |
@@ -344,6 +352,10 @@ No test, assertion, or coverage path was removed. The one added timeout marker
 is the bounded two-minute initial-state wait in the Android smoke, not an
 increased existing timeout. No retry, sleep, ignored error, or optional required
 shard was introduced.
+
+The final local Android smoke completed in 27.769 seconds with exit code 0,
+created the test profile, found all five contexts, opened the real selector,
+and returned to the workout. The bounded logcat cleanup then exited normally.
 
 ## Files And Product Safety
 
