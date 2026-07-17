@@ -173,9 +173,11 @@ once across four duration-balanced shards. Integration tests are a separate
 Android lane. Manifest validation fails for missing, duplicate, stale, invalid,
 or unsorted paths.
 
-Measured local PR Gate shard durations were 60.225, 40.822, 37.404, and 35.611
-seconds before the final small gate-test addition. Final shard timings are
-recorded by the final PR Gate and CI runs.
+Final warm PR Gate shard durations were 57.085, 35.558, 34.147, and 33.125
+seconds on the first run, then 53.232, 35.749, 34.698, and 33.471 seconds on
+the repeat. Both runs reused the same Android/build outputs and passed manifest
+validation, proving generated files outside `test/` cannot enter the declared
+test universe. Hosted shard timings are recorded separately by the Draft PR.
 
 ## Local Gates
 
@@ -185,6 +187,13 @@ recorded by the final PR Gate and CI runs.
   pipeline/test-runner changes and Android for UI/navigation/integration.
 - Release Gate: maximum local suite, strict audit, optional Android, current
   hierarchical full-app, release build, and explicit baseline/current upgrade.
+
+Release full-app validation always passes `-ClearAppData`. This isolates it
+from the preceding smoke, which intentionally creates or reuses a profile. A
+regression test verifies the composed command. Before this correction, the
+first Release Gate attempt passed every Dart check, the audit, and smoke, then
+waited for onboarding against the smoke profile and failed closed after 198.924
+seconds. The isolated full-app rerun and the complete Release Gate both passed.
 
 The classifier is deterministic and conservative. Production code cannot avoid
 the sharded CI suite. Unknown, deleted, renamed, unsafe, and out-of-scope paths
@@ -217,11 +226,14 @@ Measured mission-branch runs:
 - Clean data: 25.722 s
 - Warm profile: 21.220 s
 - PR Gate warm: 22.405 s
+- Final PR Gate warm repeats: 21.362 / 21.334 s
+- Final Release Gate smoke: 22.490 s
 - Agent clean/warm evidence: 29.738 / 25.304 s
 
-The current full-app passed in 37.8 s. The emulator reports WHPX usable and a
-host OpenGL ES translator on RTX 3080 Ti, so it is not software-rendering; no
-private AVD configuration change was justified or retained.
+The final isolated and Release Gate full-app runs passed in 34.550 and 34.636
+seconds. The emulator reports WHPX usable and a host OpenGL ES translator on
+RTX 3080 Ti, so it is not software-rendering; no private AVD configuration
+change was justified or retained.
 
 Gradle daemon 9.1.0 was active. Debug builds passed. No aggressive Gradle,
 configuration-cache, memory, Android SDK, signing, or project setting was
@@ -229,18 +241,23 @@ changed because the measured critical path was the test audit, not Gradle.
 
 ## Results After
 
-- Final complete suite: **629/629 pass**, 149.197 s, 0 skipped
+- Final complete suite: **629/629 pass**, 141.185 s, 0 skipped
 - Baseline median: 724.542 s
-- Absolute reduction: **575.345 s**
-- Comparable local critical-path reduction: **79.4%**
+- Absolute reduction: **583.357 s**
+- Comparable local critical-path reduction: **80.5%**
 - Required minimum: 45%
-- Fast Gate validation: 18.797 s internal, pass
-- PR Gate validation: 205.515 s internal, pass
-- Strict audit: 27.581 s, pass
+- Fast Gate final: 18.523 s internal / 19.316 s wall, pass
+- PR Gate final warm: 188.751 / 187.620 s internal, both pass
+- PR Gate final warm wall median: 190.050 s
+- Release Gate final: 352.203 s internal / 354.818 s wall, pass
+- Strict audit in Release Gate: 24.899 s, pass
+- Release build in Release Gate: 52.897 s, pass
+- Upgrade in Release Gate: 50.532 s, pass
 - Database/migration focus: 5.773 s, 10 pass
 - Widget focus: 5.034 s, 28 pass
 - Debug builds: pass
-- Analyze: pass, no issues
+- Release build: pass
+- Analyze: pass, no issues (8.1 s analyzer time)
 
 ## Quality Audit
 
