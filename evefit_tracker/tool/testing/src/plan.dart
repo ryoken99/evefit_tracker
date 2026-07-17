@@ -7,6 +7,13 @@ import 'paths.dart';
 enum GateMode { fast, pr, release }
 
 const _androidSmokeScript = 'tool/run_android_smoke.ps1';
+const _trackedDartRoots = <String>[
+  'lib',
+  'test',
+  'integration_test',
+  'test_driver',
+  'tool',
+];
 
 class GateOptions {
   const GateOptions({
@@ -104,7 +111,11 @@ GatePlan composePlan({
       commands.add(GateCommand(name, dart, args));
   if (mode != GateMode.fast) {
     add('pub-get', const ['pub', 'get']);
-    addDart('format', const ['format', '--set-exit-if-changed', '.']);
+    addDart('format', const [
+      'format',
+      '--set-exit-if-changed',
+      ..._trackedDartRoots,
+    ]);
     add('analyze', const ['analyze']);
   } else {
     if (dartChanges.isNotEmpty) {

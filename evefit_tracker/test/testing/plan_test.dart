@@ -81,6 +81,20 @@ void main() {
             .executable,
         Platform.resolvedExecutable,
       );
+      expect(
+        pr.commands.firstWhere((command) => command.name == 'format').arguments,
+        containsAll(<String>[
+          'lib',
+          'test',
+          'integration_test',
+          'test_driver',
+          'tool',
+        ]),
+      );
+      expect(
+        pr.commands.firstWhere((command) => command.name == 'format').arguments,
+        isNot(contains('.')),
+      );
     },
   );
 
