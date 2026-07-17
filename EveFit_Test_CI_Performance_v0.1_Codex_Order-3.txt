@@ -1,0 +1,2055 @@
+ORDEM COMPLETA AO CODEX
+
+EVEFIT TEST & CI PERFORMANCE v0.1
+OTIMIZAÇÃO INTEGRAL DO PIPELINE SEM PERDA DE QUALIDADE
+
+CADEIA DE COMANDO
+
+- Sandro definiu e aprovou o objetivo de produto.
+- EVE formalizou a decisão, o comportamento e os limites.
+- O Planner transformou essa decisão nesta missão técnica autónoma.
+- GPT-5.6 Sol é o cérebro, orquestrador, crítico, auditor e único integrador da execução.
+- Subagentes e threads podem investigar, implementar, testar, medir e documentar trabalho real quando delegado.
+- Subagentes não podem reinterpretar o objetivo nem ampliar o escopo.
+- O produto e o comportamento da aplicação não podem ser alterados nesta missão.
+- O Sol escolhe livremente a estratégia de execução, os modelos, os níveis de reasoning, o paralelismo, as branches e as worktrees, desde que cumpra exatamente esta missão.
+- Toda a entrega de agentes deve ser revista criticamente pelo Sol antes de ser integrada.
+- Apenas o Sol pode atualizar a branch principal da missão, abrir ou atualizar o PR final e declarar a missão concluída.
+- Merge em main, alteração de versão, tags, releases e publicação de APK estão proibidos nesta missão.
+
+============================================================
+/goal
+============================================================
+
+Reduzir significativamente o tempo de validação local, testes, Android e GitHub CI da EveFit, preservando integralmente a cobertura, o rigor, a quantidade de testes, o determinismo e a capacidade de detetar regressões.
+
+O uso de /goal está tecnicamente confirmado pelo Planner porque esta é uma missão grande e persistente, com:
+
+- baseline antes e depois;
+- várias linhas de trabalho paralelas;
+- branches e worktrees;
+- profiling;
+- otimização de algoritmos de teste;
+- reestruturação do CI;
+- Android e emulador;
+- validação real num Pull Request;
+- documentação permanente;
+- risco de interrupção entre etapas.
+
+O goal deve permanecer ativo durante toda a missão.
+
+A missão não termina com um diagnóstico. Deve entregar melhorias reais, medidas, validadas e sustentáveis.
+
+============================================================
+1. MISSÃO
+============================================================
+
+Implementar EveFit Test & CI Performance v0.1.
+
+Reduzir significativamente o tempo necessário para:
+
+- receber feedback durante implementação;
+- validar alterações localmente;
+- validar Pull Requests no GitHub;
+- testar a aplicação Android;
+- preparar releases;
+
+sem perder:
+
+- testes;
+- assertions;
+- cobertura relevante;
+- deteção de regressões;
+- independência do CI;
+- validação Android;
+- qualidade das releases;
+- segurança dos dados;
+- determinismo da suíte.
+
+O objetivo não é remover validações.
+
+O objetivo é:
+
+- executar cada validação no momento correto;
+- eliminar repetições sem valor;
+- paralelizar trabalho independente;
+- corrigir gargalos medidos;
+- reutilizar caches, builds e ambientes;
+- criar gates proporcionais ao risco;
+- manter uma validação final rigorosa.
+
+Esta missão tem prioridade sobre a implementação dos cinco conceitos de Cardio.
+
+Não iniciar conceitos, intenções, atributos ou exercícios até esta missão estar concluída e revista.
+
+============================================================
+2. ESTADO INICIAL CONHECIDO
+============================================================
+
+Repositório:
+
+ryoken99/evefit_tracker
+
+Estrutura conhecida:
+
+- raiz Git contém `.github/`
+- projeto Flutter está em `evefit_tracker/`
+
+Branch principal:
+
+main
+
+Última referência conhecida de main:
+
+b8ebbbb67b625dc8f0e99b804697faa882f2dc51
+
+Commit conhecido:
+
+Merge pull request #14 from ryoken99/release/v1.1.2-hierarchical-search
+
+Última versão conhecida:
+
+1.1.2+4
+
+Última contagem conhecida:
+
+603 testes
+
+Última duração conhecida da quality gate:
+
+14 minutos e 55 segundos
+
+Workflow conhecido:
+
+.github/workflows/flutter_quality_gate.yml
+
+Estes valores são referências e não substituem a inspeção real.
+
+Antes de alterar qualquer ficheiro, confirmar:
+
+- HEAD local;
+- origin/main;
+- versão;
+- número atual de testes;
+- número de ficheiros de teste;
+- workflows ativos;
+- nomes de workflows, jobs e checks;
+- required checks observáveis;
+- duração das últimas quality gates comparáveis;
+- duração da suíte local;
+- scripts de validação existentes;
+- estado do emulador;
+- configuração de hardware;
+- git status;
+- trabalho concorrente;
+- branches existentes relacionadas com esta missão.
+
+============================================================
+3. PRÉ-CHECK OBRIGATÓRIO
+============================================================
+
+Executar a partir da raiz Git:
+
+gh auth status
+
+git fetch origin --prune --tags
+
+git checkout main
+
+git status --short
+
+git rev-parse HEAD
+
+git rev-parse origin/main
+
+git log -1 --oneline
+
+Confirmar:
+
+- HEAD local = origin/main;
+- origin/main corresponde ao estado remoto atual;
+- versão continua 1.1.2+4;
+- não existem alterações tracked inesperadas;
+- não existe trabalho concorrente incompatível;
+- tags e releases existentes permanecem intactas;
+- nenhuma branch desta missão contém trabalho divergente não revisto.
+
+Quando origin/main continuar em:
+
+b8ebbbb67b625dc8f0e99b804697faa882f2dc51
+
+usar esse SHA como base.
+
+Quando origin/main tiver avançado legitimamente:
+
+1. não recuar artificialmente;
+2. inspecionar os commits posteriores;
+3. confirmar que não introduzem conceitos, intenções, atributos ou exercícios;
+4. confirmar que não alteram o objetivo desta missão;
+5. usar o origin/main atual como base;
+6. registar o SHA real no relatório.
+
+Parar quando a alteração de main criar conflito de produto, de escopo ou de arquitetura que exija decisão de Sandro.
+
+============================================================
+4. PRESERVAÇÃO DOS UNTRACKED
+============================================================
+
+Preservar sem tocar:
+
+../15_ARTES_MARCIAIS_EXERCICIOS_DERIVADOS.md
+
+evefit_tracker/docs/catalog_reports/v0.9.4/menu_matrix_review_pack.zip
+
+Dependendo do diretório atual, o segundo caminho pode aparecer como:
+
+docs/catalog_reports/v0.9.4/menu_matrix_review_pack.zip
+
+Não:
+
+- adicionar;
+- apagar;
+- mover;
+- modificar;
+- renomear;
+- limpar;
+- usar como fixture;
+- incluir em artefactos;
+- incluir em commits.
+
+Não usar:
+
+git add .
+
+git clean
+
+git reset --hard
+
+============================================================
+5. BRANCH E PULL REQUEST
+============================================================
+
+Criar branch a partir do origin/main confirmado:
+
+perf/test-ci-pipeline-v0.1
+
+Confirmar:
+
+git checkout -b perf/test-ci-pipeline-v0.1
+git branch --show-current
+git rev-parse HEAD
+git status --short
+
+Se a branch já existir:
+
+- inspecionar local e remoto;
+- confirmar base;
+- confirmar autoria e propósito;
+- não sobrescrever;
+- parar se contiver trabalho divergente não autorizado.
+
+Abrir um Pull Request draft no fim da missão.
+
+Título:
+
+EveFit Test & CI Performance v0.1
+
+Não:
+
+- fazer merge;
+- marcar ready;
+- alterar main;
+- alterar versão;
+- criar tag;
+- criar release;
+- publicar APK.
+
+============================================================
+6. ESCOPO AUTORIZADO
+============================================================
+
+Pode alterar:
+
+- workflows do GitHub Actions;
+- scripts de testes;
+- scripts de profiling;
+- scripts de benchmark;
+- ferramentas de recolha de métricas;
+- configuração de sharding;
+- configuração de concorrência;
+- tags e agrupamento de testes;
+- fixtures;
+- setup e teardown de testes;
+- helpers de teste;
+- configuração Gradle relacionada com performance;
+- scripts de laboratório Android;
+- configuração documentada do emulador de testes;
+- reutilização de builds e artefactos;
+- configuração de caches;
+- documentação técnica;
+- algoritmos usados exclusivamente por auditorias ou testes, desde que os resultados sejam preservados exatamente.
+
+Pode alterar código de produção apenas quando todos forem verdadeiros:
+
+1. o gargalo foi comprovado por medição;
+2. a alteração não muda comportamento funcional;
+3. os resultados anteriores e posteriores são equivalentes;
+4. existem testes que provam equivalência;
+5. o diff é mínimo;
+6. existe ganho real no tempo de validação;
+7. o Sol documenta a necessidade e revê o impacto.
+
+============================================================
+7. FORA DO ESCOPO
+============================================================
+
+Não adicionar:
+
+- conceitos;
+- intenções;
+- atributos oficiais;
+- exercícios;
+- subníveis;
+- filtros de produto;
+- funcionalidades;
+- alterações visuais;
+- migrations;
+- dependências sem necessidade comprovada.
+
+Não alterar:
+
+- schema da base de dados;
+- dados canónicos;
+- Canonical Registry;
+- Dashboard;
+- Perfil;
+- Objetivos;
+- Medições;
+- históricos;
+- comportamento funcional;
+- package name;
+- versionName;
+- versionCode;
+- tags existentes;
+- releases existentes;
+- artefactos de releases publicadas.
+
+Não usar:
+
+- testes removidos para melhorar tempos;
+- testes marcados skip;
+- assertions reduzidas;
+- cobertura reduzida;
+- retries automáticos que escondam flakiness;
+- timeouts aumentados sem diagnóstico;
+- sleeps adicionados;
+- benchmarks não comparáveis;
+- exclusão de testes lentos;
+- serviços pagos;
+- runners pagos;
+- secrets novos sem autorização.
+
+============================================================
+8. PRINCÍPIO LOCAL, CI E RELEASE
+============================================================
+
+LOCAL DURANTE IMPLEMENTAÇÃO
+
+Responsável por:
+
+- formatação dos ficheiros alterados;
+- testes focados;
+- contratos afetados;
+- feedback rápido.
+
+LOCAL ANTES DO PUSH
+
+Responsável por:
+
+- analyze;
+- testes focados;
+- contratos relevantes;
+- verificação do diff;
+- Android smoke apenas quando a classificação exigir.
+
+GITHUB CI
+
+Responsável por:
+
+- ambiente independente e limpo;
+- análise estática;
+- suíte completa em shards;
+- auditorias;
+- verificação de cobertura dos shards;
+- Android condicional;
+- gate agregador obrigatório.
+
+RELEASE GATE
+
+Responsável por:
+
+- suíte máxima;
+- instalação limpa;
+- upgrade;
+- full-app;
+- build release;
+- assinatura;
+- hash;
+- verificação do APK.
+
+Não executar tudo em todos os ambientes por rotina.
+
+Como esta missão altera o próprio pipeline, é obrigatório executar uma suíte completa local final e o CI real. Esta duplicação é excecional e justificada.
+
+============================================================
+9. ORQUESTRAÇÃO MULTIAGENTE
+============================================================
+
+GPT-5.6 Sol é o cérebro, orquestrador, auditor e único integrador.
+
+O Sol decide:
+
+- número de agentes e threads;
+- modelos Luna, Terra ou Sol;
+- reasoning medium, high, xhigh ou max;
+- paralelismo;
+- trabalho sequencial;
+- agentes read-only;
+- agentes escritores;
+- branches e worktrees;
+- substituição ou reforço de agentes.
+
+O Sol deve considerar pelo menos quatro linhas independentes.
+
+------------------------------------------------------------
+LINHA A
+PERFIL E OTIMIZAÇÃO DA SUÍTE
+------------------------------------------------------------
+
+Responsabilidades:
+
+- medir ficheiros, grupos e testes;
+- identificar top 10;
+- localizar O(n²) e custos superiores;
+- localizar setups repetidos;
+- otimizar fixtures;
+- reduzir inicializações;
+- avaliar concorrência;
+- implementar e provar equivalência.
+
+Zonas possíveis:
+
+- `evefit_tracker/test/`
+- fixtures e helpers
+- ferramentas de profiling
+- algoritmos exclusivos de auditoria
+
+------------------------------------------------------------
+LINHA B
+GITHUB ACTIONS E CI
+------------------------------------------------------------
+
+Responsabilidades:
+
+- auditar workflows;
+- medir execução atual;
+- identificar duplicação;
+- implementar caches;
+- desenhar e equilibrar shards;
+- adicionar concurrency e cancel-in-progress;
+- criar agregador final;
+- preservar o required check;
+- validar comportamento de falha e sucesso.
+
+Zona principal:
+
+- `.github/workflows/`
+
+------------------------------------------------------------
+LINHA C
+ANDROID, BUILD E EMULADOR
+------------------------------------------------------------
+
+Responsabilidades:
+
+- auditar Gradle;
+- medir builds;
+- inspecionar aceleração;
+- inspecionar GPU;
+- estudar Quick Boot e snapshots;
+- reutilizar emulador e APK;
+- remover waits fixos;
+- criar ou otimizar smoke Android;
+- medir estabilidade.
+
+Zonas possíveis:
+
+- `evefit_tracker/integration_test/`
+- `evefit_tracker/tool/`
+- scripts Android
+- documentação do laboratório
+
+------------------------------------------------------------
+LINHA D
+GATES LOCAIS E DOCUMENTAÇÃO
+------------------------------------------------------------
+
+Responsabilidades:
+
+- criar Fast Gate;
+- criar PR Gate;
+- criar Release Gate;
+- classificar alterações;
+- validar manifest de shards;
+- documentar comandos;
+- impedir repetição desnecessária.
+
+Zonas possíveis:
+
+- `evefit_tracker/tool/testing/`
+- manifests
+- `evefit_tracker/docs/engineering/`
+
+============================================================
+10. CONTRATO DOS AGENTES
+============================================================
+
+Antes de iniciar cada agente ou thread, o Sol deve definir:
+
+1. identificador;
+2. modelo;
+3. reasoning level;
+4. papel;
+5. missão exata;
+6. resultado esperado;
+7. base SHA;
+8. branch ou worktree;
+9. ficheiros permitidos;
+10. ficheiros proibidos;
+11. dependências;
+12. testes obrigatórios;
+13. critérios de aceitação;
+14. limites absolutos;
+15. formato de entrega.
+
+Qualquer agente com escrita trabalha numa branch ou worktree isolada.
+
+O Sol deve reservar áreas de edição.
+
+Dois agentes escritores não podem editar ficheiros ou módulos sobrepostos ao mesmo tempo.
+
+Apenas o Sol integra na branch:
+
+perf/test-ci-pipeline-v0.1
+
+Subagentes não podem:
+
+- alterar main;
+- fazer merge;
+- integrar trabalho de outros agentes;
+- criar tags;
+- publicar releases;
+- alterar versão sem atribuição;
+- ampliar escopo;
+- declarar a missão global concluída.
+
+============================================================
+11. BASELINE IMUTÁVEL
+============================================================
+
+Medir antes de integrar qualquer otimização.
+
+Criar preferencialmente um worktree no SHA base:
+
+../evefit-test-ci-baseline
+
+Exemplo:
+
+git worktree add ../evefit-test-ci-baseline <BASE_SHA>
+
+Esse worktree deve permanecer sem alterações funcionais.
+
+Guardar resultados em:
+
+evefit_tracker/test_artifacts/test_ci_performance/baseline/<timestamp>/
+
+ou, quando executado dentro do projeto Flutter:
+
+test_artifacts/test_ci_performance/baseline/<timestamp>/
+
+Garantir que os artefactos estão ignorados pelo Git.
+
+Não commitar logs, profiles, APKs, caches ou medições runtime.
+
+============================================================
+12. DEFINIÇÃO DE COLD E WARM
+============================================================
+
+Documentar a definição usada.
+
+COLD LOCAL
+
+- novo processo;
+- checkout limpo;
+- primeira execução depois de limpeza segura dos artefactos do projeto, quando aplicável;
+- caches globais de Flutter, Dart, Pub e SDK preservadas;
+- sem eliminar SDKs ou caches globais.
+
+WARM LOCAL
+
+- mesmo commit;
+- mesmo ambiente;
+- sem `flutter clean`;
+- dependências já resolvidas;
+- repetição imediata após uma execução válida.
+
+COLD CI
+
+- cache miss real ou chave nova;
+- queue separada da execução.
+
+WARM CI
+
+- mesmas versões e lockfiles;
+- cache hit confirmado nos logs.
+
+Não classificar uma execução como cold ou warm sem evidência do estado das caches.
+
+============================================================
+13. BASELINE LOCAL
+============================================================
+
+Medir separadamente:
+
+1. `flutter pub get`;
+2. `dart format --set-exit-if-changed .`;
+3. `flutter analyze`;
+4. testes focados representativos;
+5. suíte completa;
+6. testes de catálogo e auditorias pesadas;
+7. testes de base de dados;
+8. widget tests;
+9. Android smoke atual, quando existir;
+10. full-app;
+11. `flutter build apk --debug`;
+12. build release apenas quando necessário para compreender o Release Gate, sem publicar;
+13. upgrade test existente;
+14. validação total local atualmente usada.
+
+Para comandos curtos:
+
+- 1 cold;
+- pelo menos 2 warm;
+- usar mediana warm.
+
+Para comandos longos:
+
+- 1 cold;
+- 1 warm;
+- repetir apenas perante anomalia.
+
+Registar por execução:
+
+- comando;
+- início e fim;
+- duração de parede;
+- exit code;
+- CPU disponível;
+- pico de RAM;
+- disco quando mensurável;
+- número de processos;
+- concurrency;
+- cold ou warm;
+- estado das caches;
+- commit;
+- sistema operativo;
+- CPU;
+- RAM total;
+- disco;
+- Flutter;
+- Dart;
+- Java;
+- Gradle;
+- estado do Gradle daemon;
+- estado do ADB;
+- estado do emulador.
+
+Quando uma métrica não puder ser obtida com confiança:
+
+- marcar indisponível;
+- explicar;
+- não inventar.
+
+============================================================
+14. BASELINE DO GITHUB CI
+============================================================
+
+Analisar as últimas execuções comparáveis do workflow atual.
+
+Usar:
+
+gh run list
+gh run view
+gh api
+
+Registar:
+
+- run ID;
+- SHA;
+- evento;
+- runner;
+- tempo em fila;
+- tempo de preparação;
+- checkout;
+- setup do Flutter;
+- cache restore;
+- pub get;
+- analyze;
+- testes;
+- build;
+- upload;
+- teardown;
+- duração por job;
+- duração por step;
+- tempo total;
+- caminho crítico;
+- conclusão.
+
+Separar:
+
+- queue time;
+- workflow execution time.
+
+Usar 14m55s apenas como referência inicial, não como medição final automática.
+
+============================================================
+15. PROFILER DA SUÍTE
+============================================================
+
+Criar ou reutilizar uma ferramenta reproduzível.
+
+Preferir:
+
+flutter test --machine
+
+ou outro protocolo oficial estruturado.
+
+Não basear resultados críticos apenas em parsing frágil do reporter compact.
+
+Produzir:
+
+- duração por ficheiro;
+- duração por grupo;
+- duração por teste individual, quando possível;
+- setup estimado;
+- execução;
+- teardown;
+- percentagem do total;
+- top 10 testes;
+- top 10 ficheiros;
+- variância;
+- possíveis flakiness;
+- testes serializados.
+
+Guardar formato machine-readable:
+
+test_artifacts/test_ci_performance/profile/<timestamp>/test_events.jsonl
+
+Gerar resumo:
+
+test_artifacts/test_ci_performance/profile/<timestamp>/summary.json
+
+Commitar apenas a ferramenta.
+
+Não commitar resultados runtime.
+
+============================================================
+16. GARGALOS A INVESTIGAR
+============================================================
+
+Investigar por medição:
+
+- near-duplicates;
+- todos-contra-todos;
+- O(n²) ou superior;
+- normalização repetida;
+- I/O repetido;
+- parsing repetido;
+- fixtures repetidas;
+- criação repetida de DB;
+- migrations repetidas;
+- setup por teste;
+- app completa arrancada sem necessidade;
+- `pumpAndSettle` amplo;
+- waits fixos;
+- sleeps;
+- timeouts usados como sincronização;
+- processos Flutter órfãos;
+- processos ADB órfãos;
+- builds Android repetidos;
+- instalações repetidas;
+- boot repetido do AVD;
+- screenshots redundantes;
+- logs excessivos;
+- scans integrais repetidos.
+
+Não assumir o gargalo antes de medir.
+
+============================================================
+17. OTIMIZAÇÃO DOS TESTES LENTOS
+============================================================
+
+Para cada gargalo:
+
+1. apresentar baseline;
+2. explicar a causa;
+3. identificar complexidade;
+4. implementar solução;
+5. provar equivalência;
+6. confirmar o mesmo conjunto de casos;
+7. confirmar as mesmas regressões detetáveis;
+8. medir novamente;
+9. calcular ganho;
+10. rever o diff.
+
+Técnicas autorizadas:
+
+- maps;
+- sets;
+- índices;
+- agrupamento por chave;
+- pré-normalização;
+- memoização local imutável;
+- cache segura de fixtures;
+- `setUpAll` e `tearDownAll` seguros;
+- eliminação de pares duplicados;
+- eliminação de I/O repetido;
+- DB em memória reutilizada apenas quando o isolamento continuar provado;
+- substituição de espera fixa por condição observável;
+- redução de arranques completos sem perder cobertura;
+- paralelismo seguro.
+
+Não:
+
+- usar aproximações;
+- fazer sampling;
+- reduzir combinações;
+- alterar expectativas para acomodar a otimização.
+
+============================================================
+18. PROVA DE EQUIVALÊNCIA
+============================================================
+
+Quando um algoritmo de teste ou auditoria mudar, comparar implementação anterior e otimizada.
+
+Cobrir:
+
+- fixtures reais;
+- casos sintéticos;
+- vazio;
+- um elemento;
+- duplicados exatos;
+- near-duplicates;
+- Unicode;
+- acentos;
+- normalização;
+- ordem diferente;
+- entradas grandes;
+- edge cases.
+
+As duas implementações devem devolver exatamente os mesmos resultados.
+
+A implementação anterior pode permanecer apenas em teste de equivalência quando necessário.
+
+Não manter duplicação de produção sem necessidade.
+
+============================================================
+19. CONCURRENCY LOCAL
+============================================================
+
+Medir pelo menos:
+
+- concurrency 1;
+- concurrency 2;
+- concurrency 4;
+- outro nível proporcional ao hardware, quando justificado.
+
+Usar o runner oficial.
+
+Para cada nível:
+
+- medir warm;
+- registar duração;
+- registar CPU e RAM;
+- procurar flakiness;
+- procurar contenção;
+- procurar conflitos de SQLite;
+- procurar conflito de ficheiros;
+- procurar portas partilhadas;
+- procurar processos órfãos.
+
+Escolher o nível estável mais rápido.
+
+Não escolher automaticamente o máximo.
+
+Repetir o nível escolhido para confirmar estabilidade.
+
+Documentar testes que exigem serialização e a razão.
+
+============================================================
+20. SHARDING DETERMINÍSTICO
+============================================================
+
+Avaliar inicialmente 4 shards.
+
+O número final deve resultar das medições.
+
+Equilibrar por duração histórica, não apenas por quantidade de ficheiros.
+
+Cada ficheiro de teste deve pertencer:
+
+- a exatamente um shard;
+- nunca a zero;
+- nunca a dois, salvo duplicação intencional documentada.
+
+Criar validação automática do manifest.
+
+A validação deve:
+
+- descobrir todos os `*_test.dart`;
+- comparar com o manifest;
+- falhar por ausência;
+- falhar por duplicação;
+- falhar por caminho inexistente;
+- apresentar diff claro.
+
+Preferir manifest determinístico versionado quando o sharding nativo não equilibrar adequadamente.
+
+Quando usar sharding nativo:
+
+- provar reprodutibilidade;
+- medir equilíbrio;
+- justificar.
+
+Registar duração de cada shard.
+
+Minimizar o shard mais lento.
+
+============================================================
+21. FAST GATE
+============================================================
+
+Criar comando multiplataforma, preferencialmente:
+
+dart run tool/testing/evefit_gate.dart fast
+
+Pode usar nome equivalente coerente.
+
+Parâmetros recomendados:
+
+--base-ref
+--changed-files
+--json-report
+--verbose
+
+Deve:
+
+- descobrir ficheiros alterados;
+- verificar formatação dos Dart alterados;
+- executar análise direcionada quando suportada;
+- selecionar testes relacionados;
+- executar contratos essenciais;
+- falhar claramente;
+- mostrar comandos;
+- gerar relatório.
+
+Não deve:
+
+- executar suíte completa;
+- arrancar Android sem necessidade;
+- fazer build completo.
+
+Meta warm:
+
+30 segundos a 2 minutos.
+
+Não usar Fast Gate como substituto da quality gate completa.
+
+============================================================
+22. PR GATE LOCAL
+============================================================
+
+Criar comando:
+
+dart run tool/testing/evefit_gate.dart pr
+
+ou equivalente.
+
+Deve incluir:
+
+- formatação;
+- `flutter analyze`;
+- testes focados;
+- contratos relevantes;
+- auditoria do diff;
+- Android smoke quando UI, navegação ou integração forem afetadas.
+
+Não deve repetir a suíte completa que o CI executará, salvo:
+
+- alteração do próprio pipeline;
+- alteração do test runner;
+- alto risco;
+- falha anterior;
+- suspeita de dependência de ambiente.
+
+Meta warm normal:
+
+até 5 minutos.
+
+Quando a meta não for atingida:
+
+- reportar caminho crítico;
+- não ocultar componentes;
+- manter a qualidade.
+
+============================================================
+23. RELEASE GATE
+============================================================
+
+Criar comando:
+
+dart run tool/testing/evefit_gate.dart release
+
+ou equivalente.
+
+Deve incluir conforme infraestrutura disponível:
+
+- formatação completa;
+- analyze;
+- todos os shards;
+- suíte consolidada ou prova de equivalência;
+- auditorias pesadas;
+- clean install;
+- upgrade;
+- full-app;
+- build release;
+- assinatura;
+- metadados do APK;
+- hash;
+- artefactos;
+- git status;
+- relatório.
+
+Não publicar APK.
+
+Executar uma validação completa do Release Gate nesta missão quando o ambiente e fixtures existentes permitirem.
+
+============================================================
+24. CLASSIFICAÇÃO DE ALTERAÇÕES
+============================================================
+
+Criar classificador determinístico e conservador.
+
+Categorias:
+
+DOCUMENTAÇÃO
+
+Inclui Markdown e ficheiros sem impacto runtime.
+
+Pode evitar Android.
+
+CÓDIGO DART SEM UI
+
+Exige:
+
+- analyze;
+- testes focados;
+- suíte completa sharded no CI.
+
+UI OU NAVEGAÇÃO
+
+Exige:
+
+- analyze;
+- testes focados;
+- suíte sharded;
+- Android smoke.
+
+BASE DE DADOS OU INICIALIZAÇÃO
+
+Exige:
+
+- tudo o anterior;
+- clean install;
+- upgrade relevante.
+
+PIPELINE OU TESTES
+
+Exige:
+
+- validação comparativa;
+- suíte completa;
+- CI real;
+- auditoria de testes.
+
+RELEASE
+
+Exige Release Gate completa.
+
+Ficheiro de produção desconhecido deve receber a categoria de maior segurança aplicável.
+
+Uma alteração de produção nunca pode evitar a suíte completa do CI.
+
+============================================================
+25. GITHUB ACTIONS
+============================================================
+
+Auditar primeiro:
+
+.github/workflows/flutter_quality_gate.yml
+
+Antes de renomear qualquer workflow, job ou check:
+
+- identificar o nome mostrado no GitHub;
+- identificar o required check;
+- distinguir workflow, job e check run;
+- preservar o nome requerido.
+
+Não alterar branch protection.
+
+Estrutura desejada:
+
+1. classificação;
+2. análise e contratos;
+3. matriz de shards;
+4. Android smoke condicional;
+5. agregador final estável.
+
+Implementar quando comprovado útil:
+
+- `concurrency`;
+- grupo por PR ou branch;
+- `cancel-in-progress: true`;
+- cache de Flutter através do mecanismo oficial já usado ou suportado;
+- cache Pub;
+- cache Gradle;
+- chaves baseadas em versões e lockfiles;
+- restore keys seguras;
+- timeouts explícitos;
+- logs claros;
+- summaries pequenos;
+- artefactos de falha;
+- retenção curta;
+- permissões mínimas.
+
+Não cachear o SDK Flutter cegamente sem medir ou sem suporte oficial do setup usado.
+
+Evitar:
+
+- várias instalações de Flutter no mesmo job;
+- `pub get` repetido sem necessidade;
+- analyze duplicado;
+- suíte completa sequencial depois dos shards;
+- builds APK duplicados;
+- uploads grandes em runs verdes;
+- caches de diretórios inseguros;
+- chaves demasiado amplas;
+- acesso desnecessário a secrets.
+
+Qualquer nova action externa deve:
+
+- ser necessária;
+- ter reputação adequada;
+- estar fixada a versão imutável ou commit SHA;
+- ter risco documentado.
+
+============================================================
+26. GATE AGREGADOR
+============================================================
+
+O agregador deve:
+
+- ter nome estável;
+- depender de todos os jobs obrigatórios;
+- falhar quando qualquer job obrigatório falha;
+- tratar corretamente `success`, `failure`, `cancelled` e `skipped`;
+- aceitar apenas skips previstos pela classificação;
+- não repetir testes;
+- ser adequado a branch protection.
+
+Um shard falhado deve falhar o agregador.
+
+Um Android smoke obrigatório falhado deve falhar o agregador.
+
+Quando o required check não puder ser preservado sem alteração manual da branch protection:
+
+PARAR E REPORTAR.
+
+============================================================
+27. CI REAL E TESTE DE FALHA
+============================================================
+
+Validar num Pull Request real.
+
+Confirmar:
+
+- jobs arrancam;
+- shards correm em paralelo;
+- caches restauram;
+- cancel-in-progress cancela runs obsoletas;
+- alteração de documentação não executa Android;
+- alteração de produção não evita a suíte completa;
+- agregador reflete dependências;
+- logs são diagnósticos;
+- permissões são mínimas.
+
+Quando necessário para provar falha de shard:
+
+- usar branch ou commit temporário isolado;
+- não contaminar o head final;
+- não reescrever história pública de forma destrutiva;
+- remover a falha antes do commit final;
+- documentar a evidência.
+
+============================================================
+28. ANDROID E EMULADOR
+============================================================
+
+Auditar:
+
+EveFit_Test_Device
+
+Confirmar:
+
+- Android;
+- API;
+- arquitetura;
+- `emulator -accel-check`;
+- virtualização;
+- hypervisor;
+- GPU mode;
+- renderer;
+- Quick Boot;
+- snapshots;
+- cold boot;
+- RAM;
+- núcleos;
+- armazenamento;
+- ADB;
+- tempo até `sys.boot_completed`;
+- estabilidade.
+
+Inspecionar `config.ini` read-only primeiro.
+
+Antes de alterar configuração local:
+
+- criar backup;
+- registar valores;
+- medir;
+- aplicar mudança reversível;
+- repetir;
+- restaurar quando não houver ganho.
+
+Não commitar configuração específica da máquina como configuração universal.
+
+Documentar recomendações reproduzíveis.
+
+============================================================
+29. GPU
+============================================================
+
+Avaliar GPU apenas para:
+
+- renderização do emulador;
+- animações;
+- screenshots;
+- responsividade UI.
+
+Não atribuir à GPU ganhos em:
+
+- analyze;
+- testes Dart;
+- compilação Dart;
+- Gradle;
+- unit tests do GitHub.
+
+Não instalar:
+
+- CUDA;
+- frameworks ML;
+- drivers experimentais;
+- ferramentas sem relação com o emulador.
+
+Quando houver software rendering e suporte seguro:
+
+1. medir estado atual;
+2. ativar host ou auto de forma reversível;
+3. repetir as medições;
+4. executar smoke várias vezes;
+5. manter apenas se houver ganho e estabilidade;
+6. restaurar em caso de regressão.
+
+============================================================
+30. ANDROID SMOKE
+============================================================
+
+Criar ou otimizar um teste Android curto com app real.
+
+Cobertura mínima:
+
+1. app arranca;
+2. perfil está disponível ou é criado;
+3. Dashboard abre;
+4. Treinos abre;
+5. treino abre;
+6. Adicionar exercício abre;
+7. primeiro passo do seletor aparece;
+8. 5 contextos aparecem;
+9. não existe exceção crítica;
+10. Back funciona.
+
+Não repetir:
+
+- full-app completo;
+- todos os ecrãs;
+- upgrade;
+- screenshots extensivos.
+
+Meta com emulador pronto:
+
+até 5 minutos.
+
+Meta desejada:
+
+1 a 3 minutos.
+
+Evitar:
+
+- limpar dados sempre;
+- reiniciar AVD sempre;
+- recompilar por cenário;
+- waits fixos;
+- `pumpAndSettle` ilimitado;
+- screenshots redundantes.
+
+Capturar logs detalhados apenas em falha ou quando necessários para o relatório.
+
+============================================================
+31. SINCRONIZAÇÃO ANDROID
+============================================================
+
+Substituir espera temporal por condição observável.
+
+Exemplos:
+
+- `sys.boot_completed`;
+- package instalado;
+- activity foreground;
+- finder;
+- ValueKey;
+- Semantics;
+- estado da DB.
+
+Todo loop deve ter:
+
+- timeout máximo;
+- mensagem de erro útil;
+- intervalo razoável;
+- exit code real.
+
+Não aumentar timeouts para esconder lentidão.
+
+============================================================
+32. REUTILIZAÇÃO DE BUILD
+============================================================
+
+Quando cenários usarem a mesma configuração:
+
+- compilar uma vez;
+- reutilizar APK;
+- instalar uma vez quando seguro;
+- executar múltiplos cenários;
+- separar dados quando necessário.
+
+Investigar suporte oficial a:
+
+- application binary pré-construída;
+- `--use-application-binary`;
+- runner existente;
+- ADB seguido de testes compatíveis.
+
+Não mudar de runner quando isso reintroduzir problemas conhecidos sem prova.
+
+Documentar limitações do Flutter `integration_test`.
+
+============================================================
+33. GRADLE E FLUTTER
+============================================================
+
+Auditar:
+
+- Gradle daemon;
+- parallel build;
+- build cache;
+- configuration cache, apenas se compatível;
+- workers;
+- JVM args;
+- RAM;
+- incremental build;
+- duplicação de tarefas;
+- diretórios gerados;
+- chamadas a `flutter clean`;
+- recompilações sem alterações.
+
+Medir:
+
+- cold build;
+- warm build;
+- build sem alterações;
+- build após alteração Dart;
+- build após alteração Android, quando seguro.
+
+Não aplicar flags agressivas sem prova de estabilidade.
+
+Não aumentar memória indiscriminadamente.
+
+============================================================
+34. QUALIDADE INEGOCIÁVEL
+============================================================
+
+Auditar antes e depois:
+
+- número de ficheiros de teste;
+- número de testes;
+- skips;
+- assertions;
+- retries;
+- timeouts;
+- testes movidos;
+- testes duplicados;
+- manifest de shards;
+- ficheiros ausentes.
+
+Depois da otimização:
+
+- nenhum teste removido sem substituição equivalente;
+- nenhum novo skip para performance;
+- nenhuma assertion reduzida sem equivalência;
+- nenhum erro ignorado;
+- nenhum retry para fabricar sucesso;
+- nenhuma dependência de ordem;
+- nenhum estado partilhado inseguro;
+- nenhum shard opcional quando obrigatório;
+- nenhuma alteração funcional escondida;
+- 100% dos testes cobertos;
+- suíte completa ainda disponível;
+- CI falha corretamente;
+- Release Gate continua rigoroso.
+
+A quantidade de testes pode aumentar devido a testes de infraestrutura.
+
+Não pode diminuir sem prova e autorização.
+
+============================================================
+35. METAS DE PERFORMANCE
+============================================================
+
+Metas desejadas:
+
+Fast Gate warm:
+30 segundos a 2 minutos
+
+PR Gate local warm:
+até 5 minutos
+
+Suíte completa no CI sharded:
+até 8 minutos de parede
+
+CI de PR warm:
+até 10 minutos de execução
+
+CI de PR cold:
+até 15 minutos de execução
+
+Android smoke com emulador pronto:
+até 5 minutos
+
+Meta mínima global:
+
+30% de redução no caminho crítico comparável
+
+Meta desejada:
+
+40% a 60%
+
+Calcular:
+
+reduction_percent =
+((before - after) / before) * 100
+
+Comparar apenas:
+
+- mesmo ambiente;
+- mesma cobertura;
+- mesma classificação;
+- mesma definição cold/warm;
+- mesmo tipo de execução.
+
+Separar:
+
+- queue;
+- setup;
+- execução;
+- upload;
+- teardown.
+
+Quando uma meta não for atingida:
+
+- entregar ganhos reais;
+- identificar gargalo;
+- distinguir código, hardware, runner, GitHub queue e limitação externa;
+- não falsificar.
+
+============================================================
+36. RETORNO DECRESCENTE
+============================================================
+
+Parar a otimização quando:
+
+- critérios principais forem atingidos;
+- qualidade estiver preservada;
+- duas otimizações consecutivas derem menos de 5%;
+- gargalo restante for externo;
+- próximo passo exigir risco desproporcional;
+- próximo passo estiver fora do escopo.
+
+Não parar depois da primeira melhoria apenas porque funcionou.
+
+Não otimizar indefinidamente.
+
+Documentar o próximo nível possível.
+
+============================================================
+37. INTEGRAÇÃO PELO SOL
+============================================================
+
+O Sol deve receber resultados das linhas A, B, C e D.
+
+Antes de aceitar cada entrega:
+
+1. reler esta missão;
+2. rever relatório;
+3. rever diff;
+4. confirmar ficheiros;
+5. confirmar zona reservada;
+6. confirmar testes;
+7. confirmar equivalência;
+8. confirmar ausência de redução de qualidade;
+9. aceitar, rejeitar, integrar parcialmente ou pedir correção.
+
+Não integrar automaticamente tudo.
+
+Integrar apenas resultados aprovados na branch:
+
+perf/test-ci-pipeline-v0.1
+
+============================================================
+38. VALIDAÇÃO LOCAL FINAL
+============================================================
+
+Após integração consolidada, executar:
+
+flutter pub get
+
+dart format --set-exit-if-changed .
+
+flutter analyze
+
+Fast Gate cold
+
+Fast Gate warm, pelo menos 2 vezes
+
+PR Gate cold
+
+PR Gate warm, pelo menos 2 vezes
+
+todos os shards
+
+validação do manifest
+
+suíte completa não sharded pelo menos 1 vez
+
+Android smoke várias vezes para avaliar flakiness
+
+full-app quando infraestrutura de integração tiver sido alterada
+
+flutter build apk --debug
+
+Release Gate 1 vez, quando o ambiente permitir sem publicação
+
+auditoria de testes
+
+auditoria de skips
+
+auditoria de assertions
+
+auditoria de retries
+
+auditoria de timeouts
+
+git status
+
+Os resultados dos agentes não substituem esta validação.
+
+============================================================
+39. BENCHMARK PÓS-OTIMIZAÇÃO
+============================================================
+
+Executar nas mesmas condições da baseline.
+
+Guardar:
+
+test_artifacts/test_ci_performance/after/<timestamp>/
+
+Recolher os mesmos campos.
+
+Comparar:
+
+- cold antes/depois;
+- warm antes/depois;
+- etapa por etapa;
+- shard por shard;
+- tempo total;
+- caminho crítico;
+- CPU;
+- RAM;
+- disco;
+- variância;
+- estabilidade;
+- flakiness.
+
+Produzir novamente:
+
+- top 10 testes;
+- top 10 ficheiros;
+- percentagem da suíte.
+
+============================================================
+40. DOCUMENTAÇÃO
+============================================================
+
+Criar:
+
+evefit_tracker/docs/engineering/EveFit_Test_CI_Performance_v0.1_Report.md
+
+Criar ou atualizar:
+
+evefit_tracker/docs/engineering/TESTING.md
+
+O relatório completo deve incluir:
+
+- SHA base;
+- ambiente;
+- arquitetura anterior;
+- baseline local;
+- baseline CI;
+- metodologia;
+- definições cold/warm;
+- profiler;
+- top 10 antes;
+- gargalos;
+- alterações;
+- ganhos individuais;
+- prova de equivalência;
+- concurrency;
+- sharding;
+- manifest;
+- Fast Gate;
+- PR Gate;
+- Release Gate;
+- classificador;
+- GitHub Actions;
+- caches;
+- Android;
+- GPU;
+- Gradle;
+- smoke;
+- reutilização de build;
+- tempos depois;
+- top 10 depois;
+- percentagens;
+- número de testes;
+- skips;
+- assertions;
+- retries;
+- timeouts;
+- riscos;
+- limitações;
+- gargalos externos;
+- rollback;
+- recomendações futuras.
+
+`TESTING.md` deve ser curto e operacional.
+
+Incluir:
+
+- comandos;
+- quando usar cada gate;
+- parâmetros;
+- relatórios;
+- atualização dos shards;
+- execução Android;
+- diagnóstico de CI;
+- interpretação do agregador;
+- resolução de falhas.
+
+============================================================
+41. COMMITS
+============================================================
+
+Criar commits pequenos e coerentes.
+
+Estrutura indicativa:
+
+1. Add test performance profiling tools
+2. Optimize slow test audits
+3. Add deterministic test sharding and local gates
+4. Parallelize Flutter quality gate
+5. Optimize Android smoke validation
+6. Document EveFit testing and CI performance
+
+O Sol pode adaptar a divisão.
+
+Não incluir:
+
+- artefactos runtime;
+- APKs;
+- `build/`;
+- ficheiros temporários;
+- caches;
+- untracked conhecidos;
+- configuração privada do AVD.
+
+============================================================
+42. PR DRAFT
+============================================================
+
+Fazer push:
+
+git push -u origin perf/test-ci-pipeline-v0.1
+
+Abrir Pull Request draft.
+
+Título:
+
+EveFit Test & CI Performance v0.1
+
+Body obrigatório:
+
+- objetivo;
+- SHA base;
+- baseline;
+- top gargalos;
+- melhorias;
+- prova de equivalência;
+- concurrency;
+- sharding;
+- Fast Gate;
+- PR Gate;
+- Release Gate;
+- classificador;
+- CI;
+- caches;
+- Android;
+- GPU;
+- Gradle;
+- contagem antes/depois;
+- skips;
+- assertions;
+- retries;
+- tempos antes/depois;
+- redução;
+- testes;
+- build debug;
+- riscos;
+- versão inalterada;
+- funcionalidades inalteradas;
+- sem merge.
+
+============================================================
+43. QUALITY GATE REAL
+============================================================
+
+Aguardar:
+
+gh pr checks <PR_NUMBER> --watch
+
+Recolher:
+
+- run ID;
+- queue time;
+- execução;
+- duração por job;
+- duração por shard;
+- caches;
+- jobs skipped;
+- agregador;
+- conclusão.
+
+Se falhar por bug dentro do escopo:
+
+- diagnosticar;
+- corrigir;
+- repetir;
+- documentar.
+
+Parar quando a correção exigir:
+
+- redução de cobertura;
+- branch protection manual;
+- runner pago;
+- secret novo;
+- alteração funcional;
+- mudança de versão;
+- migration.
+
+Não fazer merge.
+
+============================================================
+44. REVISÃO FINAL DE ESCOPO
+============================================================
+
+Executar:
+
+git status --short
+
+git diff origin/main...HEAD --stat
+
+git diff origin/main...HEAD --name-only
+
+git log --oneline origin/main..HEAD
+
+Auditar:
+
+- versão inalterada;
+- versionCode inalterado;
+- conceitos 0;
+- intenções 0;
+- atributos oficiais 0;
+- exercícios 0;
+- subníveis 0;
+- schema inalterado;
+- migrations inalteradas;
+- Dashboard inalterado;
+- dados pessoais inalterados;
+- tags inalteradas;
+- releases inalteradas;
+- nenhum teste eliminado;
+- nenhum skip criado por performance;
+- nenhuma assertion removida sem equivalência;
+- nenhum APK commitado;
+- nenhum artefacto runtime commitado;
+- dois untracked preservados.
+
+============================================================
+45. CONDIÇÕES DE PARAGEM
+============================================================
+
+Parar e reportar antes de ampliar escopo quando:
+
+- for necessária alteração funcional da app;
+- for necessária migration;
+- for necessário reduzir qualidade;
+- for necessário remover testes;
+- existir incompatibilidade entre testes e paralelismo sem solução segura;
+- serviços externos instáveis forem requisito;
+- branch protection precisar de alteração manual;
+- runner GitHub não suportar o desenho;
+- GPU causar instabilidade;
+- for necessário runner ou serviço pago;
+- for necessário secret novo;
+- for necessário alterar release publicada;
+- existir risco para dados;
+- surgir conflito de produto;
+- surgir conflito de escopo.
+
+Não parar apenas porque uma meta de tempo não foi atingida.
+
+Nesse caso, entregar melhorias comprovadas e documentar o gargalo.
+
+============================================================
+46. CONTRATO DE ENTREGA DOS AGENTES
+============================================================
+
+Cada agente deve devolver:
+
+1. Identificador
+2. Modelo
+3. Reasoning level
+4. Papel
+5. Missão
+6. Branch ou worktree
+7. Base SHA
+8. Final SHA
+9. Ficheiros analisados
+10. Ficheiros alterados
+11. Testes executados
+12. Resultados
+13. Tempos
+14. Decisões técnicas
+15. Equivalência
+16. Riscos
+17. Limitações
+18. Conflitos
+19. Recomendações
+20. Merge realizado: não
+21. Main alterada: não
+22. Tag criada: não
+23. Release criada: não
+
+============================================================
+47. ENTREGA FINAL DO SOL
+============================================================
+
+Responder:
+
+EveFit Test & CI Performance v0.1 implementado e parado para revisão.
+
+Incluir:
+
+1. Branch:
+2. Commit base:
+3. Commit final:
+4. PR:
+5. Estado do PR:
+6. Head do PR:
+7. Quality gate:
+8. Agentes e threads:
+9. Modelo e reasoning de cada agente:
+10. Razão da estratégia:
+11. Tarefas paralelas:
+12. Tarefas sequenciais:
+13. Agentes com escrita:
+14. Branches e worktrees:
+15. Resultados aceites:
+16. Resultados rejeitados:
+17. Resultados parcialmente integrados:
+18. Correções solicitadas:
+19. Baseline local:
+20. Baseline CI:
+21. Hardware:
+22. Tempos finais:
+23. Redução absoluta:
+24. Redução percentual:
+25. Top 10 testes antes:
+26. Top 10 testes depois:
+27. Top 10 ficheiros antes:
+28. Top 10 ficheiros depois:
+29. Quantidade de testes antes:
+30. Quantidade de testes depois:
+31. Ficheiros de teste antes:
+32. Ficheiros de teste depois:
+33. Testes removidos:
+34. Testes adicionados:
+35. Testes ignorados:
+36. Assertions removidas:
+37. Retries adicionados:
+38. Timeouts alterados:
+39. Fast Gate cold:
+40. Fast Gate warm:
+41. PR Gate cold:
+42. PR Gate warm:
+43. Release Gate:
+44. Número de shards:
+45. Conteúdo de cada shard:
+46. Manifest validado:
+47. Duração de cada shard:
+48. Concurrency local escolhida:
+49. Caches implementadas:
+50. Cancel-in-progress:
+51. Quality gate anterior:
+52. Quality gate nova:
+53. CI cold:
+54. CI warm:
+55. Android smoke:
+56. Full-app:
+57. Build debug:
+58. Emulador:
+59. GPU utilizada:
+60. Resultado da aceleração:
+61. Gradle:
+62. Reutilização de build:
+63. flutter analyze:
+64. Prova de equivalência:
+65. Documentação:
+66. Ficheiros alterados:
+67. Código funcional alterado:
+68. Schema alterado: não
+69. Migrations adicionadas: não
+70. Versão alterada: não
+71. versionCode alterado: não
+72. Funcionalidades alteradas: não
+73. Dados alterados: não
+74. Main alterada: não
+75. Merge realizado: não
+76. Tag criada: não
+77. Release criada: não
+78. Untracked 1 preservado:
+79. Untracked 2 preservado:
+80. git status final:
+81. Riscos restantes:
+82. Limitações externas:
+83. Recomendações futuras:
+84. Recomendação para merge:
+
+============================================================
+48. RELATÓRIO DE BLOQUEIO
+============================================================
+
+Quando existir blocker, responder:
+
+EveFit Test & CI Performance v0.1 parada por blocker.
+
+Incluir:
+
+1. Etapa:
+2. Tipo de blocker:
+3. Comando:
+4. Erro:
+5. Causa técnica:
+6. Escopo necessário:
+7. Cobertura afetada:
+8. Runner afetado:
+9. Branch:
+10. HEAD:
+11. PR:
+12. Alterações integradas:
+13. Alterações pendentes:
+14. Menor solução recomendada:
+15. git status:
+
+============================================================
+49. PARAGEM OBRIGATÓRIA
+============================================================
+
+Parar completamente depois de:
+
+- abrir o PR draft;
+- executar a quality gate real;
+- concluir a documentação;
+- entregar o relatório.
+
+Não:
+
+- marcar o PR como ready;
+- fazer merge;
+- alterar main;
+- criar tag;
+- criar release;
+- publicar APK;
+- alterar versão;
+- iniciar conceitos;
+- iniciar intenções;
+- iniciar atributos;
+- adicionar exercícios;
+- começar os cinco conceitos de Cardio.
