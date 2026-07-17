@@ -224,7 +224,7 @@ jobs:
           target: google_apis
           profile: ${{ steps.android-profile.outputs.profile }}
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -skin 1344x2992
-          script: flutter test -r compact -d emulator-5554 integration_test/android_smoke_test.dart
+          script: cd evefit_tracker && flutter test -r compact -d emulator-5554 integration_test/android_smoke_test.dart
 
   quality:
     name: quality
