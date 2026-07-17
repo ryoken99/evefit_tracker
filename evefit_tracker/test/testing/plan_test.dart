@@ -270,7 +270,11 @@ void main() {
         fullApp.commands
             .firstWhere((command) => command.name == 'full-app')
             .arguments,
-        const ['-File', 'tool/run_workout_exercise_selector_roots_test.ps1'],
+        const [
+          '-File',
+          'tool/run_workout_exercise_selector_roots_test.ps1',
+          '-ClearAppData',
+        ],
       );
     },
   );

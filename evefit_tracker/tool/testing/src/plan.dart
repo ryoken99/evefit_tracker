@@ -184,7 +184,11 @@ GatePlan composePlan({
       options.enableFullApp,
       'full-app',
       'powershell',
-      const ['-File', 'tool/run_workout_exercise_selector_roots_test.ps1'],
+      const [
+        '-File',
+        'tool/run_workout_exercise_selector_roots_test.ps1',
+        '-ClearAppData',
+      ],
     );
     if (options.enableBuild) {
       add('android-release-build', const ['build', 'apk', '--release']);
