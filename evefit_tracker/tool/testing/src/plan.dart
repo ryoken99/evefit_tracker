@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'manifest.dart';
 import 'models.dart';
+import 'paths.dart';
 
 enum GateMode { fast, pr, release }
 
@@ -13,11 +14,15 @@ class GateOptions {
     this.enableFullApp = false,
     this.enableUpgrade = false,
     this.enableBuild = false,
+    this.baselineApk,
+    this.currentApk,
   });
   final bool enableAndroid;
   final bool enableFullApp;
   final bool enableUpgrade;
   final bool enableBuild;
+  final String? baselineApk;
+  final String? currentApk;
 }
 
 class GatePlan {
@@ -53,6 +58,33 @@ GatePlan composePlan({
       exitEnvironment,
       'Requested validation script is unavailable: ${missingScripts.join(', ')}',
     );
+  }
+  String? baselineApk;
+  String? currentApk;
+  if (mode == GateMode.release && options.enableUpgrade) {
+    if (options.baselineApk == null) {
+      return const GatePlan(
+        [],
+        exitEnvironment,
+        '--enable-upgrade requires --baseline-apk <path>',
+      );
+    }
+    try {
+      baselineApk = resolveLocalApk(root, options.baselineApk!).path;
+      if (options.currentApk != null) {
+        currentApk = resolveLocalApk(root, options.currentApk!).path;
+      } else if (options.enableBuild) {
+        currentApk = File(
+          '${root.absolute.path}${Platform.pathSeparator}build${Platform.pathSeparator}app${Platform.pathSeparator}outputs${Platform.pathSeparator}flutter-apk${Platform.pathSeparator}app-release.apk',
+        ).path;
+      }
+    } on FormatException catch (error) {
+      return GatePlan(
+        const [],
+        exitEnvironment,
+        'Invalid upgrade APK path: ${error.message}',
+      );
+    }
   }
   final flutter = flutterExecutable();
   final dart = Platform.resolvedExecutable;
@@ -136,16 +168,21 @@ GatePlan composePlan({
       'powershell',
       const ['-File', 'tool/run_canonical_core_full_app_test.ps1'],
     );
+    if (options.enableBuild) {
+      add('android-release-build', const ['build', 'apk', '--release']);
+    }
     _addRequestedScript(
       commands,
       options.enableUpgrade,
       'upgrade',
       'powershell',
-      const ['-File', 'tool/run_v112_hierarchical_upgrade_test.ps1'],
+      [
+        '-File',
+        'tool/run_v112_hierarchical_upgrade_test.ps1',
+        if (baselineApk != null) ...['-BaselineApk', baselineApk],
+        if (currentApk != null) ...['-CurrentApk', currentApk],
+      ],
     );
-    if (options.enableBuild) {
-      add('android-release-build', const ['build', 'apk', '--release']);
-    }
   }
   return GatePlan(commands, exitPass, null);
 }

@@ -4,7 +4,8 @@ import 'paths.dart';
 Classification classifyChangedFiles(Iterable<ChangedFile> files) {
   final classes = <ChangeClass>{};
   for (final file in files) {
-    if (file.status == ChangeStatus.deleted ||
+    if (file.status == ChangeStatus.unknown ||
+        file.status == ChangeStatus.deleted ||
         file.status == ChangeStatus.renamed) {
       return Classification(
         <ChangeClass>{ChangeClass.unknown},

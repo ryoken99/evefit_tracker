@@ -28,7 +28,7 @@ void main() {
   tearDown(() => root.deleteSync(recursive: true));
 
   TestManifest manifest(List<List<String>> tests) =>
-      TestManifest(1, 'fixture', [
+      TestManifest(1, manifestTestUniverse, 'fixture', [
         TestShard('shard-1', 1, tests[0]),
         TestShard('shard-2', 1, tests[1]),
         TestShard('shard-3', 1, tests[2]),
@@ -48,6 +48,24 @@ void main() {
       expect(complete.tests.toSet().length, 4);
     },
   );
+
+  test('rejects a manifest that declares a different test universe', () {
+    final value = TestManifest(
+      1,
+      'integration_test/**/*_test.dart',
+      'fixture',
+      const [
+        TestShard('shard-1', 1, ['test/one/a_test.dart']),
+        TestShard('shard-2', 1, ['test/one/b_test.dart']),
+        TestShard('shard-3', 1, ['test/one/c_test.dart']),
+        TestShard('shard-4', 1, ['test/one/d_test.dart']),
+      ],
+    );
+    expect(
+      validateManifest(value, root).join('\n'),
+      contains(manifestTestUniverse),
+    );
+  });
 
   test(
     'reports duplicates, missing files, escaped paths, and unsorted entries',

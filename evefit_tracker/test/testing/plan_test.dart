@@ -7,7 +7,7 @@ import '../../tool/testing/src/plan.dart';
 import '../../tool/testing/src/manifest.dart';
 
 void main() {
-  final manifest = TestManifest(1, 'fixture', const [
+  final manifest = TestManifest(1, manifestTestUniverse, 'fixture', const [
     TestShard('shard-1', 10, ['test/a_test.dart']),
     TestShard('shard-2', 10, ['test/b_test.dart']),
     TestShard('shard-3', 10, ['test/c_test.dart']),
@@ -72,6 +72,10 @@ void main() {
         contains('catalog-audit'),
       );
       expect(
+        release.commands.map((command) => command.name),
+        isNot(contains('upgrade')),
+      );
+      expect(
         pr.commands
             .firstWhere((command) => command.name == 'format')
             .executable,
@@ -79,6 +83,115 @@ void main() {
       );
     },
   );
+
+  test('upgrade requires a valid baseline and composes optional current APK', () {
+    final root = Directory.systemTemp.createTempSync('evefit-upgrade-plan-');
+    addTearDown(() => root.deleteSync(recursive: true));
+    Directory('${root.path}${Platform.pathSeparator}tool').createSync();
+    File(
+      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v112_hierarchical_upgrade_test.ps1',
+    ).writeAsStringSync('');
+
+    final missing = composePlan(
+      mode: GateMode.release,
+      classification: classified,
+      manifest: manifest,
+      root: root,
+      changedPaths: const ['lib/service.dart'],
+      options: const GateOptions(enableUpgrade: true),
+    );
+    expect(missing.exitCode, exitEnvironment);
+    expect(missing.reason, contains('--baseline-apk'));
+
+    final baseline = File('${root.path}${Platform.pathSeparator}baseline.apk')
+      ..writeAsStringSync('baseline');
+    final current = File('${root.path}${Platform.pathSeparator}current.apk')
+      ..writeAsStringSync('current');
+    final baselineOnly = composePlan(
+      mode: GateMode.release,
+      classification: classified,
+      manifest: manifest,
+      root: root,
+      changedPaths: const ['lib/service.dart'],
+      options: GateOptions(enableUpgrade: true, baselineApk: baseline.path),
+    );
+    final baselineOnlyArguments = baselineOnly.commands
+        .firstWhere((command) => command.name == 'upgrade')
+        .arguments;
+    expect(
+      baselineOnlyArguments,
+      containsAll(['-BaselineApk', baseline.absolute.path]),
+    );
+    expect(baselineOnlyArguments, isNot(contains('-CurrentApk')));
+
+    final buildAndUpgrade = composePlan(
+      mode: GateMode.release,
+      classification: classified,
+      manifest: manifest,
+      root: root,
+      changedPaths: const ['lib/service.dart'],
+      options: GateOptions(
+        enableBuild: true,
+        enableUpgrade: true,
+        baselineApk: baseline.path,
+      ),
+    );
+    final commandNames = buildAndUpgrade.commands
+        .map((command) => command.name)
+        .toList();
+    expect(
+      commandNames.indexOf('android-release-build'),
+      lessThan(commandNames.indexOf('upgrade')),
+    );
+    final officialCurrent = File(
+      '${root.path}${Platform.pathSeparator}build${Platform.pathSeparator}app${Platform.pathSeparator}outputs${Platform.pathSeparator}flutter-apk${Platform.pathSeparator}app-release.apk',
+    ).absolute.path;
+    expect(
+      buildAndUpgrade.commands
+          .firstWhere((command) => command.name == 'upgrade')
+          .arguments,
+      containsAll(['-CurrentApk', officialCurrent]),
+    );
+
+    final valid = composePlan(
+      mode: GateMode.release,
+      classification: classified,
+      manifest: manifest,
+      root: root,
+      changedPaths: const ['lib/service.dart'],
+      options: GateOptions(
+        enableUpgrade: true,
+        baselineApk: baseline.path,
+        currentApk: current.path,
+      ),
+    );
+    final upgrade = valid.commands.firstWhere(
+      (command) => command.name == 'upgrade',
+    );
+    expect(upgrade.arguments, [
+      '-File',
+      'tool/run_v112_hierarchical_upgrade_test.ps1',
+      '-BaselineApk',
+      baseline.absolute.path,
+      '-CurrentApk',
+      current.absolute.path,
+    ]);
+
+    final invalid = composePlan(
+      mode: GateMode.release,
+      classification: classified,
+      manifest: manifest,
+      root: root,
+      changedPaths: const ['lib/service.dart'],
+      options: GateOptions(
+        enableUpgrade: true,
+        baselineApk: baseline.path,
+        currentApk: '${root.path}${Platform.pathSeparator}missing.apk',
+      ),
+    );
+    expect(invalid.exitCode, exitEnvironment);
+    expect(invalid.reason, contains('missing.apk'));
+  });
 
   test(
     'requested release scripts are explicit and fail closed when unavailable',

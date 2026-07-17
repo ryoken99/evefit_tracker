@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'paths.dart';
 
+const manifestTestUniverse = 'test/**/*_test.dart';
+
 class TestShard {
   const TestShard(this.id, this.estimatedMilliseconds, this.tests);
 
@@ -12,9 +14,10 @@ class TestShard {
 }
 
 class TestManifest {
-  const TestManifest(this.version, this.profile, this.shards);
+  const TestManifest(this.version, this.universe, this.profile, this.shards);
 
   final int version;
+  final String universe;
   final String profile;
   final List<TestShard> shards;
 
@@ -28,14 +31,16 @@ TestManifest readManifest(File file) {
   }
   final shards = decoded['shards'];
   if (decoded['version'] is! int ||
+      decoded['universe'] is! String ||
       decoded['profile'] is! String ||
       shards is! List) {
     throw const FormatException(
-      'Manifest requires version, profile, and shards',
+      'Manifest requires version, universe, profile, and shards',
     );
   }
   return TestManifest(
     decoded['version'] as int,
+    decoded['universe'] as String,
     decoded['profile'] as String,
     shards
         .map((value) {
@@ -61,6 +66,11 @@ List<String> validateManifest(TestManifest manifest, Directory root) {
   final errors = <String>[];
   if (manifest.version != 1) {
     errors.add('Unsupported manifest version: ${manifest.version}');
+  }
+  if (manifest.universe != manifestTestUniverse) {
+    errors.add(
+      'Manifest universe must be exactly $manifestTestUniverse: ${manifest.universe}',
+    );
   }
   if (manifest.shards.length != 4) {
     errors.add('Manifest must define exactly four shards');
@@ -94,7 +104,7 @@ List<String> validateManifest(TestManifest manifest, Directory root) {
       .whereType<File>()
       .where((file) => file.path.replaceAll('\\', '/').endsWith('_test.dart'))
       .map((file) => repositoryRelativePath(root, file))
-      .where((path) => path.startsWith('test/'))
+      .where((path) => path.startsWith('test/') && path.endsWith('_test.dart'))
       .toSet();
   final missing = actual.difference(seen).toList()..sort();
   final stale = seen.difference(actual).toList()..sort();

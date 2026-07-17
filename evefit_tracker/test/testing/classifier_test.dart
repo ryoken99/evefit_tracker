@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../tool/testing/src/classifier.dart';
@@ -53,6 +55,7 @@ void main() {
     test('fails closed for unknown, deleted, and renamed changes', () {
       for (final change in const [
         ChangedFile('assets/unclassified.bin'),
+        ChangedFile('lib/a.dart', status: ChangeStatus.unknown),
         ChangedFile('lib/a.dart', status: ChangeStatus.deleted),
         ChangedFile('lib/a.dart', status: ChangeStatus.renamed),
       ]) {
@@ -79,6 +82,23 @@ void main() {
       ]) {
         expect(() => normalizeRepositoryPath(path), throwsFormatException);
       }
+    });
+
+    test('validates safe repository JSON report paths', () {
+      final root = Directory.systemTemp.createTempSync('evefit-report-path-');
+      addTearDown(() => root.deleteSync(recursive: true));
+      expect(
+        safeJsonReportFile(root, '.dart_tool/reports/gate.json').path,
+        endsWith('gate.json'),
+      );
+      expect(
+        () => safeJsonReportFile(root, '../outside.json'),
+        throwsFormatException,
+      );
+      expect(
+        () => safeJsonReportFile(root, 'report.txt'),
+        throwsFormatException,
+      );
     });
   });
 }

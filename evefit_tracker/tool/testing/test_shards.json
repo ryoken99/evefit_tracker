@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "universe": "test/**/*_test.dart",
   "profile": "full_suite_warm_test_events.jsonl",
   "shards": [
     {
@@ -49,7 +50,7 @@
     },
     {
       "id": "shard-2",
-      "estimatedMilliseconds": 368559,
+      "estimatedMilliseconds": 368560,
       "tests": [
         "test/canonical_core/canonical_core_search_screen_test.dart",
         "test/catalog/catalog_cardio_warmup_recovery_v099b6a_test.dart",
@@ -75,6 +76,7 @@
         "test/exercise_descriptions_are_specific_test.dart",
         "test/regression/async_refresh_callback_test.dart",
         "test/regression/manual_findings_regression_test.dart",
+        "test/testing/git_changes_test.dart",
         "test/testing/manifest_test.dart",
         "test/testing/runner_test.dart",
         "test/v060_training_filter_test.dart",
