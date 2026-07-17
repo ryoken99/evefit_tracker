@@ -310,6 +310,32 @@ void main() {
     );
   });
 
+  test('hosted Gradle cache is scoped to the Android smoke build', () {
+    final workflow = File(
+      '../.github/workflows/flutter_quality_gate.yml',
+    ).readAsStringSync();
+    final analyzeStart = workflow.indexOf('\n  analyze:');
+    final contractsStart = workflow.indexOf('\n  contracts:');
+    final androidStart = workflow.indexOf('\n  android-smoke:');
+    final qualityStart = workflow.indexOf('\n  quality:');
+
+    expect([
+      analyzeStart,
+      contractsStart,
+      androidStart,
+      qualityStart,
+    ], everyElement(greaterThanOrEqualTo(0)));
+    final analyzeJob = workflow.substring(analyzeStart, contractsStart);
+    final androidJob = workflow.substring(androidStart, qualityStart);
+
+    expect(analyzeJob, isNot(contains('gradle/actions/setup-gradle@')));
+    expect(androidJob, contains('gradle/actions/setup-gradle@'));
+    expect(
+      androidJob.indexOf('gradle/actions/setup-gradle@'),
+      lessThan(androidJob.indexOf('Run real-app Android smoke')),
+    );
+  });
+
   test('policy failures propagate without a runnable command', () {
     final plan = composePlan(
       mode: GateMode.fast,

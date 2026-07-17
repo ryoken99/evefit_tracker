@@ -103,8 +103,6 @@ jobs:
         with:
           channel: stable
           cache: true
-      - name: Configure Gradle cache
-        uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5
       - run: flutter pub get
       - run: flutter analyze
 
@@ -204,6 +202,8 @@ jobs:
         with:
           channel: stable
           cache: true
+      - name: Configure Gradle cache
+        uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5
       - run: flutter pub get
       - name: Enable KVM for Android emulator
         run: |
