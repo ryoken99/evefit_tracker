@@ -115,14 +115,10 @@ void main() {
       changedPaths: const ['lib/service.dart'],
       options: GateOptions(enableUpgrade: true, baselineApk: baseline.path),
     );
-    final baselineOnlyArguments = baselineOnly.commands
-        .firstWhere((command) => command.name == 'upgrade')
-        .arguments;
-    expect(
-      baselineOnlyArguments,
-      containsAll(['-BaselineApk', baseline.absolute.path]),
-    );
-    expect(baselineOnlyArguments, isNot(contains('-CurrentApk')));
+    expect(baselineOnly.exitCode, exitEnvironment);
+    expect(baselineOnly.reason, contains('--enable-build'));
+    expect(baselineOnly.reason, contains('--current-apk'));
+    expect(baselineOnly.commands, isEmpty);
 
     final buildAndUpgrade = composePlan(
       mode: GateMode.release,
@@ -221,7 +217,7 @@ void main() {
       expect(allUnavailable.exitCode, exitEnvironment);
       expect(
         allUnavailable.reason,
-        contains('tool/run_canonical_core_full_app_test.ps1'),
+        contains('tool/run_workout_exercise_selector_roots_test.ps1'),
       );
       expect(
         allUnavailable.reason,
@@ -244,6 +240,24 @@ void main() {
         (command) => command.name == 'android-smoke',
       );
       expect(smoke.arguments, const ['-File', 'tool/run_android_smoke.ps1']);
+
+      File(
+        '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_workout_exercise_selector_roots_test.ps1',
+      ).writeAsStringSync('');
+      final fullApp = composePlan(
+        mode: GateMode.release,
+        classification: classified,
+        manifest: manifest,
+        root: root,
+        changedPaths: const ['lib/service.dart'],
+        options: const GateOptions(enableFullApp: true),
+      );
+      expect(
+        fullApp.commands
+            .firstWhere((command) => command.name == 'full-app')
+            .arguments,
+        const ['-File', 'tool/run_workout_exercise_selector_roots_test.ps1'],
+      );
     },
   );
 

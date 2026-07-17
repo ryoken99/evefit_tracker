@@ -52,10 +52,17 @@ void main() {
       },
     );
 
-    test('fails closed for unknown, deleted, and renamed changes', () {
+    test('fails closed for an unknown status on an otherwise known path', () {
+      final result = classifyChangedFiles(const [
+        ChangedFile('lib/services/report.dart', status: ChangeStatus.unknown),
+      ]);
+      expect(result.failsClosed, isTrue);
+      expect(result.reason, contains('unknown'));
+    });
+
+    test('fails closed for unknown paths, deleted, and renamed changes', () {
       for (final change in const [
         ChangedFile('assets/unclassified.bin'),
-        ChangedFile('lib/a.dart', status: ChangeStatus.unknown),
         ChangedFile('lib/a.dart', status: ChangeStatus.deleted),
         ChangedFile('lib/a.dart', status: ChangeStatus.renamed),
       ]) {

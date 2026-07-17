@@ -57,8 +57,41 @@ void main() {
         '--find-renames',
         '-z',
         'origin/main',
-        'HEAD',
       ]);
+    },
+  );
+
+  test(
+    'allows approved repository paths and rejects other parent paths',
+    () async {
+      final approved = await discoverGitChanges(
+        projectRoot,
+        baseRef: 'origin/main',
+        runner: FakeGitRunner([
+          GitProcessOutput(0, '${gitRoot.path}\n', ''),
+          const GitProcessOutput(
+            0,
+            'M\u0000.github/workflows/test.yml\u0000M\u0000README.md\u0000',
+            '',
+          ),
+        ]),
+      );
+      expect(approved.succeeded, isTrue);
+      expect(approved.files.map((file) => file.path), [
+        '.github/workflows/test.yml',
+        'README.md',
+      ]);
+
+      final rejected = await discoverGitChanges(
+        projectRoot,
+        baseRef: 'origin/main',
+        runner: FakeGitRunner([
+          GitProcessOutput(0, '${gitRoot.path}\n', ''),
+          const GitProcessOutput(0, 'M\u0000notes/private.txt\u0000', ''),
+        ]),
+      );
+      expect(rejected.exitCode, exitPolicy);
+      expect(rejected.reason, contains('not approved'));
     },
   );
 

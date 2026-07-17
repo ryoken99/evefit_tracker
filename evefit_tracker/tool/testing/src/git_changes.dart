@@ -150,7 +150,6 @@ Future<ChangeResolution> discoverGitChanges(
       '--find-renames',
       '-z',
       baseRef,
-      'HEAD',
     ], workingDirectory: projectRoot);
     if (diffResult.exitCode != 0) {
       return ChangeResolution(
@@ -172,7 +171,7 @@ Future<ChangeResolution> discoverGitChanges(
         baseRef: baseRef,
         gitRoot: gitRoot.absolute.path,
         exitCode: exitPolicy,
-        reason: 'Git diff is empty for $baseRef..HEAD',
+        reason: 'Git diff is empty for $baseRef and the working tree',
       );
     }
     final files = _parseNameStatus(diffResult.stdout, prefix);
@@ -183,7 +182,8 @@ Future<ChangeResolution> discoverGitChanges(
         baseRef: baseRef,
         gitRoot: gitRoot.absolute.path,
         exitCode: exitPolicy,
-        reason: 'Git diff did not contain any changed paths for $baseRef..HEAD',
+        reason:
+            'Git diff did not contain any changed paths for $baseRef and the working tree',
       );
     }
     return ChangeResolution(
@@ -319,12 +319,22 @@ String _normalizeGitPath(String input, String projectPrefix) {
     final comparedPath = Platform.isWindows ? path.toLowerCase() : path;
     final comparedPrefix = Platform.isWindows ? prefix.toLowerCase() : prefix;
     if (!comparedPath.startsWith('$comparedPrefix/')) {
-      throw FormatException('Changed path is outside the project root: $input');
+      final repositoryPath = normalizeRepositoryPath(path);
+      if (_isApprovedRepositoryPath(repositoryPath)) {
+        return repositoryPath;
+      }
+      throw FormatException(
+        'Changed path is outside the project root and is not approved: $input',
+      );
     }
     path = path.substring(prefix.length + 1);
   }
   return normalizeRepositoryPath(path);
 }
+
+bool _isApprovedRepositoryPath(String path) =>
+    path.startsWith('.github/') ||
+    (!path.contains('/') && path.startsWith('README'));
 
 String _message(String prefix, String detail) {
   final value = detail.trim();

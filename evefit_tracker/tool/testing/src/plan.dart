@@ -71,6 +71,13 @@ GatePlan composePlan({
     }
     try {
       baselineApk = resolveLocalApk(root, options.baselineApk!).path;
+      if (!options.enableBuild && options.currentApk == null) {
+        return const GatePlan(
+          [],
+          exitEnvironment,
+          '--enable-upgrade requires --enable-build or --current-apk <path>',
+        );
+      }
       if (options.currentApk != null) {
         currentApk = resolveLocalApk(root, options.currentApk!).path;
       } else if (options.enableBuild) {
@@ -166,7 +173,7 @@ GatePlan composePlan({
       options.enableFullApp,
       'full-app',
       'powershell',
-      const ['-File', 'tool/run_canonical_core_full_app_test.ps1'],
+      const ['-File', 'tool/run_workout_exercise_selector_roots_test.ps1'],
     );
     if (options.enableBuild) {
       add('android-release-build', const ['build', 'apk', '--release']);
@@ -219,7 +226,7 @@ List<String> _missingRequestedScripts(
   final requested = <String>[
     if (options.enableAndroid || requiresAndroidSmoke) _androidSmokeScript,
     if (mode == GateMode.release && options.enableFullApp)
-      'tool/run_canonical_core_full_app_test.ps1',
+      'tool/run_workout_exercise_selector_roots_test.ps1',
     if (mode == GateMode.release && options.enableUpgrade)
       'tool/run_v112_hierarchical_upgrade_test.ps1',
   ];
