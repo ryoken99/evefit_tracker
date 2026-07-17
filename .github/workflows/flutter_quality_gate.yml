@@ -5,19 +5,249 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
+concurrency:
+  group: flutter-quality-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  quality:
+  classify:
+    name: Classify PR changes
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      requires_android: ${{ steps.classify.outputs.requires_android }}
+      shards: ${{ steps.classify.outputs.shards }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          channel: stable
+          cache: true
+      - id: classify
+        name: Classify the base-to-head diff
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -e "${BASE_SHA}^{commit}"
+          git cat-file -e "${HEAD_SHA}^{commit}"
+          git diff --name-status --find-renames -z "$BASE_SHA" "$HEAD_SHA" > "$RUNNER_TEMP/evefit-diff.z"
+
+          gate_path() {
+            case "$1" in
+              evefit_tracker/*) printf '%s' "${1#evefit_tracker/}" ;;
+              *) printf '%s' "$1" ;;
+            esac
+          }
+
+          args=()
+          while IFS= read -r -d '' status; do
+            case "$status" in
+              R*|C*)
+                IFS= read -r -d '' old_path
+                IFS= read -r -d '' new_path
+                args+=(--renamed "$(gate_path "$new_path")")
+                ;;
+              A)
+                IFS= read -r -d '' path
+                args+=(--added "$(gate_path "$path")")
+                ;;
+              D)
+                IFS= read -r -d '' path
+                args+=(--deleted "$(gate_path "$path")")
+                ;;
+              *)
+                IFS= read -r -d '' path
+                args+=(--changed "$(gate_path "$path")")
+                ;;
+            esac
+          done < "$RUNNER_TEMP/evefit-diff.z"
+
+          printf 'Classifying %s diff entries between %s and %s\n' "$((${#args[@]} / 2))" "$BASE_SHA" "$HEAD_SHA"
+          set +e
+          report="$(cd evefit_tracker && dart run tool/testing/evefit_gate.dart pr --dry-run "${args[@]}")"
+          gate_status=$?
+          set -e
+          printf '%s\n' "$report" | jq .
+          printf '%s\n' "$report" | jq -e . >/dev/null
+          jq -e '(.version == 1) and (.shards | length == 4) and ([.shards[].id] | unique | length == 4)' evefit_tracker/tool/testing/test_shards.json >/dev/null
+
+          requires_android="$(printf '%s\n' "$report" | jq -r '([.classification.classes[] | select(. == "uiNavigation" or . == "databaseStartup" or . == "release")] | length) > 0')"
+          shards="$(jq -c '[.shards[].id]' evefit_tracker/tool/testing/test_shards.json)"
+          printf 'requires_android=%s\n' "$requires_android" >> "$GITHUB_OUTPUT"
+          printf 'shards=%s\n' "$shards" >> "$GITHUB_OUTPUT"
+          exit "$gate_status"
+
+  analyze:
+    name: Analyze
+    needs: classify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: evefit_tracker
     steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
         with:
           channel: stable
+          cache: true
       - run: flutter pub get
       - run: flutter analyze
-      - run: flutter test -r compact
+
+  contracts:
+    name: Contract tests
+    needs: classify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: evefit_tracker
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter test -r compact test/canonical_core/canonical_core_contract_test.dart test/testing
+
+  manifest:
+    name: Validate test manifest
+    needs: classify
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: evefit_tracker
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: dart run tool/testing/evefit_gate.dart manifest
+
+  catalog-audit:
+    name: Strict catalog audit
+    needs: classify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: evefit_tracker
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
       - run: dart run tool/catalog_audit_report.dart --strict
 
+  shards:
+    name: Test ${{ matrix.shard }}
+    needs: classify
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJSON(needs.classify.outputs.shards) }}
+    defaults:
+      run:
+        working-directory: evefit_tracker
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Run manifest shard
+        env:
+          SHARD: ${{ matrix.shard }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t tests < <(jq -er --arg shard "$SHARD" '.shards[] | select(.id == $shard) | .tests[]' tool/testing/test_shards.json)
+          test "${#tests[@]}" -gt 0
+          printf 'Running %s tests from %s\n' "${#tests[@]}" "$SHARD"
+          flutter test -r compact "${tests[@]}"
+
+  android-smoke:
+    name: Android smoke
+    needs: classify
+    if: ${{ needs.classify.result == 'success' && needs.classify.outputs.requires_android == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: evefit_tracker
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Run real-app Android smoke
+        uses: ReactiveCircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808 # v2
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          profile: pixel_2
+          script: flutter test -r compact -d emulator-5554 integration_test/android_smoke_test.dart
+
+  quality:
+    name: quality
+    if: ${{ always() }}
+    needs:
+      - classify
+      - analyze
+      - contracts
+      - manifest
+      - catalog-audit
+      - shards
+      - android-smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Aggregate required checks
+        env:
+          REQUIRES_ANDROID: ${{ needs.classify.outputs.requires_android }}
+          CLASSIFY: ${{ needs.classify.result }}
+          ANALYZE: ${{ needs.analyze.result }}
+          CONTRACTS: ${{ needs.contracts.result }}
+          MANIFEST: ${{ needs.manifest.result }}
+          CATALOG_AUDIT: ${{ needs.catalog-audit.result }}
+          SHARDS: ${{ needs.shards.result }}
+          ANDROID_SMOKE: ${{ needs.android-smoke.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'classify=%s analyze=%s contracts=%s manifest=%s catalog-audit=%s shards=%s android-smoke=%s requires_android=%s\n' \
+            "$CLASSIFY" "$ANALYZE" "$CONTRACTS" "$MANIFEST" "$CATALOG_AUDIT" "$SHARDS" "$ANDROID_SMOKE" "$REQUIRES_ANDROID"
+
+          failed=0
+          for result in "$CLASSIFY" "$ANALYZE" "$CONTRACTS" "$MANIFEST" "$CATALOG_AUDIT" "$SHARDS"; do
+            if [ "$result" != 'success' ]; then
+              failed=1
+            fi
+          done
+          if [ "$REQUIRES_ANDROID" = 'true' ]; then
+            [ "$ANDROID_SMOKE" = 'success' ] || failed=1
+          elif [ "$ANDROID_SMOKE" != 'skipped' ] && [ "$ANDROID_SMOKE" != 'success' ]; then
+            failed=1
+          fi
+          exit "$failed"
