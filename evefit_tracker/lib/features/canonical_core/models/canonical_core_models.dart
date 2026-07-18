@@ -70,6 +70,16 @@ class CanonicalPillarDefinition {
     this.schemaVersion = canonicalCoreSchemaVersion,
   });
 
+  const CanonicalPillarDefinition.trainingConcept({
+    required this.id,
+    required this.displayNamePtPt,
+    required this.descriptionPtPt,
+    required this.displayOrder,
+    this.schemaVersion = canonicalCoreSchemaVersion,
+  }) : axis = CanonicalPillarAxis.trainingConcept,
+       status = CanonicalDefinitionStatus.approved,
+       iconKey = CanonicalCoreIconKey.conceptAxis;
+
   final String id;
   final CanonicalPillarAxis axis;
   final String displayNamePtPt;
@@ -77,6 +87,20 @@ class CanonicalPillarDefinition {
   final CanonicalDefinitionStatus status;
   final int displayOrder;
   final CanonicalCoreIconKey iconKey;
+  final String schemaVersion;
+}
+
+class CanonicalCapabilityConceptRelation {
+  const CanonicalCapabilityConceptRelation({
+    required this.capabilityRootId,
+    required this.trainingConceptId,
+    required this.displayOrder,
+    this.schemaVersion = canonicalCoreSchemaVersion,
+  }) : assert(displayOrder > 0);
+
+  final String capabilityRootId;
+  final String trainingConceptId;
+  final int displayOrder;
   final String schemaVersion;
 }
 

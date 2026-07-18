@@ -124,6 +124,107 @@ void main() {
       }
       _marker('CONTEXT_COUNT=${_contextIds.length}');
 
+      await _scrollToKey(
+        tester,
+        const ValueKey('workout_exercise_selector_context_warmup'),
+      );
+      await tester.tap(
+        find.byKey(const ValueKey('workout_exercise_selector_context_warmup')),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+      );
+      for (final id in _capabilityIds) {
+        final capability = ValueKey('workout_exercise_selector_capability_$id');
+        await _scrollToKey(tester, capability);
+        expect(find.byKey(capability), findsOneWidget);
+      }
+      _marker('CAPABILITY_COUNT=${_capabilityIds.length}');
+
+      await _scrollToKey(
+        tester,
+        const ValueKey(
+          'workout_exercise_selector_capability_cardio_conditioning',
+        ),
+      );
+      await tester.tap(
+        find.byKey(
+          const ValueKey(
+            'workout_exercise_selector_capability_cardio_conditioning',
+          ),
+        ),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      );
+      for (final id in _cardioConceptIds) {
+        final concept = ValueKey('workout_exercise_selector_concept_$id');
+        await _scrollToKey(tester, concept);
+        expect(find.byKey(concept), findsOneWidget);
+      }
+      await tester.tap(
+        find.byKey(
+          const ValueKey('workout_exercise_selector_concept_cyclic_locomotion'),
+        ),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
+      );
+      expect(
+        find.text('Ainda não existem intenções de treino aprovadas.'),
+        findsOneWidget,
+      );
+      expect(find.text('Locomoção cíclica'), findsWidgets);
+
+      await tester.binding.handlePopRoute();
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      );
+      await tester.binding.handlePopRoute();
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+      );
+      await _scrollToKey(
+        tester,
+        const ValueKey('workout_exercise_selector_capability_mobility'),
+      );
+      await tester.tap(
+        find.byKey(
+          const ValueKey('workout_exercise_selector_capability_mobility'),
+        ),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      );
+      for (final id in _mobilityConceptIds) {
+        final concept = ValueKey('workout_exercise_selector_concept_$id');
+        await _scrollToKey(tester, concept);
+        expect(find.byKey(concept), findsOneWidget);
+      }
+      expect(
+        find.byKey(
+          const ValueKey(
+            'workout_exercise_selector_concept_active_joint_exploration',
+          ),
+        ),
+        findsOneWidget,
+      );
+      expect(find.text('Mostrar todos'), findsNothing);
+      expect(find.text('Sem máquinas'), findsNothing);
+
+      await tester.tap(
+        find.byKey(const ValueKey('workout_exercise_selector_home')),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_contexts')),
+      );
       await tester.binding.handlePopRoute();
       await _pumpUntilFound(
         tester,
@@ -148,6 +249,33 @@ const _contextIds = <String>[
   'prevention_adaptation_return',
 ];
 
+const _capabilityIds = <String>[
+  'muscular_capacity',
+  'cardio_conditioning',
+  'speed_power',
+  'mobility',
+  'flexibility',
+  'motor_control_coordination',
+  'technique_skill',
+  'breathing_regulation',
+];
+
+const _cardioConceptIds = <String>[
+  'cyclic_locomotion',
+  'cyclic_propulsion',
+  'repetitive_rhythmic_movement',
+  'repeated_multidirectional_displacement',
+  'repeated_motor_sequence',
+];
+
+const _mobilityConceptIds = <String>[
+  'active_joint_exploration',
+  'range_transition',
+  'integrated_chain_mobility',
+  'supported_loaded_mobility',
+  'segmental_dissociation',
+];
+
 Finder _navigationDestination(String label) => find.byWidgetPredicate(
   (widget) => widget is NavigationDestination && widget.label == label,
   description: 'NavigationDestination($label)',
@@ -159,6 +287,31 @@ Finder _profileOptionFinder() => find.byWidgetPredicate(
       (widget.key! as ValueKey<String>).value.startsWith('profile_option_'),
   description: 'profile option',
 );
+
+Future<void> _scrollToKey(WidgetTester tester, ValueKey<String> key) async {
+  final target = find.byKey(key);
+  for (var attempt = 0; attempt < 18; attempt++) {
+    if (target.evaluate().isNotEmpty) {
+      await tester.ensureVisible(target);
+      await tester.pump();
+      final center = tester.getCenter(target);
+      if (center.dy > 80 && center.dy < 920) return;
+    }
+    await tester.dragFrom(const Offset(224, 760), const Offset(0, -480));
+    await tester.pump(const Duration(milliseconds: 100));
+  }
+  for (var attempt = 0; attempt < 18; attempt++) {
+    if (target.evaluate().isNotEmpty) {
+      await tester.ensureVisible(target);
+      await tester.pump();
+      final center = tester.getCenter(target);
+      if (center.dy > 80 && center.dy < 920) return;
+    }
+    await tester.dragFrom(const Offset(224, 240), const Offset(0, 480));
+    await tester.pump(const Duration(milliseconds: 100));
+  }
+  expect(target, findsOneWidget);
+}
 
 Future<String> _pumpUntilAny(
   WidgetTester tester,

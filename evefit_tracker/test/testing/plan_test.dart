@@ -103,7 +103,7 @@ void main() {
     addTearDown(() => root.deleteSync(recursive: true));
     Directory('${root.path}${Platform.pathSeparator}tool').createSync();
     File(
-      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v112_hierarchical_upgrade_test.ps1',
+      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v113_canonical_training_concepts_upgrade_test.ps1',
     ).writeAsStringSync('');
 
     final missing = composePlan(
@@ -180,7 +180,7 @@ void main() {
     );
     expect(upgrade.arguments, [
       '-File',
-      'tool/run_v112_hierarchical_upgrade_test.ps1',
+      'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
       '-BaselineApk',
       baseline.absolute.path,
       '-CurrentApk',
@@ -201,6 +201,29 @@ void main() {
     );
     expect(invalid.exitCode, exitEnvironment);
     expect(invalid.reason, contains('missing.apk'));
+  });
+
+  test('v1.1.3 upgrade harness resets selector scroll before each restart', () {
+    final harness = File(
+      'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+    ).readAsStringSync();
+    final helper = harness.indexOf('function Scroll-UiListToTop');
+    final definitions = harness.indexOf(
+      r"foreach ($text in @('Deslocar o corpo'",
+    );
+    final firstReset = harness.indexOf(r'Scroll-UiListToTop $adb $DeviceId');
+    final secondReset = harness.indexOf(
+      r'Scroll-UiListToTop $adb $DeviceId',
+      firstReset + 1,
+    );
+    final selection = harness.indexOf(
+      r"$concept = Find-UiNodeWithScroll $adb $DeviceId 'Locomo'",
+    );
+
+    expect(helper, greaterThanOrEqualTo(0));
+    expect(firstReset, lessThan(definitions));
+    expect(secondReset, greaterThan(definitions));
+    expect(secondReset, lessThan(selection));
   });
 
   test(
@@ -235,7 +258,7 @@ void main() {
       );
       expect(
         allUnavailable.reason,
-        contains('tool/run_v112_hierarchical_upgrade_test.ps1'),
+        contains('tool/run_v113_canonical_training_concepts_upgrade_test.ps1'),
       );
 
       Directory('${root.path}${Platform.pathSeparator}tool').createSync();
@@ -355,6 +378,16 @@ void main() {
 
     expect(runner, contains(r'$logcatProcess.WaitForExit(10000)'));
     expect(runner, isNot(contains(r'$logcatProcess.WaitForExit()')));
+  });
+
+  test('Android command runner does not wait for detached descendants', () {
+    final helpers = File(
+      'tool/evefit_android_test_helpers.ps1',
+    ).readAsStringSync();
+
+    expect(helpers, isNot(contains('-PassThru -Wait -WindowStyle Hidden')));
+    expect(helpers, contains(r'$process.WaitForExit()'));
+    expect(helpers, contains(r'$process.Refresh()'));
   });
 
   test('policy failures propagate without a runnable command', () {

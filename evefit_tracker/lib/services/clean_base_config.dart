@@ -1,7 +1,7 @@
 class CleanBaseConfig {
   const CleanBaseConfig._();
 
-  static const versionLabel = 'EveFit v1.1.2 - Pesquisa Canónica Hierárquica';
+  static const versionLabel = 'EveFit v1.1.3 - Conceitos Canónicos de Treino';
   static const legacyCatalogueVisible = false;
   static const legacyFiltersVisible = false;
   static const legacySeedEnabled = false;

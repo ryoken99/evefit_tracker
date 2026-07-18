@@ -1,3 +1,4 @@
+import 'package:evefit_tracker/features/canonical_core/data/canonical_registry.dart';
 import 'package:evefit_tracker/features/canonical_core/models/canonical_core_models.dart';
 import 'package:evefit_tracker/features/canonical_core/repositories/canonical_exercise_search_repository.dart';
 import 'package:evefit_tracker/features/canonical_core/screens/canonical_core_search_screen.dart';
@@ -131,7 +132,7 @@ void main() {
     expect(find.text('Aquecimento'), findsWidgets);
   });
 
-  testWidgets('intention and concept axes show approved pending states', (
+  testWidgets('intention remains pending and concept axis shows approvals', (
     tester,
   ) async {
     await pumpScreen(tester);
@@ -153,8 +154,29 @@ void main() {
     await tester.pumpAndSettle();
     expect(
       find.byKey(const ValueKey('canonical_core_concepts_pending')),
+      findsNothing,
+    );
+    expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
+    expect(value('overcome_resistance'), findsOneWidget);
+    expect(find.text('Vencer resistência'), findsOneWidget);
+    expect(
+      find.text(
+        'Produzir força suficiente para deslocar o corpo, uma carga ou um implemento contra uma resistência.',
+      ),
       findsOneWidget,
     );
+    final conceptsScroll = find.descendant(
+      of: find.byKey(
+        const ValueKey('canonical_core_axis_values_training_concept'),
+      ),
+      matching: find.byType(Scrollable),
+    );
+    await tester.scrollUntilVisible(
+      value('interoceptive_monitoring_adjustment'),
+      260,
+      scrollable: conceptsScroll,
+    );
+    expect(value('interoceptive_monitoring_adjustment'), findsOneWidget);
     expect(find.text('Empurrar'), findsNothing);
   });
 

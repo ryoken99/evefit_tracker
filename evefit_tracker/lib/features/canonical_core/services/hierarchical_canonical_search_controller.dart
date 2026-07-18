@@ -34,7 +34,9 @@ class HierarchicalCanonicalSearchController {
       _ordered(compatibilityProvider.compatibleCapabilities(_path));
 
   List<CanonicalPillarDefinition> get compatibleTrainingConcepts =>
-      _ordered(compatibilityProvider.compatibleTrainingConcepts(_path));
+      List.unmodifiable(
+        compatibilityProvider.compatibleTrainingConcepts(_path),
+      );
 
   List<CanonicalPillarDefinition> get compatibleTrainingIntentions =>
       _ordered(compatibilityProvider.compatibleTrainingIntentions(_path));
@@ -110,6 +112,11 @@ class HierarchicalCanonicalSearchController {
   void goToCapabilityRoot() {
     if (_path.usageContextId == null) return;
     _step = HierarchicalCanonicalSearchStep.capabilityRoot;
+  }
+
+  void goToTrainingConcept() {
+    if (_path.capabilityRootId == null) return;
+    _step = HierarchicalCanonicalSearchStep.trainingConcept;
   }
 
   void goToRoot() {

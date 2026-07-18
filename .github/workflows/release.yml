@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão do release (v1.1.2)'
+        description: 'Versão do release (v1.1.3)'
         required: true
-        default: 'v1.1.2'
+        default: 'v1.1.3'
 
 permissions:
   contents: write
@@ -49,6 +49,10 @@ jobs:
         working-directory: evefit_tracker
         run: flutter build apk --release
 
+      - name: Prepare release APK
+        working-directory: evefit_tracker
+        run: cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.3-canonical-training-concepts-release.apk
+
       - name: Set version name
         id: version
         run: echo "name=${{ github.event.inputs.version || github.ref_name }}" >> $GITHUB_OUTPUT
@@ -57,18 +61,18 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.name }}
-          name: ${{ steps.version.outputs.name }}
-          files: evefit_tracker/build/app/outputs/flutter-apk/app-release.apk
+          name: EveFit v1.1.3 - Conceitos Canónicos de Treino
+          files: evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.3-canonical-training-concepts-release.apk
           generate_release_notes: false
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v1.1.2
-            - Pesquisa canonica hierarquica por Contexto, Capacidade, Conceito, Intencao e Exercicios.
-            - Cinco contextos explicitos, com Treino principal em primeiro, e oito capacidades aprovadas.
-            - Query progressiva e navegacao com breadcrumb ate ao estado vazio de conceitos.
-            - Esta versao nao adiciona conceitos, intencoes ou exercicios canonicos.
-            - Catalogo legacy continua fora do runtime e os dados pessoais e historicos permanecem preservados.
+            ### Novidades v1.1.3
+            - 35 conceitos canónicos globais e 40 compatibilidades ordenadas por capacidade.
+            - Cinco contextos e oito capacidades cobertos pela mesma matriz de conceitos reutilizáveis.
+            - Fluxo Contexto → Capacidade → Conceito → estado vazio de Intenção.
+            - Esta versão mantém zero intenções, zero atributos oficiais, zero exercícios e zero subníveis.
+            - Schema e migrations permanecem inalterados; dados pessoais e históricos devem ser preservados.
 
             ### Novidades v0.9.4
             - Alfandega permanente dos catalogos com auditoria strict, inventario e gap analysis.

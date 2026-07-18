@@ -11,14 +11,14 @@ void main() {
   test('approved hierarchy inputs remain flat independent pillar values', () {
     expect(CanonicalRegistry.approvedUsageContexts, hasLength(5));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
-    expect(CanonicalRegistry.approvedTrainingConcepts, isEmpty);
+    expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
     expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
     expect(CanonicalRegistry.approvedAttributeDefinitions, isEmpty);
     expect(
       const CanonicalRegistry().approvedPillarValues
           .map((value) => value.id)
           .toSet(),
-      hasLength(13),
+      hasLength(48),
     );
   });
 
@@ -189,31 +189,51 @@ void main() {
     expect(validator.queryErrors(oversized), isNotEmpty);
   });
 
-  test('concept and intention providers remain empty without fake values', () {
+  test('concept selection creates the third criterion in binding order', () {
     final controller = HierarchicalCanonicalSearchController()
       ..selectUsageContext('activation')
-      ..selectCapabilityRoot('muscular_capacity');
+      ..selectCapabilityRoot('cardio_conditioning');
 
-    expect(controller.compatibleTrainingConcepts, isEmpty);
+    expect(controller.compatibleTrainingConcepts, isNotEmpty);
+    controller.selectTrainingConcept('cyclic_locomotion');
+
+    expect(controller.step, HierarchicalCanonicalSearchStep.trainingIntention);
+    expect(controller.currentQuery.criteria, const [
+      CanonicalSearchCriterion(
+        axis: CanonicalPillarAxis.usageContext,
+        valueId: 'activation',
+      ),
+      CanonicalSearchCriterion(
+        axis: CanonicalPillarAxis.capabilityRoot,
+        valueId: 'cardio_conditioning',
+      ),
+      CanonicalSearchCriterion(
+        axis: CanonicalPillarAxis.trainingConcept,
+        valueId: 'cyclic_locomotion',
+      ),
+    ]);
     expect(controller.compatibleTrainingIntentions, isEmpty);
     expect(
-      () => controller.selectTrainingConcept('invented_concept'),
+      () => controller.selectTrainingIntention('invented_intention'),
       throwsStateError,
     );
+    expect(validator.queryErrors(controller.currentQuery), isEmpty);
   });
 
   test('back preserves valid choices and home clears the path', () {
     final controller = HierarchicalCanonicalSearchController()
       ..selectUsageContext('warmup')
-      ..selectCapabilityRoot('cardio_conditioning');
+      ..selectCapabilityRoot('cardio_conditioning')
+      ..selectTrainingConcept('cyclic_locomotion');
+
+    expect(controller.goBack(), isTrue);
+    expect(controller.step, HierarchicalCanonicalSearchStep.trainingConcept);
+    expect(controller.path.usageContextId, 'warmup');
+    expect(controller.path.capabilityRootId, 'cardio_conditioning');
+    expect(controller.path.trainingConceptId, 'cyclic_locomotion');
 
     expect(controller.goBack(), isTrue);
     expect(controller.step, HierarchicalCanonicalSearchStep.capabilityRoot);
-    expect(controller.path.usageContextId, 'warmup');
-    expect(controller.path.capabilityRootId, 'cardio_conditioning');
-
-    expect(controller.goBack(), isTrue);
-    expect(controller.step, HierarchicalCanonicalSearchStep.usageContext);
     expect(controller.path.usageContextId, 'warmup');
 
     controller.goToRoot();

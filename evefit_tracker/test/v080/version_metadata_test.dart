@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('v1.1.2 hierarchical search public version metadata', () {
-    test('app surface and release tooling identify v1.1.2 build 4', () {
+  group('v1.1.3 canonical training concepts public version metadata', () {
+    test('app surface and release tooling identify v1.1.3 build 5', () {
       final pubspec = _contents('pubspec.yaml');
       final settings = _contents('lib/screens/settings_screen.dart');
       final cleanBaseConfig = _contents('lib/services/clean_base_config.dart');
@@ -15,7 +15,7 @@ void main() {
 
       expect(
         pubspec,
-        contains(RegExp(r'^version: 1\.1\.2\+4$', multiLine: true)),
+        contains(RegExp(r'^version: 1\.1\.3\+5$', multiLine: true)),
       );
       expect(pubspec, isNot(contains('1.0.0-rc.1')));
       expect(
@@ -24,14 +24,20 @@ void main() {
       );
       expect(
         cleanBaseConfig,
-        contains('EveFit v1.1.2 - Pesquisa Canónica Hierárquica'),
+        contains('EveFit v1.1.3 - Conceitos Canónicos de Treino'),
       );
       expect(settings, contains('Ver atualiza'));
-      expect(settings, contains('v1.1.2'));
-      expect(readme, contains('v1.1.2'));
-      expect(readme, contains('1.1.2+4'));
-      expect(workflow, contains("default: 'v1.1.2'"));
-      expect(workflow, contains('### Novidades v1.1.2'));
+      expect(settings, contains('v1.1.3'));
+      expect(readme, contains('v1.1.3'));
+      expect(readme, contains('1.1.3+5'));
+      expect(workflow, contains("default: 'v1.1.3'"));
+      expect(workflow, contains('### Novidades v1.1.3'));
+      expect(
+        workflow,
+        contains('EveFit-v1.1.3-canonical-training-concepts-release.apk'),
+      );
+      expect(changelog, contains('# EveFit v1.1.3'));
+      expect(releaseNotes, contains('# EveFit v1.1.3'));
       expect(changelog, contains('# EveFit v1.1.2'));
       expect(releaseNotes, contains('# EveFit v1.1.2'));
       expect(changelog, contains('# EveFit v1.1.1'));

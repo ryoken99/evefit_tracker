@@ -51,8 +51,12 @@ ChangeClass _classifyPath(String path) {
     return ChangeClass.pipelineTests;
   }
   if (path == 'tool/run_android_smoke.ps1' ||
+      path == 'tool/evefit_android_test_helpers.ps1' ||
       path.startsWith('integration_test/')) {
     return ChangeClass.uiNavigation;
+  }
+  if (path == 'tool/run_v113_canonical_training_concepts_upgrade_test.ps1') {
+    return ChangeClass.databaseStartup;
   }
   if (path.startsWith('lib/data/') ||
       path.contains('database') ||

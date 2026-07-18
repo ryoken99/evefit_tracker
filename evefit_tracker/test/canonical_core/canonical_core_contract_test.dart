@@ -11,16 +11,17 @@ void main() {
   const registry = CanonicalRegistry();
   const validator = CanonicalValidator();
 
-  test('registry exposes only the approved canonical foundation', () {
+  test('registry exposes the approved canonical foundation', () {
     validator.validateRegistryOrThrow();
 
     expect(CanonicalRegistry.axisDefinitions, hasLength(4));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
     expect(CanonicalRegistry.approvedUsageContexts, hasLength(5));
     expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
-    expect(CanonicalRegistry.approvedTrainingConcepts, isEmpty);
+    expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
     expect(CanonicalRegistry.approvedAttributeDefinitions, isEmpty);
-    expect(registry.approvedPillarValues, hasLength(13));
+    expect(CanonicalRegistry.capabilityConceptRelations, hasLength(40));
+    expect(registry.approvedPillarValues, hasLength(48));
     expect(
       CanonicalRegistry.axisDefinitions.map((definition) => definition.axis),
       CanonicalPillarAxis.values,
@@ -62,6 +63,8 @@ void main() {
       'lib/features/canonical_core/models/canonical_core_models.dart',
     ).readAsStringSync();
     expect(source, isNot(contains('parentId')));
+    expect(source, isNot(contains('exerciseIds')));
+    expect(source, isNot(contains('legacyIds')));
     expect(source, isNot(contains('children')));
     expect(source, isNot(contains('final int depth')));
     expect(

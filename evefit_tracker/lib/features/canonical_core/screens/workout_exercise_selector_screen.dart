@@ -79,6 +79,9 @@ class _WorkoutExerciseSelectorScreenState
               onCapabilityPressed: () {
                 setState(_controller.goToCapabilityRoot);
               },
+              onConceptPressed: () {
+                setState(_controller.goToTrainingConcept);
+              },
             ),
             const Divider(height: 1),
             Expanded(child: _buildCurrentStep()),
@@ -93,10 +96,7 @@ class _WorkoutExerciseSelectorScreenState
     HierarchicalCanonicalSearchStep.capabilityRoot => _buildCapabilities(),
     HierarchicalCanonicalSearchStep.trainingConcept => _buildTrainingConcepts(),
     HierarchicalCanonicalSearchStep.trainingIntention =>
-      _buildUnavailableFutureStep(
-        'Que resultado específico procuras?',
-        'Ainda não existem intenções de treino aprovadas.',
-      ),
+      _buildTrainingIntentions(),
     HierarchicalCanonicalSearchStep.results => _buildUnavailableFutureStep(
       'Exercícios correspondentes',
       'Ainda não existem exercícios canónicos ativos.',
@@ -162,6 +162,33 @@ class _WorkoutExerciseSelectorScreenState
     );
   }
 
+  Widget _buildTrainingIntentions() => ListView(
+    key: const ValueKey('workout_exercise_selector_intentions'),
+    padding: const EdgeInsets.all(24),
+    children: [
+      Text(
+        'Que intenção de treino procuras?',
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
+      const SizedBox(height: 32),
+      const Icon(Icons.flag_outlined, size: 48),
+      const SizedBox(height: 16),
+      Text(
+        'Ainda não existem intenções de treino aprovadas.',
+        key: const ValueKey('workout_exercise_selector_intention_empty'),
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.titleMedium,
+      ),
+      const SizedBox(height: 8),
+      const Text(
+        'As intenções compatíveis com esta seleção serão adicionadas e validadas progressivamente.',
+        textAlign: TextAlign.center,
+      ),
+      const SizedBox(height: 24),
+      _WorkoutExerciseSelectorEmptyPath(controller: _controller),
+    ],
+  );
+
   Widget _buildUnavailableFutureStep(String title, String message) => Center(
     child: Padding(
       padding: const EdgeInsets.all(24),
@@ -206,16 +233,19 @@ class _WorkoutExerciseSelectorBreadcrumb extends StatelessWidget {
     required this.controller,
     required this.onContextPressed,
     required this.onCapabilityPressed,
+    required this.onConceptPressed,
   });
 
   final HierarchicalCanonicalSearchController controller;
   final VoidCallback onContextPressed;
   final VoidCallback onCapabilityPressed;
+  final VoidCallback onConceptPressed;
 
   @override
   Widget build(BuildContext context) {
     final contextDefinition = controller.selectedUsageContext;
     final capabilityDefinition = controller.selectedCapabilityRoot;
+    final conceptDefinition = controller.selectedTrainingConcept;
     final children = <Widget>[];
     if (contextDefinition != null) {
       children.add(
@@ -235,6 +265,16 @@ class _WorkoutExerciseSelectorBreadcrumb extends StatelessWidget {
           ),
           onPressed: onCapabilityPressed,
           child: Text(capabilityDefinition.displayNamePtPt),
+        ),
+      );
+    }
+    if (conceptDefinition != null) {
+      if (children.isNotEmpty) children.add(const Text('>'));
+      children.add(
+        TextButton(
+          key: const ValueKey('workout_exercise_selector_breadcrumb_concept'),
+          onPressed: onConceptPressed,
+          child: Text(conceptDefinition.displayNamePtPt),
         ),
       );
     }
@@ -360,20 +400,32 @@ class _WorkoutExerciseSelectorEmptyPath extends StatelessWidget {
   final HierarchicalCanonicalSearchController controller;
 
   @override
-  Widget build(BuildContext context) => Semantics(
-    label: 'Percurso selecionado',
-    child: Container(
-      key: const ValueKey('workout_exercise_selector_empty_path'),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(8),
+  Widget build(BuildContext context) {
+    final path = [
+      controller.selectedUsageContext?.displayNamePtPt,
+      controller.selectedCapabilityRoot?.displayNamePtPt,
+      controller.selectedTrainingConcept?.displayNamePtPt,
+    ].whereType<String>().toList(growable: false);
+    return Semantics(
+      label: 'Percurso selecionado',
+      child: Container(
+        key: const ValueKey('workout_exercise_selector_empty_path'),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.surfaceContainerHighest,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          path
+              .asMap()
+              .entries
+              .map((entry) {
+                return entry.key == 0 ? entry.value : '> ${entry.value}';
+              })
+              .join('\n'),
+          textAlign: TextAlign.center,
+        ),
       ),
-      child: Text(
-        '${controller.selectedUsageContext!.displayNamePtPt}\n'
-        '> ${controller.selectedCapabilityRoot!.displayNamePtPt}',
-        textAlign: TextAlign.center,
-      ),
-    ),
-  );
+    );
+  }
 }
