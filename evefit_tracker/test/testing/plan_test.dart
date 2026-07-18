@@ -203,6 +203,29 @@ void main() {
     expect(invalid.reason, contains('missing.apk'));
   });
 
+  test('v1.1.3 upgrade harness resets selector scroll before each restart', () {
+    final harness = File(
+      'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+    ).readAsStringSync();
+    final helper = harness.indexOf('function Scroll-UiListToTop');
+    final definitions = harness.indexOf(
+      r"foreach ($text in @('Deslocar o corpo'",
+    );
+    final firstReset = harness.indexOf(r'Scroll-UiListToTop $adb $DeviceId');
+    final secondReset = harness.indexOf(
+      r'Scroll-UiListToTop $adb $DeviceId',
+      firstReset + 1,
+    );
+    final selection = harness.indexOf(
+      r"$concept = Find-UiNodeWithScroll $adb $DeviceId 'Locomo'",
+    );
+
+    expect(helper, greaterThanOrEqualTo(0));
+    expect(firstReset, lessThan(definitions));
+    expect(secondReset, greaterThan(definitions));
+    expect(secondReset, lessThan(selection));
+  });
+
   test(
     'requested release scripts are explicit and fail closed when unavailable',
     () {

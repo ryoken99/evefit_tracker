@@ -67,6 +67,18 @@ function Find-UiNodeWithScroll {
   return $null
 }
 
+function Scroll-UiListToTop {
+  param(
+    [string]$Adb,
+    [string]$TargetDevice,
+    [int]$Attempts = 10
+  )
+  for ($attempt = 0; $attempt -lt $Attempts; $attempt++) {
+    & $Adb -s $TargetDevice shell input swipe 700 700 700 2200 300 | Out-Null
+    Start-Sleep -Milliseconds 400
+  }
+}
+
 function Require-UiTextWithScroll([string]$Adb, [string]$TargetDevice, [string]$Text) {
   if (-not (Find-UiNodeWithScroll $Adb $TargetDevice $Text)) {
     throw "Required UI text was not visible: $Text"
@@ -369,12 +381,14 @@ try {
   foreach ($text in @('Locomo', 'Propuls', 'Movimento r', 'Deslocamento multidirecional', 'Sequ')) {
     Require-UiTextWithScroll $adb $DeviceId $text
   }
+  Scroll-UiListToTop $adb $DeviceId
   foreach ($text in @('Deslocar o corpo', 'Produzir repetidamente', 'Repetir regularmente', 'Deslocar-se repetidamente', 'Encadear v')) {
     Require-UiTextWithScroll $adb $DeviceId $text
   }
   if (Wait-UiNode $adb $DeviceId 'Upgrade v1.1.2 historical exercise' '' 3) {
     throw 'LEGACY_VISIBLE: the representative legacy exercise is visible in the canonical selector.'
   }
+  Scroll-UiListToTop $adb $DeviceId
   $concept = Find-UiNodeWithScroll $adb $DeviceId 'Locomo'
   if (-not $concept) { throw 'Cyclic locomotion was not visible after upgrade.' }
   Invoke-UiTap $adb $DeviceId $concept
