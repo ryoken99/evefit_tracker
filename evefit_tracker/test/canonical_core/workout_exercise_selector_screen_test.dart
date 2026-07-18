@@ -12,6 +12,8 @@ void main() {
       find.byKey(ValueKey('workout_exercise_selector_capability_$id'));
   Finder usageContext(String id) =>
       find.byKey(ValueKey('workout_exercise_selector_context_$id'));
+  Finder concept(String id) =>
+      find.byKey(ValueKey('workout_exercise_selector_concept_$id'));
 
   Future<HierarchicalCanonicalSearchController> pumpScreen(
     WidgetTester tester, {
@@ -31,7 +33,10 @@ void main() {
           ).copyWith(textScaler: TextScaler.linear(textScale)),
           child: child!,
         ),
-        home: WorkoutExerciseSelectorScreen(controller: controller),
+        home: WorkoutExerciseSelectorScreen(
+          key: UniqueKey(),
+          controller: controller,
+        ),
       ),
     );
     await tester.pumpAndSettle();
@@ -109,55 +114,115 @@ void main() {
     }
   });
 
-  testWidgets('context and capability compose query then stop at concepts', (
+  testWidgets('cardio concept order is identical in all five contexts', (
     tester,
   ) async {
-    final controller = await pumpScreen(tester);
+    const expectedIds = [
+      'cyclic_locomotion',
+      'cyclic_propulsion',
+      'repetitive_rhythmic_movement',
+      'repeated_multidirectional_displacement',
+      'repeated_motor_sequence',
+    ];
 
-    await tester.tap(usageContext('warmup'));
-    await tester.pumpAndSettle();
-    expect(controller.currentQuery.criteria, const [
-      CanonicalSearchCriterion(
-        axis: CanonicalPillarAxis.usageContext,
-        valueId: 'warmup',
-      ),
-    ]);
+    for (final contextDefinition in CanonicalRegistry.approvedUsageContexts) {
+      await pumpScreen(tester);
+      await tester.tap(usageContext(contextDefinition.id));
+      await tester.pumpAndSettle();
+      await tester.tap(capability('cardio_conditioning'));
+      await tester.pumpAndSettle();
 
-    await tester.tap(capability('cardio_conditioning'));
-    await tester.pumpAndSettle();
-
-    expect(controller.currentQuery.criteria, const [
-      CanonicalSearchCriterion(
-        axis: CanonicalPillarAxis.usageContext,
-        valueId: 'warmup',
-      ),
-      CanonicalSearchCriterion(
-        axis: CanonicalPillarAxis.capabilityRoot,
-        valueId: 'cardio_conditioning',
-      ),
-    ]);
-    expect(
-      find.byKey(const ValueKey('workout_exercise_selector_concept_empty')),
-      findsOneWidget,
-    );
-    expect(
-      find.text('Ainda não existem conceitos de treino aprovados.'),
-      findsOneWidget,
-    );
-    expect(
-      find.text(
-        'Os conceitos compatíveis com esta seleção serão adicionados e validados progressivamente.',
-      ),
-      findsOneWidget,
-    );
-    expect(find.text('Aquecimento'), findsWidgets);
-    expect(find.text('Cardio e condicionamento'), findsWidgets);
-    expect(find.textContaining('Aquecimento\n> Cardio'), findsOneWidget);
-    expect(find.text('Intenção'), findsNothing);
-    expect(find.text('Resultados: 0'), findsNothing);
-    expect(find.text('Exercício recomendado'), findsNothing);
-    expect(find.text('Sem máquinas'), findsNothing);
+      final renderedIds = find
+          .byWidgetPredicate(
+            (widget) =>
+                widget.key is ValueKey<String> &&
+                (widget.key! as ValueKey<String>).value.startsWith(
+                  'workout_exercise_selector_concept_',
+                ),
+          )
+          .evaluate()
+          .map(
+            (element) => (element.widget.key! as ValueKey<String>).value
+                .replaceFirst('workout_exercise_selector_concept_', ''),
+          )
+          .toList(growable: false);
+      expect(renderedIds, expectedIds);
+    }
   });
+
+  testWidgets(
+    'context, capability and concept compose query then stop at intentions',
+    (tester) async {
+      final controller = await pumpScreen(tester);
+
+      await tester.tap(usageContext('warmup'));
+      await tester.pumpAndSettle();
+      expect(controller.currentQuery.criteria, const [
+        CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.usageContext,
+          valueId: 'warmup',
+        ),
+      ]);
+
+      await tester.tap(capability('cardio_conditioning'));
+      await tester.pumpAndSettle();
+
+      expect(controller.currentQuery.criteria, const [
+        CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.usageContext,
+          valueId: 'warmup',
+        ),
+        CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.capabilityRoot,
+          valueId: 'cardio_conditioning',
+        ),
+      ]);
+      expect(
+        find.text('Que tipo de trabalho funcional procuras?'),
+        findsOneWidget,
+      );
+      expect(concept('cyclic_locomotion'), findsOneWidget);
+
+      await tester.tap(concept('cyclic_locomotion'));
+      await tester.pumpAndSettle();
+
+      expect(controller.currentQuery.criteria, const [
+        CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.usageContext,
+          valueId: 'warmup',
+        ),
+        CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.capabilityRoot,
+          valueId: 'cardio_conditioning',
+        ),
+        CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.trainingConcept,
+          valueId: 'cyclic_locomotion',
+        ),
+      ]);
+      expect(
+        find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
+        findsOneWidget,
+      );
+      expect(
+        find.text('Ainda não existem intenções de treino aprovadas.'),
+        findsOneWidget,
+      );
+      expect(
+        find.text(
+          'As intenções compatíveis com esta seleção serão adicionadas e validadas progressivamente.',
+        ),
+        findsOneWidget,
+      );
+      expect(find.text('Aquecimento'), findsWidgets);
+      expect(find.text('Cardio e condicionamento'), findsWidgets);
+      expect(find.textContaining('Aquecimento\n> Cardio'), findsOneWidget);
+      expect(find.textContaining('> Locomoção cíclica'), findsOneWidget);
+      expect(find.text('Resultados: 0'), findsNothing);
+      expect(find.text('Exercício recomendado'), findsNothing);
+      expect(find.text('Sem máquinas'), findsNothing);
+    },
+  );
 
   testWidgets('back preserves choices and changing context clears capability', (
     tester,
@@ -167,6 +232,16 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(capability('cardio_conditioning'));
     await tester.pumpAndSettle();
+    await tester.tap(concept('cyclic_locomotion'));
+    await tester.pumpAndSettle();
+
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+    expect(
+      find.text('Que tipo de trabalho funcional procuras?'),
+      findsOneWidget,
+    );
+    expect(controller.path.trainingConceptId, 'cyclic_locomotion');
 
     await tester.binding.handlePopRoute();
     await tester.pumpAndSettle();
@@ -206,6 +281,28 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(capability('muscular_capacity'));
     await tester.pumpAndSettle();
+    await tester.tap(concept('overcome_resistance'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(
+      find.byKey(
+        const ValueKey('workout_exercise_selector_breadcrumb_concept'),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(concept('overcome_resistance'), findsOneWidget);
+
+    await tester.tap(
+      find.byKey(
+        const ValueKey('workout_exercise_selector_breadcrumb_capability'),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(capability('mobility'));
+    await tester.pumpAndSettle();
+    expect(controller.path.capabilityRootId, 'mobility');
+    expect(controller.path.trainingConceptId, isNull);
+    expect(controller.currentQuery.criteria, hasLength(2));
 
     await tester.tap(
       find.byKey(
@@ -254,6 +351,18 @@ void main() {
       capabilityScroll,
     );
     expect(capability('breathing_regulation'), findsOneWidget);
+    await tester.tap(capability('breathing_regulation'));
+    await tester.pumpAndSettle();
+    final conceptScroll = find.descendant(
+      of: find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      matching: find.byType(Scrollable),
+    );
+    await _bringIntoPhoneViewport(
+      tester,
+      concept('interoceptive_monitoring_adjustment'),
+      conceptScroll,
+    );
+    expect(concept('interoceptive_monitoring_adjustment'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }
