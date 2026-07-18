@@ -288,13 +288,6 @@ Finder _profileOptionFinder() => find.byWidgetPredicate(
   description: 'profile option',
 );
 
-Finder _cardsWithPrefix(String prefix) => find.byWidgetPredicate(
-  (widget) =>
-      widget.key is ValueKey<String> &&
-      (widget.key! as ValueKey<String>).value.startsWith(prefix),
-  description: 'widgets with key prefix $prefix',
-);
-
 Future<void> _scrollToKey(WidgetTester tester, ValueKey<String> key) async {
   final target = find.byKey(key);
   for (var attempt = 0; attempt < 18; attempt++) {
