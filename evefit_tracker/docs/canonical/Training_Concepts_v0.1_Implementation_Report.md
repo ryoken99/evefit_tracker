@@ -175,11 +175,17 @@ Current evidence on the release branch:
 - Version metadata tests: 2 passed.
 - Fast Gate: passed in 11.830 seconds wall time (9.108 seconds reported by the gate).
 - Changed-file format and analyze: passed through the Fast Gate.
-- PR Gate, Android, CI, upgrade, APK metadata, signature and release evidence: pending their required execution stages.
+- PR Gate: passed on `79d0b072fd47d1115676477c5757820fddd91e9f` in 306.900 seconds wall time (305.960 seconds reported by the gate).
+- PR Gate test shards: 641 tests passed (`228 + 134 + 141 + 138`); manifest validation passed.
+- Android smoke inside the PR Gate: passed in 33.518 seconds. The focused rerun passed in 31.512 seconds and recorded 5 contexts, 8 capabilities, concept navigation and return to the workout.
+- Android smoke artifacts: `test_artifacts/test_ci_performance/android_smoke/2026-07-18T203555Z/` (ignored by Git).
+- The smoke now validates virtualized card lists by scrolling through stable IDs. The Android command helper waits for the requested command without waiting for a long-lived Gradle daemon descendant.
+- CI, upgrade, APK metadata, signature and release evidence remain pending their required execution stages.
 
 ## Risks, limitations and rollback
 
-- The registry, compatibility provider, selector and focused tests are integrated on the release branch; remote CI and post-merge Release Gate evidence remain pending.
+- The registry, compatibility provider, selector, focused tests and local PR Gate are integrated on the release branch; remote CI and post-merge Release Gate evidence remain pending.
+- The measured local PR Gate was 5.960 seconds above the five-minute warm target; all required commands passed and CI will measure the parallel hosted path independently.
 - Tag, PR merge SHA, release URL, APK path, APK hash and certificate evidence remain pending.
 - Rollback is a revert of the release commits; no database rollback is required because this release makes no schema or migration change.
 - Publication is allowed only after the consolidated gates pass.

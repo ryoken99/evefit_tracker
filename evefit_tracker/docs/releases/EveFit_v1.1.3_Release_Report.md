@@ -45,7 +45,7 @@ Fields still marked pending require remote or post-merge evidence and must be co
 | Main SHA after PR #15 | `6a7dc2e579c927f24c3f04801b86b710d973eb30` |
 | v1.1.3 branch | `release/v1.1.3-canonical-training-concepts` |
 | v1.1.3 PR | PENDING DO SOL |
-| Final PR head | PENDING DO SOL |
+| Final PR head | `79d0b072fd47d1115676477c5757820fddd91e9f` before the evidence-only report update |
 | v1.1.3 merge SHA | PENDING DO SOL |
 | Final main SHA | PENDING DO SOL |
 | Tag and tag SHA | PENDING; no tag created |
@@ -54,15 +54,15 @@ Fields still marked pending require remote or post-merge evidence and must be co
 | APK name/path/size/SHA-256 | PENDING DO SOL |
 | Signature scheme and certificate SHA-256 | PENDING DO SOL |
 | Fast Gate and duration | PASS; 11.830 s wall, 9.108 s reported by gate |
-| PR Gate and duration | PENDING EXECUTION |
+| PR Gate and duration | PASS; 306.900 s wall, 305.960 s reported by gate |
 | Quality gate and duration | PENDING CI |
-| Shard count/duration | PENDING CI |
-| Android smoke | PENDING EXECUTION |
+| Shard count/duration | PASS locally; 4 shards, 641 tests (`228 + 134 + 141 + 138`) |
+| Android smoke | PASS; 33.518 s in PR Gate; focused rerun 31.512 s |
 | Full-app | PENDING EXECUTION |
 | Upgrade 1.1.2+4 -> 1.1.3+5 | PENDING EXECUTION |
 | Release build | PENDING EXECUTION |
 | Focused tests | PASS; 39 canonical/Clean Base tests plus 2 version metadata tests |
-| Analyze | PASS; changed-file analysis included in Fast Gate |
+| Analyze | PASS; no issues in PR Gate |
 | Final git status | PENDING DO SOL |
 
 ## Final audit checklist
