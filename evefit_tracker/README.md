@@ -1,4 +1,4 @@
-# EveFit Tracker v1.1.2
+# EveFit Tracker v1.1.3
 
 Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados corporais, fotos de progresso e objetivos.
 
@@ -10,9 +10,11 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - Formulario Dados para registar balanca, composicao corporal, medidas, dobras cutaneas e notas.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- Versão atual: v1.1.2 - Pesquisa Canónica Hierárquica.
-- Pesquisa canónica hierárquica com 5 contextos explícitos, 8 capacidades e 13 valores ativos.
-- Catálogo canónico vazio; nenhum exercício novo nesta versão.
+- Versão declarada: v1.1.3 - Conceitos Canónicos de Treino.
+- Pesquisa canónica hierárquica com 5 contextos explícitos, 8 capacidades, 35 conceitos globais e 40 compatibilidades ordenadas.
+- Catálogo canónico da v1.1.3: 35 conceitos globais, 40 compatibilidades ordenadas e zero exercícios.
+- Zero intenções, zero atributos oficiais e zero subníveis nesta versão.
+- A mesma lista de conceitos por capacidade é reutilizada nos cinco contextos.
 - Catálogo legacy fora do runtime, com fontes preservadas em arquivo histórico.
 - Aba Medidas renomeada para Dados.
 - Dados de balanca e composicao corporal expandidos.
@@ -41,16 +43,20 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - SQLite com `sqflite`
 - `path_provider`, `image_picker`, `fl_chart`, `intl`, `csv`
 
-## Validacao feita
+## Validacao da v1.1.3
 
 ```powershell
-flutter analyze
+flutter pub get
+dart format --set-exit-if-changed .
+flutter analyze --no-fatal-infos
 flutter test
 flutter build apk --release
 ```
 
-O versionamento oficial desta release é `1.1.2+4`: `1.1.2` é a versão pública
-e `4` é o versionCode Android monotónico.
+Os testes focados e o Fast Gate passam na branch de release. PR Gate, Android,
+upgrade e Release Gate são executados nas etapas próprias antes da publicação.
+O versionamento oficial declarado é `1.1.3+5`: `1.1.3` é a versão pública e `5`
+é o versionCode Android monotónico.
 
 ## Package Android
 

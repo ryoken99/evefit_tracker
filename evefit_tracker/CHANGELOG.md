@@ -1,3 +1,15 @@
+# EveFit v1.1.3 - Conceitos Canónicos de Treino
+
+- 35 conceitos globais únicos e 40 compatibilidades ordenadas por capacidade.
+- Oito capacidades cobertas por conceitos globais reutilizáveis nos cinco contextos.
+- Fluxo canónico Contexto → Capacidade → Conceito → estado vazio de Intenção.
+- Mantidos zero intenções, zero atributos oficiais, zero exercícios e zero subníveis.
+- Schema e migrations inalterados; dados pessoais e históricos preservados por contrato.
+- Pipeline PR15 integrado; testes focados e Fast Gate passaram, mantendo CI, Android, upgrade, build, assinatura e release nas respetivas etapas obrigatórias.
+- Atualizado o versionamento Android para `1.1.3+5`.
+
+Esta entrada documenta o alvo canónico da v1.1.3. Não afirma que a release foi publicada nem que os gates operacionais foram executados.
+
 # EveFit v1.1.2 — Pesquisa Canónica Hierárquica
 
 - Adicionada pesquisa hierárquica de exercícios pelo fluxo Contexto → Capacidade → Conceito → Intenção → Exercícios.
