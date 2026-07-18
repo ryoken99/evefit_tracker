@@ -380,6 +380,16 @@ void main() {
     expect(runner, isNot(contains(r'$logcatProcess.WaitForExit()')));
   });
 
+  test('Android command runner does not wait for detached descendants', () {
+    final helpers = File(
+      'tool/evefit_android_test_helpers.ps1',
+    ).readAsStringSync();
+
+    expect(helpers, isNot(contains('-PassThru -Wait -WindowStyle Hidden')));
+    expect(helpers, contains(r'$process.WaitForExit()'));
+    expect(helpers, contains(r'$process.Refresh()'));
+  });
+
   test('policy failures propagate without a runnable command', () {
     final plan = composePlan(
       mode: GateMode.fast,

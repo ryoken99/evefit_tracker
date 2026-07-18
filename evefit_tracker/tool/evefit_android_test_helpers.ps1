@@ -164,7 +164,21 @@ function Invoke-EveFitCommand(
   [string]$StandardOutputPath,
   [string]$StandardErrorPath
 ) {
-  $process = Start-Process -FilePath $FilePath -ArgumentList $ArgumentList -WorkingDirectory $WorkingDirectory -RedirectStandardOutput $StandardOutputPath -RedirectStandardError $StandardErrorPath -PassThru -Wait -WindowStyle Hidden
+  $arguments = @($ArgumentList)
+  $isCmd = [System.IO.Path]::GetFileName($FilePath) -ieq 'cmd.exe'
+  if (-not $isCmd) {
+    throw "Invoke-EveFitCommand currently requires cmd.exe, found '$FilePath'."
+  }
+  $commandIndex = [Array]::IndexOf($arguments, '/c') + 1
+  if ($commandIndex -le 0 -or $commandIndex -ge $arguments.Count) {
+    throw 'Invoke-EveFitCommand requires a cmd.exe /c command.'
+  }
+  $arguments[$commandIndex] = '{0} 1> "{1}" 2> "{2}"' -f $arguments[$commandIndex], $StandardOutputPath, $StandardErrorPath
+  $process = Start-Process -FilePath $FilePath -ArgumentList $arguments -WorkingDirectory $WorkingDirectory -PassThru -WindowStyle Hidden
+  # Wait only for the requested command, not long-lived descendants such as
+  # the Gradle daemon that may outlive a completed Flutter invocation.
+  $process.WaitForExit()
+  $process.Refresh()
   $exitCode = $process.ExitCode
   if ($null -eq $exitCode) {
     throw "Command '$FilePath' completed without an exit code."
