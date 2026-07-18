@@ -226,6 +226,23 @@ void main() {
     expect(secondReset, lessThan(selection));
   });
 
+  test('v1.1.3 upgrade harness executes its database helper from a file', () {
+    final runner = File(
+      'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+    ).readAsStringSync();
+
+    expect(runner, contains("'database_helper.py'"));
+    expect(
+      runner,
+      contains(r'& $python $databaseHelperPath prepare $database'),
+    );
+    expect(
+      runner,
+      contains(r'& $python $databaseHelperPath verify $afterDatabase'),
+    );
+    expect(runner, isNot(contains(r'& $python -c $databaseHelper')));
+  });
+
   test(
     'requested release scripts are explicit and fail closed when unavailable',
     () {
