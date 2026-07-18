@@ -43,6 +43,7 @@ void main() {
         final result = classifyChangedFiles(const [
           ChangedFile('integration_test/workout_flow_test.dart'),
           ChangedFile('tool/run_android_smoke.ps1'),
+          ChangedFile('tool/evefit_android_test_helpers.ps1'),
         ]);
         expect(result.failsClosed, isFalse);
         expect(result.classes, equals(<ChangeClass>{ChangeClass.uiNavigation}));
