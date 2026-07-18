@@ -25,38 +25,213 @@ void main() {
     });
 
     test('different catalog descriptions are not near-duplicates', () {
-      final nearDuplicates = <String>[];
-      final entries = ExerciseCatalogContextService.entries;
-
-      for (var i = 0; i < entries.length; i++) {
-        for (var j = i + 1; j < entries.length; j++) {
-          final a = entries[i];
-          final b = entries[j];
-          if (a.catalogEntryKey == b.catalogEntryKey) continue;
-          if (_normalized(a.name) == _normalized(b.name)) continue;
-
-          final similarity = _orderedWordSimilarity(_allText(a), _allText(b));
-          final sameFamily = _movementFamily(a.name) == _movementFamily(b.name);
-          // v0.9.1: os textos passaram a ser curtos e canónicos (objetivo de
-          // 1-2 frases e 4-7 passos), por isso variações da mesma família
-          // partilham legitimamente a base da execução e diferem no passo de
-          // variação. Duplicados exatos continuam proibidos em
-          // test/v091_content_review_test.dart.
-          final limit = sameFamily ? 0.93 : 0.80;
-          if (similarity > limit) {
-            nearDuplicates.add(
-              '${a.id} ${a.name} / ${b.id} ${b.name}: '
-              '${similarity.toStringAsFixed(2)} > ${limit.toStringAsFixed(2)}',
-            );
-          }
-        }
-      }
+      final entries = ExerciseCatalogContextService.entries
+          .map(_NearDuplicateAuditEntry.fromCatalog)
+          .toList(growable: false);
+      final nearDuplicates = _optimizedNearDuplicateOffenders(entries);
 
       expect(
         nearDuplicates,
         isEmpty,
         reason: nearDuplicates.take(30).join('\n'),
       );
+    });
+
+    test('near-duplicate candidate index matches the reference audit', () {
+      final shortShared = _wordRange('short', 39);
+      final exactForty = _wordRange('exact', 40);
+      final exactDuplicate = _wordRange('duplicate', 45);
+      final sameFamilyShared = _wordRange('samefamily', 40);
+      final differentFamilyShared = _wordRange('differentfamily', 41);
+      final unicodeShared = <String>[
+        '\u00c1rvore',
+        ..._wordRange('unicode', 39),
+      ];
+
+      final cases = <List<_NearDuplicateAuditEntry>>[
+        const [],
+        [_auditEntry(id: 'one', name: 'One', text: 'only one entry')],
+        [
+          _auditEntry(
+            id: 'short-a',
+            name: 'Short A',
+            text: shortShared.join(' '),
+          ),
+          _auditEntry(
+            id: 'short-b',
+            name: 'Short B',
+            text: shortShared.join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'same-key-a',
+            name: 'Same key A',
+            catalogEntryKey: 'shared-key',
+            text: exactDuplicate.join(' '),
+          ),
+          _auditEntry(
+            id: 'same-key-b',
+            name: 'Same key B',
+            catalogEntryKey: 'shared-key',
+            text: exactDuplicate.join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'same-name-a',
+            name: 'Curl \u00c1gil',
+            text: exactDuplicate.join(' '),
+          ),
+          _auditEntry(
+            id: 'same-name-b',
+            name: 'curl agil',
+            text: exactDuplicate.join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'duplicate-a',
+            name: 'Curl exact one',
+            text: exactDuplicate.join(' '),
+          ),
+          _auditEntry(
+            id: 'duplicate-b',
+            name: 'Curl exact two',
+            text: exactDuplicate.join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'same-family-a',
+            name: 'Curl variation one',
+            text: [...sameFamilyShared, 'leftalpha', 'leftbeta'].join(' '),
+          ),
+          _auditEntry(
+            id: 'same-family-b',
+            name: 'Curl variation two',
+            text: [...sameFamilyShared, 'rightalpha', 'rightbeta'].join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'different-family-a',
+            name: 'Remo variation',
+            text: [
+              ...differentFamilyShared,
+              ..._wordRange('pullend', 9),
+            ].join(' '),
+          ),
+          _auditEntry(
+            id: 'different-family-b',
+            name: 'Agachamento variation',
+            text: [
+              ...differentFamilyShared,
+              ..._wordRange('lowerend', 9),
+            ].join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'unicode-a',
+            name: 'Unicode one',
+            text: unicodeShared.join(' '),
+          ),
+          _auditEntry(
+            id: 'unicode-b',
+            name: 'Unicode two',
+            text: ['arvore', ..._wordRange('unicode', 39)].join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'exact-forty-a',
+            name: 'Forty one',
+            text: exactForty.join(' '),
+          ),
+          _auditEntry(
+            id: 'exact-forty-b',
+            name: 'Forty two',
+            text: exactForty.join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'long-a',
+            name: 'Long one',
+            text: [...exactForty, 'morealpha'].join(' '),
+          ),
+          _auditEntry(
+            id: 'long-b',
+            name: 'Long two',
+            text: [...exactForty, 'morebeta', 'moregamma'].join(' '),
+          ),
+        ],
+        [
+          _auditEntry(
+            id: 'unrelated-a',
+            name: 'Unrelated one',
+            text: _wordRange('leftside', 45).join(' '),
+          ),
+          _auditEntry(
+            id: 'unrelated-b',
+            name: 'Unrelated two',
+            text: _wordRange('rightside', 45).join(' '),
+          ),
+        ],
+      ];
+      const expectedOffenderCounts = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0];
+
+      for (var index = 0; index < cases.length; index++) {
+        final entries = cases[index];
+        expect(
+          _optimizedNearDuplicateOffenders(entries),
+          hasLength(expectedOffenderCounts[index]),
+        );
+        _expectNearDuplicateAuditEquivalent(entries);
+      }
+    });
+
+    test('near-duplicate offender order stays deterministic', () {
+      final sameFamilyShared = _wordRange('orderedfamily', 40);
+      final differentFamilyShared = _wordRange('orderedother', 41);
+      final entries = [
+        _auditEntry(
+          id: 'first',
+          name: 'Curl ordered one',
+          text: [...sameFamilyShared, 'firstalpha', 'firstbeta'].join(' '),
+        ),
+        _auditEntry(
+          id: 'second',
+          name: 'Curl ordered two',
+          text: [...sameFamilyShared, 'secondalpha', 'secondbeta'].join(' '),
+        ),
+        _auditEntry(
+          id: 'third',
+          name: 'Remo ordered',
+          text: [
+            ...differentFamilyShared,
+            ..._wordRange('thirdend', 9),
+          ].join(' '),
+        ),
+        _auditEntry(
+          id: 'fourth',
+          name: 'Agachamento ordered',
+          text: [
+            ...differentFamilyShared,
+            ..._wordRange('fourthend', 9),
+          ].join(' '),
+        ),
+      ];
+
+      expect(
+        _optimizedNearDuplicateOffenders(entries),
+        equals([
+          'first Curl ordered one / second Curl ordered two: 0.95 > 0.93',
+          'third Remo ordered / fourth Agachamento ordered: 0.82 > 0.80',
+        ]),
+      );
+      _expectNearDuplicateAuditEquivalent(entries.reversed.toList());
     });
 
     test('farmer walk and static dumbbell hold teach different actions', () {
@@ -383,6 +558,215 @@ String _allText(ExerciseCatalogEntry entry) =>
     '${entry.details.description} ${entry.details.executionSteps} '
     '${entry.details.commonMistakes} ${entry.details.safetyNotes}';
 
+const _minimumContiguousRun = 40;
+
+class _NearDuplicateAuditEntry {
+  factory _NearDuplicateAuditEntry({
+    required String id,
+    required String name,
+    required String catalogEntryKey,
+    required String text,
+  }) {
+    final normalizedName = _normalized(name);
+    return _NearDuplicateAuditEntry._(
+      id: id,
+      name: name,
+      catalogEntryKey: catalogEntryKey,
+      text: text,
+      normalizedName: normalizedName,
+      movementFamily: _movementFamilyFromNormalized(normalizedName),
+      words: List<String>.unmodifiable(_words(text)),
+    );
+  }
+
+  factory _NearDuplicateAuditEntry.fromCatalog(ExerciseCatalogEntry entry) {
+    return _NearDuplicateAuditEntry(
+      id: entry.id,
+      name: entry.name,
+      catalogEntryKey: entry.catalogEntryKey,
+      text: _allText(entry),
+    );
+  }
+
+  const _NearDuplicateAuditEntry._({
+    required this.id,
+    required this.name,
+    required this.catalogEntryKey,
+    required this.text,
+    required this.normalizedName,
+    required this.movementFamily,
+    required this.words,
+  });
+
+  final String id;
+  final String name;
+  final String catalogEntryKey;
+  final String text;
+  final String normalizedName;
+  final String movementFamily;
+  final List<String> words;
+}
+
+class _EntryPair {
+  const _EntryPair(this.first, this.second);
+
+  final int first;
+  final int second;
+}
+
+List<String> _optimizedNearDuplicateOffenders(
+  List<_NearDuplicateAuditEntry> entries,
+) {
+  final offenders = <String>[];
+  for (final pair in _candidatePairsWithNonzeroSimilarity(entries)) {
+    final a = entries[pair.first];
+    final b = entries[pair.second];
+    if (!_isEligibleNearDuplicatePair(a, b)) continue;
+
+    _recordNearDuplicateOffender(
+      offenders,
+      a,
+      b,
+      _orderedWordSimilarityForWords(a.words, b.words),
+      sameFamily: a.movementFamily == b.movementFamily,
+    );
+  }
+  return offenders;
+}
+
+List<String> _referenceNearDuplicateOffenders(
+  List<_NearDuplicateAuditEntry> entries,
+) {
+  final offenders = <String>[];
+  for (var i = 0; i < entries.length; i++) {
+    for (var j = i + 1; j < entries.length; j++) {
+      final a = entries[i];
+      final b = entries[j];
+      if (!_isEligibleNearDuplicatePair(a, b)) continue;
+
+      _recordNearDuplicateOffender(
+        offenders,
+        a,
+        b,
+        _orderedWordSimilarity(a.text, b.text),
+        sameFamily: _movementFamily(a.name) == _movementFamily(b.name),
+      );
+    }
+  }
+  return offenders;
+}
+
+bool _isEligibleNearDuplicatePair(
+  _NearDuplicateAuditEntry a,
+  _NearDuplicateAuditEntry b,
+) {
+  return a.catalogEntryKey != b.catalogEntryKey &&
+      a.normalizedName != b.normalizedName;
+}
+
+void _recordNearDuplicateOffender(
+  List<String> offenders,
+  _NearDuplicateAuditEntry a,
+  _NearDuplicateAuditEntry b,
+  double similarity, {
+  required bool sameFamily,
+}) {
+  // This keeps the original thresholds and offender text unchanged.
+  final limit = sameFamily ? 0.93 : 0.80;
+  if (similarity > limit) {
+    offenders.add(
+      '${a.id} ${a.name} / ${b.id} ${b.name}: '
+      '${similarity.toStringAsFixed(2)} > ${limit.toStringAsFixed(2)}',
+    );
+  }
+}
+
+List<_EntryPair> _candidatePairsWithNonzeroSimilarity(
+  List<_NearDuplicateAuditEntry> entries,
+) {
+  final entryCount = entries.length;
+  if (entryCount < 2) return const [];
+
+  final entriesByWindow = <String, List<int>>{};
+  final pairIds = <int>{};
+  for (var index = 0; index < entryCount; index++) {
+    final words = entries[index].words;
+    if (words.length < _minimumContiguousRun) continue;
+
+    final windowKeys = <String>{};
+    for (
+      var start = 0;
+      start <= words.length - _minimumContiguousRun;
+      start++
+    ) {
+      // _words emits only a-z0-9 tokens, so the separator cannot be a token.
+      final key = words
+          .sublist(start, start + _minimumContiguousRun)
+          .join('\u0000');
+      if (!windowKeys.add(key)) continue;
+
+      final previousEntries = entriesByWindow[key];
+      if (previousEntries != null) {
+        for (final previousIndex in previousEntries) {
+          pairIds.add(previousIndex * entryCount + index);
+        }
+      }
+      entriesByWindow.putIfAbsent(key, () => <int>[]).add(index);
+    }
+  }
+
+  final orderedPairIds = pairIds.toList()..sort();
+  return orderedPairIds
+      .map((pairId) => _EntryPair(pairId ~/ entryCount, pairId % entryCount))
+      .toList(growable: false);
+}
+
+void _expectNearDuplicateAuditEquivalent(
+  List<_NearDuplicateAuditEntry> entries,
+) {
+  expect(
+    _optimizedNearDuplicateOffenders(entries),
+    equals(_referenceNearDuplicateOffenders(entries)),
+  );
+  expect(_candidatePairIds(entries), equals(_referenceNonzeroPairIds(entries)));
+}
+
+List<int> _candidatePairIds(List<_NearDuplicateAuditEntry> entries) {
+  return _candidatePairsWithNonzeroSimilarity(entries)
+      .map((pair) => pair.first * entries.length + pair.second)
+      .toList(growable: false);
+}
+
+List<int> _referenceNonzeroPairIds(List<_NearDuplicateAuditEntry> entries) {
+  final pairIds = <int>[];
+  for (var i = 0; i < entries.length; i++) {
+    for (var j = i + 1; j < entries.length; j++) {
+      if (_orderedWordSimilarity(entries[i].text, entries[j].text) > 0) {
+        pairIds.add(i * entries.length + j);
+      }
+    }
+  }
+  return pairIds;
+}
+
+_NearDuplicateAuditEntry _auditEntry({
+  required String id,
+  required String name,
+  required String text,
+  String? catalogEntryKey,
+}) {
+  return _NearDuplicateAuditEntry(
+    id: id,
+    name: name,
+    catalogEntryKey: catalogEntryKey ?? 'key-$id',
+    text: text,
+  );
+}
+
+List<String> _wordRange(String prefix, int count) {
+  return List<String>.generate(count, (index) => '$prefix$index');
+}
+
 void _expectPairBelowLimit(String leftName, String rightName, double limit) {
   final left = _entryByName(leftName);
   final right = _entryByName(rightName);
@@ -401,9 +785,10 @@ bool _has(String value, String needle) => WorkoutTaxonomy.normalize(
 
 String _normalized(String value) => WorkoutTaxonomy.normalize(value);
 
-double _orderedWordSimilarity(String left, String right) {
-  final a = _words(left);
-  final b = _words(right);
+double _orderedWordSimilarity(String left, String right) =>
+    _orderedWordSimilarityForWords(_words(left), _words(right));
+
+double _orderedWordSimilarityForWords(List<String> a, List<String> b) {
   if (a.isEmpty || b.isEmpty) return 0;
   final previous = List<int>.filled(b.length + 1, 0);
   final current = List<int>.filled(b.length + 1, 0);
@@ -420,7 +805,7 @@ double _orderedWordSimilarity(String left, String right) {
       current[j] = 0;
     }
   }
-  if (longestContiguousRun < 40) return 0;
+  if (longestContiguousRun < _minimumContiguousRun) return 0;
   return longestContiguousRun / (a.length < b.length ? a.length : b.length);
 }
 
@@ -428,8 +813,10 @@ List<String> _words(String value) => _normalized(
   value,
 ).split(RegExp(r'[^a-z0-9]+')).where((word) => word.length > 3).toList();
 
-String _movementFamily(String name) {
-  final n = _normalized(name);
+String _movementFamily(String name) =>
+    _movementFamilyFromNormalized(_normalized(name));
+
+String _movementFamilyFromNormalized(String n) {
   if (n.contains('curl')) return 'curl';
   if (n.contains('triceps') ||
       n.contains('extensao francesa') ||
