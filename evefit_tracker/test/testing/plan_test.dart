@@ -103,7 +103,7 @@ void main() {
     addTearDown(() => root.deleteSync(recursive: true));
     Directory('${root.path}${Platform.pathSeparator}tool').createSync();
     File(
-      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v112_hierarchical_upgrade_test.ps1',
+      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v113_canonical_training_concepts_upgrade_test.ps1',
     ).writeAsStringSync('');
 
     final missing = composePlan(
@@ -180,7 +180,7 @@ void main() {
     );
     expect(upgrade.arguments, [
       '-File',
-      'tool/run_v112_hierarchical_upgrade_test.ps1',
+      'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
       '-BaselineApk',
       baseline.absolute.path,
       '-CurrentApk',
@@ -235,7 +235,7 @@ void main() {
       );
       expect(
         allUnavailable.reason,
-        contains('tool/run_v112_hierarchical_upgrade_test.ps1'),
+        contains('tool/run_v113_canonical_training_concepts_upgrade_test.ps1'),
       );
 
       Directory('${root.path}${Platform.pathSeparator}tool').createSync();
