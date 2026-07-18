@@ -36,7 +36,13 @@ class RegistryCanonicalSelectionCompatibilityProvider
   @override
   List<CanonicalPillarDefinition> compatibleTrainingConcepts(
     CanonicalExerciseSelectionPath path,
-  ) => const [];
+  ) {
+    if (path.usageContextId == null) return const [];
+    final capabilityId = path.capabilityRootId;
+    return capabilityId == null
+        ? const []
+        : const CanonicalRegistry().trainingConceptsForCapability(capabilityId);
+  }
 
   @override
   List<CanonicalPillarDefinition> compatibleTrainingIntentions(

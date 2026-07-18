@@ -99,6 +99,7 @@
       "estimatedMilliseconds": 368575,
       "tests": [
         "test/canonical_core/canonical_core_contract_test.dart",
+        "test/canonical_core/training_concepts_contract_test.dart",
         "test/catalog/catalog_activation_expansion_v099b4a_test.dart",
         "test/catalog/catalog_activation_quality_v099b4a_test.dart",
         "test/catalog/catalog_axis_coverage_test.dart",

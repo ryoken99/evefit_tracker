@@ -35,16 +35,20 @@ class CanonicalValidator {
       'No training intentions are approved.',
     );
     _expect(
-      CanonicalRegistry.approvedTrainingConcepts.isEmpty,
-      'No training concepts are approved.',
+      CanonicalRegistry.approvedTrainingConcepts.length == 35,
+      'The canonical core requires exactly thirty-five training concepts.',
     );
     _expect(
       CanonicalRegistry.approvedAttributeDefinitions.isEmpty,
       'No canonical attributes are approved.',
     );
     _expect(
-      registry.approvedPillarValues.length == 13,
-      'The canonical core requires exactly thirteen approved values.',
+      CanonicalRegistry.capabilityConceptRelations.length == 40,
+      'The canonical core requires exactly forty capability-concept relations.',
+    );
+    _expect(
+      registry.approvedPillarValues.length == 48,
+      'The canonical core requires exactly forty-eight approved values.',
     );
 
     final axes = CanonicalRegistry.axisDefinitions;
@@ -102,6 +106,83 @@ class CanonicalValidator {
         orders.length == orders.toSet().length,
         'Display orders must be unique within ${axis.name}.',
       );
+    }
+
+    final capabilityRootIds = CanonicalRegistry.approvedCapabilityRoots
+        .map((value) => value.id)
+        .toSet();
+    final trainingConceptIds = CanonicalRegistry.approvedTrainingConcepts
+        .map((value) => value.id)
+        .toSet();
+    final relationPairs = CanonicalRegistry.capabilityConceptRelations
+        .map(
+          (relation) =>
+              '${relation.capabilityRootId}/${relation.trainingConceptId}',
+        )
+        .toSet();
+    _expect(
+      relationPairs.length ==
+          CanonicalRegistry.capabilityConceptRelations.length,
+      'Capability-concept relations must be unique.',
+    );
+    for (final relation in CanonicalRegistry.capabilityConceptRelations) {
+      _expect(
+        capabilityRootIds.contains(relation.capabilityRootId),
+        'Relation capability ${relation.capabilityRootId} is not approved.',
+      );
+      _expect(
+        trainingConceptIds.contains(relation.trainingConceptId),
+        'Relation concept ${relation.trainingConceptId} is not an approved training concept.',
+      );
+      _expect(
+        relation.displayOrder > 0,
+        'Capability-concept relations require a positive display order.',
+      );
+      _expect(
+        relation.schemaVersion == canonicalCoreSchemaVersion,
+        'Capability-concept relation has an unexpected schema version.',
+      );
+    }
+    final relatedConceptIds = CanonicalRegistry.capabilityConceptRelations
+        .map((relation) => relation.trainingConceptId)
+        .toSet();
+    _expect(
+      relatedConceptIds.length == trainingConceptIds.length &&
+          relatedConceptIds.containsAll(trainingConceptIds),
+      'Every approved training concept must be related to a capability.',
+    );
+    for (final capabilityRootId in capabilityRootIds) {
+      final relations = registry.relationsForCapability(capabilityRootId);
+      final expectedOrders = List.generate(
+        relations.length,
+        (index) => index + 1,
+      );
+      _expect(
+        relations.isNotEmpty,
+        'Every approved capability must have training concepts.',
+      );
+      _expect(
+        relations
+                .map((relation) => relation.displayOrder)
+                .toList()
+                .toString() ==
+            expectedOrders.toString(),
+        'Capability $capabilityRootId requires contiguous relation display orders.',
+      );
+      final concepts = registry.trainingConceptsForCapability(capabilityRootId);
+      _expect(
+        concepts.length == relations.length,
+        'Capability $capabilityRootId must resolve each relation.',
+      );
+      for (var index = 0; index < relations.length; index++) {
+        _expect(
+          identical(
+            concepts[index],
+            registry.valueById[relations[index].trainingConceptId],
+          ),
+          'Capability $capabilityRootId must resolve global concept identities.',
+        );
+      }
     }
   }
 
