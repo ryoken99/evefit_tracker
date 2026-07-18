@@ -29,6 +29,9 @@ void main() {
       final result = classifyChangedFiles(const [
         ChangedFile('lib/services/report_service.dart'),
         ChangedFile('lib/data/database/app_database.dart'),
+        ChangedFile(
+          'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+        ),
       ]);
       expect(result.classes, contains(ChangeClass.dartNonUi));
       expect(result.classes, contains(ChangeClass.databaseStartup));

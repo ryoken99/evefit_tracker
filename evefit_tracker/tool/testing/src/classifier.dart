@@ -54,6 +54,9 @@ ChangeClass _classifyPath(String path) {
       path.startsWith('integration_test/')) {
     return ChangeClass.uiNavigation;
   }
+  if (path == 'tool/run_v113_canonical_training_concepts_upgrade_test.ps1') {
+    return ChangeClass.databaseStartup;
+  }
   if (path.startsWith('lib/data/') ||
       path.contains('database') ||
       path.endsWith('main.dart') ||
