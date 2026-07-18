@@ -301,6 +301,8 @@ try {
   $runDirectory = Join-Path $repository "test_artifacts\release\v1.1.3\upgrade\$timestamp"
   $screenshots = Join-Path $runDirectory 'screenshots'
   New-Item -ItemType Directory -Force -Path $screenshots | Out-Null
+  $databaseHelperPath = Join-Path $runDirectory 'database_helper.py'
+  $databaseHelper | Set-Content -LiteralPath $databaseHelperPath -Encoding utf8
   & $adb -s $DeviceId uninstall $packageId 2>$null | Out-Null
   & $adb -s $DeviceId install $BaselineApk | Out-Null
   if ($LASTEXITCODE -ne 0) { throw 'Failed to install the v1.1.2 APK.' }
@@ -320,7 +322,7 @@ try {
   $group = (& $adb -s $DeviceId shell stat -c '%g' $databasePath).Trim()
   $database = Join-Path $runDirectory 'evefit_tracker_before.db'
   Copy-DatabaseFromDevice $adb $DeviceId $packageId $database
-  $beforeJson = & $python -c $databaseHelper prepare $database
+  $beforeJson = & $python $databaseHelperPath prepare $database
   if ($LASTEXITCODE -ne 0) { throw 'Failed to prepare the representative v1.1.2 database.' }
   $before = $beforeJson | ConvertFrom-Json
   Restore-DatabaseToDevice $adb $DeviceId $packageId $database $owner $group
@@ -406,7 +408,7 @@ try {
   & $adb -s $DeviceId shell am force-stop $packageId | Out-Null
   $afterDatabase = Join-Path $runDirectory 'evefit_tracker_after.db'
   Copy-DatabaseFromDevice $adb $DeviceId $packageId $afterDatabase
-  $afterJson = & $python -c $databaseHelper verify $afterDatabase
+  $afterJson = & $python $databaseHelperPath verify $afterDatabase
   if ($LASTEXITCODE -ne 0) { throw 'Failed to verify the upgraded v1.1.3 database.' }
   $after = $afterJson | ConvertFrom-Json
   foreach ($table in @('profiles', 'body_measurements', 'goals', 'workouts', 'workout_exercises', 'workout_sets', 'dashboard_widgets')) {
