@@ -124,6 +124,103 @@ void main() {
       }
       _marker('CONTEXT_COUNT=${_contextIds.length}');
 
+      await _scrollToKey(
+        tester,
+        const ValueKey('workout_exercise_selector_context_warmup'),
+      );
+      await tester.tap(
+        find.byKey(const ValueKey('workout_exercise_selector_context_warmup')),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+      );
+      expect(
+        _cardsWithPrefix('workout_exercise_selector_capability_'),
+        findsNWidgets(8),
+      );
+
+      await _scrollToKey(
+        tester,
+        const ValueKey(
+          'workout_exercise_selector_capability_cardio_conditioning',
+        ),
+      );
+      await tester.tap(
+        find.byKey(
+          const ValueKey(
+            'workout_exercise_selector_capability_cardio_conditioning',
+          ),
+        ),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      );
+      expect(
+        _cardsWithPrefix('workout_exercise_selector_concept_'),
+        findsNWidgets(5),
+      );
+      await tester.tap(
+        find.byKey(
+          const ValueKey('workout_exercise_selector_concept_cyclic_locomotion'),
+        ),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
+      );
+      expect(
+        find.text('Ainda não existem intenções de treino aprovadas.'),
+        findsOneWidget,
+      );
+      expect(find.text('Locomoção cíclica'), findsWidgets);
+
+      await tester.binding.handlePopRoute();
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      );
+      await tester.binding.handlePopRoute();
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+      );
+      await _scrollToKey(
+        tester,
+        const ValueKey('workout_exercise_selector_capability_mobility'),
+      );
+      await tester.tap(
+        find.byKey(
+          const ValueKey('workout_exercise_selector_capability_mobility'),
+        ),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      );
+      expect(
+        _cardsWithPrefix('workout_exercise_selector_concept_'),
+        findsNWidgets(5),
+      );
+      expect(
+        find.byKey(
+          const ValueKey(
+            'workout_exercise_selector_concept_active_joint_exploration',
+          ),
+        ),
+        findsOneWidget,
+      );
+      expect(find.text('Mostrar todos'), findsNothing);
+      expect(find.text('Sem máquinas'), findsNothing);
+
+      await tester.tap(
+        find.byKey(const ValueKey('workout_exercise_selector_home')),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_contexts')),
+      );
       await tester.binding.handlePopRoute();
       await _pumpUntilFound(
         tester,
@@ -159,6 +256,28 @@ Finder _profileOptionFinder() => find.byWidgetPredicate(
       (widget.key! as ValueKey<String>).value.startsWith('profile_option_'),
   description: 'profile option',
 );
+
+Finder _cardsWithPrefix(String prefix) => find.byWidgetPredicate(
+  (widget) =>
+      widget.key is ValueKey<String> &&
+      (widget.key! as ValueKey<String>).value.startsWith(prefix),
+  description: 'widgets with key prefix $prefix',
+);
+
+Future<void> _scrollToKey(WidgetTester tester, ValueKey<String> key) async {
+  final target = find.byKey(key);
+  for (var attempt = 0; attempt < 18; attempt++) {
+    if (target.evaluate().isNotEmpty) {
+      await tester.ensureVisible(target);
+      await tester.pump();
+      final center = tester.getCenter(target);
+      if (center.dy > 80 && center.dy < 920) return;
+    }
+    await tester.dragFrom(const Offset(224, 760), const Offset(0, -480));
+    await tester.pump(const Duration(milliseconds: 100));
+  }
+  expect(target, findsOneWidget);
+}
 
 Future<String> _pumpUntilAny(
   WidgetTester tester,

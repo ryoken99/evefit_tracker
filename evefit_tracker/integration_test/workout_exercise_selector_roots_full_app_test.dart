@@ -135,24 +135,51 @@ void main() {
     );
     await _pumpUntilFound(
       tester,
-      find.byKey(const ValueKey('workout_exercise_selector_concept_empty')),
+      find.byKey(const ValueKey('workout_exercise_selector_concepts')),
     );
     capabilityTimer.stop();
-    _metric(
-      'CAPABILITY_TO_CONCEPT_EMPTY_MS',
-      capabilityTimer.elapsedMilliseconds,
-    );
+    _metric('CAPABILITY_TO_CONCEPTS_MS', capabilityTimer.elapsedMilliseconds);
 
+    expect(_conceptCards(), findsNWidgets(5));
+    for (final conceptId in _conceptIdsByCapability['cardio_conditioning']!) {
+      expect(
+        find.byKey(ValueKey('workout_exercise_selector_concept_$conceptId')),
+        findsOneWidget,
+      );
+    }
+    await _screenshot(binding, tester, 'hierarchical_warmup_cardio_concepts');
+    await tester.tap(
+      find.byKey(
+        const ValueKey('workout_exercise_selector_concept_cyclic_locomotion'),
+      ),
+    );
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
+    );
     expect(
-      find.text('Ainda não existem conceitos de treino aprovados.'),
+      find.text('Ainda não existem intenções de treino aprovadas.'),
       findsOneWidget,
     );
     expect(find.text('Aquecimento'), findsWidgets);
     expect(find.text('Cardio e condicionamento'), findsWidgets);
+    expect(find.text('Locomoção cíclica'), findsWidgets);
     expect(find.textContaining('Aquecimento\n> Cardio'), findsOneWidget);
+    expect(find.textContaining('> Locomoção cíclica'), findsOneWidget);
     _expectNoLegacyOrSublevels();
-    await _screenshot(binding, tester, 'hierarchical_warmup_cardio_empty');
+    await _screenshot(
+      binding,
+      tester,
+      'hierarchical_warmup_cardio_intention_empty',
+    );
 
+    await tester.tap(
+      find.byKey(const ValueKey('workout_exercise_selector_back')),
+    );
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+    );
     await tester.tap(
       find.byKey(const ValueKey('workout_exercise_selector_back')),
     );
@@ -160,6 +187,45 @@ void main() {
       tester,
       find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
     );
+
+    for (final capabilityId in _capabilityIds.where(
+      (id) => id != 'cardio_conditioning',
+    )) {
+      await _scrollToKey(
+        tester,
+        ValueKey('workout_exercise_selector_capability_$capabilityId'),
+      );
+      await tester.tap(
+        find.byKey(
+          ValueKey('workout_exercise_selector_capability_$capabilityId'),
+        ),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+      );
+      final expectedConceptIds = _conceptIdsByCapability[capabilityId]!;
+      expect(_conceptCards(), findsNWidgets(expectedConceptIds.length));
+      for (final conceptId in expectedConceptIds) {
+        await _scrollToKey(
+          tester,
+          ValueKey('workout_exercise_selector_concept_$conceptId'),
+        );
+        expect(
+          find.byKey(ValueKey('workout_exercise_selector_concept_$conceptId')),
+          findsOneWidget,
+        );
+      }
+      _expectNoLegacyOrSublevels();
+      await tester.tap(
+        find.byKey(const ValueKey('workout_exercise_selector_back')),
+      );
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+      );
+    }
+
     await tester.tap(
       find.byKey(const ValueKey('workout_exercise_selector_back')),
     );
@@ -196,13 +262,28 @@ void main() {
     );
     await _pumpUntilFound(
       tester,
-      find.byKey(const ValueKey('workout_exercise_selector_concept_empty')),
+      find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+    );
+    expect(_conceptCards(), findsNWidgets(4));
+    await tester.tap(
+      find.byKey(
+        const ValueKey('workout_exercise_selector_concept_overcome_resistance'),
+      ),
+    );
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
     );
     expect(find.text('Treino principal'), findsWidgets);
     expect(find.text('Força e capacidade muscular'), findsWidgets);
+    expect(find.text('Vencer resistência'), findsWidgets);
     expect(find.textContaining('Treino principal\n> Força'), findsOneWidget);
     _expectNoLegacyOrSublevels();
-    await _screenshot(binding, tester, 'hierarchical_main_strength_empty');
+    await _screenshot(
+      binding,
+      tester,
+      'hierarchical_main_strength_intention_empty',
+    );
 
     await tester.tap(
       find.byKey(const ValueKey('workout_exercise_selector_home')),
@@ -269,6 +350,74 @@ const _contextIds = <String>[
   'recovery_cooldown',
   'prevention_adaptation_return',
 ];
+
+const _conceptIdsByCapability = <String, List<String>>{
+  'muscular_capacity': [
+    'overcome_resistance',
+    'control_resistance',
+    'sustain_resistance',
+    'loaded_carry',
+  ],
+  'cardio_conditioning': [
+    'cyclic_locomotion',
+    'cyclic_propulsion',
+    'repetitive_rhythmic_movement',
+    'repeated_multidirectional_displacement',
+    'repeated_motor_sequence',
+  ],
+  'speed_power': [
+    'explosive_acceleration',
+    'ballistic_projection',
+    'elastic_reactive_action',
+    'braking_redirection',
+    'cyclic_locomotion',
+    'repeated_multidirectional_displacement',
+  ],
+  'mobility': [
+    'active_joint_exploration',
+    'range_transition',
+    'integrated_chain_mobility',
+    'supported_loaded_mobility',
+    'segmental_dissociation',
+  ],
+  'flexibility': [
+    'sustained_lengthening',
+    'dynamic_lengthening',
+    'assisted_lengthening',
+  ],
+  'motor_control_coordination': [
+    'postural_stabilization',
+    'base_of_support_control',
+    'rhythm_synchronization',
+    'reactive_adjustment',
+    'segmental_dissociation',
+    'repeated_motor_sequence',
+  ],
+  'technique_skill': [
+    'isolated_technical_practice',
+    'contextual_technical_application',
+    'target_oriented_precision',
+    'stimulus_response_decision',
+    'technical_variability_adaptation',
+    'repeated_motor_sequence',
+  ],
+  'breathing_regulation': [
+    'voluntary_breath_cycle_control',
+    'breath_movement_synchronization',
+    'internal_pressure_management',
+    'autonomic_modulation',
+    'interoceptive_monitoring_adjustment',
+  ],
+};
+
+Finder _conceptCards() => find.byWidgetPredicate(
+  (widget) =>
+      widget.key is ValueKey<String> &&
+      (widget.key! as ValueKey<String>).value.startsWith(
+        'workout_exercise_selector_concept_',
+      ),
+  description: 'canonical concept cards',
+);
 
 void _expectNoLegacyOrSublevels() {
   expect(find.text('Sem máquinas'), findsNothing);
