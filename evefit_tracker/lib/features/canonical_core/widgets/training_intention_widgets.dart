@@ -5,12 +5,13 @@ import '../models/training_intention_models.dart';
 /// Product copy for resolved training intentions. This intentionally contains
 /// no registry identifiers because these widgets are a presentation boundary.
 abstract final class TrainingIntentionCopy {
-  static const String highRisk = 'Exigência elevada.';
+  static const String highRisk = 'Exigência elevada';
   static const String clinicallyRestrictedRisk =
-      'Restrição clínica: depende de elegibilidade, sem decidir o resultado.';
-  static const String clinicalReviewRequired = 'Revisão clínica necessária.';
+      'Utilização dependente de critérios de elegibilidade ou avaliação profissional.';
+  static const String clinicalReviewRequired =
+      'Esta intenção requer revisão clínica antes de ser utilizada numa decisão individual.';
   static const String returnToFunction =
-      'No retorno à função, a elegibilidade e a progressão são confirmadas fora desta intenção.';
+      'Retorno à função não substitui diagnóstico, reabilitação, critérios clínicos ou autorização de retorno ao desporto.';
 }
 
 class TrainingIntentionList extends StatefulWidget {

@@ -5,6 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  test('uses the exact mandatory product copy', () {
+    expect(TrainingIntentionCopy.highRisk, 'Exigência elevada');
+    expect(
+      TrainingIntentionCopy.clinicallyRestrictedRisk,
+      'Utilização dependente de critérios de elegibilidade ou avaliação profissional.',
+    );
+    expect(
+      TrainingIntentionCopy.clinicalReviewRequired,
+      'Esta intenção requer revisão clínica antes de ser utilizada numa decisão individual.',
+    );
+    expect(
+      TrainingIntentionCopy.returnToFunction,
+      'Retorno à função não substitui diagnóstico, reabilitação, critérios clínicos ou autorização de retorno ao desporto.',
+    );
+  });
+
   final items = <CanonicalResolvedPathIntention>[
     _item(role: CanonicalTrainingIntentionRole.principalCandidate, order: 2),
     _item(role: CanonicalTrainingIntentionRole.alternativePrimary, order: 1),
@@ -63,35 +79,42 @@ void main() {
     expect(find.text('Opção avançada'), findsOneWidget);
   });
 
-  testWidgets('represents all risk tiers and path escalation conservatively', (
-    tester,
-  ) async {
-    await _pump(tester, [
-      _item(risk: CanonicalOperationalRiskTier.low),
-      _item(risk: CanonicalOperationalRiskTier.moderate, order: 2),
-      _item(risk: CanonicalOperationalRiskTier.high, order: 3),
-      _item(
-        risk: CanonicalOperationalRiskTier.low,
-        riskModifier: CanonicalPathOperationalRiskModifier.clinicallyRestricted,
-        order: 4,
-      ),
-    ]);
-
-    expect(find.text(TrainingIntentionCopy.highRisk), findsOneWidget);
-    expect(
-      find.text(TrainingIntentionCopy.clinicallyRestrictedRisk),
-      findsOneWidget,
-    );
-    expect(
-      EffectiveTrainingIntentionFlags.from(
+  testWidgets(
+    'shows exact risk and review copy only in their applicable cards',
+    (tester) async {
+      await _pump(tester, [
+        _item(risk: CanonicalOperationalRiskTier.low),
+        _item(risk: CanonicalOperationalRiskTier.moderate, order: 2),
+        _item(risk: CanonicalOperationalRiskTier.high, order: 3),
         _item(
-          risk: CanonicalOperationalRiskTier.moderate,
-          riskModifier: CanonicalPathOperationalRiskModifier.mayEscalateToHigh,
+          risk: CanonicalOperationalRiskTier.low,
+          riskModifier:
+              CanonicalPathOperationalRiskModifier.clinicallyRestricted,
+          order: 4,
         ),
-      ).risk,
-      CanonicalOperationalRiskTier.high,
-    );
-  });
+      ]);
+
+      expect(find.text(TrainingIntentionCopy.highRisk), findsOneWidget);
+      expect(
+        find.text(TrainingIntentionCopy.clinicallyRestrictedRisk),
+        findsOneWidget,
+      );
+      expect(
+        find.text(TrainingIntentionCopy.clinicalReviewRequired),
+        findsNothing,
+      );
+      expect(
+        EffectiveTrainingIntentionFlags.from(
+          _item(
+            risk: CanonicalOperationalRiskTier.moderate,
+            riskModifier:
+                CanonicalPathOperationalRiskModifier.mayEscalateToHigh,
+          ),
+        ).risk,
+        CanonicalOperationalRiskTier.high,
+      );
+    },
+  );
 
   testWidgets(
     'shows clinical and return-to-function notes in accessible detail',
