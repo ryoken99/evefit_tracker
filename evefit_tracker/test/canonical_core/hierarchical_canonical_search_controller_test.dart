@@ -259,6 +259,22 @@ void main() {
     expect(controller.step, HierarchicalCanonicalSearchStep.usageContext);
   });
 
+  test('intention breadcrumb navigation preserves the four-part path', () {
+    final controller = HierarchicalCanonicalSearchController()
+      ..selectUsageContext('activation')
+      ..selectCapabilityRoot('cardio_conditioning')
+      ..selectTrainingConcept('cyclic_locomotion');
+    final intentionId =
+        controller.compatibleTrainingIntentions.first.definition.pillar.id;
+    controller.selectTrainingIntention(intentionId);
+
+    controller.goToTrainingIntention();
+
+    expect(controller.step, HierarchicalCanonicalSearchStep.trainingIntention);
+    expect(controller.path.trainingIntentionId, intentionId);
+    expect(controller.currentQuery.criteria, hasLength(4));
+  });
+
   test('controller rejects a known intention outside the selected path', () {
     final controller = HierarchicalCanonicalSearchController()
       ..selectUsageContext('activation')

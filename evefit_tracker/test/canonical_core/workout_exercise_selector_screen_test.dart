@@ -151,7 +151,7 @@ void main() {
   });
 
   testWidgets(
-    'context, capability and concept compose query then stop at intentions',
+    'context capability concept and intention compose the final empty query',
     (tester) async {
       final controller = await pumpScreen(tester);
 
@@ -186,6 +186,11 @@ void main() {
       await tester.tap(concept('cyclic_locomotion'));
       await tester.pumpAndSettle();
 
+      final selectedOption = controller.compatibleTrainingIntentions.first;
+      final intentionId = selectedOption.definition.pillar.id;
+      final cardIdentity =
+          '${intentionId}_warmup_cardio_conditioning_cyclic_locomotion';
+
       expect(controller.currentQuery.criteria, const [
         CanonicalSearchCriterion(
           axis: CanonicalPillarAxis.usageContext,
@@ -201,23 +206,63 @@ void main() {
         ),
       ]);
       expect(
-        find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
+        find.byKey(const ValueKey('workout_exercise_selector_intentions')),
+        findsOneWidget,
+      );
+      expect(find.text('Que intenção de treino procuras?'), findsOneWidget);
+      await tester.tap(
+        find.byKey(ValueKey('training_intention_card_$cardIdentity')),
+      );
+      await tester.pumpAndSettle();
+      expect(controller.currentQuery.criteria, hasLength(3));
+      await tester.scrollUntilVisible(
+        find.byKey(ValueKey('training_intention_select_$cardIdentity')),
+        180,
+        scrollable: find.byType(Scrollable).last,
+      );
+      await tester.tap(
+        find.byKey(ValueKey('training_intention_select_$cardIdentity')),
+      );
+      await tester.pumpAndSettle();
+
+      expect(controller.currentQuery.criteria, [
+        const CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.usageContext,
+          valueId: 'warmup',
+        ),
+        const CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.capabilityRoot,
+          valueId: 'cardio_conditioning',
+        ),
+        const CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.trainingConcept,
+          valueId: 'cyclic_locomotion',
+        ),
+        CanonicalSearchCriterion(
+          axis: CanonicalPillarAxis.trainingIntention,
+          valueId: intentionId,
+        ),
+      ]);
+      expect(
+        find.byKey(const ValueKey('workout_exercise_selector_results_empty')),
         findsOneWidget,
       );
       expect(
-        find.text('Ainda não existem intenções de treino aprovadas.'),
+        find.text('Ainda não existem exercícios aprovados para este percurso.'),
         findsOneWidget,
       );
       expect(
         find.text(
-          'As intenções compatíveis com esta seleção serão adicionadas e validadas progressivamente.',
+          'Os exercícios compatíveis serão adicionados e validados progressivamente.',
         ),
         findsOneWidget,
       );
-      expect(find.text('Aquecimento'), findsWidgets);
-      expect(find.text('Cardio e condicionamento'), findsWidgets);
       expect(find.textContaining('Aquecimento\n> Cardio'), findsOneWidget);
       expect(find.textContaining('> Locomoção cíclica'), findsOneWidget);
+      expect(
+        find.textContaining(selectedOption.definition.pillar.displayNamePtPt),
+        findsWidgets,
+      );
       expect(find.text('Resultados: 0'), findsNothing);
       expect(find.text('Exercício recomendado'), findsNothing);
       expect(find.text('Sem máquinas'), findsNothing);

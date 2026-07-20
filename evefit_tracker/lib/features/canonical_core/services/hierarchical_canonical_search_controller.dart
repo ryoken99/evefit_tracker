@@ -122,6 +122,11 @@ class HierarchicalCanonicalSearchController {
     _step = HierarchicalCanonicalSearchStep.trainingConcept;
   }
 
+  void goToTrainingIntention() {
+    if (_path.trainingConceptId == null) return;
+    _step = HierarchicalCanonicalSearchStep.trainingIntention;
+  }
+
   void goToRoot() {
     _path = const CanonicalExerciseSelectionPath();
     _step = HierarchicalCanonicalSearchStep.usageContext;
