@@ -1,0 +1,6 @@
+# Preserve the approved EveFit v1.1.4 bundle bytes across platforms.
+/README_FIRST_EveFit_Intentions_v1.1.4_Bundle.txt -text
+/EveFit_Seven_Contexts_Training_Intentions_v0.1_Codex_Order_RELEASE_v1.1.4.md -text
+/EveFit_Training_Intentions_Production_Registry_v0.4.md -text
+/EveFit_Training_Intentions_Production_Registry_v0.4.1.md -text
+/SHA256SUMS_EveFit_Intentions_v0.1_RELEASE_v1.1.4.txt -text
