@@ -28,18 +28,16 @@ class HierarchicalCanonicalSearchController {
   CanonicalSearchQuery get currentQuery => _path.toQuery();
 
   List<CanonicalPillarDefinition> get activeUsageContexts =>
-      _ordered(compatibilityProvider.activeUsageContexts());
+      compatibilityProvider.activeUsageContexts();
 
   List<CanonicalPillarDefinition> get compatibleCapabilities =>
-      _ordered(compatibilityProvider.compatibleCapabilities(_path));
+      compatibilityProvider.compatibleCapabilities(_path);
 
   List<CanonicalPillarDefinition> get compatibleTrainingConcepts =>
-      List.unmodifiable(
-        compatibilityProvider.compatibleTrainingConcepts(_path),
-      );
+      compatibilityProvider.compatibleTrainingConcepts(_path);
 
   List<CanonicalPillarDefinition> get compatibleTrainingIntentions =>
-      _ordered(compatibilityProvider.compatibleTrainingIntentions(_path));
+      compatibilityProvider.compatibleTrainingIntentions(_path);
 
   CanonicalPillarDefinition? get selectedUsageContext =>
       _definition(_path.usageContextId);
@@ -124,14 +122,12 @@ class HierarchicalCanonicalSearchController {
     _step = HierarchicalCanonicalSearchStep.usageContext;
   }
 
+  void clear() => goToRoot();
+
+  void goHome() => goToRoot();
+
   CanonicalPillarDefinition? _definition(String? id) =>
       id == null ? null : const CanonicalRegistry().valueById[id];
-
-  List<CanonicalPillarDefinition> _ordered(
-    List<CanonicalPillarDefinition> values,
-  ) => List.unmodifiable(
-    [...values]..sort((a, b) => a.displayOrder.compareTo(b.displayOrder)),
-  );
 
   void _requireOption(List<CanonicalPillarDefinition> values, String id) {
     if (!values.any((value) => value.id == id)) {

@@ -20,7 +20,11 @@ abstract interface class CanonicalSelectionCompatibilityProvider {
 
 class RegistryCanonicalSelectionCompatibilityProvider
     implements CanonicalSelectionCompatibilityProvider {
-  const RegistryCanonicalSelectionCompatibilityProvider();
+  const RegistryCanonicalSelectionCompatibilityProvider({
+    this.registry = const CanonicalRegistry(),
+  });
+
+  final CanonicalRegistry registry;
 
   @override
   List<CanonicalPillarDefinition> activeUsageContexts() =>
@@ -41,11 +45,14 @@ class RegistryCanonicalSelectionCompatibilityProvider
     final capabilityId = path.capabilityRootId;
     return capabilityId == null
         ? const []
-        : const CanonicalRegistry().trainingConceptsForCapability(capabilityId);
+        : registry.trainingConceptsForPath(path.usageContextId!, capabilityId);
   }
 
   @override
   List<CanonicalPillarDefinition> compatibleTrainingIntentions(
     CanonicalExerciseSelectionPath path,
-  ) => const [];
+  ) {
+    final key = path.trainingPathKey;
+    return key == null ? const [] : registry.trainingIntentionsForPath(key);
+  }
 }

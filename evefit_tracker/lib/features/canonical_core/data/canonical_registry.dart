@@ -1,7 +1,16 @@
 import '../models/canonical_core_models.dart';
+import '../generated/training_intentions/training_intentions_registry.g.dart';
+import '../generated/training_intentions/training_path_intention_links.g.dart';
+import '../generated/training_intentions/training_paths_registry.g.dart';
+import '../models/training_intention_models.dart';
 
 class CanonicalRegistry {
   const CanonicalRegistry();
+
+  static const trainingIntentionDefinitions =
+      generatedCanonicalTrainingIntentionDefinitions;
+  static const trainingPaths = generatedCanonicalTrainingPaths;
+  static const pathIntentionLinks = generatedCanonicalPathIntentionLinks;
 
   static const axisDefinitions = <CanonicalPillarAxisDefinition>[
     CanonicalPillarAxisDefinition(
@@ -119,7 +128,8 @@ class CanonicalRegistry {
     ),
   ];
 
-  static const approvedTrainingIntentions = <CanonicalPillarDefinition>[];
+  static final List<CanonicalPillarDefinition> approvedTrainingIntentions =
+      _runtime.trainingIntentionPillars;
   static const approvedTrainingConcepts = <CanonicalPillarDefinition>[
     CanonicalPillarDefinition(
       id: 'overcome_resistance',
@@ -752,43 +762,334 @@ class CanonicalRegistry {
 
   static const approvedAttributeDefinitions = <CanonicalAttributeDefinition>[];
 
-  List<CanonicalPillarDefinition> get approvedPillarValues =>
-      List.unmodifiable([
-        ...approvedCapabilityRoots,
-        ...approvedTrainingIntentions,
-        ...approvedTrainingConcepts,
-        ...approvedUsageContexts,
-      ]);
+  static final _CanonicalRegistryRuntime _runtime = _CanonicalRegistryRuntime(
+    definitions: trainingIntentionDefinitions,
+    paths: trainingPaths,
+    links: pathIntentionLinks,
+    capabilityRoots: approvedCapabilityRoots,
+    trainingConcepts: approvedTrainingConcepts,
+    usageContexts: approvedUsageContexts,
+    capabilityConceptRelations: capabilityConceptRelations,
+  );
 
-  Map<String, CanonicalPillarDefinition> get valueById => {
-    for (final value in approvedPillarValues) value.id: value,
-  };
+  List<CanonicalPillarDefinition> get approvedPillarValues =>
+      _runtime.approvedPillarValues;
+
+  Map<String, CanonicalPillarDefinition> get valueById => _runtime.valueById;
+
+  Map<String, CanonicalTrainingIntentionDefinition>
+  get trainingIntentionDefinitionById =>
+      _runtime.trainingIntentionDefinitionById;
+
+  Map<CanonicalTrainingPathKey, CanonicalTrainingPathDefinition>
+  get pathByKey => _runtime.pathByKey;
+
+  Map<String, CanonicalTrainingPathDefinition> get pathByContractId =>
+      _runtime.pathByContractId;
+
+  Map<CanonicalTrainingPathKey, List<CanonicalPathIntentionLink>>
+  get linksByPathKey => _runtime.linksByPathKey;
+
+  Map<String, List<CanonicalTrainingPathDefinition>> get pathsByIntentionId =>
+      _runtime.pathsByIntentionId;
 
   List<CanonicalPillarDefinition> valuesForAxis(CanonicalPillarAxis axis) =>
-      List.unmodifiable(
-        approvedPillarValues.where((value) => value.axis == axis).toList()
-          ..sort((a, b) => a.displayOrder.compareTo(b.displayOrder)),
-      );
+      _runtime.valuesByAxis[axis] ?? const <CanonicalPillarDefinition>[];
 
   bool isApprovedValue(String id) =>
       valueById[id]?.status == CanonicalDefinitionStatus.approved;
 
   List<CanonicalCapabilityConceptRelation> relationsForCapability(
     String capabilityRootId,
-  ) => List.unmodifiable(
-    capabilityConceptRelations
-        .where((relation) => relation.capabilityRootId == capabilityRootId)
-        .toList()
-      ..sort((a, b) => a.displayOrder.compareTo(b.displayOrder)),
-  );
+  ) =>
+      _runtime.relationsByCapability[capabilityRootId] ??
+      const <CanonicalCapabilityConceptRelation>[];
 
   List<CanonicalPillarDefinition> trainingConceptsForCapability(
     String capabilityRootId,
-  ) => List.unmodifiable(
-    relationsForCapability(
-      capabilityRootId,
-    ).map((relation) => valueById[relation.trainingConceptId]!).toList(),
-  );
+  ) =>
+      _runtime.trainingConceptsByCapability[capabilityRootId] ??
+      const <CanonicalPillarDefinition>[];
+
+  List<CanonicalPillarDefinition> trainingConceptsForPath(
+    String usageContextId,
+    String capabilityRootId,
+  ) =>
+      _runtime
+          .compatibleConceptsByContextCapability[_contextCapabilityContractId(
+        usageContextId,
+        capabilityRootId,
+      )] ??
+      const <CanonicalPillarDefinition>[];
+
+  CanonicalTrainingPathDefinition? pathForKey(CanonicalTrainingPathKey key) =>
+      pathByKey[key];
+
+  CanonicalTrainingPathDefinition? pathForContractId(String contractId) =>
+      pathByContractId[contractId];
+
+  List<CanonicalTrainingPathDefinition> pathsForIntention(String intentionId) =>
+      pathsByIntentionId[intentionId] ??
+      const <CanonicalTrainingPathDefinition>[];
+
+  List<CanonicalTrainingPathDefinition> pathsForContextAndCapability(
+    String usageContextId,
+    String capabilityRootId,
+  ) =>
+      _runtime.pathsByContextCapability[_contextCapabilityContractId(
+        usageContextId,
+        capabilityRootId,
+      )] ??
+      const <CanonicalTrainingPathDefinition>[];
+
+  List<CanonicalPathIntentionLink> linksForPath(CanonicalTrainingPathKey key) =>
+      linksByPathKey[key] ?? const <CanonicalPathIntentionLink>[];
+
+  List<CanonicalResolvedPathIntention> resolvedOptionsForPath(
+    CanonicalTrainingPathKey key,
+  ) =>
+      _runtime.resolvedOptionsByPathKey[key] ??
+      const <CanonicalResolvedPathIntention>[];
+
+  List<CanonicalPillarDefinition> trainingIntentionsForPath(
+    CanonicalTrainingPathKey key,
+  ) =>
+      _runtime.trainingIntentionsByPathKey[key] ??
+      const <CanonicalPillarDefinition>[];
+
+  bool hasCompatibleResolvedOptions(CanonicalTrainingPathKey key) {
+    final path = pathByKey[key];
+    return path != null &&
+        path.status == CanonicalTrainingPathStatus.compatible &&
+        resolvedOptionsForPath(key).isNotEmpty;
+  }
 
   String get schemaVersion => canonicalCoreSchemaVersion;
 }
+
+class _CanonicalRegistryRuntime {
+  _CanonicalRegistryRuntime({
+    required List<CanonicalTrainingIntentionDefinition> definitions,
+    required List<CanonicalTrainingPathDefinition> paths,
+    required List<CanonicalPathIntentionLink> links,
+    required List<CanonicalPillarDefinition> capabilityRoots,
+    required List<CanonicalPillarDefinition> trainingConcepts,
+    required List<CanonicalPillarDefinition> usageContexts,
+    required List<CanonicalCapabilityConceptRelation>
+    capabilityConceptRelations,
+  }) {
+    trainingIntentionDefinitions = List.unmodifiable(definitions);
+    trainingPaths = List.unmodifiable(paths);
+    pathIntentionLinks = List.unmodifiable(links);
+    trainingIntentionPillars = List<CanonicalPillarDefinition>.unmodifiable(
+      trainingIntentionDefinitions.map((definition) => definition.pillar),
+    );
+    approvedPillarValues = List<CanonicalPillarDefinition>.unmodifiable([
+      ...capabilityRoots,
+      ...trainingIntentionPillars,
+      ...trainingConcepts,
+      ...usageContexts,
+    ]);
+    valueById = Map<String, CanonicalPillarDefinition>.unmodifiable({
+      for (final value in approvedPillarValues) value.id: value,
+    });
+    trainingIntentionDefinitionById =
+        Map<String, CanonicalTrainingIntentionDefinition>.unmodifiable({
+          for (final definition in trainingIntentionDefinitions)
+            definition.pillar.id: definition,
+        });
+    valuesByAxis =
+        Map<CanonicalPillarAxis, List<CanonicalPillarDefinition>>.unmodifiable({
+          for (final axis in CanonicalPillarAxis.values)
+            axis: List<CanonicalPillarDefinition>.unmodifiable(
+              approvedPillarValues
+                  .where((value) => value.axis == axis)
+                  .toList(growable: false)
+                ..sort(
+                  (left, right) =>
+                      left.displayOrder.compareTo(right.displayOrder),
+                ),
+            ),
+        });
+
+    final mutableRelationsByCapability =
+        <String, List<CanonicalCapabilityConceptRelation>>{};
+    for (final relation in capabilityConceptRelations) {
+      (mutableRelationsByCapability[relation.capabilityRootId] ??= []).add(
+        relation,
+      );
+    }
+    relationsByCapability =
+        Map<String, List<CanonicalCapabilityConceptRelation>>.unmodifiable({
+          for (final entry in mutableRelationsByCapability.entries)
+            entry.key: List<CanonicalCapabilityConceptRelation>.unmodifiable(
+              [...entry.value]..sort(
+                (left, right) =>
+                    left.displayOrder.compareTo(right.displayOrder),
+              ),
+            ),
+        });
+    trainingConceptsByCapability =
+        Map<String, List<CanonicalPillarDefinition>>.unmodifiable({
+          for (final entry in relationsByCapability.entries)
+            entry.key: List<CanonicalPillarDefinition>.unmodifiable(
+              entry.value
+                  .map((relation) => valueById[relation.trainingConceptId]!)
+                  .toList(growable: false),
+            ),
+        });
+
+    pathByKey =
+        Map<
+          CanonicalTrainingPathKey,
+          CanonicalTrainingPathDefinition
+        >.unmodifiable({for (final path in trainingPaths) path.key: path});
+    pathByContractId =
+        Map<String, CanonicalTrainingPathDefinition>.unmodifiable({
+          for (final path in trainingPaths) path.key.contractId: path,
+        });
+    final mutablePathsByContextCapability =
+        <String, List<CanonicalTrainingPathDefinition>>{};
+    for (final path in trainingPaths) {
+      (mutablePathsByContextCapability[_contextCapabilityContractId(
+                path.key.usageContextId,
+                path.key.capabilityRootId,
+              )] ??=
+              [])
+          .add(path);
+    }
+    pathsByContextCapability =
+        Map<String, List<CanonicalTrainingPathDefinition>>.unmodifiable({
+          for (final entry in mutablePathsByContextCapability.entries)
+            entry.key: List<CanonicalTrainingPathDefinition>.unmodifiable(
+              [...entry.value]..sort(
+                (left, right) =>
+                    left.sourceNumber.compareTo(right.sourceNumber),
+              ),
+            ),
+        });
+
+    final mutableLinksByPathKey =
+        <CanonicalTrainingPathKey, List<CanonicalPathIntentionLink>>{};
+    final mutablePathsByIntention =
+        <String, List<CanonicalTrainingPathDefinition>>{};
+    for (final link in pathIntentionLinks) {
+      final path = trainingPaths[link.pathSourceNumber - 1];
+      (mutableLinksByPathKey[path.key] ??= []).add(link);
+      (mutablePathsByIntention[link.intentionId] ??= []).add(path);
+    }
+    linksByPathKey =
+        Map<
+          CanonicalTrainingPathKey,
+          List<CanonicalPathIntentionLink>
+        >.unmodifiable({
+          for (final entry in mutableLinksByPathKey.entries)
+            entry.key: List<CanonicalPathIntentionLink>.unmodifiable(
+              [...entry.value]..sort(
+                (left, right) =>
+                    left.displayOrder.compareTo(right.displayOrder),
+              ),
+            ),
+        });
+    pathsByIntentionId =
+        Map<String, List<CanonicalTrainingPathDefinition>>.unmodifiable({
+          for (final entry in mutablePathsByIntention.entries)
+            entry.key: List<CanonicalTrainingPathDefinition>.unmodifiable(
+              [...entry.value]..sort(
+                (left, right) =>
+                    left.sourceNumber.compareTo(right.sourceNumber),
+              ),
+            ),
+        });
+
+    resolvedOptionsByPathKey =
+        Map<
+          CanonicalTrainingPathKey,
+          List<CanonicalResolvedPathIntention>
+        >.unmodifiable({
+          for (final path in trainingPaths)
+            path.key: List<CanonicalResolvedPathIntention>.unmodifiable([
+              for (final link
+                  in linksByPathKey[path.key] ??
+                      const <CanonicalPathIntentionLink>[])
+                CanonicalResolvedPathIntention(
+                  definition:
+                      trainingIntentionDefinitionById[link.intentionId]!,
+                  path: path,
+                  link: link,
+                ),
+            ]),
+        });
+    trainingIntentionsByPathKey =
+        Map<
+          CanonicalTrainingPathKey,
+          List<CanonicalPillarDefinition>
+        >.unmodifiable({
+          for (final entry in resolvedOptionsByPathKey.entries)
+            entry.key: List<CanonicalPillarDefinition>.unmodifiable(
+              entry.value
+                  .map((resolved) => resolved.definition.pillar)
+                  .toList(growable: false),
+            ),
+        });
+
+    compatibleConceptsByContextCapability =
+        Map<String, List<CanonicalPillarDefinition>>.unmodifiable({
+          for (final entry in pathsByContextCapability.entries)
+            entry.key: List<CanonicalPillarDefinition>.unmodifiable([
+              for (final concept
+                  in trainingConceptsByCapability[entry
+                          .value
+                          .first
+                          .key
+                          .capabilityRootId] ??
+                      const <CanonicalPillarDefinition>[])
+                if (entry.value.any(
+                  (path) =>
+                      path.key.trainingConceptId == concept.id &&
+                      path.status == CanonicalTrainingPathStatus.compatible &&
+                      (resolvedOptionsByPathKey[path.key] ??
+                              const <CanonicalResolvedPathIntention>[])
+                          .isNotEmpty,
+                ))
+                  concept,
+            ]),
+        });
+  }
+
+  late final List<CanonicalTrainingIntentionDefinition>
+  trainingIntentionDefinitions;
+  late final List<CanonicalTrainingPathDefinition> trainingPaths;
+  late final List<CanonicalPathIntentionLink> pathIntentionLinks;
+  late final List<CanonicalPillarDefinition> trainingIntentionPillars;
+  late final List<CanonicalPillarDefinition> approvedPillarValues;
+  late final Map<String, CanonicalPillarDefinition> valueById;
+  late final Map<String, CanonicalTrainingIntentionDefinition>
+  trainingIntentionDefinitionById;
+  late final Map<CanonicalPillarAxis, List<CanonicalPillarDefinition>>
+  valuesByAxis;
+  late final Map<String, List<CanonicalCapabilityConceptRelation>>
+  relationsByCapability;
+  late final Map<String, List<CanonicalPillarDefinition>>
+  trainingConceptsByCapability;
+  late final Map<CanonicalTrainingPathKey, CanonicalTrainingPathDefinition>
+  pathByKey;
+  late final Map<String, CanonicalTrainingPathDefinition> pathByContractId;
+  late final Map<String, List<CanonicalTrainingPathDefinition>>
+  pathsByContextCapability;
+  late final Map<CanonicalTrainingPathKey, List<CanonicalPathIntentionLink>>
+  linksByPathKey;
+  late final Map<String, List<CanonicalTrainingPathDefinition>>
+  pathsByIntentionId;
+  late final Map<CanonicalTrainingPathKey, List<CanonicalResolvedPathIntention>>
+  resolvedOptionsByPathKey;
+  late final Map<CanonicalTrainingPathKey, List<CanonicalPillarDefinition>>
+  trainingIntentionsByPathKey;
+  late final Map<String, List<CanonicalPillarDefinition>>
+  compatibleConceptsByContextCapability;
+}
+
+String _contextCapabilityContractId(
+  String usageContextId,
+  String capabilityRootId,
+) => '$usageContextId/$capabilityRootId';

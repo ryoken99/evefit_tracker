@@ -333,7 +333,7 @@ void main() {
   });
 
   test(
-    'every context returns the same ordered concepts for each capability',
+    'every context returns only ordered compatible path concepts for each capability',
     () {
       for (final context in CanonicalRegistry.approvedUsageContexts) {
         for (final capability in CanonicalRegistry.approvedCapabilityRoots) {
@@ -342,7 +342,8 @@ void main() {
             capabilityRootId: capability.id,
           );
           final concepts = provider.compatibleTrainingConcepts(path);
-          final registryConcepts = registry.trainingConceptsForCapability(
+          final registryConcepts = registry.trainingConceptsForPath(
+            context.id,
             capability.id,
           );
 

@@ -17,11 +17,11 @@ void main() {
     expect(CanonicalRegistry.axisDefinitions, hasLength(4));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
     expect(CanonicalRegistry.approvedUsageContexts, hasLength(7));
-    expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
+    expect(CanonicalRegistry.approvedTrainingIntentions, hasLength(591));
     expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
     expect(CanonicalRegistry.approvedAttributeDefinitions, isEmpty);
     expect(CanonicalRegistry.capabilityConceptRelations, hasLength(40));
-    expect(registry.approvedPillarValues, hasLength(50));
+    expect(registry.approvedPillarValues, hasLength(641));
     expect(
       CanonicalRegistry.axisDefinitions.map((definition) => definition.axis),
       CanonicalPillarAxis.values,
@@ -80,26 +80,23 @@ void main() {
     );
   });
 
-  test(
-    'capability and context queries contain exactly one valid criterion',
-    () {
-      for (final value in registry.approvedPillarValues) {
-        final query = CanonicalSearchQuery(
-          criteria: [
-            CanonicalSearchCriterion(axis: value.axis, valueId: value.id),
-          ],
-        );
-        expect(validator.queryErrors(query), isEmpty, reason: value.id);
-        expect(query.criteria, hasLength(1));
-        expect(query.criteria.single.axis, value.axis);
-        expect(query.criteria.single.valueId, value.id);
-        expect(query.toJson().toString(), isNot(contains('exercise_ids')));
-        if (value.id == 'main_training') {
-          expect(query.toJson().toString(), contains('main_training'));
-        }
+  test('usage context queries contain exactly one valid criterion', () {
+    for (final value in CanonicalRegistry.approvedUsageContexts) {
+      final query = CanonicalSearchQuery(
+        criteria: [
+          CanonicalSearchCriterion(axis: value.axis, valueId: value.id),
+        ],
+      );
+      expect(validator.queryErrors(query), isEmpty, reason: value.id);
+      expect(query.criteria, hasLength(1));
+      expect(query.criteria.single.axis, value.axis);
+      expect(query.criteria.single.valueId, value.id);
+      expect(query.toJson().toString(), isNot(contains('exercise_ids')));
+      if (value.id == 'main_training') {
+        expect(query.toJson().toString(), contains('main_training'));
       }
-    },
-  );
+    }
+  });
 
   test(
     'validator rejects unknown, draft, mismatched, and old subtree values',
@@ -163,6 +160,11 @@ void main() {
         }),
         throwsStateError,
       );
+      expect(
+        () =>
+            CanonicalValidator.validateRawQueryData({'environment_id': 'gym'}),
+        throwsStateError,
+      );
     },
   );
 
@@ -171,8 +173,8 @@ void main() {
     const validQuery = CanonicalSearchQuery(
       criteria: [
         CanonicalSearchCriterion(
-          axis: CanonicalPillarAxis.capabilityRoot,
-          valueId: 'cardio_conditioning',
+          axis: CanonicalPillarAxis.usageContext,
+          valueId: 'warmup',
         ),
       ],
     );

@@ -184,9 +184,23 @@ class CanonicalTrainingPathKey {
 
   String get contractId =>
       '$usageContextId/$capabilityRootId/$trainingConceptId';
+
+  @override
+  bool operator ==(Object other) =>
+      other is CanonicalTrainingPathKey &&
+      other.usageContextId == usageContextId &&
+      other.capabilityRootId == capabilityRootId &&
+      other.trainingConceptId == trainingConceptId;
+
+  @override
+  int get hashCode =>
+      Object.hash(usageContextId, capabilityRootId, trainingConceptId);
 }
 
 class CanonicalTrainingIntentionDefinition {
+  /// Generated definitions use this constructor with const collection literals.
+  /// Runtime-created definitions should use [CanonicalTrainingIntentionDefinition.runtime]
+  /// so every exposed collection is a defensive immutable copy.
   const CanonicalTrainingIntentionDefinition({
     required this.pillar,
     required this.type,
@@ -212,6 +226,60 @@ class CanonicalTrainingIntentionDefinition {
     required this.sourceRegistryVersion,
     required this.runtimeProvenanceId,
   });
+
+  factory CanonicalTrainingIntentionDefinition.runtime({
+    required CanonicalPillarDefinition pillar,
+    required CanonicalTrainingIntentionType type,
+    required String effectPtPt,
+    required String primaryTargetPtPt,
+    required CanonicalTrainingHorizon horizon,
+    required Iterable<String> declaredUsageContextIds,
+    required Iterable<String> declaredCapabilityRootIds,
+    required Iterable<String> declaredTrainingConceptIds,
+    required int occurrenceCount,
+    required Iterable<CanonicalTrainingIntentionRole> possibleRoles,
+    required Iterable<String> globallyIncompatibleAlternativeIds,
+    required Iterable<String> globallyCompatibleComplementaryIds,
+    required Iterable<String> relevantPopulationPtPt,
+    required CanonicalEvidenceBasis evidenceBasis,
+    required Iterable<String> sourceCodes,
+    required String evidenceLimitPtPt,
+    required String reviewState,
+    required CanonicalClinicalReviewRequirement clinicalReviewRequired,
+    required CanonicalOperationalRiskTier operationalRiskTier,
+    required String generalSafetyNotePtPt,
+    required int sourceOrder,
+    required String sourceRegistryVersion,
+    required String runtimeProvenanceId,
+  }) => CanonicalTrainingIntentionDefinition(
+    pillar: pillar,
+    type: type,
+    effectPtPt: effectPtPt,
+    primaryTargetPtPt: primaryTargetPtPt,
+    horizon: horizon,
+    declaredUsageContextIds: List.unmodifiable(declaredUsageContextIds),
+    declaredCapabilityRootIds: List.unmodifiable(declaredCapabilityRootIds),
+    declaredTrainingConceptIds: List.unmodifiable(declaredTrainingConceptIds),
+    occurrenceCount: occurrenceCount,
+    possibleRoles: List.unmodifiable(possibleRoles),
+    globallyIncompatibleAlternativeIds: List.unmodifiable(
+      globallyIncompatibleAlternativeIds,
+    ),
+    globallyCompatibleComplementaryIds: List.unmodifiable(
+      globallyCompatibleComplementaryIds,
+    ),
+    relevantPopulationPtPt: List.unmodifiable(relevantPopulationPtPt),
+    evidenceBasis: evidenceBasis,
+    sourceCodes: List.unmodifiable(sourceCodes),
+    evidenceLimitPtPt: evidenceLimitPtPt,
+    reviewState: reviewState,
+    clinicalReviewRequired: clinicalReviewRequired,
+    operationalRiskTier: operationalRiskTier,
+    generalSafetyNotePtPt: generalSafetyNotePtPt,
+    sourceOrder: sourceOrder,
+    sourceRegistryVersion: sourceRegistryVersion,
+    runtimeProvenanceId: runtimeProvenanceId,
+  );
 
   final CanonicalPillarDefinition pillar;
   final CanonicalTrainingIntentionType type;
@@ -277,6 +345,8 @@ class CanonicalTrainingPathDefinition {
 }
 
 class CanonicalPathIntentionLink {
+  /// Generated links use the const constructor with const label lists.
+  /// Runtime-created links should use [CanonicalPathIntentionLink.runtime].
   const CanonicalPathIntentionLink({
     required this.pathSourceNumber,
     required this.intentionId,
@@ -286,6 +356,24 @@ class CanonicalPathIntentionLink {
     required this.sourceRegistryVersion,
     required this.runtimeProvenanceId,
   });
+
+  factory CanonicalPathIntentionLink.runtime({
+    required int pathSourceNumber,
+    required String intentionId,
+    required CanonicalTrainingIntentionRole role,
+    required int displayOrder,
+    required Iterable<String> contextualLabelsPtPt,
+    required String sourceRegistryVersion,
+    required String runtimeProvenanceId,
+  }) => CanonicalPathIntentionLink(
+    pathSourceNumber: pathSourceNumber,
+    intentionId: intentionId,
+    role: role,
+    displayOrder: displayOrder,
+    contextualLabelsPtPt: List.unmodifiable(contextualLabelsPtPt),
+    sourceRegistryVersion: sourceRegistryVersion,
+    runtimeProvenanceId: runtimeProvenanceId,
+  );
 
   final int pathSourceNumber;
   final String intentionId;
@@ -306,4 +394,32 @@ class CanonicalResolvedPathIntention {
   final CanonicalTrainingIntentionDefinition definition;
   final CanonicalTrainingPathDefinition path;
   final CanonicalPathIntentionLink link;
+
+  CanonicalOperationalRiskTier get effectiveOperationalRiskTier {
+    final baseTier = definition.operationalRiskTier;
+    return switch (path.operationalRiskModifier) {
+      CanonicalPathOperationalRiskModifier.clinicallyRestricted =>
+        CanonicalOperationalRiskTier.clinicallyRestricted,
+      CanonicalPathOperationalRiskModifier.mayEscalateToHigh
+          when baseTier == CanonicalOperationalRiskTier.low ||
+              baseTier == CanonicalOperationalRiskTier.moderate =>
+        CanonicalOperationalRiskTier.high,
+      _ => baseTier,
+    };
+  }
+
+  CanonicalOperationalRiskTier get effectiveRiskTier =>
+      effectiveOperationalRiskTier;
+
+  bool get effectiveClinicalReviewRequired =>
+      definition.clinicalReviewRequired ==
+          CanonicalClinicalReviewRequirement.yes ||
+      path.clinicalReviewModifier ==
+          CanonicalPathClinicalReviewModifier.required;
+
+  String get pathOperationalRiskModifierTextPtPt =>
+      path.operationalRiskModifierPtPt;
+
+  String get pathClinicalReviewModifierTextPtPt =>
+      path.clinicalReviewModifierPtPt;
 }

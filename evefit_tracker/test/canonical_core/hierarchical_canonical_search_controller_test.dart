@@ -12,13 +12,13 @@ void main() {
     expect(CanonicalRegistry.approvedUsageContexts, hasLength(7));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
     expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
-    expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
+    expect(CanonicalRegistry.approvedTrainingIntentions, hasLength(591));
     expect(CanonicalRegistry.approvedAttributeDefinitions, isEmpty);
     expect(
       const CanonicalRegistry().approvedPillarValues
           .map((value) => value.id)
           .toSet(),
-      hasLength(50),
+      hasLength(641),
     );
   });
 
@@ -212,7 +212,7 @@ void main() {
         valueId: 'cyclic_locomotion',
       ),
     ]);
-    expect(controller.compatibleTrainingIntentions, isEmpty);
+    expect(controller.compatibleTrainingIntentions, isNotEmpty);
     expect(
       () => controller.selectTrainingIntention('invented_intention'),
       throwsStateError,
@@ -239,5 +239,30 @@ void main() {
     controller.goToRoot();
     expect(controller.currentQuery.criteria, isEmpty);
     expect(controller.path.usageContextId, isNull);
+
+    controller
+      ..selectUsageContext('warmup')
+      ..selectCapabilityRoot('cardio_conditioning');
+    controller.clear();
+    expect(controller.path, const CanonicalExerciseSelectionPath());
+    controller.goHome();
+    expect(controller.step, HierarchicalCanonicalSearchStep.usageContext);
+  });
+
+  test('controller rejects a known intention outside the selected path', () {
+    final controller = HierarchicalCanonicalSearchController()
+      ..selectUsageContext('activation')
+      ..selectCapabilityRoot('cardio_conditioning')
+      ..selectTrainingConcept('cyclic_locomotion');
+    final incompatibleKnownId = CanonicalRegistry.approvedTrainingIntentions
+        .firstWhere(
+          (value) => !controller.compatibleTrainingIntentions.contains(value),
+        )
+        .id;
+
+    expect(
+      () => controller.selectTrainingIntention(incompatibleKnownId),
+      throwsStateError,
+    );
   });
 }
