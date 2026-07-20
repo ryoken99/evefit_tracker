@@ -134,6 +134,9 @@ void main() {
         find.text(TrainingIntentionCopy.clinicalReviewRequired),
         findsWidgets,
       );
+      expect(find.text('Retorno à função'), findsOneWidget);
+      expect(find.text('Força e capacidade muscular'), findsOneWidget);
+      expect(find.text('Vencer resistência'), findsOneWidget);
       await tester.scrollUntilVisible(
         find.text(TrainingIntentionCopy.returnToFunction),
         180,
@@ -145,6 +148,32 @@ void main() {
       expect(find.text('demo_intention'), findsNothing);
     },
   );
+
+  testWidgets('selects only after explicit confirmation in the detail', (
+    tester,
+  ) async {
+    final selected = <CanonicalResolvedPathIntention>[];
+    final item = _item();
+    await _pump(tester, [item], onSelected: selected.add);
+
+    await tester.tap(
+      find.byKey(ValueKey('training_intention_card_${item.cardIdentity}')),
+    );
+    await tester.pumpAndSettle();
+    expect(selected, isEmpty);
+
+    await tester.scrollUntilVisible(
+      find.byKey(ValueKey('training_intention_select_${item.cardIdentity}')),
+      180,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.tap(
+      find.byKey(ValueKey('training_intention_select_${item.cardIdentity}')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(selected, [same(item)]);
+  });
 
   testWidgets(
     'provides stable card keys, semantics, and narrow large-text layout',
@@ -177,12 +206,17 @@ Future<void> _pump(
   WidgetTester tester,
   List<CanonicalResolvedPathIntention> items, {
   double textScaleFactor = 1,
+  ValueChanged<CanonicalResolvedPathIntention>? onSelected,
 }) => tester.pumpWidget(
   MaterialApp(
     home: MediaQuery(
       data: MediaQueryData(textScaler: TextScaler.linear(textScaleFactor)),
       child: Scaffold(
-        body: TrainingIntentionList(title: 'Intenções', intentions: items),
+        body: TrainingIntentionList(
+          title: 'Intenções',
+          intentions: items,
+          onIntentionTap: onSelected,
+        ),
       ),
     ),
   ),
@@ -237,8 +271,8 @@ CanonicalResolvedPathIntention _item({
     sourceNumber: 1,
     key: CanonicalTrainingPathKey(
       usageContextId: usageContextId,
-      capabilityRootId: 'capacity',
-      trainingConceptId: 'concept',
+      capabilityRootId: 'muscular_capacity',
+      trainingConceptId: 'overcome_resistance',
     ),
     status: CanonicalTrainingPathStatus.compatible,
     rationalePtPt: 'Conceito em linguagem de produto.',

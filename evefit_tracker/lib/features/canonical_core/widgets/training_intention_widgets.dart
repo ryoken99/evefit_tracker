@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/canonical_registry.dart';
 import '../models/training_intention_models.dart';
 
 /// Product copy for resolved training intentions. This intentionally contains
@@ -109,13 +110,15 @@ class _TrainingIntentionListState extends State<TrainingIntentionList> {
     );
   }
 
-  void _openDetail(CanonicalResolvedPathIntention intention) {
-    widget.onIntentionTap?.call(intention);
-    showModalBottomSheet<void>(
+  Future<void> _openDetail(CanonicalResolvedPathIntention intention) async {
+    final selected = await showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
       builder: (_) => TrainingIntentionDetailSheet(intention: intention),
     );
+    if (selected == true && mounted) {
+      widget.onIntentionTap?.call(intention);
+    }
   }
 }
 
@@ -245,13 +248,23 @@ class TrainingIntentionDetailSheet extends StatelessWidget {
     final definition = intention.definition;
     final path = intention.path;
     final effective = EffectiveTrainingIntentionFlags.from(intention);
+    const registry = CanonicalRegistry();
     final details = <_DetailRowData>[
       _DetailRowData('Nome', definition.pillar.displayNamePtPt),
       _DetailRowData('Definição', definition.effectPtPt),
       _DetailRowData('Tipo', definition.type.presentationLabel),
-      _DetailRowData('Contexto', path.contextNotesPtPt),
-      _DetailRowData('Capacidade', definition.primaryTargetPtPt),
-      _DetailRowData('Conceito', path.rationalePtPt),
+      _DetailRowData(
+        'Contexto',
+        _pillarName(registry, path.key.usageContextId),
+      ),
+      _DetailRowData(
+        'Capacidade',
+        _pillarName(registry, path.key.capabilityRootId),
+      ),
+      _DetailRowData(
+        'Conceito',
+        _pillarName(registry, path.key.trainingConceptId),
+      ),
       _DetailRowData(
         'Etiqueta contextual',
         _joinOrFallback(intention.link.contextualLabelsPtPt),
@@ -298,12 +311,25 @@ class TrainingIntentionDetailSheet extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
                 itemCount:
                     details.length +
-                    (path.key.usageContextId == 'return_to_function' ? 1 : 0),
+                    (path.key.usageContextId == 'return_to_function' ? 1 : 0) +
+                    1,
                 separatorBuilder: (_, _) => const SizedBox(height: 14),
                 itemBuilder: (context, index) {
-                  if (index == details.length) {
+                  final hasReturnNote =
+                      path.key.usageContextId == 'return_to_function';
+                  if (hasReturnNote && index == details.length) {
                     return _ProductNotice(
                       text: TrainingIntentionCopy.returnToFunction,
+                    );
+                  }
+                  final actionIndex = details.length + (hasReturnNote ? 1 : 0);
+                  if (index == actionIndex) {
+                    return FilledButton(
+                      key: ValueKey(
+                        'training_intention_select_${intention.cardIdentity}',
+                      ),
+                      onPressed: () => Navigator.of(context).pop(true),
+                      child: const Text('Selecionar esta intenção'),
                     );
                   }
                   final detail = details[index];
@@ -533,6 +559,9 @@ _GroupedIntentions _groupIntentions(
 
 String _joinOrFallback(List<String> values) =>
     values.isEmpty ? 'Sem etiqueta contextual declarada.' : values.join(', ');
+
+String _pillarName(CanonicalRegistry registry, String id) =>
+    registry.valueById[id]?.displayNamePtPt ?? 'Informação indisponível.';
 
 extension on CanonicalTrainingIntentionRole {
   String get presentationLabel => switch (this) {
