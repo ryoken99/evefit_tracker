@@ -72,6 +72,55 @@ Future<_RegistryData> _loadRegistry() async {
   final sourceV04 = await _readSource(_sourceV04Path, _sourceV04Hash);
   final sourceV041 = await _readSource(_sourceV041Path, _sourceV041Hash);
 
+  return _parseRegistry(sourceV04, sourceV041);
+}
+
+void validateTrainingIntentionsSourceTextsForTesting({
+  required String sourceV04,
+  required String sourceV041,
+}) {
+  _parseRegistry(
+    _SourceDocument(
+      'test-v0.4.md',
+      Uint8List.fromList(utf8.encode(sourceV04)),
+      sourceV04,
+      'test',
+    ),
+    _SourceDocument(
+      'test-v0.4.1.md',
+      Uint8List.fromList(utf8.encode(sourceV041)),
+      sourceV041,
+      'test',
+    ),
+  );
+}
+
+List<List<String>> readTrainingIntentionsTableForTesting(
+  String source, {
+  required String heading,
+  required String header,
+  required int columnCount,
+}) => _readTable(
+  source,
+  heading: heading,
+  header: header,
+  columnCount: columnCount,
+);
+
+Future<void> regenerateTrainingIntentionsOutputsForTesting() async {
+  final outputs = await _buildOutputs(await _loadRegistry());
+  await _writeOutputs(outputs);
+}
+
+Future<void> checkTrainingIntentionsOutputsForTesting() async {
+  final outputs = await _buildOutputs(await _loadRegistry());
+  _checkOutputs(outputs);
+}
+
+_RegistryData _parseRegistry(
+  _SourceDocument sourceV04,
+  _SourceDocument sourceV041,
+) {
   _expectTitle(
     sourceV04.text,
     '# EveFit: Registo de Intenções de Produção v0.4',
@@ -126,6 +175,10 @@ Future<_RegistryData> _loadRegistry() async {
   );
 
   final paths = _parsePaths(pathRows);
+  final historicPathMatrixValidated = _validateHistoricPathMatrix(
+    historicV041,
+    paths,
+  );
   final labels = _parseContextualLabels(contextualLabelRows, historicV04);
   final links = _parseLinks(paths, definitionsById, labels);
 
@@ -137,6 +190,7 @@ Future<_RegistryData> _loadRegistry() async {
     links: links,
     historicMappings: historicV041,
     contextualLabels: labels,
+    historicPathMatrixValidated: historicPathMatrixValidated,
   );
   _validateRegistry(data);
   return data;
@@ -187,15 +241,17 @@ List<List<String>> _readTable(
       .toList();
   final headingIndex = lines.indexOf(heading);
   _expect(headingIndex >= 0, 'Missing required heading: $heading');
-  final headerIndex = lines.indexOf(header, headingIndex + 1);
-  _expect(headerIndex >= 0, 'Missing exact table header after $heading.');
-  final nextHeading = lines.indexWhere(
+  final sectionEnd = lines.indexWhere(
     (line) => line.startsWith('#'),
-    headerIndex + 1,
+    headingIndex + 1,
+  );
+  final headerIndex = lines.indexWhere(
+    (line) => line == header,
+    headingIndex + 1,
   );
   _expect(
-    nextHeading < 0 || headerIndex < nextHeading,
-    'Table header occurs outside section $heading.',
+    headerIndex >= 0 && (sectionEnd < 0 || headerIndex < sectionEnd),
+    'Missing exact table header within section $heading.',
   );
   _expect(
     headerIndex + 1 < lines.length,
@@ -208,7 +264,8 @@ List<List<String>> _readTable(
   );
 
   final rows = <List<String>>[];
-  for (var index = headerIndex + 2; index < lines.length; index++) {
+  final tableEnd = sectionEnd < 0 ? lines.length : sectionEnd;
+  for (var index = headerIndex + 2; index < tableEnd; index++) {
     final line = lines[index];
     if (!line.startsWith('|')) {
       break;
@@ -220,7 +277,10 @@ List<List<String>> _readTable(
 }
 
 List<String> _splitTableLine(String line, int expectedColumns) {
-  _expect(line.endsWith('|'), 'Ambiguous Markdown table row: $line');
+  _expect(
+    line.startsWith('|') && line.endsWith('|'),
+    'Ambiguous Markdown table row: $line',
+  );
   final cells = line
       .substring(1, line.length - 1)
       .split('|')
@@ -247,19 +307,40 @@ List<_HistoricMapping> _parseHistoricRows(List<List<String>> rows) {
       seen.add(historical.id),
       'Duplicate historic ID: ${historical.id}.',
     );
-    final affectedPaths = RegExp(
-      r'\d+',
-    ).allMatches(row[7]).map((match) => int.parse(match.group(0)!)).toList();
-    _expect(
-      affectedPaths.isNotEmpty,
-      'Historic ID ${historical.id} has no affected path occurrence.',
-    );
     mappings.add(
       _HistoricMapping(
         id: historical.id,
         namePtPt: historical.name,
+        decisionId: _codeId(row[1], historical.id, 'historic decision'),
         destinationId: target.id,
-        affectedPathNumbers: affectedPaths,
+        destinationNamePtPt: target.name,
+        rationalePtPt: _requiredText(
+          row[3],
+          historical.id,
+          'historic rationale',
+        ),
+        preservedEffectsPtPt: _requiredText(
+          row[4],
+          historical.id,
+          'historic preserved effects',
+        ),
+        removedEffectsPtPt: _requiredText(
+          row[5],
+          historical.id,
+          'historic removed effects',
+        ),
+        destinationLayerPtPt: _requiredText(
+          row[6],
+          historical.id,
+          'historic destination layer',
+        ),
+        affectedPathNumbers: _pathNumberList(row[7], historical.id),
+        clinicalReview: _enumId(
+          row[8],
+          _clinicalReviews,
+          historical.id,
+          'historic clinical review',
+        ),
       ),
     );
   }
@@ -278,23 +359,59 @@ void _validatePreservedHistoricMap(
     v041.length == 693,
     'Expected 693 preserved v0.3 IDs, found ${v041.length}.',
   );
-  final v04ById = {for (final item in v04) item.id: item};
-  for (final item in v041) {
-    final original = v04ById[item.id];
+  for (var index = 0; index < v04.length; index++) {
+    final original = v04[index];
+    final preserved = v041[index];
     _expect(
-      original != null,
-      'v0.4.1 contains unknown historic ID ${item.id}.',
+      original.id == preserved.id,
+      'Historic row order changed at ${index + 1}: ${original.id} -> ${preserved.id}.',
     );
     _expect(
-      original!.destinationId == item.destinationId,
-      'Historic destination changed for ${item.id}.',
-    );
-    _expect(
-      original.affectedPathNumbers.join(',') ==
-          item.affectedPathNumbers.join(','),
-      'Historic path occurrences changed for ${item.id}.',
+      original.matchesExactly(preserved),
+      'Historic v0.4 row changed for ${original.id}.',
     );
   }
+}
+
+bool _validateHistoricPathMatrix(
+  List<_HistoricMapping> historicMappings,
+  List<_Path> paths,
+) {
+  final historicTriples = <String>{
+    for (final mapping in historicMappings)
+      for (final pathNumber in mapping.affectedPathNumbers)
+        '${mapping.id}\u001f$pathNumber\u001f${mapping.destinationId}',
+  };
+  final pathMatrixTriples = <String>{
+    for (final path in paths)
+      for (final destination in path.destinations)
+        '${destination.fromId}\u001f${path.number}\u001f${destination.toId}',
+  };
+  final historicOccurrences = historicMappings
+      .expand((mapping) => mapping.affectedPathNumbers)
+      .length;
+  final pathMatrixOccurrences = paths
+      .expand((path) => path.destinations)
+      .length;
+  _expect(historicOccurrences == 792, 'Historic occurrence count diverged.');
+  _expect(
+    pathMatrixOccurrences == 792,
+    'Path-matrix destination occurrence count diverged.',
+  );
+  _expect(
+    historicTriples.length == historicOccurrences,
+    'Historic mapping contains duplicate occurrence triples.',
+  );
+  _expect(
+    pathMatrixTriples.length == pathMatrixOccurrences,
+    'Path matrix contains duplicate destination triples.',
+  );
+  _expect(
+    historicTriples.length == pathMatrixTriples.length &&
+        historicTriples.containsAll(pathMatrixTriples),
+    'Historic mappings do not exactly match current path-matrix destinations.',
+  );
+  return true;
 }
 
 List<_Definition> _parseDefinitions(List<List<String>> rows) {
@@ -336,6 +453,7 @@ List<_Definition> _parseDefinitions(List<List<String>> rows) {
       conceptIds: compatibility.concepts,
       occurrenceCount: occurrence.count,
       possibleRoleIds: occurrence.roleIds,
+      roleCounts: occurrence.roleCounts,
       alternativeIds: _idList(row[8], id, 'alternatives'),
       complementaryIds: _idList(row[9], id, 'complementaries'),
       populationsPtPt: _textList(row[10], id, 'populations'),
@@ -406,6 +524,12 @@ List<_Path> _parsePaths(List<List<String>> rows) {
         priorities.map((priority) => priority.id).join(',') ==
             finalIntentionIds.join(','),
         'Path $number priority order does not match final intention order.',
+      );
+      _expect(
+        destinations
+            .map((destination) => destination.toId)
+            .every(finalIntentionIds.contains),
+        'Path $number historic destination is missing from final intentions.',
       );
     }
     paths.add(
@@ -614,6 +738,14 @@ void _validateRegistry(_RegistryData data) {
     );
   }
   for (final definition in data.definitions) {
+    _expect(
+      definition.alternativeIds.every(definitionsById.containsKey),
+      'Alternative reference is unknown for ${definition.id}.',
+    );
+    _expect(
+      definition.complementaryIds.every(definitionsById.containsKey),
+      'Complementary reference is unknown for ${definition.id}.',
+    );
     final links = data.links
         .where((link) => link.intentionId == definition.id)
         .toList();
@@ -621,10 +753,29 @@ void _validateRegistry(_RegistryData data) {
       links.length == definition.occurrenceCount,
       'Occurrence count diverged for ${definition.id}: expected ${definition.occurrenceCount}, found ${links.length}.',
     );
-    final linkedRoles = links.map((link) => link.roleId).toSet();
     _expect(
-      linkedRoles.every(definition.possibleRoleIds.contains),
-      'Link role diverged for ${definition.id}.',
+      _mapsMatch(
+        _distribution(links.map((link) => link.roleId)),
+        definition.roleCounts,
+      ),
+      'Role counts diverge for ${definition.id}.',
+    );
+  }
+  final pathsByNumber = {for (final path in data.paths) path.number: path};
+  for (final link in data.links) {
+    final definition = definitionsById[link.intentionId]!;
+    final path = pathsByNumber[link.pathNumber]!;
+    _expect(
+      definition.usageContextIds.contains(path.contextId),
+      'Link ${link.pathNumber}/${link.intentionId} uses an incompatible context.',
+    );
+    _expect(
+      definition.capabilityIds.contains(path.capabilityId),
+      'Link ${link.pathNumber}/${link.intentionId} uses an incompatible capability.',
+    );
+    _expect(
+      definition.conceptIds.contains(path.conceptId),
+      'Link ${link.pathNumber}/${link.intentionId} uses an incompatible concept.',
     );
   }
 
@@ -748,7 +899,7 @@ Future<Map<String, String>> _formatDartOutputs(
       await destination.writeAsString(entry.value, encoding: utf8);
       temporaryPaths.add(destination.path);
     }
-    final result = await Process.run(Platform.resolvedExecutable, [
+    final result = await Process.run(_dartExecutable(), [
       'format',
       ...temporaryPaths,
     ]);
@@ -768,6 +919,25 @@ Future<Map<String, String>> _formatDartOutputs(
       await temporaryDirectory.delete(recursive: true);
     }
   }
+}
+
+String _dartExecutable() {
+  final resolvedExecutable = File(Platform.resolvedExecutable);
+  if (!resolvedExecutable.path.toLowerCase().contains('flutter_tester')) {
+    return resolvedExecutable.path;
+  }
+  var candidateRoot = resolvedExecutable.parent;
+  for (var depth = 0; depth < 8; depth++) {
+    final dartSdkExecutable = File(
+      '${candidateRoot.path}/bin/cache/dart-sdk/bin/'
+      'dart${Platform.isWindows ? '.exe' : ''}',
+    );
+    if (dartSdkExecutable.existsSync()) {
+      return dartSdkExecutable.path;
+    }
+    candidateRoot = candidateRoot.parent;
+  }
+  _fail('Cannot locate Dart SDK when running from flutter_tester.');
 }
 
 String _renderDefinitionRegistry(int partCount) {
@@ -982,12 +1152,16 @@ String _renderManifest(_RegistryData data, Map<String, String> dartOutputs) {
   };
   final historicRepresentation =
       data.historicMappings
-          .map(
-            (item) =>
-                '${item.id}|${item.destinationId}|${item.affectedPathNumbers.join(',')}',
-          )
+          .map((item) => item.normalizedRepresentation)
           .toList()
         ..sort();
+  final allHistoricIdsHaveDestination = data.historicMappings.every(
+    (item) => item.destinationId.isNotEmpty,
+  );
+  final knownDefinitionIds = data.definitions.map((item) => item.id).toSet();
+  final noHistoricDestinationIsUnknown = data.historicMappings.every(
+    (item) => knownDefinitionIds.contains(item.destinationId),
+  );
   final manifest = <String, Object>{
     'generator_version': _generatorVersion,
     'registry_version': _registryVersion,
@@ -1034,9 +1208,9 @@ String _renderManifest(_RegistryData data, Map<String, String> dartOutputs) {
       'normalized_mapping_sha256': _sha256(
         utf8.encode('${historicRepresentation.join('\n')}\n'),
       ),
-      'complete_mapping_validated': true,
-      'all_historic_ids_have_destination': true,
-      'no_historic_destination_is_unknown': true,
+      'complete_mapping_validated': data.historicPathMatrixValidated,
+      'all_historic_ids_have_destination': allHistoricIdsHaveDestination,
+      'no_historic_destination_is_unknown': noHistoricDestinationIsUnknown,
       'complete_mapping_emitted_to_runtime': false,
     },
     'runtime_separation': <String, Object>{
@@ -1082,6 +1256,10 @@ Map<String, int> _distribution(Iterable<String> values) {
       ..sort((left, right) => left.key.compareTo(right.key)),
   );
 }
+
+bool _mapsMatch(Map<String, int> left, Map<String, int> right) =>
+    left.length == right.length &&
+    left.entries.every((entry) => right[entry.key] == entry.value);
 
 Future<void> _writeOutputs(Map<String, String> outputs) async {
   for (final entry in outputs.entries) {
@@ -1261,13 +1439,13 @@ String _riskModifier(String raw) {
   if (value == 'não aplicável') {
     return 'not_applicable';
   }
-  if (value.contains('pode agravar para `high`')) {
+  if (RegExp(r'^pode agravar para `high`; .+$').hasMatch(value)) {
     return 'may_escalate_to_high';
   }
-  if (value.contains('`clinically_restricted`')) {
+  if (RegExp(r'^`clinically_restricted`; .+$').hasMatch(value)) {
     return 'clinically_restricted';
   }
-  if (value.startsWith('sem agravamento automático')) {
+  if (RegExp(r'^sem agravamento automático; .+$').hasMatch(value)) {
     return 'inherit_only';
   }
   _fail('Unknown path operational risk modifier: $raw');
@@ -1278,10 +1456,10 @@ String _clinicalModifier(String raw) {
   if (value == 'não aplicável') {
     return 'not_applicable';
   }
-  if (value.startsWith('`yes`')) {
+  if (RegExp(r'^`yes`; .+$').hasMatch(value)) {
     return 'required';
   }
-  if (value.startsWith('herda a intenção')) {
+  if (RegExp(r'^herda a intenção; .+$').hasMatch(value)) {
     return 'inherit_only';
   }
   _fail('Unknown path clinical review modifier: $raw');
@@ -1305,58 +1483,65 @@ _Occurrence _parseOccurrenceAndRoles(String raw, String id) {
   final match = RegExp(r'^(\d+); (.+)$').firstMatch(value);
   _expect(match != null, 'Malformed occurrence and roles for $id: $raw');
   final count = int.parse(match!.group(1)!);
+  _expect(count > 0, 'Occurrence count must be positive for $id.');
   final roleCounts = <String, int>{};
-  for (final roleMatch in RegExp(
-    r'([a-z_]+):(\d+)',
-  ).allMatches(match.group(2)!)) {
-    final role = roleMatch.group(1)!;
+  for (final rawRole in match.group(2)!.split(', ')) {
+    final roleMatch = RegExp(r'^([a-z_]+):(\d+)$').firstMatch(rawRole);
+    _expect(roleMatch != null, 'Malformed role count for $id: $rawRole.');
+    final role = roleMatch!.group(1)!;
     _expect(
       _trainingIntentionRoles.contains(role),
       'Unknown role $role for $id.',
     );
     _expect(!roleCounts.containsKey(role), 'Duplicate role $role for $id.');
-    roleCounts[role] = int.parse(roleMatch.group(2)!);
+    final roleCount = int.parse(roleMatch.group(2)!);
+    _expect(roleCount > 0, 'Role count must be positive for $id/$role.');
+    roleCounts[role] = roleCount;
   }
   _expect(roleCounts.isNotEmpty, 'No roles for $id.');
   _expect(
     roleCounts.values.reduce((left, right) => left + right) == count,
     'Role count diverges from occurrence count for $id.',
   );
-  return _Occurrence(count, roleCounts.keys.toList());
+  return _Occurrence(
+    count,
+    List<String>.unmodifiable(roleCounts.keys),
+    Map<String, int>.unmodifiable(roleCounts),
+  );
 }
 
 _Evidence _parseEvidence(String raw, String id) {
   final value = _plain(raw);
-  final firstSeparator = value.indexOf(';');
-  _expect(firstSeparator > 0, 'Malformed evidence basis for $id.');
-  final basis = _stripOuterCode(value.substring(0, firstSeparator).trim());
+  final match = RegExp(
+    r'^`([a-z_]+)`; (SRC-\d+(?:, SRC-\d+)*); (.+)$',
+  ).firstMatch(value);
+  _expect(match != null, 'Malformed evidence basis for $id.');
+  final basis = match!.group(1)!;
   _expect(
     _evidenceBases.contains(basis),
     'Unknown evidence basis $basis for $id.',
   );
-  final sourceCodes = RegExp(
-    r'SRC-\d+',
-  ).allMatches(value).map((match) => match.group(0)!).toList();
-  _expect(sourceCodes.isNotEmpty, 'Missing source codes for $id.');
-  final lastSource = value.lastIndexOf(sourceCodes.last);
-  final limit = value
-      .substring(lastSource + sourceCodes.last.length)
-      .replaceFirst(';', '')
-      .trim();
+  final sourceCodes = match.group(2)!.split(', ');
+  _expect(
+    sourceCodes.toSet().length == sourceCodes.length,
+    'Duplicate source code for $id.',
+  );
+  final limit = match.group(3)!.trim();
   _expect(limit.isNotEmpty, 'Missing evidence limit for $id.');
   return _Evidence(basis, sourceCodes, limit);
 }
 
 List<_Priority> _parsePriorities(String raw, String pathKey) {
-  if (_isNone(raw)) {
+  final value = _plain(raw);
+  if (_isNone(value)) {
     return const <_Priority>[];
   }
   final priorities = <_Priority>[];
   final seen = <String>{};
-  final matches = RegExp(r'`([a-z0-9_]+)`:([a-z_]+)').allMatches(raw).toList();
-  _expect(matches.isNotEmpty, 'Malformed priorities for $pathKey.');
-  for (final match in matches) {
-    final id = match.group(1)!;
+  for (final rawPriority in value.split('; ')) {
+    final match = RegExp(r'^`([a-z0-9_]+)`:([a-z_]+)$').firstMatch(rawPriority);
+    _expect(match != null, 'Malformed priority for $pathKey: $rawPriority.');
+    final id = match!.group(1)!;
     final roleId = match.group(2)!;
     _expect(seen.add(id), 'Duplicate priority ID $id for $pathKey.');
     _expect(
@@ -1369,40 +1554,48 @@ List<_Priority> _parsePriorities(String raw, String pathKey) {
 }
 
 List<_DestinationPair> _parseDestinationPairs(String raw, String pathKey) {
-  if (_isNone(raw)) {
+  final value = _plain(raw);
+  if (_isNone(value)) {
     return const <_DestinationPair>[];
   }
   final pairs = <_DestinationPair>[];
-  final matches = RegExp(
-    r'`([a-z0-9_]+)`→`([a-z0-9_]+)`',
-  ).allMatches(raw).toList();
-  _expect(matches.isNotEmpty, 'Malformed historic destinations for $pathKey.');
-  for (final match in matches) {
-    pairs.add(_DestinationPair(match.group(1)!, match.group(2)!));
+  for (final rawPair in value.split('; ')) {
+    final match = RegExp(
+      r'^`([a-z0-9_]+)`→`([a-z0-9_]+)`$',
+    ).firstMatch(rawPair);
+    _expect(
+      match != null,
+      'Malformed historic destination for $pathKey: $rawPair.',
+    );
+    pairs.add(_DestinationPair(match!.group(1)!, match.group(2)!));
   }
   return pairs;
 }
 
 List<String> _idList(String raw, String owner, String field) {
-  if (_isNone(raw)) {
+  final value = _plain(raw);
+  if (_isNone(value)) {
     return const <String>[];
   }
-  final ids = RegExp(
-    r'`([a-z0-9_]+)`',
-  ).allMatches(raw).map((match) => match.group(1)!).toList();
-  _expect(ids.isNotEmpty, 'Missing $field IDs for $owner.');
+  final match = RegExp(
+    r'^`([a-z0-9_]+)`(?:, `([a-z0-9_]+)`)*$',
+  ).firstMatch(value);
+  _expect(match != null, 'Malformed $field IDs for $owner: $raw.');
+  final ids = value
+      .split(', ')
+      .map((item) => item.substring(1, item.length - 1))
+      .toList();
   _expect(ids.toSet().length == ids.length, 'Duplicate $field ID for $owner.');
   return ids;
 }
 
 List<String> _textList(String raw, String owner, String field) {
   final value = _plain(raw);
-  final items = value
-      .split(';')
-      .map((item) => item.trim())
-      .where((item) => item.isNotEmpty)
-      .toList();
-  _expect(items.isNotEmpty, 'Missing $field for $owner.');
+  final items = value.split('; ').map((item) => item.trim()).toList();
+  _expect(
+    items.isNotEmpty && items.every((item) => item.isNotEmpty),
+    'Malformed $field for $owner.',
+  );
   return items;
 }
 
@@ -1418,6 +1611,30 @@ _IdAndName _idAndName(String raw, String field) {
   final name = match!.group(2)!.trim();
   _expect(name.isNotEmpty, 'Missing name for $field.');
   return _IdAndName(match.group(1)!, name);
+}
+
+String _codeId(String raw, String owner, String field) {
+  final match = RegExp(r'^`([a-z0-9_]+)`$').firstMatch(_plain(raw));
+  _expect(match != null, 'Malformed $field for $owner: $raw');
+  return match!.group(1)!;
+}
+
+List<int> _pathNumberList(String raw, String historicId) {
+  final value = _plain(raw);
+  _expect(
+    RegExp(r'^\d+(?:, \d+)*$').hasMatch(value),
+    'Malformed affected paths for $historicId: $raw',
+  );
+  final pathNumbers = value.split(', ').map(int.parse).toList();
+  _expect(
+    pathNumbers.every((number) => number >= 1 && number <= 280),
+    'Affected path number is outside 1..280 for $historicId.',
+  );
+  _expect(
+    pathNumbers.toSet().length == pathNumbers.length,
+    'Duplicate affected path number for $historicId.',
+  );
+  return pathNumbers;
 }
 
 (String, String) _splitRequired(
@@ -1445,13 +1662,9 @@ String _requiredText(String raw, String owner, String field) {
 }
 
 String _enumId(String raw, Set<String> allowed, String owner, String field) {
-  final value = _plain(raw);
-  final id = RegExp(r'^`?([^`]+?)`?$').firstMatch(value)?.group(1)?.trim();
-  _expect(
-    id != null && allowed.contains(id),
-    'Unknown $field for $owner: $raw.',
-  );
-  return id!;
+  final value = _stripOuterCode(_plain(raw));
+  _expect(allowed.contains(value), 'Unknown $field for $owner: $raw.');
+  return value;
 }
 
 bool _isNone(String raw) {
@@ -1461,12 +1674,40 @@ bool _isNone(String raw) {
       value == 'não aplicável';
 }
 
-String _plain(String raw) => raw.trim().replaceAll('**', '').trim();
+String _plain(String raw) {
+  final value = raw.trim();
+  final hasOpeningBold = value.startsWith('**');
+  final hasClosingBold = value.endsWith('**');
+  _expect(hasOpeningBold == hasClosingBold, 'Malformed bold markup: $raw');
+  if (hasOpeningBold) {
+    _expect(value.length > 4, 'Empty bold value: $raw');
+    final unwrapped = value.substring(2, value.length - 2).trim();
+    _expect(
+      !unwrapped.contains('**'),
+      'Nested bold markup is not allowed: $raw',
+    );
+    return unwrapped;
+  }
+  _expect(!value.contains('**'), 'Unexpected bold markup: $raw');
+  return value;
+}
 
-String _stripOuterCode(String value) =>
-    value.startsWith('`') && value.endsWith('`')
-    ? value.substring(1, value.length - 1)
-    : value;
+String _stripOuterCode(String value) {
+  final hasOpeningCode = value.startsWith('`');
+  final hasClosingCode = value.endsWith('`');
+  _expect(hasOpeningCode == hasClosingCode, 'Malformed code markup: $value');
+  if (!hasOpeningCode) {
+    _expect(!value.contains('`'), 'Unexpected code markup: $value');
+    return value;
+  }
+  _expect(value.length > 2, 'Empty code value: $value');
+  final unwrapped = value.substring(1, value.length - 1);
+  _expect(
+    !unwrapped.contains('`'),
+    'Nested code markup is not allowed: $value',
+  );
+  return unwrapped;
+}
 
 const _trainingIntentionTypes = <String>{
   'adaptation_outcome',
@@ -1695,14 +1936,45 @@ class _HistoricMapping {
   const _HistoricMapping({
     required this.id,
     required this.namePtPt,
+    required this.decisionId,
     required this.destinationId,
+    required this.destinationNamePtPt,
+    required this.rationalePtPt,
+    required this.preservedEffectsPtPt,
+    required this.removedEffectsPtPt,
+    required this.destinationLayerPtPt,
     required this.affectedPathNumbers,
+    required this.clinicalReview,
   });
 
   final String id;
   final String namePtPt;
+  final String decisionId;
   final String destinationId;
+  final String destinationNamePtPt;
+  final String rationalePtPt;
+  final String preservedEffectsPtPt;
+  final String removedEffectsPtPt;
+  final String destinationLayerPtPt;
   final List<int> affectedPathNumbers;
+  final String clinicalReview;
+
+  String get normalizedRepresentation => <String>[
+    id,
+    namePtPt,
+    decisionId,
+    destinationId,
+    destinationNamePtPt,
+    rationalePtPt,
+    preservedEffectsPtPt,
+    removedEffectsPtPt,
+    destinationLayerPtPt,
+    affectedPathNumbers.join(', '),
+    clinicalReview,
+  ].join('\u001f');
+
+  bool matchesExactly(_HistoricMapping other) =>
+      normalizedRepresentation == other.normalizedRepresentation;
 }
 
 class _Compatibility {
@@ -1718,10 +1990,11 @@ class _Compatibility {
 }
 
 class _Occurrence {
-  const _Occurrence(this.count, this.roleIds);
+  const _Occurrence(this.count, this.roleIds, this.roleCounts);
 
   final int count;
   final List<String> roleIds;
+  final Map<String, int> roleCounts;
 }
 
 class _Evidence {
@@ -1746,6 +2019,7 @@ class _Definition {
     required this.conceptIds,
     required this.occurrenceCount,
     required this.possibleRoleIds,
+    required this.roleCounts,
     required this.alternativeIds,
     required this.complementaryIds,
     required this.populationsPtPt,
@@ -1771,6 +2045,7 @@ class _Definition {
   final List<String> conceptIds;
   final int occurrenceCount;
   final List<String> possibleRoleIds;
+  final Map<String, int> roleCounts;
   final List<String> alternativeIds;
   final List<String> complementaryIds;
   final List<String> populationsPtPt;
@@ -1875,6 +2150,7 @@ class _RegistryData {
     required this.links,
     required this.historicMappings,
     required this.contextualLabels,
+    required this.historicPathMatrixValidated,
   });
 
   final _SourceDocument sourceV04;
@@ -1884,4 +2160,5 @@ class _RegistryData {
   final List<_Link> links;
   final List<_HistoricMapping> historicMappings;
   final List<_ContextualLabel> contextualLabels;
+  final bool historicPathMatrixValidated;
 }

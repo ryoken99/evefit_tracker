@@ -488,7 +488,7 @@
   "historic_v03_audit": {
     "unique_ids": 693,
     "occurrences": 792,
-    "normalized_mapping_sha256": "c91a0ce3d0b7ea3f55b24149863b686c1327ba738dcd843c79dd1a08c103b962",
+    "normalized_mapping_sha256": "ecd2fabeb9de618854b8f4ffc804093cc80d98de32b18ad6fbe3fa0e11ac63a8",
     "complete_mapping_validated": true,
     "all_historic_ids_have_destination": true,
     "no_historic_destination_is_unknown": true,

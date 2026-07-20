@@ -53,6 +53,12 @@ void main() {
     final definitionIds = definitions
         .map((definition) => definition.pillar.id)
         .toSet();
+    final definitionsById = {
+      for (final definition in definitions) definition.pillar.id: definition,
+    };
+    final pathsBySourceNumber = {
+      for (final path in paths) path.sourceNumber: path,
+    };
     expect(
       links.every((link) => definitionIds.contains(link.intentionId)),
       isTrue,
@@ -64,6 +70,92 @@ void main() {
       ),
       isTrue,
     );
+    for (final definition in definitions) {
+      expect(
+        definition.globallyIncompatibleAlternativeIds.every(
+          definitionIds.contains,
+        ),
+        isTrue,
+        reason: definition.pillar.id,
+      );
+      expect(
+        definition.globallyCompatibleComplementaryIds.every(
+          definitionIds.contains,
+        ),
+        isTrue,
+        reason: definition.pillar.id,
+      );
+    }
+    for (final link in links) {
+      final definition = definitionsById[link.intentionId]!;
+      final path = pathsBySourceNumber[link.pathSourceNumber]!;
+      expect(
+        definition.declaredUsageContextIds.contains(path.key.usageContextId),
+        isTrue,
+        reason: '${link.pathSourceNumber}/${link.intentionId}',
+      );
+      expect(
+        definition.declaredCapabilityRootIds.contains(
+          path.key.capabilityRootId,
+        ),
+        isTrue,
+        reason: '${link.pathSourceNumber}/${link.intentionId}',
+      );
+      expect(
+        definition.declaredTrainingConceptIds.contains(
+          path.key.trainingConceptId,
+        ),
+        isTrue,
+        reason: '${link.pathSourceNumber}/${link.intentionId}',
+      );
+    }
+  });
+
+  test('every source role count is preserved by its emitted links', () async {
+    final source = await File(
+      'docs/canonical/source/training_intentions/'
+      'EveFit_Training_Intentions_Production_Registry_v0.4.1.md',
+    ).readAsString();
+    final sourceRoleCounts = <String, Map<String, int>>{};
+    for (final row in _tableRows(
+      source,
+      '## 20. Registo final das 591 intenções',
+    )) {
+      final id = RegExp(r'^`([a-z0-9_]+)`$').firstMatch(row[0])!.group(1)!;
+      final occurrence = row[7].split('; ');
+      final expectedTotal = int.parse(occurrence[0]);
+      final roleCounts = <String, int>{};
+      for (final roleCount in occurrence[1].split(', ')) {
+        final parts = roleCount.split(':');
+        roleCounts[parts[0]] = int.parse(parts[1]);
+      }
+      expect(
+        roleCounts.values.reduce((left, right) => left + right),
+        expectedTotal,
+        reason: id,
+      );
+      sourceRoleCounts[id] = roleCounts;
+    }
+
+    final emittedRoleCounts = <String, Map<String, int>>{};
+    for (final link in generatedCanonicalPathIntentionLinks) {
+      final counts = emittedRoleCounts.putIfAbsent(
+        link.intentionId,
+        () => <String, int>{},
+      );
+      final role = link.role.contractId;
+      counts[role] = (counts[role] ?? 0) + 1;
+    }
+
+    expect(sourceRoleCounts, hasLength(591));
+    expect(emittedRoleCounts, hasLength(591));
+    for (final entry in sourceRoleCounts.entries) {
+      expect(
+        emittedRoleCounts[entry.key],
+        equals(entry.value),
+        reason: entry.key,
+      );
+    }
   });
 
   test('enum contract IDs, display labels, and distributions are exact', () {
@@ -155,7 +247,11 @@ void main() {
       final labels = generatedCanonicalPathIntentionLinks
           .expand((link) => link.contextualLabelsPtPt)
           .toSet();
+      final labelOccurrences = generatedCanonicalPathIntentionLinks
+          .expand((link) => link.contextualLabelsPtPt)
+          .length;
       expect(labels, hasLength(59));
+      expect(labelOccurrences, 66);
       expect(labels.every((label) => !label.contains('_')), isTrue);
 
       final files = Directory(
@@ -174,6 +270,35 @@ void main() {
       }
     },
   );
+}
+
+List<List<String>> _tableRows(String source, String heading) {
+  final lines = source.split('\n');
+  final headingIndex = lines.indexOf(heading);
+  expect(headingIndex, isNonNegative, reason: heading);
+  final sectionEnd = lines.indexWhere(
+    (line) => line.startsWith('#'),
+    headingIndex + 1,
+  );
+  final end = sectionEnd < 0 ? lines.length : sectionEnd;
+  final headerIndex = lines.indexWhere(
+    (line) => line.startsWith('|'),
+    headingIndex + 1,
+  );
+  final rows = <List<String>>[];
+  for (var index = headerIndex + 2; index < end; index++) {
+    if (!lines[index].startsWith('|')) {
+      break;
+    }
+    rows.add(
+      lines[index]
+          .substring(1, lines[index].length - 1)
+          .split('|')
+          .map((cell) => cell.trim())
+          .toList(),
+    );
+  }
+  return rows;
 }
 
 Map<String, int> _distribution(Iterable<String> values) {
