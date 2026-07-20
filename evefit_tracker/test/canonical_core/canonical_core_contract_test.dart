@@ -16,12 +16,12 @@ void main() {
 
     expect(CanonicalRegistry.axisDefinitions, hasLength(4));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
-    expect(CanonicalRegistry.approvedUsageContexts, hasLength(5));
+    expect(CanonicalRegistry.approvedUsageContexts, hasLength(7));
     expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
     expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
     expect(CanonicalRegistry.approvedAttributeDefinitions, isEmpty);
     expect(CanonicalRegistry.capabilityConceptRelations, hasLength(40));
-    expect(registry.approvedPillarValues, hasLength(48));
+    expect(registry.approvedPillarValues, hasLength(50));
     expect(
       CanonicalRegistry.axisDefinitions.map((definition) => definition.axis),
       CanonicalPillarAxis.values,
@@ -43,9 +43,16 @@ void main() {
       'main_training',
       'warmup',
       'activation',
-      'recovery_cooldown',
-      'prevention_adaptation_return',
+      'recovery',
+      'cooldown',
+      'prevention',
+      'return_to_function',
     ]);
+    final contextIds = CanonicalRegistry.approvedUsageContexts
+        .map((value) => value.id)
+        .toList(growable: false);
+    expect(contextIds, isNot(contains('recovery_cooldown')));
+    expect(contextIds, isNot(contains('prevention_adaptation_return')));
     expect(
       registry.approvedPillarValues.every(
         (value) =>

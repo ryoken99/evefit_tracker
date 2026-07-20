@@ -245,8 +245,10 @@ const _contextIds = <String>[
   'main_training',
   'warmup',
   'activation',
-  'recovery_cooldown',
-  'prevention_adaptation_return',
+  'recovery',
+  'cooldown',
+  'prevention',
+  'return_to_function',
 ];
 
 const _capabilityIds = <String>[

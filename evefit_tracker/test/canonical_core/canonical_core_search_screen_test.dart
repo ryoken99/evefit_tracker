@@ -54,7 +54,7 @@ void main() {
     expect(find.text('Sem máquinas'), findsNothing);
   });
 
-  testWidgets('context axis shows exactly the five approved contexts', (
+  testWidgets('context axis shows exactly the seven approved contexts', (
     tester,
   ) async {
     await pumpScreen(tester);
@@ -70,8 +70,10 @@ void main() {
       'main_training',
       'warmup',
       'activation',
-      'recovery_cooldown',
-      'prevention_adaptation_return',
+      'recovery',
+      'cooldown',
+      'prevention',
+      'return_to_function',
     ]) {
       await tester.scrollUntilVisible(value(id), 220, scrollable: valuesScroll);
       expect(value(id), findsOneWidget);

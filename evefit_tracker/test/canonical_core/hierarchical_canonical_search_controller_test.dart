@@ -9,7 +9,7 @@ void main() {
   const validator = CanonicalValidator();
 
   test('approved hierarchy inputs remain flat independent pillar values', () {
-    expect(CanonicalRegistry.approvedUsageContexts, hasLength(5));
+    expect(CanonicalRegistry.approvedUsageContexts, hasLength(7));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
     expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
     expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
@@ -18,7 +18,7 @@ void main() {
       const CanonicalRegistry().approvedPillarValues
           .map((value) => value.id)
           .toSet(),
-      hasLength(48),
+      hasLength(50),
     );
   });
 

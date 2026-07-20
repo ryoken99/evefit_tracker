@@ -131,13 +131,15 @@ void main() {
       'main_training',
       'warmup',
       'activation',
-      'recovery_cooldown',
-      'prevention_adaptation_return',
+      'recovery',
+      'cooldown',
+      'prevention',
+      'return_to_function',
     ]) {
       await _scrollToValue(tester, id);
       expect(find.byKey(ValueKey('canonical_core_value_$id')), findsOneWidget);
     }
-    await _screenshot(binding, tester, 'canonical_core_five_contexts');
+    await _screenshot(binding, tester, 'canonical_core_seven_contexts');
 
     final warmupTimer = Stopwatch()..start();
     await tester.tap(find.byKey(const ValueKey('canonical_core_value_warmup')));

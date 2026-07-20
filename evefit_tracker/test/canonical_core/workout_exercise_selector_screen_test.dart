@@ -64,7 +64,7 @@ void main() {
     expect(workoutDetail, isNot(contains('CanonicalCoreSearchScreen')));
   });
 
-  testWidgets('starts with exactly five contexts and no capability shortcut', (
+  testWidgets('starts with exactly seven contexts and no capability shortcut', (
     tester,
   ) async {
     await pumpScreen(tester);
@@ -75,7 +75,7 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('Como queres procurar?'), findsNothing);
-    expect(CanonicalRegistry.approvedUsageContexts, hasLength(5));
+    expect(CanonicalRegistry.approvedUsageContexts, hasLength(7));
     for (final definition in CanonicalRegistry.approvedUsageContexts) {
       expect(usageContext(definition.id), findsOneWidget);
       expect(find.text(definition.displayNamePtPt), findsOneWidget);
@@ -114,7 +114,7 @@ void main() {
     }
   });
 
-  testWidgets('cardio concept order is identical in all five contexts', (
+  testWidgets('cardio concept order is identical in all seven contexts', (
     tester,
   ) async {
     const expectedIds = [
@@ -335,11 +335,11 @@ void main() {
     );
     await _bringIntoPhoneViewport(
       tester,
-      usageContext('prevention_adaptation_return'),
+      usageContext('return_to_function'),
       contextScroll,
     );
-    expect(usageContext('prevention_adaptation_return'), findsOneWidget);
-    await tester.tap(usageContext('prevention_adaptation_return'));
+    expect(usageContext('return_to_function'), findsOneWidget);
+    await tester.tap(usageContext('return_to_function'));
     await tester.pumpAndSettle();
     final capabilityScroll = find.descendant(
       of: find.byKey(const ValueKey('workout_exercise_selector_capabilities')),

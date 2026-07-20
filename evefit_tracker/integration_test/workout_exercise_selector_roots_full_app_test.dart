@@ -87,7 +87,7 @@ void main() {
       );
     }
     _expectNoLegacyOrSublevels();
-    await _screenshot(binding, tester, 'hierarchical_five_contexts');
+    await _screenshot(binding, tester, 'hierarchical_seven_contexts');
 
     await _scrollToKey(
       tester,
@@ -347,8 +347,10 @@ const _contextIds = <String>[
   'main_training',
   'warmup',
   'activation',
-  'recovery_cooldown',
-  'prevention_adaptation_return',
+  'recovery',
+  'cooldown',
+  'prevention',
+  'return_to_function',
 ];
 
 const _conceptIdsByCapability = <String, List<String>>{

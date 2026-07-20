@@ -27,8 +27,8 @@ class CanonicalValidator {
       'The canonical core requires exactly eight capability roots.',
     );
     _expect(
-      CanonicalRegistry.approvedUsageContexts.length == 5,
-      'The canonical core requires exactly five usage contexts.',
+      CanonicalRegistry.approvedUsageContexts.length == 7,
+      'The canonical core requires exactly seven usage contexts.',
     );
     _expect(
       CanonicalRegistry.approvedTrainingIntentions.isEmpty,
@@ -47,8 +47,8 @@ class CanonicalValidator {
       'The canonical core requires exactly forty capability-concept relations.',
     );
     _expect(
-      registry.approvedPillarValues.length == 48,
-      'The canonical core requires exactly forty-eight approved values.',
+      registry.approvedPillarValues.length == 50,
+      'The canonical core requires exactly fifty approved values.',
     );
 
     final axes = CanonicalRegistry.axisDefinitions;

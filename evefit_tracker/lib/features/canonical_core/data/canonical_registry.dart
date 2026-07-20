@@ -709,24 +709,44 @@ class CanonicalRegistry {
       iconKey: CanonicalCoreIconKey.activation,
     ),
     CanonicalPillarDefinition(
-      id: 'recovery_cooldown',
+      id: 'recovery',
       axis: CanonicalPillarAxis.usageContext,
-      displayNamePtPt: 'Recuperação e retorno à calma',
+      displayNamePtPt: 'Recuperação',
       descriptionPtPt:
-          'O exercício reduz progressivamente a exigência ou facilita a recuperação através de movimento e regulação leves.',
+          'Atividade deliberadamente leve numa sessão posterior ou mais tarde no mesmo dia, sem prometer acelerar a recuperação fisiológica ou o desempenho futuro.',
       status: CanonicalDefinitionStatus.approved,
       displayOrder: 3,
-      iconKey: CanonicalCoreIconKey.recoveryCooldown,
+      iconKey: CanonicalCoreIconKey.recovery,
     ),
     CanonicalPillarDefinition(
-      id: 'prevention_adaptation_return',
+      id: 'cooldown',
       axis: CanonicalPillarAxis.usageContext,
-      displayNamePtPt: 'Prevenção, adaptação e retorno à função',
+      displayNamePtPt: 'Retorno à calma',
       descriptionPtPt:
-          'O exercício desenvolve progressivamente tolerância, controlo e capacidade para regressar a uma atividade.',
+          'Transição imediata após o esforço para reduzir a exigência e regressar a maior conforto.',
       status: CanonicalDefinitionStatus.approved,
       displayOrder: 4,
-      iconKey: CanonicalCoreIconKey.preventionAdaptationReturn,
+      iconKey: CanonicalCoreIconKey.cooldown,
+    ),
+    CanonicalPillarDefinition(
+      id: 'prevention',
+      axis: CanonicalPillarAxis.usageContext,
+      displayNamePtPt: 'Prevenção',
+      descriptionPtPt:
+          'Desenvolvimento de capacidade, controlo ou tolerância perante exigências previsíveis numa pessoa funcional, sem garantir prevenção de lesão.',
+      status: CanonicalDefinitionStatus.approved,
+      displayOrder: 5,
+      iconKey: CanonicalCoreIconKey.prevention,
+    ),
+    CanonicalPillarDefinition(
+      id: 'return_to_function',
+      axis: CanonicalPillarAxis.usageContext,
+      displayNamePtPt: 'Retorno à função',
+      descriptionPtPt:
+          'Recuperação ou reintrodução de uma função reduzida ou interrompida, dependente de critérios de elegibilidade e sem equivaler a reabilitação ou autorização de retorno.',
+      status: CanonicalDefinitionStatus.approved,
+      displayOrder: 6,
+      iconKey: CanonicalCoreIconKey.returnToFunction,
     ),
   ];
 
