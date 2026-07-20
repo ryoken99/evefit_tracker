@@ -44,6 +44,7 @@ ChangeClass _classifyPath(String path) {
     return ChangeClass.release;
   }
   if (path.startsWith('tool/testing/') ||
+      path.startsWith('tool/canonical/') ||
       path.startsWith('test/testing/') ||
       path.startsWith('.github/') ||
       path.contains('pipeline') ||
@@ -79,6 +80,7 @@ ChangeClass _classifyPath(String path) {
     return ChangeClass.pipelineTests;
   }
   if (path.startsWith('docs/') ||
+      path == '.gitattributes' ||
       path.endsWith('.md') ||
       path.startsWith('README')) {
     return ChangeClass.documentation;

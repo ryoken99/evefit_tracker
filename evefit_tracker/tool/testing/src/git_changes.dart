@@ -334,6 +334,7 @@ String _normalizeGitPath(String input, String projectPrefix) {
 
 bool _isApprovedRepositoryPath(String path) =>
     path.startsWith('.github/') ||
+    path == '.gitattributes' ||
     (!path.contains('/') && path.startsWith('README'));
 
 String _message(String prefix, String detail) {

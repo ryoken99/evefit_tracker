@@ -12,6 +12,7 @@ void main() {
       final result = classifyChangedFiles(const [
         ChangedFile('lib/screens/home_screen.dart'),
         ChangedFile('tool/testing/evefit_gate.dart'),
+        ChangedFile('tool/canonical/generate_registry.dart'),
         ChangedFile('pubspec.yaml'),
       ]);
       expect(result.failsClosed, isFalse);
@@ -35,6 +36,15 @@ void main() {
       ]);
       expect(result.classes, contains(ChangeClass.dartNonUi));
       expect(result.classes, contains(ChangeClass.databaseStartup));
+    });
+
+    test('classifies the repository attributes contract as documentation', () {
+      final result = classifyChangedFiles(const [
+        ChangedFile('.gitattributes'),
+      ]);
+
+      expect(result.failsClosed, isFalse);
+      expect(result.classes, equals(<ChangeClass>{ChangeClass.documentation}));
     });
 
     test(
