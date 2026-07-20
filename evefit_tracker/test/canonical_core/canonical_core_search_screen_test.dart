@@ -134,21 +134,17 @@ void main() {
     expect(find.text('Aquecimento'), findsWidgets);
   });
 
-  testWidgets('intention remains pending and concept axis shows approvals', (
+  testWidgets('intention uses the global flow and concept axis shows approvals', (
     tester,
   ) async {
     await pumpScreen(tester);
     await tester.tap(axis(CanonicalPillarAxis.trainingIntention));
     await tester.pumpAndSettle();
     expect(
-      find.byKey(const ValueKey('canonical_core_intentions_pending')),
+      find.byKey(const ValueKey('canonical_core_global_intentions')),
       findsOneWidget,
     );
-    expect(
-      find.text('O vocabulário canónico de intenções ainda está em definição.'),
-      findsOneWidget,
-    );
-    expect(find.text('Hipertrofia'), findsNothing);
+    expect(CanonicalRegistry.approvedTrainingIntentions, hasLength(591));
 
     await tester.tap(find.byKey(const ValueKey('canonical_core_home')));
     await tester.pumpAndSettle();
