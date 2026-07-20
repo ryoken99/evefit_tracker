@@ -1,6 +1,7 @@
 import '../data/canonical_registry.dart';
 import '../models/canonical_core_models.dart';
 import '../models/canonical_exercise_selection_path.dart';
+import '../models/training_intention_models.dart';
 import 'canonical_selection_compatibility_provider.dart';
 
 enum HierarchicalCanonicalSearchStep {
@@ -36,7 +37,7 @@ class HierarchicalCanonicalSearchController {
   List<CanonicalPillarDefinition> get compatibleTrainingConcepts =>
       compatibilityProvider.compatibleTrainingConcepts(_path);
 
-  List<CanonicalPillarDefinition> get compatibleTrainingIntentions =>
+  List<CanonicalResolvedPathIntention> get compatibleTrainingIntentions =>
       compatibilityProvider.compatibleTrainingIntentions(_path);
 
   CanonicalPillarDefinition? get selectedUsageContext =>
@@ -79,7 +80,11 @@ class HierarchicalCanonicalSearchController {
     if (_path.trainingConceptId == null) {
       throw StateError('A training concept must be selected first.');
     }
-    _requireOption(compatibleTrainingIntentions, id);
+    if (!compatibleTrainingIntentions.any(
+      (option) => option.definition.pillar.id == id,
+    )) {
+      throw StateError('Canonical intention $id is not active for this path.');
+    }
     _path = _path.selectTrainingIntention(id);
     _step = HierarchicalCanonicalSearchStep.results;
   }

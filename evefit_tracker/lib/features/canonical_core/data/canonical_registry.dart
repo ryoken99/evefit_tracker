@@ -851,12 +851,6 @@ class CanonicalRegistry {
       _runtime.resolvedOptionsByPathKey[key] ??
       const <CanonicalResolvedPathIntention>[];
 
-  List<CanonicalPillarDefinition> trainingIntentionsForPath(
-    CanonicalTrainingPathKey key,
-  ) =>
-      _runtime.trainingIntentionsByPathKey[key] ??
-      const <CanonicalPillarDefinition>[];
-
   bool hasCompatibleResolvedOptions(CanonicalTrainingPathKey key) {
     final path = pathByKey[key];
     return path != null &&
@@ -1020,19 +1014,6 @@ class _CanonicalRegistryRuntime {
                 ),
             ]),
         });
-    trainingIntentionsByPathKey =
-        Map<
-          CanonicalTrainingPathKey,
-          List<CanonicalPillarDefinition>
-        >.unmodifiable({
-          for (final entry in resolvedOptionsByPathKey.entries)
-            entry.key: List<CanonicalPillarDefinition>.unmodifiable(
-              entry.value
-                  .map((resolved) => resolved.definition.pillar)
-                  .toList(growable: false),
-            ),
-        });
-
     compatibleConceptsByContextCapability =
         Map<String, List<CanonicalPillarDefinition>>.unmodifiable({
           for (final entry in pathsByContextCapability.entries)
@@ -1083,8 +1064,6 @@ class _CanonicalRegistryRuntime {
   pathsByIntentionId;
   late final Map<CanonicalTrainingPathKey, List<CanonicalResolvedPathIntention>>
   resolvedOptionsByPathKey;
-  late final Map<CanonicalTrainingPathKey, List<CanonicalPillarDefinition>>
-  trainingIntentionsByPathKey;
   late final Map<String, List<CanonicalPillarDefinition>>
   compatibleConceptsByContextCapability;
 }

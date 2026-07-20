@@ -585,8 +585,10 @@ class CanonicalValidator {
     }
     if (criteria.length == 4 &&
         !registry
-            .trainingIntentionsForPath(key)
-            .any((value) => value.id == criteria[3].valueId)) {
+            .resolvedOptionsForPath(key)
+            .any(
+              (option) => option.definition.pillar.id == criteria[3].valueId,
+            )) {
       errors.add(
         'Training intention ${criteria[3].valueId} is not active for ${key.contractId}.',
       );

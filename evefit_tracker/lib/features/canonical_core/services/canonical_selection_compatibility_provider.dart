@@ -1,6 +1,7 @@
 import '../data/canonical_registry.dart';
 import '../models/canonical_core_models.dart';
 import '../models/canonical_exercise_selection_path.dart';
+import '../models/training_intention_models.dart';
 
 abstract interface class CanonicalSelectionCompatibilityProvider {
   List<CanonicalPillarDefinition> activeUsageContexts();
@@ -13,7 +14,7 @@ abstract interface class CanonicalSelectionCompatibilityProvider {
     CanonicalExerciseSelectionPath path,
   );
 
-  List<CanonicalPillarDefinition> compatibleTrainingIntentions(
+  List<CanonicalResolvedPathIntention> compatibleTrainingIntentions(
     CanonicalExerciseSelectionPath path,
   );
 }
@@ -49,10 +50,12 @@ class RegistryCanonicalSelectionCompatibilityProvider
   }
 
   @override
-  List<CanonicalPillarDefinition> compatibleTrainingIntentions(
+  List<CanonicalResolvedPathIntention> compatibleTrainingIntentions(
     CanonicalExerciseSelectionPath path,
   ) {
     final key = path.trainingPathKey;
-    return key == null ? const [] : registry.trainingIntentionsForPath(key);
+    return key == null || !registry.hasCompatibleResolvedOptions(key)
+        ? const []
+        : registry.resolvedOptionsForPath(key);
   }
 }

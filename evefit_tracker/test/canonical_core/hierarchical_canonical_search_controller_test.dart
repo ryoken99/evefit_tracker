@@ -1,11 +1,13 @@
 import 'package:evefit_tracker/features/canonical_core/data/canonical_registry.dart';
 import 'package:evefit_tracker/features/canonical_core/models/canonical_core_models.dart';
 import 'package:evefit_tracker/features/canonical_core/models/canonical_exercise_selection_path.dart';
+import 'package:evefit_tracker/features/canonical_core/models/training_intention_models.dart';
 import 'package:evefit_tracker/features/canonical_core/services/hierarchical_canonical_search_controller.dart';
 import 'package:evefit_tracker/features/canonical_core/validators/canonical_validator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  const registry = CanonicalRegistry();
   const validator = CanonicalValidator();
 
   test('approved hierarchy inputs remain flat independent pillar values', () {
@@ -214,6 +216,14 @@ void main() {
     ]);
     expect(controller.compatibleTrainingIntentions, isNotEmpty);
     expect(
+      controller.compatibleTrainingIntentions,
+      everyElement(isA<CanonicalResolvedPathIntention>()),
+    );
+    expect(
+      controller.compatibleTrainingIntentions,
+      same(registry.resolvedOptionsForPath(controller.path.trainingPathKey!)),
+    );
+    expect(
       () => controller.selectTrainingIntention('invented_intention'),
       throwsStateError,
     );
@@ -256,7 +266,9 @@ void main() {
       ..selectTrainingConcept('cyclic_locomotion');
     final incompatibleKnownId = CanonicalRegistry.approvedTrainingIntentions
         .firstWhere(
-          (value) => !controller.compatibleTrainingIntentions.contains(value),
+          (value) => !controller.compatibleTrainingIntentions.any(
+            (option) => option.definition.pillar == value,
+          ),
         )
         .id;
 

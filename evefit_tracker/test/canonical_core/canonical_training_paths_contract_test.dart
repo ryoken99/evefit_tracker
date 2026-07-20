@@ -94,14 +94,17 @@ void main() {
 
       if (!isSelectable) continue;
       final options = provider.compatibleTrainingIntentions(selection);
-      expect(
-        options.map((value) => value.id),
-        resolved.map((option) => option.definition.pillar.id),
-        reason: path.key.contractId,
-      );
+      expect(options, same(resolved), reason: path.key.contractId);
       for (var index = 0; index < resolved.length; index++) {
         final option = resolved[index];
-        expect(options[index], same(option.definition.pillar));
+        expect(options[index], same(option));
+        expect(option.link.role, resolved[index].link.role);
+        expect(option.link.displayOrder, index + 1);
+        expect(
+          option.link.contextualLabelsPtPt,
+          resolved[index].link.contextualLabelsPtPt,
+        );
+        expect(option.path, same(path));
         expect(
           option.definition.declaredUsageContextIds,
           contains(path.key.usageContextId),

@@ -25,15 +25,16 @@ void main() {
     final resolved = registry.resolvedOptionsForPath(path.key);
     final options = provider.compatibleTrainingIntentions(selection);
     final incompatibleKnownId = CanonicalRegistry.approvedTrainingIntentions
-        .firstWhere((value) => !options.contains(value))
+        .firstWhere(
+          (value) =>
+              !options.any((option) => option.definition.pillar == value),
+        )
         .id;
 
-    expect(options.map((value) => value.id), [
-      for (final option in resolved) option.definition.pillar.id,
-    ]);
+    expect(options, same(resolved));
     expect(
-      resolved.map((option) => option.link.displayOrder),
-      List<int>.generate(resolved.length, (index) => index + 1),
+      options.map((option) => option.link.displayOrder),
+      List<int>.generate(options.length, (index) => index + 1),
     );
     expect(
       () => validator.validateQueryOrThrow(
@@ -42,9 +43,71 @@ void main() {
       throwsStateError,
     );
     for (final option in options) {
-      final query = selection.selectTrainingIntention(option.id).toQuery();
-      expect(validator.queryErrors(query), isEmpty, reason: option.id);
+      expect(
+        option.definition,
+        same(
+          registry.trainingIntentionDefinitionById[option.definition.pillar.id],
+        ),
+      );
+      expect(option.path, same(path));
+      expect(option.link.contextualLabelsPtPt, isA<List<String>>());
+      expect(
+        option.effectiveOperationalRiskTier.index,
+        greaterThanOrEqualTo(option.definition.operationalRiskTier.index),
+      );
+      expect(
+        option.effectiveClinicalReviewRequired,
+        option.definition.clinicalReviewRequired ==
+                CanonicalClinicalReviewRequirement.yes ||
+            option.path.clinicalReviewModifier ==
+                CanonicalPathClinicalReviewModifier.required,
+      );
+      final query = selection
+          .selectTrainingIntention(option.definition.pillar.id)
+          .toQuery();
+      expect(
+        validator.queryErrors(query),
+        isEmpty,
+        reason: option.definition.pillar.id,
+      );
     }
+  });
+
+  test('partial and incompatible paths expose no resolved intentions', () {
+    final compatiblePath = CanonicalRegistry.trainingPaths.firstWhere(
+      (path) =>
+          path.status == CanonicalTrainingPathStatus.compatible &&
+          registry.resolvedOptionsForPath(path.key).isNotEmpty,
+    );
+    final incompatiblePath = CanonicalRegistry.trainingPaths.firstWhere(
+      (path) => path.status == CanonicalTrainingPathStatus.incompatible,
+    );
+
+    expect(
+      provider.compatibleTrainingIntentions(
+        const CanonicalExerciseSelectionPath(),
+      ),
+      isEmpty,
+    );
+    expect(
+      provider.compatibleTrainingIntentions(
+        CanonicalExerciseSelectionPath(
+          usageContextId: compatiblePath.key.usageContextId,
+          capabilityRootId: compatiblePath.key.capabilityRootId,
+        ),
+      ),
+      isEmpty,
+    );
+    expect(
+      provider.compatibleTrainingIntentions(
+        CanonicalExerciseSelectionPath(
+          usageContextId: incompatiblePath.key.usageContextId,
+          capabilityRootId: incompatiblePath.key.capabilityRootId,
+          trainingConceptId: incompatiblePath.key.trainingConceptId,
+        ),
+      ),
+      isEmpty,
+    );
   });
 
   test('queries accept only the exact progressive path prefix', () {
