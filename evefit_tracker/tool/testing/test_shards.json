@@ -56,6 +56,7 @@
       "tests": [
         "test/canonical_core/canonical_core_search_screen_test.dart",
         "test/canonical_core/canonical_training_paths_contract_test.dart",
+        "test/canonical_core/global_intention_search_test.dart",
         "test/catalog/catalog_cardio_warmup_recovery_v099b6a_test.dart",
         "test/catalog/catalog_empty_menu_paths_test.dart",
         "test/catalog/catalog_entry_quality_evidence_test.dart",
