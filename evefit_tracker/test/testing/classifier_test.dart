@@ -31,7 +31,7 @@ void main() {
         ChangedFile('lib/services/report_service.dart'),
         ChangedFile('lib/data/database/app_database.dart'),
         ChangedFile(
-          'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+          'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
         ),
       ]);
       expect(result.classes, contains(ChangeClass.dartNonUi));

@@ -200,7 +200,7 @@ GatePlan composePlan({
       'powershell',
       [
         '-File',
-        'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+        'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
         if (baselineApk != null) ...['-BaselineApk', baselineApk],
         if (currentApk != null) ...['-CurrentApk', currentApk],
       ],
@@ -243,7 +243,7 @@ List<String> _missingRequestedScripts(
     if (mode == GateMode.release && options.enableFullApp)
       'tool/run_workout_exercise_selector_roots_test.ps1',
     if (mode == GateMode.release && options.enableUpgrade)
-      'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+      'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
   ];
   return requested
       .where(
