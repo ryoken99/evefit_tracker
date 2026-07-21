@@ -83,6 +83,8 @@ the upload step.
 - initial PR classification rejected the new `tool/release/` path as unknown;
   the classifier now maps that path to the release gate and has a regression
   test for the fail-closed decision
+- the next PR run correctly rejected the unassigned verifier test; the test is
+  now explicitly assigned to the existing test manifest
 
 ## Rollback
 
