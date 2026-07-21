@@ -51,13 +51,19 @@ Completed:
 - progressive 1/2/3/4 criterion controller tests;
 - path-aware intention compatibility tests;
 - no `exercise_ids`, `parent_id`, legacy IDs, equipment, environment, protocol, or prescription in queries;
-- database version 22 unchanged and no migration diff.
+- database version 22 unchanged and no migration diff;
+- final Fast Gate passed with 113 focused tests;
+- functional PR Gate passed with 678 tests across four shards plus Android smoke;
+- dedicated Pixel 8 Pro full-app passed with seven contexts and no Flutter or Hero exceptions;
+- v1.1.3+5 existing-install validation preserved personal data, historical joins, schema, and foreign keys.
 
-Pending final evidence before integration:
+Runtime evidence:
 
-- updated Pixel 8 Pro Android smoke and full-app scenarios;
-- existing-install v1.1.3 validation;
-- final Fast Gate, PR Gate, and CI quality gate.
+- clean smoke: `test_artifacts/test_ci_performance/android_smoke/2026-07-21T002637Z/`;
+- full-app: `test_artifacts/workout_exercise_selector_roots/full_app/2026-07-21T001052Z/`;
+- existing install: `test_artifacts/release/v1.1.4/functional_existing_install/runs/2026-07-21T001754Z/`.
+
+The remote CI quality gate remains pending until the functional branch is pushed.
 
 ## Rollback
 

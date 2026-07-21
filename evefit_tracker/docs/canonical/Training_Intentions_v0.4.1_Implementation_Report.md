@@ -89,29 +89,43 @@ Repository inspection found canonical context, capability, concept, and intentio
 
 ## Validation status
 
-Completed on the functional branch:
+Completed on the functional branch at `eaef58598ea5025daa0f64dbd2c6eef0c463823b`:
 
 - raw Git blob SHA-256 gate;
 - deterministic generator `report` and `check`;
 - exact closed counts and historical mapping validation;
 - generator tamper, malformed-input, Unicode, and round-trip tests;
 - registry, matrix, provider, controller, query, and widget focused tests;
-- Fast Gate on coherent implementation batches;
-- baseline Pixel 8 Pro full-app run from the authorized base.
+- final Fast Gate: passed in 14.232 seconds, including format, analyze, and 113 focused tests;
+- functional PR Gate: passed in 275.801 seconds;
+- four test shards: 238 + 144 + 149 + 147 = 678 tests, all passed;
+- Android smoke on `EveFit_Test_Device`: passed with seven contexts, a real intention, explicit confirmation, full breadcrumb, empty exercises, and no Flutter or Hero exception;
+- dedicated Pixel 8 Pro full-app: passed with 11 screenshots, clinical review, hidden advanced options, Dashboard, Profile/Settings, Goals, and no Flutter or Hero exception;
+- existing-install validation over the signed v1.1.3+5 baseline: passed with profile, measurement, goal, workout, workout exercise, set, settings, historical join, schema 22, and foreign keys preserved;
+- functional release APK build at version 1.1.3+5: passed for local evidence only.
 
-Still to be recorded before functional integration:
+Evidence paths:
 
-- final Fast Gate and PR Gate on the complete functional diff;
-- updated Android smoke and full-app flow;
-- existing-install validation over the v1.1.3 baseline;
-- startup and selector-open performance before/after;
-- CI quality gate and final PR head.
+- Fast Gate report: `.dart_tool/v114-fast-final-retry.json`;
+- PR Gate report: `.dart_tool/v114-pr-functional.json`;
+- Android smoke: `test_artifacts/test_ci_performance/android_smoke/2026-07-21T002637Z/`;
+- full-app: `test_artifacts/workout_exercise_selector_roots/full_app/2026-07-21T001052Z/`;
+- existing install: `test_artifacts/release/v1.1.4/functional_existing_install/runs/2026-07-21T001754Z/`.
 
-No pending result is reported as passed before its command completes.
+The remote CI quality gate and final feature PR head remain pending until the branch is pushed. No pending result is reported as passed before its command completes.
 
 ## Performance
 
-The baseline Pixel 8 Pro AVD run recorded selector transitions of 129 ms to open, 127 ms from context to capability, and 108 ms from capability to concepts. The final implementation will be measured with the same environment and procedure. The 591-item global list is virtualized, generated data is memory-backed, and path indexes avoid repeated link scans. Any reproducible regression above 25% remains a blocker for investigation. The additional user performance gate is evaluated from real before/after measurements and is not inferred from architecture alone.
+Measurements used the same `EveFit_Test_Device` Pixel 8 Pro AVD and debug mode with `-ClearAppData`:
+
+| Measurement | Authorized main | Functional branch | Delta |
+| --- | ---: | ---: | ---: |
+| Profile ready | 4,181 ms | 4,349 ms | +4.02% |
+| Selector open, clean smoke | 128 ms | 125 ms | -2.34% |
+| Selector open, full-app | 129 ms | 129 ms | 0.00% |
+| Debug APK size | 179,285,322 bytes | 179,301,706 bytes | +16,384 bytes (+0.009139%) |
+
+The authorized baseline also recorded 127 ms from context to capability and 108 ms from capability to concepts. The final flow adds real intention resolution after concept selection without a reproducible startup or selector regression above the 25% investigation threshold. The 591-item global list is virtualized, generated data is memory-backed, and path indexes avoid repeated link scans.
 
 ## Limitations, risks, and rollback
 
