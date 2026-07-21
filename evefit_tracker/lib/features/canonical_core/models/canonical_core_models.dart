@@ -35,8 +35,10 @@ enum CanonicalCoreIconKey {
   mainTraining,
   warmup,
   activation,
-  recoveryCooldown,
-  preventionAdaptationReturn,
+  recovery,
+  cooldown,
+  prevention,
+  returnToFunction,
   emptySearch,
 }
 

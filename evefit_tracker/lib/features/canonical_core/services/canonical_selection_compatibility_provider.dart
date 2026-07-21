@@ -1,6 +1,7 @@
 import '../data/canonical_registry.dart';
 import '../models/canonical_core_models.dart';
 import '../models/canonical_exercise_selection_path.dart';
+import '../models/training_intention_models.dart';
 
 abstract interface class CanonicalSelectionCompatibilityProvider {
   List<CanonicalPillarDefinition> activeUsageContexts();
@@ -13,14 +14,18 @@ abstract interface class CanonicalSelectionCompatibilityProvider {
     CanonicalExerciseSelectionPath path,
   );
 
-  List<CanonicalPillarDefinition> compatibleTrainingIntentions(
+  List<CanonicalResolvedPathIntention> compatibleTrainingIntentions(
     CanonicalExerciseSelectionPath path,
   );
 }
 
 class RegistryCanonicalSelectionCompatibilityProvider
     implements CanonicalSelectionCompatibilityProvider {
-  const RegistryCanonicalSelectionCompatibilityProvider();
+  const RegistryCanonicalSelectionCompatibilityProvider({
+    this.registry = const CanonicalRegistry(),
+  });
+
+  final CanonicalRegistry registry;
 
   @override
   List<CanonicalPillarDefinition> activeUsageContexts() =>
@@ -41,11 +46,16 @@ class RegistryCanonicalSelectionCompatibilityProvider
     final capabilityId = path.capabilityRootId;
     return capabilityId == null
         ? const []
-        : const CanonicalRegistry().trainingConceptsForCapability(capabilityId);
+        : registry.trainingConceptsForPath(path.usageContextId!, capabilityId);
   }
 
   @override
-  List<CanonicalPillarDefinition> compatibleTrainingIntentions(
+  List<CanonicalResolvedPathIntention> compatibleTrainingIntentions(
     CanonicalExerciseSelectionPath path,
-  ) => const [];
+  ) {
+    final key = path.trainingPathKey;
+    return key == null || !registry.hasCompatibleResolvedOptions(key)
+        ? const []
+        : registry.resolvedOptionsForPath(key);
+  }
 }

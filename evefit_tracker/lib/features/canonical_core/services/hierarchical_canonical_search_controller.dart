@@ -1,6 +1,7 @@
 import '../data/canonical_registry.dart';
 import '../models/canonical_core_models.dart';
 import '../models/canonical_exercise_selection_path.dart';
+import '../models/training_intention_models.dart';
 import 'canonical_selection_compatibility_provider.dart';
 
 enum HierarchicalCanonicalSearchStep {
@@ -28,18 +29,16 @@ class HierarchicalCanonicalSearchController {
   CanonicalSearchQuery get currentQuery => _path.toQuery();
 
   List<CanonicalPillarDefinition> get activeUsageContexts =>
-      _ordered(compatibilityProvider.activeUsageContexts());
+      compatibilityProvider.activeUsageContexts();
 
   List<CanonicalPillarDefinition> get compatibleCapabilities =>
-      _ordered(compatibilityProvider.compatibleCapabilities(_path));
+      compatibilityProvider.compatibleCapabilities(_path);
 
   List<CanonicalPillarDefinition> get compatibleTrainingConcepts =>
-      List.unmodifiable(
-        compatibilityProvider.compatibleTrainingConcepts(_path),
-      );
+      compatibilityProvider.compatibleTrainingConcepts(_path);
 
-  List<CanonicalPillarDefinition> get compatibleTrainingIntentions =>
-      _ordered(compatibilityProvider.compatibleTrainingIntentions(_path));
+  List<CanonicalResolvedPathIntention> get compatibleTrainingIntentions =>
+      compatibilityProvider.compatibleTrainingIntentions(_path);
 
   CanonicalPillarDefinition? get selectedUsageContext =>
       _definition(_path.usageContextId);
@@ -81,7 +80,11 @@ class HierarchicalCanonicalSearchController {
     if (_path.trainingConceptId == null) {
       throw StateError('A training concept must be selected first.');
     }
-    _requireOption(compatibleTrainingIntentions, id);
+    if (!compatibleTrainingIntentions.any(
+      (option) => option.definition.pillar.id == id,
+    )) {
+      throw StateError('Canonical intention $id is not active for this path.');
+    }
     _path = _path.selectTrainingIntention(id);
     _step = HierarchicalCanonicalSearchStep.results;
   }
@@ -119,19 +122,22 @@ class HierarchicalCanonicalSearchController {
     _step = HierarchicalCanonicalSearchStep.trainingConcept;
   }
 
+  void goToTrainingIntention() {
+    if (_path.trainingConceptId == null) return;
+    _step = HierarchicalCanonicalSearchStep.trainingIntention;
+  }
+
   void goToRoot() {
     _path = const CanonicalExerciseSelectionPath();
     _step = HierarchicalCanonicalSearchStep.usageContext;
   }
 
+  void clear() => goToRoot();
+
+  void goHome() => goToRoot();
+
   CanonicalPillarDefinition? _definition(String? id) =>
       id == null ? null : const CanonicalRegistry().valueById[id];
-
-  List<CanonicalPillarDefinition> _ordered(
-    List<CanonicalPillarDefinition> values,
-  ) => List.unmodifiable(
-    [...values]..sort((a, b) => a.displayOrder.compareTo(b.displayOrder)),
-  );
 
   void _requireOption(List<CanonicalPillarDefinition> values, String id) {
     if (!values.any((value) => value.id == id)) {

@@ -1,4 +1,5 @@
 import 'canonical_core_models.dart';
+import 'training_intention_models.dart';
 
 class CanonicalExerciseSelectionPath {
   const CanonicalExerciseSelectionPath({
@@ -12,6 +13,24 @@ class CanonicalExerciseSelectionPath {
   final String? capabilityRootId;
   final String? trainingConceptId;
   final String? trainingIntentionId;
+
+  CanonicalTrainingPathKey? get trainingPathKey {
+    final usageContextId = this.usageContextId;
+    final capabilityRootId = this.capabilityRootId;
+    final trainingConceptId = this.trainingConceptId;
+    if (usageContextId == null ||
+        capabilityRootId == null ||
+        trainingConceptId == null) {
+      return null;
+    }
+    return CanonicalTrainingPathKey(
+      usageContextId: usageContextId,
+      capabilityRootId: capabilityRootId,
+      trainingConceptId: trainingConceptId,
+    );
+  }
+
+  bool get hasCompleteTrainingPath => trainingPathKey != null;
 
   CanonicalExerciseSelectionPath selectUsageContext(String id) {
     if (id == usageContextId) return this;
@@ -90,4 +109,20 @@ class CanonicalExerciseSelectionPath {
     }
     return CanonicalSearchQuery(criteria: List.unmodifiable(criteria));
   }
+
+  @override
+  bool operator ==(Object other) =>
+      other is CanonicalExerciseSelectionPath &&
+      other.usageContextId == usageContextId &&
+      other.capabilityRootId == capabilityRootId &&
+      other.trainingConceptId == trainingConceptId &&
+      other.trainingIntentionId == trainingIntentionId;
+
+  @override
+  int get hashCode => Object.hash(
+    usageContextId,
+    capabilityRootId,
+    trainingConceptId,
+    trainingIntentionId,
+  );
 }

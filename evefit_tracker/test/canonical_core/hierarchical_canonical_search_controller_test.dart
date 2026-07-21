@@ -1,24 +1,26 @@
 import 'package:evefit_tracker/features/canonical_core/data/canonical_registry.dart';
 import 'package:evefit_tracker/features/canonical_core/models/canonical_core_models.dart';
 import 'package:evefit_tracker/features/canonical_core/models/canonical_exercise_selection_path.dart';
+import 'package:evefit_tracker/features/canonical_core/models/training_intention_models.dart';
 import 'package:evefit_tracker/features/canonical_core/services/hierarchical_canonical_search_controller.dart';
 import 'package:evefit_tracker/features/canonical_core/validators/canonical_validator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  const registry = CanonicalRegistry();
   const validator = CanonicalValidator();
 
   test('approved hierarchy inputs remain flat independent pillar values', () {
-    expect(CanonicalRegistry.approvedUsageContexts, hasLength(5));
+    expect(CanonicalRegistry.approvedUsageContexts, hasLength(7));
     expect(CanonicalRegistry.approvedCapabilityRoots, hasLength(8));
     expect(CanonicalRegistry.approvedTrainingConcepts, hasLength(35));
-    expect(CanonicalRegistry.approvedTrainingIntentions, isEmpty);
+    expect(CanonicalRegistry.approvedTrainingIntentions, hasLength(591));
     expect(CanonicalRegistry.approvedAttributeDefinitions, isEmpty);
     expect(
       const CanonicalRegistry().approvedPillarValues
           .map((value) => value.id)
           .toSet(),
-      hasLength(48),
+      hasLength(641),
     );
   });
 
@@ -212,7 +214,15 @@ void main() {
         valueId: 'cyclic_locomotion',
       ),
     ]);
-    expect(controller.compatibleTrainingIntentions, isEmpty);
+    expect(controller.compatibleTrainingIntentions, isNotEmpty);
+    expect(
+      controller.compatibleTrainingIntentions,
+      everyElement(isA<CanonicalResolvedPathIntention>()),
+    );
+    expect(
+      controller.compatibleTrainingIntentions,
+      same(registry.resolvedOptionsForPath(controller.path.trainingPathKey!)),
+    );
     expect(
       () => controller.selectTrainingIntention('invented_intention'),
       throwsStateError,
@@ -239,5 +249,48 @@ void main() {
     controller.goToRoot();
     expect(controller.currentQuery.criteria, isEmpty);
     expect(controller.path.usageContextId, isNull);
+
+    controller
+      ..selectUsageContext('warmup')
+      ..selectCapabilityRoot('cardio_conditioning');
+    controller.clear();
+    expect(controller.path, const CanonicalExerciseSelectionPath());
+    controller.goHome();
+    expect(controller.step, HierarchicalCanonicalSearchStep.usageContext);
+  });
+
+  test('intention breadcrumb navigation preserves the four-part path', () {
+    final controller = HierarchicalCanonicalSearchController()
+      ..selectUsageContext('activation')
+      ..selectCapabilityRoot('cardio_conditioning')
+      ..selectTrainingConcept('cyclic_locomotion');
+    final intentionId =
+        controller.compatibleTrainingIntentions.first.definition.pillar.id;
+    controller.selectTrainingIntention(intentionId);
+
+    controller.goToTrainingIntention();
+
+    expect(controller.step, HierarchicalCanonicalSearchStep.trainingIntention);
+    expect(controller.path.trainingIntentionId, intentionId);
+    expect(controller.currentQuery.criteria, hasLength(4));
+  });
+
+  test('controller rejects a known intention outside the selected path', () {
+    final controller = HierarchicalCanonicalSearchController()
+      ..selectUsageContext('activation')
+      ..selectCapabilityRoot('cardio_conditioning')
+      ..selectTrainingConcept('cyclic_locomotion');
+    final incompatibleKnownId = CanonicalRegistry.approvedTrainingIntentions
+        .firstWhere(
+          (value) => !controller.compatibleTrainingIntentions.any(
+            (option) => option.definition.pillar == value,
+          ),
+        )
+        .id;
+
+    expect(
+      () => controller.selectTrainingIntention(incompatibleKnownId),
+      throwsStateError,
+    );
   });
 }

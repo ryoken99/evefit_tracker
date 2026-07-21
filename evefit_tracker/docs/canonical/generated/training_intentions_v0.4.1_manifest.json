@@ -1,0 +1,505 @@
+{
+  "generator_version": "1.0.0",
+  "registry_version": "0.4.1",
+  "generation_id": "training-intentions-v0.4.1-4d6f6d06f8f5",
+  "source_files": {
+    "docs/canonical/source/training_intentions/EveFit_Training_Intentions_Production_Registry_v0.4.md": {
+      "sha256": "d9cf51727dc28aa078b7cc55fa0f6246360e86bcba93b40fe34feac9ac7f50ad"
+    },
+    "docs/canonical/source/training_intentions/EveFit_Training_Intentions_Production_Registry_v0.4.1.md": {
+      "sha256": "4d6f6d06f8f593f549dfd0ab132ce09f92ec760dfed11966cdd816be3506c0d8"
+    }
+  },
+  "output_hashes_normalized": {
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_registry_part_01.g.dart": "010a25641f3da35ed9acfa26b604cb5d64c91aede1630d5aaf8c334de9d7bffd",
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_registry_part_02.g.dart": "042d7bbb9825092372e5f660e9e54e66f9170768df11e5d1480bf7f8928fa192",
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_registry_part_03.g.dart": "fdd702ee8089996232068803b3ed2d5cd56f00bc4e7790a1937b172d2f8cf64a",
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_registry_part_04.g.dart": "7fe83d5a2bb8c277ed10de53cf1df01b171cfa899761f19f32666a1f3ca091f3",
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_registry_part_05.g.dart": "008b171cd59fc0290d7e35d4c461ea4ffdfd6d4ed0a99644f3f0420054ef914d",
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_registry_part_06.g.dart": "c00fd2725ed8812ea2312185163f753b903bedbc8fce2b459bb058585a8903f5",
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_registry.g.dart": "a9a75173e3ff8a947c70b6622dd95a09fb8ba1b3d4253631ddfdb93b6ccb79f0",
+    "lib/features/canonical_core/generated/training_intentions/training_paths_registry.g.dart": "a3c6b5e4588e066be253de065f974112b70b2c1a636fed6f4819922e4f834a22",
+    "lib/features/canonical_core/generated/training_intentions/training_path_intention_links.g.dart": "c7208f0d72bef33b4a26133bbed1899bd979cd125de3e7429aac607862ffeb40",
+    "lib/features/canonical_core/generated/training_intentions/training_intentions_provenance.g.dart": "8f7dcbd625bf01dbb634ad20adf0b276a7c4cdc91e7a451588c654ab72ec79f0"
+  },
+  "counts": {
+    "active_contexts": 7,
+    "capabilities": 8,
+    "concepts": 35,
+    "capability_concept_relations": 40,
+    "paths": 280,
+    "compatible_paths": 261,
+    "incompatible_paths": 19,
+    "global_intentions": 591,
+    "path_intention_links": 771,
+    "historic_v03_ids": 693,
+    "historic_v03_occurrences": 792,
+    "contextual_labels": 59
+  },
+  "distributions": {
+    "type": {
+      "acute_preparation": 89,
+      "adaptation_outcome": 100,
+      "cooldown_regulation": 20,
+      "functional_restoration": 92,
+      "prevention_capacity": 102,
+      "recovery_activity": 56,
+      "self_regulation": 9,
+      "targeted_activation": 98,
+      "technical_learning": 25
+    },
+    "operational_risk_tier": {
+      "clinically_restricted": 92,
+      "high": 37,
+      "low": 92,
+      "moderate": 370
+    },
+    "clinical_review_required": {
+      "no": 491,
+      "yes": 100
+    },
+    "evidence_basis": {
+      "limited_family_evidence": 160,
+      "moderate_family_evidence": 285,
+      "product_ontology_inference": 19,
+      "professional_consensus": 92,
+      "strong_family_evidence": 35
+    },
+    "horizon": {
+      "agudo": 263,
+      "agudo e crónico": 9,
+      "crónico": 227,
+      "fase de retorno funcional": 92
+    },
+    "path_intention_role": {
+      "alternative_primary": 74,
+      "complementary": 412,
+      "conditional_complementary": 33,
+      "hidden_advanced": 14,
+      "principal_candidate": 238
+    },
+    "path_operational_risk_modifier": {
+      "clinically_restricted": 40,
+      "inherit_only": 213,
+      "may_escalate_to_high": 8,
+      "not_applicable": 19
+    },
+    "path_clinical_review_modifier": {
+      "inherit_only": 221,
+      "not_applicable": 19,
+      "required": 40
+    }
+  },
+  "contextual_labels": {
+    "unique_labels_pt_pt": [
+      "Aceder suavemente à amplitude necessária",
+      "Aumentar a resistência de preensão durante transporte",
+      "Aumentar a temperatura através de movimento integrado",
+      "Aumentar a temperatura dos tecidos para a tarefa seguinte",
+      "Automatizar sequência técnica",
+      "Coordenar movimento integrado com respiração confortável",
+      "Coordenar movimento segmentar com respiração confortável",
+      "Ensaiar amplitudes articulares específicas da sessão",
+      "Ensaiar sequência familiar",
+      "Facilitar a transição para menor exigência muscular",
+      "Facilitar a transição para repouso através de movimento articular suave",
+      "Facilitar a transição para repouso com mobilidade suportada",
+      "Libertar co-contração global após esforço",
+      "Libertar co-contração global desnecessária",
+      "Libertar estabilização postural excessiva",
+      "Libertar tensão de preensão e dos ombros",
+      "Libertar tensão global através de dissociação suave",
+      "Libertar tensão posicional sob suporte",
+      "Manter atividade isométrica ligeira",
+      "Manter atividade postural ligeira",
+      "Manter movimento dissociado suave",
+      "Melhorar a recuperação entre esforços locomotores",
+      "Melhorar a recuperação entre esforços propulsivos",
+      "Preparar a sincronização entre respiração e propulsão",
+      "Preparar amplitude dinâmica para a atividade",
+      "Preparar movimento específico de um segmento",
+      "Preparar múltiplas amplitudes articulares",
+      "Preparar o controlo articular seletivo",
+      "Preparar o recrutamento segmentar seletivo",
+      "Reconstruir confiança em arranques explosivos",
+      "Reconstruir confiança em ações balísticas",
+      "Reconstruir confiança em locomoção rápida",
+      "Reconstruir confiança em movimento multidirecional",
+      "Reconstruir confiança em movimento repetitivo",
+      "Reconstruir confiança em posições carregadas",
+      "Reconstruir confiança em posições suportadas ou carregadas",
+      "Reconstruir confiança em sequências motoras",
+      "Reconstruir confiança em tarefas direcionais rápidas",
+      "Reconstruir confiança na propulsão",
+      "Reconstruir confiança na travagem e redirecionamento",
+      "Reconstruir confiança nas mudanças de posição",
+      "Reconstruir confiança no deslocamento",
+      "Reconstruir confiança no movimento articular",
+      "Reconstruir confiança no movimento integrado",
+      "Reconstruir confiança no movimento segmentar seletivo",
+      "Reconstruir confiança no transporte de carga",
+      "Reconstruir confiança perante contacto reativo",
+      "Reconstruir confiança sob carga",
+      "Recuperar controlo direcional de desaceleração",
+      "Recuperar execução suave da sequência",
+      "Reduzir a rigidez articular inicial percebida",
+      "Reduzir a tensão desnecessária durante movimento articular",
+      "Reduzir rigidez articular percebida através de movimento leve",
+      "Reduzir rigidez global percebida através de movimento leve",
+      "Reduzir rigidez percebida através de movimento suave",
+      "Reduzir rigidez percebida através de transições leves",
+      "Reduzir rigidez percebida em direções específicas",
+      "Reduzir rigidez percebida em posições suportadas",
+      "Reduzir tensão desnecessária através de movimento controlado"
+    ],
+    "resolved_link_occurrences": [
+      {
+        "path_source_number": 4,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez percebida através de movimento suave"
+      },
+      {
+        "path_source_number": 5,
+        "intention_id": "facilitate_transition_to_rest",
+        "label_pt_pt": "Facilitar a transição para menor exigência muscular"
+      },
+      {
+        "path_source_number": 7,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança sob carga"
+      },
+      {
+        "path_source_number": 11,
+        "intention_id": "release_unnecessary_tension",
+        "label_pt_pt": "Reduzir tensão desnecessária através de movimento controlado"
+      },
+      {
+        "path_source_number": 12,
+        "intention_id": "facilitate_transition_to_rest",
+        "label_pt_pt": "Facilitar a transição para menor exigência muscular"
+      },
+      {
+        "path_source_number": 18,
+        "intention_id": "maintain_light_muscle_activity",
+        "label_pt_pt": "Manter atividade isométrica ligeira"
+      },
+      {
+        "path_source_number": 19,
+        "intention_id": "facilitate_transition_to_rest",
+        "label_pt_pt": "Facilitar a transição para menor exigência muscular"
+      },
+      {
+        "path_source_number": 21,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em posições carregadas"
+      },
+      {
+        "path_source_number": 22,
+        "intention_id": "increase_grip_endurance",
+        "label_pt_pt": "Aumentar a resistência de preensão durante transporte"
+      },
+      {
+        "path_source_number": 25,
+        "intention_id": "maintain_gentle_postural_control",
+        "label_pt_pt": "Manter atividade postural ligeira"
+      },
+      {
+        "path_source_number": 26,
+        "intention_id": "release_unnecessary_muscle_tension",
+        "label_pt_pt": "Libertar tensão de preensão e dos ombros"
+      },
+      {
+        "path_source_number": 28,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança no transporte de carga"
+      },
+      {
+        "path_source_number": 29,
+        "intention_id": "improve_recovery_between_repeated_efforts",
+        "label_pt_pt": "Melhorar a recuperação entre esforços locomotores"
+      },
+      {
+        "path_source_number": 32,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez percebida através de movimento suave"
+      },
+      {
+        "path_source_number": 35,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança no deslocamento"
+      },
+      {
+        "path_source_number": 36,
+        "intention_id": "improve_recovery_between_repeated_efforts",
+        "label_pt_pt": "Melhorar a recuperação entre esforços propulsivos"
+      },
+      {
+        "path_source_number": 38,
+        "intention_id": "prime_breath_movement_timing",
+        "label_pt_pt": "Preparar a sincronização entre respiração e propulsão"
+      },
+      {
+        "path_source_number": 42,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança na propulsão"
+      },
+      {
+        "path_source_number": 46,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez percebida através de movimento suave"
+      },
+      {
+        "path_source_number": 49,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em movimento repetitivo"
+      },
+      {
+        "path_source_number": 53,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez percebida em direções específicas"
+      },
+      {
+        "path_source_number": 56,
+        "intention_id": "restore_deceleration_control",
+        "label_pt_pt": "Recuperar controlo direcional de desaceleração"
+      },
+      {
+        "path_source_number": 56,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em movimento multidirecional"
+      },
+      {
+        "path_source_number": 63,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em sequências motoras"
+      },
+      {
+        "path_source_number": 65,
+        "intention_id": "raise_local_tissue_temperature_for_activity",
+        "label_pt_pt": "Aumentar a temperatura dos tecidos para a tarefa seguinte"
+      },
+      {
+        "path_source_number": 70,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em arranques explosivos"
+      },
+      {
+        "path_source_number": 77,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em ações balísticas"
+      },
+      {
+        "path_source_number": 84,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança perante contacto reativo"
+      },
+      {
+        "path_source_number": 91,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança na travagem e redirecionamento"
+      },
+      {
+        "path_source_number": 93,
+        "intention_id": "raise_local_tissue_temperature_for_activity",
+        "label_pt_pt": "Aumentar a temperatura dos tecidos para a tarefa seguinte"
+      },
+      {
+        "path_source_number": 98,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em locomoção rápida"
+      },
+      {
+        "path_source_number": 100,
+        "intention_id": "raise_local_tissue_temperature_for_activity",
+        "label_pt_pt": "Aumentar a temperatura dos tecidos para a tarefa seguinte"
+      },
+      {
+        "path_source_number": 105,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em tarefas direcionais rápidas"
+      },
+      {
+        "path_source_number": 107,
+        "intention_id": "prepare_required_joint_ranges",
+        "label_pt_pt": "Ensaiar amplitudes articulares específicas da sessão"
+      },
+      {
+        "path_source_number": 107,
+        "intention_id": "reduce_initial_perceived_stiffness",
+        "label_pt_pt": "Reduzir a rigidez articular inicial percebida"
+      },
+      {
+        "path_source_number": 108,
+        "intention_id": "prime_selective_segment_control",
+        "label_pt_pt": "Preparar o controlo articular seletivo"
+      },
+      {
+        "path_source_number": 109,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez articular percebida através de movimento leve"
+      },
+      {
+        "path_source_number": 110,
+        "intention_id": "release_unnecessary_muscle_tension",
+        "label_pt_pt": "Reduzir a tensão desnecessária durante movimento articular"
+      },
+      {
+        "path_source_number": 110,
+        "intention_id": "facilitate_transition_to_rest",
+        "label_pt_pt": "Facilitar a transição para repouso através de movimento articular suave"
+      },
+      {
+        "path_source_number": 112,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança no movimento articular"
+      },
+      {
+        "path_source_number": 114,
+        "intention_id": "prepare_required_joint_ranges",
+        "label_pt_pt": "Preparar múltiplas amplitudes articulares"
+      },
+      {
+        "path_source_number": 116,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez percebida através de transições leves"
+      },
+      {
+        "path_source_number": 119,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança nas mudanças de posição"
+      },
+      {
+        "path_source_number": 121,
+        "intention_id": "raise_whole_body_temperature",
+        "label_pt_pt": "Aumentar a temperatura através de movimento integrado"
+      },
+      {
+        "path_source_number": 123,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez global percebida através de movimento leve"
+      },
+      {
+        "path_source_number": 124,
+        "intention_id": "coordinate_movement_with_comfortable_breathing",
+        "label_pt_pt": "Coordenar movimento integrado com respiração confortável"
+      },
+      {
+        "path_source_number": 126,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança no movimento integrado"
+      },
+      {
+        "path_source_number": 130,
+        "intention_id": "reduce_perceived_stiffness",
+        "label_pt_pt": "Reduzir rigidez percebida em posições suportadas"
+      },
+      {
+        "path_source_number": 131,
+        "intention_id": "release_unnecessary_muscle_tension",
+        "label_pt_pt": "Libertar tensão posicional sob suporte"
+      },
+      {
+        "path_source_number": 131,
+        "intention_id": "facilitate_transition_to_rest",
+        "label_pt_pt": "Facilitar a transição para repouso com mobilidade suportada"
+      },
+      {
+        "path_source_number": 133,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança em posições suportadas ou carregadas"
+      },
+      {
+        "path_source_number": 135,
+        "intention_id": "prepare_selective_segment_control",
+        "label_pt_pt": "Preparar movimento específico de um segmento"
+      },
+      {
+        "path_source_number": 136,
+        "intention_id": "prime_selective_recruitment",
+        "label_pt_pt": "Preparar o recrutamento segmentar seletivo"
+      },
+      {
+        "path_source_number": 138,
+        "intention_id": "release_unnecessary_muscle_tension",
+        "label_pt_pt": "Libertar tensão global através de dissociação suave"
+      },
+      {
+        "path_source_number": 138,
+        "intention_id": "coordinate_movement_with_comfortable_breathing",
+        "label_pt_pt": "Coordenar movimento segmentar com respiração confortável"
+      },
+      {
+        "path_source_number": 140,
+        "intention_id": "increase_perceived_task_confidence",
+        "label_pt_pt": "Reconstruir confiança no movimento segmentar seletivo"
+      },
+      {
+        "path_source_number": 142,
+        "intention_id": "prepare_required_joint_ranges",
+        "label_pt_pt": "Aceder suavemente à amplitude necessária"
+      },
+      {
+        "path_source_number": 149,
+        "intention_id": "prepare_required_joint_ranges",
+        "label_pt_pt": "Preparar amplitude dinâmica para a atividade"
+      },
+      {
+        "path_source_number": 156,
+        "intention_id": "prepare_required_joint_ranges",
+        "label_pt_pt": "Aceder suavemente à amplitude necessária"
+      },
+      {
+        "path_source_number": 166,
+        "intention_id": "release_unnecessary_muscle_tension",
+        "label_pt_pt": "Libertar estabilização postural excessiva"
+      },
+      {
+        "path_source_number": 193,
+        "intention_id": "release_unnecessary_tension",
+        "label_pt_pt": "Libertar co-contração global desnecessária"
+      },
+      {
+        "path_source_number": 193,
+        "intention_id": "maintain_low_demand_segmental_control",
+        "label_pt_pt": "Manter movimento dissociado suave"
+      },
+      {
+        "path_source_number": 194,
+        "intention_id": "release_unnecessary_muscle_tension",
+        "label_pt_pt": "Libertar co-contração global após esforço"
+      },
+      {
+        "path_source_number": 239,
+        "intention_id": "automate_motor_sequence",
+        "label_pt_pt": "Automatizar sequência técnica"
+      },
+      {
+        "path_source_number": 240,
+        "intention_id": "rehearse_motor_sequence",
+        "label_pt_pt": "Ensaiar sequência familiar"
+      },
+      {
+        "path_source_number": 242,
+        "intention_id": "resume_smooth_sequence_coordination_after_effort",
+        "label_pt_pt": "Recuperar execução suave da sequência"
+      }
+    ]
+  },
+  "historic_v03_audit": {
+    "unique_ids": 693,
+    "occurrences": 792,
+    "normalized_mapping_sha256": "ecd2fabeb9de618854b8f4ffc804093cc80d98de32b18ad6fbe3fa0e11ac63a8",
+    "complete_mapping_validated": true,
+    "all_historic_ids_have_destination": true,
+    "no_historic_destination_is_unknown": true,
+    "complete_mapping_emitted_to_runtime": false
+  },
+  "runtime_separation": {
+    "markdown_parsed_at_runtime": false,
+    "executable_equipment_fields_present": false,
+    "executable_environment_fields_present": false,
+    "legacy_v03_ids_present_in_runtime_queries": false,
+    "historic_reasons_present_in_runtime": false,
+    "historic_ledger_present_in_runtime": false
+  }
+}

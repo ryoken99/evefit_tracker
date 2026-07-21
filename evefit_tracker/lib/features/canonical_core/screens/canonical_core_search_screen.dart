@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/canonical_registry.dart';
 import '../models/canonical_core_models.dart';
+import '../models/training_intention_models.dart';
 import '../repositories/canonical_exercise_search_repository.dart';
 import '../services/canonical_core_navigation_controller.dart';
 import '../widgets/canonical_core_empty_state.dart';
@@ -37,6 +38,29 @@ class _CanonicalCoreSearchScreenState extends State<CanonicalCoreSearchScreen> {
 
   Future<void> _selectValue(CanonicalPillarDefinition value) async {
     final query = _controller.selectValue(value.id);
+    setState(() {
+      _searching = true;
+      _result = null;
+    });
+    final result = await widget.repository.search(query);
+    if (!mounted) return;
+    setState(() {
+      _result = result;
+      _searching = false;
+    });
+  }
+
+  void _selectGlobalIntention(CanonicalPillarDefinition intention) {
+    setState(() {
+      _controller.selectGlobalIntention(intention.id);
+      _result = null;
+    });
+  }
+
+  Future<void> _selectGlobalIntentionPath(
+    CanonicalTrainingPathDefinition path,
+  ) async {
+    final query = _controller.selectGlobalIntentionPath(path);
     setState(() {
       _searching = true;
       _result = null;
@@ -100,10 +124,13 @@ class _CanonicalCoreSearchScreenState extends State<CanonicalCoreSearchScreen> {
               _CanonicalCoreBreadcrumb(
                 axis: _controller.selectedAxis,
                 value: _controller.selectedValue,
+                globalIntention: _controller.selectedGlobalIntention,
+                globalIntentionPath: _controller.selectedGlobalIntentionPath,
+                registry: _controller.registry,
                 onRootSelected: _goHome,
-                onAxisSelected: () {
-                  if (_controller.selectedValue != null) _goBack();
-                },
+                onAxisSelected: () => setState(_controller.goToAxis),
+                onGlobalIntentionSelected: () =>
+                    setState(_controller.goToGlobalIntentionPaths),
               ),
               Expanded(child: _buildContent()),
             ],
@@ -116,6 +143,10 @@ class _CanonicalCoreSearchScreenState extends State<CanonicalCoreSearchScreen> {
   Widget _buildContent() {
     if (_controller.isAtRoot) {
       return _CanonicalCoreAxisList(onSelected: _selectAxis);
+    }
+    final axis = _controller.selectedAxis!;
+    if (axis.axis == CanonicalPillarAxis.trainingIntention) {
+      return _buildGlobalIntentionContent(axis);
     }
     if (_controller.selectedValue != null) {
       if (_searching) {
@@ -137,7 +168,6 @@ class _CanonicalCoreSearchScreenState extends State<CanonicalCoreSearchScreen> {
       );
     }
 
-    final axis = _controller.selectedAxis!;
     final values = _controller.availableValues;
     if (values.isEmpty) return _VocabularyPendingState(axis: axis.axis);
     return ListView(
@@ -160,6 +190,186 @@ class _CanonicalCoreSearchScreenState extends State<CanonicalCoreSearchScreen> {
       ],
     );
   }
+
+  Widget _buildGlobalIntentionContent(CanonicalPillarAxisDefinition axis) {
+    final intention = _controller.selectedGlobalIntention;
+    if (intention == null) {
+      return _CanonicalGlobalIntentionList(
+        intentions: _controller.availableValues,
+        onSelected: _selectGlobalIntention,
+      );
+    }
+    final path = _controller.selectedGlobalIntentionPath;
+    if (path == null) {
+      return _CanonicalGlobalIntentionPathList(
+        registry: _controller.registry,
+        intention: intention,
+        paths: _controller.compatiblePathsForGlobalIntention(intention.id),
+        onSelected: _selectGlobalIntentionPath,
+      );
+    }
+    if (_searching) {
+      return const Center(
+        child: CircularProgressIndicator(
+          key: ValueKey('canonical_core_search_loading'),
+        ),
+      );
+    }
+    final result = _result;
+    if (result == null ||
+        result.status == CanonicalSearchResultStatus.invalidQuery) {
+      return const _CanonicalCoreSearchError();
+    }
+    return _CanonicalGlobalIntentionEmptyState(
+      registry: _controller.registry,
+      axis: axis,
+      intention: intention,
+      path: path,
+    );
+  }
+}
+
+class _CanonicalGlobalIntentionList extends StatelessWidget {
+  const _CanonicalGlobalIntentionList({
+    required this.intentions,
+    required this.onSelected,
+  });
+
+  final List<CanonicalPillarDefinition> intentions;
+  final ValueChanged<CanonicalPillarDefinition> onSelected;
+
+  @override
+  Widget build(BuildContext context) => ListView.builder(
+    key: const ValueKey('canonical_core_global_intentions'),
+    padding: const EdgeInsets.all(16),
+    itemCount: intentions.length + 2,
+    itemBuilder: (context, index) {
+      if (index == 0) {
+        return Text(
+          'Intenções de treino',
+          style: Theme.of(context).textTheme.titleLarge,
+        );
+      }
+      if (index == 1) return const SizedBox(height: 12);
+      final intention = intentions[index - 2];
+      return _CanonicalDefinitionCard(
+        key: ValueKey('canonical_core_intention_${intention.id}'),
+        iconKey: intention.iconKey,
+        title: intention.displayNamePtPt,
+        description: intention.descriptionPtPt,
+        onTap: () => onSelected(intention),
+      );
+    },
+  );
+}
+
+class _CanonicalGlobalIntentionPathList extends StatelessWidget {
+  const _CanonicalGlobalIntentionPathList({
+    required this.registry,
+    required this.intention,
+    required this.paths,
+    required this.onSelected,
+  });
+
+  final CanonicalRegistry registry;
+  final CanonicalPillarDefinition intention;
+  final List<CanonicalTrainingPathDefinition> paths;
+  final ValueChanged<CanonicalTrainingPathDefinition> onSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      key: const ValueKey('canonical_core_global_intention_paths'),
+      padding: const EdgeInsets.all(16),
+      itemCount: paths.length + 2,
+      itemBuilder: (context, index) {
+        if (index == 0) {
+          return Text(
+            intention.displayNamePtPt,
+            style: Theme.of(context).textTheme.titleLarge,
+          );
+        }
+        if (index == 1) return const SizedBox(height: 12);
+        final path = paths[index - 2];
+        return _CanonicalDefinitionCard(
+          key: ValueKey('canonical_core_path_${path.key.contractId}'),
+          iconKey: CanonicalCoreIconKey.intentionAxis,
+          title: _canonicalPathDisplayName(registry, path),
+          description: 'Percurso compatível',
+          onTap: () => onSelected(path),
+        );
+      },
+    );
+  }
+}
+
+class _CanonicalGlobalIntentionEmptyState extends StatelessWidget {
+  const _CanonicalGlobalIntentionEmptyState({
+    required this.registry,
+    required this.axis,
+    required this.intention,
+    required this.path,
+  });
+
+  final CanonicalRegistry registry;
+  final CanonicalPillarAxisDefinition axis;
+  final CanonicalPillarDefinition intention;
+  final CanonicalTrainingPathDefinition path;
+
+  @override
+  Widget build(BuildContext context) => SingleChildScrollView(
+    key: const ValueKey('canonical_core_global_intention_empty_state'),
+    padding: const EdgeInsets.all(24),
+    child: Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 560),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              CanonicalCoreIconResolver.resolve(
+                CanonicalCoreIconKey.emptySearch,
+              ),
+              size: 44,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Ainda não existem exercícios aprovados para este percurso.',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Os exercícios compatíveis serão adicionados e validados progressivamente.',
+            ),
+            const SizedBox(height: 20),
+            Text('Intenção', style: Theme.of(context).textTheme.labelLarge),
+            Text(intention.displayNamePtPt),
+            const SizedBox(height: 12),
+            Text('Percurso', style: Theme.of(context).textTheme.labelLarge),
+            Text(_canonicalPathDisplayName(registry, path)),
+            const SizedBox(height: 12),
+            Text(
+              'Critérios ativos',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+            Text('${axis.displayNamePtPt}: ${intention.displayNamePtPt}'),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+String _canonicalPathDisplayName(
+  CanonicalRegistry registry,
+  CanonicalTrainingPathDefinition path,
+) {
+  final values = registry.valueById;
+  return [
+    values[path.key.usageContextId]!.displayNamePtPt,
+    values[path.key.capabilityRootId]!.displayNamePtPt,
+    values[path.key.trainingConceptId]!.displayNamePtPt,
+  ].join(' > ');
 }
 
 class _CanonicalCoreAxisList extends StatelessWidget {
@@ -306,14 +516,22 @@ class _CanonicalCoreBreadcrumb extends StatelessWidget {
   const _CanonicalCoreBreadcrumb({
     required this.axis,
     required this.value,
+    required this.globalIntention,
+    required this.globalIntentionPath,
+    required this.registry,
     required this.onRootSelected,
     required this.onAxisSelected,
+    required this.onGlobalIntentionSelected,
   });
 
   final CanonicalPillarAxisDefinition? axis;
   final CanonicalPillarDefinition? value;
+  final CanonicalPillarDefinition? globalIntention;
+  final CanonicalTrainingPathDefinition? globalIntentionPath;
+  final CanonicalRegistry registry;
   final VoidCallback onRootSelected;
   final VoidCallback onAxisSelected;
+  final VoidCallback onGlobalIntentionSelected;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -336,8 +554,13 @@ class _CanonicalCoreBreadcrumb extends StatelessWidget {
           ),
         if (axis != null) ...[
           const Text('>'),
-          if (value == null)
-            Text(axis!.displayNamePtPt)
+          if (value == null && globalIntention == null)
+            Text(
+              axis!.displayNamePtPt,
+              key: ValueKey(
+                'canonical_core_breadcrumb_${axis!.axis.contractId}',
+              ),
+            )
           else
             TextButton(
               key: ValueKey(
@@ -348,6 +571,33 @@ class _CanonicalCoreBreadcrumb extends StatelessWidget {
             ),
         ],
         if (value != null) ...[const Text('>'), Text(value!.displayNamePtPt)],
+        if (globalIntention != null) ...[
+          const Text('>'),
+          if (globalIntentionPath == null)
+            Text(
+              globalIntention!.displayNamePtPt,
+              key: ValueKey(
+                'canonical_core_breadcrumb_intention_${globalIntention!.id}',
+              ),
+            )
+          else
+            TextButton(
+              key: ValueKey(
+                'canonical_core_breadcrumb_intention_${globalIntention!.id}',
+              ),
+              onPressed: onGlobalIntentionSelected,
+              child: Text(globalIntention!.displayNamePtPt),
+            ),
+        ],
+        if (globalIntentionPath != null) ...[
+          const Text('>'),
+          Text(
+            _canonicalPathDisplayName(registry, globalIntentionPath!),
+            key: ValueKey(
+              'canonical_core_breadcrumb_path_${globalIntentionPath!.key.contractId}',
+            ),
+          ),
+        ],
       ],
     ),
   );

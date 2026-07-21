@@ -19,9 +19,10 @@ abstract final class CanonicalCoreIconResolver {
     CanonicalCoreIconKey.mainTraining => Icons.sports_gymnastics,
     CanonicalCoreIconKey.warmup => Icons.wb_sunny_outlined,
     CanonicalCoreIconKey.activation => Icons.flash_on_outlined,
-    CanonicalCoreIconKey.recoveryCooldown => Icons.spa_outlined,
-    CanonicalCoreIconKey.preventionAdaptationReturn =>
-      Icons.health_and_safety_outlined,
+    CanonicalCoreIconKey.recovery => Icons.spa_outlined,
+    CanonicalCoreIconKey.cooldown => Icons.self_improvement_outlined,
+    CanonicalCoreIconKey.prevention => Icons.health_and_safety_outlined,
+    CanonicalCoreIconKey.returnToFunction => Icons.accessible_forward_outlined,
     CanonicalCoreIconKey.emptySearch => Icons.construction_outlined,
   };
 }

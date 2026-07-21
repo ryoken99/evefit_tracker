@@ -71,7 +71,9 @@ void main() {
           GitProcessOutput(0, '${gitRoot.path}\n', ''),
           const GitProcessOutput(
             0,
-            'M\u0000.github/workflows/test.yml\u0000M\u0000README.md\u0000',
+            'M\u0000.github/workflows/test.yml\u0000'
+                'M\u0000.gitattributes\u0000'
+                'M\u0000README.md\u0000',
             '',
           ),
         ]),
@@ -79,6 +81,7 @@ void main() {
       expect(approved.succeeded, isTrue);
       expect(approved.files.map((file) => file.path), [
         '.github/workflows/test.yml',
+        '.gitattributes',
         'README.md',
       ]);
 

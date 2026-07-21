@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../models/canonical_core_models.dart';
+import '../models/training_intention_models.dart';
 import '../services/hierarchical_canonical_search_controller.dart';
 import '../widgets/canonical_core_icon_resolver.dart';
+import '../widgets/training_intention_widgets.dart';
 
 class WorkoutExerciseSelectorScreen extends StatefulWidget {
   const WorkoutExerciseSelectorScreen({super.key, this.controller});
@@ -28,6 +30,12 @@ class _WorkoutExerciseSelectorScreenState
 
   void _selectCapabilityRoot(CanonicalPillarDefinition definition) {
     setState(() => _controller.selectCapabilityRoot(definition.id));
+  }
+
+  void _selectTrainingIntention(CanonicalResolvedPathIntention option) {
+    setState(
+      () => _controller.selectTrainingIntention(option.definition.pillar.id),
+    );
   }
 
   void _goBack() {
@@ -82,6 +90,9 @@ class _WorkoutExerciseSelectorScreenState
               onConceptPressed: () {
                 setState(_controller.goToTrainingConcept);
               },
+              onIntentionPressed: () {
+                setState(_controller.goToTrainingIntention);
+              },
             ),
             const Divider(height: 1),
             Expanded(child: _buildCurrentStep()),
@@ -97,10 +108,7 @@ class _WorkoutExerciseSelectorScreenState
     HierarchicalCanonicalSearchStep.trainingConcept => _buildTrainingConcepts(),
     HierarchicalCanonicalSearchStep.trainingIntention =>
       _buildTrainingIntentions(),
-    HierarchicalCanonicalSearchStep.results => _buildUnavailableFutureStep(
-      'Exercícios correspondentes',
-      'Ainda não existem exercícios canónicos ativos.',
-    ),
+    HierarchicalCanonicalSearchStep.results => _buildResults(),
   };
 
   Widget _buildUsageContexts() => _WorkoutExerciseSelectorList(
@@ -162,41 +170,33 @@ class _WorkoutExerciseSelectorScreenState
     );
   }
 
-  Widget _buildTrainingIntentions() => ListView(
+  Widget _buildTrainingIntentions() => TrainingIntentionList(
     key: const ValueKey('workout_exercise_selector_intentions'),
+    title: 'Que intenção de treino procuras?',
+    intentions: _controller.compatibleTrainingIntentions,
+    onIntentionTap: _selectTrainingIntention,
+  );
+
+  Widget _buildResults() => ListView(
+    key: const ValueKey('workout_exercise_selector_results_empty'),
     padding: const EdgeInsets.all(24),
     children: [
-      Text(
-        'Que intenção de treino procuras?',
-        style: Theme.of(context).textTheme.titleLarge,
-      ),
       const SizedBox(height: 32),
-      const Icon(Icons.flag_outlined, size: 48),
+      const Icon(Icons.search_off_outlined, size: 48),
       const SizedBox(height: 16),
       Text(
-        'Ainda não existem intenções de treino aprovadas.',
-        key: const ValueKey('workout_exercise_selector_intention_empty'),
+        'Ainda não existem exercícios aprovados para este percurso.',
         textAlign: TextAlign.center,
         style: Theme.of(context).textTheme.titleMedium,
       ),
       const SizedBox(height: 8),
       const Text(
-        'As intenções compatíveis com esta seleção serão adicionadas e validadas progressivamente.',
+        'Os exercícios compatíveis serão adicionados e validados progressivamente.',
         textAlign: TextAlign.center,
       ),
       const SizedBox(height: 24),
       _WorkoutExerciseSelectorEmptyPath(controller: _controller),
     ],
-  );
-
-  Widget _buildUnavailableFutureStep(String title, String message) => Center(
-    child: Padding(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [Text(title), const SizedBox(height: 8), Text(message)],
-      ),
-    ),
   );
 }
 
@@ -234,18 +234,21 @@ class _WorkoutExerciseSelectorBreadcrumb extends StatelessWidget {
     required this.onContextPressed,
     required this.onCapabilityPressed,
     required this.onConceptPressed,
+    required this.onIntentionPressed,
   });
 
   final HierarchicalCanonicalSearchController controller;
   final VoidCallback onContextPressed;
   final VoidCallback onCapabilityPressed;
   final VoidCallback onConceptPressed;
+  final VoidCallback onIntentionPressed;
 
   @override
   Widget build(BuildContext context) {
     final contextDefinition = controller.selectedUsageContext;
     final capabilityDefinition = controller.selectedCapabilityRoot;
     final conceptDefinition = controller.selectedTrainingConcept;
+    final intentionDefinition = controller.selectedTrainingIntention;
     final children = <Widget>[];
     if (contextDefinition != null) {
       children.add(
@@ -275,6 +278,16 @@ class _WorkoutExerciseSelectorBreadcrumb extends StatelessWidget {
           key: const ValueKey('workout_exercise_selector_breadcrumb_concept'),
           onPressed: onConceptPressed,
           child: Text(conceptDefinition.displayNamePtPt),
+        ),
+      );
+    }
+    if (intentionDefinition != null) {
+      if (children.isNotEmpty) children.add(const Text('>'));
+      children.add(
+        TextButton(
+          key: const ValueKey('workout_exercise_selector_breadcrumb_intention'),
+          onPressed: onIntentionPressed,
+          child: Text(intentionDefinition.displayNamePtPt),
         ),
       );
     }
@@ -405,6 +418,7 @@ class _WorkoutExerciseSelectorEmptyPath extends StatelessWidget {
       controller.selectedUsageContext?.displayNamePtPt,
       controller.selectedCapabilityRoot?.displayNamePtPt,
       controller.selectedTrainingConcept?.displayNamePtPt,
+      controller.selectedTrainingIntention?.displayNamePtPt,
     ].whereType<String>().toList(growable: false);
     return Semantics(
       label: 'Percurso selecionado',
