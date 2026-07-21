@@ -56,7 +56,8 @@ ChangeClass _classifyPath(String path) {
       path.startsWith('integration_test/')) {
     return ChangeClass.uiNavigation;
   }
-  if (path == 'tool/run_v113_canonical_training_concepts_upgrade_test.ps1') {
+  if (path ==
+      'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1') {
     return ChangeClass.databaseStartup;
   }
   if (path.startsWith('lib/data/') ||
@@ -81,6 +82,7 @@ ChangeClass _classifyPath(String path) {
   }
   if (path.startsWith('docs/') ||
       path == '.gitattributes' ||
+      path.endsWith('/.gitattributes') ||
       path.endsWith('.md') ||
       path.startsWith('README')) {
     return ChangeClass.documentation;

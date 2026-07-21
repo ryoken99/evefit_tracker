@@ -1,3 +1,13 @@
+# EveFit v1.1.4 — Sete Contextos e Intenções Canónicas
+
+- Evoluída a pesquisa canónica para sete contextos explícitos: Treino principal, Aquecimento, Ativação, Recuperação, Retorno à calma, Prevenção e adaptação, e Retorno à função.
+- Mantidas oito capacidades, 35 conceitos globais e 40 relações capacidade-conceito; a matriz contém 280 percursos, dos quais 261 compatíveis e 19 incompatíveis documentados.
+- Adicionadas 591 intenções globais e 771 ligações contextualizadas aos percursos, com seleção explícita e query progressiva `usage_context → capability_root → training_concept → training_intention`.
+- Mantidos zero atributos oficiais, zero exercícios canónicos e zero subníveis: todos os percursos concluídos continuam num estado vazio intencional de exercícios.
+- Validado o mapeamento histórico de 693 IDs e 792 ocorrências; o histórico documental não é carregado no runtime nem incluído no APK como dados funcionais.
+- Catálogo legacy e árvore antiga permanecem fora do runtime. Schema 22 e migrations mantêm-se inalterados; perfis, medições, objetivos, treinos e históricos são preservados.
+- A versão de release alvo é `1.1.4+6`. A publicação requer ainda os gates de release, atualização, assinatura, qualidade remota e validação final em main.
+
 # EveFit v1.1.3 - Conceitos Canónicos de Treino
 
 - 35 conceitos globais únicos e 40 compatibilidades ordenadas por capacidade.

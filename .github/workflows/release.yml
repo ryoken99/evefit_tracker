@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão do release (v1.1.3)'
+        description: 'Versão do release (v1.1.4)'
         required: true
-        default: 'v1.1.3'
+        default: 'v1.1.4'
 
 permissions:
   contents: write
@@ -51,7 +51,7 @@ jobs:
 
       - name: Prepare release APK
         working-directory: evefit_tracker
-        run: cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.3-canonical-training-concepts-release.apk
+        run: cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.4-seven-contexts-training-intentions-release.apk
 
       - name: Set version name
         id: version
@@ -61,18 +61,23 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.name }}
-          name: EveFit v1.1.3 - Conceitos Canónicos de Treino
-          files: evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.3-canonical-training-concepts-release.apk
+          name: EveFit v1.1.4 — Sete Contextos e Intenções Canónicas
+          files: evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.4-seven-contexts-training-intentions-release.apk
+          draft: false
+          prerelease: false
+          make_latest: true
           generate_release_notes: false
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v1.1.3
-            - 35 conceitos canónicos globais e 40 compatibilidades ordenadas por capacidade.
-            - Cinco contextos e oito capacidades cobertos pela mesma matriz de conceitos reutilizáveis.
-            - Fluxo Contexto → Capacidade → Conceito → estado vazio de Intenção.
-            - Esta versão mantém zero intenções, zero atributos oficiais, zero exercícios e zero subníveis.
-            - Schema e migrations permanecem inalterados; dados pessoais e históricos devem ser preservados.
+            ### Novidades v1.1.4
+            - Sete contextos explícitos, oito capacidades, 35 conceitos e 40 relações capacidade-conceito.
+            - 591 intenções canónicas globais, ligadas a 261 percursos compatíveis por 771 links tipados.
+            - Fluxo Contexto → Capacidade → Conceito → Intenção → estado vazio de Exercícios.
+            - Pesquisa global por intenção com escolha posterior de um percurso realmente compatível.
+            - Risco operacional e revisão clínica permanecem separados, com mensagens prudentes em PT-PT.
+            - Esta versão mantém zero atributos oficiais, zero exercícios e zero subníveis.
+            - Schema 22 e migrations permanecem inalterados; dados pessoais e históricos são preservados.
 
             ### Novidades v0.9.4
             - Alfandega permanente dos catalogos com auditoria strict, inventario e gap analysis.
@@ -107,6 +112,6 @@ jobs:
             - Atualizada versão da app para v0.9.0.
 
             ### Instalação
-            Descarrega o ficheiro `app-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
+            Descarrega `EveFit-v1.1.4-seven-contexts-training-intentions-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

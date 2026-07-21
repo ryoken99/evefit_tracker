@@ -31,21 +31,28 @@ void main() {
         ChangedFile('lib/services/report_service.dart'),
         ChangedFile('lib/data/database/app_database.dart'),
         ChangedFile(
-          'tool/run_v113_canonical_training_concepts_upgrade_test.ps1',
+          'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
         ),
       ]);
       expect(result.classes, contains(ChangeClass.dartNonUi));
       expect(result.classes, contains(ChangeClass.databaseStartup));
     });
 
-    test('classifies the repository attributes contract as documentation', () {
-      final result = classifyChangedFiles(const [
-        ChangedFile('.gitattributes'),
-      ]);
+    test(
+      'classifies repository and nested attributes contracts as documentation',
+      () {
+        final result = classifyChangedFiles(const [
+          ChangedFile('.gitattributes'),
+          ChangedFile('lib/canonical/generated/.gitattributes'),
+        ]);
 
-      expect(result.failsClosed, isFalse);
-      expect(result.classes, equals(<ChangeClass>{ChangeClass.documentation}));
-    });
+        expect(result.failsClosed, isFalse);
+        expect(
+          result.classes,
+          equals(<ChangeClass>{ChangeClass.documentation}),
+        );
+      },
+    );
 
     test(
       'classifies integration tests and the Android smoke runner as UI navigation',
