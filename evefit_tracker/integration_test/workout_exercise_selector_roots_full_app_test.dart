@@ -3,14 +3,20 @@ import 'dart:io';
 import 'package:evefit_tracker/main.dart' as app;
 import 'package:flutter/foundation.dart' show FlutterError, FlutterErrorDetails;
 import 'package:flutter/material.dart'
-    show FocusManager, NavigationDestination, TextField, ValueKey;
+    show
+        FilledButton,
+        FocusManager,
+        NavigationDestination,
+        Scaffold,
+        TextField,
+        ValueKey;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('workout exercise selector follows the canonical hierarchy', (
+  testWidgets('full app validates the v1.1.4 canonical exercise selector', (
     tester,
   ) async {
     final capturedErrors = <FlutterErrorDetails>[];
@@ -22,40 +28,24 @@ void main() {
     addTearDown(() => FlutterError.onError = previousOnError);
 
     app.main();
-    await _pumpUntilFound(
-      tester,
-      find.text('Configuração inicial'),
-      timeout: const Duration(minutes: 3),
-    );
+    await _ensureDashboard(tester);
     await binding.convertFlutterSurfaceToImage();
-    await _screenshot(binding, tester, 'hierarchical_initial_setup');
-
-    await tester.tap(find.text('Começar'));
-    await tester.pumpAndSettle();
-    final fields = find.byType(TextField);
-    expect(fields, findsNWidgets(5));
-    await tester.enterText(fields.at(0), 'Hierarchical search integration');
-    await tester.enterText(fields.at(1), '1234');
-    await tester.enterText(fields.at(2), '1234');
-    FocusManager.instance.primaryFocus?.unfocus();
-    await _tapVisibleText(tester, 'Continuar');
-    await _tapVisibleText(tester, 'Continuar');
-    await _tapVisibleText(tester, 'Continuar');
-    await _tapVisibleText(tester, 'Criar perfil');
-
-    await _pumpUntilFound(tester, find.text('Dashboard'));
-    await _screenshot(binding, tester, 'hierarchical_dashboard');
+    await _screenshot(binding, tester, 'v114_dashboard');
 
     await tester.tap(_navigationDestination('Treinos'));
     await _pumpUntilFound(tester, find.text('Criar treino'));
     await tester.tap(find.text('Criar treino'));
-    await _pumpUntilFound(tester, find.text('Guardar treino'));
-    await _tapVisibleText(tester, 'Guardar treino');
+    final saveWorkout = find.widgetWithText(FilledButton, 'Guardar treino');
+    await _pumpUntilFound(tester, saveWorkout);
+    final saveCallback = tester.widget<FilledButton>(saveWorkout).onPressed;
+    expect(saveCallback, isNotNull);
+    saveCallback!();
+    await tester.pump();
     await _pumpUntilFound(
       tester,
       find.byKey(const ValueKey('workout_detail_add_exercise')),
     );
-    await _screenshot(binding, tester, 'hierarchical_workout_detail');
+    await _screenshot(binding, tester, 'v114_workout_detail');
 
     final openTimer = Stopwatch()..start();
     await tester.tap(find.byKey(const ValueKey('workout_detail_add_exercise')));
@@ -80,243 +70,164 @@ void main() {
         findsOneWidget,
       );
     }
-    for (final id in _capabilityIds) {
-      expect(
-        find.byKey(ValueKey('workout_exercise_selector_capability_$id')),
-        findsNothing,
-      );
-    }
-    _expectNoLegacyOrSublevels();
-    await _screenshot(binding, tester, 'hierarchical_seven_contexts');
+    _expectNoLegacy();
+    await _screenshot(binding, tester, 'v114_seven_contexts');
 
-    await _scrollToKey(
+    await _selectPath(
       tester,
-      const ValueKey('workout_exercise_selector_context_warmup'),
-      towardStart: true,
+      contextId: 'warmup',
+      capabilityId: 'cardio_conditioning',
+      conceptId: 'cyclic_locomotion',
     );
-    final contextTimer = Stopwatch()..start();
-    await tester.tap(
-      find.byKey(const ValueKey('workout_exercise_selector_context_warmup')),
+    expect(_intentionCards(), findsWidgets);
+    await _screenshot(binding, tester, 'v114_warmup_cardio_intentions');
+
+    await _tapVisible(tester, _intentionCards().first);
+    await _pumpUntilFound(tester, find.text('Detalhe da intenção'));
+    expect(find.text('Selecionar esta intenção'), findsOneWidget);
+    await _tapVisible(tester, find.text('Selecionar esta intenção'));
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_results_empty')),
+    );
+    expect(
+      find.text('Ainda não existem exercícios aprovados para este percurso.'),
+      findsOneWidget,
+    );
+    expect(
+      find.text(
+        'Os exercícios compatíveis serão adicionados e validados progressivamente.',
+      ),
+      findsOneWidget,
+    );
+    for (final key in _completeBreadcrumbKeys) {
+      expect(find.byKey(key), findsOneWidget);
+    }
+    expect(
+      find.byKey(const ValueKey('workout_exercise_selector_empty_path')),
+      findsOneWidget,
+    );
+    _expectNoLegacy();
+    await _screenshot(binding, tester, 'v114_warmup_exercises_empty');
+
+    await _goHome(tester);
+    await _selectContextAndCapability(
+      tester,
+      contextId: 'recovery',
+      capabilityId: 'speed_power',
     );
     await _pumpUntilFound(
       tester,
-      find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+      find.byKey(const ValueKey('workout_exercise_selector_concept_empty')),
     );
-    contextTimer.stop();
-    _metric('CONTEXT_TO_CAPABILITY_MS', contextTimer.elapsedMilliseconds);
+    expect(
+      find.text('Ainda não existem conceitos de treino aprovados.'),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const ValueKey('workout_exercise_selector_empty_path')),
+      findsOneWidget,
+    );
+    _expectNoLegacy();
+    await _screenshot(binding, tester, 'v114_recovery_speed_power_empty');
 
-    expect(find.text('Que capacidade queres trabalhar?'), findsOneWidget);
-    for (final id in _capabilityIds) {
-      await _scrollToKey(
-        tester,
-        ValueKey('workout_exercise_selector_capability_$id'),
-      );
-      expect(
-        find.byKey(ValueKey('workout_exercise_selector_capability_$id')),
-        findsOneWidget,
-      );
-    }
-    await _screenshot(binding, tester, 'hierarchical_eight_capabilities');
+    await _goHome(tester);
+    await _selectPath(
+      tester,
+      contextId: 'return_to_function',
+      capabilityId: 'muscular_capacity',
+      conceptId: 'loaded_carry',
+    );
+    final clinicalCard = find.byKey(
+      const ValueKey(
+        'training_intention_card_restore_gait_under_load_return_to_function_muscular_capacity_loaded_carry',
+      ),
+    );
+    await _tapVisible(tester, clinicalCard);
+    await _pumpUntilFound(tester, find.text('Detalhe da intenção'));
+    expect(
+      find.text(
+        'Utilização dependente de critérios de elegibilidade ou avaliação profissional.',
+      ),
+      findsWidgets,
+    );
+    expect(
+      find.text(
+        'Esta intenção requer revisão clínica antes de ser utilizada numa decisão individual.',
+      ),
+      findsWidgets,
+    );
+    final returnToFunctionNote = find.text(
+      'Retorno à função não substitui diagnóstico, reabilitação, critérios clínicos ou autorização de retorno ao desporto.',
+    );
+    await _scrollUntilFound(tester, returnToFunctionNote);
+    expect(returnToFunctionNote, findsOneWidget);
+    await _screenshot(
+      binding,
+      tester,
+      'v114_return_to_function_clinical_detail',
+    );
+    await tester.tap(find.byTooltip('Fechar'));
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_intentions')),
+    );
 
+    await _goHome(tester);
+    await _selectPath(
+      tester,
+      contextId: 'warmup',
+      capabilityId: 'speed_power',
+      conceptId: 'ballistic_projection',
+    );
+    final hiddenAdvanced = find.byKey(
+      const ValueKey(
+        'training_intention_card_prepare_ballistic_projection_chain_warmup_speed_power_ballistic_projection',
+      ),
+    );
+    expect(hiddenAdvanced, findsNothing);
+    await _tapVisible(
+      tester,
+      find.byKey(const ValueKey('training_intention_advanced_toggle')),
+    );
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('training_intention_advanced_group')),
+    );
     await _scrollToKey(
       tester,
       const ValueKey(
-        'workout_exercise_selector_capability_cardio_conditioning',
-      ),
-      towardStart: true,
-    );
-    final capabilityTimer = Stopwatch()..start();
-    await tester.tap(
-      find.byKey(
-        const ValueKey(
-          'workout_exercise_selector_capability_cardio_conditioning',
-        ),
+        'training_intention_card_prepare_ballistic_projection_chain_warmup_speed_power_ballistic_projection',
       ),
     );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_concepts')),
-    );
-    capabilityTimer.stop();
-    _metric('CAPABILITY_TO_CONCEPTS_MS', capabilityTimer.elapsedMilliseconds);
+    expect(hiddenAdvanced, findsOneWidget);
+    await _screenshot(binding, tester, 'v114_hidden_advanced_expanded');
 
-    expect(_conceptCards(), findsNWidgets(5));
-    for (final conceptId in _conceptIdsByCapability['cardio_conditioning']!) {
-      expect(
-        find.byKey(ValueKey('workout_exercise_selector_concept_$conceptId')),
-        findsOneWidget,
-      );
-    }
-    await _screenshot(binding, tester, 'hierarchical_warmup_cardio_concepts');
-    await tester.tap(
-      find.byKey(
-        const ValueKey('workout_exercise_selector_concept_cyclic_locomotion'),
-      ),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
-    );
-    expect(
-      find.text('Ainda não existem intenções de treino aprovadas.'),
-      findsOneWidget,
-    );
-    expect(find.text('Aquecimento'), findsWidgets);
-    expect(find.text('Cardio e condicionamento'), findsWidgets);
-    expect(find.text('Locomoção cíclica'), findsWidgets);
-    expect(find.textContaining('Aquecimento\n> Cardio'), findsOneWidget);
-    expect(find.textContaining('> Locomoção cíclica'), findsOneWidget);
-    _expectNoLegacyOrSublevels();
-    await _screenshot(
-      binding,
-      tester,
-      'hierarchical_warmup_cardio_intention_empty',
-    );
-
-    await tester.tap(
-      find.byKey(const ValueKey('workout_exercise_selector_back')),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_concepts')),
-    );
-    await tester.tap(
-      find.byKey(const ValueKey('workout_exercise_selector_back')),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
-    );
-
-    for (final capabilityId in _capabilityIds.where(
-      (id) => id != 'cardio_conditioning',
-    )) {
-      await _scrollToKey(
-        tester,
-        ValueKey('workout_exercise_selector_capability_$capabilityId'),
-      );
-      await tester.tap(
-        find.byKey(
-          ValueKey('workout_exercise_selector_capability_$capabilityId'),
-        ),
-      );
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
-      );
-      final expectedConceptIds = _conceptIdsByCapability[capabilityId]!;
-      expect(_conceptCards(), findsNWidgets(expectedConceptIds.length));
-      for (final conceptId in expectedConceptIds) {
-        await _scrollToKey(
-          tester,
-          ValueKey('workout_exercise_selector_concept_$conceptId'),
-        );
-        expect(
-          find.byKey(ValueKey('workout_exercise_selector_concept_$conceptId')),
-          findsOneWidget,
-        );
-      }
-      _expectNoLegacyOrSublevels();
-      await tester.tap(
-        find.byKey(const ValueKey('workout_exercise_selector_back')),
-      );
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
-      );
-    }
-
-    await tester.tap(
-      find.byKey(const ValueKey('workout_exercise_selector_back')),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_contexts')),
-    );
-
-    await _scrollToKey(
-      tester,
-      const ValueKey('workout_exercise_selector_context_main_training'),
-      towardStart: true,
-    );
-    await tester.tap(
-      find.byKey(
-        const ValueKey('workout_exercise_selector_context_main_training'),
-      ),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
-    );
-    await _scrollToKey(
-      tester,
-      const ValueKey('workout_exercise_selector_capability_muscular_capacity'),
-      towardStart: true,
-    );
-    await tester.tap(
-      find.byKey(
-        const ValueKey(
-          'workout_exercise_selector_capability_muscular_capacity',
-        ),
-      ),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_concepts')),
-    );
-    expect(_conceptCards(), findsNWidgets(4));
-    await tester.tap(
-      find.byKey(
-        const ValueKey('workout_exercise_selector_concept_overcome_resistance'),
-      ),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
-    );
-    expect(find.text('Treino principal'), findsWidgets);
-    expect(find.text('Força e capacidade muscular'), findsWidgets);
-    expect(find.text('Vencer resistência'), findsWidgets);
-    expect(find.textContaining('Treino principal\n> Força'), findsOneWidget);
-    _expectNoLegacyOrSublevels();
-    await _screenshot(
-      binding,
-      tester,
-      'hierarchical_main_strength_intention_empty',
-    );
-
-    await tester.tap(
-      find.byKey(const ValueKey('workout_exercise_selector_home')),
-    );
-    await _pumpUntilFound(
-      tester,
-      find.byKey(const ValueKey('workout_exercise_selector_contexts')),
-    );
+    await _goHome(tester);
     await tester.binding.handlePopRoute();
-    await tester.pumpAndSettle();
     await _pumpUntilFound(
       tester,
       find.byKey(const ValueKey('workout_detail_add_exercise')),
     );
-    await _screenshot(binding, tester, 'hierarchical_returned_to_workout');
-
     await tester.binding.handlePopRoute();
-    await tester.pumpAndSettle();
     await _pumpUntilFound(tester, find.text('Criar treino'));
+    await tester.pumpAndSettle();
 
     await tester.tap(_navigationDestination('Dashboard'));
     await _pumpUntilFound(tester, find.byTooltip('Definições'));
-    await _screenshot(binding, tester, 'hierarchical_dashboard_return');
+    expect(find.text('Dashboard'), findsWidgets);
+    await _screenshot(binding, tester, 'v114_dashboard_return');
     await tester.tap(find.byTooltip('Definições'));
     await _pumpUntilFound(tester, find.text('Perfil ativo'));
     expect(find.text('Definições'), findsOneWidget);
-    await _screenshot(binding, tester, 'hierarchical_profile_settings');
+    await _screenshot(binding, tester, 'v114_profile_settings');
     await tester.binding.handlePopRoute();
     await tester.pumpAndSettle();
+    await _pumpUntilFound(tester, find.text('Dashboard'));
 
     await tester.tap(_navigationDestination('Objetivos'));
     await _pumpUntilFound(tester, find.text('Criar objetivo'));
-    await _screenshot(binding, tester, 'hierarchical_goals');
+    await _screenshot(binding, tester, 'v114_goals');
     await tester.tap(_navigationDestination('Treinos'));
     await _pumpUntilFound(tester, find.text('Treinos'));
 
@@ -328,20 +239,9 @@ void main() {
     );
     expect(capturedErrors, isEmpty);
     expect(tester.takeException(), isNull);
-    _scenario('HIERARCHICAL_CANONICAL_EXERCISE_SEARCH_FULL_APP_COMPLETE');
+    _scenario('V114_CANONICAL_EXERCISE_SELECTOR_FULL_APP_COMPLETE');
   });
 }
-
-const _capabilityIds = <String>[
-  'muscular_capacity',
-  'cardio_conditioning',
-  'speed_power',
-  'mobility',
-  'flexibility',
-  'motor_control_coordination',
-  'technique_skill',
-  'breathing_regulation',
-];
 
 const _contextIds = <String>[
   'main_training',
@@ -353,75 +253,23 @@ const _contextIds = <String>[
   'return_to_function',
 ];
 
-const _conceptIdsByCapability = <String, List<String>>{
-  'muscular_capacity': [
-    'overcome_resistance',
-    'control_resistance',
-    'sustain_resistance',
-    'loaded_carry',
-  ],
-  'cardio_conditioning': [
-    'cyclic_locomotion',
-    'cyclic_propulsion',
-    'repetitive_rhythmic_movement',
-    'repeated_multidirectional_displacement',
-    'repeated_motor_sequence',
-  ],
-  'speed_power': [
-    'explosive_acceleration',
-    'ballistic_projection',
-    'elastic_reactive_action',
-    'braking_redirection',
-    'cyclic_locomotion',
-    'repeated_multidirectional_displacement',
-  ],
-  'mobility': [
-    'active_joint_exploration',
-    'range_transition',
-    'integrated_chain_mobility',
-    'supported_loaded_mobility',
-    'segmental_dissociation',
-  ],
-  'flexibility': [
-    'sustained_lengthening',
-    'dynamic_lengthening',
-    'assisted_lengthening',
-  ],
-  'motor_control_coordination': [
-    'postural_stabilization',
-    'base_of_support_control',
-    'rhythm_synchronization',
-    'reactive_adjustment',
-    'segmental_dissociation',
-    'repeated_motor_sequence',
-  ],
-  'technique_skill': [
-    'isolated_technical_practice',
-    'contextual_technical_application',
-    'target_oriented_precision',
-    'stimulus_response_decision',
-    'technical_variability_adaptation',
-    'repeated_motor_sequence',
-  ],
-  'breathing_regulation': [
-    'voluntary_breath_cycle_control',
-    'breath_movement_synchronization',
-    'internal_pressure_management',
-    'autonomic_modulation',
-    'interoceptive_monitoring_adjustment',
-  ],
-};
+const _completeBreadcrumbKeys = <ValueKey<String>>[
+  ValueKey('workout_exercise_selector_breadcrumb_context'),
+  ValueKey('workout_exercise_selector_breadcrumb_capability'),
+  ValueKey('workout_exercise_selector_breadcrumb_concept'),
+  ValueKey('workout_exercise_selector_breadcrumb_intention'),
+];
 
-Finder _conceptCards() => find.byWidgetPredicate(
+Finder _intentionCards() => find.byWidgetPredicate(
   (widget) =>
       widget.key is ValueKey<String> &&
       (widget.key! as ValueKey<String>).value.startsWith(
-        'workout_exercise_selector_concept_',
+        'training_intention_card_',
       ),
-  description: 'canonical concept cards',
+  description: 'training intention cards',
 );
 
-void _expectNoLegacyOrSublevels() {
+void _expectNoLegacy() {
   expect(find.text('Sem máquinas'), findsNothing);
   expect(find.text('Caminhada e corrida'), findsNothing);
   expect(find.text('Mostrar todos'), findsNothing);
@@ -430,22 +278,122 @@ void _expectNoLegacyOrSublevels() {
   expect(find.text('Resultados: 0'), findsNothing);
 }
 
-Future<void> _scrollToKey(
-  WidgetTester tester,
-  ValueKey<String> key, {
-  bool towardStart = false,
-}) async {
-  final target = find.byKey(key);
-  for (var attempt = 0; attempt < 18; attempt++) {
-    if (target.evaluate().isNotEmpty) {
-      final center = tester.getCenter(target);
-      if (center.dy > 80 && center.dy < 920) return;
-    }
-    await tester.dragFrom(
-      const Offset(224, 760),
-      Offset(0, towardStart ? 480 : -480),
+Future<void> _ensureDashboard(WidgetTester tester) async {
+  final initialState = await _pumpUntilAny(tester, <String, Finder>{
+    'setup': find.text('Configuração inicial'),
+    'dashboard': find.text('Dashboard'),
+    'profile_selection': find.text('Escolher perfil'),
+  }, timeout: const Duration(minutes: 3));
+  if (initialState == 'dashboard') return;
+
+  if (initialState == 'profile_selection') {
+    await _tapVisible(tester, _profileOptionFinder());
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('profile_unlock_pin')),
     );
-    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const ValueKey('profile_unlock_pin')),
+      '1234',
+    );
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pump();
+    await _tapVisible(
+      tester,
+      find.byKey(const ValueKey('profile_unlock_submit')),
+    );
+    await _pumpUntilFound(tester, find.text('Dashboard'));
+    return;
+  }
+
+  await _tapVisible(tester, find.text('Começar'));
+  await _pumpUntilFound(tester, find.byType(TextField));
+  final fields = find.byType(TextField);
+  expect(fields, findsNWidgets(5));
+  await tester.enterText(fields.at(0), 'Full app selector profile');
+  await tester.enterText(fields.at(1), '1234');
+  await tester.enterText(fields.at(2), '1234');
+  FocusManager.instance.primaryFocus?.unfocus();
+  await tester.pump();
+  await _advanceProfileStep(tester, find.text('Passo 2 de 4'));
+  await _advanceProfileStep(tester, find.text('Passo 3 de 4'));
+  await _advanceProfileStep(
+    tester,
+    find.widgetWithText(FilledButton, 'Criar perfil'),
+  );
+  await _tapVisible(tester, find.widgetWithText(FilledButton, 'Criar perfil'));
+  await _pumpUntilFound(tester, find.text('Dashboard'));
+}
+
+Future<void> _goHome(WidgetTester tester) async {
+  await tester.tap(
+    find.byKey(const ValueKey('workout_exercise_selector_home')),
+  );
+  await _pumpUntilFound(
+    tester,
+    find.byKey(const ValueKey('workout_exercise_selector_contexts')),
+  );
+}
+
+Future<void> _selectContextAndCapability(
+  WidgetTester tester, {
+  required String contextId,
+  required String capabilityId,
+}) async {
+  await _tapVisible(
+    tester,
+    find.byKey(ValueKey('workout_exercise_selector_context_$contextId')),
+  );
+  await _pumpUntilFound(
+    tester,
+    find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+  );
+  await _tapVisible(
+    tester,
+    find.byKey(ValueKey('workout_exercise_selector_capability_$capabilityId')),
+  );
+}
+
+Future<void> _selectPath(
+  WidgetTester tester, {
+  required String contextId,
+  required String capabilityId,
+  required String conceptId,
+}) async {
+  await _selectContextAndCapability(
+    tester,
+    contextId: contextId,
+    capabilityId: capabilityId,
+  );
+  await _pumpUntilFound(
+    tester,
+    find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+  );
+  await _tapVisible(
+    tester,
+    find.byKey(ValueKey('workout_exercise_selector_concept_$conceptId')),
+  );
+  await _pumpUntilFound(
+    tester,
+    find.byKey(const ValueKey('workout_exercise_selector_intentions')),
+  );
+}
+
+Future<void> _scrollToKey(WidgetTester tester, ValueKey<String> key) async {
+  await _scrollUntilFound(tester, find.byKey(key));
+}
+
+Future<void> _scrollUntilFound(WidgetTester tester, Finder target) async {
+  for (final offset in const [Offset(0, -480), Offset(0, 480)]) {
+    for (var attempt = 0; attempt < 18; attempt++) {
+      if (target.evaluate().isNotEmpty) {
+        await tester.ensureVisible(target);
+        await tester.pump();
+        return;
+      }
+      await tester.dragFrom(const Offset(224, 500), offset);
+      await tester.pump(const Duration(milliseconds: 100));
+    }
   }
   expect(target, findsOneWidget);
 }
@@ -455,25 +403,26 @@ Finder _navigationDestination(String label) => find.byWidgetPredicate(
   description: 'NavigationDestination($label)',
 );
 
-Future<void> _tapVisibleText(
+Finder _profileOptionFinder() => find.byWidgetPredicate(
+  (widget) =>
+      widget.key is ValueKey<String> &&
+      (widget.key! as ValueKey<String>).value.startsWith('profile_option_'),
+  description: 'profile option',
+);
+
+Future<String> _pumpUntilAny(
   WidgetTester tester,
-  String label, {
-  int maxScrolls = 10,
+  Map<String, Finder> candidates, {
+  Duration timeout = const Duration(seconds: 45),
 }) async {
-  final target = find.text(label);
-  for (var attempt = 0; attempt <= maxScrolls; attempt++) {
-    if (target.evaluate().isNotEmpty) {
-      final center = tester.getCenter(target.last);
-      if (center.dy > 24 && center.dy < 950) {
-        await tester.tap(target.last);
-        await tester.pumpAndSettle();
-        return;
-      }
+  final deadline = DateTime.now().add(timeout);
+  while (DateTime.now().isBefore(deadline)) {
+    await tester.pump(const Duration(milliseconds: 100));
+    for (final candidate in candidates.entries) {
+      if (candidate.value.evaluate().isNotEmpty) return candidate.key;
     }
-    await tester.dragFrom(const Offset(224, 760), const Offset(0, -520));
-    await tester.pumpAndSettle();
   }
-  expect(target, findsOneWidget);
+  fail('Timed out waiting for one of: ${candidates.keys.join(', ')}');
 }
 
 Future<void> _pumpUntilFound(
@@ -487,6 +436,46 @@ Future<void> _pumpUntilFound(
     if (finder.evaluate().isNotEmpty) return;
   }
   expect(finder, findsOneWidget);
+}
+
+Future<void> _advanceProfileStep(
+  WidgetTester tester,
+  Finder expectedState,
+) async {
+  await _tapVisible(tester, find.widgetWithText(FilledButton, 'Continuar'));
+  await _pumpUntilFound(tester, expectedState);
+}
+
+Future<void> _tapVisible(
+  WidgetTester tester,
+  Finder target, {
+  int maxScrolls = 18,
+}) async {
+  final viewportHeight = tester.getSize(find.byType(Scaffold).last).height;
+  for (final offset in const [Offset(0, -520), Offset(0, 520)]) {
+    for (var attempt = 0; attempt <= maxScrolls; attempt++) {
+      if (target.evaluate().isNotEmpty) {
+        await tester.ensureVisible(target.last);
+        await tester.pump();
+        final currentTargets = target.evaluate().toList();
+        if (currentTargets.isNotEmpty) {
+          final currentTarget = target.at(currentTargets.length - 1);
+          final center = tester.getCenter(currentTarget);
+          if (center.dx.isFinite &&
+              center.dy.isFinite &&
+              center.dy > 0 &&
+              center.dy < viewportHeight) {
+            await tester.tap(currentTarget);
+            await tester.pump();
+            return;
+          }
+        }
+      }
+      await tester.dragFrom(const Offset(224, 760), offset);
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+  }
+  fail('Could not make the tap target visible within $maxScrolls scrolls.');
 }
 
 Future<void> _screenshot(

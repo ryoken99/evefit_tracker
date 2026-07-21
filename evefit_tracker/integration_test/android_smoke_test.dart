@@ -14,7 +14,9 @@ import 'package:integration_test/integration_test.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Android smoke reaches the first selector step', (tester) async {
+  testWidgets('Android smoke completes a real canonical exercise path', (
+    tester,
+  ) async {
     final capturedErrors = <FlutterErrorDetails>[];
     final previousOnError = FlutterError.onError;
     FlutterError.onError = (details) {
@@ -23,221 +25,157 @@ void main() {
     };
     addTearDown(() => FlutterError.onError = previousOnError);
 
-    try {
-      final profileTimer = Stopwatch()..start();
-      app.main();
-      final initialState = await _pumpUntilAny(tester, <String, Finder>{
-        'setup': find.text('Configuração inicial'),
-        'dashboard': find.text('Dashboard'),
-        'profile_selection': find.text('Escolher perfil'),
-      }, timeout: const Duration(minutes: 2));
+    app.main();
+    final profileTimer = Stopwatch()..start();
+    final initialState = await _pumpUntilAny(tester, <String, Finder>{
+      'setup': find.text('Configuração inicial'),
+      'dashboard': find.text('Dashboard'),
+      'profile_selection': find.text('Escolher perfil'),
+    }, timeout: const Duration(minutes: 2));
 
-      if (initialState == 'setup') {
-        await tester.tap(find.text('Começar'));
-        await _pumpUntilFound(tester, find.byType(TextField));
-        final fields = find.byType(TextField);
-        expect(fields, findsNWidgets(5));
-        await tester.enterText(fields.at(0), 'Android smoke profile');
-        await tester.enterText(fields.at(1), '1234');
-        await tester.enterText(fields.at(2), '1234');
-        FocusManager.instance.primaryFocus?.unfocus();
-        await tester.pump();
-        await _advanceProfileStep(tester, find.text('Passo 2 de 4'));
-        await _advanceProfileStep(tester, find.text('Passo 3 de 4'));
-        await _advanceProfileStep(
-          tester,
-          find.widgetWithText(FilledButton, 'Criar perfil'),
-        );
-        await _tapVisible(
-          tester,
-          find.widgetWithText(FilledButton, 'Criar perfil'),
-        );
-        await _pumpUntilFound(tester, find.text('Dashboard'));
-        _marker('PROFILE=created');
-      } else if (initialState == 'profile_selection') {
-        await _tapVisible(tester, _profileOptionFinder());
-        await _pumpUntilFound(
-          tester,
-          find.byKey(const ValueKey('profile_unlock_pin')),
-        );
-        await tester.enterText(
-          find.byKey(const ValueKey('profile_unlock_pin')),
-          '1234',
-        );
-        FocusManager.instance.primaryFocus?.unfocus();
-        await tester.pump();
-        await _tapVisible(
-          tester,
-          find.byKey(const ValueKey('profile_unlock_submit')),
-        );
-        await _pumpUntilFound(tester, find.text('Dashboard'));
-        _marker('PROFILE=reused');
-      } else {
-        _marker('PROFILE=reused');
-      }
-      profileTimer.stop();
-      _metric('PROFILE_READY_MS', profileTimer.elapsedMilliseconds);
-
-      expect(find.text('Dashboard'), findsWidgets);
-      await tester.tap(_navigationDestination('Treinos'));
-      await _pumpUntilFound(tester, find.text('Criar treino'));
-      await tester.tap(find.text('Criar treino'));
-      final saveWorkout = find.widgetWithText(FilledButton, 'Guardar treino');
-      await _pumpUntilFound(tester, saveWorkout);
-      final saveCallback = tester.widget<FilledButton>(saveWorkout).onPressed;
-      expect(saveCallback, isNotNull);
-      saveCallback!();
+    if (initialState == 'setup') {
+      await _tapVisible(tester, find.text('Começar'));
+      await _pumpUntilFound(tester, find.byType(TextField));
+      final fields = find.byType(TextField);
+      expect(fields, findsNWidgets(5));
+      await tester.enterText(fields.at(0), 'Android smoke profile');
+      await tester.enterText(fields.at(1), '1234');
+      await tester.enterText(fields.at(2), '1234');
+      FocusManager.instance.primaryFocus?.unfocus();
+      await tester.pump();
+      await _advanceProfileStep(tester, find.text('Passo 2 de 4'));
+      await _advanceProfileStep(tester, find.text('Passo 3 de 4'));
+      await _advanceProfileStep(
+        tester,
+        find.widgetWithText(FilledButton, 'Criar perfil'),
+      );
+      await _tapVisible(
+        tester,
+        find.widgetWithText(FilledButton, 'Criar perfil'),
+      );
+      await _pumpUntilFound(tester, find.text('Dashboard'));
+      _marker('PROFILE=created');
+    } else if (initialState == 'profile_selection') {
+      await _tapVisible(tester, _profileOptionFinder());
       await _pumpUntilFound(
         tester,
-        find.byKey(const ValueKey('workout_detail_add_exercise')),
+        find.byKey(const ValueKey('profile_unlock_pin')),
       );
-
-      final selectorTimer = Stopwatch()..start();
-      await tester.tap(
-        find.byKey(const ValueKey('workout_detail_add_exercise')),
+      await tester.enterText(
+        find.byKey(const ValueKey('profile_unlock_pin')),
+        '1234',
       );
-      await _pumpUntilFound(
+      FocusManager.instance.primaryFocus?.unfocus();
+      await tester.pump();
+      await _tapVisible(
         tester,
-        find.byKey(const ValueKey('workout_exercise_selector_contexts')),
+        find.byKey(const ValueKey('profile_unlock_submit')),
       );
-      selectorTimer.stop();
-      _metric('OPEN_SELECTOR_MS', selectorTimer.elapsedMilliseconds);
-
-      expect(
-        find.text('Em que contexto vais utilizar o exercício?'),
-        findsOneWidget,
-      );
-      final contextFinder = find.byWidgetPredicate(
-        (widget) =>
-            widget.key is ValueKey<String> &&
-            (widget.key! as ValueKey<String>).value.startsWith(
-              'workout_exercise_selector_context_',
-            ),
-        description: 'workout exercise selector contexts',
-      );
-      expect(contextFinder, findsNWidgets(_contextIds.length));
-      for (final id in _contextIds) {
-        expect(
-          find.byKey(ValueKey('workout_exercise_selector_context_$id')),
-          findsOneWidget,
-        );
-      }
-      _marker('CONTEXT_COUNT=${_contextIds.length}');
-
-      await _scrollToKey(
-        tester,
-        const ValueKey('workout_exercise_selector_context_warmup'),
-      );
-      await tester.tap(
-        find.byKey(const ValueKey('workout_exercise_selector_context_warmup')),
-      );
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
-      );
-      for (final id in _capabilityIds) {
-        final capability = ValueKey('workout_exercise_selector_capability_$id');
-        await _scrollToKey(tester, capability);
-        expect(find.byKey(capability), findsOneWidget);
-      }
-      _marker('CAPABILITY_COUNT=${_capabilityIds.length}');
-
-      await _scrollToKey(
-        tester,
-        const ValueKey(
-          'workout_exercise_selector_capability_cardio_conditioning',
-        ),
-      );
-      await tester.tap(
-        find.byKey(
-          const ValueKey(
-            'workout_exercise_selector_capability_cardio_conditioning',
-          ),
-        ),
-      );
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
-      );
-      for (final id in _cardioConceptIds) {
-        final concept = ValueKey('workout_exercise_selector_concept_$id');
-        await _scrollToKey(tester, concept);
-        expect(find.byKey(concept), findsOneWidget);
-      }
-      await tester.tap(
-        find.byKey(
-          const ValueKey('workout_exercise_selector_concept_cyclic_locomotion'),
-        ),
-      );
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_intention_empty')),
-      );
-      expect(
-        find.text('Ainda não existem intenções de treino aprovadas.'),
-        findsOneWidget,
-      );
-      expect(find.text('Locomoção cíclica'), findsWidgets);
-
-      await tester.binding.handlePopRoute();
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
-      );
-      await tester.binding.handlePopRoute();
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
-      );
-      await _scrollToKey(
-        tester,
-        const ValueKey('workout_exercise_selector_capability_mobility'),
-      );
-      await tester.tap(
-        find.byKey(
-          const ValueKey('workout_exercise_selector_capability_mobility'),
-        ),
-      );
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_concepts')),
-      );
-      for (final id in _mobilityConceptIds) {
-        final concept = ValueKey('workout_exercise_selector_concept_$id');
-        await _scrollToKey(tester, concept);
-        expect(find.byKey(concept), findsOneWidget);
-      }
-      expect(
-        find.byKey(
-          const ValueKey(
-            'workout_exercise_selector_concept_active_joint_exploration',
-          ),
-        ),
-        findsOneWidget,
-      );
-      expect(find.text('Mostrar todos'), findsNothing);
-      expect(find.text('Sem máquinas'), findsNothing);
-
-      await tester.tap(
-        find.byKey(const ValueKey('workout_exercise_selector_home')),
-      );
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_exercise_selector_contexts')),
-      );
-      await tester.binding.handlePopRoute();
-      await _pumpUntilFound(
-        tester,
-        find.byKey(const ValueKey('workout_detail_add_exercise')),
-      );
-      _marker('BACK_TO_WORKOUT=true');
-
-      expect(capturedErrors, isEmpty);
-      expect(tester.takeException(), isNull);
-      _marker('REAL_APP_SELECTOR_SMOKE_COMPLETE');
-    } catch (_) {
-      rethrow;
+      await _pumpUntilFound(tester, find.text('Dashboard'));
+      _marker('PROFILE=reused');
+    } else {
+      _marker('PROFILE=reused');
     }
+    profileTimer.stop();
+    _metric('PROFILE_READY_MS', profileTimer.elapsedMilliseconds);
+
+    await tester.tap(_navigationDestination('Treinos'));
+    await _pumpUntilFound(tester, find.text('Criar treino'));
+    await tester.tap(find.text('Criar treino'));
+    final saveWorkout = find.widgetWithText(FilledButton, 'Guardar treino');
+    await _pumpUntilFound(tester, saveWorkout);
+    final saveCallback = tester.widget<FilledButton>(saveWorkout).onPressed;
+    expect(saveCallback, isNotNull);
+    saveCallback!();
+    await tester.pump();
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_detail_add_exercise')),
+    );
+
+    final selectorTimer = Stopwatch()..start();
+    await tester.tap(find.byKey(const ValueKey('workout_detail_add_exercise')));
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_contexts')),
+    );
+    selectorTimer.stop();
+    _metric('OPEN_SELECTOR_MS', selectorTimer.elapsedMilliseconds);
+
+    expect(
+      find.text('Em que contexto vais utilizar o exercício?'),
+      findsOneWidget,
+    );
+    for (final id in _contextIds) {
+      await _scrollToKey(
+        tester,
+        ValueKey('workout_exercise_selector_context_$id'),
+      );
+      expect(
+        find.byKey(ValueKey('workout_exercise_selector_context_$id')),
+        findsOneWidget,
+      );
+    }
+    _marker('CONTEXT_COUNT=${_contextIds.length}');
+
+    await _selectPath(
+      tester,
+      contextId: 'warmup',
+      capabilityId: 'cardio_conditioning',
+      conceptId: 'cyclic_locomotion',
+    );
+    expect(
+      find.byKey(const ValueKey('training_intention_list')),
+      findsOneWidget,
+    );
+    expect(_intentionCards(), findsWidgets);
+    _marker('WARMUP_CARDIO_CYCLIC_INTENTIONS=visible');
+
+    await _tapVisible(tester, _intentionCards().first);
+    await _pumpUntilFound(tester, find.text('Detalhe da intenção'));
+    expect(find.text('Selecionar esta intenção'), findsOneWidget);
+    await _tapVisible(tester, find.text('Selecionar esta intenção'));
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_results_empty')),
+    );
+    expect(
+      find.text('Ainda não existem exercícios aprovados para este percurso.'),
+      findsOneWidget,
+    );
+    expect(
+      find.text(
+        'Os exercícios compatíveis serão adicionados e validados progressivamente.',
+      ),
+      findsOneWidget,
+    );
+    for (final key in _completeBreadcrumbKeys) {
+      expect(find.byKey(key), findsOneWidget);
+    }
+    expect(
+      find.byKey(const ValueKey('workout_exercise_selector_empty_path')),
+      findsOneWidget,
+    );
+    _expectNoLegacy();
+    _marker('EXERCISES_EMPTY_WITH_COMPLETE_BREADCRUMB=true');
+
+    await tester.tap(
+      find.byKey(const ValueKey('workout_exercise_selector_home')),
+    );
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_contexts')),
+    );
+    await tester.binding.handlePopRoute();
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_detail_add_exercise')),
+    );
+    _marker('BACK_TO_WORKOUT=true');
+
+    expect(capturedErrors, isEmpty);
+    expect(tester.takeException(), isNull);
+    _marker('REAL_APP_SELECTOR_SMOKE_COMPLETE');
   });
 }
 
@@ -251,32 +189,78 @@ const _contextIds = <String>[
   'return_to_function',
 ];
 
-const _capabilityIds = <String>[
-  'muscular_capacity',
-  'cardio_conditioning',
-  'speed_power',
-  'mobility',
-  'flexibility',
-  'motor_control_coordination',
-  'technique_skill',
-  'breathing_regulation',
+const _completeBreadcrumbKeys = <ValueKey<String>>[
+  ValueKey('workout_exercise_selector_breadcrumb_context'),
+  ValueKey('workout_exercise_selector_breadcrumb_capability'),
+  ValueKey('workout_exercise_selector_breadcrumb_concept'),
+  ValueKey('workout_exercise_selector_breadcrumb_intention'),
 ];
 
-const _cardioConceptIds = <String>[
-  'cyclic_locomotion',
-  'cyclic_propulsion',
-  'repetitive_rhythmic_movement',
-  'repeated_multidirectional_displacement',
-  'repeated_motor_sequence',
-];
+Finder _intentionCards() => find.byWidgetPredicate(
+  (widget) =>
+      widget.key is ValueKey<String> &&
+      (widget.key! as ValueKey<String>).value.startsWith(
+        'training_intention_card_',
+      ),
+  description: 'training intention cards',
+);
 
-const _mobilityConceptIds = <String>[
-  'active_joint_exploration',
-  'range_transition',
-  'integrated_chain_mobility',
-  'supported_loaded_mobility',
-  'segmental_dissociation',
-];
+void _expectNoLegacy() {
+  expect(find.text('Sem máquinas'), findsNothing);
+  expect(find.text('Caminhada e corrida'), findsNothing);
+  expect(find.text('Mostrar todos'), findsNothing);
+  expect(find.text('Hipertrofia'), findsNothing);
+  expect(find.text('Exercício recomendado'), findsNothing);
+  expect(find.text('Resultados: 0'), findsNothing);
+}
+
+Future<void> _selectPath(
+  WidgetTester tester, {
+  required String contextId,
+  required String capabilityId,
+  required String conceptId,
+}) async {
+  await _tapVisible(
+    tester,
+    find.byKey(ValueKey('workout_exercise_selector_context_$contextId')),
+  );
+  await _pumpUntilFound(
+    tester,
+    find.byKey(const ValueKey('workout_exercise_selector_capabilities')),
+  );
+  await _tapVisible(
+    tester,
+    find.byKey(ValueKey('workout_exercise_selector_capability_$capabilityId')),
+  );
+  await _pumpUntilFound(
+    tester,
+    find.byKey(const ValueKey('workout_exercise_selector_concepts')),
+  );
+  await _tapVisible(
+    tester,
+    find.byKey(ValueKey('workout_exercise_selector_concept_$conceptId')),
+  );
+  await _pumpUntilFound(
+    tester,
+    find.byKey(const ValueKey('workout_exercise_selector_intentions')),
+  );
+}
+
+Future<void> _scrollToKey(WidgetTester tester, ValueKey<String> key) async {
+  final target = find.byKey(key);
+  for (final offset in const [Offset(0, -480), Offset(0, 480)]) {
+    for (var attempt = 0; attempt < 18; attempt++) {
+      if (target.evaluate().isNotEmpty) {
+        await tester.ensureVisible(target);
+        await tester.pump();
+        return;
+      }
+      await tester.dragFrom(const Offset(224, 500), offset);
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+  }
+  expect(target, findsOneWidget);
+}
 
 Finder _navigationDestination(String label) => find.byWidgetPredicate(
   (widget) => widget is NavigationDestination && widget.label == label,
@@ -289,31 +273,6 @@ Finder _profileOptionFinder() => find.byWidgetPredicate(
       (widget.key! as ValueKey<String>).value.startsWith('profile_option_'),
   description: 'profile option',
 );
-
-Future<void> _scrollToKey(WidgetTester tester, ValueKey<String> key) async {
-  final target = find.byKey(key);
-  for (var attempt = 0; attempt < 18; attempt++) {
-    if (target.evaluate().isNotEmpty) {
-      await tester.ensureVisible(target);
-      await tester.pump();
-      final center = tester.getCenter(target);
-      if (center.dy > 80 && center.dy < 920) return;
-    }
-    await tester.dragFrom(const Offset(224, 760), const Offset(0, -480));
-    await tester.pump(const Duration(milliseconds: 100));
-  }
-  for (var attempt = 0; attempt < 18; attempt++) {
-    if (target.evaluate().isNotEmpty) {
-      await tester.ensureVisible(target);
-      await tester.pump();
-      final center = tester.getCenter(target);
-      if (center.dy > 80 && center.dy < 920) return;
-    }
-    await tester.dragFrom(const Offset(224, 240), const Offset(0, 480));
-    await tester.pump(const Duration(milliseconds: 100));
-  }
-  expect(target, findsOneWidget);
-}
 
 Future<String> _pumpUntilAny(
   WidgetTester tester,
@@ -357,25 +316,28 @@ Future<void> _tapVisible(
   int maxScrolls = 18,
 }) async {
   final viewportHeight = tester.getSize(find.byType(Scaffold).last).height;
-  for (var attempt = 0; attempt <= maxScrolls; attempt++) {
-    if (target.evaluate().isNotEmpty) {
-      await tester.ensureVisible(target.last);
-      await tester.pump();
-      final currentTargets = target.evaluate().toList();
-      if (currentTargets.isEmpty) continue;
-      final currentTarget = target.at(currentTargets.length - 1);
-      final center = tester.getCenter(currentTarget);
-      if (center.dx.isFinite &&
-          center.dy.isFinite &&
-          center.dy > 0 &&
-          center.dy < viewportHeight) {
-        await tester.tap(currentTarget);
+  for (final offset in const [Offset(0, -520), Offset(0, 520)]) {
+    for (var attempt = 0; attempt <= maxScrolls; attempt++) {
+      if (target.evaluate().isNotEmpty) {
+        await tester.ensureVisible(target.last);
         await tester.pump();
-        return;
+        final currentTargets = target.evaluate().toList();
+        if (currentTargets.isNotEmpty) {
+          final currentTarget = target.at(currentTargets.length - 1);
+          final center = tester.getCenter(currentTarget);
+          if (center.dx.isFinite &&
+              center.dy.isFinite &&
+              center.dy > 0 &&
+              center.dy < viewportHeight) {
+            await tester.tap(currentTarget);
+            await tester.pump();
+            return;
+          }
+        }
       }
+      await tester.dragFrom(const Offset(224, 760), offset);
+      await tester.pump(const Duration(milliseconds: 100));
     }
-    await tester.dragFrom(const Offset(224, 760), const Offset(0, -520));
-    await tester.pump(const Duration(milliseconds: 100));
   }
   fail('Could not make the tap target visible within $maxScrolls scrolls.');
 }
