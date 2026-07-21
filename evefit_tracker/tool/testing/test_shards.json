@@ -170,6 +170,7 @@
         "test/clean_base/clean_base_catalog_visibility_test.dart",
         "test/dashboard/dashboard_composition_service_test.dart",
         "test/filters/training_type_filter_matrix_test.dart",
+        "test/release/release_apk_verifier_test.dart",
         "test/testing/profiler_test.dart",
         "test/v051_filter_test.dart",
         "test/v052_filter_test.dart",

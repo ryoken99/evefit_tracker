@@ -40,6 +40,7 @@ ChangeClass _classifyPath(String path) {
       path == 'pubspec.lock' ||
       path.startsWith('android/') ||
       path.startsWith('release/') ||
+      path.startsWith('tool/release/') ||
       path.startsWith('docs/releases/')) {
     return ChangeClass.release;
   }
