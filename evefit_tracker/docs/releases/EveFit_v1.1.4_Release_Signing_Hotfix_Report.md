@@ -80,6 +80,9 @@ the upload step.
 - approved public APK verification: passed
 - deliberately incorrect certificate verification: rejected with exit code `1`
 - real public-asset upgrade test: passed with exit code `0`
+- initial PR classification rejected the new `tool/release/` path as unknown;
+  the classifier now maps that path to the release gate and has a regression
+  test for the fail-closed decision
 
 ## Rollback
 

@@ -13,6 +13,7 @@ void main() {
         ChangedFile('lib/screens/home_screen.dart'),
         ChangedFile('tool/testing/evefit_gate.dart'),
         ChangedFile('tool/canonical/generate_registry.dart'),
+        ChangedFile('tool/release/verify_release_apk.dart'),
         ChangedFile('pubspec.yaml'),
       ]);
       expect(result.failsClosed, isFalse);
