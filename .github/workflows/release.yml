@@ -49,13 +49,35 @@ jobs:
         working-directory: evefit_tracker
         run: flutter build apk --release
 
-      - name: Prepare release APK
-        working-directory: evefit_tracker
-        run: cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.4-seven-contexts-training-intentions-release.apk
-
       - name: Set version name
         id: version
         run: echo "name=${{ github.event.inputs.version || github.ref_name }}" >> $GITHUB_OUTPUT
+
+      - name: Verify release APK identity and signing
+        working-directory: evefit_tracker
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.name }}
+          EXPECTED_RELEASE_CERTIFICATE_SHA256: 59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B
+        run: |
+          set -euo pipefail
+          pubspec_version="$(awk '$1 == "version:" {print $2; exit}' pubspec.yaml)"
+          expected_version_name="${pubspec_version%%+*}"
+          expected_version_code="${pubspec_version##*+}"
+          expected_tag="v${expected_version_name}"
+          if [[ "$RELEASE_TAG" != "$expected_tag" ]]; then
+            echo "Release tag $RELEASE_TAG does not match pubspec version $pubspec_version." >&2
+            exit 1
+          fi
+          dart run tool/release/verify_release_apk.dart \
+            --apk build/app/outputs/flutter-apk/app-release.apk \
+            --expected-package com.sandro.evefittracker \
+            --expected-version-name "$expected_version_name" \
+            --expected-version-code "$expected_version_code" \
+            --expected-certificate-sha256 "$EXPECTED_RELEASE_CERTIFICATE_SHA256"
+
+      - name: Prepare release APK
+        working-directory: evefit_tracker
+        run: cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.4-seven-contexts-training-intentions-release.apk
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
