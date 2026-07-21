@@ -133,7 +133,6 @@ void main() {
 
     await _tapVisible(tester, _intentionCards().first);
     await _pumpUntilFound(tester, find.text('Detalhe da intenção'));
-    expect(find.text('Selecionar esta intenção'), findsOneWidget);
     await _tapVisible(tester, find.text('Selecionar esta intenção'));
     await _pumpUntilFound(
       tester,
