@@ -322,17 +322,16 @@ Future<void> _tapVisible(
         await tester.ensureVisible(target.last);
         await tester.pump();
         final currentTargets = target.evaluate().toList();
-        if (currentTargets.isNotEmpty) {
-          final currentTarget = target.at(currentTargets.length - 1);
-          final center = tester.getCenter(currentTarget);
-          if (center.dx.isFinite &&
-              center.dy.isFinite &&
-              center.dy > 0 &&
-              center.dy < viewportHeight) {
-            await tester.tap(currentTarget);
-            await tester.pump();
-            return;
-          }
+        if (currentTargets.isEmpty) continue;
+        final currentTarget = target.at(currentTargets.length - 1);
+        final center = tester.getCenter(currentTarget);
+        if (center.dx.isFinite &&
+            center.dy.isFinite &&
+            center.dy > 0 &&
+            center.dy < viewportHeight) {
+          await tester.tap(currentTarget);
+          await tester.pump();
+          return;
         }
       }
       await tester.dragFrom(const Offset(224, 760), offset);
