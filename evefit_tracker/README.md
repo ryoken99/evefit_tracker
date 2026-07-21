@@ -1,4 +1,4 @@
-# EveFit Tracker v1.1.3
+# EveFit Tracker v1.1.4
 
 Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados corporais, fotos de progresso e objetivos.
 
@@ -10,11 +10,13 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - Formulario Dados para registar balanca, composicao corporal, medidas, dobras cutaneas e notas.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- Versão declarada: v1.1.3 - Conceitos Canónicos de Treino.
-- Pesquisa canónica hierárquica com 5 contextos explícitos, 8 capacidades, 35 conceitos globais e 40 compatibilidades ordenadas.
-- Catálogo canónico da v1.1.3: 35 conceitos globais, 40 compatibilidades ordenadas e zero exercícios.
-- Zero intenções, zero atributos oficiais e zero subníveis nesta versão.
-- A mesma lista de conceitos por capacidade é reutilizada nos cinco contextos.
+- Versão de release: v1.1.4 - Sete Contextos e Intenções Canónicas (`1.1.4+6`).
+- Pesquisa canónica hierárquica com 7 contextos explícitos, 8 capacidades, 35 conceitos globais e 40 relações capacidade-conceito.
+- Matriz canónica: 280 percursos, 261 compatíveis, 19 incompatíveis, 591 intenções globais e 771 ligações de intenção por percurso.
+- Fluxo ativo: Contexto → Capacidade → Conceito → Intenção → Exercícios.
+- Zero atributos oficiais, zero exercícios canónicos e zero subníveis nesta versão; o resultado de exercícios permanece vazio de forma intencional.
+- A query é progressiva e contém apenas `usage_context`, `capability_root`, `training_concept` e `training_intention`; não contém `exercise_ids`, IDs legacy nem relações de propriedade.
+- As 693 identidades e 792 ocorrências históricas foram auditadas, mas não são dados funcionais em runtime.
 - Catálogo legacy fora do runtime, com fontes preservadas em arquivo histórico.
 - Aba Medidas renomeada para Dados.
 - Dados de balanca e composicao corporal expandidos.
@@ -43,7 +45,7 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - SQLite com `sqflite`
 - `path_provider`, `image_picker`, `fl_chart`, `intl`, `csv`
 
-## Validacao da v1.1.3
+## Validacao da v1.1.4
 
 ```powershell
 flutter pub get
@@ -53,9 +55,11 @@ flutter test
 flutter build apk --release
 ```
 
-Os testes focados e o Fast Gate passam na branch de release. PR Gate, Android,
-upgrade e Release Gate são executados nas etapas próprias antes da publicação.
-O versionamento oficial declarado é `1.1.3+5`: `1.1.3` é a versão pública e `5`
+O Fast Gate funcional, o PR Gate funcional, os shards, Android smoke, full-app e
+validação de instalação existente foram concluídos na fase funcional. A release
+só é publicada depois de repetir os gates de release, a atualização
+`1.1.3+5 → 1.1.4+6`, a inspeção da assinatura e a validação final em main.
+O versionamento de release alvo é `1.1.4+6`: `1.1.4` é a versão pública e `6`
 é o versionCode Android monotónico.
 
 ## Package Android
