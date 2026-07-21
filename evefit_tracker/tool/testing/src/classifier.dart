@@ -82,6 +82,7 @@ ChangeClass _classifyPath(String path) {
   }
   if (path.startsWith('docs/') ||
       path == '.gitattributes' ||
+      path.endsWith('/.gitattributes') ||
       path.endsWith('.md') ||
       path.startsWith('README')) {
     return ChangeClass.documentation;

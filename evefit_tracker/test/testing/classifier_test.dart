@@ -38,14 +38,21 @@ void main() {
       expect(result.classes, contains(ChangeClass.databaseStartup));
     });
 
-    test('classifies the repository attributes contract as documentation', () {
-      final result = classifyChangedFiles(const [
-        ChangedFile('.gitattributes'),
-      ]);
+    test(
+      'classifies repository and nested attributes contracts as documentation',
+      () {
+        final result = classifyChangedFiles(const [
+          ChangedFile('.gitattributes'),
+          ChangedFile('lib/canonical/generated/.gitattributes'),
+        ]);
 
-      expect(result.failsClosed, isFalse);
-      expect(result.classes, equals(<ChangeClass>{ChangeClass.documentation}));
-    });
+        expect(result.failsClosed, isFalse);
+        expect(
+          result.classes,
+          equals(<ChangeClass>{ChangeClass.documentation}),
+        );
+      },
+    );
 
     test(
       'classifies integration tests and the Android smoke runner as UI navigation',
