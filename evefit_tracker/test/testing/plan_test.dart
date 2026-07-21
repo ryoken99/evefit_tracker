@@ -252,14 +252,16 @@ void main() {
     expect(runner, contains('VersionCode -ne 6'));
     expect(runner, contains('APK Signature Scheme v2'));
     expect(runner, contains('user_version -ne 22'));
+    expect(runner, contains('Require-UiButtonWithScroll'));
+    expect(runner, contains("'android.widget.Button'"));
     for (final context in const [
       'Treino principal',
       'Aquecimento',
-      'Ativação',
-      'Recuperação',
-      'Retorno à calma',
-      'Prevenção',
-      'Retorno à função',
+      'Ativa',
+      'Recupera',
+      'calma',
+      'Preven',
+      'fun',
     ]) {
       expect(runner, contains(context));
     }

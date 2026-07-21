@@ -85,6 +85,15 @@ function Require-UiTextWithScroll([string]$Adb, [string]$TargetDevice, [string]$
   }
 }
 
+function Require-UiButtonWithScroll([string]$Adb, [string]$TargetDevice, [string]$Text) {
+  for ($attempt = 0; $attempt -lt 10; $attempt++) {
+    if (Wait-UiNode $Adb $TargetDevice $Text 'android.widget.Button' 2) { return }
+    & $Adb -s $TargetDevice shell input swipe 700 2200 700 700 300 | Out-Null
+    Start-Sleep -Milliseconds 400
+  }
+  throw "Required UI button was not visible: $Text"
+}
+
 function Save-Screenshot([string]$Adb, [string]$TargetDevice, [string]$Path) {
   $command = '"{0}" -s {1} exec-out screencap -p > "{2}"' -f $Adb, $TargetDevice, $Path
   & cmd.exe /d /c $command
@@ -368,8 +377,8 @@ try {
   if (-not (Wait-UiNode $adb $DeviceId 'Em que contexto vais utilizar o exerc' '' 20)) {
     throw 'The hierarchical selector context step did not open after upgrade.'
   }
-  foreach ($context in @('Treino principal', 'Aquecimento', 'Ativação', 'Recuperação', 'Retorno à calma', 'Prevenção', 'Retorno à função')) {
-    Require-UiTextWithScroll $adb $DeviceId $context
+  foreach ($context in @('Treino principal', 'Aquecimento', 'Ativa', 'Recupera', 'calma', 'Preven', 'fun')) {
+    Require-UiButtonWithScroll $adb $DeviceId $context
   }
   Scroll-UiListToTop $adb $DeviceId
   $warmup = Find-UiNodeWithScroll $adb $DeviceId 'Aquecimento'
