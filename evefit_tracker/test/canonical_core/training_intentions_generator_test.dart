@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:crypto/crypto.dart';
+import 'package:evefit_tracker/features/canonical_core/data/canonical_registry.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../../tool/canonical/generate_training_intentions_registry.dart'
     as generator;
@@ -15,6 +16,11 @@ const _v04Path =
     '$_sourceDirectory/EveFit_Training_Intentions_Production_Registry_v0.4.md';
 const _v041Path =
     '$_sourceDirectory/EveFit_Training_Intentions_Production_Registry_v0.4.1.md';
+const _definitionHeading = '## 20. Registo final das 591 intenções';
+const _pathHeading = '## 21. Matriz final dos 280 percursos';
+const _historicHeading = '## 12. Mapeamento integral v0.3 para v0.4';
+const _preservedHistoricHeading =
+    '### 25.2 Mapeamento v0.3 para v0.4 preservado';
 
 void main() {
   test(
@@ -208,6 +214,134 @@ void main() {
     );
   });
 
+  test('all canonical names and definitions round-trip into runtime', () async {
+    final source = utf8.decode(await File(_v041Path).readAsBytes());
+    final rows = _tableRows(source, _definitionHeading);
+    const registry = CanonicalRegistry();
+
+    expect(rows, hasLength(591));
+    for (final row in rows) {
+      final id = _singleBacktickId(row[0]);
+      final definition = registry.trainingIntentionDefinitionById[id];
+      expect(definition, isNotNull, reason: id);
+      expect(definition!.pillar.displayNamePtPt, row[1], reason: id);
+      expect(definition.pillar.descriptionPtPt, row[2], reason: id);
+      expect(
+        utf8.decode(
+          utf8.encode(definition.pillar.displayNamePtPt),
+          allowMalformed: false,
+        ),
+        row[1],
+        reason: id,
+      );
+      expect(
+        utf8.decode(
+          utf8.encode(definition.pillar.descriptionPtPt),
+          allowMalformed: false,
+        ),
+        row[2],
+        reason: id,
+      );
+    }
+  });
+
+  test(
+    'validator rejects missing, duplicate, and divergent historic mappings',
+    () async {
+      final v04 = utf8.decode(await File(_v04Path).readAsBytes());
+      final v041 = utf8.decode(await File(_v041Path).readAsBytes());
+      final firstHistoricCell = _tableRows(v04, _historicHeading).first[0];
+
+      final missingDestinationV04 = _replaceTableCell(
+        v04,
+        heading: _historicHeading,
+        rowIndex: 0,
+        cellIndex: 2,
+        value: '',
+      );
+      final missingDestinationV041 = _replaceTableCell(
+        v041,
+        heading: _preservedHistoricHeading,
+        rowIndex: 0,
+        cellIndex: 2,
+        value: '',
+      );
+      expect(
+        () => generator.validateTrainingIntentionsSourceTextsForTesting(
+          sourceV04: missingDestinationV04,
+          sourceV041: missingDestinationV041,
+        ),
+        throwsA(isA<Exception>()),
+      );
+
+      final duplicateV04 = _replaceTableCell(
+        v04,
+        heading: _historicHeading,
+        rowIndex: 1,
+        cellIndex: 0,
+        value: firstHistoricCell,
+      );
+      final duplicateV041 = _replaceTableCell(
+        v041,
+        heading: _preservedHistoricHeading,
+        rowIndex: 1,
+        cellIndex: 0,
+        value: firstHistoricCell,
+      );
+      expect(
+        () => generator.validateTrainingIntentionsSourceTextsForTesting(
+          sourceV04: duplicateV04,
+          sourceV041: duplicateV041,
+        ),
+        throwsA(isA<Exception>()),
+      );
+
+      final divergentV041 = _replaceTableCell(
+        v041,
+        heading: _preservedHistoricHeading,
+        rowIndex: 0,
+        cellIndex: 3,
+        value: 'Divergência deliberada para o teste fail-closed.',
+      );
+      expect(
+        () => generator.validateTrainingIntentionsSourceTextsForTesting(
+          sourceV04: v04,
+          sourceV041: divergentV041,
+        ),
+        throwsA(isA<Exception>()),
+      );
+    },
+  );
+
+  test(
+    'validator rejects an unknown canonical destination in a path',
+    () async {
+      final v04 = utf8.decode(await File(_v04Path).readAsBytes());
+      final v041 = utf8.decode(await File(_v041Path).readAsBytes());
+      final priorityCell = _tableRows(v041, _pathHeading).first[8];
+      final unknownPriority = priorityCell.replaceFirst(
+        RegExp(r'`[a-z0-9_]+`'),
+        '`unknown_canonical_intention`',
+      );
+
+      expect(unknownPriority, isNot(priorityCell));
+      final malformed = _replaceTableCell(
+        v041,
+        heading: _pathHeading,
+        rowIndex: 0,
+        cellIndex: 8,
+        value: unknownPriority,
+      );
+      expect(
+        () => generator.validateTrainingIntentionsSourceTextsForTesting(
+          sourceV04: v04,
+          sourceV041: malformed,
+        ),
+        throwsA(isA<Exception>()),
+      );
+    },
+  );
+
   test(
     'parser rejects malformed structured cells and headers outside their section',
     () async {
@@ -297,4 +431,37 @@ String _idAndNameName(String value) {
   final match = RegExp(r'^`[a-z0-9_]+` · (.+)$').firstMatch(value);
   expect(match, isNotNull, reason: value);
   return match!.group(1)!;
+}
+
+String _singleBacktickId(String value) {
+  final match = RegExp(r'^`([a-z0-9_]+)`$').firstMatch(value);
+  expect(match, isNotNull, reason: value);
+  return match!.group(1)!;
+}
+
+String _replaceTableCell(
+  String source, {
+  required String heading,
+  required int rowIndex,
+  required int cellIndex,
+  required String value,
+}) {
+  final lines = source.split('\n');
+  final headingIndex = lines.indexOf(heading);
+  expect(headingIndex, isNonNegative, reason: heading);
+  final headerIndex = lines.indexWhere(
+    (line) => line.startsWith('|'),
+    headingIndex + 1,
+  );
+  expect(headerIndex, greaterThan(headingIndex));
+  final lineIndex = headerIndex + 2 + rowIndex;
+  final cells = lines[lineIndex]
+      .substring(1, lines[lineIndex].length - 1)
+      .split('|')
+      .map((cell) => cell.trim())
+      .toList();
+  expect(cellIndex, lessThan(cells.length));
+  cells[cellIndex] = value;
+  lines[lineIndex] = '| ${cells.join(' | ')} |';
+  return lines.join('\n');
 }
