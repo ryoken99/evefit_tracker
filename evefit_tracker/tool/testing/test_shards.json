@@ -9,6 +9,7 @@
       "tests": [
         "test/canonical_core/canonical_training_intentions_provider_test.dart",
         "test/canonical_core/training_intentions_registry_contract_test.dart",
+        "test/canonical_core/wave1_exercise_registry_contract_test.dart",
         "test/canonical_search/floating_action_button_hero_tag_contract_test.dart",
         "test/catalog/catalog_cardio_expansion_v099b6a_test.dart",
         "test/catalog/catalog_full_menu_matrix_test.dart",
@@ -103,6 +104,7 @@
       "estimatedMilliseconds": 368575,
       "tests": [
         "test/canonical_core/canonical_core_contract_test.dart",
+        "test/canonical_core/canonical_exercise_results_ui_test.dart",
         "test/canonical_core/training_concepts_contract_test.dart",
         "test/canonical_core/training_intention_widgets_test.dart",
         "test/catalog/catalog_activation_expansion_v099b4a_test.dart",
@@ -151,6 +153,7 @@
       "tests": [
         "test/canonical_core/hierarchical_canonical_search_controller_test.dart",
         "test/canonical_core/training_intentions_generator_test.dart",
+        "test/canonical_core/wave1_exercises_generator_test.dart",
         "test/canonical_core/workout_exercise_selector_screen_test.dart",
         "test/catalog/cardio_specificity_test.dart",
         "test/catalog/catalog_cardio_filter_contract_test.dart",

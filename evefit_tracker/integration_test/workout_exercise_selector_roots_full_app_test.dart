@@ -16,7 +16,7 @@ import 'package:integration_test/integration_test.dart';
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('full app validates the v1.1.4 canonical exercise selector', (
+  testWidgets('full app validates Wave1 exercise results and empty paths', (
     tester,
   ) async {
     final capturedErrors = <FlutterErrorDetails>[];
@@ -73,6 +73,63 @@ void main() {
     _expectNoLegacy();
     await _screenshot(binding, tester, 'v114_seven_contexts');
 
+    await _selectPath(
+      tester,
+      contextId: 'main_training',
+      capabilityId: 'speed_power',
+      conceptId: 'explosive_acceleration',
+    );
+    final increaseAcceleration = find.byKey(
+      const ValueKey(
+        'training_intention_card_increase_initial_acceleration_main_training_speed_power_explosive_acceleration',
+      ),
+    );
+    await _tapIntention(tester, increaseAcceleration);
+    await _pumpUntilFound(tester, find.text('Detalhe da intenção'));
+    await _tapVisible(tester, find.text('Selecionar esta intenção'));
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_results_list')),
+    );
+    expect(find.text('Exercícios disponíveis'), findsOneWidget);
+    expect(find.text('Passo 5 de 5: Exercícios'), findsOneWidget);
+    await _scrollToKey(
+      tester,
+      const ValueKey('workout_exercise_selector_exercise_sled_resisted_sprint'),
+    );
+    expect(find.text('Variante'), findsWidgets);
+    expect(find.text('Exigência elevada'), findsWidgets);
+    expect(find.text('Adicionar ao treino'), findsNothing);
+    await _screenshot(binding, tester, 'wave1_exercise_results');
+
+    await _tapVisible(
+      tester,
+      find.byKey(
+        const ValueKey('workout_exercise_selector_view_sled_resisted_sprint'),
+      ),
+    );
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('canonical_exercise_detail_screen')),
+    );
+    expect(
+      find.byKey(const ValueKey('canonical_exercise_detail_high_risk')),
+      findsOneWidget,
+    );
+    expect(find.text('Variante'), findsWidgets);
+    expect(find.text('Adicionar ao treino'), findsNothing);
+    await _screenshot(binding, tester, 'wave1_high_risk_variant_detail');
+    await _scrollUntilFound(tester, find.text('Evidência e limites'));
+    expect(find.text('Evidência e limites'), findsOneWidget);
+    await _screenshot(binding, tester, 'wave1_long_detail_scrolled');
+    await tester.binding.handlePopRoute();
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('workout_exercise_selector_results_list')),
+    );
+    expect(tester.takeException(), isNull);
+
+    await _goHome(tester);
     await _selectPath(
       tester,
       contextId: 'warmup',
@@ -239,7 +296,7 @@ void main() {
     );
     expect(capturedErrors, isEmpty);
     expect(tester.takeException(), isNull);
-    _scenario('V114_CANONICAL_EXERCISE_SELECTOR_FULL_APP_COMPLETE');
+    _scenario('WAVE1_EXERCISE_RESULTS_FULL_APP_COMPLETE');
   });
 }
 
@@ -377,6 +434,20 @@ Future<void> _selectPath(
     tester,
     find.byKey(const ValueKey('workout_exercise_selector_intentions')),
   );
+}
+
+Future<void> _tapIntention(WidgetTester tester, Finder target) async {
+  if (target.evaluate().isEmpty) {
+    await _tapVisible(
+      tester,
+      find.byKey(const ValueKey('training_intention_advanced_toggle')),
+    );
+    await _pumpUntilFound(
+      tester,
+      find.byKey(const ValueKey('training_intention_advanced_group')),
+    );
+  }
+  await _tapVisible(tester, target);
 }
 
 Future<void> _scrollToKey(WidgetTester tester, ValueKey<String> key) async {

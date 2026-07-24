@@ -1,0 +1,74 @@
+{
+  "generator_version": "1.0.0",
+  "registry_version": "0.1",
+  "beginner_content_version": "0.1.2",
+  "source_files": {
+    "docs/canonical/source/exercises/wave1/archives/EveFit_Exercise_Implementation_Bundle_Wave1_v0.1.zip": {
+      "sha256": "3393bde5d0d3980e823240effac9213ff6f6d3e90148990628e2e216f9287b71"
+    },
+    "docs/canonical/source/exercises/wave1/archives/EveFit_Exercise_Beginner_Content_Wave1_Bundle_v0.1.2.zip": {
+      "sha256": "35296706fd2abb6f821324f80c8aafc091a944fba9007e3fb933f2046da3b279"
+    },
+    "docs/canonical/source/exercises/wave1/archives/EveFit_Canonical_Exercise_Classification_Spec_v0.1.md": {
+      "sha256": "9c6c65caa36e785bd82c4d8e4f5d37e1d21e3a974f9676d80658a82d10d9911c"
+    }
+  },
+  "counts": {
+    "exercises": 49,
+    "active_compatible_relations": 88,
+    "deferred_conditional_relations": 66,
+    "public_content_records": 49,
+    "variants": 3,
+    "pending_review_excluded": 52,
+    "specialist_review_excluded": 25,
+    "muscular_excluded": 159,
+    "nonapproved_conditional_excluded": 13
+  },
+  "distributions": {
+    "entity_type": {
+      "canonical_exercise": 38,
+      "exercise_variant": 3,
+      "technique_drill": 8
+    },
+    "operational_risk_tier": {
+      "high": 9,
+      "low": 22,
+      "moderate": 18
+    },
+    "active_relation_role": {
+      "alternative_primary": 44,
+      "complementary": 10,
+      "principal_candidate": 34
+    },
+    "deferred_classification": {
+      "eligibility_engine_required": 57,
+      "unresolved_product_logic": 9
+    }
+  },
+  "output_hashes_normalized": {
+    "lib/features/canonical_core/generated/exercises/canonical_exercises_registry_part_01.g.dart": "e7f280f3ae60bb27b77e59309892847d37ca6216e1f49a4881e88f0fbe0c7758",
+    "lib/features/canonical_core/generated/exercises/canonical_exercises_registry_part_02.g.dart": "99d7c0249ebc4df37cb3ae291546a5ac70724fbe30b86629efdf77d1c18f50f9",
+    "lib/features/canonical_core/generated/exercises/canonical_exercises_registry_part_03.g.dart": "e16e062a4007a3dcbe4c37242c6d0cf04dd3a8ac2a66abe4a7ecd0ab0eecfe0a",
+    "lib/features/canonical_core/generated/exercises/canonical_exercises_registry_part_04.g.dart": "6a89440b9fd89bd08789fe3e99b5643480bfef0715fc0c6fda664df2376ce3b8",
+    "lib/features/canonical_core/generated/exercises/canonical_exercises_registry_part_05.g.dart": "d540b65a4d5680e13b26b8b453374015f6013373ea98a43715ef5cbe98951e1e",
+    "lib/features/canonical_core/generated/exercises/canonical_exercise_beginner_content_part_01.g.dart": "78562f46ccbe60174f6cfdf5c83d1f63a08e0624953f54001d6346343c90b985",
+    "lib/features/canonical_core/generated/exercises/canonical_exercise_beginner_content_part_02.g.dart": "7ebdcf2c06fa550e0a87cb15dcb80e7d48f06de3a7724c2a98834aef40659f98",
+    "lib/features/canonical_core/generated/exercises/canonical_exercise_beginner_content_part_03.g.dart": "45e0a38edd9039bb5a87c6a90e07bd27cd47df26a957c00631e715ed8169fc29",
+    "lib/features/canonical_core/generated/exercises/canonical_exercise_beginner_content_part_04.g.dart": "fb924647100c6ce3effb160e0a766f8bc57a73a8563dfd7c9a1de30d5b3949d3",
+    "lib/features/canonical_core/generated/exercises/canonical_exercise_beginner_content_part_05.g.dart": "3078044533fb7110f0028435a7cb9cfe622e6a1844ed2fe8b97bf112e7033802",
+    "lib/features/canonical_core/generated/exercises/canonical_exercises_registry.g.dart": "0695c235142362b8a3f0d6c65a77b537c1c7f50fa424d58e997996ff76b18f36",
+    "lib/features/canonical_core/generated/exercises/canonical_exercise_beginner_content.g.dart": "bab9cf0bf766a9955a786afdb8f6f2892795068683fec77fb23cd240f88d3619",
+    "lib/features/canonical_core/generated/exercises/canonical_exercise_path_links.g.dart": "17e5c6157a21ee3ba5fb4b03a71d4b14af403ff635603b3b274d296d57ada98b",
+    "lib/features/canonical_core/generated/exercises/canonical_exercises_provenance.g.dart": "5f12485010985fa8d2e838389ae18ac7627c72e3decf9afb1fb864a445efe4c8"
+  },
+  "runtime_separation": {
+    "zip_parsed_at_runtime": false,
+    "json_parsed_at_runtime": false,
+    "markdown_parsed_at_runtime": false,
+    "deferred_relations_exported_to_public_provider": false,
+    "legacy_catalogue_queried": false,
+    "database_seeded": false,
+    "schema_changed": false,
+    "media_rendered": false
+  }
+}
