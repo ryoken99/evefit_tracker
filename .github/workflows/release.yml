@@ -45,6 +45,30 @@ jobs:
         working-directory: evefit_tracker
         run: flutter test
 
+      - name: Configure official release signing
+        working-directory: evefit_tracker
+        env:
+          ANDROID_RELEASE_KEYSTORE_BASE64: ${{ secrets.ANDROID_RELEASE_KEYSTORE_BASE64 }}
+          ANDROID_RELEASE_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEYSTORE_PASSWORD }}
+          ANDROID_RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_RELEASE_KEY_ALIAS }}
+          ANDROID_RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          : "${ANDROID_RELEASE_KEYSTORE_BASE64:?ANDROID_RELEASE_KEYSTORE_BASE64 is required}"
+          : "${ANDROID_RELEASE_KEYSTORE_PASSWORD:?ANDROID_RELEASE_KEYSTORE_PASSWORD is required}"
+          : "${ANDROID_RELEASE_KEY_ALIAS:?ANDROID_RELEASE_KEY_ALIAS is required}"
+          : "${ANDROID_RELEASE_KEY_PASSWORD:?ANDROID_RELEASE_KEY_PASSWORD is required}"
+          umask 077
+          printf '%s' "$ANDROID_RELEASE_KEYSTORE_BASE64" |
+            base64 --decode > android/app/release-keystore.jks
+          test -s android/app/release-keystore.jks
+          printf '%s\n' \
+            'storeFile=release-keystore.jks' \
+            "storePassword=$ANDROID_RELEASE_KEYSTORE_PASSWORD" \
+            "keyAlias=$ANDROID_RELEASE_KEY_ALIAS" \
+            "keyPassword=$ANDROID_RELEASE_KEY_PASSWORD" \
+            > android/key.properties
+
       - name: Build APK
         working-directory: evefit_tracker
         run: flutter build apk --release
@@ -94,6 +118,7 @@ jobs:
             --expected-certificate-sha256 "$EXPECTED_RELEASE_CERTIFICATE_SHA256"
 
       - name: Prepare release APK
+        if: github.event_name == 'push'
         working-directory: evefit_tracker
         run: |
           cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk
@@ -103,6 +128,7 @@ jobs:
           )
 
       - name: Create Release
+        if: github.event_name == 'push'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.name }}
@@ -170,6 +196,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify published release assets
+        if: github.event_name == 'push'
         working-directory: evefit_tracker
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -196,3 +223,8 @@ jobs:
             --expected-version-name 1.1.5 \
             --expected-version-code 7 \
             --expected-certificate-sha256 "$EXPECTED_RELEASE_CERTIFICATE_SHA256"
+
+      - name: Remove temporary signing files
+        if: always()
+        working-directory: evefit_tracker
+        run: rm -f android/key.properties android/app/release-keystore.jks
