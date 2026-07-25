@@ -42,34 +42,127 @@ final class ReleaseApkVerificationException implements Exception {
 ReleaseApkEvidence parseReleaseApkEvidence({
   required String aaptOutput,
   required String apkSignerOutput,
+  String apkSignerStdout = '',
+  String apkSignerStderr = '',
+  String apkSignerVersion = 'unknown',
 }) {
-  final packageMatch = RegExp(
+  final packagePattern = RegExp(
     r"^package: name='([^']+)' versionCode='([^']+)' versionName='([^']+)'",
-    multiLine: true,
-  ).firstMatch(aaptOutput);
+  );
+  final packageMatch = _normalizedLines(
+    aaptOutput,
+  ).map(packagePattern.firstMatch).whereType<RegExpMatch>().firstOrNull;
   if (packageMatch == null) {
     throw const ReleaseApkVerificationException(
       'aapt did not return package, versionCode, and versionName.',
     );
   }
 
-  final certificateMatch = RegExp(
-    r'^Signer #1 certificate SHA-256 digest:\s*([0-9a-fA-F:]+)\s*$',
-    multiLine: true,
-  ).firstMatch(apkSignerOutput);
-  if (certificateMatch == null) {
-    throw const ReleaseApkVerificationException(
-      'apksigner did not return the signer SHA-256 certificate digest.',
+  final outputSources = <_ApkSignerOutputSource>[
+    if (apkSignerOutput.isNotEmpty)
+      _ApkSignerOutputSource('combined', apkSignerOutput),
+    if (apkSignerStdout.isNotEmpty)
+      _ApkSignerOutputSource('stdout', apkSignerStdout),
+    if (apkSignerStderr.isNotEmpty)
+      _ApkSignerOutputSource('stderr', apkSignerStderr),
+  ];
+  final signerLines = outputSources
+      .expand((source) => _normalizedLines(source.output))
+      .toList(growable: false);
+
+  final signerCounts = <int>{};
+  final signerCountPattern = RegExp(r'^Number of signers:\s*(\d+)$');
+  for (final line in signerLines) {
+    final match = signerCountPattern.firstMatch(line);
+    if (match != null) signerCounts.add(int.parse(match.group(1)!));
+  }
+  if (signerCounts.isEmpty) {
+    throw _apkSignerFailure(
+      'apksigner did not report the number of signers.',
+      outputSources,
+      apkSignerVersion,
+    );
+  }
+  if (signerCounts.length > 1 || signerCounts.any((count) => count != 1)) {
+    throw _apkSignerFailure(
+      'apksigner reported an unsupported signer count: '
+      '${signerCounts.toList()..sort()}.',
+      outputSources,
+      apkSignerVersion,
     );
   }
 
-  final v2Match = RegExp(
-    r'^Verified using v2 scheme \(APK Signature Scheme v2\):\s*(true|false)\s*$',
-    multiLine: true,
-  ).firstMatch(apkSignerOutput);
-  if (v2Match == null) {
-    throw const ReleaseApkVerificationException(
+  final certificateValues = <String>[];
+  final legacyCertificatePattern = RegExp(
+    r'^Signer #(\d+) certificate SHA-256 digest:\s*(\S.*)$',
+  );
+  final linux37CertificatePattern = RegExp(
+    r'^V2 Signer:\s*certificate SHA-256 digest:\s*(\S.*)$',
+  );
+  for (final line in signerLines) {
+    final legacyMatch = legacyCertificatePattern.firstMatch(line);
+    if (legacyMatch != null) {
+      if (legacyMatch.group(1) != '1') {
+        throw _apkSignerFailure(
+          'apksigner reported a certificate for an unsupported signer: '
+          'Signer #${legacyMatch.group(1)}.',
+          outputSources,
+          apkSignerVersion,
+        );
+      }
+      certificateValues.add(legacyMatch.group(2)!);
+      continue;
+    }
+
+    final linux37Match = linux37CertificatePattern.firstMatch(line);
+    if (linux37Match != null) {
+      certificateValues.add(linux37Match.group(1)!);
+    }
+  }
+  if (certificateValues.isEmpty) {
+    throw _apkSignerFailure(
+      'apksigner did not return the signer SHA-256 certificate digest.',
+      outputSources,
+      apkSignerVersion,
+    );
+  }
+
+  final normalizedCertificates = <String>{};
+  for (final value in certificateValues) {
+    try {
+      normalizedCertificates.add(normalizeCertificateSha256(value));
+    } on ReleaseApkVerificationException catch (error) {
+      throw _apkSignerFailure(error.message, outputSources, apkSignerVersion);
+    }
+  }
+  if (normalizedCertificates.length != 1) {
+    throw _apkSignerFailure(
+      'apksigner returned conflicting signer SHA-256 certificate digests.',
+      outputSources,
+      apkSignerVersion,
+    );
+  }
+
+  final v2Values = <bool>{};
+  final v2Pattern = RegExp(
+    r'^Verified using v2 scheme \(APK Signature Scheme v2\):\s*(true|false)$',
+  );
+  for (final line in signerLines) {
+    final match = v2Pattern.firstMatch(line);
+    if (match != null) v2Values.add(match.group(1) == 'true');
+  }
+  if (v2Values.isEmpty) {
+    throw _apkSignerFailure(
       'apksigner did not report APK Signature Scheme v2.',
+      outputSources,
+      apkSignerVersion,
+    );
+  }
+  if (v2Values.length != 1) {
+    throw _apkSignerFailure(
+      'apksigner returned conflicting APK Signature Scheme v2 results.',
+      outputSources,
+      apkSignerVersion,
     );
   }
 
@@ -77,8 +170,8 @@ ReleaseApkEvidence parseReleaseApkEvidence({
     packageName: packageMatch.group(1)!,
     versionCode: packageMatch.group(2)!,
     versionName: packageMatch.group(3)!,
-    certificateSha256: normalizeCertificateSha256(certificateMatch.group(1)!),
-    usesSignatureSchemeV2: v2Match.group(1) == 'true',
+    certificateSha256: normalizedCertificates.single,
+    usesSignatureSchemeV2: v2Values.single,
   );
 }
 
@@ -101,8 +194,20 @@ void verifyReleaseApkEvidence({
   }
 }
 
-String normalizeCertificateSha256(String value) =>
-    value.replaceAll(':', '').trim().toUpperCase();
+String normalizeCertificateSha256(String value) {
+  final trimmed = value.trim();
+  final continuous = RegExp(r'^[0-9a-fA-F]{64}$').hasMatch(trimmed);
+  final colonSeparated = RegExp(
+    r'^(?:[0-9a-fA-F]{2}:){31}[0-9a-fA-F]{2}$',
+  ).hasMatch(trimmed);
+  if (!continuous && !colonSeparated) {
+    throw const ReleaseApkVerificationException(
+      'The signer SHA-256 certificate digest must contain exactly 64 '
+      'hexadecimal characters, optionally separated into bytes by colons.',
+    );
+  }
+  return trimmed.replaceAll(':', '').toUpperCase();
+}
 
 Future<ReleaseApkEvidence> inspectReleaseApk({
   required File apk,
@@ -138,10 +243,17 @@ Future<ReleaseApkEvidence> inspectReleaseApk({
     apk.path,
   ]);
   _requireSuccessfulTool('apksigner', signerResult);
+  final signerVersionResult = await _runTool(apkSigner.path, ['--version']);
+  final signerVersion = signerVersionResult.exitCode == 0
+      ? '${signerVersionResult.stdout}\n${signerVersionResult.stderr}'.trim()
+      : 'unavailable (exit code ${signerVersionResult.exitCode})';
 
   return parseReleaseApkEvidence(
     aaptOutput: '${aaptResult.stdout}\n${aaptResult.stderr}',
-    apkSignerOutput: '${signerResult.stdout}\n${signerResult.stderr}',
+    apkSignerOutput: '',
+    apkSignerStdout: '${signerResult.stdout}',
+    apkSignerStderr: '${signerResult.stderr}',
+    apkSignerVersion: signerVersion,
   );
 }
 
@@ -207,4 +319,47 @@ void _requireEqual(String label, String expected, String actual) {
   throw ReleaseApkVerificationException(
     'Unexpected $label. Expected "$expected", found "$actual".',
   );
+}
+
+Iterable<String> _normalizedLines(String output) sync* {
+  for (final line
+      in output.replaceAll('\r\n', '\n').replaceAll('\r', '\n').split('\n')) {
+    final trimmed = line.trim();
+    if (trimmed.isNotEmpty) yield trimmed;
+  }
+}
+
+ReleaseApkVerificationException _apkSignerFailure(
+  String reason,
+  List<_ApkSignerOutputSource> sources,
+  String version,
+) {
+  final diagnostics = sources
+      .map((source) {
+        final relevant = _normalizedLines(source.output)
+            .where(
+              (line) =>
+                  line.contains('Signer') ||
+                  line.startsWith('Number of signers:') ||
+                  line.startsWith('Verified'),
+            )
+            .toList(growable: false);
+        return '${source.name}: '
+            '${relevant.isEmpty ? '<no relevant lines>' : relevant.join(' | ')}';
+      })
+      .join('; ');
+  final safeVersion = version.replaceAll(RegExp(r'[\r\n]+'), ' ').trim();
+  return ReleaseApkVerificationException(
+    '$reason apksigner version: '
+    '${safeVersion.isEmpty ? 'unknown' : safeVersion}. '
+    'Relevant output: '
+    '${diagnostics.isEmpty ? '<no stdout or stderr>' : diagnostics}',
+  );
+}
+
+final class _ApkSignerOutputSource {
+  const _ApkSignerOutputSource(this.name, this.output);
+
+  final String name;
+  final String output;
 }
