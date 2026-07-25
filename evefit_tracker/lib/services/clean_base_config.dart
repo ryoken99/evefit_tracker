@@ -1,15 +1,14 @@
 class CleanBaseConfig {
   const CleanBaseConfig._();
 
-  static const versionLabel =
-      'EveFit v1.1.4 - Sete Contextos e Intenções Canónicas';
+  static const versionLabel = 'EveFit v1.1.5 - Primeiros Exercícios Canónicos';
   static const legacyCatalogueVisible = false;
   static const legacyFiltersVisible = false;
   static const legacySeedEnabled = false;
   static const legacyCatalogueRuntimeEnabled = false;
   static const legacyFiltersRuntimeEnabled = false;
   static const canonicalSearchMenuVisible = true;
-  static const canonicalCatalogueHasActiveExercises = false;
+  static const canonicalCatalogueHasActiveExercises = true;
 
   static const catalogueRebuildTitle =
       'O catalogo de exercicios esta em reconstrucao.';

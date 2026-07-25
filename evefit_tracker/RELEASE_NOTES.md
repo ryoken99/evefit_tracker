@@ -1,3 +1,24 @@
+# EveFit v1.1.5 — Primeiros exercícios canónicos
+
+## Resumo
+
+- Adicionados 49 exercícios não musculares aprovados.
+- As intenções compatíveis passam a apresentar exercícios disponíveis.
+- Cada exercício possui uma explicação detalhada em PT-PT para principiantes.
+- Foram adicionadas instruções passo a passo, preparação, respiração, erros comuns e segurança.
+- Exercícios de exigência elevada apresentam avisos próprios.
+- Foram adicionadas três variantes de exercícios.
+- Esta versão ainda não adiciona os exercícios diretamente aos treinos.
+- Conteúdo muscular, prescrições automáticas e multimédia continuam em preparação.
+
+## Informação técnica
+
+- Versão: `1.1.5+7`.
+- 49 exercícios, 88 relações públicas, 50 intenções e 54 percursos.
+- 66 relações condicionais permanecem desativadas.
+- Schema SQLite 22 e migrations inalterados.
+- Atualizações validadas: `1.1.3+5 → 1.1.5+7` e `1.1.4+6 → 1.1.5+7`.
+
 # EveFit v1.1.4 — Sete Contextos e Intenções Canónicas
 
 ## Resumo

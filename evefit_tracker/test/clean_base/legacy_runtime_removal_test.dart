@@ -33,7 +33,7 @@ void main() {
       expect(StartupCatalogDiagnostics.snapshot.legacySeedExecuted, isFalse);
       expect(StartupCatalogDiagnostics.snapshot.legacyEntriesProcessed, 0);
       expect(const CanonicalRegistry().approvedPillarValues, hasLength(641));
-      expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isFalse);
+      expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isTrue);
     },
   );
 

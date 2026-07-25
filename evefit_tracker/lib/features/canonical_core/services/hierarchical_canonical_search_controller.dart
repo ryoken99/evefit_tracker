@@ -1,7 +1,9 @@
 import '../data/canonical_registry.dart';
 import '../models/canonical_core_models.dart';
 import '../models/canonical_exercise_selection_path.dart';
+import '../models/canonical_exercise_models.dart';
 import '../models/training_intention_models.dart';
+import '../repositories/canonical_exercise_search_repository.dart';
 import 'canonical_selection_compatibility_provider.dart';
 
 enum HierarchicalCanonicalSearchStep {
@@ -16,9 +18,13 @@ class HierarchicalCanonicalSearchController {
   HierarchicalCanonicalSearchController({
     this.compatibilityProvider =
         const RegistryCanonicalSelectionCompatibilityProvider(),
+    this.exerciseRepository =
+        const GeneratedCanonicalExerciseSearchRepository(),
   });
 
   final CanonicalSelectionCompatibilityProvider compatibilityProvider;
+  final CanonicalExerciseSearchRepository<CanonicalResolvedExercise>
+  exerciseRepository;
 
   CanonicalExerciseSelectionPath _path = const CanonicalExerciseSelectionPath();
   HierarchicalCanonicalSearchStep _step =
@@ -51,6 +57,9 @@ class HierarchicalCanonicalSearchController {
 
   CanonicalPillarDefinition? get selectedTrainingIntention =>
       _definition(_path.trainingIntentionId);
+
+  Future<CanonicalSearchResult<CanonicalResolvedExercise>>
+  searchSelectedExercises() => exerciseRepository.search(currentQuery);
 
   void selectUsageContext(String id) {
     _requireOption(activeUsageContexts, id);

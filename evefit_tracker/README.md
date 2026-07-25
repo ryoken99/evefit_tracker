@@ -1,4 +1,4 @@
-# EveFit Tracker v1.1.4
+# EveFit Tracker v1.1.5
 
 Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados corporais, fotos de progresso e objetivos.
 
@@ -10,11 +10,11 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - Formulario Dados para registar balanca, composicao corporal, medidas, dobras cutaneas e notas.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- Versão de release: v1.1.4 - Sete Contextos e Intenções Canónicas (`1.1.4+6`).
+- Versão de release: v1.1.5 - Primeiros Exercícios Canónicos (`1.1.5+7`).
 - Pesquisa canónica hierárquica com 7 contextos explícitos, 8 capacidades, 35 conceitos globais e 40 relações capacidade-conceito.
 - Matriz canónica: 280 percursos, 261 compatíveis, 19 incompatíveis, 591 intenções globais e 771 ligações de intenção por percurso.
 - Fluxo ativo: Contexto → Capacidade → Conceito → Intenção → Exercícios.
-- Zero atributos oficiais, zero exercícios canónicos e zero subníveis nesta versão; o resultado de exercícios permanece vazio de forma intencional.
+- A Wave1 disponibiliza 49 exercícios canónicos não musculares em 54 percursos aprovados, sem os adicionar diretamente aos treinos.
 - A query é progressiva e contém apenas `usage_context`, `capability_root`, `training_concept` e `training_intention`; não contém `exercise_ids`, IDs legacy nem relações de propriedade.
 - As 693 identidades e 792 ocorrências históricas foram auditadas, mas não são dados funcionais em runtime.
 - Catálogo legacy fora do runtime, com fontes preservadas em arquivo histórico.
@@ -45,7 +45,7 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - SQLite com `sqflite`
 - `path_provider`, `image_picker`, `fl_chart`, `intl`, `csv`
 
-## Validacao da v1.1.4
+## Validacao da v1.1.5
 
 ```powershell
 flutter pub get
@@ -58,8 +58,8 @@ flutter build apk --release
 O Fast Gate funcional, o PR Gate funcional, os shards, Android smoke, full-app e
 validação de instalação existente foram concluídos na fase funcional. A release
 só é publicada depois de repetir os gates de release, a atualização
-`1.1.3+5 → 1.1.4+6`, a inspeção da assinatura e a validação final em main.
-O versionamento de release alvo é `1.1.4+6`: `1.1.4` é a versão pública e `6`
+`1.1.3+5 → 1.1.5+7` e `1.1.4+6 → 1.1.5+7`, a inspeção da assinatura e a validação final em main.
+O versionamento de release alvo é `1.1.5+7`: `1.1.5` é a versão pública e `7`
 é o versionCode Android monotónico.
 
 ## Package Android

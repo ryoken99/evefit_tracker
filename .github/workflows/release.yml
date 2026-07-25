@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão do release (v1.1.4)'
+        description: 'Versão do release (v1.1.5)'
         required: true
-        default: 'v1.1.4'
+        default: 'v1.1.5'
 
 permissions:
   contents: write
@@ -77,14 +77,21 @@ jobs:
 
       - name: Prepare release APK
         working-directory: evefit_tracker
-        run: cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.4-seven-contexts-training-intentions-release.apk
+        run: |
+          cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk
+          (
+            cd build/app/outputs/flutter-apk
+            sha256sum EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk > EveFit-v1.1.5-SHA256SUMS.txt
+          )
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.name }}
-          name: EveFit v1.1.4 — Sete Contextos e Intenções Canónicas
-          files: evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.4-seven-contexts-training-intentions-release.apk
+          name: EveFit v1.1.5 — Primeiros exercícios canónicos
+          files: |
+            evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk
+            evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.5-SHA256SUMS.txt
           draft: false
           prerelease: false
           make_latest: true
@@ -92,14 +99,20 @@ jobs:
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v1.1.4
-            - Sete contextos explícitos, oito capacidades, 35 conceitos e 40 relações capacidade-conceito.
-            - 591 intenções canónicas globais, ligadas a 261 percursos compatíveis por 771 links tipados.
-            - Fluxo Contexto → Capacidade → Conceito → Intenção → estado vazio de Exercícios.
-            - Pesquisa global por intenção com escolha posterior de um percurso realmente compatível.
-            - Risco operacional e revisão clínica permanecem separados, com mensagens prudentes em PT-PT.
-            - Esta versão mantém zero atributos oficiais, zero exercícios e zero subníveis.
-            - Schema 22 e migrations permanecem inalterados; dados pessoais e históricos são preservados.
+            ### Novidades v1.1.5
+            - Adicionados 49 exercícios não musculares aprovados.
+            - As intenções compatíveis passam a apresentar exercícios disponíveis.
+            - Cada exercício possui explicação detalhada para principiantes.
+            - Foram adicionadas instruções passo a passo, preparação, respiração, erros comuns e segurança.
+            - Exercícios de exigência elevada apresentam avisos próprios.
+            - Foram adicionadas três variantes de exercícios.
+            - Esta versão ainda não adiciona os exercícios diretamente aos treinos.
+            - Conteúdo muscular, prescrições automáticas e multimédia continuam em preparação.
+
+            ### Informação técnica
+            - 49 exercícios, 88 relações públicas, 50 intenções e 54 percursos.
+            - 66 relações condicionais permanecem desativadas.
+            - Schema SQLite 22 e migrations inalterados.
 
             ### Novidades v0.9.4
             - Alfandega permanente dos catalogos com auditoria strict, inventario e gap analysis.
@@ -134,6 +147,34 @@ jobs:
             - Atualizada versão da app para v0.9.0.
 
             ### Instalação
-            Descarrega `EveFit-v1.1.4-seven-contexts-training-intentions-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
+            Descarrega `EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify published release assets
+        working-directory: evefit_tracker
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.version.outputs.name }}
+          EXPECTED_RELEASE_CERTIFICATE_SHA256: 59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B
+        run: |
+          set -euo pipefail
+          published_directory="$(mktemp -d)"
+          gh release download "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk' \
+            --pattern 'EveFit-v1.1.5-SHA256SUMS.txt' \
+            --dir "$published_directory"
+          cmp --silent \
+            build/app/outputs/flutter-apk/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk \
+            "$published_directory/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk"
+          (
+            cd "$published_directory"
+            sha256sum -c EveFit-v1.1.5-SHA256SUMS.txt
+          )
+          dart run tool/release/verify_release_apk.dart \
+            --apk "$published_directory/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk" \
+            --expected-package com.sandro.evefittracker \
+            --expected-version-name 1.1.5 \
+            --expected-version-code 7 \
+            --expected-certificate-sha256 "$EXPECTED_RELEASE_CERTIFICATE_SHA256"

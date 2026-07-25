@@ -9,8 +9,8 @@ void main() {
       '59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B';
   const contract = ReleaseApkContract(
     packageName: 'com.sandro.evefittracker',
-    versionName: '1.1.4',
-    versionCode: '6',
+    versionName: '1.1.5',
+    versionCode: '7',
     certificateSha256: expectedCertificate,
   );
 
@@ -43,7 +43,7 @@ void main() {
         ),
         ReleaseApkEvidence(
           packageName: valid.packageName,
-          versionName: '1.1.5',
+          versionName: '1.1.4',
           versionCode: valid.versionCode,
           certificateSha256: valid.certificateSha256,
           usesSignatureSchemeV2: true,
@@ -51,7 +51,7 @@ void main() {
         ReleaseApkEvidence(
           packageName: valid.packageName,
           versionName: valid.versionName,
-          versionCode: '7',
+          versionCode: '6',
           certificateSha256: valid.certificateSha256,
           usesSignatureSchemeV2: true,
         ),
@@ -119,11 +119,15 @@ void main() {
       );
       final prepare = workflow.indexOf('- name: Prepare release APK');
       final upload = workflow.indexOf('- name: Create Release');
+      final verifyPublished = workflow.indexOf(
+        '- name: Verify published release assets',
+      );
 
       expect(setVersion, greaterThanOrEqualTo(0));
       expect(verify, greaterThan(setVersion));
       expect(prepare, greaterThan(verify));
       expect(upload, greaterThan(prepare));
+      expect(verifyPublished, greaterThan(upload));
       expect(workflow, contains('tool/release/verify_release_apk.dart'));
       expect(workflow, contains('com.sandro.evefittracker'));
       expect(workflow, contains(expectedCertificate));
@@ -132,13 +136,16 @@ void main() {
       expect(workflow, contains('"\$RELEASE_TAG" != "\$expected_tag"'));
       expect(workflow, contains('--expected-version-name'));
       expect(workflow, contains('--expected-version-code'));
+      expect(workflow, contains('sha256sum -c'));
+      expect(workflow, contains('gh release download'));
+      expect(workflow, contains('cmp --silent'));
     },
   );
 }
 
 const _aaptOutput =
-    "package: name='com.sandro.evefittracker' versionCode='6' "
-    "versionName='1.1.4' platformBuildVersionName='16'";
+    "package: name='com.sandro.evefittracker' versionCode='7' "
+    "versionName='1.1.5' platformBuildVersionName='16'";
 
 String _signerOutput(String certificate) =>
     '''

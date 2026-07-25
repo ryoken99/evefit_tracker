@@ -192,6 +192,22 @@ GatePlan composePlan({
     );
     if (options.enableBuild) {
       add('android-release-build', const ['build', 'apk', '--release']);
+      commands.add(
+        GateCommand('release-apk-verification', dart, const [
+          'run',
+          'tool/release/verify_release_apk.dart',
+          '--apk',
+          'build/app/outputs/flutter-apk/app-release.apk',
+          '--expected-package',
+          'com.sandro.evefittracker',
+          '--expected-version-name',
+          '1.1.5',
+          '--expected-version-code',
+          '7',
+          '--expected-certificate-sha256',
+          '59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B',
+        ]),
+      );
     }
     _addRequestedScript(
       commands,
@@ -200,7 +216,7 @@ GatePlan composePlan({
       'powershell',
       [
         '-File',
-        'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
+        'tool/run_v115_wave1_upgrade_test.ps1',
         if (baselineApk != null) ...['-BaselineApk', baselineApk],
         if (currentApk != null) ...['-CurrentApk', currentApk],
       ],
@@ -243,7 +259,7 @@ List<String> _missingRequestedScripts(
     if (mode == GateMode.release && options.enableFullApp)
       'tool/run_workout_exercise_selector_roots_test.ps1',
     if (mode == GateMode.release && options.enableUpgrade)
-      'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
+      'tool/run_v115_wave1_upgrade_test.ps1',
   ];
   return requested
       .where(
