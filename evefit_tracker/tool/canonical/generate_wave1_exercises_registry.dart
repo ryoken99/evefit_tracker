@@ -432,6 +432,7 @@ void _validate(Wave1SourceData data) {
   final relationIds = <String>{};
   final representedExercises = <String>{};
   final activeRelationKeys = <String>{};
+  final activeRelationTuples = <String>{};
   final activeIntentionIds = <String>{};
   final roleCounts = <String, int>{};
   final registry = const CanonicalRegistry();
@@ -455,6 +456,11 @@ void _validate(Wave1SourceData data) {
     final conceptId = _string(relation, 'training_concept_id');
     final intentionId = _string(relation, 'training_intention_id');
     _expect(relationIds.add(relationId), 'Duplicate relation ID: $relationId.');
+    final relationTuple = _relationTuple(relation);
+    _expect(
+      activeRelationTuples.add(relationTuple),
+      'Duplicate ready relation tuple: $relationTuple.',
+    );
     _expect(
       technicalById.containsKey(exerciseId),
       'Unknown exercise in ready relation: $exerciseId.',
@@ -516,13 +522,23 @@ void _validate(Wave1SourceData data) {
   );
 
   final deferredIds = <String>{};
+  final deferredRelationTuples = <String>{};
   final deferredClassifications = <String, int>{};
   for (final relation in data.deferredRelations) {
     final relationId = _string(relation, 'relation_id');
+    final relationTuple = _relationTuple(relation);
     _expect(deferredIds.add(relationId), 'Duplicate deferred relation ID.');
+    _expect(
+      deferredRelationTuples.add(relationTuple),
+      'Duplicate deferred relation tuple: $relationTuple.',
+    );
     _expect(
       !activeRelationKeys.contains(relationId),
       'Deferred relation leaked into active relations: $relationId.',
+    );
+    _expect(
+      !activeRelationTuples.contains(relationTuple),
+      'Deferred relation tuple leaked into active relations: $relationTuple.',
     );
     _expect(
       _string(relation, 'compatibility_status') == 'conditional' &&
@@ -540,6 +556,14 @@ void _validate(Wave1SourceData data) {
     'Deferred relation classification counts differ from the approval.',
   );
 }
+
+String _relationTuple(Map<String, dynamic> relation) => [
+  _string(relation, 'exercise_id'),
+  _string(relation, 'usage_context_id'),
+  _string(relation, 'capability_root_id'),
+  _string(relation, 'training_concept_id'),
+  _string(relation, 'training_intention_id'),
+].join('|');
 
 void _increment(Map<String, int> counts, String key) {
   counts[key] = (counts[key] ?? 0) + 1;
@@ -948,7 +972,8 @@ String _renderContentPart(List<Map<String, dynamic>> contents, int part) {
     'const generatedCanonicalWave1BeginnerContentPart$suffix = '
     '<CanonicalExerciseBeginnerContent>[',
   );
-  for (final content in contents) {
+  for (final sourceContent in contents) {
+    final content = _sanitizePublicContent(sourceContent);
     final phases = _list(content, 'movement_phases_pt_pt');
     final errors = _list(content, 'common_errors_pt_pt');
     buffer
@@ -1103,6 +1128,63 @@ String _renderVariantExplanation(Object? value) {
       '${_dart(_string(value, 'additional_risks_pt_pt'))}, '
       'variantSpecificErrorsPtPt: ${_dartValue(errors)})';
 }
+
+Map<String, dynamic> _sanitizePublicContent(Map<String, dynamic> source) => {
+  for (final entry in source.entries)
+    entry.key: entry.key == 'confidence'
+        ? _sanitizePublicConfidence(entry.value as String)
+        : _sanitizePublicValue(entry.value),
+};
+
+Object? _sanitizePublicValue(Object? value) {
+  if (value is String) {
+    final sanitized = _sanitizePublicText(value);
+    return _isPublicSentinel(sanitized) ? '' : sanitized;
+  }
+  if (value is List<dynamic>) {
+    return value
+        .map(_sanitizePublicValue)
+        .where((item) => item is! String || item.isNotEmpty)
+        .toList(growable: false);
+  }
+  if (value is Map<String, dynamic>) {
+    return _sanitizePublicContent(value);
+  }
+  return value;
+}
+
+String _sanitizePublicConfidence(String value) {
+  final parts = value
+      .split(' — ')
+      .map(_sanitizePublicText)
+      .where((item) => item.isNotEmpty)
+      .toList(growable: false);
+  final firstNarrative = parts.indexWhere(
+    (part) => RegExp(r'[.!?:;]').hasMatch(part),
+  );
+  if (firstNarrative < 0) return '';
+  return parts.sublist(firstNarrative).join(' — ');
+}
+
+String _sanitizePublicText(String value) {
+  var result = value
+      .replaceAll('os indicações', 'as indicações')
+      .replaceAll('da movimento', 'do movimento');
+  result = result.replaceAll(
+    RegExp(r'\s*Implementação realizada:\s*não\.?', caseSensitive: false),
+    '',
+  );
+  return result.trim();
+}
+
+bool _isPublicSentinel(String value) => const {
+  'sim',
+  'não',
+  'nao',
+  'not_applicable',
+  'omitted_by_scope',
+  'not_yet_approved',
+}.contains(value.toLowerCase());
 
 String _renderRelations(List<Map<String, dynamic>> relations) {
   final buffer = StringBuffer(_generatedHeader());

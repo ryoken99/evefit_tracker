@@ -332,7 +332,7 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'A ação principal e a posição sentada são diretamente sustentadas por fontes oficiais independentes e são coerentes com a literatura primária. A orientação respiratória é conservadora porque não foi encontrada uma fase respiratória específica aplicável a esta execução geral.',
     limitationsPtPt: <String>[
-      'As fontes disponíveis usam contextos diferentes, incluindo exercício geral sentado, condicionamento do tornozelo, pós-operatório e investigação hemodinâmica em decúbito. Não foram importadas doses, ritmos, amplitudes máximas, indicações de tratamento ou promessas de resultado. O documento não determina adequação individual nem substitui revisão profissional quando existem gatilhos clínicos. Implementação realizada: não',
+      'As fontes disponíveis usam contextos diferentes, incluindo exercício geral sentado, condicionamento do tornozelo, pós-operatório e investigação hemodinâmica em decúbito. Não foram importadas doses, ritmos, amplitudes máximas, indicações de tratamento ou promessas de resultado. O documento não determina adequação individual nem substitui revisão profissional quando existem gatilhos clínicos.',
     ],
     variantExplanation: null,
   ),
@@ -529,7 +529,6 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
       'Não são definidos distância, pontuação, volume, carga, ritmo, progressão individual nem critérios clínicos.',
       'O manual da World Archery descreve padrões respiratórios que podem incluir uma breve pausa; por regra deste conteúdo e para evitar impor retenções, a orientação pública fica limitada a respiração natural e consistente.',
       'A segurança depende da verificação real do campo, do alvo, da barreira de retenção, dos acessos e do equipamento em cada utilização.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),
@@ -709,7 +708,6 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
       'As fontes técnicas permitem variação individual; alinhamentos são referências observáveis, não posições rígidas universais.',
       'Não foi identificado um protocolo respiratório específico de FIBA ou USA Basketball para este lançamento; foi usada respiração natural e contínua sem retenção.',
       'A relação de aquecimento permanece condicional e dependente do motor de elegibilidade.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),
@@ -895,7 +893,7 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Executa apenas numa superfície firme, plana, regular, seca e antiderrapante, com iluminação suficiente e área de aterragem livre. Interrompe se a superfície ficar húmida, escorregadia, instável, danificada ou invadida por terceiros. Evita calor ou frio que prejudiquem o controlo, pouca luz, trânsito, cruzamentos públicos e altura livre insuficiente.',
     confidencePtPt:
-        'moderada — alta — moderada — moderada — moderada — A identidade e a mecânica estão sustentadas por registo canónico, literatura de saltos bipodais e fontes profissionais. As instruções para principiante são uma tradução conservadora de evidência sobretudo ao nível da família, pelo que exigem limites explícitos e supervisão na primeira exposição.',
+        'A identidade e a mecânica estão sustentadas por registo canónico, literatura de saltos bipodais e fontes profissionais. As instruções para principiante são uma tradução conservadora de evidência sobretudo ao nível da família, pelo que exigem limites explícitos e supervisão na primeira exposição.',
     limitationsPtPt: <String>[
       'Não foi identificada uma norma experimental específica que valide uma técnica única deste exercício para principiantes absolutos. A literatura direta inclui amostras pequenas e treinadas, e as fontes de segurança abrangem a família pliométrica. Por isso, o conteúdo não define dose, não autoriza prática autónoma no primeiro dia, não aprova multimédia, não altera equipamento, superfície, risco, identidade ou relação e não substitui avaliação individual.',
     ],
@@ -1077,9 +1075,9 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Mantém uma área lateral livre para ambos os participantes. Usa apenas piso firme, nivelado, seco e antiderrapante. Interrompe se alguém entrar na área de contacto. Não executar numa zona de circulação, perto de obstáculos ou num espaço partilhado sem controlo. No exterior, verifica continuamente o piso, o calor e outras condições que possam reduzir a aderência ou a atenção.',
     confidencePtPt:
-        'alta_para_execucao_documental_com_limites — alta — alta — moderada — alta — Há concordância entre manuais oficiais independentes sobre técnica, guarda, equilíbrio, utilização das manoplas e supervisão. A orientação respiratória específica é sustentada pela USA Boxing e mantida simples, sem contagens nem retenções.',
+        'Há concordância entre manuais oficiais independentes sobre técnica, guarda, equilíbrio, utilização das manoplas e supervisão. A orientação respiratória específica é sustentada pela USA Boxing e mantida simples, sem contagens nem retenções.',
     limitationsPtPt: <String>[
-      'Conteúdo documental para principiantes; não prescreve volume, velocidade, intensidade, duração, frequência ou progressão. Não prova transferência para combate, não substitui instrução presencial e não concede autorização universal para executar. Não altera identidade, risco, equipamento, espaço, supervisão, multimédia ou relações aprovadas. Implementação realizada: não.',
+      'Conteúdo documental para principiantes; não prescreve volume, velocidade, intensidade, duração, frequência ou progressão. Não prova transferência para combate, não substitui instrução presencial e não concede autorização universal para executar. Não altera identidade, risco, equipamento, espaço, supervisão, multimédia ou relações aprovadas.',
     ],
     variantExplanation: null,
   ),
@@ -1272,13 +1270,12 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Piso firme, nivelado, seco e antiderrapante. Percurso e margem em redor sem objetos, cabos, tapetes soltos, líquidos ou outras pessoas. Iluminação suficiente para distinguir todos os quadrantes e os limites do espaço. Folga multidirecional, com atenção específica à área posterior usada no passo para trás. Sem trânsito, desníveis ou superfícies soltas no trajeto.',
     confidencePtPt:
-        'moderada — alta — moderada — alta — moderada — A identidade, o risco, o ambiente e as relações são canónicos. A literatura e as orientações profissionais sustentam a família de passos multidirecionais e as medidas de segurança, mas não validam diretamente esta ordem fechada específica.',
+        'A identidade, o risco, o ambiente e as relações são canónicos. A literatura e as orientações profissionais sustentam a família de passos multidirecionais e as medidas de segurança, mas não validam diretamente esta ordem fechada específica.',
     limitationsPtPt: <String>[
       'A evidência disponível refere-se sobretudo a programas e famílias de passos em grelha, não à sequência canónica isolada.',
       'Não se inferem efeitos, resultados clínicos, dose, velocidade, cadência ou progressão.',
       'A orientação respiratória é geral porque não foi encontrada uma relação respiratória específica para esta sequência.',
       'A adequação individual e o nível de supervisão dependem da capacidade de executar passos laterais e para trás, parar e sair da tarefa com controlo.',
-      'Implementação realizada: não.',
     ],
     variantExplanation: null,
   ),
@@ -1465,7 +1462,7 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Degraus fixos, uniformes, íntegros e antiderrapantes. Boa iluminação, com bordas dos degraus distinguíveis. Entrada, degraus e patamar sem obstáculos. Ausência de água, gelo, folhas, areia, cabos ou revestimentos soltos. Sem escadas móveis, muito íngremes, curvas, abertas ou irregulares para a execução inicial. Circulação de outras pessoas controlada para evitar choques ou ultrapassagens.',
     confidencePtPt:
-        'moderate — high — high — moderate — moderate — moderate — Há convergência entre fontes oficiais independentes e investigação biomecânica para ambiente, risco de queda, alternância dos apoios e respiração contínua. A evidência direta para uma sequência pedagógica universal de principiante é limitada, pelo que o conteúdo mantém limites explícitos.',
+        'Há convergência entre fontes oficiais independentes e investigação biomecânica para ambiente, risco de queda, alternância dos apoios e respiração contínua. A evidência direta para uma sequência pedagógica universal de principiante é limitada, pelo que o conteúdo mantém limites explícitos.',
     limitationsPtPt: <String>[
       'Não define dose, intensidade, cadência, velocidade, duração, distância, carga, descanso ou progressão.',
       'Não autoriza automaticamente qualquer pessoa a executar e não substitui avaliação profissional quando há sintomas, instabilidade ou regresso após lesão ou cirurgia.',
@@ -1494,7 +1491,6 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
       'Escolhe, com o profissional, uma posição simples para os braços e mantém essa opção consistente; o balanço dos braços não é obrigatório nesta base.',
     ],
     equipmentSetupPtPt: <String>[
-      'sim',
       'Não é necessário equipamento. Retira objetos soltos do corpo e do chão que possam interferir com a impulsão ou a aterragem.',
     ],
     environmentSetupPtPt: <String>[
@@ -1647,9 +1643,9 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Executa apenas numa superfície firme, plana, regular e antiderrapante, com área de receção segura, espaço livre por cima e percurso sem obstáculos. Evita superfícies escorregadias ou instáveis, iluminação insuficiente, trânsito, pessoas a atravessar, calor ou frio que comprometam o controlo e qualquer local com altura livre insuficiente.',
     confidencePtPt:
-        'A sequência mecânica e os indicações técnicas de aterragem convergem entre manual profissional e estudos biomecânicos primários. A respiração e a passagem de critérios gerais para um principiante individual têm suporte menos direto.',
+        'A sequência mecânica e as indicações técnicas de aterragem convergem entre manual profissional e estudos biomecânicos primários. A respiração e a passagem de critérios gerais para um principiante individual têm suporte menos direto.',
     limitationsPtPt: <String>[
-      'Este conteúdo documenta uma identidade técnica de risco operacional elevado e não prescreve repetições, séries, intensidade, frequência, carga, duração, progressão ou momento da sessão. Não avalia lesões, condições clínicas, prontidão individual nem segurança de um local concreto. A evidência sobre respiração não é específica do salto com contramovimento. A relação de aquecimento permanece condicional e dependente de lógica de produto futura. Implementação realizada: não',
+      'Este conteúdo documenta uma identidade técnica de risco operacional elevado e não prescreve repetições, séries, intensidade, frequência, carga, duração, progressão ou momento da sessão. Não avalia lesões, condições clínicas, prontidão individual nem segurança de um local concreto. A evidência sobre respiração não é específica do salto com contramovimento. A relação de aquecimento permanece condicional e dependente de lógica de produto futura.',
       'Limite documentado: Não existe evidência direta suficiente para impor uma sincronização respiratória universal neste exercício.',
       'Limite documentado: A posição e o uso dos braços continuam opcionais na identidade base e devem ser definidos no contexto técnico sem criar prescrição.',
       'Limite documentado: A relação de aquecimento mantém classificação condicional por lógica de produto ainda não resolvida.',
@@ -1665,7 +1661,7 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
     whatYouWillDoPtPt:
         'Escolher uma posição estável, observar primeiro a respiração natural, usar o contacto leve das mãos como referência opcional e permitir que a parte inferior do tronco se expanda ao inspirar e recue ao expirar.',
     whyThisMovementExistsPtPt:
-        'Existe para praticar o controlo voluntário da movimento do diafragma ao longo de um ciclo respiratório. Não define uma dose, não promete um resultado e não substitui avaliação profissional de sintomas respiratórios.',
+        'Existe para praticar o controlo voluntário do movimento do diafragma ao longo de um ciclo respiratório. Não define uma dose, não promete um resultado e não substitui avaliação profissional de sintomas respiratórios.',
     beforeYouStartPtPt: <String>[
       'Confirma que consegues iniciar, ajustar e interromper voluntariamente a tarefa.',
       'Começa apenas se a tua respiração estiver estável no estado atual e a posição escolhida for confortável.',
@@ -1816,7 +1812,6 @@ const generatedCanonicalWave1BeginnerContentPart01 = <CanonicalExerciseBeginnerC
       'Não determina se uma via respiratória, posição ou amplitude é a melhor para uma pessoa específica.',
       'A literatura usa definições e instruções de respiração diafragmática que não são totalmente uniformes.',
       'Uma parte relevante da investigação é clínica ou usa amostras pequenas; não se inferem resultados universais.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),

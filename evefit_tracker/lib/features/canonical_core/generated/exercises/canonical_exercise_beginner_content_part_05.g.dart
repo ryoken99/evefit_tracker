@@ -170,9 +170,9 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Usa uma superfície firme, nivelada e segura para decúbito dorsal, com fricção suficiente para controlar o calcanhar e espaço desimpedido. Evita superfícies irregulares, apoios que cedam, zonas com obstáculos e qualquer superfície que provoque deslizamento descontrolado.',
     confidencePtPt:
-        'moderate_high — high — high — moderate — moderate_high — Há convergência de fontes oficiais independentes para a mecânica principal e apoio de literatura primária para posição, qualidade e aprendizagem. A respiração fase a fase e a amplitude individual não têm suporte direto suficiente para maior especificidade.',
+        'Há convergência de fontes oficiais independentes para a mecânica principal e apoio de literatura primária para posição, qualidade e aprendizagem. A respiração fase a fase e a amplitude individual não têm suporte direto suficiente para maior especificidade.',
     limitationsPtPt: <String>[
-      'Conteúdo documental geral para principiantes; não define dose, não prescreve amplitude individual, não promete resultados, não diagnostica nem trata. Grande parte da orientação oficial disponível provém de contextos pós-operatórios ou de variantes orientadas ao tronco, que foram usados apenas nos elementos compatíveis com a identidade canónica. As três relações aprovadas, o risco operacional baixo, os requisitos de superfície, o equipamento opcional e os gatilhos de supervisão foram preservados sem alteração. Implementação realizada: não',
+      'Conteúdo documental geral para principiantes; não define dose, não prescreve amplitude individual, não promete resultados, não diagnostica nem trata. Grande parte da orientação oficial disponível provém de contextos pós-operatórios ou de variantes orientadas ao tronco, que foram usados apenas nos elementos compatíveis com a identidade canónica. As três relações aprovadas, o risco operacional baixo, os requisitos de superfície, o equipamento opcional e os gatilhos de supervisão foram preservados sem alteração.',
       'Não foi identificada evidência direta suficiente para impor inspiração ou expiração numa fase específica deste exercício.',
       'As fontes não sustentam um limite universal de amplitude; mantém-se o critério de tolerância e controlo.',
     ],
@@ -346,7 +346,7 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'A execução manual é descrita diretamente por fontes profissionais independentes e coincide com a identidade canónica. A literatura primária é de família ou biomecânica próxima, não da instrução exata em todas as populações.',
     limitationsPtPt: <String>[
-      'Conteúdo educativo para principiantes, sem dose, prescrição, diagnóstico, tratamento, autorização clínica ou promessa de resultado. Não valida a execução com faixa, toalha, peso ou assistência humana e não substitui avaliação individual quando o historial ou os sintomas alteram a elegibilidade. Implementação realizada: não',
+      'Conteúdo educativo para principiantes, sem dose, prescrição, diagnóstico, tratamento, autorização clínica ou promessa de resultado. Não valida a execução com faixa, toalha, peso ou assistência humana e não substitui avaliação individual quando o historial ou os sintomas alteram a elegibilidade.',
     ],
     variantExplanation: null,
   ),
@@ -527,7 +527,6 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
       'Os estudos primários incluem amostras e contextos específicos, pelo que não autorizam generalização automática a todas as populações.',
       'A relação entre apoio, desempenho e risco deve ser interpretada por profissional quando existirem quedas recentes, condições neurológicas ou vestibulares, regresso à função ou incapacidade de sair da posição.',
       'Identidade, risco moderado, apoio opcional, requisitos de superfície e relações canónicas foram preservados.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),
@@ -700,7 +699,6 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
       'O estudo primário direto incluiu uma amostra pequena de pessoas com perda vestibular unilateral e avaliou também biofeedback vibrotátil; os seus resultados não sustentam promessas para principiantes em geral.',
       'Não foi encontrada uma relação respiratória específica entre inspiração, expiração e fase do passo; por isso, a orientação limita-se a respiração natural e contínua sem retenção.',
       'Não se define dose, distância, duração, velocidade, progressão programada, diagnóstico, tratamento ou autorização universal.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),
@@ -873,7 +871,7 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Utiliza a máquina apenas num local interior adequado e numa superfície estável. Mantém livre a área indicada pelo fabricante, incluindo a zona atrás da passadeira. Não permitas pessoas, crianças ou animais junto da superfície móvel. Garante iluminação suficiente para ver o tapete, os apoios e os comandos. Não uses a máquina quando água, objetos ou obstáculos comprometerem a zona de entrada e saída.',
     confidencePtPt:
-        'high — high — high — moderate — high — As instruções operacionais críticas são convergentes em dois manuais oficiais independentes; a respiração assenta em orientação profissional geral e a distinção da variante é apoiada por literatura biomecânica e pela identidade canónica.',
+        'As instruções operacionais críticas são convergentes em dois manuais oficiais independentes; a respiração assenta em orientação profissional geral e a distinção da variante é apoiada por literatura biomecânica e pela identidade canónica.',
     limitationsPtPt: <String>[
       'Os comandos, a desaceleração e o mecanismo da chave variam entre modelos; prevalece sempre o manual da máquina utilizada.',
       'Este conteúdo não define dose, velocidade, inclinação, duração, distância, intensidade, progressão nem elegibilidade individual.',
@@ -1272,7 +1270,7 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Executa apenas num corredor linear desimpedido, com superfície firme, regular e não escorregadia, espaço livre por cima e uma zona de desaceleração suficiente para uma paragem gradual. Não uses áreas com trânsito, cruzamentos públicos não controlados, iluminação insuficiente, pessoas a atravessar ou espaço reduzido.',
     confidencePtPt:
-        'moderate — high — moderate — moderate — A identidade, o risco e os limites estão fechados pelo registo canónico. A técnica é sustentada por federação, guia profissional e biomecânica primária, mas a evidência direta e exclusiva para uma partida de dois apoios em principiantes é limitada.',
+        'A identidade, o risco e os limites estão fechados pelo registo canónico. A técnica é sustentada por federação, guia profissional e biomecânica primária, mas a evidência direta e exclusiva para uma partida de dois apoios em principiantes é limitada.',
     limitationsPtPt: <String>[
       'A maior parte da evidência é da família do sprint, da aceleração inicial ou de outras configurações de partida.',
       'A posição exata varia entre pessoas; não foram impostos ângulos, marcas, velocidade, distância ou qualquer dose.',
@@ -1456,7 +1454,7 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Mantém a bicicleta numa superfície nivelada e com base estável. Conserva livre a área de acesso e desmontagem. Usa iluminação suficiente para ver apoios e comandos. Evita uma base instável e qualquer condição que dificulte a montagem ou a saída segura.',
     confidencePtPt:
-        'alta_com_limites — alta — alta — moderada — alta — moderada — O ajuste, os apoios e a paragem são sustentados por uma fonte profissional independente e por documentação oficial de vários fabricantes. A orientação respiratória é deliberadamente genérica porque não existe uma fase respiratória própria da pedalada.',
+        'O ajuste, os apoios e a paragem são sustentados por uma fonte profissional independente e por documentação oficial de vários fabricantes. A orientação respiratória é deliberadamente genérica porque não existe uma fase respiratória própria da pedalada.',
     limitationsPtPt: <String>[
       'Os comandos de resistência, travagem, paragem e ajuste variam entre modelos; prevalecem o manual e os avisos da bicicleta usada.',
       'A indicação de joelho ligeiramente fletido é uma verificação geral, não substitui um ajuste individual por profissional quando há desconforto ou necessidades específicas.',
@@ -1485,13 +1483,9 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
     equipmentSetupPtPt: <String>[
       'Bola de voleibol.',
       'Marcador de alvo no chão.',
-      'sim',
-      'sim',
       'Inspeciona visualmente a superfície e a forma da bola; não uses uma bola danificada, deformada, molhada ou com enchimento claramente inadequado. Define uma zona-alvo antes de começares. O marcador de chão é opcional, mas o alvo não é. O alvo pode ser uma zona assinalada ou uma zona cujos limites foram claramente combinados com o parceiro. Mantém bolas não utilizadas fora da zona de deslocação.',
     ],
     environmentSetupPtPt: <String>[
-      'sim',
-      'sim',
       'Superfície firme, nivelada e antiderrapante.',
       'Área livre para a trajetória da bola e espaço livre por cima.',
       'Evita tetos demasiado baixos e espaços partilhados sem controlo.',
@@ -1633,14 +1627,13 @@ const generatedCanonicalWave1BeginnerContentPart05 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Mantém espaço livre à frente, aos lados e por cima. Usa uma superfície firme, plana, regular e não escorregadia. Não pratiques sob teto baixo nem num espaço partilhado sem controlo. Considera pouca iluminação, piso molhado e vento como fatores que dificultam a trajetória e o controlo. Interrompe se alguém entrar na zona da bola.',
     confidencePtPt:
-        'moderada-alta — alta — alta — moderada — moderada-alta — A técnica e a preparação convergem entre FIVB e USA Volleyball. A segurança ambiental é apoiada pelas regras FIVB. Não foi localizada uma instrução respiratória específica da modalidade, pelo que se aplicou apenas orientação geral e não prescritiva.',
+        'A técnica e a preparação convergem entre FIVB e USA Volleyball. A segurança ambiental é apoiada pelas regras FIVB. Não foi localizada uma instrução respiratória específica da modalidade, pelo que se aplicou apenas orientação geral e não prescritiva.',
     limitationsPtPt: <String>[
       'Conteúdo documental para um principiante, sem prescrição de repetições, séries, duração, distância, carga, intensidade, velocidade, ritmo, frequência, descanso ou progressão.',
       'Não é diagnóstico, tratamento, autorização universal nem avaliação individual de elegibilidade.',
       'A supervisão recomendada e as adaptações dependem do contexto da pessoa e do local.',
       'A fonte FIVB de exercícios de praia foi usada apenas para pontos técnicos transferíveis de passe e não altera a compatibilidade indoor e outdoor do exercício canónico.',
       'Os conteúdos multimédia continuam por aprovar.',
-      'Implementação realizada: não.',
     ],
     variantExplanation: null,
   ),

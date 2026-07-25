@@ -1,10 +1,12 @@
 import 'dart:async';
 
+import 'package:evefit_tracker/features/canonical_core/generated/exercises/canonical_exercise_beginner_content.g.dart';
 import 'package:evefit_tracker/features/canonical_core/generated/exercises/canonical_exercise_path_links.g.dart';
 import 'package:evefit_tracker/features/canonical_core/generated/exercises/canonical_exercises_registry.g.dart';
 import 'package:evefit_tracker/features/canonical_core/models/canonical_core_models.dart';
 import 'package:evefit_tracker/features/canonical_core/models/canonical_exercise_models.dart';
 import 'package:evefit_tracker/features/canonical_core/repositories/canonical_exercise_search_repository.dart';
+import 'package:evefit_tracker/features/canonical_core/screens/canonical_exercise_detail_screen.dart';
 import 'package:evefit_tracker/features/canonical_core/screens/workout_exercise_selector_screen.dart';
 import 'package:evefit_tracker/features/canonical_core/services/hierarchical_canonical_search_controller.dart';
 import 'package:flutter/material.dart';
@@ -115,7 +117,7 @@ void main() {
     );
   });
 
-  testWidgets('detail exposes the approved 19 sections in order', (
+  testWidgets('detail exposes its heading and 18 public sections in order', (
     tester,
   ) async {
     final link = generatedCanonicalWave1PathLinks.first;
@@ -152,6 +154,80 @@ void main() {
     }
     expect(sectionTitles, hasLength(18));
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('all 49 detail screens render on the Pixel 8 Pro viewport', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(448, 998);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    final contentById = {
+      for (final content in generatedCanonicalWave1BeginnerContent)
+        content.exerciseId: content,
+    };
+    final linkByExerciseId = {
+      for (final link in generatedCanonicalWave1PathLinks)
+        link.exerciseId: link,
+    };
+
+    for (final definition in generatedCanonicalWave1Exercises) {
+      final content = contentById[definition.id];
+      final compatibility = linkByExerciseId[definition.id];
+      expect(content, isNotNull, reason: definition.id);
+      expect(compatibility, isNotNull, reason: definition.id);
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: CanonicalExerciseDetailScreen(
+            exercise: CanonicalResolvedExercise(
+              definition: definition,
+              content: content!,
+              compatibility: compatibility!,
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(
+        find.byKey(const ValueKey('canonical_exercise_detail_screen')),
+        findsOneWidget,
+        reason: definition.id,
+      );
+      await _bringDetailTextIntoView(tester, 'Evidência e limites');
+      expect(tester.takeException(), isNull, reason: definition.id);
+    }
+  });
+
+  testWidgets('result card exposes one accessible details action', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    try {
+      final link = generatedCanonicalWave1PathLinks.first;
+      final definition = generatedCanonicalWave1Exercises.firstWhere(
+        (item) => item.id == link.exerciseId,
+      );
+      await _pump(tester, _controllerAt(link));
+      await _bringResultIntoView(tester, link.exerciseId);
+
+      expect(
+        find.bySemanticsLabel('Ver detalhes de ${definition.namePtPt}'),
+        findsOneWidget,
+      );
+      expect(
+        tester.widget(
+          find.byKey(
+            ValueKey('workout_exercise_selector_view_${definition.id}'),
+          ),
+        ),
+        isA<Text>(),
+      );
+    } finally {
+      semantics.dispose();
+    }
   });
 
   testWidgets('high-risk detail exposes warning before execution content', (

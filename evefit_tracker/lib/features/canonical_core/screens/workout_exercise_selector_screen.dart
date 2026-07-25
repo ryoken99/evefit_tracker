@@ -361,6 +361,8 @@ class _CanonicalExerciseResultCard extends StatelessWidget {
       child: Semantics(
         button: true,
         label: 'Ver detalhes de ${definition.namePtPt}',
+        onTap: onOpen,
+        excludeSemantics: true,
         child: Card(
           child: InkWell(
             onTap: onOpen,
@@ -425,12 +427,14 @@ class _CanonicalExerciseResultCard extends StatelessWidget {
                   const SizedBox(height: 12),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: TextButton(
+                    child: Text(
                       key: ValueKey(
                         'workout_exercise_selector_view_${definition.id}',
                       ),
-                      onPressed: onOpen,
-                      child: const Text('Ver detalhes'),
+                      'Ver detalhes',
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
                   ),
                 ],

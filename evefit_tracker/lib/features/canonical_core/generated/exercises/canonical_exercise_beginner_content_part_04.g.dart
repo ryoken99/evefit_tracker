@@ -205,9 +205,9 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Superfície firme, regular, não escorregadia e compatível com o trenó. Pista linear e zona de desaceleração totalmente desimpedidas. Sem trânsito, cruzamento público não controlado ou pessoas junto da cinta e do trenó. Visibilidade suficiente para observar o percurso completo. Não usar em superfície instável, escorregadia, desorganizada ou que faça o trenó comportar-se de modo imprevisível. Calor, frio, iluminação deficiente e fadiga aumentam o risco e exigem reavaliação do contexto.',
     confidencePtPt:
-        'moderate — moderate — moderate — moderate — moderate — Há suporte direto para alterações cinemáticas, ponto de ligação, mecânica geral de sprint, travagem, respiração e supervisão. Não existe uma única norma oficial que detalhe toda a execução desta variante para principiantes, pelo que parte da sequência é uma síntese conservadora.',
+        'Há suporte direto para alterações cinemáticas, ponto de ligação, mecânica geral de sprint, travagem, respiração e supervisão. Não existe uma única norma oficial que detalhe toda a execução desta variante para principiantes, pelo que parte da sequência é uma síntese conservadora.',
     limitationsPtPt: <String>[
-      'Implementação realizada: não. Conteúdo documental geral, não prescrição individual nem autorização universal para executar. Não define carga, distância, duração, séries, intensidade, ritmo, frequência, descanso ou progressão. O atrito da superfície, o modelo do trenó e o sistema de ligação alteram a resistência real e exigem instruções do fabricante e julgamento profissional. Pessoas jovens, idosas, previamente sedentárias ou com deficiência podem precisar de adaptação; gravidez ou pós-parto, doença crónica relevante e retorno funcional requerem revisão adequada ao contexto.',
+      'Conteúdo documental geral, não prescrição individual nem autorização universal para executar. Não define carga, distância, duração, séries, intensidade, ritmo, frequência, descanso ou progressão. O atrito da superfície, o modelo do trenó e o sistema de ligação alteram a resistência real e exigem instruções do fabricante e julgamento profissional. Pessoas jovens, idosas, previamente sedentárias ou com deficiência podem precisar de adaptação; gravidez ou pós-parto, doença crónica relevante e retorno funcional requerem revisão adequada ao contexto.',
     ],
     variantExplanation: CanonicalExerciseVariantExplanation(
       baseExerciseId: 'linear_sprint',
@@ -394,14 +394,13 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Executa apenas numa pista de atletismo, pavilhão desportivo ou campo que ofereça um corredor linear livre, piso firme, regular e antiderrapante, boa visibilidade, zona de travagem e zona de saída. Não executes com trânsito ativo, cruzamento público não controlado, piso escorregadio ou instável, obstáculos, iluminação insuficiente ou pessoas dentro da trajetória.',
     confidencePtPt:
-        'moderate_with_safety_limits — Moderada: a mecânica geral da desaceleração é consistente entre literatura biomecânica e orientação profissional. — Moderada-baixa para especificidade: há suporte para respiração contínua sem retenção, mas não para uma sincronização obrigatória neste exercício técnico. — Moderada: demonstração, familiarização, avaliação de risco e supervisão são coerentes com as fontes, mas faltam estudos diretos em principiantes absolutos.',
+        'Moderada: a mecânica geral da desaceleração é consistente entre literatura biomecânica e orientação profissional. — Moderada-baixa para especificidade: há suporte para respiração contínua sem retenção, mas não para uma sincronização obrigatória neste exercício técnico. — Moderada: demonstração, familiarização, avaliação de risco e supervisão são coerentes com as fontes, mas faltam estudos diretos em principiantes absolutos.',
     limitationsPtPt: <String>[
       'A maior parte da evidência direta estudou atletas ou adultos recreativamente treinados, não principiantes absolutos.',
       'Não existe nas fontes consultadas uma distância de travagem segura que possa ser generalizada; a distância depende da velocidade, da pessoa, da superfície e do contexto.',
       'As fontes não validam prática autónoma na primeira exposição.',
       'Não são fornecidas dose, velocidade, intensidade, progressão, diagnóstico, tratamento ou promessa de resultado.',
       'A relação condicional com o aquecimento continua dependente de lógica de produto e não é resolvida por este conteúdo.',
-      'Implementação realizada: não',
       'Limite documentado: Distância individual de travagem e velocidade de entrada: pertencem à prescrição e à decisão do profissional no contexto.',
       'Limite documentado: Adequação individual para populações que requerem adaptação ou revisão: exige avaliação fora deste conteúdo.',
       'Limite documentado: Relação condicional de utilização no aquecimento: permanece por resolver na lógica de produto.',
@@ -576,10 +575,9 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
         'Não existe equipamento obrigatório. Não acrescentes obstáculos, caixas, barreiras, pesos ou superfícies instáveis. Qualquer marca visual deve ficar plana, não escorregar e não criar um alvo obrigatório. Verifica atacadores, sola e objetos pessoais antes de saltar.',
     environmentSafetyPtPt:
         'São adequados um ginásio, pavilhão interior ou campo exterior apenas quando oferecem piso firme, regular e não escorregadio, boa visibilidade, altura livre, espaço frontal e zona de receção desimpedida. Não uses superfícies molhadas, soltas, inclinadas, instáveis ou escorregadias, nem zonas com trânsito, cruzamento público ou pessoas a circular.',
-    confidencePtPt:
-        'moderada_alta — alta — moderada_alta — moderada — moderada_alta',
+    confidencePtPt: '',
     limitationsPtPt: <String>[
-      'A literatura direta sobre o salto horizontal parado concentra-se sobretudo em desempenho e em amostras pequenas ou específicas; a evidência de aterragem inclui outras tarefas de salto e não permite inferir risco individual. Não foi encontrada uma cadência respiratória específica validada para este exercício. O conteúdo não substitui avaliação profissional, não autoriza execução autónoma no primeiro dia e não contém prescrição. Implementação realizada: não.',
+      'A literatura direta sobre o salto horizontal parado concentra-se sobretudo em desempenho e em amostras pequenas ou específicas; a evidência de aterragem inclui outras tarefas de salto e não permite inferir risco individual. Não foi encontrada uma cadência respiratória específica validada para este exercício. O conteúdo não substitui avaliação profissional, não autoriza execução autónoma no primeiro dia e não contém prescrição.',
     ],
     variantExplanation: null,
   ),
@@ -747,7 +745,7 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'A execução essencial converge entre duas entidades profissionais independentes e é coerente com investigação biomecânica primária. A respiração e a supervisão assentam em princípios gerais de segurança e nos limites de elegibilidade canónicos.',
     limitationsPtPt: <String>[
-      'Implementação realizada: não. Este conteúdo documenta a execução geral e não determina adequação individual. A investigação biomecânica citada não autoriza inferências sobre resultados pessoais, prevenção de lesões ou resposta clínica. Não foi aprovada qualquer imagem ou vídeo.',
+      'Este conteúdo documenta a execução geral e não determina adequação individual. A investigação biomecânica citada não autoriza inferências sobre resultados pessoais, prevenção de lesões ou resposta clínica. Não foi aprovada qualquer imagem ou vídeo.',
     ],
     variantExplanation: null,
   ),
@@ -939,7 +937,7 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'A identidade, a natureza balística e os requisitos gerais de controlo têm suporte convergente. Alguns detalhes operacionais resultam de síntese prudente de fontes gerais porque não foi localizada uma norma oficial única para a versão exata, estacionária e sem receção.',
     limitationsPtPt: <String>[
-      'O conteúdo descreve técnica introdutória e gestão operacional, sem dose, carga, distância, velocidade concreta, progressão programada, promessa de resultado, diagnóstico ou autorização universal. Não transforma a receção da bola, o uso de parceiro ou o uso de alvo em requisitos. A adequação individual depende do contexto e pode exigir revisão profissional. Implementação realizada: não',
+      'O conteúdo descreve técnica introdutória e gestão operacional, sem dose, carga, distância, velocidade concreta, progressão programada, promessa de resultado, diagnóstico ou autorização universal. Não transforma a receção da bola, o uso de parceiro ou o uso de alvo em requisitos. A adequação individual depende do contexto e pode exigir revisão profissional.',
       'Limite documentado: Não existe uma norma técnica universal identificada para a largura exata da base, posição fina dos cotovelos, ângulo de libertação ou formato de alvo.',
       'Limite documentado: A resposta de ressalto varia entre modelos de bola e deve ser confirmada nas instruções do fabricante.',
       'Limite documentado: A literatura consultada não define uma única estratégia de receção segura aplicável a todas as bolas, alvos e populações; por isso, a receção não integra a execução nuclear.',
@@ -1115,7 +1113,6 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
       'Os estudos primários consultados foram realizados sobretudo com adultos mais velhos e em tarefas instrumentadas; não autorizam generalização automática a todas as populações.',
       'A orientação respiratória é geral para movimento e não uma cadência específica validada para este exercício.',
       'O conteúdo não determina elegibilidade individual, amplitude, ritmo, dose, progressão nem grau final de supervisão.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),
@@ -1278,7 +1275,7 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'Três fontes profissionais independentes convergem na mecânica essencial e uma investigação primária apoia a relevância da posição do joelho. A confiança de segurança e respiração é moderada porque as fontes são orientações gerais ou inseridas em contextos clínicos, não ensaios específicos deste conteúdo para principiantes.',
     limitationsPtPt: <String>[
-      'A evidência consultada apoia a identidade e a mecânica próxima, mas não estabelece resultado individual, isolamento muscular, prevenção, elegibilidade universal ou dose. Este conteúdo não substitui avaliação profissional perante sintomas, lesão, cirurgia ou doença relevante. Implementação realizada: não.',
+      'A evidência consultada apoia a identidade e a mecânica próxima, mas não estabelece resultado individual, isolamento muscular, prevenção, elegibilidade universal ou dose. Este conteúdo não substitui avaliação profissional perante sintomas, lesão, cirurgia ou doença relevante.',
     ],
     variantExplanation: null,
   ),
@@ -1640,7 +1637,7 @@ const generatedCanonicalWave1BeginnerContentPart04 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Usa um local interior, nivelado, bem visível e sem obstáculos na zona de acesso. Mantém cabos fora da passagem. Garante que ninguém entra no círculo das manivelas. Mantém espaço para entrar e sair depois de o equipamento parar.',
     confidencePtPt:
-        'moderada — moderada_alta — moderada — moderada — Dois manuais independentes convergem no alcance com ligeira flexão do cotovelo e na necessidade de ajustes seguros; a variação entre modelos impede instruções universais mais específicas.',
+        'Dois manuais independentes convergem no alcance com ligeira flexão do cotovelo e na necessidade de ajustes seguros; a variação entre modelos impede instruções universais mais específicas.',
     limitationsPtPt: <String>[
       'As instruções são gerais e não substituem o manual do modelo.',
       'A posição exata do eixo, o raio das manivelas e a configuração entre os dois braços variam entre ergómetros.',

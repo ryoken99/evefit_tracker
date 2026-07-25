@@ -11,7 +11,7 @@ void main() {
     expect(CleanBaseConfig.legacyCatalogueRuntimeEnabled, isFalse);
     expect(CleanBaseConfig.legacyFiltersRuntimeEnabled, isFalse);
     expect(CleanBaseConfig.canonicalSearchMenuVisible, isTrue);
-    expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isFalse);
+    expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isTrue);
   });
 
   test('canonical menu replaces catalogue and filter entry points', () {

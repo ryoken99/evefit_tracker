@@ -159,7 +159,7 @@ const generatedCanonicalWave1BeginnerContentPart03 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Usa uma zona plana, firme, seca, bem iluminada e sem tapetes soltos, cabos, objetos ou pessoas na área de movimento. Evita superfícies instáveis e condições de visibilidade reduzida.',
     confidencePtPt:
-        'moderate_high — high — moderate — high — A execução básica e o apoio estável são convergentes em fontes clínicas profissionais independentes. A orientação respiratória é geral, não específica da marcha no lugar.',
+        'A execução básica e o apoio estável são convergentes em fontes clínicas profissionais independentes. A orientação respiratória é geral, não específica da marcha no lugar.',
     limitationsPtPt: <String>[
       'As fontes técnicas descrevem versões semelhantes, mas variam na altura sugerida para o joelho e no contexto de utilização; por isso, o conteúdo usa apenas a amplitude confortável e controlável.',
       'Não foi encontrada uma norma biomecânica primária dedicada exclusivamente à marcha no lugar para principiantes.',
@@ -711,7 +711,7 @@ const generatedCanonicalWave1BeginnerContentPart03 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'A identidade, o risco e os limites vêm do registo canónico aprovado. Há evidência primária direta para sinais externos e apoio clínico profissional para execução confortável e reconhecimento de hiperventilação. A heterogeneidade impede fixar frequência, razão temporal, via respiratória ou efeito.',
     limitationsPtPt: <String>[
-      'Conteúdo documental sem avaliação individual, dose, aprovação multimédia, diagnóstico ou tratamento. Implementação realizada: não.',
+      'Conteúdo documental sem avaliação individual, dose, aprovação multimédia, diagnóstico ou tratamento.',
     ],
     variantExplanation: null,
   ),
@@ -1261,7 +1261,7 @@ const generatedCanonicalWave1BeginnerContentPart03 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'A execução e os limites de segurança convergem entre fontes profissionais independentes e o registo canónico. A literatura primária apoia a participação dos adutores, mas não estuda integralmente esta apresentação para principiantes.',
     limitationsPtPt: <String>[
-      'Conteúdo educativo para a identidade canónica e para utilização geral de baixo risco. A resposta individual pode variar, sobretudo após lesão ou cirurgia, com hipermobilidade, gravidez, pós-parto, doença crónica relevante ou retorno funcional. Implementação realizada: não',
+      'Conteúdo educativo para a identidade canónica e para utilização geral de baixo risco. A resposta individual pode variar, sobretudo após lesão ou cirurgia, com hipermobilidade, gravidez, pós-parto, doença crónica relevante ou retorno funcional.',
     ],
     variantExplanation: null,
   ),
@@ -1628,7 +1628,6 @@ const generatedCanonicalWave1BeginnerContentPart03 = <CanonicalExerciseBeginnerC
       'Não foram definidos dose, progressão, amplitude individual nem critérios clínicos personalizados.',
       'A adequação para cirurgia recente, sintomas persistentes, instabilidade conhecida ou retorno à função exige revisão individual.',
       'A aprovação é documental; os meios visuais continuam por aprovar.',
-      'Implementação realizada: não.',
     ],
     variantExplanation: null,
   ),
@@ -1802,7 +1801,7 @@ const generatedCanonicalWave1BeginnerContentPart03 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'A identidade e os limites são canónicos; a técnica e a segurança são apoiadas por orientações profissionais independentes e literatura primária, com limitações populacionais explícitas.',
     limitationsPtPt: <String>[
-      'Conteúdo educativo geral para principiante, não avaliação individual, diagnóstico, tratamento, prescrição ou autorização universal. A evidência técnica inclui materiais centrados em pessoas idosas e estudos laboratoriais; não foi feita transferência automática entre populações. As relações aprovadas, o risco moderado, o apoio opcional e os requisitos de superfície foram preservados. Implementação realizada: não.',
+      'Conteúdo educativo geral para principiante, não avaliação individual, diagnóstico, tratamento, prescrição ou autorização universal. A evidência técnica inclui materiais centrados em pessoas idosas e estudos laboratoriais; não foi feita transferência automática entre populações. As relações aprovadas, o risco moderado, o apoio opcional e os requisitos de superfície foram preservados.',
     ],
     variantExplanation: null,
   ),

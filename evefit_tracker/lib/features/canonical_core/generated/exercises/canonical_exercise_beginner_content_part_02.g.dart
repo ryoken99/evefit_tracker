@@ -169,7 +169,7 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'Há concordância entre duas fontes hospitalares independentes e literatura primária sobre a mecânica nuclear. A confiança é limitada pela especificidade clínica e populacional das fontes e pela ausência de evidência direta para principiantes adultos em execução autónoma.',
     limitationsPtPt: <String>[
-      'A documentação descreve identidade, execução e segurança geral, não uma dose, prescrição, diagnóstico, tratamento ou promessa de resultado. A evidência direta é sobretudo aguda, biomecânica e proveniente de populações específicas. A adequação após lesão, cirurgia, doença crónica, hipermobilidade ou sintomas relevantes exige apreciação individual. Implementação realizada: não.',
+      'A documentação descreve identidade, execução e segurança geral, não uma dose, prescrição, diagnóstico, tratamento ou promessa de resultado. A evidência direta é sobretudo aguda, biomecânica e proveniente de populações específicas. A adequação após lesão, cirurgia, doença crónica, hipermobilidade ou sintomas relevantes exige apreciação individual.',
     ],
     variantExplanation: null,
   ),
@@ -358,9 +358,9 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
         'Verifica se a bola está em bom estado e adequada à superfície. Usa calçado desportivo compatível com o piso e com aderência suficiente. Usa apenas marcadores de chão baixos e bem visíveis quando forem necessários. Retira bolas e equipamento não utilizados do corredor de receção. Não uses paredes ou objetos duros próximos como limite da zona-alvo.',
     environmentSafetyPtPt:
         'Mantém o corredor de receção e a trajetória de saída livres. Usa uma superfície firme, nivelada, regular e sem zonas escorregadias. Garante espaço lateral para o ajuste do corpo e para a bola abrandar em segurança. Evita locais com trânsito ativo, obstáculos, cruzamento de outras tarefas ou iluminação insuficiente. Interrompe se as condições do piso, da luz ou da circulação de pessoas mudarem.',
-    confidencePtPt: 'moderate_high — high — high — moderate — limited',
+    confidencePtPt: '',
     limitationsPtPt: <String>[
-      'Implementação realizada: não. Conteúdo documental para uma versão fixa, cooperativa e sem oposição. Não contém dose, intensidade, progressão programada, diagnóstico, tratamento, autorização clínica ou promessa de resultado. A orientação respiratória é uma regra conservadora de não retenção, porque não foi encontrada orientação federativa específica para este gesto. A adequação individual, o uso em aquecimento e qualquer alteração relevante da velocidade, trajetória, escolha ou oposição exigem decisão fora deste conteúdo.',
+      'Conteúdo documental para uma versão fixa, cooperativa e sem oposição. Não contém dose, intensidade, progressão programada, diagnóstico, tratamento, autorização clínica ou promessa de resultado. A orientação respiratória é uma regra conservadora de não retenção, porque não foi encontrada orientação federativa específica para este gesto. A adequação individual, o uso em aquecimento e qualquer alteração relevante da velocidade, trajetória, escolha ou oposição exigem decisão fora deste conteúdo.',
     ],
     variantExplanation: null,
   ),
@@ -386,13 +386,9 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
       'O exercício pode ser realizado sem equipamento portátil. Se usares apoio, verifica primeiro que está imóvel, não tem rodas e suporta uma pressão ligeira da mão sem deslocar-se. Coloca o apoio ao lado da perna de sustentação, sem bloquear a trajetória da perna livre.',
     ],
     environmentSetupPtPt: <String>[
-      'sim',
-      'sim',
-      'não',
       'Espaço estacionário suficiente para executares o movimento com controlo.',
       'Superfície firme, estável e antiderrapante.',
       'Não utilizes piso escorregadio ou instável.',
-      'sim',
       'Mantém livre a trajetória à frente e atrás da perna.',
       'Não executes com trânsito ou pessoas a atravessar, obstáculos na trajetória ou piso escorregadio.',
       'Reserva espaço livre à frente e atrás, incluindo margem para uma oscilação que pare antes de qualquer objeto. Mantém a zona bem iluminada e sem pessoas a atravessar a trajetória. No exterior, evita piso irregular, húmido, solto ou escorregadio e condições de frio que alterem a tolerância ao movimento.',
@@ -539,7 +535,6 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
     confidencePtPt:
         'Há convergência entre uma instrução oficial específica, orientações profissionais independentes e um estudo primário próximo da mecânica. A confiança não é alta porque a literatura direta é limitada, algumas fontes são de contexto específico e não existe validação universal da técnica para todas as populações.',
     limitationsPtPt: <String>[
-      'Implementação realizada: não',
       'Conteúdo documental para principiante; não constitui prescrição individual, diagnóstico, tratamento ou autorização universal.',
       'Não define dose, velocidade, cadência, frequência, intensidade, progressão programada ou amplitude individual.',
       'A evidência apoia sobretudo a família do alongamento dinâmico e uma mecânica próxima; não prova resultados individuais.',
@@ -632,7 +627,7 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
       ),
     ],
     breathingGuidancePtPt:
-        'Respira de forma natural, regular e contínua durante todo o ciclo. Não prendas a respiração e não forces uma sincronização com cada passada ou cada movimento das alavancas. Uma alteração progressiva da ventilação pode acompanhar o esforço, mas falta de ar atípica é sinal para parar.',
+        'Respira de forma natural, regular e contínua durante todo o ciclo. Não prendas a respiração e não forces uma sincronização com cada passada ou cado movimento das alavancas. Uma alteração progressiva da ventilação pode acompanhar o esforço, mas falta de ar atípica é sinal para parar.',
     expectedSensationsPtPt: <String>[
       'Contacto contínuo dos pés com os pedais e das mãos com as alavancas.',
       'Resistência guiada e regular ao empurrar os pedais e ao empurrar e puxar as alavancas.',
@@ -908,9 +903,9 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Executa apenas numa área de meio-ajoelhado desimpedida, com piso firme, nivelado, antiderrapante e tolerável para o joelho de trás. Não uses uma superfície instável, escorregadia ou que impeça o apoio completo do pé.',
     confidencePtPt:
-        'moderada — moderada — moderada — moderada — baixa_a_moderada — A mecânica de dorsiflexão em carga e os limites de calcanhar apoiado, tolerância e controlo são coerentes entre fontes clínicas e literatura primária. A evidência direta refere sobretudo testes ou populações clínicas, não a eficácia desta identidade pública exata.',
+        'A mecânica de dorsiflexão em carga e os limites de calcanhar apoiado, tolerância e controlo são coerentes entre fontes clínicas e literatura primária. A evidência direta refere sobretudo testes ou populações clínicas, não a eficácia desta identidade pública exata.',
     limitationsPtPt: <String>[
-      'A evidência é sobretudo de família mecânica, avaliação em carga e reabilitação específica de lesão. Não estabelece benefício individual, dose, valor-alvo de amplitude nem adequação universal. A respiração natural e contínua é uma orientação conservadora do contrato, não um padrão específico validado. Implementação realizada: não.',
+      'A evidência é sobretudo de família mecânica, avaliação em carga e reabilitação específica de lesão. Não estabelece benefício individual, dose, valor-alvo de amplitude nem adequação universal. A respiração natural e contínua é uma orientação conservadora do contrato, não um padrão específico validado.',
       'Limite documentado: Não foi encontrada investigação primária sobre a identidade pública exata, sem alvo, sem medição e sem assistência externa.',
       'Limite documentado: Não foi encontrado um padrão respiratório específico validado para este exercício.',
       'Limite documentado: A adequação perante cirurgia recente, sintomas persistentes, instabilidade conhecida ou retorno à função depende de revisão contextual.',
@@ -1094,7 +1089,6 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
       'Não há base suficiente para prometer aumento da capacidade pulmonar, correção postural, correção de assimetria ou qualquer resultado individual.',
       'Não foram incluídos inspiração máxima, pausas, retenções, pressão manual, dose ou cadência, mesmo quando presentes em fontes clínicas, porque não pertencem ao âmbito aprovado.',
       'A expansão aproximadamente simétrica é uma referência técnica, não um teste diagnóstico.',
-      'Implementação realizada: não.',
       'Limite documentado: A amplitude lateral considerada confortável varia entre pessoas e não deve ser convertida numa meta fixa.',
       'Limite documentado: A melhor posição para cada pessoa depende do conforto e do contexto; a identidade canónica permite posições estáveis diferentes.',
       'Limite documentado: A evidência primária não isola de forma robusta o efeito deste exercício técnico em principiantes saudáveis.',
@@ -1278,14 +1272,13 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Superfície estável, regular e antiderrapante. Espaço lateral e frontal livre de obstáculos em toda a amplitude. Sem trânsito ativo nem passagem de outras pessoas pelo trajeto. Iluminação suficiente e apoio claramente visível. No exterior, verifica humidade, areia, gravilha, gelo, irregularidades e frio que possam alterar aderência, sensibilidade ou controlo.',
     confidencePtPt:
-        'moderada — alta — moderada — moderada — A identidade, o risco e os requisitos vêm do registo canónico aprovado. A execução lateral básica é apoiada por fontes profissionais independentes. A evidência científica encontrada incide na família de alongamento dinâmico e em protocolos ou regiões anatómicas próximas, não numa validação direta desta descrição passo a passo.',
+        'A identidade, o risco e os requisitos vêm do registo canónico aprovado. A execução lateral básica é apoiada por fontes profissionais independentes. A evidência científica encontrada incide na família de alongamento dinâmico e em protocolos ou regiões anatómicas próximas, não numa validação direta desta descrição passo a passo.',
     limitationsPtPt: <String>[
       'Não foi identificada literatura primária que valide diretamente toda a execução do balanço lateral da perna descrita neste documento.',
       'As fontes científicas estudam protocolos com participantes, músculos, amplitudes e doses próprios; os resultados não são transferidos como promessa.',
       'O conteúdo não determina elegibilidade individual, não diagnostica, não trata e não substitui avaliação profissional quando existam sintomas, historial relevante ou limitações de equilíbrio.',
       'Não contém dose, carga, duração, frequência, progressão programada nem autorização universal para executar.',
       'A relação de prevenção permanece condicional e não implica promessa de prevenção de lesão.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),
@@ -1474,7 +1467,6 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
       'A investigação consultada inclui sobretudo adultos fisicamente ativos, corredores experientes ou atletas; a transferência para principiantes é prudente e limitada.',
       'Não existe aqui uma dimensão universal para a zona de travagem: deve ser validada no local pelo supervisor.',
       'Não é imposta uma cadência respiratória porque a evidência não sustenta uma regra universal de iniciação.',
-      'Implementação realizada: não',
     ],
     variantExplanation: null,
   ),
@@ -1857,7 +1849,7 @@ const generatedCanonicalWave1BeginnerContentPart02 = <CanonicalExerciseBeginnerC
     environmentSafetyPtPt:
         'Piso firme, nivelado e antiderrapante. Área estacionária livre de obstáculos, cabos e tapetes soltos. Ruído de fundo suficientemente baixo para distinguir o pulso. Iluminação que permita ver os pés, o chão e o apoio. Nunca num veículo em movimento nem junto de uma altura desprotegida. Não executar numa superfície escorregadia, instável ou desorganizada.',
     confidencePtPt:
-        'moderate — moderate — moderate — Existe evidência primária direta para passo no lugar com pista auditiva e orientação profissional para marcha estacionária e segurança do equilíbrio, mas a literatura direta é sobretudo clínica e não define conteúdo universal para principiantes.',
+        'Existe evidência primária direta para passo no lugar com pista auditiva e orientação profissional para marcha estacionária e segurança do equilíbrio, mas a literatura direta é sobretudo clínica e não define conteúdo universal para principiantes.',
     limitationsPtPt: <String>[
       'A evidência direta de sincronização auditiva no passo no lugar é sobretudo proveniente de populações clínicas.',
       'Não se generalizam resultados de investigação nem se promete melhoria.',

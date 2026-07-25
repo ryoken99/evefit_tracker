@@ -255,7 +255,7 @@ void main() {
 
   test('clean base keeps canonical core visible and legacy disabled', () {
     expect(CleanBaseConfig.canonicalSearchMenuVisible, isTrue);
-    expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isFalse);
+    expect(CleanBaseConfig.canonicalCatalogueHasActiveExercises, isTrue);
     expect(CleanBaseConfig.legacySeedEnabled, isFalse);
     expect(CleanBaseConfig.legacyCatalogueVisible, isFalse);
     expect(CleanBaseConfig.legacyFiltersVisible, isFalse);
