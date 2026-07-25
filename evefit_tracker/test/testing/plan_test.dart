@@ -103,7 +103,7 @@ void main() {
     addTearDown(() => root.deleteSync(recursive: true));
     Directory('${root.path}${Platform.pathSeparator}tool').createSync();
     File(
-      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
+      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v115_wave1_upgrade_test.ps1',
     ).writeAsStringSync('');
 
     final missing = composePlan(
@@ -151,6 +151,10 @@ void main() {
         .toList();
     expect(
       commandNames.indexOf('android-release-build'),
+      lessThan(commandNames.indexOf('release-apk-verification')),
+    );
+    expect(
+      commandNames.indexOf('release-apk-verification'),
       lessThan(commandNames.indexOf('upgrade')),
     );
     final officialCurrent = File(
@@ -180,7 +184,7 @@ void main() {
     );
     expect(upgrade.arguments, [
       '-File',
-      'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
+      'tool/run_v115_wave1_upgrade_test.ps1',
       '-BaselineApk',
       baseline.absolute.path,
       '-CurrentApk',
@@ -203,37 +207,27 @@ void main() {
     expect(invalid.reason, contains('missing.apk'));
   });
 
-  test('v1.1.4 upgrade harness resets selector scroll before each restart', () {
+  test('v1.1.5 upgrade harness validates an approved Wave1 result', () {
     final harness = File(
-      'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
+      'tool/run_v115_wave1_upgrade_test.ps1',
     ).readAsStringSync();
     final helper = harness.indexOf('function Scroll-UiListToTop');
-    final definitions = harness.indexOf(
-      r"foreach ($text in @('Deslocar o corpo'",
-    );
     final contextReset = harness.indexOf(r'Scroll-UiListToTop $adb $DeviceId');
-    final firstConceptReset = harness.indexOf(
-      r'Scroll-UiListToTop $adb $DeviceId',
-      contextReset + 1,
-    );
-    final secondConceptReset = harness.indexOf(
-      r'Scroll-UiListToTop $adb $DeviceId',
-      firstConceptReset + 1,
-    );
     final selection = harness.indexOf(
-      r"$concept = Find-UiNodeWithScroll $adb $DeviceId 'Locomo'",
+      r"$concept = Find-UiNodeWithScroll $adb $DeviceId 'Acelera'",
     );
 
     expect(helper, greaterThanOrEqualTo(0));
     expect(contextReset, greaterThanOrEqualTo(0));
-    expect(firstConceptReset, lessThan(definitions));
-    expect(secondConceptReset, greaterThan(definitions));
-    expect(secondConceptReset, lessThan(selection));
+    expect(contextReset, lessThan(selection));
+    expect(harness, contains('Aumentar a acelera'));
+    expect(harness, contains('Sprint resistido com tren'));
+    expect(harness, contains("Find-UiNodeWithScroll \$adb \$DeviceId 'Evid'"));
   });
 
-  test('v1.1.4 upgrade harness executes its database helper from a file', () {
+  test('v1.1.5 upgrade harness preserves data for both baselines', () {
     final runner = File(
-      'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
+      'tool/run_v115_wave1_upgrade_test.ps1',
     ).readAsStringSync();
 
     expect(runner, contains("'database_helper.py'"));
@@ -246,10 +240,10 @@ void main() {
       contains(r'& $python $databaseHelperPath verify $afterDatabase'),
     );
     expect(runner, isNot(contains(r'& $python -c $databaseHelper')));
-    expect(runner, contains("VersionName -ne '1.1.3'"));
-    expect(runner, contains("VersionName -ne '1.1.4'"));
-    expect(runner, contains('VersionCode -ne 5'));
-    expect(runner, contains('VersionCode -ne 6'));
+    expect(runner, contains(r'$ExpectedBaselineVersionName'));
+    expect(runner, contains(r'$ExpectedBaselineVersionCode'));
+    expect(runner, contains("VersionName -ne '1.1.5'"));
+    expect(runner, contains('VersionCode -ne 7'));
     expect(runner, contains('APK Signature Scheme v2'));
     expect(runner, contains('user_version -ne 22'));
     expect(runner, contains('Require-UiButtonWithScroll'));
@@ -268,8 +262,9 @@ void main() {
     expect(runner, contains('Selecionar esta inten'));
     expect(
       runner,
-      contains('EVEFIT_V114_EXPLICIT_INTENTION_CONFIRMATION=true'),
+      contains('EVEFIT_V115_EXPLICIT_INTENTION_CONFIRMATION=true'),
     );
+    expect(runner, contains('EVEFIT_V115_WAVE1_RESULT_VISIBLE=true'));
   });
 
   test(
@@ -304,9 +299,7 @@ void main() {
       );
       expect(
         allUnavailable.reason,
-        contains(
-          'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1',
-        ),
+        contains('tool/run_v115_wave1_upgrade_test.ps1'),
       );
 
       Directory('${root.path}${Platform.pathSeparator}tool').createSync();

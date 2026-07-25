@@ -58,7 +58,8 @@ ChangeClass _classifyPath(String path) {
     return ChangeClass.uiNavigation;
   }
   if (path ==
-      'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1') {
+          'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1' ||
+      path == 'tool/run_v115_wave1_upgrade_test.ps1') {
     return ChangeClass.databaseStartup;
   }
   if (path.startsWith('lib/data/') ||

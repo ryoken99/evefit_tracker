@@ -4,10 +4,10 @@
 
 - Branch: `feature/wave1-non-muscular-exercises-v0.1`
 - Commit base: `f34ed6952cf2a384c167a09b2902d764d090da03`
-- Versão pública preservada: `1.1.4+6`
+- Versão de release revista: `1.1.5+7`
 - Schema SQLite preservado: `22`
 - Âmbito: 49 exercícios canónicos não musculares e relações Wave1
-- Publicação, merge, tag e release: fora do âmbito
+- Revisão, merge, tag e release: autorizados apenas depois de todos os gates
 
 ## Fontes aprovadas
 
@@ -154,7 +154,8 @@ Cada card mostra nome e descrição pública, variante, requisitos relevantes,
 badge textual de exigência elevada e `Ver detalhes`. Não existe ação para
 adicionar ao treino.
 
-O detalhe reutilizável apresenta o nome e as 18 secções públicas aprovadas,
+O detalhe reutilizável apresenta um cabeçalho e as 18 secções públicas
+aprovadas,
 mantendo a ordem da especificação. Conteúdo ausente ou `not_applicable` não é
 renderizado. Exercícios high apresentam pré-requisitos, espaço, supervisão e
 sinais de paragem antes das instruções de execução.
@@ -196,21 +197,21 @@ Explicitamente não alterados:
 - Database e migrations;
 - Dashboard, Goals, Profile e respetivos contratos;
 - schema canónico de pilares e taxonomia;
-- versão pública;
+- package name, applicationId e schema;
 - catálogo legacy e arquivo legacy;
 - lógica de workouts e histórico.
 
 ## Validação local
 
 - generator `report`, `generate` e `check`: passaram;
-- testes Wave1 focados: 20 passaram;
-- `test/canonical_core`: 100 passaram;
-- Fast Gate: passou;
-- PR Gate: passou em 270,8 segundos, incluindo quatro shards, manifest e
-  Android smoke;
+- baseline Wave1 focado: 20 testes passaram;
+- `test/canonical_core` depois da revisão: 102 passaram;
+- Fast Gate final: passou em 10,062 segundos;
+- PR Gate final: passou em 201,962 segundos, incluindo 705 testes em quatro shards,
+  manifest e Android smoke;
 - `flutter analyze`: passou, zero issues;
-- suíte completa final: 702 passaram em 203,4 segundos;
-- build release local: passou, 55.1 MB;
+- suíte completa final por shards: 705 passaram;
+- build release local: passou, 57 707 549 bytes;
 - APK não commitado e não publicado.
 
 ### Android full-app
@@ -234,11 +235,11 @@ Validado:
 
 Artefactos:
 
-`test_artifacts/workout_exercise_selector_roots/full_app/2026-07-24T222315Z/`
+`test_artifacts/workout_exercise_selector_roots/full_app/2026-07-25T001651Z/`
 
 ### Ensaio de atualização
 
-Upgrade `1.1.3+5` para a build Wave1 `1.1.4+6`: passou.
+Upgrades `1.1.3+5` e `1.1.4+6` para a build Wave1 `1.1.5+7`: passaram.
 
 - certificado SHA-256:
   `59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B`;
@@ -256,15 +257,15 @@ Upgrade `1.1.3+5` para a build Wave1 `1.1.4+6`: passou.
 
 Artefactos:
 
-`test_artifacts/release/v1.1.4/upgrade/2026-07-24T222939Z/`
+`test_artifacts/release/v1.1.5/upgrade/`
 
 ### Performance
 
 Medição contemporânea no mesmo AVD, modo e procedimento:
 
 - main base: 2126, 2155, 2147 ms; mediana 2147 ms;
-- Wave1: 1972, 2288, 2162 ms; mediana 2162 ms;
-- diferença de mediana: +15 ms, aproximadamente +0,7%;
+- Wave1 revista: 2230, 2100, 2286 ms; mediana 2230 ms;
+- diferença de mediana: +83 ms, aproximadamente +3,87%;
 - legacy seed invocations: 0;
 - legacy entries processed: 0.
 
@@ -272,16 +273,10 @@ Não foi observada regressão material.
 
 ## Orquestração
 
-O Sol integrou e validou todo o trabalho. Um subagente read-only foi usado:
-
-- ID: `wave1-source-auditor`;
-- modelo: GPT-5.6 Luna;
-- reasoning: high;
-- base/final SHA:
-  `f34ed6952cf2a384c167a09b2902d764d090da03`;
-- missão: auditoria independente dos schemas, joins, opcionais e contagens;
-- resultado: aceite após revisão;
-- alterações, merge, main, tag e release: nenhum.
+O Sol integrou e validou todo o trabalho. Oito subagentes read-only foram
+usados para fontes, ontologia, UI, conteúdo PT-PT, segurança, exclusões,
+persistência e release. As conclusões e correções estão consolidadas em
+`docs/releases/Wave1_Exercise_Release_Review_v1.1.5.md`.
 
 ## Riscos e limitações
 

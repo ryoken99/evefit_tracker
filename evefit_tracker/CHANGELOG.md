@@ -1,3 +1,14 @@
+# EveFit v1.1.5 — Primeiros exercícios canónicos
+
+- Adicionados 49 exercícios canónicos não musculares aprovados, distribuídos por 54 percursos e 88 relações públicas.
+- As intenções compatíveis passam a apresentar exercícios disponíveis; percursos sem exercícios mantêm um estado vazio explícito.
+- Cada exercício inclui conteúdo PT-PT para principiantes com preparação, execução, respiração, erros comuns, segurança e limites.
+- Exercícios de exigência elevada apresentam avisos próprios antes das instruções; foram incluídas três variantes claramente identificadas.
+- A pesquisa continua a exigir Contexto, Capacidade, Conceito e Intenção completos e falha fechada perante queries inválidas.
+- As 66 relações condicionais, conteúdo muscular, pending review, specialist review, prescrições e multimédia permanecem excluídos.
+- Esta versão não adiciona os exercícios diretamente aos treinos e não altera schema, migrations, dados pessoais ou histórico.
+- Versão de release: `1.1.5+7`.
+
 # EveFit v1.1.4 — Sete Contextos e Intenções Canónicas
 
 - Evoluída a pesquisa canónica para sete contextos explícitos: Treino principal, Aquecimento, Ativação, Recuperação, Retorno à calma, Prevenção e adaptação, e Retorno à função.
