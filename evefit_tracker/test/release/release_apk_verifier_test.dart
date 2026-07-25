@@ -298,12 +298,16 @@ V2 Signer: certificate SHA-1 digest: e67ae7b509c8f778a318e3800c401a3f18532d9f
       final verifyPublished = workflow.indexOf(
         '- name: Verify published release assets',
       );
+      final cleanup = workflow.indexOf(
+        '- name: Remove temporary signing files',
+      );
 
       expect(setVersion, greaterThanOrEqualTo(0));
       expect(verify, greaterThan(setVersion));
       expect(prepare, greaterThan(verify));
       expect(upload, greaterThan(prepare));
       expect(verifyPublished, greaterThan(upload));
+      expect(cleanup, greaterThan(verifyPublished));
       expect(workflow, contains('tool/release/verify_release_apk.dart'));
       expect(
         workflow,
@@ -320,8 +324,49 @@ V2 Signer: certificate SHA-1 digest: e67ae7b509c8f778a318e3800c401a3f18532d9f
       expect(workflow, contains('sha256sum -c'));
       expect(workflow, contains('gh release download'));
       expect(workflow, contains('cmp --silent'));
+      expect(
+        workflow,
+        contains(r'${{ secrets.ANDROID_RELEASE_KEYSTORE_BASE64 }}'),
+      );
+      expect(
+        workflow,
+        contains(r'${{ secrets.ANDROID_RELEASE_KEYSTORE_PASSWORD }}'),
+      );
+      expect(workflow, contains(r'${{ secrets.ANDROID_RELEASE_KEY_ALIAS }}'));
+      expect(
+        workflow,
+        contains(r'${{ secrets.ANDROID_RELEASE_KEY_PASSWORD }}'),
+      );
+      expect(
+        RegExp(
+          r"- name: (Prepare release APK|Create Release|Verify published "
+          r"release assets)\n\s+if: github\.event_name == 'push'",
+        ).allMatches(workflow),
+        hasLength(3),
+      );
+      expect(workflow, contains('- name: Remove temporary signing files'));
+      expect(workflow, contains('if: always()'));
+      expect(
+        workflow,
+        contains(
+          'rm -f android/key.properties android/app/release-keystore.jks',
+        ),
+      );
     },
   );
+
+  test('Android release signing uses temporary CI properties when present', () {
+    final gradle = File('android/app/build.gradle.kts').readAsStringSync();
+
+    expect(gradle, contains('rootProject.file("key.properties")'));
+    expect(gradle, contains('create("release")'));
+    expect(gradle, contains('keystoreProperties["keyAlias"]'));
+    expect(gradle, contains('keystoreProperties["keyPassword"]'));
+    expect(gradle, contains('keystoreProperties["storeFile"]'));
+    expect(gradle, contains('keystoreProperties["storePassword"]'));
+    expect(gradle, contains('signingConfigs.getByName("release")'));
+    expect(gradle, contains('signingConfigs.getByName("debug")'));
+  });
 }
 
 ReleaseApkEvidence _parseSigner(String output) {
