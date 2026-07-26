@@ -7,6 +7,17 @@ import '../services/pin_service.dart';
 import '../services/profile_preferences_service.dart';
 import '../services/training_location_service.dart';
 
+const _profileGateGradient = LinearGradient(
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+  colors: [Color(0xFF5B21B6), Color(0xFF8B5CF6), Color(0xFFFACC15)],
+  stops: [0, 0.52, 1],
+);
+const _profileGateForeground = Color(0xFFF8FAFC);
+const _profileGateSurface = Color(0xEB0F172A);
+const _profileGateCardSurface = Color(0xF2172033);
+const _profileGateBorder = Color(0x40FFFFFF);
+
 class ProfileGateScreen extends StatefulWidget {
   const ProfileGateScreen({
     super.key,
@@ -39,103 +50,162 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: FutureBuilder<List<Profile>>(
-          future: _profilesFuture,
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              return Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(Icons.error_outline, size: 40),
-                      const SizedBox(height: 12),
-                      Text(
-                        'Não foi possível carregar os perfis.',
-                        style: Theme.of(context).textTheme.titleMedium,
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'Verifica a base de dados local e tenta novamente.',
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 16),
-                      FilledButton.icon(
-                        onPressed: () {
-                          setState(() {
-                            _profilesFuture = _loadProfiles();
-                          });
-                        },
-                        icon: const Icon(Icons.refresh),
-                        label: const Text('Tentar novamente'),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }
-            if (!snapshot.hasData) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            final profiles = snapshot.data!;
-            if (profiles.isEmpty) {
-              return _CreateFirstProfile(
-                database: widget.database,
-                onCreated: widget.onUnlocked,
-              );
-            }
-            return ListView(
-              padding: const EdgeInsets.all(16),
-              children: [
-                Text(
-                  'Escolher perfil',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                const Text('Seleciona o perfil e introduz o PIN de 4 dígitos.'),
-                const SizedBox(height: 16),
-                for (final profile in profiles)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Card(
-                      child: ListTile(
-                        key: ValueKey('profile_option_${profile.id}'),
-                        leading: const Icon(Icons.person_outline),
-                        title: Text(profile.name),
-                        subtitle: profile.trainingLocation.isEmpty
-                            ? null
-                            : Text(profile.trainingLocation),
-                        trailing: const Icon(Icons.lock_open_outlined),
-                        onTap: () => _unlock(profile),
+      backgroundColor: Colors.transparent,
+      body: DecoratedBox(
+        key: const ValueKey('profile_gate_background'),
+        decoration: const BoxDecoration(gradient: _profileGateGradient),
+        child: SafeArea(
+          child: FutureBuilder<List<Profile>>(
+            future: _profilesFuture,
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 480),
+                      child: _ProfileGateSurface(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              size: 40,
+                              color: _profileGateForeground,
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              'Não foi possível carregar os perfis.',
+                              style: Theme.of(context).textTheme.titleMedium
+                                  ?.copyWith(color: _profileGateForeground),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'Verifica a base de dados local e tenta novamente.',
+                              style: TextStyle(color: _profileGateForeground),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 16),
+                            FilledButton.icon(
+                              onPressed: () {
+                                setState(() {
+                                  _profilesFuture = _loadProfiles();
+                                });
+                              },
+                              icon: const Icon(Icons.refresh),
+                              label: const Text('Tentar novamente'),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                const SizedBox(height: 8),
-                OutlinedButton.icon(
-                  onPressed: () async {
-                    final created = await showCreateProfileSheet(
-                      context: context,
-                      database: widget.database,
-                    );
-                    if (created != null) {
-                      widget.onUnlocked(created);
-                    } else {
-                      setState(() {
-                        _profilesFuture = _loadProfiles();
-                      });
-                    }
-                  },
-                  icon: const Icon(Icons.person_add_alt_1_outlined),
-                  label: const Text('Criar novo perfil'),
-                ),
-              ],
-            );
-          },
+                );
+              }
+              if (!snapshot.hasData) {
+                return const Center(
+                  child: _ProfileGateSurface(
+                    child: CircularProgressIndicator(
+                      color: _profileGateForeground,
+                    ),
+                  ),
+                );
+              }
+              final profiles = snapshot.data!;
+              if (profiles.isEmpty) {
+                return _CreateFirstProfile(
+                  database: widget.database,
+                  onCreated: widget.onUnlocked,
+                );
+              }
+              return ListView(
+                padding: const EdgeInsets.all(16),
+                children: [
+                  _ProfileGateSurface(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Escolher perfil',
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(
+                                color: _profileGateForeground,
+                                fontWeight: FontWeight.bold,
+                              ),
+                        ),
+                        const SizedBox(height: 8),
+                        const Text(
+                          'Seleciona o perfil e introduz o PIN de 4 dígitos.',
+                          style: TextStyle(color: _profileGateForeground),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  for (final profile in profiles)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Card(
+                        color: _profileGateCardSurface,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          side: const BorderSide(color: _profileGateBorder),
+                        ),
+                        child: ListTile(
+                          key: ValueKey('profile_option_${profile.id}'),
+                          leading: const Icon(
+                            Icons.person_outline,
+                            color: _profileGateForeground,
+                          ),
+                          title: Text(
+                            profile.name,
+                            style: Theme.of(context).textTheme.titleMedium
+                                ?.copyWith(color: _profileGateForeground),
+                          ),
+                          subtitle: profile.trainingLocation.isEmpty
+                              ? null
+                              : Text(
+                                  profile.trainingLocation,
+                                  style: const TextStyle(
+                                    color: _profileGateForeground,
+                                  ),
+                                ),
+                          trailing: const Icon(
+                            Icons.lock_open_outlined,
+                            color: _profileGateForeground,
+                          ),
+                          onTap: () => _unlock(profile),
+                        ),
+                      ),
+                    ),
+                  const SizedBox(height: 8),
+                  OutlinedButton.icon(
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: _profileGateSurface,
+                      foregroundColor: _profileGateForeground,
+                      side: const BorderSide(color: _profileGateBorder),
+                    ),
+                    onPressed: () async {
+                      final created = await showCreateProfileSheet(
+                        context: context,
+                        database: widget.database,
+                      );
+                      if (created != null) {
+                        widget.onUnlocked(created);
+                      } else {
+                        setState(() {
+                          _profilesFuture = _loadProfiles();
+                        });
+                      }
+                    },
+                    icon: const Icon(Icons.person_add_alt_1_outlined),
+                    label: const Text('Criar novo perfil'),
+                  ),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
@@ -206,18 +276,32 @@ class _CreateFirstProfile extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        Text(
-          'Configuração inicial',
-          style: Theme.of(
-            context,
-          ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 8),
-        const Text(
-          'Cria o teu perfil local. A app não traz perfis pessoais pré-criados.',
+        _ProfileGateSurface(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Configuração inicial',
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: _profileGateForeground,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Cria o teu perfil local. A app não traz perfis pessoais pré-criados.',
+                style: TextStyle(color: _profileGateForeground),
+              ),
+            ],
+          ),
         ),
         const SizedBox(height: 16),
         FilledButton.icon(
+          style: FilledButton.styleFrom(
+            backgroundColor: _profileGateSurface,
+            foregroundColor: _profileGateForeground,
+            side: const BorderSide(color: _profileGateBorder),
+          ),
           onPressed: () async {
             final profile = await showCreateProfileSheet(
               context: context,
@@ -229,6 +313,24 @@ class _CreateFirstProfile extends StatelessWidget {
           label: const Text('Começar'),
         ),
       ],
+    );
+  }
+}
+
+class _ProfileGateSurface extends StatelessWidget {
+  const _ProfileGateSurface({required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: _profileGateSurface,
+        border: Border.all(color: _profileGateBorder),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(padding: const EdgeInsets.all(16), child: child),
     );
   }
 }
