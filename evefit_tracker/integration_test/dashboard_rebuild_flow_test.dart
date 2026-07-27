@@ -7,6 +7,8 @@ import 'package:flutter/material.dart' show FocusManager, UniqueKey, ValueKey;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
+import 'helpers/eft_landing_test_helper.dart';
+
 const _weightGoal = 'Ganhar peso';
 const _pin = '1234';
 
@@ -39,6 +41,7 @@ void main() {
       );
 
       app.main();
+      await dismissEftLanding(tester);
       await _unlockProfile(tester, firstProfile);
       await binding.convertFlutterSurfaceToImage();
 
@@ -222,7 +225,7 @@ Future<void> _unlockProfile(WidgetTester tester, Profile profile) async {
 
 Future<void> _restartAndUnlock(WidgetTester tester, Profile profile) async {
   await tester.pumpWidget(evefit_app.EveFitApp(key: UniqueKey()));
-  await tester.pumpAndSettle();
+  await dismissEftLanding(tester);
   await _unlockProfile(tester, profile);
 }
 

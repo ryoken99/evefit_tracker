@@ -9,33 +9,51 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('profile gate uses a horizontal purple to yellow background', (
-    tester,
-  ) async {
-    final profile = _profile();
+  testWidgets(
+    'profile gate uses the muted horizontal purple to gold identity',
+    (tester) async {
+      final profile = _profile();
 
-    await _pumpGate(tester, profiles: [profile]);
+      await _pumpGate(tester, profiles: [profile]);
 
-    final background = tester.widget<DecoratedBox>(
-      find.byKey(const ValueKey('profile_gate_background')),
-    );
-    final gradient =
-        (background.decoration as BoxDecoration).gradient! as LinearGradient;
+      final background = tester.widget<DecoratedBox>(
+        find.byKey(const ValueKey('profile_gate_background')),
+      );
+      final gradient =
+          (background.decoration as BoxDecoration).gradient! as LinearGradient;
 
-    expect(gradient.begin, Alignment.centerLeft);
-    expect(gradient.end, Alignment.centerRight);
-    expect(_isPurple(gradient.colors.first), isTrue);
-    expect(_isYellow(gradient.colors.last), isTrue);
-    expect(find.text('Escolher perfil'), findsOneWidget);
-    expect(find.byKey(const ValueKey('profile_option_1')), findsOneWidget);
-  });
+      expect(gradient.begin, Alignment.centerLeft);
+      expect(gradient.end, Alignment.centerRight);
+      expect(gradient.colors, const [
+        Color(0xFF302149),
+        Color(0xFF66547A),
+        Color(0xFFA48650),
+      ]);
+      expect(_isPurple(gradient.colors.first), isTrue);
+      expect(_isYellow(gradient.colors.last), isTrue);
+      expect(find.text('Escolher perfil'), findsOneWidget);
+      expect(find.byKey(const ValueKey('profile_option_1')), findsOneWidget);
+
+      final profileTarget = tester.getSize(
+        find.byKey(const ValueKey('profile_option_1')),
+      );
+      final createTarget = tester.getSize(
+        find.widgetWithText(OutlinedButton, 'Criar novo perfil'),
+      );
+      expect(profileTarget.height, greaterThanOrEqualTo(48));
+      expect(createTarget.height, greaterThanOrEqualTo(48));
+    },
+  );
 
   testWidgets(
     'loading, error, and empty states retain the localized background',
     (tester) async {
       final pending = Completer<List<Profile>>();
       await _pumpGate(tester, loader: () => pending.future);
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+      expect(find.text('Escolher perfil'), findsOneWidget);
+      expect(find.text('A preparar os perfis...'), findsOneWidget);
+      expect(find.byType(LinearProgressIndicator), findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsNothing);
       _expectBackground();
 
       var loadAttempts = 0;

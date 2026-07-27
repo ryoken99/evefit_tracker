@@ -13,6 +13,8 @@ import 'package:flutter/material.dart'
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
+import 'helpers/eft_landing_test_helper.dart';
+
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
@@ -28,6 +30,7 @@ void main() {
     addTearDown(() => FlutterError.onError = previousOnError);
 
     app.main();
+    await dismissEftLanding(tester);
     await _ensureDashboard(tester);
     await binding.convertFlutterSurfaceToImage();
     await _screenshot(binding, tester, 'v114_dashboard');
@@ -339,7 +342,7 @@ Future<void> _ensureDashboard(WidgetTester tester) async {
   final initialState = await _pumpUntilAny(tester, <String, Finder>{
     'setup': find.text('Configuração inicial'),
     'dashboard': find.text('Dashboard'),
-    'profile_selection': find.text('Escolher perfil'),
+    'profile_selection': _profileOptionFinder(),
   }, timeout: const Duration(minutes: 3));
   if (initialState == 'dashboard') return;
 

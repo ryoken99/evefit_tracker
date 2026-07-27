@@ -5,6 +5,8 @@ import 'package:flutter/material.dart' show TextField, ValueKey;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
+import 'helpers/eft_landing_test_helper.dart';
+
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
@@ -12,6 +14,7 @@ void main() {
     tester,
   ) async {
     app.main();
+    await dismissEftLanding(tester);
     await _pumpUntilFound(tester, find.text('Entrar'));
     final pin = find.byType(TextField);
     expect(pin, findsOneWidget);

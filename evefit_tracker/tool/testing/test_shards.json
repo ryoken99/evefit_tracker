@@ -78,6 +78,7 @@
         "test/dashboard/dashboard_goal_metric_service_test.dart",
         "test/dashboard_metric_test.dart",
         "test/dashboard_stats_test.dart",
+        "test/eft_landing_screen_test.dart",
         "test/exercise_descriptions_are_specific_test.dart",
         "test/profile_gate_screen_test.dart",
         "test/regression/async_refresh_callback_test.dart",
