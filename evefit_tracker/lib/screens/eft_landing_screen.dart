@@ -252,6 +252,7 @@ class _EftLivingNetworkPainter extends CustomPainter {
   const _EftLivingNetworkPainter({required this.phase});
 
   final double phase;
+  static final _filaments = _buildEftFilaments();
 
   static const _branches = <_EftBranch>[
     // Five trunks grow inwards from the edges and frame the EFT wordmark.
@@ -270,9 +271,9 @@ class _EftLivingNetworkPainter extends CustomPainter {
       flowOffset: 0.31,
     ),
     _EftBranch(
-      Offset(0.46, -0.05),
-      Offset(0.47, 0.13),
-      Offset(0.43, 0.29),
+      Offset(0.45, -0.05),
+      Offset(0.53, 0.12),
+      Offset(0.39, 0.29),
       Offset(0.47, 0.40),
       flowOffset: 0.54,
     ),
@@ -442,6 +443,19 @@ class _EftLivingNetworkPainter extends CustomPainter {
       stops: [0, 0.38, 0.68, 1],
     ).createShader(rect);
 
+    for (final filament in _filaments) {
+      canvas.drawPath(
+        filament.pathFor(size),
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = filament.level == 2 ? 0.55 : 0.38
+          ..strokeCap = StrokeCap.round
+          ..color = EftVisualIdentity.circuit.withValues(
+            alpha: filament.level == 2 ? 0.22 : 0.14,
+          ),
+      );
+    }
+
     for (final branch in _branches) {
       final path = branch.pathFor(size);
       final lineWidth = switch (branch.level) {
@@ -512,6 +526,20 @@ class _EftLivingNetworkPainter extends CustomPainter {
         point.translate(-0.55, -0.65),
         0.65,
         Paint()..color = Colors.white.withValues(alpha: 0.52),
+      );
+    }
+
+    for (var index = 4; index < _filaments.length; index += 7) {
+      final point = _scale(_filaments[index].end, size);
+      canvas.drawCircle(
+        point,
+        3.2,
+        Paint()..color = EftVisualIdentity.circuit.withValues(alpha: 0.055),
+      );
+      canvas.drawCircle(
+        point,
+        1.05,
+        Paint()..color = EftVisualIdentity.circuitCore.withValues(alpha: 0.56),
       );
     }
   }
@@ -585,4 +613,81 @@ class _EftSynapse {
 
   final Offset point;
   final double strength;
+}
+
+List<_EftBranch> _buildEftFilaments() {
+  final random = math.Random(7319);
+  final filaments = <_EftBranch>[];
+  const seeds = <(Offset, double, double)>[
+    (Offset(0.06, 0.42), -2.72, 0.095),
+    (Offset(0.11, 0.63), 2.18, 0.105),
+    (Offset(0.28, 0.76), 1.86, 0.085),
+    (Offset(0.34, 0.18), -2.55, 0.09),
+    (Offset(0.31, 0.07), -2.18, 0.08),
+    (Offset(0.61, 0.10), -1.03, 0.08),
+    (Offset(0.72, 0.08), -0.46, 0.09),
+    (Offset(0.94, 0.37), 0.34, 0.085),
+    (Offset(0.96, 0.28), -0.42, 0.085),
+    (Offset(0.67, 0.76), 1.34, 0.085),
+    (Offset(0.70, 0.87), 0.74, 0.1),
+    (Offset(0.97, 0.58), 0.64, 0.09),
+  ];
+
+  for (final seed in seeds) {
+    _growEftFilament(
+      filaments,
+      random,
+      start: seed.$1,
+      direction: seed.$2,
+      length: seed.$3,
+      generations: 3,
+      level: 2,
+    );
+  }
+  return List.unmodifiable(filaments);
+}
+
+void _growEftFilament(
+  List<_EftBranch> branches,
+  math.Random random, {
+  required Offset start,
+  required double direction,
+  required double length,
+  required int generations,
+  required int level,
+}) {
+  final directionVector = Offset(math.cos(direction), math.sin(direction));
+  final normal = Offset(-directionVector.dy, directionVector.dx);
+  final bend = (random.nextDouble() - 0.5) * length * 0.72;
+  final end = start + (directionVector * length);
+  final controlA = start + (directionVector * length * 0.32) + (normal * bend);
+  final controlB =
+      start +
+      (directionVector * length * 0.7) -
+      (normal * bend * (0.25 + (random.nextDouble() * 0.3)));
+
+  branches.add(_EftBranch(start, controlA, controlB, end, level: level));
+
+  if (generations == 0) return;
+
+  final spread = 0.34 + (random.nextDouble() * 0.26);
+  final nextLength = length * (0.61 + (random.nextDouble() * 0.11));
+  _growEftFilament(
+    branches,
+    random,
+    start: end,
+    direction: direction - spread + ((random.nextDouble() - 0.5) * 0.12),
+    length: nextLength,
+    generations: generations - 1,
+    level: level + 1,
+  );
+  _growEftFilament(
+    branches,
+    random,
+    start: end,
+    direction: direction + spread + ((random.nextDouble() - 0.5) * 0.12),
+    length: nextLength * (0.9 + (random.nextDouble() * 0.12)),
+    generations: generations - 1,
+    level: level + 1,
+  );
 }
