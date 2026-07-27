@@ -54,7 +54,7 @@ class _EftLandingScreenState extends State<EftLandingScreen>
         ..value = 0.5;
     } else {
       _introController.forward();
-      _ambientController.repeat(reverse: true);
+      _ambientController.repeat();
     }
   }
 
@@ -89,10 +89,12 @@ class _EftLandingScreenState extends State<EftLandingScreen>
           children: [
             RepaintBoundary(
               child: AnimatedBuilder(
-                key: const ValueKey('eft_landing_circuit'),
+                key: const ValueKey('eft_landing_network'),
                 animation: _ambientController,
                 builder: (context, _) => CustomPaint(
-                  painter: _EftCircuitPainter(phase: _ambientController.value),
+                  painter: _EftLivingNetworkPainter(
+                    phase: _ambientController.value,
+                  ),
                 ),
               ),
             ),
@@ -246,106 +248,298 @@ class _ContinuePrompt extends StatelessWidget {
   }
 }
 
-class _EftCircuitPainter extends CustomPainter {
-  const _EftCircuitPainter({required this.phase});
+class _EftLivingNetworkPainter extends CustomPainter {
+  const _EftLivingNetworkPainter({required this.phase});
 
   final double phase;
 
-  static const _points = <Offset>[
-    Offset(0.06, 0.16),
-    Offset(0.19, 0.12),
-    Offset(0.31, 0.2),
-    Offset(0.47, 0.12),
-    Offset(0.67, 0.18),
-    Offset(0.88, 0.1),
-    Offset(0.1, 0.42),
-    Offset(0.25, 0.5),
-    Offset(0.46, 0.43),
-    Offset(0.73, 0.49),
-    Offset(0.92, 0.39),
-    Offset(0.08, 0.73),
-    Offset(0.29, 0.82),
-    Offset(0.51, 0.7),
-    Offset(0.72, 0.81),
-    Offset(0.92, 0.69),
+  static const _branches = <_EftBranch>[
+    // Five trunks grow inwards from the edges and frame the EFT wordmark.
+    _EftBranch(
+      Offset(-0.04, 0.82),
+      Offset(0.08, 0.78),
+      Offset(0.17, 0.57),
+      Offset(0.39, 0.48),
+      flowOffset: 0.08,
+    ),
+    _EftBranch(
+      Offset(-0.04, 0.15),
+      Offset(0.09, 0.13),
+      Offset(0.22, 0.35),
+      Offset(0.40, 0.43),
+      flowOffset: 0.31,
+    ),
+    _EftBranch(
+      Offset(0.46, -0.05),
+      Offset(0.47, 0.13),
+      Offset(0.43, 0.29),
+      Offset(0.47, 0.40),
+      flowOffset: 0.54,
+    ),
+    _EftBranch(
+      Offset(1.04, 0.12),
+      Offset(0.89, 0.14),
+      Offset(0.76, 0.34),
+      Offset(0.60, 0.43),
+      flowOffset: 0.72,
+    ),
+    _EftBranch(
+      Offset(1.04, 0.84),
+      Offset(0.89, 0.80),
+      Offset(0.76, 0.58),
+      Offset(0.61, 0.48),
+      flowOffset: 0.9,
+    ),
+
+    // Secondary branches create restrained Y-shaped bifurcations.
+    _EftBranch(
+      Offset(0.14, 0.68),
+      Offset(0.10, 0.62),
+      Offset(0.05, 0.59),
+      Offset(0.03, 0.52),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.14, 0.68),
+      Offset(0.20, 0.65),
+      Offset(0.24, 0.72),
+      Offset(0.28, 0.76),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.17, 0.29),
+      Offset(0.12, 0.29),
+      Offset(0.08, 0.36),
+      Offset(0.03, 0.38),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.17, 0.29),
+      Offset(0.23, 0.27),
+      Offset(0.27, 0.20),
+      Offset(0.34, 0.18),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.46, 0.19),
+      Offset(0.41, 0.18),
+      Offset(0.39, 0.12),
+      Offset(0.34, 0.09),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.46, 0.19),
+      Offset(0.51, 0.18),
+      Offset(0.56, 0.12),
+      Offset(0.61, 0.10),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.80, 0.27),
+      Offset(0.85, 0.28),
+      Offset(0.88, 0.35),
+      Offset(0.94, 0.37),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.80, 0.27),
+      Offset(0.75, 0.24),
+      Offset(0.72, 0.18),
+      Offset(0.67, 0.16),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.83, 0.69),
+      Offset(0.88, 0.67),
+      Offset(0.91, 0.60),
+      Offset(0.97, 0.58),
+      level: 1,
+    ),
+    _EftBranch(
+      Offset(0.83, 0.69),
+      Offset(0.77, 0.67),
+      Offset(0.73, 0.74),
+      Offset(0.67, 0.76),
+      level: 1,
+    ),
+
+    // Sparse tertiary growth keeps the silhouette organic without adding noise.
+    _EftBranch(
+      Offset(0.03, 0.52),
+      Offset(0.01, 0.49),
+      Offset(0.02, 0.44),
+      Offset(0.06, 0.42),
+      level: 2,
+    ),
+    _EftBranch(
+      Offset(0.03, 0.52),
+      Offset(0.06, 0.55),
+      Offset(0.07, 0.61),
+      Offset(0.11, 0.63),
+      level: 2,
+    ),
+    _EftBranch(
+      Offset(0.34, 0.18),
+      Offset(0.31, 0.15),
+      Offset(0.29, 0.11),
+      Offset(0.31, 0.07),
+      level: 2,
+    ),
+    _EftBranch(
+      Offset(0.61, 0.10),
+      Offset(0.64, 0.07),
+      Offset(0.69, 0.06),
+      Offset(0.72, 0.08),
+      level: 2,
+    ),
+    _EftBranch(
+      Offset(0.94, 0.37),
+      Offset(0.97, 0.35),
+      Offset(0.98, 0.31),
+      Offset(0.96, 0.28),
+      level: 2,
+    ),
+    _EftBranch(
+      Offset(0.67, 0.76),
+      Offset(0.65, 0.80),
+      Offset(0.66, 0.85),
+      Offset(0.70, 0.87),
+      level: 2,
+    ),
   ];
 
-  static const _links = <(int, int)>[
-    (0, 1),
-    (1, 2),
-    (2, 3),
-    (3, 4),
-    (4, 5),
-    (0, 6),
-    (2, 7),
-    (3, 8),
-    (4, 9),
-    (5, 10),
-    (6, 7),
-    (7, 8),
-    (8, 9),
-    (9, 10),
-    (6, 11),
-    (7, 12),
-    (8, 13),
-    (9, 14),
-    (10, 15),
-    (11, 12),
-    (12, 13),
-    (13, 14),
-    (14, 15),
+  static const _synapses = <_EftSynapse>[
+    _EftSynapse(Offset(0.14, 0.68), 0.8),
+    _EftSynapse(Offset(0.17, 0.29), 0.9),
+    _EftSynapse(Offset(0.46, 0.19), 0.75),
+    _EftSynapse(Offset(0.80, 0.27), 0.8),
+    _EftSynapse(Offset(0.83, 0.69), 0.85),
+    _EftSynapse(Offset(0.39, 0.48), 1),
+    _EftSynapse(Offset(0.40, 0.43), 1),
+    _EftSynapse(Offset(0.47, 0.40), 1),
+    _EftSynapse(Offset(0.60, 0.43), 1),
+    _EftSynapse(Offset(0.61, 0.48), 1),
+    _EftSynapse(Offset(0.03, 0.52), 0.65),
+    _EftSynapse(Offset(0.28, 0.76), 0.55),
+    _EftSynapse(Offset(0.34, 0.18), 0.55),
+    _EftSynapse(Offset(0.61, 0.10), 0.55),
+    _EftSynapse(Offset(0.94, 0.37), 0.55),
+    _EftSynapse(Offset(0.67, 0.76), 0.55),
   ];
 
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Offset.zero & size;
-    final linePaint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.15
-      ..shader = LinearGradient(
-        colors: [
-          EftVisualIdentity.circuit.withValues(alpha: 0.12),
-          EftVisualIdentity.circuitCore.withValues(alpha: 0.2 + (phase * 0.08)),
-          EftVisualIdentity.circuit.withValues(alpha: 0.1),
-        ],
-      ).createShader(rect);
+    final branchShader = const LinearGradient(
+      begin: Alignment.bottomLeft,
+      end: Alignment.topRight,
+      colors: [
+        Color(0x005C9BC8),
+        Color(0x665C9BC8),
+        Color(0x809DD9F5),
+        Color(0x4D5C9BC8),
+      ],
+      stops: [0, 0.38, 0.68, 1],
+    ).createShader(rect);
 
-    for (final link in _links) {
-      final start = _scale(_points[link.$1], size);
-      final end = _scale(_points[link.$2], size);
-      final middleX = start.dx + ((end.dx - start.dx) * 0.52);
-      final path = Path()
-        ..moveTo(start.dx, start.dy)
-        ..lineTo(middleX, start.dy)
-        ..lineTo(middleX, end.dy)
-        ..lineTo(end.dx, end.dy);
-      canvas.drawPath(path, linePaint);
+    for (final branch in _branches) {
+      final path = branch.pathFor(size);
+      final lineWidth = switch (branch.level) {
+        0 => 1.35,
+        1 => 0.95,
+        _ => 0.65,
+      };
+      final alpha = switch (branch.level) {
+        0 => 0.42,
+        1 => 0.3,
+        _ => 0.2,
+      };
+
+      if (branch.level == 0) {
+        canvas.drawPath(
+          path,
+          Paint()
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 4
+            ..strokeCap = StrokeCap.round
+            ..color = EftVisualIdentity.circuit.withValues(alpha: 0.035),
+        );
+      }
+
+      canvas.drawPath(
+        path,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = lineWidth
+          ..strokeCap = StrokeCap.round
+          ..shader = branchShader
+          ..color = Colors.white.withValues(alpha: alpha),
+      );
+
+      if (branch.level == 0) {
+        _drawEnergyFlow(canvas, path, branch.flowOffset);
+      }
     }
 
-    for (var index = 0; index < _points.length; index++) {
-      final point = _scale(_points[index], size);
-      final pulse = 0.5 + (0.5 * math.sin((phase + index / 7) * math.pi));
+    for (final synapse in _synapses) {
+      final point = _scale(synapse.point, size);
+      final radius = 3.2 + (synapse.strength * 1.4);
       canvas.drawCircle(
         point,
-        8 + pulse,
+        radius + 5,
         Paint()
           ..color = EftVisualIdentity.circuit.withValues(
-            alpha: 0.035 + (pulse * 0.025),
+            alpha: 0.025 + (synapse.strength * 0.035),
           ),
       );
       canvas.drawCircle(
         point,
-        5.2,
+        radius,
         Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.3
-          ..color = EftVisualIdentity.circuit.withValues(alpha: 0.48),
+          ..color = EftVisualIdentity.circuit.withValues(
+            alpha: 0.2 + (synapse.strength * 0.14),
+          ),
       );
       canvas.drawCircle(
         point,
-        2.1,
-        Paint()..color = EftVisualIdentity.circuitCore.withValues(alpha: 0.82),
+        1.4 + (synapse.strength * 0.7),
+        Paint()
+          ..color = EftVisualIdentity.circuitCore.withValues(
+            alpha: 0.74 + (synapse.strength * 0.2),
+          ),
       );
+      canvas.drawCircle(
+        point.translate(-0.55, -0.65),
+        0.65,
+        Paint()..color = Colors.white.withValues(alpha: 0.52),
+      );
+    }
+  }
+
+  void _drawEnergyFlow(Canvas canvas, Path path, double offset) {
+    for (final metric in path.computeMetrics()) {
+      final progress = (phase + offset) % 1;
+      final head = metric.length * progress;
+      final tail = math.max(0.0, head - 18);
+      final flow = metric.extractPath(tail, head);
+      canvas.drawPath(
+        flow,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.8
+          ..strokeCap = StrokeCap.round
+          ..color = EftVisualIdentity.circuitCore.withValues(alpha: 0.3),
+      );
+
+      final tangent = metric.getTangentForOffset(head);
+      if (tangent != null) {
+        canvas.drawCircle(
+          tangent.position,
+          2.1,
+          Paint()
+            ..color = EftVisualIdentity.circuitCore.withValues(alpha: 0.38),
+        );
+      }
     }
   }
 
@@ -353,6 +547,42 @@ class _EftCircuitPainter extends CustomPainter {
       Offset(point.dx * size.width, point.dy * size.height);
 
   @override
-  bool shouldRepaint(covariant _EftCircuitPainter oldDelegate) =>
+  bool shouldRepaint(covariant _EftLivingNetworkPainter oldDelegate) =>
       oldDelegate.phase != phase;
+}
+
+class _EftBranch {
+  const _EftBranch(
+    this.start,
+    this.controlA,
+    this.controlB,
+    this.end, {
+    this.level = 0,
+    this.flowOffset = 0,
+  });
+
+  final Offset start;
+  final Offset controlA;
+  final Offset controlB;
+  final Offset end;
+  final int level;
+  final double flowOffset;
+
+  Path pathFor(Size size) => Path()
+    ..moveTo(start.dx * size.width, start.dy * size.height)
+    ..cubicTo(
+      controlA.dx * size.width,
+      controlA.dy * size.height,
+      controlB.dx * size.width,
+      controlB.dy * size.height,
+      end.dx * size.width,
+      end.dy * size.height,
+    );
+}
+
+class _EftSynapse {
+  const _EftSynapse(this.point, this.strength);
+
+  final Offset point;
+  final double strength;
 }

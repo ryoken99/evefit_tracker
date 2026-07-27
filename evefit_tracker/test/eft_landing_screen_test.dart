@@ -14,7 +14,7 @@ void main() {
     await _pumpLanding(tester, onContinue: () => continuations += 1);
 
     expect(find.byKey(const ValueKey('eft_landing_screen')), findsOneWidget);
-    expect(find.byKey(const ValueKey('eft_landing_circuit')), findsOneWidget);
+    expect(find.byKey(const ValueKey('eft_landing_network')), findsOneWidget);
     expect(find.byKey(const ValueKey('eft_landing_wordmark')), findsOneWidget);
     expect(find.text('EFT'), findsOneWidget);
     expect(find.text('Tocar para continuar'), findsOneWidget);
@@ -98,7 +98,7 @@ void main() {
     await _pumpLanding(tester, onContinue: () {}, disableAnimations: true);
     await tester.pump(const Duration(seconds: 1));
 
-    expect(find.byKey(const ValueKey('eft_landing_circuit')), findsOneWidget);
+    expect(find.byKey(const ValueKey('eft_landing_network')), findsOneWidget);
     expect(tester.binding.transientCallbackCount, 0);
     expect(tester.takeException(), isNull);
   });
