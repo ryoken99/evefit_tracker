@@ -5,6 +5,8 @@ import 'package:flutter/material.dart'
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
+import 'helpers/eft_landing_test_helper.dart';
+
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
@@ -21,6 +23,7 @@ void main() {
 
     final firstUsable = Stopwatch()..start();
     app.main();
+    await dismissEftLanding(tester);
     await _pumpUntilFound(
       tester,
       find.text('Configuração inicial'),

@@ -54,12 +54,14 @@ ChangeClass _classifyPath(String path) {
   }
   if (path == 'tool/run_android_smoke.ps1' ||
       path == 'tool/evefit_android_test_helpers.ps1' ||
+      path.startsWith('assets/') ||
       path.startsWith('integration_test/')) {
     return ChangeClass.uiNavigation;
   }
   if (path ==
           'tool/run_v114_seven_contexts_training_intentions_upgrade_test.ps1' ||
-      path == 'tool/run_v115_wave1_upgrade_test.ps1') {
+      path == 'tool/run_v115_wave1_upgrade_test.ps1' ||
+      path == 'tool/run_v116_eft_landing_upgrade_test.ps1') {
     return ChangeClass.databaseStartup;
   }
   if (path.startsWith('lib/data/') ||

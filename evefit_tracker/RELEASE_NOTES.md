@@ -1,3 +1,17 @@
+# EveFit v1.1.6 — Landing EFT
+
+## Novidades
+- Nova landing page EFT com identidade tecnológica baseada em circuitos eletrónicos.
+- Gradiente violeta, azul-escuro e dourado refinado, com nodes azuis luminosos.
+- Transição curta para a seleção de perfil.
+- Ecrã `Escolher perfil` atualizado com um fundo PCB coordenado sem lettering.
+- Legibilidade e consistência reforçadas em diferentes ecrãs e escalas de texto.
+
+## Atualização
+- A atualização direta desde `1.1.5+7` preserva perfis, PIN, dados pessoais, treinos e históricos.
+- Package Android, schema e migrations não foram alterados.
+- Versão: `1.1.6+8`.
+
 # EveFit v1.1.5 — Primeiros exercícios canónicos
 
 ## Resumo

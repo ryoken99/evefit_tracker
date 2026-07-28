@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('v1.1.5 Wave1 public version metadata', () {
-    test('app surface and release tooling identify v1.1.5 build 7', () {
+  group('v1.1.6 EFT landing public version metadata', () {
+    test('app surface and release tooling identify v1.1.6 build 8', () {
       final pubspec = _contents('pubspec.yaml');
       final settings = _contents('lib/screens/settings_screen.dart');
       final cleanBaseConfig = _contents('lib/services/clean_base_config.dart');
@@ -15,27 +15,23 @@ void main() {
 
       expect(
         pubspec,
-        contains(RegExp(r'^version: 1\.1\.5\+7$', multiLine: true)),
+        contains(RegExp(r'^version: 1\.1\.6\+8$', multiLine: true)),
       );
       expect(pubspec, isNot(contains('1.0.0-rc.1')));
       expect(
         settings,
         contains('appVersionLabel = CleanBaseConfig.versionLabel'),
       );
-      expect(
-        cleanBaseConfig,
-        contains('EveFit v1.1.5 - Primeiros Exercícios Canónicos'),
-      );
+      expect(cleanBaseConfig, contains('EveFit v1.1.6 - Landing EFT'));
       expect(settings, contains('Ver atualiza'));
-      expect(settings, contains('v1.1.5'));
-      expect(readme, contains('v1.1.5'));
-      expect(readme, contains('1.1.5+7'));
-      expect(workflow, contains("default: 'v1.1.5'"));
-      expect(workflow, contains('### Novidades v1.1.5'));
-      expect(
-        workflow,
-        contains('EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk'),
-      );
+      expect(settings, contains('v1.1.6'));
+      expect(readme, contains('v1.1.6'));
+      expect(readme, contains('1.1.6+8'));
+      expect(workflow, contains("default: 'v1.1.6'"));
+      expect(workflow, contains('### Novidades v1.1.6'));
+      expect(workflow, contains('EveFit-v1.1.6-eft-landing-release.apk'));
+      expect(changelog, contains('# EveFit v1.1.6'));
+      expect(releaseNotes, contains('# EveFit v1.1.6'));
       expect(changelog, contains('# EveFit v1.1.5'));
       expect(releaseNotes, contains('# EveFit v1.1.5'));
       expect(changelog, contains('# EveFit v1.1.4'));

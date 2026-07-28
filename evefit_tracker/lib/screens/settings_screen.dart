@@ -46,7 +46,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           FilledButton.icon(
             onPressed: () => _openUrl(githubLatestReleaseUrl),
             icon: const Icon(Icons.system_update_alt),
-            label: const Text('Ver atualizações v1.1.5'),
+            label: const Text('Ver atualizações v1.1.6'),
           ),
           TextButton.icon(
             onPressed: () => _openUrl(githubRepoUrl),

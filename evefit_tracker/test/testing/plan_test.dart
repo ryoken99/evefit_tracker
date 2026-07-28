@@ -103,7 +103,7 @@ void main() {
     addTearDown(() => root.deleteSync(recursive: true));
     Directory('${root.path}${Platform.pathSeparator}tool').createSync();
     File(
-      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v115_wave1_upgrade_test.ps1',
+      '${root.path}${Platform.pathSeparator}tool${Platform.pathSeparator}run_v116_eft_landing_upgrade_test.ps1',
     ).writeAsStringSync('');
 
     final missing = composePlan(
@@ -184,7 +184,7 @@ void main() {
     );
     expect(upgrade.arguments, [
       '-File',
-      'tool/run_v115_wave1_upgrade_test.ps1',
+      'tool/run_v116_eft_landing_upgrade_test.ps1',
       '-BaselineApk',
       baseline.absolute.path,
       '-CurrentApk',
@@ -207,9 +207,9 @@ void main() {
     expect(invalid.reason, contains('missing.apk'));
   });
 
-  test('v1.1.5 upgrade harness validates an approved Wave1 result', () {
+  test('v1.1.6 upgrade harness validates an approved Wave1 result', () {
     final harness = File(
-      'tool/run_v115_wave1_upgrade_test.ps1',
+      'tool/run_v116_eft_landing_upgrade_test.ps1',
     ).readAsStringSync();
     final helper = harness.indexOf('function Scroll-UiListToTop');
     final contextReset = harness.indexOf(r'Scroll-UiListToTop $adb $DeviceId');
@@ -225,9 +225,9 @@ void main() {
     expect(harness, contains("Find-UiNodeWithScroll \$adb \$DeviceId 'Evid'"));
   });
 
-  test('v1.1.5 upgrade harness preserves data for both baselines', () {
+  test('v1.1.6 upgrade harness preserves data for both baselines', () {
     final runner = File(
-      'tool/run_v115_wave1_upgrade_test.ps1',
+      'tool/run_v116_eft_landing_upgrade_test.ps1',
     ).readAsStringSync();
 
     expect(runner, contains("'database_helper.py'"));
@@ -242,10 +242,12 @@ void main() {
     expect(runner, isNot(contains(r'& $python -c $databaseHelper')));
     expect(runner, contains(r'$ExpectedBaselineVersionName'));
     expect(runner, contains(r'$ExpectedBaselineVersionCode'));
-    expect(runner, contains("VersionName -ne '1.1.5'"));
-    expect(runner, contains('VersionCode -ne 7'));
+    expect(runner, contains("VersionName -ne '1.1.6'"));
+    expect(runner, contains('VersionCode -ne 8'));
     expect(runner, contains('APK Signature Scheme v2'));
     expect(runner, contains('user_version -ne 22'));
+    expect(runner, contains("'Tocar para continuar'"));
+    expect(runner, contains('00_eft_landing_after_upgrade.png'));
     expect(runner, contains('Require-UiButtonWithScroll'));
     expect(runner, contains("'android.widget.Button'"));
     for (final context in const [
@@ -262,9 +264,9 @@ void main() {
     expect(runner, contains('Selecionar esta inten'));
     expect(
       runner,
-      contains('EVEFIT_V115_EXPLICIT_INTENTION_CONFIRMATION=true'),
+      contains('EVEFIT_V116_EXPLICIT_INTENTION_CONFIRMATION=true'),
     );
-    expect(runner, contains('EVEFIT_V115_WAVE1_RESULT_VISIBLE=true'));
+    expect(runner, contains('EVEFIT_V116_WAVE1_RESULT_VISIBLE=true'));
   });
 
   test(
@@ -299,7 +301,7 @@ void main() {
       );
       expect(
         allUnavailable.reason,
-        contains('tool/run_v115_wave1_upgrade_test.ps1'),
+        contains('tool/run_v116_eft_landing_upgrade_test.ps1'),
       );
 
       Directory('${root.path}${Platform.pathSeparator}tool').createSync();

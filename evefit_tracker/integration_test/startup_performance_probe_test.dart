@@ -3,6 +3,8 @@ import 'package:evefit_tracker/services/startup_catalog_diagnostics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
+import 'helpers/eft_landing_test_helper.dart';
+
 const _expectLegacyRuntime = bool.fromEnvironment(
   'EVEFIT_EXPECT_LEGACY_RUNTIME',
 );
@@ -15,6 +17,7 @@ void main() {
   ) async {
     final startup = Stopwatch()..start();
     app.main();
+    await dismissEftLanding(tester);
 
     final profileGate = find.text('Configura\u00e7\u00e3o inicial');
     final deadline = DateTime.now().add(const Duration(minutes: 12));

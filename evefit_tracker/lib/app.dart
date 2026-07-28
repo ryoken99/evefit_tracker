@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'database/app_database.dart';
 import 'screens/dashboard_screen.dart';
+import 'screens/eft_landing_screen.dart';
 import 'screens/goals_screen.dart';
 import 'screens/measurements_screen.dart';
 import 'screens/photos_screen.dart';
@@ -32,19 +33,42 @@ class EveFitRoot extends StatefulWidget {
 
 class _EveFitRootState extends State<EveFitRoot> {
   final _db = AppDatabase.instance;
+  bool _landingCompleted = false;
   bool _unlocked = false;
 
   @override
   Widget build(BuildContext context) {
-    if (!_unlocked) {
-      return ProfileGateScreen(
+    final mediaQuery = MediaQuery.of(context);
+    final duration =
+        mediaQuery.disableAnimations || mediaQuery.accessibleNavigation
+        ? Duration.zero
+        : const Duration(milliseconds: 280);
+
+    final Widget content;
+    if (!_landingCompleted) {
+      content = EftLandingScreen(
+        key: const ValueKey('eft_landing_route'),
+        onContinue: () => setState(() => _landingCompleted = true),
+      );
+    } else if (!_unlocked) {
+      content = ProfileGateScreen(
+        key: const ValueKey('profile_gate_route'),
         database: _db,
         onUnlocked: (_) => setState(() => _unlocked = true),
       );
+    } else {
+      content = EveFitHome(
+        key: const ValueKey('evefit_home_route'),
+        database: _db,
+        onProfileLocked: () => setState(() => _unlocked = false),
+      );
     }
-    return EveFitHome(
-      database: _db,
-      onProfileLocked: () => setState(() => _unlocked = false),
+
+    return AnimatedSwitcher(
+      duration: duration,
+      switchInCurve: Curves.easeOut,
+      switchOutCurve: Curves.easeIn,
+      child: content,
     );
   }
 }

@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão do release (v1.1.5)'
+        description: 'Versão do release (v1.1.6)'
         required: true
-        default: 'v1.1.5'
+        default: 'v1.1.6'
 
 permissions:
   contents: write
@@ -121,10 +121,10 @@ jobs:
         if: github.event_name == 'push'
         working-directory: evefit_tracker
         run: |
-          cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk
+          cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/EveFit-v1.1.6-eft-landing-release.apk
           (
             cd build/app/outputs/flutter-apk
-            sha256sum EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk > EveFit-v1.1.5-SHA256SUMS.txt
+            sha256sum EveFit-v1.1.6-eft-landing-release.apk > EveFit-v1.1.6-SHA256SUMS.txt
           )
 
       - name: Create Release
@@ -132,10 +132,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.name }}
-          name: EveFit v1.1.5 — Primeiros exercícios canónicos
+          name: EveFit v1.1.6 — Landing EFT
           files: |
-            evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk
-            evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.5-SHA256SUMS.txt
+            evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.6-eft-landing-release.apk
+            evefit_tracker/build/app/outputs/flutter-apk/EveFit-v1.1.6-SHA256SUMS.txt
           draft: false
           prerelease: false
           make_latest: true
@@ -143,20 +143,17 @@ jobs:
           body: |
             ## EveFit Tracker ${{ steps.version.outputs.name }}
 
-            ### Novidades v1.1.5
-            - Adicionados 49 exercícios não musculares aprovados.
-            - As intenções compatíveis passam a apresentar exercícios disponíveis.
-            - Cada exercício possui explicação detalhada para principiantes.
-            - Foram adicionadas instruções passo a passo, preparação, respiração, erros comuns e segurança.
-            - Exercícios de exigência elevada apresentam avisos próprios.
-            - Foram adicionadas três variantes de exercícios.
-            - Esta versão ainda não adiciona os exercícios diretamente aos treinos.
-            - Conteúdo muscular, prescrições automáticas e multimédia continuam em preparação.
+            ### Novidades v1.1.6
+            - Nova landing page EFT com identidade tecnológica premium.
+            - Fundo de circuitos eletrónicos refinado, com nodes azuis e transição violeta/dourada.
+            - Transição curta e acessível para a seleção de perfil.
+            - Ecrã Escolher perfil atualizado com um fundo coordenado sem lettering EFT.
+            - Legibilidade reforçada em ecrãs pequenos, altos, landscape e com texto ampliado.
 
-            ### Informação técnica
-            - 49 exercícios, 88 relações públicas, 50 intenções e 54 percursos.
-            - 66 relações condicionais permanecem desativadas.
-            - Schema SQLite 22 e migrations inalterados.
+            ### Integridade
+            - Perfis, PIN, dados pessoais, treinos e históricos são preservados na atualização.
+            - Package Android, schema SQLite 22 e migrations permanecem inalterados.
+            - Não foram alterados a ontologia, o catálogo de exercícios ou o domínio de treino.
 
             ### Novidades v0.9.4
             - Alfandega permanente dos catalogos com auditoria strict, inventario e gap analysis.
@@ -191,7 +188,7 @@ jobs:
             - Atualizada versão da app para v0.9.0.
 
             ### Instalação
-            Descarrega `EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
+            Descarrega `EveFit-v1.1.6-eft-landing-release.apk` e instala no Android (permite instalação de fontes desconhecidas nas definições).
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -207,21 +204,21 @@ jobs:
           published_directory="$(mktemp -d)"
           gh release download "$RELEASE_TAG" \
             --repo "$GITHUB_REPOSITORY" \
-            --pattern 'EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk' \
-            --pattern 'EveFit-v1.1.5-SHA256SUMS.txt' \
+            --pattern 'EveFit-v1.1.6-eft-landing-release.apk' \
+            --pattern 'EveFit-v1.1.6-SHA256SUMS.txt' \
             --dir "$published_directory"
           cmp --silent \
-            build/app/outputs/flutter-apk/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk \
-            "$published_directory/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk"
+            build/app/outputs/flutter-apk/EveFit-v1.1.6-eft-landing-release.apk \
+            "$published_directory/EveFit-v1.1.6-eft-landing-release.apk"
           (
             cd "$published_directory"
-            sha256sum -c EveFit-v1.1.5-SHA256SUMS.txt
+            sha256sum -c EveFit-v1.1.6-SHA256SUMS.txt
           )
           dart run tool/release/verify_release_apk.dart \
-            --apk "$published_directory/EveFit-v1.1.5-wave1-non-muscular-exercises-release.apk" \
+            --apk "$published_directory/EveFit-v1.1.6-eft-landing-release.apk" \
             --expected-package com.sandro.evefittracker \
-            --expected-version-name 1.1.5 \
-            --expected-version-code 7 \
+            --expected-version-name 1.1.6 \
+            --expected-version-code 8 \
             --expected-certificate-sha256 "$EXPECTED_RELEASE_CERTIFICATE_SHA256"
 
       - name: Remove temporary signing files
