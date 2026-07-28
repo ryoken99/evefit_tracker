@@ -201,9 +201,9 @@ GatePlan composePlan({
           '--expected-package',
           'com.sandro.evefittracker',
           '--expected-version-name',
-          '1.1.5',
+          '1.1.6',
           '--expected-version-code',
-          '7',
+          '8',
           '--expected-certificate-sha256',
           '59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B',
         ]),
@@ -216,7 +216,7 @@ GatePlan composePlan({
       'powershell',
       [
         '-File',
-        'tool/run_v115_wave1_upgrade_test.ps1',
+        'tool/run_v116_eft_landing_upgrade_test.ps1',
         if (baselineApk != null) ...['-BaselineApk', baselineApk],
         if (currentApk != null) ...['-CurrentApk', currentApk],
       ],
@@ -259,7 +259,7 @@ List<String> _missingRequestedScripts(
     if (mode == GateMode.release && options.enableFullApp)
       'tool/run_workout_exercise_selector_roots_test.ps1',
     if (mode == GateMode.release && options.enableUpgrade)
-      'tool/run_v115_wave1_upgrade_test.ps1',
+      'tool/run_v116_eft_landing_upgrade_test.ps1',
   ];
   return requested
       .where(

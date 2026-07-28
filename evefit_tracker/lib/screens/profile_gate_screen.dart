@@ -54,15 +54,26 @@ class _ProfileGateScreenState extends State<ProfileGateScreen> {
         child: Stack(
           fit: StackFit.expand,
           children: [
+            Image(
+              key: const ValueKey('profile_gate_background_image'),
+              image: const AssetImage(EftVisualIdentity.profileBackgroundAsset),
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+              filterQuality: FilterQuality.high,
+              excludeFromSemantics: true,
+            ),
             DecoratedBox(
+              key: const ValueKey('profile_gate_background_scrim'),
               decoration: BoxDecoration(
-                gradient: RadialGradient(
-                  center: const Alignment(-0.32, -0.76),
-                  radius: 0.84,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                   colors: [
-                    EftVisualIdentity.circuit.withValues(alpha: 0.09),
-                    Colors.transparent,
+                    const Color(0xFF080B18).withValues(alpha: 0.38),
+                    const Color(0xFF100D1B).withValues(alpha: 0.52),
+                    const Color(0xFF080A13).withValues(alpha: 0.66),
                   ],
+                  stops: const [0, 0.5, 1],
                 ),
               ),
             ),

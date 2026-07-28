@@ -1,4 +1,4 @@
-# EveFit Tracker v1.1.5
+# EveFit Tracker v1.1.6
 
 Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados corporais, fotos de progresso e objetivos.
 
@@ -10,7 +10,8 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - Formulario Dados para registar balanca, composicao corporal, medidas, dobras cutaneas e notas.
 - Graficos simples com `fl_chart`.
 - Exportacao CSV simples.
-- Versão de release: v1.1.5 - Primeiros Exercícios Canónicos (`1.1.5+7`).
+- Versão de release: v1.1.6 - Landing EFT (`1.1.6+8`).
+- Nova landing EFT e seleção de perfil com identidade PCB coordenada.
 - Pesquisa canónica hierárquica com 7 contextos explícitos, 8 capacidades, 35 conceitos globais e 40 relações capacidade-conceito.
 - Matriz canónica: 280 percursos, 261 compatíveis, 19 incompatíveis, 591 intenções globais e 771 ligações de intenção por percurso.
 - Fluxo ativo: Contexto → Capacidade → Conceito → Intenção → Exercícios.
@@ -45,7 +46,7 @@ Aplicacao Flutter local-first para acompanhar evolucao fisica, treinos, dados co
 - SQLite com `sqflite`
 - `path_provider`, `image_picker`, `fl_chart`, `intl`, `csv`
 
-## Validacao da v1.1.5
+## Validacao da v1.1.6
 
 ```powershell
 flutter pub get
@@ -55,12 +56,11 @@ flutter test
 flutter build apk --release
 ```
 
-O Fast Gate funcional, o PR Gate funcional, os shards, Android smoke, full-app e
-validação de instalação existente foram concluídos na fase funcional. A release
-só é publicada depois de repetir os gates de release, a atualização
-`1.1.3+5 → 1.1.5+7` e `1.1.4+6 → 1.1.5+7`, a inspeção da assinatura e a validação final em main.
-O versionamento de release alvo é `1.1.5+7`: `1.1.5` é a versão pública e `7`
-é o versionCode Android monotónico.
+O Fast Gate, PR Gate, suíte completa, Android smoke e upgrade real
+`1.1.5+7 → 1.1.6+8` são obrigatórios antes da publicação. A release só avança
+depois da inspeção do package, versão, assinatura, certificado e validação final
+em main. O versionamento alvo é `1.1.6+8`: `1.1.6` é a versão pública e `8` é
+o versionCode Android monotónico.
 
 ## Package Android
 

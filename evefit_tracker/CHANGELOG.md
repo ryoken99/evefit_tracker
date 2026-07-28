@@ -1,3 +1,17 @@
+# EveFit v1.1.6 — Landing EFT
+
+## Identidade visual
+- Nova landing page EFT com composição PCB premium, nodes azuis e uma transição violeta/dourada refinada.
+- O foco dourado foi elevado e aquecido de forma subtil, preservando o azul-escuro e o violeta.
+- O ecrã `Escolher perfil` usa uma variante coordenada sem lettering EFT e um scrim para manter a legibilidade.
+- A transição landing → perfis é curta, acessível e não se repete ao regressar do background.
+
+## Integridade
+- Perfis, PIN, dados pessoais, treinos e históricos são preservados na atualização desde `1.1.5+7`.
+- Package Android, schema SQLite 22 e migrations permanecem inalterados.
+- Ontologia, catálogo de exercícios e domínio de treino não foram alterados.
+- Versão de release: `1.1.6+8`.
+
 # EveFit v1.1.5 — Primeiros exercícios canónicos
 
 - Adicionados 49 exercícios canónicos não musculares aprovados, distribuídos por 54 percursos e 88 relações públicas.

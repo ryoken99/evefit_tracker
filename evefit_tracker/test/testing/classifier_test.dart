@@ -56,9 +56,10 @@ void main() {
     );
 
     test(
-      'classifies integration tests and the Android smoke runner as UI navigation',
+      'classifies UI assets, integration tests, and Android smoke as navigation',
       () {
         final result = classifyChangedFiles(const [
+          ChangedFile('assets/branding/eft_landing_background.jpg'),
           ChangedFile('integration_test/workout_flow_test.dart'),
           ChangedFile('tool/run_android_smoke.ps1'),
           ChangedFile('tool/evefit_android_test_helpers.ps1'),
@@ -84,7 +85,7 @@ void main() {
 
     test('fails closed for unknown paths, deleted, and renamed changes', () {
       for (final change in const [
-        ChangedFile('assets/unclassified.bin'),
+        ChangedFile('unknown/unclassified.bin'),
         ChangedFile('lib/a.dart', status: ChangeStatus.deleted),
         ChangedFile('lib/a.dart', status: ChangeStatus.renamed),
       ]) {

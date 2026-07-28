@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:evefit_tracker/app.dart';
 import 'package:evefit_tracker/screens/eft_landing_screen.dart';
 import 'package:evefit_tracker/theme/eft_visual_identity.dart';
@@ -14,12 +16,34 @@ void main() {
     await _pumpLanding(tester, onContinue: () => continuations += 1);
 
     expect(find.byKey(const ValueKey('eft_landing_screen')), findsOneWidget);
-    expect(find.byKey(const ValueKey('eft_landing_network')), findsOneWidget);
-    expect(find.byKey(const ValueKey('eft_landing_wordmark')), findsOneWidget);
-    expect(find.text('EFT'), findsOneWidget);
-    expect(find.text('Tocar para continuar'), findsOneWidget);
     expect(
-      find.bySemanticsLabel('Continuar para a seleção de perfil'),
+      find.byKey(const ValueKey('eft_landing_background_image')),
+      findsOneWidget,
+    );
+    expect(find.byKey(const ValueKey('eft_landing_wordmark')), findsNothing);
+    expect(find.text('EFT'), findsNothing);
+    expect(find.text('Tocar para continuar'), findsOneWidget);
+    final background = tester.widget<Image>(
+      find.byKey(const ValueKey('eft_landing_background_image')),
+    );
+    expect(background.image, isA<AssetImage>());
+    expect(
+      (background.image as AssetImage).assetName,
+      EftVisualIdentity.landingBackgroundAsset,
+    );
+    final actionSemantics = tester
+        .getSemantics(find.byKey(const ValueKey('eft_landing_continue')))
+        .getSemanticsData();
+    expect(
+      actionSemantics.label,
+      'EFT. Tocar para continuar para a seleção de perfil',
+    );
+    expect(actionSemantics.flagsCollection.isButton, isTrue);
+    expect(actionSemantics.hasAction(ui.SemanticsAction.tap), isTrue);
+    expect(
+      find.bySemanticsLabel(
+        'EFT. Tocar para continuar para a seleção de perfil',
+      ),
       findsOneWidget,
     );
 
@@ -83,7 +107,19 @@ void main() {
         textScale: scenario.textScale,
       );
 
-      expect(find.text('EFT'), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('eft_landing_background_image')),
+        findsOneWidget,
+      );
+      final image = tester.widget<Image>(
+        find.byKey(const ValueKey('eft_landing_background_image')),
+      );
+      final landscape = scenario.size.width > scenario.size.height;
+      expect(image.fit, landscape ? BoxFit.contain : BoxFit.cover);
+      expect(
+        find.byKey(const ValueKey('eft_landing_landscape_side_fill')),
+        landscape ? findsOneWidget : findsNothing,
+      );
       expect(find.text('Tocar para continuar'), findsOneWidget);
       expect(tester.takeException(), isNull);
     }
@@ -98,10 +134,46 @@ void main() {
     await _pumpLanding(tester, onContinue: () {}, disableAnimations: true);
     await tester.pump(const Duration(seconds: 1));
 
-    expect(find.byKey(const ValueKey('eft_landing_network')), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('eft_landing_background_image')),
+      findsOneWidget,
+    );
     expect(tester.binding.transientCallbackCount, 0);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets(
+    'profile gate remains active after background resume and layout rebuild',
+    (tester) async {
+      await tester.pumpWidget(const EveFitApp());
+      await tester.pump();
+
+      await tester.tap(find.byKey(const ValueKey('eft_landing_continue')));
+      await _pumpUntilFound(
+        tester,
+        find.byKey(const ValueKey('profile_gate_background')),
+      );
+      await tester.pump(const Duration(milliseconds: 300));
+
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+      await tester.pump();
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pump();
+
+      tester.view.physicalSize = const Size(640, 320);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      await tester.pump();
+
+      expect(find.byKey(const ValueKey('eft_landing_screen')), findsNothing);
+      expect(
+        find.byKey(const ValueKey('profile_gate_background')),
+        findsOneWidget,
+      );
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   test('local visual identity keeps readable composite contrast', () {
     final backgroundColors = {

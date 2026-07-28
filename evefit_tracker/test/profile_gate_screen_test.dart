@@ -5,32 +5,31 @@ import 'package:evefit_tracker/models/profile.dart';
 import 'package:evefit_tracker/screens/profile_gate_screen.dart';
 import 'package:evefit_tracker/services/pin_service.dart';
 import 'package:evefit_tracker/theme/app_theme.dart';
+import 'package:evefit_tracker/theme/eft_visual_identity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets(
-    'profile gate uses the muted horizontal purple to gold identity',
+    'profile gate uses the coordinated PCB background and readable scrim',
     (tester) async {
       final profile = _profile();
 
       await _pumpGate(tester, profiles: [profile]);
 
-      final background = tester.widget<DecoratedBox>(
-        find.byKey(const ValueKey('profile_gate_background')),
+      final background = tester.widget<Image>(
+        find.byKey(const ValueKey('profile_gate_background_image')),
       );
-      final gradient =
-          (background.decoration as BoxDecoration).gradient! as LinearGradient;
-
-      expect(gradient.begin, Alignment.centerLeft);
-      expect(gradient.end, Alignment.centerRight);
-      expect(gradient.colors, const [
-        Color(0xFF302149),
-        Color(0xFF66547A),
-        Color(0xFFA48650),
-      ]);
-      expect(_isPurple(gradient.colors.first), isTrue);
-      expect(_isYellow(gradient.colors.last), isTrue);
+      expect(background.image, isA<AssetImage>());
+      expect(
+        (background.image as AssetImage).assetName,
+        EftVisualIdentity.profileBackgroundAsset,
+      );
+      expect(background.fit, BoxFit.cover);
+      expect(
+        find.byKey(const ValueKey('profile_gate_background_scrim')),
+        findsOneWidget,
+      );
       expect(find.text('Escolher perfil'), findsOneWidget);
       expect(find.byKey(const ValueKey('profile_option_1')), findsOneWidget);
 
@@ -214,22 +213,6 @@ Future<void> _pumpUntilFound(WidgetTester tester, Finder finder) async {
     if (finder.evaluate().isNotEmpty) return;
   }
   expect(finder, findsOneWidget);
-}
-
-bool _isPurple(Color color) {
-  final value = color.toARGB32();
-  final red = (value >> 16) & 0xFF;
-  final green = (value >> 8) & 0xFF;
-  final blue = value & 0xFF;
-  return red > green && blue > green;
-}
-
-bool _isYellow(Color color) {
-  final value = color.toARGB32();
-  final red = (value >> 16) & 0xFF;
-  final green = (value >> 8) & 0xFF;
-  final blue = value & 0xFF;
-  return red > blue && green > blue;
 }
 
 Profile _profile({int? id = 1, String name = 'Perfil de teste'}) {

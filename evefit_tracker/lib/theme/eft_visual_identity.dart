@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 class EftVisualIdentity {
   const EftVisualIdentity._();
 
+  static const landingBackgroundAsset =
+      'assets/branding/eft_landing_background.jpg';
+  static const profileBackgroundAsset =
+      'assets/branding/eft_profile_background.jpg';
+
   static const landingGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,

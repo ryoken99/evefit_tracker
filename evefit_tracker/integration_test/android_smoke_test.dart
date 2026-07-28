@@ -33,7 +33,16 @@ void main() {
       find.byKey(const ValueKey('eft_landing_screen')),
     );
     await tester.pump(const Duration(milliseconds: 700));
-    expect(find.text('EFT'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('eft_landing_background_image')),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel(
+        'EFT. Tocar para continuar para a seleção de perfil',
+      ),
+      findsOneWidget,
+    );
     expect(find.text('Tocar para continuar'), findsOneWidget);
     _marker('EFT_LANDING=visible');
     await dismissEftLanding(tester);
