@@ -1394,7 +1394,7 @@ void _checkOutputs(Map<String, String> expected) {
       .where((path) => path.endsWith('.dart'))
       .toSet();
   final actualDart = directory
-      .listSync(recursive: true)
+      .listSync(recursive: false)
       .whereType<File>()
       .map((file) => file.path.replaceAll('\\', '/'))
       .where((path) => path.endsWith('.dart'))

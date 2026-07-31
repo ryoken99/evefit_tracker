@@ -53,6 +53,7 @@ ChangeClass _classifyPath(String path) {
     return ChangeClass.pipelineTests;
   }
   if (path == 'tool/run_android_smoke.ps1' ||
+      path == 'tool/run_arm_muscular_flow_test.ps1' ||
       path == 'tool/evefit_android_test_helpers.ps1' ||
       path.startsWith('assets/') ||
       path.startsWith('integration_test/')) {

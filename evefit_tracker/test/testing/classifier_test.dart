@@ -62,6 +62,7 @@ void main() {
           ChangedFile('assets/branding/eft_landing_background.jpg'),
           ChangedFile('integration_test/workout_flow_test.dart'),
           ChangedFile('tool/run_android_smoke.ps1'),
+          ChangedFile('tool/run_arm_muscular_flow_test.ps1'),
           ChangedFile('tool/evefit_android_test_helpers.ps1'),
         ]);
         expect(result.failsClosed, isFalse);

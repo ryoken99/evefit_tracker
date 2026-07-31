@@ -3,15 +3,23 @@ import 'package:flutter/material.dart';
 import '../models/canonical_core_models.dart';
 import '../models/canonical_exercise_models.dart';
 import '../models/training_intention_models.dart';
+import '../repositories/canonical_muscular_repository.dart';
+import '../repositories/generated_canonical_muscular_repository.dart';
 import '../services/hierarchical_canonical_search_controller.dart';
 import '../widgets/canonical_core_icon_resolver.dart';
 import '../widgets/training_intention_widgets.dart';
 import 'canonical_exercise_detail_screen.dart';
+import 'muscular_anatomy_browser_screen.dart';
 
 class WorkoutExerciseSelectorScreen extends StatefulWidget {
-  const WorkoutExerciseSelectorScreen({super.key, this.controller});
+  const WorkoutExerciseSelectorScreen({
+    super.key,
+    this.controller,
+    this.muscularRepository,
+  });
 
   final HierarchicalCanonicalSearchController? controller;
+  final CanonicalMuscularRepository? muscularRepository;
 
   @override
   State<WorkoutExerciseSelectorScreen> createState() =>
@@ -22,6 +30,8 @@ class _WorkoutExerciseSelectorScreenState
     extends State<WorkoutExerciseSelectorScreen> {
   late final HierarchicalCanonicalSearchController _controller =
       widget.controller ?? HierarchicalCanonicalSearchController();
+  late final CanonicalMuscularRepository _muscularRepository =
+      widget.muscularRepository ?? GeneratedCanonicalMuscularRepository();
   Future<CanonicalSearchResult<CanonicalResolvedExercise>>? _resultsFuture;
 
   bool get _atRoot =>
@@ -151,6 +161,10 @@ class _WorkoutExerciseSelectorScreenState
         definitions: concepts,
         selectedId: _controller.path.trainingConceptId,
         keyPrefix: 'workout_exercise_selector_concept_',
+        leading: [
+          if (_controller.path.capabilityRootId == 'muscular_capacity')
+            _MuscularAnatomyCallout(onPressed: _openMuscularAnatomy),
+        ],
         onSelected: (definition) {
           setState(() {
             _resultsFuture = null;
@@ -228,6 +242,63 @@ class _WorkoutExerciseSelectorScreenState
       ),
     );
   }
+
+  Future<void> _openMuscularAnatomy() => Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) =>
+          MuscularAnatomyBrowserScreen(repository: _muscularRepository),
+    ),
+  );
+}
+
+class _MuscularAnatomyCallout extends StatelessWidget {
+  const _MuscularAnatomyCallout({required this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: 16),
+    child: Semantics(
+      button: true,
+      label: 'Explorar por anatomia. Braço e antebraço.',
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        child: InkWell(
+          key: const ValueKey('workout_exercise_selector_explore_anatomy'),
+          borderRadius: BorderRadius.circular(8),
+          onTap: onPressed,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Icon(Icons.accessibility_new_outlined),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Explorar por anatomia',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      const SizedBox(height: 4),
+                      const Text(
+                        'Consulta os principais exercícios de braço e antebraço sem substituir a seleção por intenção.',
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 class _WorkoutExerciseSelectorResultsEmpty extends StatelessWidget {
@@ -570,6 +641,7 @@ class _WorkoutExerciseSelectorList extends StatelessWidget {
     required this.selectedId,
     required this.keyPrefix,
     required this.onSelected,
+    this.leading = const [],
   });
 
   final String title;
@@ -577,6 +649,7 @@ class _WorkoutExerciseSelectorList extends StatelessWidget {
   final String? selectedId;
   final String keyPrefix;
   final ValueChanged<CanonicalPillarDefinition> onSelected;
+  final List<Widget> leading;
 
   @override
   Widget build(BuildContext context) => ListView(
@@ -585,6 +658,7 @@ class _WorkoutExerciseSelectorList extends StatelessWidget {
     children: [
       Text(title, style: Theme.of(context).textTheme.titleLarge),
       const SizedBox(height: 12),
+      ...leading,
       for (final definition in definitions)
         _WorkoutExerciseSelectorCard(
           key: ValueKey('$keyPrefix${definition.id}'),
