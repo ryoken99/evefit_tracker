@@ -5,8 +5,9 @@
   "shards": [
     {
       "id": "shard-1",
-      "estimatedMilliseconds": 368575,
+      "estimatedMilliseconds": 374575,
       "tests": [
+        "test/canonical_core/arm_muscular_generator_test.dart",
         "test/canonical_core/canonical_training_intentions_provider_test.dart",
         "test/canonical_core/training_intentions_registry_contract_test.dart",
         "test/canonical_core/wave1_exercise_registry_contract_test.dart",
@@ -53,8 +54,9 @@
     },
     {
       "id": "shard-2",
-      "estimatedMilliseconds": 368560,
+      "estimatedMilliseconds": 374560,
       "tests": [
+        "test/canonical_core/arm_muscular_registry_contract_test.dart",
         "test/canonical_core/canonical_core_search_screen_test.dart",
         "test/canonical_core/canonical_training_paths_contract_test.dart",
         "test/canonical_core/global_intention_search_test.dart",
@@ -103,10 +105,11 @@
     },
     {
       "id": "shard-3",
-      "estimatedMilliseconds": 368575,
+      "estimatedMilliseconds": 374575,
       "tests": [
         "test/canonical_core/canonical_core_contract_test.dart",
         "test/canonical_core/canonical_exercise_results_ui_test.dart",
+        "test/canonical_core/muscular_anatomy_browser_screen_test.dart",
         "test/canonical_core/training_concepts_contract_test.dart",
         "test/canonical_core/training_intention_widgets_test.dart",
         "test/catalog/catalog_activation_expansion_v099b4a_test.dart",
@@ -151,11 +154,12 @@
     },
     {
       "id": "shard-4",
-      "estimatedMilliseconds": 368572,
+      "estimatedMilliseconds": 374572,
       "tests": [
         "test/canonical_core/hierarchical_canonical_search_controller_test.dart",
         "test/canonical_core/training_intentions_generator_test.dart",
         "test/canonical_core/wave1_exercises_generator_test.dart",
+        "test/canonical_core/workout_exercise_selector_arm_anatomy_test.dart",
         "test/canonical_core/workout_exercise_selector_screen_test.dart",
         "test/catalog/cardio_specificity_test.dart",
         "test/catalog/catalog_cardio_filter_contract_test.dart",

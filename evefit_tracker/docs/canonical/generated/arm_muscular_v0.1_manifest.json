@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "generator_version": "0.1.0",
+  "sources": {
+    "docs/canonical/source/muscular/v0.1.1/EveFit_Muscular_Knowledge_Base_v0.1.1.zip": "a1876a1d4bc21ab54b3828774f66a99519a4953dc00191e69475d8c15b8b30b0",
+    "docs/canonical/source/exercises/arms/v0.1/EveFit_Principal_Arm_Exercise_Catalogue_v0.1.zip": "247b9c6b36e3dd93d7b9c4fc4e6569c2b71eb9c710b8fb2b9ba62ebc86dfd71f"
+  },
+  "counts": {
+    "regions": 16,
+    "groups": 45,
+    "muscles": 179,
+    "components": 36,
+    "joints": 35,
+    "actions": 94,
+    "muscle_joint_relations": 365,
+    "muscle_action_relations": 484,
+    "muscle_interactions": 394,
+    "muscle_trainability_profiles": 179,
+    "muscular_relations_total": 1243,
+    "public_regions": 2,
+    "public_groups": 7,
+    "public_muscles": 23,
+    "arm_exercises_internal": 36,
+    "arm_exercises_public": 35,
+    "arm_variants": 85,
+    "limited_exercises": 6,
+    "limited_variants": 21,
+    "specialist_internal": 1,
+    "exercise_muscle_relations": 228,
+    "exercise_joint_relations": 86,
+    "exercise_action_relations": 68,
+    "exercise_equipment_relations": 91
+  },
+  "output_hashes_normalized": {
+    "lib/features/canonical_core/generated/muscular/canonical_muscular_registry.g.dart": "4bfb624f717aadb3ec821fc34ef7290d6a94179c67e1350bca8c1834c4a0a831",
+    "lib/features/canonical_core/generated/muscular/canonical_muscular_regions.g.dart": "9a34d59c90500279094caee098615c8a26d800963a839561e9e7e5ef3f5906ac",
+    "lib/features/canonical_core/generated/muscular/canonical_muscle_groups.g.dart": "6f7089eb7d3ce07a2d03f4b73296e7c3fb9f5da81c8134d4b103ba3064c31a1f",
+    "lib/features/canonical_core/generated/muscular/canonical_muscles.g.dart": "fa36140176cc0fa8de471c7c4a9778c214e26fcdbcafdbcb500ed1aa813c3fc0",
+    "lib/features/canonical_core/generated/muscular/canonical_muscle_components.g.dart": "7ac9a497d47385d977c832e7dafcf5da51c210a037ef1d310dff9a5bc8cc0412",
+    "lib/features/canonical_core/generated/muscular/canonical_muscle_joints_actions.g.dart": "70e06825eec33ab4ee031eef515a197a17c508a460093b820c9078b6632816bc",
+    "lib/features/canonical_core/generated/muscular/canonical_muscle_relations.g.dart": "1dd5d2f4c3b9b351bf343f7e26b0e2f16dda42543fdf6186338176f013909777",
+    "lib/features/canonical_core/generated/exercises/arms/canonical_arm_exercises_registry.g.dart": "a388ef58cb3f6f1d3e71959c7eb042d3624a5b58d4cc6fd4c07336956ae365c2",
+    "lib/features/canonical_core/generated/exercises/arms/canonical_arm_families_equipment.g.dart": "2496f718283e1e54777e66de3accc044a57d36325354b1883428f138b160d9d4",
+    "lib/features/canonical_core/generated/exercises/arms/canonical_arm_exercises.g.dart": "9d3cabde8fb80b0c38e98ff1cafc14c5572e332eabe03775224b69756cf2a7b8",
+    "lib/features/canonical_core/generated/exercises/arms/canonical_arm_public_contents.g.dart": "8cd3777a26cb31734e2f9014e7ae67b7b9410b855e19f525b012e0f32e97846c",
+    "lib/features/canonical_core/generated/exercises/arms/canonical_arm_variants.g.dart": "3739a6fc7230b455b85bad9e327b1913ca530079c7b343b3a40c2f91205ae277",
+    "lib/features/canonical_core/generated/exercises/arms/canonical_arm_relations.g.dart": "ba0e2badd2227ebf539db6268dc401e7a06db8f5199da9232185a3fd3f28c354",
+    "lib/features/canonical_core/generated/arm_muscular_registry.g.dart": "23e1f1b7dc41fba8a508b13ff9d40c474869a9bd351b7178dcc7e3f23ad40924"
+  },
+  "runtime_separation": {
+    "zip_parsed_at_runtime": false,
+    "claims_exported_to_runtime": false,
+    "bibliography_exported_to_runtime": false,
+    "legacy_catalogue_queried": false,
+    "database_seeded": false,
+    "schema_changed": false,
+    "four_pillar_links_added": false
+  }
+}
