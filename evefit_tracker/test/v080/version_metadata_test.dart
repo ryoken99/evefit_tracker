@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('v1.1.6 EFT landing public version metadata', () {
     test('app surface and release tooling identify v1.1.6 build 8', () {
+      final expectedPubspecVersion = _expectedPubspecVersion();
       final pubspec = _contents('pubspec.yaml');
       final settings = _contents('lib/screens/settings_screen.dart');
       final cleanBaseConfig = _contents('lib/services/clean_base_config.dart');
@@ -15,7 +16,12 @@ void main() {
 
       expect(
         pubspec,
-        contains(RegExp(r'^version: 1\.1\.6\+8$', multiLine: true)),
+        contains(
+          RegExp(
+            '^version: ${RegExp.escape(expectedPubspecVersion)}\$',
+            multiLine: true,
+          ),
+        ),
       );
       expect(pubspec, isNot(contains('1.0.0-rc.1')));
       expect(
@@ -81,6 +87,22 @@ void main() {
       }
     });
   });
+}
+
+String _expectedPubspecVersion() {
+  switch (Platform.environment['EVEFIT_INTERNAL_TEST_BUILD']) {
+    case null:
+    case '0':
+    case 'false':
+      return '1.1.6+8';
+    case '1':
+    case 'true':
+      return '1.1.6+9';
+    default:
+      throw StateError(
+        'EVEFIT_INTERNAL_TEST_BUILD must be absent, 0, false, 1, or true.',
+      );
+  }
 }
 
 String _contents(String path) {

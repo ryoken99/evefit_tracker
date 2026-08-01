@@ -154,8 +154,16 @@ jobs:
             test/canonical_core/muscular_anatomy_browser_screen_test.dart \
             test/canonical_core/workout_exercise_selector_arm_anatomy_test.dart
 
+      - name: Internal version metadata test
+        working-directory: evefit_tracker
+        env:
+          EVEFIT_INTERNAL_TEST_BUILD: '1'
+        run: flutter test test/v080/version_metadata_test.dart
+
       - name: Fast Gate
         working-directory: evefit_tracker
+        env:
+          EVEFIT_INTERNAL_TEST_BUILD: '1'
         run: dart run tool/testing/evefit_gate.dart fast
 
       - name: Additional supported tests
