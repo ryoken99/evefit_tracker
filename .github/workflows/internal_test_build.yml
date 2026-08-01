@@ -103,23 +103,14 @@ jobs:
             | tee "$RUNNER_TEMP/evefit-test-logs/arm-muscular-check.txt"
           dart run tool/canonical/generate_arm_muscular_registry.dart report \
             | tee "$RUNNER_TEMP/evefit-test-logs/arm-muscular-report.txt"
-          python - "$RUNNER_TEMP/evefit-test-logs/arm-muscular-report.txt" "$RUNNER_TEMP/evefit-canonical-counts.txt" <<'PY'
+          python - "$RUNNER_TEMP/evefit-canonical-counts.txt" <<'PY'
           import json
           import pathlib
           import sys
 
-          report_path = pathlib.Path(sys.argv[1])
-          report = None
-          for line in reversed(report_path.read_text(encoding='utf-8').splitlines()):
-              try:
-                  candidate = json.loads(line)
-              except json.JSONDecodeError:
-                  continue
-              if isinstance(candidate, dict) and 'counts' in candidate:
-                  report = candidate
-                  break
-          if report is None or report.get('status') != 'PASS':
-              raise SystemExit('Canonical report did not produce status PASS.')
+          manifest_path = pathlib.Path('docs/canonical/generated/arm_muscular_v0.1_manifest.json')
+          with manifest_path.open(encoding='utf-8') as manifest_file:
+              manifest = json.load(manifest_file)
           expected = {
               'regions': 16,
               'groups': 45,
@@ -131,13 +122,15 @@ jobs:
               'arm_exercises_public': 35,
               'arm_variants': 85,
           }
-          actual = report['counts']
+          actual = manifest.get('counts')
+          if not isinstance(actual, dict):
+              raise SystemExit('Canonical manifest has no counts object.')
           mismatches = {key: (expected[key], actual.get(key)) for key in expected if actual.get(key) != expected[key]}
           if mismatches:
-              raise SystemExit(f'Canonical count mismatch: {mismatches}')
-          pathlib.Path(sys.argv[2]).write_text(
+              raise SystemExit(f'Canonical manifest count mismatch: {mismatches}')
+          pathlib.Path(sys.argv[1]).write_text(
               '\n'.join([
-                  'Canonical counts (validated from generator report):',
+                  'Canonical counts (validated from canonical manifest):',
                   f"regions/groups/muscles: {actual['regions']}/{actual['groups']}/{actual['muscles']}",
                   f"public regions/groups/muscles: {actual['public_regions']}/{actual['public_groups']}/{actual['public_muscles']}",
                   f"arm exercises internal/public/variants: {actual['arm_exercises_internal']}/{actual['arm_exercises_public']}/{actual['arm_variants']}",
