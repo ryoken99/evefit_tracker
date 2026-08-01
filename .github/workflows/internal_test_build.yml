@@ -308,6 +308,7 @@ jobs:
           path: evefit_tracker/.evefit-internal-staging
           if-no-files-found: error
           retention-days: ${{ inputs.retention_days }}
+          include-hidden-files: true
 
       - name: Remove private staging artifacts
         if: always()
