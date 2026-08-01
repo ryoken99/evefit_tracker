@@ -45,7 +45,7 @@ jobs:
       PR_BASE_SHA: d6345b9c87433f1d1184e40ad12d5c9f62041bf5
       SOURCE_IMPLEMENTATION_SHA: e59f4116dd269cc0d58e926ea2ef3ed8f8f64274
       OFFICIAL_CERTIFICATE_SHA256: 59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B
-      STAGING_DIR: ${{ github.workspace }}/.evefit-internal-staging
+      STAGING_DIR: ${{ github.workspace }}/evefit_tracker/.evefit-internal-staging
     steps:
       - name: Checkout requested ref
         uses: actions/checkout@v4
@@ -305,9 +305,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.artifact_name }}
-          path: ${{ env.STAGING_DIR }}
+          path: evefit_tracker/.evefit-internal-staging
           if-no-files-found: error
           retention-days: ${{ inputs.retention_days }}
+
+      - name: Remove private staging artifacts
+        if: always()
+        shell: bash
+        run: rm -rf "$GITHUB_WORKSPACE/evefit_tracker/.evefit-internal-staging"
 
       - name: Remove temporary signing files
         if: always()
