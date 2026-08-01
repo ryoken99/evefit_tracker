@@ -62,8 +62,9 @@ jobs:
           git cat-file -e "$SOURCE_IMPLEMENTATION_SHA^{commit}"
           git merge-base --is-ancestor "$SOURCE_IMPLEMENTATION_SHA" HEAD
           pubspec_version="$(awk '$1 == "version:" {print $2; exit}' "$APP_DIR/pubspec.yaml")"
-          test "$pubspec_version" = "${{ inputs.test_version_name }}+${{ inputs.test_version_code }}"
-          test "$pubspec_version" = '1.1.6B+9'
+          test "$pubspec_version" = '1.1.6+9'
+          test "${{ inputs.test_version_name }}" = '1.1.6B'
+          test "${{ inputs.test_version_code }}" = '9'
           schema_version="$(sed -n 's/^[[:space:]]*version: \([0-9][0-9]*\),$/\1/p' "$APP_DIR/lib/database/app_database.dart" | head -n 1)"
           test "$schema_version" = '22'
           migration_diff_count="$(git diff --name-only "$PR_BASE_SHA..HEAD" | grep -Eic '(^|/)(migration|migrations)(/|_|\\.|$)' || true)"
@@ -195,7 +196,7 @@ jobs:
 
       - name: Build signed APK
         working-directory: evefit_tracker
-        run: flutter build apk --release
+        run: flutter build apk --release --build-name=1.1.6B --build-number=9
 
       - name: Verify APK identity and signing
         working-directory: evefit_tracker
@@ -234,6 +235,9 @@ jobs:
           cp "$apk" "$STAGING_DIR/EveFit-v1.1.6B-arm-muscular-test.apk"
           apk_sha="$(sha256sum "$STAGING_DIR/EveFit-v1.1.6B-arm-muscular-test.apk" | awk '{print $1}')"
           apk_size="$(stat -c '%s' "$STAGING_DIR/EveFit-v1.1.6B-arm-muscular-test.apk")"
+          apk_package="$(sed -n 's/^EVEFIT_RELEASE_PACKAGE=//p' "$RUNNER_TEMP/evefit-release-verifier.txt")"
+          apk_version_name="$(sed -n 's/^EVEFIT_RELEASE_VERSION_NAME=//p' "$RUNNER_TEMP/evefit-release-verifier.txt")"
+          apk_version_code="$(sed -n 's/^EVEFIT_RELEASE_VERSION_CODE=//p' "$RUNNER_TEMP/evefit-release-verifier.txt")"
           cert_sha="$(sed -n 's/^EVEFIT_RELEASE_CERTIFICATE_SHA256=//p' "$RUNNER_TEMP/evefit-release-verifier.txt")"
           {
             echo "EveFit-v1.1.6B-arm-muscular-test.apk  $apk_sha"
@@ -244,8 +248,11 @@ jobs:
             echo 'COMMIT: '"$(git rev-parse HEAD)"
             echo 'PR_BASE_SHA: '"$PR_BASE_SHA"
             echo 'SOURCE_IMPLEMENTATION_SHA: '"$SOURCE_IMPLEMENTATION_SHA"
-            echo 'VERSION_NAME: '"$TEST_VERSION_NAME"
-            echo 'VERSION_CODE: '"$TEST_VERSION_CODE"
+            echo 'pubspec_version: 1.1.6+9'
+            echo 'android_version_name: '"$TEST_VERSION_NAME"
+            echo 'android_version_code: '"$TEST_VERSION_CODE"
+            echo 'display_version: 1.1.6B+9'
+            echo 'release_status: TESTE INTERNO — NÃO É RELEASE PÚBLICA'
             echo 'PACKAGE: '"$PACKAGE_NAME"
             echo 'APK: EveFit-v1.1.6B-arm-muscular-test.apk'
             echo 'APK_SIZE_BYTES: '"$apk_size"
@@ -263,6 +270,8 @@ jobs:
             echo 'TESTE INTERNO — NÃO É RELEASE PÚBLICA'
             echo
             echo '## Comandos executados'
+            echo 'Source ref: '"${{ inputs.source_ref }}"
+            echo 'Source commit: '"$(git rev-parse HEAD)"
             echo '- git rev-parse HEAD and version/schema/diff validation'
             echo '- flutter pub get'
             echo '- dart run tool/canonical/generate_arm_muscular_registry.dart generate'
@@ -272,7 +281,7 @@ jobs:
             echo '- flutter test focused arm muscular test files'
             echo '- dart run tool/testing/evefit_gate.dart fast'
             echo '- flutter test test/release/release_apk_verifier_test.dart'
-            echo '- flutter build apk --release'
+            echo '- flutter build apk --release --build-name=1.1.6B --build-number=9'
             echo '- apksigner verify --verbose and dart run tool/release/verify_release_apk.dart'
             echo
             echo '## Testes aprovados'
@@ -285,6 +294,10 @@ jobs:
             echo '- Android smoke, Android local interaction, upgrade test, PR Gate, and full suite: NOT RUN.'
             echo
             cat "$RUNNER_TEMP/evefit-canonical-counts.txt"
+            echo 'Source pubspec effective version: 1.1.6+9'
+            echo 'APK effective package: '"$apk_package"
+            echo 'APK effective android_version_name: '"$apk_version_name"
+            echo 'APK effective android_version_code: '"$apk_version_code"
             echo 'Schema: 22'
             echo 'Migrations in PR_BASE_SHA..HEAD diff: 0'
             echo 'Resultado build: PASS'
