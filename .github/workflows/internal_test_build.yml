@@ -1,0 +1,310 @@
+name: EveFit Internal Test Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Explicit source branch or ref to validate
+        required: true
+        type: string
+      expected_sha:
+        description: Explicit final commit expected after checkout
+        required: true
+        type: string
+      test_version_name:
+        description: Expected Android version name
+        required: true
+        default: 1.1.6B
+        type: string
+      test_version_code:
+        description: Expected Android version code
+        required: true
+        default: '9'
+        type: string
+      artifact_name:
+        description: Private artifact name
+        required: true
+        default: EveFit-v1.1.6B-arm-muscular-test
+        type: string
+      retention_days:
+        description: Artifact retention in days
+        required: true
+        default: '14'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  internal-test-build:
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: evefit_tracker
+      PACKAGE_NAME: com.sandro.evefittracker
+      ORDER_ID: eve-evefit-1_1_6b-arm-foundation-test-20260801-001-amendment-001
+      PR_BASE_SHA: d6345b9c87433f1d1184e40ad12d5c9f62041bf5
+      SOURCE_IMPLEMENTATION_SHA: e59f4116dd269cc0d58e926ea2ef3ed8f8f64274
+      OFFICIAL_CERTIFICATE_SHA256: 59042D19D9B0CEA872A34CD0D1FD3A268F322B8819D1D6E3849B5761DB17230B
+      STAGING_DIR: ${{ runner.temp }}/evefit-internal-staging
+    steps:
+      - name: Checkout requested ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref }}
+          fetch-depth: 0
+
+      - name: Validate source and version
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_sha="$(git rev-parse HEAD)"
+          test "$actual_sha" = "${{ inputs.expected_sha }}"
+          git cat-file -e "$SOURCE_IMPLEMENTATION_SHA^{commit}"
+          git merge-base --is-ancestor "$SOURCE_IMPLEMENTATION_SHA" HEAD
+          pubspec_version="$(awk '$1 == "version:" {print $2; exit}' "$APP_DIR/pubspec.yaml")"
+          test "$pubspec_version" = "${{ inputs.test_version_name }}+${{ inputs.test_version_code }}"
+          test "$pubspec_version" = '1.1.6B+9'
+          schema_version="$(sed -n 's/^[[:space:]]*version: \([0-9][0-9]*\),$/\1/p' "$APP_DIR/lib/database/app_database.dart" | head -n 1)"
+          test "$schema_version" = '22'
+          migration_diff_count="$(git diff --name-only "$PR_BASE_SHA..HEAD" | grep -Eic '(^|/)(migration|migrations)(/|_|\\.|$)' || true)"
+          test "$migration_diff_count" = '0'
+          retention_days='${{ inputs.retention_days }}'
+          [[ "$retention_days" =~ ^[0-9]+$ ]]
+          test "$retention_days" = '14'
+          printf 'source_ref=%s\nexpected_sha=%s\nactual_sha=%s\npr_base_sha=%s\nsource_implementation_sha=%s\nversion=%s\nschema_version=%s\nmigration_diff_count=%s\n' \
+            "${{ inputs.source_ref }}" "${{ inputs.expected_sha }}" "$actual_sha" "$PR_BASE_SHA" "$SOURCE_IMPLEMENTATION_SHA" "$pubspec_version" "$schema_version" "$migration_diff_count"
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        working-directory: evefit_tracker
+        run: flutter pub get
+
+      - name: Generate, check and report
+        working-directory: evefit_tracker
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/evefit-test-logs"
+          dart run tool/canonical/generate_arm_muscular_registry.dart generate \
+            | tee "$RUNNER_TEMP/evefit-test-logs/arm-muscular-generate.txt"
+          dart run tool/canonical/generate_arm_muscular_registry.dart check \
+            | tee "$RUNNER_TEMP/evefit-test-logs/arm-muscular-check.txt"
+          dart run tool/canonical/generate_arm_muscular_registry.dart report \
+            | tee "$RUNNER_TEMP/evefit-test-logs/arm-muscular-report.txt"
+          python - "$RUNNER_TEMP/evefit-test-logs/arm-muscular-report.txt" "$RUNNER_TEMP/evefit-canonical-counts.txt" <<'PY'
+          import json
+          import pathlib
+          import sys
+
+          report_path = pathlib.Path(sys.argv[1])
+          report = None
+          for line in reversed(report_path.read_text(encoding='utf-8').splitlines()):
+              try:
+                  candidate = json.loads(line)
+              except json.JSONDecodeError:
+                  continue
+              if isinstance(candidate, dict) and 'counts' in candidate:
+                  report = candidate
+                  break
+          if report is None or report.get('status') != 'PASS':
+              raise SystemExit('Canonical report did not produce status PASS.')
+          expected = {
+              'regions': 16,
+              'groups': 45,
+              'muscles': 179,
+              'public_regions': 2,
+              'public_groups': 7,
+              'public_muscles': 23,
+              'arm_exercises_internal': 36,
+              'arm_exercises_public': 35,
+              'arm_variants': 85,
+          }
+          actual = report['counts']
+          mismatches = {key: (expected[key], actual.get(key)) for key in expected if actual.get(key) != expected[key]}
+          if mismatches:
+              raise SystemExit(f'Canonical count mismatch: {mismatches}')
+          pathlib.Path(sys.argv[2]).write_text(
+              '\n'.join([
+                  'Canonical counts (validated from generator report):',
+                  f"regions/groups/muscles: {actual['regions']}/{actual['groups']}/{actual['muscles']}",
+                  f"public regions/groups/muscles: {actual['public_regions']}/{actual['public_groups']}/{actual['public_muscles']}",
+                  f"arm exercises internal/public/variants: {actual['arm_exercises_internal']}/{actual['arm_exercises_public']}/{actual['arm_variants']}",
+              ]) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Flutter analyze
+        working-directory: evefit_tracker
+        run: flutter analyze --no-fatal-infos
+
+      - name: Focused arm muscular tests
+        working-directory: evefit_tracker
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter test \
+            test/canonical_core/arm_muscular_generator_test.dart \
+            test/canonical_core/arm_muscular_registry_contract_test.dart \
+            test/canonical_core/muscular_anatomy_browser_screen_test.dart \
+            test/canonical_core/workout_exercise_selector_arm_anatomy_test.dart
+
+      - name: Fast Gate
+        working-directory: evefit_tracker
+        run: dart run tool/testing/evefit_gate.dart fast
+
+      - name: Additional supported tests
+        working-directory: evefit_tracker
+        run: flutter test test/release/release_apk_verifier_test.dart
+
+      - name: Configure official signing
+        working-directory: evefit_tracker
+        shell: bash
+        env:
+          ANDROID_RELEASE_KEYSTORE_BASE64: ${{ secrets.ANDROID_RELEASE_KEYSTORE_BASE64 }}
+          ANDROID_RELEASE_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEYSTORE_PASSWORD }}
+          ANDROID_RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_RELEASE_KEY_ALIAS }}
+          ANDROID_RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          : "${ANDROID_RELEASE_KEYSTORE_BASE64:?ANDROID_RELEASE_KEYSTORE_BASE64 is required}"
+          : "${ANDROID_RELEASE_KEYSTORE_PASSWORD:?ANDROID_RELEASE_KEYSTORE_PASSWORD is required}"
+          : "${ANDROID_RELEASE_KEY_ALIAS:?ANDROID_RELEASE_KEY_ALIAS is required}"
+          : "${ANDROID_RELEASE_KEY_PASSWORD:?ANDROID_RELEASE_KEY_PASSWORD is required}"
+          umask 077
+          printf '%s' "$ANDROID_RELEASE_KEYSTORE_BASE64" |
+            base64 --decode > android/app/release-keystore.jks
+          test -s android/app/release-keystore.jks
+          printf '%s\n' \
+            'storeFile=release-keystore.jks' \
+            "storePassword=$ANDROID_RELEASE_KEYSTORE_PASSWORD" \
+            "keyAlias=$ANDROID_RELEASE_KEY_ALIAS" \
+            "keyPassword=$ANDROID_RELEASE_KEY_PASSWORD" \
+            > android/key.properties
+
+      - name: Build signed APK
+        working-directory: evefit_tracker
+        run: flutter build apk --release
+
+      - name: Verify APK identity and signing
+        working-directory: evefit_tracker
+        shell: bash
+        env:
+          EXPECTED_VERSION_NAME: ${{ inputs.test_version_name }}
+          EXPECTED_VERSION_CODE: ${{ inputs.test_version_code }}
+        run: |
+          set -euo pipefail
+          apk='build/app/outputs/flutter-apk/app-release.apk'
+          test -s "$apk"
+          sdk_root="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
+          build_tools_dir="$(find "$sdk_root/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n 1)"
+          "$build_tools_dir/apksigner" verify --verbose "$apk" > "$RUNNER_TEMP/evefit-signature-report.txt"
+          dart run tool/release/verify_release_apk.dart \
+            --apk "$apk" \
+            --expected-package "$PACKAGE_NAME" \
+            --expected-version-name "$EXPECTED_VERSION_NAME" \
+            --expected-version-code "$EXPECTED_VERSION_CODE" \
+            --expected-certificate-sha256 "$OFFICIAL_CERTIFICATE_SHA256" \
+            > "$RUNNER_TEMP/evefit-release-verifier.txt"
+          grep -q 'EVEFIT_RELEASE_SIGNATURE_SCHEME_V2=true' "$RUNNER_TEMP/evefit-release-verifier.txt"
+          grep -q "EVEFIT_RELEASE_CERTIFICATE_SHA256=$OFFICIAL_CERTIFICATE_SHA256" "$RUNNER_TEMP/evefit-release-verifier.txt"
+
+      - name: Prepare private staging artifacts
+        working-directory: evefit_tracker
+        shell: bash
+        env:
+          TEST_VERSION_NAME: ${{ inputs.test_version_name }}
+          TEST_VERSION_CODE: ${{ inputs.test_version_code }}
+        run: |
+          set -euo pipefail
+          apk='build/app/outputs/flutter-apk/app-release.apk'
+          rm -rf "$STAGING_DIR"
+          mkdir -p "$STAGING_DIR"
+          cp "$apk" "$STAGING_DIR/EveFit-v1.1.6B-arm-muscular-test.apk"
+          apk_sha="$(sha256sum "$STAGING_DIR/EveFit-v1.1.6B-arm-muscular-test.apk" | awk '{print $1}')"
+          apk_size="$(stat -c '%s' "$STAGING_DIR/EveFit-v1.1.6B-arm-muscular-test.apk")"
+          cert_sha="$(sed -n 's/^EVEFIT_RELEASE_CERTIFICATE_SHA256=//p' "$RUNNER_TEMP/evefit-release-verifier.txt")"
+          {
+            echo "EveFit-v1.1.6B-arm-muscular-test.apk  $apk_sha"
+          } > "$STAGING_DIR/SHA256SUMS.txt"
+          {
+            echo 'ORDER_ID: '"$ORDER_ID"
+            echo 'SOURCE_REF: '"${{ inputs.source_ref }}"
+            echo 'COMMIT: '"$(git rev-parse HEAD)"
+            echo 'PR_BASE_SHA: '"$PR_BASE_SHA"
+            echo 'SOURCE_IMPLEMENTATION_SHA: '"$SOURCE_IMPLEMENTATION_SHA"
+            echo 'VERSION_NAME: '"$TEST_VERSION_NAME"
+            echo 'VERSION_CODE: '"$TEST_VERSION_CODE"
+            echo 'PACKAGE: '"$PACKAGE_NAME"
+            echo 'APK: EveFit-v1.1.6B-arm-muscular-test.apk'
+            echo 'APK_SIZE_BYTES: '"$apk_size"
+            echo 'APK_SHA256: '"$apk_sha"
+            echo 'SIGNATURE_SCHEME: APK Signature Scheme v2'
+            echo 'CERTIFICATE_SHA256: '"$cert_sha"
+            echo 'UTC: '"$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo 'RUN_ID: '"$GITHUB_RUN_ID"
+            echo 'TESTE INTERNO — NÃO É RELEASE PÚBLICA'
+          } > "$STAGING_DIR/BUILD_METADATA.txt"
+          {
+            echo '# EveFit internal test report'
+            echo
+            echo 'Estado final: PARCIAL — CI ARTIFACT READY'
+            echo 'TESTE INTERNO — NÃO É RELEASE PÚBLICA'
+            echo
+            echo '## Comandos executados'
+            echo '- git rev-parse HEAD and version/schema/diff validation'
+            echo '- flutter pub get'
+            echo '- dart run tool/canonical/generate_arm_muscular_registry.dart generate'
+            echo '- dart run tool/canonical/generate_arm_muscular_registry.dart check'
+            echo '- dart run tool/canonical/generate_arm_muscular_registry.dart report'
+            echo '- flutter analyze --no-fatal-infos'
+            echo '- flutter test focused arm muscular test files'
+            echo '- dart run tool/testing/evefit_gate.dart fast'
+            echo '- flutter test test/release/release_apk_verifier_test.dart'
+            echo '- flutter build apk --release'
+            echo '- apksigner verify --verbose and dart run tool/release/verify_release_apk.dart'
+            echo
+            echo '## Testes aprovados'
+            echo '- Generator report/check, focused arm muscular tests, Fast Gate, additional release verifier tests, and APK identity/signature validation: PASS when this report is produced.'
+            echo
+            echo '## Testes falhados'
+            echo '- None observed before artifact preparation.'
+            echo
+            echo '## Testes não executados'
+            echo '- Android smoke, Android local interaction, upgrade test, PR Gate, and full suite: NOT RUN.'
+            echo
+            cat "$RUNNER_TEMP/evefit-canonical-counts.txt"
+            echo 'Schema: 22'
+            echo 'Migrations in PR_BASE_SHA..HEAD diff: 0'
+            echo 'Resultado build: PASS'
+            echo 'Resultado assinatura: PASS — official signing and certificate verification completed.'
+            echo 'Limitações: this is an internal CI artifact; Android smoke, upgrade, PR Gate, and full suite remain unexecuted.'
+          } > "$STAGING_DIR/TEST_REPORT.md"
+          expected='BUILD_METADATA.txt EveFit-v1.1.6B-arm-muscular-test.apk SHA256SUMS.txt TEST_REPORT.md'
+          actual="$(find "$STAGING_DIR" -maxdepth 1 -type f -printf '%f\n' | sort | tr '\n' ' ' | sed 's/ $//')"
+          test "$actual" = "$expected"
+
+      - name: Upload private internal artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: ${{ env.STAGING_DIR }}
+          if-no-files-found: error
+          retention-days: ${{ inputs.retention_days }}
+
+      - name: Remove temporary signing files
+        if: always()
+        working-directory: evefit_tracker
+        shell: bash
+        run: rm -f android/key.properties android/app/release-keystore.jks
